@@ -26,7 +26,12 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!card.isStackable && card.stackCount > 1) return; // Prevent dragging stacks unless allowed
+        if (!card.CardData.IsStackable && card.StackCount > 1) 
+            return; // Prevent dragging stacks unless allowed
+
+        if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
+            CraftingManager.Instance.CancelCraft();
+
         startPosition = transform.position;
         transform.SetParent(null, true);
         isDragging = true;
@@ -34,14 +39,15 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!isDragging) return;
+        if (!isDragging) 
+            return;
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0; // Ensure 2D
         targetPos = mousePos;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
 
-        // Optional: Tilt card like Hearthstone (inspired by)[](https://gamedev.stackexchange.com/questions/137265/how-to-make-card-movement-behave-like-those-in-hearthstone-and-eternal-ccg)
+        // Optional: Tilt card like Hearthstone 
         Vector3 delta = mousePos - (Vector3)startPosition;
         float tiltAngle = Mathf.Clamp(delta.x * 10f, -maxTiltAngle, maxTiltAngle); // Tilt based on movement
         transform.rotation = Quaternion.Euler(0, 0, tiltAngle);
@@ -66,10 +72,10 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                 continue;
 
             Card otherCard = hit.GetComponent<Card>();
-            Debug.Log(otherCard);
-            if (otherCard != null && otherCard.cardName == card.cardName && otherCard.isStackable)
+           
+            if (otherCard != null && otherCard.CardData.IsStackable)
             {
-                otherCard.stackCount += card.stackCount;
+                otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
                 
@@ -77,6 +83,12 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                 newPos.y = -stackingHeight * (otherCard.transform.childCount); // Stack upwards in 2D (negative z for visibility)
                 newPos.z = -0.1f * (otherCard.transform.childCount);
                 transform.localPosition = newPos;
+
+                if (CraftingManager.Instance.TryCraft(otherCard.transform.root, out GameObject craftedCard))
+                {
+                    return;
+                }
+
                 return;
             }
         }
