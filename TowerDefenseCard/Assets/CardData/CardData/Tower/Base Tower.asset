@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: Wood
+  m_Script: {fileID: 11500000, guid: 9f9cebef44ae9b0498a094263cba6c3f, type: 3}
+  m_Name: Base Tower
   m_EditorClassIdentifier: 
-  cardID: 0
-  cardName: wood
-  isStackable: 1
+  attackRange: 0
+  attackSpeed: 0
+  attackArea: 0
+  damageType: 0

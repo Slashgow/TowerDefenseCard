@@ -1,7 +1,7 @@
 public enum CardID 
 {
-    WOOD,
-    TREE,
-    STONE,
-    ARCHER_TOWER
+    BAMBOO,
+    JADE,
+    TORII_GATE,
+    TENGU_SHRINE
 }

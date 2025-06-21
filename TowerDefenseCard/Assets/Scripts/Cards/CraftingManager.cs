@@ -77,6 +77,9 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
     {
+        if(recipe.Ingredients.Count != cardCounts.Count)
+            return false;
+
         foreach (var ingredient in recipe.Ingredients)
         {
             if (!cardCounts.ContainsKey(ingredient.cardID) || cardCounts[ingredient.cardID] < ingredient.quantity)

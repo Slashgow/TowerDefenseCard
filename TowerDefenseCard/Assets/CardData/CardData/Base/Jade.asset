@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: Stone
+  m_Name: Jade
   m_EditorClassIdentifier: 
-  cardID: 2
-  cardName: stone
+  cardID: 1
+  cardName: Jade
+  cardSprite: {fileID: -6950192332035175229, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1

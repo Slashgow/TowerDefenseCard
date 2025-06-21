@@ -35,6 +35,8 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         startPosition = transform.position;
         transform.SetParent(null, true);
         isDragging = true;
+
+        AssignSortingOrderRecursively(card.transform, 20);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,7 +45,7 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
             return;
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0; // Ensure 2D
+        mousePos.z = -0f; // Ensure 2D
         targetPos = mousePos;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
 
@@ -72,7 +74,12 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                 continue;
 
             Card otherCard = hit.GetComponent<Card>();
-           
+            Debug.Log(otherCard);
+            if (otherCard.transform.childCount > 1)
+                continue;
+            
+         
+
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
                 otherCard.StackCount += card.StackCount;
@@ -80,22 +87,38 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
                 transform.SetParent(otherCard.transform, false);
                 
                 Vector3 newPos = Vector3.zero;
-                newPos.y = -stackingHeight * (otherCard.transform.childCount); // Stack upwards in 2D (negative z for visibility)
-                newPos.z = -0.1f * (otherCard.transform.childCount);
+                newPos.y = -stackingHeight * (otherCard.transform.childCount); 
                 transform.localPosition = newPos;
+                AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + 1);
 
                 if (CraftingManager.Instance.TryCraft(otherCard.transform.root, out GameObject craftedCard))
-                {
                     return;
-                }
 
                 return;
             }
         }
 
-
+        Vector3 pos2D = transform.position;
+        pos2D.z = 0.0f;
+        transform.position = pos2D;
+        AssignSortingOrderRecursively(card.transform, 0);
         transform.SetParent(startParent, false);
     }
+
+    void AssignSortingOrderRecursively(Transform transform, int startSortingOrder)
+    {
+        SpriteRenderer spriteRenderer = transform.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+            spriteRenderer.sortingOrder = startSortingOrder;
+
+        int childCount = transform.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            AssignSortingOrderRecursively(child, startSortingOrder + 1);
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {
