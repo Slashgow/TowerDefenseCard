@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,7 +7,8 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
     [SerializeField, Range(0f, 180f)] private float maxTiltAngle = 20f;
     [SerializeField, Range(0f, 1f)] private float overlapRadius = 0.5f;
-    [SerializeField] private LayerMask detectionLayerMask;
+    [SerializeField] private LayerMask detectionLayerMaskCards;
+    [SerializeField] private LayerMask detectionLayerMaskReseller;
     [SerializeField][Range(0f, 1f)] private float stackingHeight = 0.1f;
 
     private Card card;
@@ -16,7 +18,6 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
     private Camera mainCamera;
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPos;
-
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         transform.SetParent(null, true);
         isDragging = true;
 
-        AssignSortingOrderRecursively(card.transform, 20);
+        CardUtility.AssignSortingOrderRecursively(card.transform, 20);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -64,10 +65,28 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
     private void HandleDrop()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMask); 
+        TryResell();
+        TryStackCards();
+    }
+
+    private void TryResell()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, overlapRadius, detectionLayerMaskReseller);
+
+        if (hit == null)
+            return;
+
+        if(hit.TryGetComponent(out Reseller reseller))
+            reseller.Resell(CardUtility.GetAllCards(card.gameObject));
+    }
+
+    private void TryStackCards()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
+
         foreach (var hit in hits)
         {
-            if (hit.gameObject == this.gameObject) 
+            if (hit.gameObject == this.gameObject)
                 continue;
 
             if (hit.transform.IsChildOf(this.transform))
@@ -75,21 +94,19 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
 
             Card otherCard = hit.GetComponent<Card>();
             Debug.Log(otherCard);
-            if (otherCard.transform.childCount > 1)
+            if (otherCard.transform.childCount > 2)
                 continue;
-            
-         
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
                 otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
-                
+
                 Vector3 newPos = Vector3.zero;
-                newPos.y = -stackingHeight * (otherCard.transform.childCount); 
+                newPos.y = -stackingHeight * (otherCard.transform.childCount);
                 transform.localPosition = newPos;
-                AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + 1);
+                CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + 1);
 
                 if (CraftingManager.Instance.TryCraft(otherCard.transform.root, out GameObject craftedCard))
                     return;
@@ -101,22 +118,8 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         Vector3 pos2D = transform.position;
         pos2D.z = 0.0f;
         transform.position = pos2D;
-        AssignSortingOrderRecursively(card.transform, 0);
+        CardUtility.AssignSortingOrderRecursively(card.transform, 0);
         transform.SetParent(startParent, false);
-    }
-
-    void AssignSortingOrderRecursively(Transform transform, int startSortingOrder)
-    {
-        SpriteRenderer spriteRenderer = transform.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-            spriteRenderer.sortingOrder = startSortingOrder;
-
-        int childCount = transform.childCount;
-        for (int i = 0; i < childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-            AssignSortingOrderRecursively(child, startSortingOrder + 1);
-        }
     }
 
 

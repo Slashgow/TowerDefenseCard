@@ -11,11 +11,14 @@ public class Card : MonoBehaviour
     [SerializeField] private SpriteRenderer cardSprite;
     public SpriteRenderer CardSprite => cardSprite;
 
+    [SerializeField] private CardUI cardUI;
+
     public int StackCount { get; set; }
 
-    private void Awake()
+    private void OnEnable()
     {
         cardSprite.sprite = cardData.CardSprite;
+        cardUI.SetupCard(cardData.CardName, cardData.Cost.ToString());
     }
 
     void Start()

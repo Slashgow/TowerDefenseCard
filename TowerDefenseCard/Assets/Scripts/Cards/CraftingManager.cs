@@ -55,6 +55,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     private void InitializeCooldownBar(Transform stackParent, float craftingDelay)
     {
         cooldownBar = Instantiate(cooldownBarPrefab, stackParent.position, Quaternion.identity);
+        cooldownBar.GetComponent<Canvas>().sortingOrder = 30;
         CooldownBarUI cooldownBarUI = cooldownBar.GetComponentInChildren<CooldownBarUI>();
         cooldownBarUI.Init(stackParent, craftingDelay, cooldownBarOffset);
         cooldownBar.transform.position = stackParent.position + new Vector3(0, cooldownBarOffset, 0);

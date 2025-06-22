@@ -15,4 +15,7 @@ public class CardData : ScriptableObject
     [SerializeField] private bool isStackable; 
     public bool IsStackable => isStackable;
 
+    [SerializeField] private int cost;
+    public int Cost => cost;
+
 }
