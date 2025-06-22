@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Prefabs/UI/UI%20Toolkit/MainMenuUSS.uss?fileID=7433441132597879392&amp;guid=51e001713ba277841a53d5bdb5c8f3c8&amp;type=3#MainMenuUSS" />
+    <ui:VisualElement name="BackgroundPanel" class="background" style="flex-grow: 1; align-items: center; align-content: auto; justify-content: center;">
+        <ui:Label text="Irezumi Defenders" name="Title" class="title" />
+        <ui:VisualElement name="Buttons" class="Buttons" style="flex-grow: 0; height: 50%; width: 30%; align-self: center; align-items: auto; justify-content: flex-start; align-content: auto; flex-shrink: 1; flex-direction: column; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button text="Start" name="ButtonStart" class="text-button Button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:0973f375f04bcf845b691bad9cad1996" entry="Id(29220007936)" />
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Button" name="ButtonSettings" class="text-button Button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:0973f375f04bcf845b691bad9cad1996" entry="Id(159717388288)" />
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Button" name="ButtonQuit" class="text-button Button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:0973f375f04bcf845b691bad9cad1996" entry="Id(221281382400)" />
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

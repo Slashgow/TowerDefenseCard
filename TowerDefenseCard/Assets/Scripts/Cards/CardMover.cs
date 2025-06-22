@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,6 +11,12 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
     [SerializeField] private LayerMask detectionLayerMaskCards;
     [SerializeField] private LayerMask detectionLayerMaskReseller;
     [SerializeField][Range(0f, 1f)] private float stackingHeight = 0.1f;
+
+    [Header("Start Movement")]
+    [SerializeField, Range(0f,3f)] private float moveStep = 0.1f; 
+    [SerializeField, Range(0f,1f)] private float checkRadius = 0.5f; 
+    [SerializeField, Range(0,10)] private int maxIterations = 10; 
+    [SerializeField, Range(0f,2f)] private float moveDuration = 0.5f;
 
     private Card card;
     private Vector2 startPosition;
@@ -23,10 +30,50 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
     {
         card = GetComponent<Card>();
         mainCamera = Camera.main;
+        StartCoroutine(SmoothMoveToClearSpot());
+    }
+
+    private IEnumerator SmoothMoveToClearSpot()
+    {
+        int iterations = 0;
+        Vector3 startPosition = transform.position;
+
+        while (IsOverlapping() && iterations < maxIterations)
+        {
+            Vector2 moveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+            Vector3 targetPosition = transform.position + new Vector3(moveDirection.x * moveStep, moveDirection.y * moveStep, 0f);
+
+            float elapsedTime = 0f;
+            Vector3 initialPosition = transform.position;
+
+            while (elapsedTime < moveDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / moveDuration;
+                transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+                yield return null; // Wait for next frame
+            }
+
+            transform.position = targetPosition; // Ensure exact target position
+            iterations++;
+        }
+    }
+
+    private bool IsOverlapping()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, checkRadius, detectionLayerMaskCards);
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.gameObject != gameObject)// && !IsStacked(hit.transform))
+                return true; 
+        }
+        return false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        CameraMovement.Instance.enabled = false;
+
         if (!card.CardData.IsStackable && card.StackCount > 1) 
             return; // Prevent dragging stacks unless allowed
 
@@ -61,6 +108,7 @@ public class CardMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         isDragging = false;
         transform.rotation = Quaternion.identity; 
         HandleDrop();
+        CameraMovement.Instance.enabled = true;
     }
 
     private void HandleDrop()

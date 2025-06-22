@@ -4,9 +4,6 @@ using UnityTimer;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    [SerializeField, Range(0f, 500f)] private float timeCraftMode;
-
-    private Timer craftingTimer;
     public GameMode CurrentGameMode {  get; private set; }
 
     public event Action OnStartCraftMode;
@@ -14,18 +11,20 @@ public class GameManager : MonoSingleton<GameManager>
     public event Action OnStartCombatMode;
     public event Action OnEndCombatMode;
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
     }
 
     private void SceneLoader_OnSceneLoaded(int buildIndex)
     {
+        Debug.Log("On Scene loaded");
         CurrentGameMode = GameMode.CRAFTING;
-        craftingTimer = Timer.Register(timeCraftMode, onComplete: SwitchGameMode);
+        CraftingManager.Instance.StartCraftingModeTimer();
     }
 
-    private void SwitchGameMode()
+    public void SwitchGameMode()
     {
         Debug.Log("timer completed");
 

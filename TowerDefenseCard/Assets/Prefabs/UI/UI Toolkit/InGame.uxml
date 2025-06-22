@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Prefabs/UI/UI%20Toolkit/InGameUSS.uss?fileID=7433441132597879392&amp;guid=0b2d36f7af61e2c48a51181eb8eabfc4&amp;type=3#InGameUSS" />
+    <ui:VisualElement name="Background" style="flex-grow: 1;">
+        <ui:VisualElement name="UpperBand" class="UpperBand" style="flex-direction: row;">
+            <ui:ProgressBar value="0" name="ProgressBarCraftMode" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; height: 100%; flex-grow: 0; align-self: auto; align-content: flex-start; align-items: stretch;">
+                <Bindings>
+                    <ui:DataBinding property="value" data-source-path="timeElpasedCraftingMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    <ui:DataBinding property="highValue" data-source-path="timeCraftMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />
+                </Bindings>
+            </ui:ProgressBar>
+        </ui:VisualElement>
+        <ui:Button text="Button" style="flex-grow: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

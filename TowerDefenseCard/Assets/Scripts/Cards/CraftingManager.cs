@@ -6,6 +6,7 @@ using System;
 
 public class CraftingManager : MonoSingleton<CraftingManager>
 {
+    [SerializeField, Range(0f, 500f)] private float timeCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,1f)] private float cooldownBarOffset = 0.3f;
@@ -13,6 +14,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     public event Action<float> OnCooldownCraftTick = delegate { };
     public event Action OnCooldownCraftCancel = delegate { };
 
+    private Timer CraftingModeDurationTimer;
+    [SerializeField, HideInInspector] private float timeElpasedCraftingMode;
     private Timer craftingTimer;
     private GameObject cooldownBar;
     public bool TryCraft(Transform stackParent, out GameObject craftedCard)
@@ -98,5 +101,10 @@ public class CraftingManager : MonoSingleton<CraftingManager>
      
         if (cooldownBar != null)
             Destroy(cooldownBar);
+    }
+
+    public void StartCraftingModeTimer()
+    {
+        CraftingModeDurationTimer = Timer.Register(timeCraftMode, onComplete: GameManager.Instance.SwitchGameMode, onUpdate: timeElapsed => timeElpasedCraftingMode = timeElapsed);
     }
 }
