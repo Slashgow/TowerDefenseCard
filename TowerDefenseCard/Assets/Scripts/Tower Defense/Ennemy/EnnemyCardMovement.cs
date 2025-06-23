@@ -2,41 +2,44 @@ using UnityEngine;
 using UnityEngine.Splines;
 using System.Collections;
 
-public class EnemyCardMovement : MonoBehaviour
-{
-    [SerializeField] private SplineContainer splineContainer;
-    [SerializeField] private float moveSpeed = 2f; // Base speed in units per second
+public class EnemyCardMovement : BaseCardMovement 
+{   
+    [SerializeField, Range(0f,10f)] private float moveSpeed = 2f; // Base speed in units per second
     [SerializeField] private bool loop = true;
-    [SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); // Influences step timing
-    [SerializeField] private float moveDuration = 2f; // Total duration for one full path traversal
-    [SerializeField] private float hopDuration = 0.1f; // Duration of smooth hop per step
-    [SerializeField] private float breakDuration = 0.05f; // Pause time after each hop
+    [SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); 
+    [Tooltip("Total duration for one full path traversal")]
+    [SerializeField, Range(0f,40f)] private float moveDuration = 2f;
+    [Tooltip("Duration of smooth hop per step")]
+    [SerializeField, Range(0f,1f)] private float hopDuration = 0.1f;
+    [Tooltip("Pause time after each hop")]
+    [SerializeField, Range(0f,1f)] private float breakDuration = 0.05f; 
 
+    private SplineContainer splineContainer;
     private float splineLength;
     private bool isMoving = false;
     private int currentStep = 0;
     private int numberOfSteps; // Calculated at runtime
 
-    void Start()
+    public void Init(SplineContainer spawnedSplineContainer)
     {
-        if (splineContainer != null)
+        if(spawnedSplineContainer == null)
         {
-            splineLength = splineContainer.Spline.GetLength();
-            if (splineLength > 0)
-            {
-                // Calculate number of steps based on moveDuration and hopDuration
-                numberOfSteps = Mathf.Max(1, Mathf.RoundToInt(moveDuration / (hopDuration + breakDuration)));
-                StartCoroutine(MoveInSteps());
-            }
-            else
-            {
-                Debug.LogWarning("Spline length is zero or invalid for " + gameObject.name);
-            }
+            Debug.LogWarning("SplineContainer not assigned to " + gameObject.name);
+            return;
+        }
+
+        splineContainer = spawnedSplineContainer;
+        
+        splineLength = splineContainer.Spline.GetLength();
+        if (splineLength > 0)
+        {
+            numberOfSteps = Mathf.Max(1, Mathf.RoundToInt(moveDuration / (hopDuration + breakDuration)));
+            StartCoroutine(MoveInSteps());
         }
         else
         {
-            Debug.LogWarning("SplineContainer not assigned to " + gameObject.name);
-        }
+            Debug.LogWarning("Spline length is zero or invalid for " + gameObject.name);
+        } 
     }
 
     private IEnumerator MoveInSteps()

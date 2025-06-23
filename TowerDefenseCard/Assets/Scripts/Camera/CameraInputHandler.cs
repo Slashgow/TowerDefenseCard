@@ -44,8 +44,4 @@ public class CameraInputHandler : MonoBehaviour
         playerInputActionAsset.Disable();
     }
 
-    //void LateUpdate()
-    //{
-    //    zoomInput = 0f; // Reset zoom input each frame to avoid continuous zooming
-    //}
 }
