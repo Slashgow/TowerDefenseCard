@@ -1,14 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Prefabs/UI/UI%20Toolkit/InGameUSS.uss?fileID=7433441132597879392&amp;guid=0b2d36f7af61e2c48a51181eb8eabfc4&amp;type=3#InGameUSS" />
     <ui:VisualElement name="Background" style="flex-grow: 1;">
-        <ui:VisualElement name="UpperBand" class="UpperBand" style="flex-direction: row;">
-            <ui:ProgressBar value="0" name="ProgressBarCraftMode" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; height: 100%; flex-grow: 0; align-self: auto; align-content: flex-start; align-items: stretch;">
+        <ui:VisualElement name="UpperBand" class="UpperBand" style="flex-direction: row; justify-content: flex-end; align-items: auto;">
+            <ui:VisualElement name="IconProgressBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Main_Art.png?fileID=-1258243211&amp;guid=aca456cfa94b9744d81d86335173709b&amp;type=3#Combat_UI&quot;); background-color: rgba(255, 255, 255, 0); width: ; height: auto; -unity-background-scale-mode: scale-to-fit; -unity-slice-scale: 0; position: absolute;" />
+            <ui:ProgressBar value="0" name="ProgressBarCraftMode" style="margin-top: 0; margin-right: 90px; margin-bottom: 0; margin-left: 0; height: 100%; flex-grow: 0; align-self: auto; align-content: flex-start; align-items: stretch; width: 40%;">
                 <Bindings>
                     <ui:DataBinding property="value" data-source-path="timeElpasedCraftingMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />
                     <ui:DataBinding property="highValue" data-source-path="timeCraftMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />
                 </Bindings>
             </ui:ProgressBar>
         </ui:VisualElement>
-        <ui:Button text="Button" style="flex-grow: 0;" />
     </ui:VisualElement>
 </ui:UXML>
