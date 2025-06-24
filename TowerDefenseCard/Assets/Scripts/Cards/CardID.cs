@@ -8,5 +8,8 @@ public enum CardID
     SAKURA_BRICK,
     ARCHER,
     TORII_GATE,
-    TENGU_SHRINE
+    TENGU_SHRINE,
+    ONI,
+    BAMBOO_FACTORY,
+    SAKURA_FACTORY
 }

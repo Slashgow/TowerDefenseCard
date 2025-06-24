@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: Torii Gate
+  m_Name: Spirit Essence
   m_EditorClassIdentifier: 
-  cardID: 2
-  cardName: Toori Gate
-  cardSprite: {fileID: 1312731569831349898, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardID: 3
+  cardName: Spirit Essence
+  cardSprite: {fileID: -423798865, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1
-  cost: 5
+  cost: 3

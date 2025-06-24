@@ -96,7 +96,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
         // Instantiate output card at the stack's position
         craftedCard = Instantiate(craftInfo.CraftingRecipe.OutputCardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
-        
+        currentCrafts.Remove(craftInfo);
     }
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)

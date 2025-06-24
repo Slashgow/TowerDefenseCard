@@ -88,6 +88,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
         foreach (var hit in hits)
         {
+            Debug.Log(hit.name);
             if (hit.gameObject == this.gameObject)
                 continue;
 
@@ -96,7 +97,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
             Card otherCard = hit.GetComponent<Card>();
             Debug.Log(otherCard);
-            if (otherCard.transform.childCount > 2)
+            if (otherCard.transform.childCount > 3)
                 continue;
 
             if (otherCard != null && otherCard.CardData.IsStackable)

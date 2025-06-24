@@ -466,7 +466,7 @@ TextureImporter:
         width: 243
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -475,6 +475,270 @@ TextureImporter:
       bones: []
       spriteID: d30812b5852ac1f48a3459a3ece4013c
       internalID: 387926511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sakura
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1269
+        width: 184
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb33a24baec7fc94f853ec29e4ad74eb
+      internalID: -208535096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit_Essence
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1259
+        width: 174
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bb7f499537c6140aef98521b827727
+      internalID: -423798865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bamboo_Plank
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1245
+        width: 167
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2f49dae54e2a1468bcb664edd510ec
+      internalID: 13222060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sakura_Brick
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 959
+        width: 195
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c0c93af757ff642ac9aedf02f0539c
+      internalID: -1430702369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 978
+        width: 171
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d50b8e2b8e945418360d7bdedf3ab9
+      internalID: 590607674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arc
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 985
+        width: 104
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0dfb44fa2b5424b9d4e7bf5db1b328
+      internalID: 2048502986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 1060
+        width: 167
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9604e0b509983b640b712d001a4b490c
+      internalID: -2099327012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arc_Fire
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 635
+        width: 147
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb9b972d0e57d449b15ac995965294a
+      internalID: -178878361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bamboo_Factory
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 655
+        width: 155
+        height: 180
+      alignment: 9
+      pivot: {x: 0.4999996, y: 0.50464445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ea2382d25f8c14c8629509f123c432
+      internalID: -87673069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sakura_Factory
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 654
+        width: 155
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5bb51dfe84e204b8a7753d0cf9e5b1
+      internalID: 1814970933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Art_10
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 607
+        width: 154
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bebe55972b8fc43ab92eaead83c581
+      internalID: 265669321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Combat_UI
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 651
+        width: 99
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f873d8f7e842b409eda54a9758c2a7
+      internalID: -1258243211
       vertices: []
       indices: 
       edges: []
@@ -493,14 +757,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Arc: 2048502986
+      Arc_Fire: -178878361
+      Archer: 590607674
+      Arrow: -2099327012
+      Bamboo_Factory: -87673069
+      Bamboo_Plank: 13222060
+      Combat_UI: -1258243211
       Craft_ProgressBar: -997937720
       Craft_ProgressBar_Fill: 387926511
       Heart: 1646642654
       Ink: -556184264
+      Main_Art_10: 265669321
       Main_Progress_Bar: -2072527109
       Oni: -791273899
       Pause: -1710879087
       Play: 1699067846
+      Sakura: -208535096
+      Sakura_Brick: -1430702369
+      Sakura_Factory: 1814970933
+      Spirit_Essence: -423798865
       Test Art_6: -168435414
       bamboo: -5142840990626629552
       bg_card_blue: -773140731
