@@ -131,10 +131,10 @@ TextureImporter:
       name: torri gate
       rect:
         serializedVersion: 2
-        x: 158
-        y: 1634
-        width: 197
-        height: 198
+        x: 159
+        y: 1635
+        width: 195
+        height: 196
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: bamboo
       rect:
         serializedVersion: 2
-        x: 492
-        y: 1648
-        width: 125
-        height: 170
+        x: 493
+        y: 1649
+        width: 123
+        height: 168
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: jade
       rect:
         serializedVersion: 2
-        x: 802
-        y: 1663
-        width: 160
-        height: 131
+        x: 803
+        y: 1664
+        width: 158
+        height: 129
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: tengu_shrine
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 1634
-        width: 176
-        height: 195
+        x: 1102
+        y: 1635
+        width: 173
+        height: 194
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: bg_card_rose
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1530
-        width: 266
-        height: 395
+        x: 1376
+        y: 1531
+        width: 264
+        height: 393
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: bg_card_green
       rect:
         serializedVersion: 2
-        x: 1681
-        y: 1530
-        width: 266
-        height: 395
+        x: 1682
+        y: 1531
+        width: 264
+        height: 393
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,6 +255,226 @@ TextureImporter:
       bones: []
       spriteID: bde469def21d1f720800000000000000
       internalID: 2878311640646176475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oni
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1288
+        width: 164
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a1e7e4ad0ac314eab4b803063ae912
+      internalID: -791273899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ink
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1389
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ab75c15314894489f40dd35b802433
+      internalID: -556184264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_card_yellow
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1105
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2031b9e97addf4890739b9552d0e25
+      internalID: -1615953430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_card_blue
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 1107
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c9a56bb12f77842b3ed783572df09b
+      internalID: -773140731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 1281
+        width: 77
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14de9a53bfa81d428cc7cd2945f12d8
+      internalID: 1646642654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_ProgressBar
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 998
+        width: 253
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5adc4eef1aeb04a42a5466842bfb7cd3
+      internalID: -997937720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 996
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76fa57520907854cbb6c86f9120cee0
+      internalID: -1710879087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 996
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202aaca80a6fa1740beb8070c1e71630
+      internalID: 1699067846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_Progress_Bar
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 890
+        width: 524
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3ce45d3f078b0489a3cd0331fb6a01
+      internalID: -2072527109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craft_ProgressBar_Fill
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1003
+        width: 243
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30812b5852ac1f48a3459a3ece4013c
+      internalID: 387926511
       vertices: []
       indices: 
       edges: []
@@ -273,9 +493,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Craft_ProgressBar: -997937720
+      Craft_ProgressBar_Fill: 387926511
+      Heart: 1646642654
+      Ink: -556184264
+      Main_Progress_Bar: -2072527109
+      Oni: -791273899
+      Pause: -1710879087
+      Play: 1699067846
+      Test Art_6: -168435414
       bamboo: -5142840990626629552
+      bg_card_blue: -773140731
       bg_card_green: 2878311640646176475
       bg_card_rose: -2533790215428652826
+      bg_card_yellow: -1615953430
       jade: -6950192332035175229
       tengu_shrine: 8504883195135373499
       torri gate: 1312731569831349898

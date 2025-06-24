@@ -4,20 +4,40 @@ using System.Linq;
 using UnityTimer;
 using System;
 
+[Serializable]
+public class CraftInfo
+{
+    private Transform stackParent;
+    private CraftingRecipe craftingRecipe;
+    private List<Card> stackCards;
+    private int craftID;
+    public List<Card> StackCards => stackCards;
+    public Transform StackParent => stackParent;
+    public CraftingRecipe CraftingRecipe => craftingRecipe;
+    public int CraftID => craftID;
+    public CraftInfo(Transform stackParent, CraftingRecipe craftingRecipe, List<Card> stackCards, int craftID)
+    {
+        this.stackParent = stackParent;
+        this.craftingRecipe = craftingRecipe;
+        this.stackCards = stackCards;
+        this.craftID = craftID;
+    }
+}
+
 public class CraftingManager : MonoSingleton<CraftingManager>
 {
     [SerializeField, Range(0f, 500f)] private float timeCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
-    [SerializeField, Range(0f,1f)] private float cooldownBarOffset = 0.3f;
+    [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
 
-    public event Action<float> OnCooldownCraftTick = delegate { };
-    public event Action OnCooldownCraftCancel = delegate { };
+    public event Action OnCraftCancel = delegate { };
 
     private Timer CraftingModeDurationTimer;
     [SerializeField, HideInInspector] private float timeElpasedCraftingMode;
-    private Timer craftingTimer;
+  
     private GameObject cooldownBar;
+    private List<CraftInfo> currentCrafts = new List<CraftInfo>();
     public bool TryCraft(Transform stackParent, out GameObject craftedCard)
     {
         craftedCard = null;
@@ -40,14 +60,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>
         {
             if (IsRecipeMatch(recipe, cardCounts))
             {
-                InitializeCooldownBar(stackParent, recipe.CraftingDelay);
-
-                // Register a timer for the crafting delay
-                craftingTimer = Timer.Register(
-                    duration: recipe.CraftingDelay,
-                    onUpdate: secondsElapsed => OnCooldownCraftTick?.Invoke(secondsElapsed),
-                    onComplete: () => Craft(stackCards, recipe, stackParent.parent, out GameObject craftedCard, cooldownBar)
-                );
+                currentCrafts.Add(new CraftInfo(stackParent, recipe, stackCards, CardUtility.GenerateUniqueID()));
+                InitializeCooldownBar(stackParent, recipe.CraftingDelay, currentCrafts[currentCrafts.Count - 1].CraftID);
                 return true;
             }
         }
@@ -55,28 +69,34 @@ public class CraftingManager : MonoSingleton<CraftingManager>
         return false;
     }
 
-    private void InitializeCooldownBar(Transform stackParent, float craftingDelay)
+    private void InitializeCooldownBar(Transform stackParent, float craftingDelay, int craftID)
     {
         cooldownBar = Instantiate(cooldownBarPrefab, stackParent.position, Quaternion.identity);
         cooldownBar.GetComponent<Canvas>().sortingOrder = 30;
         CooldownBarUI cooldownBarUI = cooldownBar.GetComponentInChildren<CooldownBarUI>();
-        cooldownBarUI.Init(stackParent, craftingDelay, cooldownBarOffset);
+        cooldownBarUI.OnCraftDelayEnd -= CooldownBarUI_OnCraftDelayEnd;
+        cooldownBarUI.OnCraftDelayEnd += CooldownBarUI_OnCraftDelayEnd;
+        cooldownBarUI.Init(stackParent, craftingDelay, cooldownBarOffset, craftID);
         cooldownBar.transform.position = stackParent.position + new Vector3(0, cooldownBarOffset, 0);
     }
 
-    private void Craft(List<Card> stackCards, CraftingRecipe recipe, Transform newParent, out GameObject craftedCard, GameObject cooldownBar)
+    private void CooldownBarUI_OnCraftDelayEnd(int craftID)
+    {
+        CraftInfo craftInfo = currentCrafts.First(currentCraft => currentCraft.CraftID == craftID);
+        Craft(craftInfo, out GameObject craftedCard);
+    }
+
+    private void Craft(CraftInfo craftInfo, out GameObject craftedCard)
     {
         // Destroy input cards
-        foreach (var card in stackCards)
+        foreach (var card in craftInfo.StackCards)
         {
             Destroy(card.gameObject);
         }
 
-        if (cooldownBar != null)
-            Destroy(cooldownBar);
-
         // Instantiate output card at the stack's position
-        craftedCard = Instantiate(recipe.OutputCardPrefab, stackCards[0].transform.position, Quaternion.identity, newParent);
+        craftedCard = Instantiate(craftInfo.CraftingRecipe.OutputCardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
+        
     }
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
@@ -96,11 +116,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public void CancelCraft()
     {
-        OnCooldownCraftCancel?.Invoke();
-        Timer.Cancel(craftingTimer);
-     
-        if (cooldownBar != null)
-            Destroy(cooldownBar);
+        OnCraftCancel?.Invoke();
     }
 
     public void StartCraftingModeTimer()

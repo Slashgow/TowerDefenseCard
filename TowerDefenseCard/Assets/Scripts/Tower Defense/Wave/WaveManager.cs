@@ -43,7 +43,7 @@ public class WaveManager : MonoSingleton<WaveManager>
                 if (paths.Length > 0)
                 {
                     SplineContainer path = paths[Random.Range(0, paths.Length)];
-                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.Spline[0].Position, Quaternion.identity);
+                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.EvaluatePosition(0, 0), Quaternion.identity);
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
                     newEnemy.GetComponent<EnemyCardMovement>().Init(path);
                     yield return new WaitForSeconds(enemy.SpawnInterval);

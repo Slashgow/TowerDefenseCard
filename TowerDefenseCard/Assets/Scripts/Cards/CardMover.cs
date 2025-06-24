@@ -31,8 +31,8 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
         if (!card.CardData.IsStackable && card.StackCount > 1) 
             return; // Prevent dragging stacks unless allowed
 
-        if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
-            CraftingManager.Instance.CancelCraft();
+        //if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
+        //    CraftingManager.Instance.CancelCraft();
 
         startPosition = transform.position;
         transform.SetParent(null, true);

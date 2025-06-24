@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ece1b3fc59ef348933309047a5a772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeCraftMode: 0
   recipes:
   - {fileID: 11400000, guid: 08f113ec1e6d16149b67277c91911d0c, type: 2}
   cooldownBarPrefab: {fileID: 5366261039685075114, guid: 05c0c4a21dc340540911cb28546c2564, type: 3}
-  cooldownBarOffset: 0.6
+  cooldownBarOffset: 1.3
+  timeElpasedCraftingMode: 0

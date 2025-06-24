@@ -59,7 +59,7 @@ public class EnemyCardMovement : BaseCardMovement
             progress = progress % 1f; // Loop by resetting
             float curveT = animationCurve.Evaluate(progress); // Apply curve to step timing
             float targetDistance = curveT * splineLength;
-            Vector3 targetPosition = SplineUtility.EvaluatePosition(splineContainer.Spline, targetDistance / splineLength);
+            Vector3 targetPosition = splineContainer.EvaluatePosition(0, targetDistance / splineLength);
 
             // Smooth hop to target position
             Vector3 startPosition = transform.position;

@@ -40,4 +40,12 @@ public static class CardUtility
             GameObject.Destroy(cards[i].gameObject);
         }
     }
+
+    public static int GenerateUniqueID()
+    {
+        System.DateTime now = System.DateTime.Now;
+        int id = now.Year + now.Month + now.Day + now.Hour + now.Minute + now.Second + now.Millisecond;
+        return id;
+        //return Mathf.Abs(seed % int.MaxValue); // Start with a unique seed
+    }
 }
