@@ -97,7 +97,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4670104876130534819}
   - component: {fileID: 5749855212708433179}
-  - component: {fileID: 3153706085142239167}
   - component: {fileID: 2416808471045339520}
   - component: {fileID: 1068575674518649929}
   - component: {fileID: 3580529832804353018}
@@ -169,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2533790215428652826, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  m_Sprite: {fileID: -773140731, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -180,23 +179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3153706085142239167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449703591669134163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e41d9716972c6b44a26489ed6db0757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  backgroundSprite: {fileID: 5749855212708433179}
-  cardSprite: {fileID: 5458517459328159983}
-  cardUI: {fileID: 7198497748934006018}
-  cardBaseTowerData: {fileID: 11400000, guid: 8f41a8d1a2e2d9f40834a70fb94b6d21, type: 2}
 --- !u!114 &2416808471045339520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,20 +191,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aacb8bc7b3f0da408d6afb51ad98fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.009
-  maxTiltAngle: 20
-  overlapRadius: 0.5
   detectionLayerMaskCards:
     serializedVersion: 2
     m_Bits: 64
+  moveStep: 2
+  checkRadius: 0.5
+  maxIterations: 1
+  startMoveDuration: 0.5
+  smoothTime: 0.009
+  maxTiltAngle: 20
+  overlapRadius: 0.5
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.1
-  moveStep: 2
-  checkRadius: 0.5
-  maxIterations: 1
-  moveDuration: 0.2
 --- !u!50 &1068575674518649929
 Rigidbody2D:
   serializedVersion: 5
@@ -288,7 +270,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.33, y: 1.975}
+    oldSize: {x: 1.32, y: 1.965}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -398,14 +380,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7932883089198233935, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
   m_PrefabInstance: {fileID: 8382269893518395449}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7198497748934006018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1708550491643092283, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
-  m_PrefabInstance: {fileID: 8382269893518395449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f1971b613a13a47a708036e49b1fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

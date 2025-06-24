@@ -3,6 +3,9 @@
 [CreateAssetMenu(fileName = "NewCardData", menuName = "William/CardBaseTowerData")]
 public class CardBaseTowerData : ScriptableObject
 {
+    [SerializeField, Range(0f, 100f)] private float damage;
+    public float Damage => damage;
+
     [SerializeField, Range(0f,10f)] private float attackRange;
     public float AttackRange => attackRange;
 

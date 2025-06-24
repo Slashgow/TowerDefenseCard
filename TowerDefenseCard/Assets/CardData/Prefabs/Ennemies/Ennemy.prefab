@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1825692453032242314}
   - component: {fileID: 4393093839653905922}
   - component: {fileID: 8770196668377592231}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Card Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3803351378072727935}
   - component: {fileID: 5601609712679972704}
   - component: {fileID: 1416622909516074884}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2878311640646176475, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  m_Sprite: {fileID: -2533790215428652826, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,13 +238,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 505245852151396201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f88123b47fa284796d68614ab92e25, type: 3}
+  m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   backgroundSprite: {fileID: 3248799991256872661}
   cardSprite: {fileID: 1503847643991101542}
   cardUI: {fileID: 686889461732242440}
+  maxHealth: 20
 --- !u!114 &3803351378072727935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionLayerMaskCards:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   moveStep: 0.1
   checkRadius: 0.5
   maxIterations: 10
@@ -358,7 +359,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.33, y: 1.975}
+    oldSize: {x: 1.32, y: 1.965}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -377,7 +378,7 @@ GameObject:
   - component: {fileID: 9078905913819889154}
   - component: {fileID: 2014193933632727923}
   - component: {fileID: 693356041642945018}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Card Coin Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +515,7 @@ GameObject:
   - component: {fileID: 1201832144182758048}
   - component: {fileID: 5775281841624093991}
   - component: {fileID: 686889461732242440}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas Card Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1757453266997565448}
   - component: {fileID: 1503847643991101542}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Card Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

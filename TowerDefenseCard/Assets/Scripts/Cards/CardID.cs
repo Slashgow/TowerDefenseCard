@@ -2,6 +2,11 @@ public enum CardID
 {
     BAMBOO,
     JADE,
+    SAKURA,
+    SPIRIT_ESSENCE,
+    BAMBOO_PLANK,
+    SAKURA_BRICK,
+    ARCHER,
     TORII_GATE,
     TENGU_SHRINE
 }

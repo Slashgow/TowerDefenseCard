@@ -15,13 +15,13 @@ public class Card : MonoBehaviour
 
     public int StackCount { get; set; }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         cardSprite.sprite = cardData.CardSprite;
         cardUI.SetupCard(cardData.CardName, cardData.Cost.ToString());
     }
 
-    void Start()
+    protected virtual void Start()
     {
         StackCount = 1; 
     }

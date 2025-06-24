@@ -1,5 +1,6 @@
 ﻿public interface IDamageor
 {
+    public float Damage { get;}
     public float AttackRange { get; }
     public float AttackSpeed { get; }
     public float AttackArea { get;  }
