@@ -1,6 +1,10 @@
-﻿public interface IDamageable
+﻿using System;
+
+public interface IDamageable
 {
     public float CurrentHealth { get; }
     public void TakeDamage(float damage);
     public void Die();
+
+    public event Action<float> OnTakeDamage;
 }

@@ -921,6 +921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 69551339698428556, guid: 8a8ed49f3b331e9409701319e505f2ef, type: 3}
+      propertyPath: timeCraftMode
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5337280644744091060, guid: 8a8ed49f3b331e9409701319e505f2ef, type: 3}
       propertyPath: m_Name
       value: Crafting Manager
@@ -1932,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1784703468
 MonoBehaviour:
   m_ObjectHideFlags: 0

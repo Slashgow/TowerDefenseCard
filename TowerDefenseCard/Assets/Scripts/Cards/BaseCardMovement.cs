@@ -44,6 +44,16 @@ public abstract class BaseCardMovement : MonoBehaviour
             transform.position = targetPosition; // Ensure exact target position
             iterations++;
         }
+
+        InitializeSortOrder();
+    }
+
+    private void InitializeSortOrder()
+    {
+        if (IsOverlapping())
+        {
+            CardUtility.AssignSortingOrderRecursively(card.transform, GetOverlapSortOrder());
+        }
     }
 
     private bool IsOverlapping()
@@ -55,5 +65,19 @@ public abstract class BaseCardMovement : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public int GetOverlapSortOrder()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, checkRadius, detectionLayerMaskCards);
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.gameObject == gameObject)
+                 continue;
+
+            Card otherCard = hit.GetComponent<Card>();
+            return otherCard.CardSprite.sortingOrder + otherCard.transform.childCount;
+        }
+        return 0;
     }
 }

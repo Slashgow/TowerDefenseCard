@@ -1,22 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class  Ennemy : Card, IDamageable
 {
     [SerializeField, Range(0,300)] private int maxHealth = 20;
+    public int MaxHealth => maxHealth;
 
     private float currentHealth;
+
+    public event Action<float> OnTakeDamage;
+
     public float CurrentHealth => currentHealth;
+
 
     protected override void OnEnable()
     {
-        base.OnEnable();
-
+        cardSprite.sprite = cardData.CardSprite;
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        OnTakeDamage?.Invoke(currentHealth);
+
         if (currentHealth <= 0)
         {
             Die();

@@ -11,11 +11,16 @@ public class WaveManager : MonoSingleton<WaveManager>
     private bool isWaveActive = false;
 
     private int indexSortingOrder = 0;
-     
-    private void Start()
+
+    private void OnEnable() => GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+
+    private void OnDisable() => GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
+
+    private void GameManager_OnStartCombatMode()
     {
         TriggerNextWave();
     }
+
     private IEnumerator StartWaveSequence()
     {
         indexSortingOrder = 0;

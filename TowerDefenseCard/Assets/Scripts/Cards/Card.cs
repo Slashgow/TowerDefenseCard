@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] private CardData cardData;
+    [SerializeField] protected CardData cardData;
     public CardData CardData => cardData;
 
     [SerializeField] private SpriteRenderer backgroundSprite;
     public SpriteRenderer BackgroundSprite => backgroundSprite;
 
-    [SerializeField] private SpriteRenderer cardSprite;
+    [SerializeField] protected SpriteRenderer cardSprite;
     public SpriteRenderer CardSprite => cardSprite;
 
     [SerializeField] private CardUI cardUI;
