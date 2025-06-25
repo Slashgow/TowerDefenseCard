@@ -34,7 +34,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     public event Action OnCraftCancel = delegate { };
 
     private Timer CraftingModeDurationTimer;
-    [SerializeField, HideInInspector] private float timeElpasedCraftingMode;
+    public event Action<float> OnTickTimeCraftingMode;
+    public float TimeCraftMode => timeCraftMode;
   
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
@@ -121,6 +122,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public void StartCraftingModeTimer()
     {
-        CraftingModeDurationTimer = Timer.Register(timeCraftMode, onComplete: GameManager.Instance.SwitchGameMode, onUpdate: timeElapsed => timeElpasedCraftingMode = timeElapsed);
+        CraftingModeDurationTimer = Timer.Register(timeCraftMode, 
+            onComplete: GameManager.Instance.SwitchGameMode, 
+            onUpdate: timeElapsed => OnTickTimeCraftingMode?.Invoke(timeElapsed));
     }
 }

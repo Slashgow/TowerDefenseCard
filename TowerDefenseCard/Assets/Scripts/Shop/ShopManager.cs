@@ -13,12 +13,14 @@ public class ShopManager : MonoSingleton<ShopManager>
   
 
     public event Action<int> OnUpdatePlayerCoin = delegate { };
-    public int CurrentPlayerCoin { get; private set; }
+
+    [SerializeField, HideInInspector] private int currentPlayerCoin;
+    public int CurrentPlayerCoin => currentPlayerCoin;
 
     protected override void Awake()
     {
         base.Awake();
-        CurrentPlayerCoin = startPlayerCoin;
+        currentPlayerCoin = startPlayerCoin;
     }
 
     private void Start() => OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
@@ -57,7 +59,7 @@ public class ShopManager : MonoSingleton<ShopManager>
             selectedItem = weightedItems[0].Item;
 
 
-        CurrentPlayerCoin -= shopCost;
+        currentPlayerCoin -= shopCost;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
 
         Instantiate(selectedItem.CardPrefab, spawnPoint.position, Quaternion.identity);
@@ -67,7 +69,7 @@ public class ShopManager : MonoSingleton<ShopManager>
 
     public void AddPlayerCoin(int cointAmount)
     {
-        CurrentPlayerCoin += cointAmount;
+        currentPlayerCoin += cointAmount;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 }

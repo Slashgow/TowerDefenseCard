@@ -11,5 +11,6 @@ public enum CardID
     TENGU_SHRINE,
     ONI,
     BAMBOO_FACTORY,
-    SAKURA_FACTORY
+    SAKURA_FACTORY,
+    SHOP
 }

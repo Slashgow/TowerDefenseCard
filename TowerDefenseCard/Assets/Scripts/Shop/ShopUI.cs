@@ -4,24 +4,16 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
-    [SerializeField] private ShopManager shopManager;
     [SerializeField] private TextMeshProUGUI yenCoinText;
-    [SerializeField] private Button purchaseButton;
 
-    private void Awake()
+    private void OnEnable()
     {
-        shopManager.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
-
-        if (purchaseButton != null)
-            purchaseButton.onClick.AddListener(shopManager.TryPurchaseWeightedCard);
+        ShopManager.Instance.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
     }
 
     private void OnDisable()
     {
-        shopManager.OnUpdatePlayerCoin -= ShopManager_OnUpdatePlayerCoin;
-
-        if (purchaseButton != null)
-            purchaseButton.onClick.RemoveListener(shopManager.TryPurchaseWeightedCard);
+        ShopManager.Instance.OnUpdatePlayerCoin -= ShopManager_OnUpdatePlayerCoin;
     }
 
     private void ShopManager_OnUpdatePlayerCoin(int currentPlayerCoin)
@@ -33,7 +25,7 @@ public class ShopUI : MonoBehaviour
     {
         if (yenCoinText != null)
         {
-            yenCoinText.text = $"Yen Coins: {currentPlayerCoin}";
+            yenCoinText.text = $"{currentPlayerCoin}";
         }
     }
 }

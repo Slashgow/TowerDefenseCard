@@ -1,9 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Prefabs/UI/UI%20Toolkit/InGameUSS.uss?fileID=7433441132597879392&amp;guid=0b2d36f7af61e2c48a51181eb8eabfc4&amp;type=3#InGameUSS" />
     <ui:VisualElement name="Background" style="flex-grow: 1;">
-        <ui:VisualElement name="UpperBand" class="UpperBand" style="flex-direction: row; justify-content: flex-end; align-items: auto;">
-            <ui:VisualElement name="IconProgressBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Main_Art.png?fileID=-1258243211&amp;guid=aca456cfa94b9744d81d86335173709b&amp;type=3#Combat_UI&quot;); background-color: rgba(255, 255, 255, 0); width: ; height: auto; -unity-background-scale-mode: scale-to-fit; -unity-slice-scale: 0; position: absolute;" />
+        <ui:VisualElement name="UpperBand" class="UpperBand" style="flex-direction: row; justify-content: flex-end; align-items: auto; height: 17%;">
+            <ui:VisualElement name="InkCounterContainer" style="flex-grow: 1; width: 20%; height: 30%; margin-left: 858px; padding-top: 0; padding-bottom: 0; background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; -unity-background-scale-mode: stretch-to-fill; margin-top: 0; margin-bottom: 0; padding-right: 0; padding-left: 0; align-self: center; margin-right: 60px; flex-direction: row; align-content: auto; align-items: stretch; border-top-left-radius: -12px; border-top-right-radius: -12px; border-bottom-right-radius: -12px; border-bottom-left-radius: -12px;">
+                <ui:VisualElement name="InkIcon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Main_Art.png?fileID=-556184264&amp;guid=aca456cfa94b9744d81d86335173709b&amp;type=3#Ink&quot;); -unity-background-scale-mode: scale-to-fit;" />
+                <ui:Label text="20" name="InkCounterText" style="-unity-font-definition: url(&quot;project://database/Assets/Font/Greattool-51Zoj.otf?fileID=12800000&amp;guid=0f0dbd08a20d8ed4a93e7593e893fde4&amp;type=3#Greattool-51Zoj&quot;); align-self: center; font-size: 50px; color: rgb(0, 0, 0);">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="currentPlayerCoin" data-source-type="ShopManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
             <ui:ProgressBar value="0" name="ProgressBarCraftMode" style="margin-top: 0; margin-right: 90px; margin-bottom: 0; margin-left: 0; height: 100%; flex-grow: 0; align-self: auto; align-content: flex-start; align-items: stretch; width: 40%;">
+                <ui:VisualElement name="IconProgressBar" style="position: absolute; -unity-background-scale-mode: scale-to-fit; background-image: url(&quot;project://database/Assets/Art/Main_Art.png?fileID=-1258243211&amp;guid=aca456cfa94b9744d81d86335173709b&amp;type=3#Combat_UI&quot;); top: 14px; right: -25px; width: 99px; height: 151px; align-items: auto; background-size: 100% 100%;" />
                 <Bindings>
                     <ui:DataBinding property="value" data-source-path="timeElpasedCraftingMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />
                     <ui:DataBinding property="highValue" data-source-path="timeCraftMode" data-source-type="CraftingManager, Assembly-CSharp" binding-mode="ToTarget" />

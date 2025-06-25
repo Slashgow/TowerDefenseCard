@@ -30,7 +30,7 @@
 }
 
 .unity-progress-bar__background {
-    background-color: rgb(0, 29, 40);
+    background-color: rgb(0, 0, 0);
     border-left-color: rgb(0, 29, 40);
     border-right-color: rgb(0, 29, 40);
     border-top-color: rgb(0, 29, 40);
@@ -42,5 +42,5 @@
 }
 
 .unity-progress-bar__progress {
-    background-color: rgb(111, 155, 170);
+    background-color: rgb(246, 243, 236);
 }
