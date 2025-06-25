@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class MonoDistanceDamageor : CardBaseDamageor
+public class AOEDamageor : CardBaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;
+    [SerializeField, Range(0f, 20f)] private float projectileSpeed = 5f;
 
     protected override void Attack()
     {
@@ -17,7 +17,7 @@ public class MonoDistanceDamageor : CardBaseDamageor
                 Vector3 direction = (target.transform.position - transform.position).normalized;
                 GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 Projectile projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, true, cardDamageorData.AttackArea);
+                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, false, cardDamageorData.AttackArea);
             }
         }
     }

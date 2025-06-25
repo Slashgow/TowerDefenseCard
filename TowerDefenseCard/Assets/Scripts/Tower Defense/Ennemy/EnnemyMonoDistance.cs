@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityTimer;
 
 public class EnnemyMonoDistance : MonoDistanceDamageor, IDamageable
 {
@@ -34,6 +35,7 @@ public class EnnemyMonoDistance : MonoDistanceDamageor, IDamageable
 
     public void Die()
     {
+        Timer.Cancel(attackTimer);
         OnDie?.Invoke(); 
         Destroy(gameObject);
     }

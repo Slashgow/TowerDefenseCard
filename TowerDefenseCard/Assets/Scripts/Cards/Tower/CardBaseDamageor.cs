@@ -3,10 +3,10 @@ using UnityTimer;
 
 public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 {
-    [SerializeField] private CardDamageorData cardDamageorData;
+    [SerializeField] protected CardDamageorData cardDamageorData;
     [SerializeField] protected LayerMask enemyLayer; 
 
-    private Timer attackTimer;
+    protected Timer attackTimer;
 
     public float AttackRange => cardDamageorData.AttackRange;
     public float AttackSpeed => cardDamageorData.AttackSpeed;

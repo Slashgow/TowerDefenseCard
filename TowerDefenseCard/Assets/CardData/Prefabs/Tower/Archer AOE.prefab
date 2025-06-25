@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
-      value: Archer
+      value: Archer AOE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8864906581117935152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85cc0057a2896b43a0485d899384bda, type: 3}
+  m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 2edb5d92d342e2a4c9c167134f590a72, type: 2}
