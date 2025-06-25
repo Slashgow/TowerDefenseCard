@@ -113,6 +113,7 @@ MonoBehaviour:
     m_Bits: 256
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   projectileSpeed: 5
+  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
 --- !u!114 &9188156823818238049 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7198497748934006018, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}

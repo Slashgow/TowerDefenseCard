@@ -4,6 +4,8 @@ public class MonoDistanceDamageor : CardBaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;
+ 
+
 
     protected override void Attack()
     {
@@ -15,9 +17,13 @@ public class MonoDistanceDamageor : CardBaseDamageor
             {
                 Debug.Log($"hit  {target.name} - damageable");
                 Vector3 direction = (target.transform.position - transform.position).normalized;
-                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Quaternion rotation = Quaternion.Euler(0, 0, angle - 90f); // Adjust -90f for 2D up vector
+
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, rotation);
                 Projectile projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, true, cardDamageorData.AttackArea);
+                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, true, cardDamageorData.AttackArea, impactEffectPrefab);
             }
         }
     }

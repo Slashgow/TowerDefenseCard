@@ -8,8 +8,9 @@ public class Projectile : MonoBehaviour
     private LayerMask enemyLayer;
     private bool isMonoTarget;
     private float attackArea;
+    private GameObject impactEffectPrefab;
 
-    public void Initialize(Vector3 direction, float speed, float damage, LayerMask enemyLayer, bool isMonoTarget, float attackArea)
+    public void Initialize(Vector3 direction, float speed, float damage, LayerMask enemyLayer, bool isMonoTarget, float attackArea, GameObject impactEffectPrefab)
     {
         this.direction = direction;
         this.speed = speed;
@@ -17,6 +18,7 @@ public class Projectile : MonoBehaviour
         this.enemyLayer = enemyLayer;
         this.isMonoTarget = isMonoTarget;
         this.attackArea = attackArea;
+        this.impactEffectPrefab = impactEffectPrefab;
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class Projectile : MonoBehaviour
             if (isMonoTarget)
             {
                 singleDamageable.TakeDamage(damage);
+                Instantiate(impactEffectPrefab, this.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             else
@@ -42,6 +45,7 @@ public class Projectile : MonoBehaviour
                         if (hit.TryGetComponent<IDamageable>(out var damageable))
                         {
                             damageable.TakeDamage(damage);
+                            Instantiate(impactEffectPrefab, hit.transform.position, Quaternion.identity);
                         }
                     }
                     Destroy(gameObject);

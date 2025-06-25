@@ -7,6 +7,7 @@ public class EnnemyMonoDistance : MonoDistanceDamageor, IDamageable
     [SerializeField, Range(0,300)] private int maxHealth = 20;
     public int MaxHealth => maxHealth;
 
+
     private float currentHealth;
 
     public event Action<float> OnTakeDamage;

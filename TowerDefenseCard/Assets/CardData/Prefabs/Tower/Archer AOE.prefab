@@ -111,6 +111,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   projectileSpeed: 5
 --- !u!114 &9188156823818238049 stripped
