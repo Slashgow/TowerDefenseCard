@@ -31,8 +31,8 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
         if (!card.CardData.IsStackable && card.StackCount > 1) 
             return; // Prevent dragging stacks unless allowed
 
-        //if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
-        //    CraftingManager.Instance.CancelCraft();
+        if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
+            CraftingManager.Instance.TryCancelCraft(this.card);
 
         startPosition = transform.position;
         transform.SetParent(null, true);
@@ -88,7 +88,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
         foreach (var hit in hits)
         {
-            Debug.Log(hit.name);
+            //Debug.Log(hit.name);
             if (hit.gameObject == this.gameObject)
                 continue;
 
@@ -96,7 +96,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
                 continue;
 
             Card otherCard = hit.GetComponent<Card>();
-            Debug.Log(otherCard);
+            //Debug.Log(otherCard);
             if (otherCard.transform.childCount > 3)
                 continue;
 

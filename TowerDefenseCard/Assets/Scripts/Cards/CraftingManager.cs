@@ -3,26 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityTimer;
 using System;
-
-[Serializable]
-public class CraftInfo
-{
-    private Transform stackParent;
-    private CraftingRecipe craftingRecipe;
-    private List<Card> stackCards;
-    private int craftID;
-    public List<Card> StackCards => stackCards;
-    public Transform StackParent => stackParent;
-    public CraftingRecipe CraftingRecipe => craftingRecipe;
-    public int CraftID => craftID;
-    public CraftInfo(Transform stackParent, CraftingRecipe craftingRecipe, List<Card> stackCards, int craftID)
-    {
-        this.stackParent = stackParent;
-        this.craftingRecipe = craftingRecipe;
-        this.stackCards = stackCards;
-        this.craftID = craftID;
-    }
-}
+using TMPro;
+using UnityEditor.Build.Pipeline;
 
 public class CraftingManager : MonoSingleton<CraftingManager>
 {
@@ -31,7 +13,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
 
-    public event Action OnCraftCancel = delegate { };
+    public event Action<int> OnCraftCancel = delegate { };
 
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
@@ -39,6 +21,11 @@ public class CraftingManager : MonoSingleton<CraftingManager>
   
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
+
+    private void OnEnable() => GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
+    private void OnDisable() => GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
+    private void GameManager_OnStartCraftMode() => StartCraftingModeTimer();
+
     public bool TryCraft(Transform stackParent, out GameObject craftedCard)
     {
         craftedCard = null;
@@ -115,9 +102,15 @@ public class CraftingManager : MonoSingleton<CraftingManager>
         return true;
     }
 
-    public void CancelCraft()
+    public void TryCancelCraft(Card card)
     {
-        OnCraftCancel?.Invoke();
+        int craftID = GetCraftIDByCard(card);
+
+        if (craftID == -1)
+            return;
+
+        OnCraftCancel?.Invoke(craftID);
+        currentCrafts.Remove(GetCraftInfoByID(craftID));
     }
 
     public void StartCraftingModeTimer()
@@ -126,4 +119,19 @@ public class CraftingManager : MonoSingleton<CraftingManager>
             onComplete: GameManager.Instance.SwitchGameMode, 
             onUpdate: timeElapsed => OnTickTimeCraftingMode?.Invoke(timeElapsed));
     }
+
+    public int GetCraftIDByCard(Card card)
+    {
+        foreach (CraftInfo craftInfo in currentCrafts) 
+        {
+            foreach (Card cardCraft in craftInfo.StackCards)
+            {
+                if (cardCraft.GetInstanceID() == card.GetInstanceID())
+                    return craftInfo.CraftID;
+            }
+        }
+        return -1;
+    }
+
+    public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.First(craftInfo => craftInfo.CraftID == cardID);
 }

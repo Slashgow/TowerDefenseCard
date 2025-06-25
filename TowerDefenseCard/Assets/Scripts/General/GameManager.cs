@@ -17,6 +17,20 @@ public class GameManager : MonoSingleton<GameManager>
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
     }
 
+    private void Start()
+    {
+        WaveManager.Instance.OnEndWaves += WaveManager_OnEndWaves;
+    }
+    private void OnDisable()
+    {
+        WaveManager.Instance.OnEndWaves -= WaveManager_OnEndWaves;
+    }
+
+    private void WaveManager_OnEndWaves()
+    {
+        SwitchGameMode();
+    }
+
     private void SceneLoader_OnSceneLoaded(int buildIndex)
     {
         Debug.Log("On Scene loaded");

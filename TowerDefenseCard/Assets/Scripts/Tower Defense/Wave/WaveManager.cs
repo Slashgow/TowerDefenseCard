@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Splines;
+using System;
 
 public class WaveManager : MonoSingleton<WaveManager>
 {
@@ -11,6 +12,8 @@ public class WaveManager : MonoSingleton<WaveManager>
     private bool isWaveActive = false;
 
     private int indexSortingOrder = 0;
+
+    public event Action OnEndWaves;
 
     private void OnEnable() => GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
 
@@ -47,7 +50,7 @@ public class WaveManager : MonoSingleton<WaveManager>
             {
                 if (paths.Length > 0)
                 {
-                    SplineContainer path = paths[Random.Range(0, paths.Length)];
+                    SplineContainer path = paths[UnityEngine.Random.Range(0, paths.Length)];
                     GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.EvaluatePosition(0, 0), Quaternion.identity);
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
                     newEnemy.GetComponent<EnemyCardMovement>().Init(path);
@@ -58,6 +61,7 @@ public class WaveManager : MonoSingleton<WaveManager>
         }
         yield return new WaitUntil(() => AreAllEnemiesDefeated()); // Wait until all enemies are gone
         isWaveActive = false;
+        OnEndWaves?.Invoke();
     }
 
     private bool AreAllEnemiesDefeated()

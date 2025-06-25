@@ -20,6 +20,17 @@ public class CooldownBarUI : MonoBehaviour
     private void OnEnable()
     {
         fillImage.fillAmount = 0f;
+        CraftingManager.Instance.OnCraftCancel += OnCooldownCraftCancel;
+    }
+
+    private void OnDisable()
+    {
+        CraftingManager.Instance.OnCraftCancel -= OnCooldownCraftCancel;
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log($"Destroy {this.transform.GetInstanceID()}");
     }
 
     public void Init(Transform p_stackParent, float p_craftingDelay, float p_cooldownBarOffset, int p_craftID)
@@ -30,7 +41,6 @@ public class CooldownBarUI : MonoBehaviour
         cooldownBarOffset = p_cooldownBarOffset;
         craftID = p_craftID;
 
-        CraftingManager.Instance.OnCraftCancel += OnCooldownCraftCancel;
 
         craftingTimer = Timer.Register(
                     duration: craftingDelay,
@@ -42,9 +52,13 @@ public class CooldownBarUI : MonoBehaviour
                     });
     }
 
-    private void OnCooldownCraftCancel()
+    private void OnCooldownCraftCancel(int craftID)
     {
+        if(craftID != this.craftID)
+            return;
+
         Timer.Cancel(craftingTimer);
+        Debug.Log($"try cancel {this.transform.GetInstanceID()}");
         Destroy(this.gameObject);
     }
     private void UpdateCooldownBar(float currentTime)
