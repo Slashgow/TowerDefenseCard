@@ -3,7 +3,8 @@ using UnityEngine.Splines;
 using System.Collections;
 
 public class EnemyCardMovement : BaseCardMovement 
-{   
+{
+    [Header("General Movement")]
     [SerializeField, Range(0f,10f)] private float moveSpeed = 2f; // Base speed in units per second
     [SerializeField] private bool loop = true;
     [SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); 
