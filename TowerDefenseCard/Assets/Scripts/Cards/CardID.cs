@@ -12,5 +12,6 @@ public enum CardID
     ONI,
     BAMBOO_FACTORY,
     SAKURA_FACTORY,
-    SHOP
+    SHOP,
+    PLAYER_HEALTH
 }

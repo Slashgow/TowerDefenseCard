@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class Card : MonoBehaviour
 {
     [SerializeField] protected CardData cardData;

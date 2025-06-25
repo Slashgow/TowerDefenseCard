@@ -111,7 +111,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
                 transform.localPosition = newPos;
                 CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
 
-                if (CraftingManager.Instance.TryCraft(otherCard.transform.root, out GameObject craftedCard))
+                if (CraftingManager.Instance.TryCraft(otherCard.transform.root, this.card))
                     return;
 
                 return;

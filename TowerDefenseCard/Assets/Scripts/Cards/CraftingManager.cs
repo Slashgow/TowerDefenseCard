@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityTimer;
 using System;
-using TMPro;
-using UnityEditor.Build.Pipeline;
 
 public class CraftingManager : MonoSingleton<CraftingManager>
 {
@@ -26,15 +24,21 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     private void OnDisable() => GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
     private void GameManager_OnStartCraftMode() => StartCraftingModeTimer();
 
-    public bool TryCraft(Transform stackParent, out GameObject craftedCard)
+    public bool TryCraft(Transform stackParent, Card movedCard)
     {
-        craftedCard = null;
         Card parentCard = stackParent.GetComponent<Card>();
         if (parentCard == null) return false;
 
         // Get all cards in the stack (parent + children)
         List<Card> stackCards = new List<Card> { parentCard };
         stackCards.AddRange(stackParent.GetComponentsInChildren<Card>().Where(card => card != parentCard));
+
+        if (IsCardsInOnGoingCraft(stackCards))
+        {
+            movedCard.transform.SetParent(null);
+            return false;
+        }
+            
 
         // Count cards by cardID
         Dictionary<CardID, int> cardCounts = new Dictionary<CardID, int>();
@@ -48,6 +52,16 @@ public class CraftingManager : MonoSingleton<CraftingManager>
         {
             if (IsRecipeMatch(recipe, cardCounts))
             {
+                // remove cards from stack if too much card per ingredients
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    if (cardCounts.ContainsKey(ingredient.cardID) && cardCounts[ingredient.cardID] > ingredient.quantity)
+                    {
+                        Card cardToRemove = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
+                        cardToRemove.transform.SetParent(null);
+                        stackCards.Remove(cardToRemove);
+                    }
+                }
                 currentCrafts.Add(new CraftInfo(stackParent, recipe, stackCards, CardUtility.GenerateUniqueID()));
                 InitializeCooldownBar(stackParent, recipe.CraftingDelay, currentCrafts[currentCrafts.Count - 1].CraftID);
                 return true;
@@ -134,4 +148,20 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     }
 
     public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.First(craftInfo => craftInfo.CraftID == cardID);
+
+    public bool IsCardsInOnGoingCraft(List<Card> stackCards)
+    {
+        foreach(Card card in stackCards)
+        {
+            foreach(CraftInfo craftInfo in currentCrafts)
+            {
+                if (craftInfo.StackCards.Any(stackCard => stackCard.GetInstanceID() == card.GetInstanceID()))
+                {
+                    Debug.Log("card is already on on going craft");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

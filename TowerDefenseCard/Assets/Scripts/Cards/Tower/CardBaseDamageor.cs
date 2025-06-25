@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityTimer;
 
-public abstract class CardBaseTower : Card, IDamageor, IUpgradable
+public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 {
-    [SerializeField] private CardBaseTowerData cardBaseTowerData;
+    [SerializeField] private CardDamageorData cardDamageorData;
     [SerializeField] protected LayerMask enemyLayer; 
 
     private Timer attackTimer;
 
-    public float AttackRange => cardBaseTowerData.AttackRange;
-    public float AttackSpeed => cardBaseTowerData.AttackSpeed;
-    public float AttackArea => cardBaseTowerData.AttackArea;
-    public DamageType DamageType => cardBaseTowerData.DamageType;
-    public float Damage => cardBaseTowerData.Damage;
+    public float AttackRange => cardDamageorData.AttackRange;
+    public float AttackSpeed => cardDamageorData.AttackSpeed;
+    public float AttackArea => cardDamageorData.AttackArea;
+    public DamageType DamageType => cardDamageorData.DamageType;
+    public float Damage => cardDamageorData.Damage;
 
     protected override void Start()
     {

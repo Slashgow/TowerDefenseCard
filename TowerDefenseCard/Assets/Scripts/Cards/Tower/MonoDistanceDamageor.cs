@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-
-public class MonoDistanceTower : CardBaseTower
+public class MonoDistanceDamageor : CardBaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;

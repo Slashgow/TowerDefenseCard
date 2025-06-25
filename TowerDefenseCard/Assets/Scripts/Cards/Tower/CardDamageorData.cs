@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewCardData", menuName = "William/CardBaseTowerData")]
-public class CardBaseTowerData : ScriptableObject
+[CreateAssetMenu(fileName = "NewCardData", menuName = "William/CardDamageorData")]
+public class CardDamageorData : ScriptableObject
 {
     [SerializeField, Range(0f, 100f)] private float damage;
     public float Damage => damage;

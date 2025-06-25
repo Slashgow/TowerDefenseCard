@@ -6,18 +6,19 @@ public class EnnemyCardUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cardTitleText;
     [SerializeField] private TextMeshProUGUI cardHealthText;
 
-    private Ennemy ennemy;
-
+    private IDamageable damageable;
+    private Card card;
     private void OnEnable()
     {
-        ennemy = GetComponentInParent<Ennemy>();
-        ennemy.OnTakeDamage += Ennemy_OnTakeDamage;
-        SetupCard(ennemy.CardData.CardName, ennemy.MaxHealth);
+        card = GetComponentInParent<Card>();
+        damageable = card.GetComponent<IDamageable>();
+        damageable.OnTakeDamage += Ennemy_OnTakeDamage;
+        SetupCard(card.CardData.CardName, damageable.MaxHealth);
     }
 
     private void OnDisable()
     {
-        ennemy.OnTakeDamage -= Ennemy_OnTakeDamage;
+        damageable.OnTakeDamage -= Ennemy_OnTakeDamage;
     }
     private void Ennemy_OnTakeDamage(float currentHealth)
     {
