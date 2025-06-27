@@ -30,7 +30,7 @@ public class CooldownBarUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log($"Destroy {this.transform.GetInstanceID()}");
+        //Debug.Log($"Destroy {this.transform.GetInstanceID()}");
     }
 
     public void Init(Transform p_stackParent, float p_craftingDelay, float p_cooldownBarOffset, int p_craftID)
@@ -58,7 +58,7 @@ public class CooldownBarUI : MonoBehaviour
             return;
 
         Timer.Cancel(craftingTimer);
-        Debug.Log($"try cancel {this.transform.GetInstanceID()}");
+        //Debug.Log($"try cancel {this.transform.GetInstanceID()}");
         Destroy(this.gameObject);
     }
     private void UpdateCooldownBar(float currentTime)

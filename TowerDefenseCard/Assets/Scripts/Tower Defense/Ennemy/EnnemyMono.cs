@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityTimer;
 
-public class EnnemyMonoDistance : MonoDistanceDamageor, IDamageable
+public class EnnemyMono : MonoDamageor, IDamageable
 {
     [SerializeField, Range(0,300)] private int maxHealth = 20;
     public int MaxHealth => maxHealth;

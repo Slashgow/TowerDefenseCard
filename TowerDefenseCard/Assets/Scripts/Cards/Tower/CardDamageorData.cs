@@ -17,4 +17,10 @@ public class CardDamageorData : ScriptableObject
 
     [SerializeField] private DamageType damageType;
     public DamageType DamageType => DamageType;
+
+    [SerializeField, Range(0f, 10f)] private float dot;
+    public float DoT => dot;
+
+    [SerializeField, Range(0f, 10f)] private float dotDuration;
+    public float DoTDuration => dotDuration;
 }

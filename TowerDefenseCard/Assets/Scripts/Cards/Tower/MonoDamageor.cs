@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MonoDistanceDamageor : CardBaseDamageor
+public class MonoDamageor : CardBaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;
@@ -23,7 +23,7 @@ public class MonoDistanceDamageor : CardBaseDamageor
 
                 GameObject projectile = Instantiate(projectilePrefab, transform.position, rotation);
                 Projectile projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, true, cardDamageorData.AttackArea, impactEffectPrefab);
+                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, true, AttackArea, impactEffectPrefab);
             }
         }
     }
