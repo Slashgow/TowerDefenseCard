@@ -7,9 +7,6 @@ public class AttackRangeEffect: MonoBehaviour
     [SerializeField] private bool showDuringMovement = true;
 
     private IDamageor damageorSource;
-    private int segmentCount = 32; // Number of points for the circle
-    private Vector3[] trailPositions;
-
 
     private void Awake() => damageorSource = GetComponent<IDamageor>();
     private void Start() => rangeIndicator.enabled = false;

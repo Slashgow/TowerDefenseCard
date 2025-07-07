@@ -895,7 +895,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 69551339698428556, guid: 8a8ed49f3b331e9409701319e505f2ef, type: 3}
       propertyPath: timeCraftMode
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5337280644744091060, guid: 8a8ed49f3b331e9409701319e505f2ef, type: 3}
       propertyPath: m_Name

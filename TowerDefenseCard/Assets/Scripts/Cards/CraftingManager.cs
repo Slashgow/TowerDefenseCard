@@ -12,6 +12,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
 
     public event Action<int> OnCraftCancel = delegate { };
+    public event Action<int> OnCraftComplete = delegate { };
 
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
@@ -93,12 +94,17 @@ public class CraftingManager : MonoSingleton<CraftingManager>
         // Destroy input cards
         foreach (var card in craftInfo.StackCards)
         {
+            if (card is CardRessourceGenerator)
+                continue;
+
             Destroy(card.gameObject);
         }
 
+       
         // Instantiate output card at the stack's position
         craftedCard = Instantiate(craftInfo.CraftingRecipe.OutputCardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);
+        OnCraftComplete?.Invoke(craftInfo.CraftID);
     }
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
@@ -149,7 +155,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.First(craftInfo => craftInfo.CraftID == cardID);
 
-    public bool IsCardsInOnGoingCraft(List<Card> stackCards)
+    private bool IsCardsInOnGoingCraft(List<Card> stackCards)
     {
         foreach(Card card in stackCards)
         {

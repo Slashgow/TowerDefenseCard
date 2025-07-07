@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
-  m_Name: Bamboo Factory
+  m_Name: Bamboo
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 4
-    quantity: 2
-  - cardID: 5
+  - cardID: 10
     quantity: 1
-  craftingDelay: 10
-  outputCardID: 10
-  outputCardPrefab: {fileID: 2883975071844807324, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
+  craftingDelay: 5
+  outputCardID: 0
+  outputCardPrefab: {fileID: 1648138419762282337, guid: ffff4daae8667f14f962def17376edc8, type: 3}
