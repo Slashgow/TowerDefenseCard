@@ -25,4 +25,9 @@ public class Card : MonoBehaviour
     {
         StackCount = 1; 
     }
+
+    public virtual void OnStack(Card targetCard) { /* Default implementation */ }
+    public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
+    public virtual void OnUnstack(Card targetCard) { /* Default implementation */ }
+
 }

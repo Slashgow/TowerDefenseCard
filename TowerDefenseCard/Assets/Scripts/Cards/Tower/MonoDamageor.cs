@@ -15,6 +15,8 @@ public class MonoDamageor : CardBaseDamageor
             Collider2D target = hits[0]; // Simplest: target the first enemy in range
             if (target.TryGetComponent<IDamageable>(out var damageable)) // Only targets IDamageable (enemies)
             {
+                ApplyDoT(hits[0].gameObject);
+
                 //Debug.Log($"hit  {target.name} - damageable");
                 Vector3 direction = (target.transform.position - transform.position).normalized;
 

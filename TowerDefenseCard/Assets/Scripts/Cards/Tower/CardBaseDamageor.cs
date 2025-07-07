@@ -11,12 +11,6 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 
     protected Timer attackTimer;
 
-    //public float AttackRange => cardDamageorData.AttackRange;
-    //public float AttackSpeed => cardDamageorData.AttackSpeed;
-    //public float AttackArea => cardDamageorData.AttackArea;
-    //public DamageType DamageType => cardDamageorData.DamageType;
-    //public float Damage => cardDamageorData.Damage;
-
     private UpgradeData[] appliedUpgrades = new UpgradeData[0];
     private Dictionary<GameObject, Timer> activeDoTTimers = new Dictionary<GameObject, Timer>(); // Track DoT per enemy
 
@@ -96,33 +90,40 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 
     protected abstract void Attack();
 
-   // private void ApplyDoT(GameObject enemy)
-   // {
-   //     if (DoT > 0 && DoTDuration > 0)
-   //     {
-   //         if (activeDoTTimers.ContainsKey(enemy))
-   //         {
-   //             activeDoTTimers[enemy].Cancel(); // Refresh DoT if already applied
-   //         }
-   //
-   //         IDamageable damageable = enemy.GetComponent<IDamageable>();
-   //         if (damageable != null)
-   //         {
-   //             Timer doTTimer = Timer.Register(1f, onComplete: () =>
-   //             {
-   //                 damageable.TakeDamage(DoT);
-   //                 if (elapsedTime >= DoTDuration)
-   //                 {
-   //                     doTTimer.Cancel();
-   //                     activeDoTTimers.Remove(enemy);
-   //                 }
-   //             }, DoTDuration, isLooped: true);
-   //
-   //             activeDoTTimers[enemy] = doTTimer;
-   //             Instantiate(impactEffectPrefab, enemy.transform.position, Quaternion.identity);
-   //         }
-   //     }
-   // }
+    protected void ApplyDoT(GameObject enemy)
+    {
+        if (DoT > 0 && DoTDuration > 0)
+        {
+            if (activeDoTTimers.ContainsKey(enemy))
+            {
+                activeDoTTimers[enemy].Cancel(); // Refresh DoT if already applied
+            }
+    
+            IDamageable damageable = enemy.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                float totalTimeElapsed = 0f;
+                Timer doTTimer = Timer.Register(1f, onComplete: () =>
+                                 {
+                                     totalTimeElapsed += 1f;
+                                     damageable.TakeDamage(DoT);
+                                     Instantiate(impactEffectPrefab, enemy.transform.position, Quaternion.identity);
+                                 }, 
+                                 onUpdate: elapsedTime =>
+                                 {
+                                     Debug.Log($"dot time {elapsedTime}");
+                                     if (totalTimeElapsed >= DoTDuration)
+                                     {
+                                         activeDoTTimers[enemy].Cancel();
+                                         activeDoTTimers.Remove(enemy);
+                                     }
+                                 }, isLooped: true);
+    
+                activeDoTTimers[enemy] = doTTimer;
+                
+            }
+        }
+    }
 
     private float GetTotalUpgradeMultiplier(float baseValue, System.Func<UpgradeData, float> getMultiplier)
     {

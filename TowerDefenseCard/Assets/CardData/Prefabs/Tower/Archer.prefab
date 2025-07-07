@@ -73,8 +73,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 290643684317168460}
+      insertIndex: -1
+      addedObject: {fileID: 8660076273353320839}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!212 &6030116188175425656 stripped
 SpriteRenderer:
@@ -91,7 +91,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
   m_PrefabInstance: {fileID: 2045989256264772963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &290643684317168460
+--- !u!114 &8660076273353320839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8864906581117935152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85cc0057a2896b43a0485d899384bda, type: 3}
+  m_Script: {fileID: 11500000, guid: f90a9ae699058da4096ad8873e023762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 2edb5d92d342e2a4c9c167134f590a72, type: 2}
@@ -111,9 +111,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   projectileSpeed: 5
-  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
 --- !u!114 &9188156823818238049 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7198497748934006018, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}

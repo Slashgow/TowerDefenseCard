@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -14,9 +15,13 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
     private Vector2 startPosition;
     private Transform startParent;
     private bool isDragging = false;
+    public bool IsDragging => isDragging;
     private Camera mainCamera;
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPos;
+
+    public event Action OnPointerDownEvent;
+    public event Action OnPointerUpEvent;
 
     protected override void Start()
     {
@@ -26,13 +31,22 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        OnPointerDownEvent?.Invoke();
+
         CameraMovement.Instance.enabled = false;
 
         if (!card.CardData.IsStackable && card.StackCount > 1) 
             return; // Prevent dragging stacks unless allowed
 
         if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
+        {
             CraftingManager.Instance.TryCancelCraft(this.card);
+            if(card.transform.root.TryGetComponent(out  Card cardRoot))
+            {
+                card.OnUnstack(cardRoot);
+            }
+        }
+            
 
         startPosition = transform.position;
         transform.SetParent(null, true);
@@ -59,6 +73,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        OnPointerUpEvent?.Invoke();
         isDragging = false;
         transform.rotation = Quaternion.identity; 
         HandleDrop();
@@ -102,6 +117,8 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
+                card.OnStackInitiate(otherCard);
+
                 otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);

@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b69ae1373e4d14aafafd53fca4bdd0, type: 3}
-  m_Name: Archer
+  m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
+  m_Name: Matcha
   m_EditorClassIdentifier: 
-  damage: 5
-  attackRange: 5
-  attackSpeed: 1
-  attackArea: 3
-  damageType: 0
-  dot: 1
-  dotDuration: 3
+  cardID: 14
+  cardName: Matcha
+  cardSprite: {fileID: 4658627485858765526, guid: 58a1a27224a5d414cb3005b036b93393, type: 3}
+  isStackable: 1
+  cost: 0
