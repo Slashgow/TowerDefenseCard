@@ -69,13 +69,13 @@ using UnityEngine;
             if (instance == null)
             {
                 instance = this as T;
-                //Debug.Log($"instance initialized {typeof(T)}");
+                Debug.Log($"instance initialized {typeof(T)}");
                 // Initialize existing instance
                 InitializeSingleton();
             }
             else
             {
-                //Debug.Log($"instance destroy {typeof(T)}");
+                Debug.Log($"instance destroy {typeof(T)}");
                 // Destory duplicates
                 if (Application.isPlaying)
                 {

@@ -15,5 +15,6 @@ MonoBehaviour:
   cardID: 14
   cardName: Matcha
   cardSprite: {fileID: 4658627485858765526, guid: 58a1a27224a5d414cb3005b036b93393, type: 3}
+  cardBackgroundSprite: {fileID: -1615953430, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1
   cost: 0

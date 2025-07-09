@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &350302098779990314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797772780826817529}
+  - component: {fileID: 7798893384937904930}
+  m_Layer: 0
+  m_Name: CardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797772780826817529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350302098779990314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7798893384937904930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350302098779990314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5219a986b280843811acd4e7fa2247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCards:
+  - card: {fileID: 597159905614504105, guid: ffff4daae8667f14f962def17376edc8, type: 3}
+    isDiscovered: 0
+  - card: {fileID: 597159905614504105, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}
+    isDiscovered: 0
+  - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
+    isDiscovered: 0
+  - card: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
+    isDiscovered: 0
+  - card: {fileID: 597159905614504105, guid: 4ae74ac77e07a374e9554cf0f4007793, type: 3}
+    isDiscovered: 0
+  - card: {fileID: 597159905614504105, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
+    isDiscovered: 0

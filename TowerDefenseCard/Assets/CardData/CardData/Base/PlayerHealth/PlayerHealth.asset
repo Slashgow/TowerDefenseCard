@@ -15,5 +15,6 @@ MonoBehaviour:
   cardID: 13
   cardName: Player Health
   cardSprite: {fileID: 590607674, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardBackgroundSprite: {fileID: -1615953430, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 0
   cost: 0

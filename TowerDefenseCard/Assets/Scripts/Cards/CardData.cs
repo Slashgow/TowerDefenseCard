@@ -12,6 +12,9 @@ public class CardData : ScriptableObject
     [SerializeField] private Sprite cardSprite;
     public Sprite CardSprite => cardSprite;
 
+    [SerializeField] private Sprite cardBackgroundSprite;
+    public Sprite CardBackgroundSprite => cardBackgroundSprite;
+
     [SerializeField] private bool isStackable; 
     public bool IsStackable => isStackable;
 

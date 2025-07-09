@@ -71,7 +71,7 @@ public class CardRessourceGenerator : Card
         }
     }
 
-    private void OnCraftComplete(int craftID)
+    private void OnCraftComplete(int craftID, CardID outputCardID)
     {
         if (isCrafting && craftID == currentCraftID)
         {

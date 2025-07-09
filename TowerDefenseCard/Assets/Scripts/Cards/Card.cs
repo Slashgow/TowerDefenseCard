@@ -18,6 +18,7 @@ public class Card : MonoBehaviour
     protected virtual void OnEnable()
     {
         cardSprite.sprite = cardData.CardSprite;
+        backgroundSprite.sprite = cardData.CardBackgroundSprite;
         cardUI.SetupCard(cardData.CardName, cardData.Cost.ToString());
     }
 

@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityTimer;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
     public GameMode CurrentGameMode {  get; private set; }
 
     public event Action OnStartCraftMode;
@@ -34,6 +36,12 @@ public class GameManager : MonoSingleton<GameManager>
     private void SceneLoader_OnSceneLoaded(int buildIndex)
     {
         Debug.Log("On Scene loaded");
+        StartCoroutine(StartCraftingModeAfterDelay());
+    }
+
+    public IEnumerator StartCraftingModeAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeCraftTimerStart);
         CurrentGameMode = GameMode.CRAFTING;
         CraftingManager.Instance.StartCraftingModeTimer();
     }

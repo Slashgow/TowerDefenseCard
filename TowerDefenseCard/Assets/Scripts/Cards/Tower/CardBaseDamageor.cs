@@ -6,6 +6,8 @@ using UnityTimer;
 public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 {
     [SerializeField] private CardDamageorData cardDamageorData;
+    public CardDamageorData CardDamageorData => cardDamageorData;
+
     [SerializeField] protected LayerMask enemyLayer;
     [SerializeField] protected GameObject impactEffectPrefab;
 

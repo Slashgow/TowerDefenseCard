@@ -15,5 +15,6 @@ MonoBehaviour:
   cardID: 0
   cardName: Bamboo
   cardSprite: {fileID: -5142840990626629552, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardBackgroundSprite: {fileID: 2878311640646176475, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1
   cost: 2

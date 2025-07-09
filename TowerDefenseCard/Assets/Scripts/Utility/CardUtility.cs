@@ -48,4 +48,12 @@ public static class CardUtility
         return id;
         //return Mathf.Abs(seed % int.MaxValue); // Start with a unique seed
     }
+
+    public static void DestroyAllChildren(this Transform transform)
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject.Destroy(transform.GetChild(i).gameObject);
+        }
+    }
 }
