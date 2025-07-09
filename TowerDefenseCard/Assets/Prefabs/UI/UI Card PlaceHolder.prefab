@@ -605,5 +605,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uICardMenu: {fileID: 2362225147406040921}
   uiOutline: {fileID: 478790708690942309}
-  hoverColor: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}
-  selectedColor: {r: 0.96470594, g: 0.95294124, b: 0.92549026, a: 1}
+  hoverColor: {r: 0.96470594, g: 0.95294124, b: 0.92549026, a: 1}
+  selectedColor: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}

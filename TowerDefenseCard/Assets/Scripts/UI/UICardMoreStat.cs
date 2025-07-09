@@ -10,7 +10,13 @@ public class UICardMoreStat : MonoBehaviour
     [SerializeField] private Transform recipeParent;
     [SerializeField] private GameObject pairCardAndCostPrefab;
 
-    private void OnEnable() => uIPageCardsDiscovered.OnSelectCard += UIPageCardsDiscovered_OnSelectCard;
+    private void OnEnable()
+    {
+        descriptionValue.text = string.Empty;
+        cardStatsParents.SetActive(false);
+        uIPageCardsDiscovered.OnSelectCard += UIPageCardsDiscovered_OnSelectCard;
+    }
+
     private void OnDisable() => uIPageCardsDiscovered.OnSelectCard -= UIPageCardsDiscovered_OnSelectCard;
 
     private void UIPageCardsDiscovered_OnSelectCard(Card card)
@@ -31,11 +37,11 @@ public class UICardMoreStat : MonoBehaviour
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
 
         if(card is not CardBaseDamageor)
-            cardStatsParents.gameObject.SetActive(false);
+            cardStatsParents.SetActive(false);
 
         else
         {
-            cardStatsParents.gameObject.SetActive(true);
+            cardStatsParents.SetActive(true);
 
             CardBaseDamageor cardBaseDamageor = card as CardBaseDamageor;
             damageValue.text = cardBaseDamageor.CardDamageorData.Damage.ToString();
