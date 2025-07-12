@@ -113,7 +113,7 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
                                  }, 
                                  onUpdate: elapsedTime =>
                                  {
-                                     Debug.Log($"dot time {elapsedTime}");
+                                     //Debug.Log($"dot time {elapsedTime}");
                                      if (totalTimeElapsed >= DoTDuration)
                                      {
                                          activeDoTTimers[enemy].Cancel();

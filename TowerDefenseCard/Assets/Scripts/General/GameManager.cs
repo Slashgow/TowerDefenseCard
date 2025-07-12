@@ -7,6 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
     public GameMode CurrentGameMode {  get; private set; }
+    public GameState CurrentGameState { get; set; }
 
     public event Action OnStartCraftMode;
     public event Action OnEndCraftMode;

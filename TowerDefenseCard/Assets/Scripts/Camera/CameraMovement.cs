@@ -29,6 +29,9 @@ public class CameraMovement : MonoSingleton<CameraMovement>
 
     void Update()
     {
+        if (GameManager.Instance.CurrentGameState != GameState.PLAY)
+            return;
+
         HandleDragging();
         HandleZooming();
         SmoothMovement();

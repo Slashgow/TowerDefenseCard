@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleCardMenu",
+                    "type": "Button",
+                    "id": "e0caa737-6d17-46db-a40f-eb66cc4b636d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -75,6 +84,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "DragStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "204c6a41-8d86-4ca9-ad5c-9ac97177c055",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ToggleCardMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
