@@ -15,9 +15,11 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     public event Action OnEndWaves;
 
-    private void OnEnable() => GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
-
-    private void OnDisable() => GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
+    private void OnEnable()
+    {
+        GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
+        GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+    }
 
     private void GameManager_OnStartCombatMode()
     {

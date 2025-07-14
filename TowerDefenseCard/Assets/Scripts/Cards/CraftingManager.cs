@@ -21,8 +21,18 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
-    private void OnEnable() => GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
-    private void OnDisable() => GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
+    private void OnEnable()
+    {
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
+    }
+
+    private void OnDisable()
+    {
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
+    }
+
     private void GameManager_OnStartCraftMode() => StartCraftingModeTimer();
 
     public bool TryCraft(Transform stackParent, Card movedCard)

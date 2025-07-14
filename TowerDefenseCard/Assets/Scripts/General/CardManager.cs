@@ -23,12 +23,14 @@ public class CardManager : MonoSingleton<CardManager>
 
     private void OnEnable()
     {
-        CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
+        if(CraftingManager.HasInstance)
+            CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
     }
 
     private void OnDisable()
     {
-        CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftComplete;
+        if(CraftingManager.HasInstance)
+            CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftComplete;
     }
 
     private void CraftingManager_OnCraftComplete(int craftID, CardID outputCardID)

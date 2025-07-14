@@ -35,7 +35,7 @@ public abstract class BaseCardMovement : MonoBehaviour
 
             while (elapsedTime < startMoveDuration)
             {
-                elapsedTime += Time.deltaTime;
+                elapsedTime += Time.unscaledDeltaTime;
                 float t = elapsedTime / startMoveDuration;
                 transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
                 yield return null; // Wait for next frame

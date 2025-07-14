@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
-public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
     [SerializeField, Range(0f, 180f)] private float maxTiltAngle = 20f;
@@ -31,6 +30,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        //Debug.Log($"on pointer down {this.name}");
         OnPointerDownEvent?.Invoke();
 
         CameraMovement.Instance.enabled = false;
@@ -57,13 +57,14 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
     public void OnDrag(PointerEventData eventData)
     {
+        //Debug.Log($"on drag {this.name}");
         if (!isDragging) 
             return;
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = -0f; // Ensure 2D
         targetPos = mousePos;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
         // Optional: Tilt card like Hearthstone 
         Vector3 delta = mousePos - (Vector3)startPosition;
@@ -73,6 +74,7 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        //Debug.Log($"on pointer up {this.name}");
         OnPointerUpEvent?.Invoke();
         isDragging = false;
         transform.rotation = Quaternion.identity; 
@@ -147,5 +149,15 @@ public class CardMover : BaseCardMovement, IPointerDownHandler, IDragHandler, IP
     {
         Gizmos.color = Color.yellow; 
         Gizmos.DrawWireSphere(transform.position, overlapRadius); 
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //Debug.Log($"on pointer enter {this.name}");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //Debug.Log($"on pointer exit {this.name}");
     }
 }

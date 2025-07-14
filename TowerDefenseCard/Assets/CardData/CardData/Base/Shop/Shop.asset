@@ -15,5 +15,6 @@ MonoBehaviour:
   cardID: 12
   cardName: Shop
   cardSprite: {fileID: 0}
+  cardBackgroundSprite: {fileID: -3563579251864965290, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 0
   cost: 0

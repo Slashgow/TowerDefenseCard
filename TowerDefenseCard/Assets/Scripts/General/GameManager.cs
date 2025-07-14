@@ -1,18 +1,23 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityTimer;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
     public GameMode CurrentGameMode {  get; private set; }
     public GameState CurrentGameState { get; set; }
+    public bool IsPaused { get; private set; }
+    public float GameSpeed { get; private set; }
 
     public event Action OnStartCraftMode;
     public event Action OnEndCraftMode;
     public event Action OnStartCombatMode;
     public event Action OnEndCombatMode;
+    public event Action OnPause; 
+    public event Action OnResume;
+
+    private Coroutine pauseSimulationCoroutine;
 
     protected override void Awake()
     {
@@ -22,11 +27,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Start()
     {
-        WaveManager.Instance.OnEndWaves += WaveManager_OnEndWaves;
-    }
-    private void OnDisable()
-    {
         WaveManager.Instance.OnEndWaves -= WaveManager_OnEndWaves;
+        WaveManager.Instance.OnEndWaves += WaveManager_OnEndWaves;
     }
 
     private void WaveManager_OnEndWaves()
@@ -63,5 +65,62 @@ public class GameManager : MonoSingleton<GameManager>
             CurrentGameMode = GameMode.CRAFTING; 
             OnStartCraftMode?.Invoke();
         }
+    }
+
+    public void Pause()
+    {
+        if (IsPaused)
+            return;
+
+        IsPaused = true;
+        Time.timeScale = 0f;
+        GameSpeed = Time.timeScale;
+        pauseSimulationCoroutine = StartCoroutine(TemporarlyAdjustTimeScale(2));
+        OnPause?.Invoke();
+        Debug.Log("Game Paused");
+    }
+    private IEnumerator TemporarlyAdjustTimeScale(int frameToSimulate)
+    {
+        while (IsPaused)
+        {
+            Time.timeScale = 0.01f;
+            SimulationMode2D originalSimulationMode = Physics2D.simulationMode;
+            Physics2D.simulationMode = SimulationMode2D.Script;
+
+
+            for (int i = 0; i < frameToSimulate; i++)
+            {
+                //Debug.Log("Simulate Physics");
+                Physics2D.Simulate(Time.fixedDeltaTime);
+            }
+
+            Physics2D.simulationMode = originalSimulationMode;
+            Time.timeScale = 0f;
+            yield return null;
+        }
+    }
+    public void Resume()
+    {
+        if (!IsPaused)
+            return;
+
+        if (pauseSimulationCoroutine != null)
+        {
+            StopCoroutine(pauseSimulationCoroutine);
+            pauseSimulationCoroutine = null;
+        }
+
+        IsPaused = false;
+        Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
+        Time.timeScale = 1f;
+        GameSpeed = Time.timeScale;
+        OnResume?.Invoke();
+        Debug.Log("Game Resumed");
+    }
+
+    public void ChangeGameSpeed(float gameSpeed)
+    {
+        Time.timeScale = gameSpeed;
+        GameSpeed = gameSpeed;
     }
 }

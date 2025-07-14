@@ -31,14 +31,16 @@ using UnityEngine;
         /// </summary>
         private SingletonInitializationStatus initializationStatus = SingletonInitializationStatus.None;
 
-        #endregion
+    #endregion
 
-        #region Properties
+    #region Properties
+        public static bool HasInstance => instance != null;
 
-        /// <summary>
-        /// Gets the instance.
-        /// </summary>
-        /// <value>The instance.</value>
+
+    /// <summary>
+    /// Gets the instance.
+    /// </summary>
+    /// <value>The instance.</value>
         public static T Instance
         {
             get

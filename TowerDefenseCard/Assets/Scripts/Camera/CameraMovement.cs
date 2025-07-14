@@ -44,7 +44,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
             return;
 
         Vector3 difference = inputHandler.DragOrigin - cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        targetPosition += difference * moveSpeed * Time.deltaTime;
+        targetPosition += difference * moveSpeed * Time.unscaledDeltaTime;
         targetPosition.x = Mathf.Clamp(targetPosition.x, minBounds.x, maxBounds.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minBounds.y, maxBounds.y);
     }
@@ -60,12 +60,12 @@ public class CameraMovement : MonoSingleton<CameraMovement>
 
     private void SmoothZooming()
     {
-        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, targetZoom, ref zoomVelocity, smoothTime);
+        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, targetZoom, ref zoomVelocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
     }
 
     private void SmoothMovement()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
     }
 }

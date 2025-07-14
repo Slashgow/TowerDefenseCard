@@ -35,7 +35,7 @@ public class CardRessourceGenerator : Card
             return;
 
         isCrafting = false;
-        if (currentCraftID != -1 && CraftingManager.Instance != null)
+        if (currentCraftID != -1 && CraftingManager.HasInstance)
         {
             CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
             CraftingManager.Instance.TryCancelCraft(this); 
@@ -45,7 +45,7 @@ public class CardRessourceGenerator : Card
 
     private void InitiateCraft()
     {
-        if (isCrafting && CraftingManager.Instance != null)
+        if (isCrafting && CraftingManager.HasInstance)
         {
             // Ensure the resource card itself can be used as the movedCard for a recipe
             if (CraftingManager.Instance.TryCraft(transform, this))

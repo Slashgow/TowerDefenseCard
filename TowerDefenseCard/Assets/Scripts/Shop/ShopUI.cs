@@ -8,12 +8,8 @@ public class ShopUI : MonoBehaviour
 
     private void OnEnable()
     {
-        ShopManager.Instance.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
-    }
-
-    private void OnDisable()
-    {
         ShopManager.Instance.OnUpdatePlayerCoin -= ShopManager_OnUpdatePlayerCoin;
+        ShopManager.Instance.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
     }
 
     private void ShopManager_OnUpdatePlayerCoin(int currentPlayerCoin)

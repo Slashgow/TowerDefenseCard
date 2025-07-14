@@ -1,0 +1,703 @@
+fileFormatVersion: 2
+guid: 361f48aeebdc4c74c9f78c015d434e4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6375175182499689699
+    second: Main_Art_2_0
+  - first:
+      213: -336484344705616820
+    second: Main_Art_2_1
+  - first:
+      213: -8563320270700976094
+    second: Main_Art_2_2
+  - first:
+      213: -5418162045431731510
+    second: Main_Art_2_3
+  - first:
+      213: -8577067152288242988
+    second: Main_Art_2_4
+  - first:
+      213: -5947617582768455614
+    second: Main_Art_2_5
+  - first:
+      213: -4312154775806992197
+    second: Main_Art_2_6
+  - first:
+      213: -3563579251864965290
+    second: Main_Art_2_7
+  - first:
+      213: -7856288522456671818
+    second: Main_Art_2_8
+  - first:
+      213: 5054244869390056487
+    second: Main_Art_2_9
+  - first:
+      213: -5076768852094435314
+    second: Main_Art_2_10
+  - first:
+      213: 8820642270154892408
+    second: Main_Art_2_11
+  - first:
+      213: -1935481588230842126
+    second: Main_Art_2_12
+  - first:
+      213: 4628595108189621392
+    second: Main_Art_2_13
+  - first:
+      213: -5571880809950956998
+    second: Main_Art_2_14
+  - first:
+      213: 5094689742197395843
+    second: Main_Art_2_15
+  - first:
+      213: -5061711287021314405
+    second: Main_Art_2_16
+  - first:
+      213: -5612399166431317920
+    second: Main_Art_2_17
+  - first:
+      213: -793715404868507150
+    second: Main_Art_2_18
+  - first:
+      213: -3961622229979622270
+    second: Main_Art_2_19
+  - first:
+      213: -3380168821889318058
+    second: Main_Art_2_20
+  - first:
+      213: -808519488074467349
+    second: Main_Art_2_21
+  - first:
+      213: 2838816098415689600
+    second: Main_Art_2_22
+  - first:
+      213: -2194696133534502180
+    second: Main_Art_2_23
+  - first:
+      213: 2521777638861226029
+    second: Main_Art_2_24
+  - first:
+      213: -8523382138606165064
+    second: Main_Art_2_25
+  - first:
+      213: -7155757720714190292
+    second: Main_Art_2_26
+  - first:
+      213: 8756690236493914884
+    second: Main_Art_2_27
+  - first:
+      213: 8155350991616783726
+    second: Main_Art_2_28
+  - first:
+      213: -5520326083218523388
+    second: Main_Art_2_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Background_card_grey_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1641
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4b7c52d0c297850800000000000000
+      internalID: 6375175182499689699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_red
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1642
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4477517541945bf0800000000000000
+      internalID: -336484344705616820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_red_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1638
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22867fe8599f82980800000000000000
+      internalID: -8563320270700976094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_yellow_2
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1636
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acaa98a8352dec4b0800000000000000
+      internalID: -5418162045431731510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_rose_2
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 1631
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d220354ed228f880800000000000000
+      internalID: -8577067152288242988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_blue_2
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 1629
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240083ff151d57da0800000000000000
+      internalID: -5947617582768455614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_green_2
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1630
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0258304162824c0800000000000000
+      internalID: -4312154775806992197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_card_black
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1224
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65fe2a31d8f9b8ec0800000000000000
+      internalID: -3563579251864965290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1256
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9ddf5963bd8f290800000000000000
+      internalID: -7856288522456671818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Noodle
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1266
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8113800c9c325e0800000000000000
+      internalID: -1935481588230842126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1250
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09cc0c04ab21c3040800000000000000
+      internalID: 4628595108189621392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rice
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1250
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32be08ace3bca2b0800000000000000
+      internalID: -5571880809950956998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kami_Essence
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 890
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3819084e359f3b640800000000000000
+      internalID: 5094689742197395843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wasabi
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 860
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e528d076031c9b0800000000000000
+      internalID: -5061711287021314405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 887
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 653cf6a8d5a3711d0800000000000000
+      internalID: -3380168821889318058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Matcha
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 901
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7375f2fcf87c4f0800000000000000
+      internalID: -808519488074467349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramen
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 861
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f3ab86330856720800000000000000
+      internalID: 2838816098415689600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spicy Ramen
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 565
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2b0ca9e7fda81e0800000000000000
+      internalID: -2194696133534502180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sake
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 547
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20c8dec6672ff220800000000000000
+      internalID: 2521777638861226029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 515
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65b2f99480ad2170800000000000000
+      internalID: 8155350991616783726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomako gohan
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 508
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40bbf6ddcacd363b0800000000000000
+      internalID: -5520326083218523388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c479d613f68c74d4a8fe7e3e69fda28b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Background_card_black: -3563579251864965290
+      Background_card_blue_2: -5947617582768455614
+      Background_card_green_2: -4312154775806992197
+      Background_card_grey_2: 6375175182499689699
+      Background_card_red: -336484344705616820
+      Background_card_red_2: -8563320270700976094
+      Background_card_rose_2: -8577067152288242988
+      Background_card_yellow_2: -5418162045431731510
+      Dragon: -7856288522456671818
+      Egg: 4628595108189621392
+      Kami_Essence: 5094689742197395843
+      Matcha: -808519488074467349
+      Noodle: -1935481588230842126
+      Ramen: 2838816098415689600
+      Rice: -5571880809950956998
+      Sake: 2521777638861226029
+      Spicy Ramen: -2194696133534502180
+      Tomako gohan: -5520326083218523388
+      Wasabi: -5061711287021314405
+      Water: -3380168821889318058
+      leaves: 8155350991616783726
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

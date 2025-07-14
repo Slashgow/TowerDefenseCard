@@ -46,14 +46,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allCards:
   - card: {fileID: 597159905614504105, guid: ffff4daae8667f14f962def17376edc8, type: 3}
-    isDiscovered: 0
+    isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}
-    isDiscovered: 0
-  - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
-    isDiscovered: 0
+    isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
-    isDiscovered: 0
+    isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 4ae74ac77e07a374e9554cf0f4007793, type: 3}
-    isDiscovered: 0
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 8f0a20479d1168b449bdcfc3a65bf27e, type: 3}
+    isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
-    isDiscovered: 0
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: a175d55a62976314fa50315240f892e8, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 5596509187565464847, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 5596509187565464847, guid: 4bd055906a676824ea76e3456e30e177, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 5596509187565464847, guid: c8db6d0c29342c5498853135601b606b, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 8660076273353320839, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: a7ab95a979963024084436afee660295, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 290643684317168460, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 30dea7d650e41da46bc656f902d87d5d, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 31316f98a2186bc42b06a5c0fd7e6b99, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 19b387a07e75f364fa19081d0fe4340f, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 9a8f5d0e14ca93c43ae650fa6b834d14, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 597159905614504105, guid: 721dfd7db680c9944a1c4beddab1c753, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 2861984798354678937, guid: 084d7fa5371385441829650d7f4c02fb, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
+    isDiscovered: 1

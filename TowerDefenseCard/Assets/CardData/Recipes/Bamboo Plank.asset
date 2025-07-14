@@ -15,6 +15,6 @@ MonoBehaviour:
   ingredients:
   - cardID: 0
     quantity: 3
-  craftingDelay: 5
+  craftingDelay: 4
   outputCardID: 4
   outputCardPrefab: {fileID: 1648138419762282337, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}

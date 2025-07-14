@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
+  m_Name: Tamgo_Gohan
+  m_EditorClassIdentifier: 
+  cardID: 34
+  cardName: Tamgo Gohan
+  cardSprite: {fileID: -5520326083218523388, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
+  cardBackgroundSprite: {fileID: -1615953430, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  isStackable: 1
+  cost: 6

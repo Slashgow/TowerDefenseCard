@@ -725,8 +725,8 @@ TextureImporter:
       name: Combat_UI
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 651
+        x: 1177
+        y: 646
         width: 99
         height: 151
       alignment: 0
@@ -739,6 +739,204 @@ TextureImporter:
       bones: []
       spriteID: f6f873d8f7e842b409eda54a9758c2a7
       internalID: -1258243211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hachiman
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 571
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c571e97ff37f0f43882caf84918e4f2
+      internalID: 1364256481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KomaInu
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 578
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a905d3dfbf7e55e40908a748f47845e8
+      internalID: 1083260046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 241
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c907f87862f6a914098a2def3c35b03e
+      internalID: 1676571497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_snake
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 234
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2cca21c490439408c034468ea1cea9
+      internalID: 451074908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_crown_crate
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 225
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89ffb0f6c3d7c74583756e4b18a6f2c
+      internalID: -1687119312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jade_factory
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 280
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38377b91d388f34ab689f27073dcf29
+      internalID: 1687640730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit_essence_factory
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 297
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6148c319ad1a71448f2f338bb50b650
+      internalID: 1879450607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amethyste
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 270
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7add604d2f91844aa194ae649e7006
+      internalID: 13634832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Akita_Inu
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 288
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99d340cbc7457944a384ef0b8c9503f
+      internalID: 1608162471
       vertices: []
       indices: 
       edges: []
@@ -757,6 +955,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Akita_Inu: 1608162471
+      Amethyste: 13634832
       Arc: 2048502986
       Arc_Fire: -178878361
       Archer: 590607674
@@ -766,18 +966,25 @@ TextureImporter:
       Combat_UI: -1258243211
       Craft_ProgressBar: -997937720
       Craft_ProgressBar_Fill: 387926511
+      Hachiman: 1364256481
       Heart: 1646642654
       Ink: -556184264
+      Jade_factory: 1687640730
+      KomaInu: 1083260046
       Main_Art_10: 265669321
       Main_Progress_Bar: -2072527109
       Oni: -791273899
       Pause: -1710879087
+      Phoenix: 1676571497
       Play: 1699067846
+      Red_crown_crate: -1687119312
       Sakura: -208535096
       Sakura_Brick: -1430702369
       Sakura_Factory: 1814970933
       Spirit_Essence: -423798865
+      Spirit_essence_factory: 1879450607
       Test Art_6: -168435414
+      White_snake: 451074908
       bamboo: -5142840990626629552
       bg_card_blue: -773140731
       bg_card_green: 2878311640646176475

@@ -46,11 +46,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCraftMode: 5
   recipes:
+  - {fileID: 11400000, guid: 6d0e1e127ccb3264296f86b99b6e9b08, type: 2}
+  - {fileID: 11400000, guid: 9917c24be31d2b84f8dac81826842a5a, type: 2}
   - {fileID: 11400000, guid: 08f113ec1e6d16149b67277c91911d0c, type: 2}
-  - {fileID: 11400000, guid: e5da0f6a36629e54bb8c820fe824b13b, type: 2}
-  - {fileID: 11400000, guid: 06348e49d6aaa124c8bced716da24060, type: 2}
-  - {fileID: 11400000, guid: 3e75ae33413cb5543937ccf3c17376e7, type: 2}
-  - {fileID: 11400000, guid: 2c44a324ce37edd4298834ba86d5ff80, type: 2}
   - {fileID: 11400000, guid: 1bec5df55689aba46930fe326d2d9566, type: 2}
+  - {fileID: 11400000, guid: 2c44a324ce37edd4298834ba86d5ff80, type: 2}
+  - {fileID: 11400000, guid: e5da0f6a36629e54bb8c820fe824b13b, type: 2}
+  - {fileID: 11400000, guid: 1fa5600641b60554492778946e0aff80, type: 2}
+  - {fileID: 11400000, guid: 08c3e04cf57798345b76636d0ebeaaa3, type: 2}
+  - {fileID: 11400000, guid: d9acc26157998b248aaaf1b4aaf808dc, type: 2}
+  - {fileID: 11400000, guid: 4c364423a89bab949a9294f35ff1537e, type: 2}
+  - {fileID: 11400000, guid: 1ed2fece8fe6cb14eb3e8c05e467fcdd, type: 2}
+  - {fileID: 11400000, guid: fbe7e9b466baf7742992abc4f84110ca, type: 2}
+  - {fileID: 11400000, guid: d21c3e39d2c180841a6520d74ed21b6f, type: 2}
+  - {fileID: 11400000, guid: 5366ea55017f4cf4ca310f98c0776635, type: 2}
+  - {fileID: 11400000, guid: a0d324ee32dcf47439f184381f78e2ab, type: 2}
+  - {fileID: 11400000, guid: 95651774f26b9af4a8cd5b6a74e20847, type: 2}
+  - {fileID: 11400000, guid: d8bde257dbbacbf44bb3d6506692b633, type: 2}
+  - {fileID: 11400000, guid: 3be3e6204401db0458e3e99b2c7f920b, type: 2}
+  - {fileID: 11400000, guid: 06348e49d6aaa124c8bced716da24060, type: 2}
+  - {fileID: 11400000, guid: f9f7a995831230845bdbe2a4f196413e, type: 2}
+  - {fileID: 11400000, guid: 248a9425709dea7458ff04d2acb0db6e, type: 2}
+  - {fileID: 11400000, guid: cd7cf5531efe66843b72d4b5cd1791e3, type: 2}
+  - {fileID: 11400000, guid: 7d13d3c9851434446bba2226eb9d0130, type: 2}
+  - {fileID: 11400000, guid: 3e75ae33413cb5543937ccf3c17376e7, type: 2}
+  - {fileID: 11400000, guid: 728ae309939d3314a9782e8236dcb537, type: 2}
   cooldownBarPrefab: {fileID: 5366261039685075114, guid: 05c0c4a21dc340540911cb28546c2564, type: 3}
-  cooldownBarOffset: 1.3
+  cooldownBarOffset: 1.2

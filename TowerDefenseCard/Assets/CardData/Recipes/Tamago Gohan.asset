@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
+  m_Name: Tamago Gohan
+  m_EditorClassIdentifier: 
+  ingredients:
+  - cardID: 26
+    quantity: 2
+  - cardID: 28
+    quantity: 1
+  craftingDelay: 4
+  outputCardID: 34
+  outputCardPrefab: {fileID: 4627174053777730407, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
