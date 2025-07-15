@@ -30,6 +30,7 @@ public class CooldownBarUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        Timer.Cancel(craftingTimer);
         //Debug.Log($"Destroy {this.transform.GetInstanceID()}");
     }
 

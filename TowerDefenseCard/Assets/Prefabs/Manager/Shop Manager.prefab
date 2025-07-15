@@ -76,16 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7459f3fc79cc23b48a86c75646b89654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopCost: 2
-  shopItems:
-  - dropPercentage: 50
-    cardPrefab: {fileID: 1648138419762282337, guid: ffff4daae8667f14f962def17376edc8, type: 3}
-  - dropPercentage: 50
-    cardPrefab: {fileID: 1648138419762282337, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
-  - dropPercentage: 20
-    cardPrefab: {fileID: 1648138419762282337, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
-  - dropPercentage: 20
-    cardPrefab: {fileID: 1648138419762282337, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
-  startPlayerCoin: 100
-  spawnPoint: {fileID: 2591928629705711176}
+  cardShops:
+  - {fileID: 0}
+  - {fileID: 0}
+  startPlayerCoin: 30
   currentPlayerCoin: 0

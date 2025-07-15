@@ -17,6 +17,6 @@ MonoBehaviour:
     quantity: 1
   - cardID: 16
     quantity: 3
-  craftingDelay: 120
+  craftingDelay: 43
   outputCardID: 25
   outputCardPrefab: {fileID: 8864906581117935152, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}

@@ -188,4 +188,13 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
+
+    private void OnDestroy()
+    {
+        Timer.Cancel(attackTimer);
+        foreach (var timer in activeDoTTimers.Values)
+        {
+            Timer.Cancel(timer);
+        }
+    }
 }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: Shop
+  m_Name: Shop base food
   m_EditorClassIdentifier: 
   cardID: 12
-  cardName: Shop
+  cardName: Marketplace
   cardSprite: {fileID: 0}
   cardBackgroundSprite: {fileID: -3563579251864965290, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 0

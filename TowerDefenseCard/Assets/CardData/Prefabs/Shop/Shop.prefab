@@ -108,6 +108,11 @@ MonoBehaviour:
   backgroundSprite: {fileID: 5793447513779673074}
   cardSprite: {fileID: 2477208669114640186}
   cardUI: {fileID: 6868042175936996570}
+  shop:
+    shopCost: 0
+    shopItems: []
+    spawnPoint: {fileID: 0}
+    booster: {fileID: 0}
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoSingleton<GameManager>
     public event Action OnEndCombatMode;
     public event Action OnPause; 
     public event Action OnResume;
+    public UnityEvent OnPauseUnity;
+    public UnityEvent OnResumeUnity;
 
     private Coroutine pauseSimulationCoroutine;
 
@@ -27,11 +30,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Start()
     {
-        WaveManager.Instance.OnEndWaves -= WaveManager_OnEndWaves;
-        WaveManager.Instance.OnEndWaves += WaveManager_OnEndWaves;
+        WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
+        WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
     }
 
-    private void WaveManager_OnEndWaves()
+    private void WaveManager_OnWaveEnd()
     {
         SwitchGameMode();
     }
@@ -77,6 +80,7 @@ public class GameManager : MonoSingleton<GameManager>
         GameSpeed = Time.timeScale;
         pauseSimulationCoroutine = StartCoroutine(TemporarlyAdjustTimeScale(2));
         OnPause?.Invoke();
+        OnPauseUnity?.Invoke();
         Debug.Log("Game Paused");
     }
     private IEnumerator TemporarlyAdjustTimeScale(int frameToSimulate)
@@ -115,6 +119,7 @@ public class GameManager : MonoSingleton<GameManager>
         Time.timeScale = 1f;
         GameSpeed = Time.timeScale;
         OnResume?.Invoke();
+        OnResumeUnity?.Invoke();
         Debug.Log("Game Resumed");
     }
 

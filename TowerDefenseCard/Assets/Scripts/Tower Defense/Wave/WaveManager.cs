@@ -13,7 +13,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private int indexSortingOrder = 0;
 
-    public event Action OnEndWaves;
+    public event Action OnWaveEnd;
 
     private void OnEnable()
     {
@@ -26,22 +26,22 @@ public class WaveManager : MonoSingleton<WaveManager>
         TriggerNextWave();
     }
 
-    private IEnumerator StartWaveSequence()
-    {
-        indexSortingOrder = 0;
-
-        yield return new WaitForSeconds(initialWaveDelay);
-
-        while (currentWaveIndex < waveDataArray.Length)
-        {
-            yield return StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
-            currentWaveIndex++;
-            if (currentWaveIndex < waveDataArray.Length)
-            {
-                yield return new WaitForSeconds(waveDataArray[currentWaveIndex].WaveDelay);
-            }
-        }
-    }
+   //private IEnumerator StartWaveSequence()
+   //{
+   //    indexSortingOrder = 0;
+   //
+   //    yield return new WaitForSeconds(initialWaveDelay);
+   //
+   //    while (currentWaveIndex < waveDataArray.Length)
+   //    {
+   //        yield return StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
+   //        currentWaveIndex++;
+   //        if (currentWaveIndex < waveDataArray.Length)
+   //        {
+   //            yield return new WaitForSeconds(waveDataArray[currentWaveIndex].WaveDelay);
+   //        }
+   //    }
+   //}
 
     private IEnumerator SpawnWave(WaveData waveData)
     {
@@ -63,7 +63,8 @@ public class WaveManager : MonoSingleton<WaveManager>
         }
         yield return new WaitUntil(() => AreAllEnemiesDefeated()); // Wait until all enemies are gone
         isWaveActive = false;
-        OnEndWaves?.Invoke();
+        currentWaveIndex++;
+        OnWaveEnd?.Invoke();
     }
 
     private bool AreAllEnemiesDefeated()
@@ -77,7 +78,7 @@ public class WaveManager : MonoSingleton<WaveManager>
         if (!isWaveActive && currentWaveIndex < waveDataArray.Length)
         {
             StopAllCoroutines();
-            StartCoroutine(StartWaveSequence());
+            StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
         }
     }
 }

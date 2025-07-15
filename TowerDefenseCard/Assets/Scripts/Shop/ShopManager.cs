@@ -1,16 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 using System;
-
 
 public class ShopManager : MonoSingleton<ShopManager>
 {
-    [SerializeField, Range(0, 50)] private int shopCost;
-    [SerializeField] private List<ShopItem> shopItems;
-    [SerializeField, Range(0,100)] private int startPlayerCoin = 10; 
-    [SerializeField] private Transform spawnPoint; 
-  
+    [SerializeField] private List<CardShop> cardShops;
+    [SerializeField, Range(0, 100)] private int startPlayerCoin = 10;
 
     public event Action<int> OnUpdatePlayerCoin = delegate { };
 
@@ -25,51 +20,31 @@ public class ShopManager : MonoSingleton<ShopManager>
 
     private void Start() => OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
 
-    public void TryPurchaseWeightedCard()
+    public void TryPurchaseBooster(Shop selectedShop)
     {
-        if (CurrentPlayerCoin < shopCost)
+        if (CurrentPlayerCoin < selectedShop.ShopCost)
         {
             Debug.Log("Not enough YenCoins!");
             return;
         }
 
-        if (shopItems == null || shopItems.Count == 0) 
-            return;
-
-        float totalWeight = shopItems.Sum(item => item.DropPercentage);
-        if (totalWeight <= 0) 
-            totalWeight = 1f; 
-        var weightedItems = shopItems.Select(item => new { Item = item, Weight = item.DropPercentage / totalWeight }).ToList();
-
-        float roll = UnityEngine.Random.value; // 0 to 1
-        ShopItem selectedItem = null;
-        float cumulativeWeight = 0f;
-
-        foreach (var weightedItem in weightedItems)
-        {
-            cumulativeWeight += weightedItem.Weight;
-            if (roll <= cumulativeWeight)
-            {
-                selectedItem = weightedItem.Item;
-                break;
-            }
-        }
-
-        if (selectedItem == null) 
-            selectedItem = weightedItems[0].Item;
-
-
-        currentPlayerCoin -= shopCost;
+        currentPlayerCoin -= selectedShop.ShopCost;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+        
+        GameObject booster = Instantiate(selectedShop.Booster.gameObject, selectedShop.SpawnPoint.position, Quaternion.identity);
+        Booster boosterComponent = booster.GetComponent<Booster>();
 
-        Instantiate(selectedItem.CardPrefab, spawnPoint.position, Quaternion.identity);
-        Debug.Log($"{selectedItem.CardPrefab.GetComponent<Card>().CardData.CardName} purchased successfully!");
-
+        if (boosterComponent != null)
+            boosterComponent.Initialize(selectedShop.ShopItems); 
+        else
+            Debug.LogError("BoosterPrefab missing Booster component!");
+        
+        Debug.Log("Booster purchased successfully!");
     }
 
-    public void AddPlayerCoin(int cointAmount)
+    public void AddPlayerCoin(int coinAmount)
     {
-        currentPlayerCoin += cointAmount;
+        currentPlayerCoin += coinAmount;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 }

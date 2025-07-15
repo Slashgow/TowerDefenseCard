@@ -10,6 +10,7 @@ public class Reseller : MonoBehaviour
         {
             Debug.Log(card);
             coinAmount += card.CardData.Cost;
+            CraftingManager.Instance.TryCancelCraft(card);
         }
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 

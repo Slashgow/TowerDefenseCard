@@ -23,7 +23,7 @@ public class AOEDamageor : CardBaseDamageor
 
                 GameObject projectile = Instantiate(projectilePrefab, transform.position, rotation);
                 Projectile projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, false, AttackArea, impactEffectPrefab);
+                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, false, AttackArea, impactEffectPrefab, AttackRange);
             }
         }
     }

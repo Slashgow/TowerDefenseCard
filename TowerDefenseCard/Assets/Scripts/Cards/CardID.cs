@@ -36,5 +36,6 @@ public enum CardID
     SAKE,
     TAMAGO_GOHAN,
     KAPPA,
-    LEAVES
+    LEAVES,
+    BOOSTER
 }

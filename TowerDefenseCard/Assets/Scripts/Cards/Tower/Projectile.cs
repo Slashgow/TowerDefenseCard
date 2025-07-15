@@ -8,9 +8,10 @@ public class Projectile : MonoBehaviour
     private LayerMask enemyLayer;
     private bool isMonoTarget;
     private float attackArea;
+    private float attackRange;
     private GameObject impactEffectPrefab;
 
-    public void Initialize(Vector3 direction, float speed, float damage, LayerMask enemyLayer, bool isMonoTarget, float attackArea, GameObject impactEffectPrefab)
+    public void Initialize(Vector3 direction, float speed, float damage, LayerMask enemyLayer, bool isMonoTarget, float attackArea, GameObject impactEffectPrefab, float attackRange)
     {
         this.direction = direction;
         this.speed = speed;
@@ -19,6 +20,7 @@ public class Projectile : MonoBehaviour
         this.isMonoTarget = isMonoTarget;
         this.attackArea = attackArea;
         this.impactEffectPrefab = impactEffectPrefab;
+        this.attackRange = attackRange;
     }
 
     void Update()
@@ -55,7 +57,7 @@ public class Projectile : MonoBehaviour
         
 
         // Destroy if out of range (e.g., 10 units)
-        if (Vector3.Distance(transform.position, Vector3.zero) > 10f)
+        if (Vector3.Distance(transform.position, Vector3.zero) > attackRange)
         {
             Destroy(gameObject);
         }
