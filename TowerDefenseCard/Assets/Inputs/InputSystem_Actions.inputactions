@@ -40,6 +40,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Play/Pause",
+                    "type": "Button",
+                    "id": "a56f8de5-01d6-4284-a77f-15146423e14a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpeedUp/Down",
+                    "type": "Button",
+                    "id": "82df3a8d-d9f9-4870-8f58-b650036f4c70",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -95,6 +113,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ToggleCardMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ae4a259-1196-4f4e-8fab-3b9111883355",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Play/Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6edadd0a-a10c-4af6-8335-ab576649cd60",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SpeedUp/Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

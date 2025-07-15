@@ -25,7 +25,8 @@ public class CooldownBarUI : MonoBehaviour
 
     private void OnDisable()
     {
-        CraftingManager.Instance.OnCraftCancel -= OnCooldownCraftCancel;
+        if(CraftingManager.HasInstance)
+            CraftingManager.Instance.OnCraftCancel -= OnCooldownCraftCancel;
     }
 
     private void OnDestroy()

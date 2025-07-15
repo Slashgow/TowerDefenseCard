@@ -6,10 +6,12 @@ using UnityEngine.Events;
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
+
+    [SerializeField, Range(1f, 5f)] private float speedUpGameSpeed;
     public GameMode CurrentGameMode {  get; private set; }
     public GameState CurrentGameState { get; set; }
     public bool IsPaused { get; private set; }
-    public float GameSpeed { get; private set; }
+    public float CurrentGameSpeed { get; private set; }
 
     public event Action OnStartCraftMode;
     public event Action OnEndCraftMode;
@@ -77,7 +79,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         IsPaused = true;
         Time.timeScale = 0f;
-        GameSpeed = Time.timeScale;
+        CurrentGameSpeed = Time.timeScale;
         pauseSimulationCoroutine = StartCoroutine(TemporarlyAdjustTimeScale(2));
         OnPause?.Invoke();
         OnPauseUnity?.Invoke();
@@ -117,15 +119,21 @@ public class GameManager : MonoSingleton<GameManager>
         IsPaused = false;
         Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
         Time.timeScale = 1f;
-        GameSpeed = Time.timeScale;
+        CurrentGameSpeed = Time.timeScale;
         OnResume?.Invoke();
         OnResumeUnity?.Invoke();
         Debug.Log("Game Resumed");
     }
 
-    public void ChangeGameSpeed(float gameSpeed)
+    public void SpeedUpGame()
     {
-        Time.timeScale = gameSpeed;
-        GameSpeed = gameSpeed;
+        CurrentGameSpeed = speedUpGameSpeed;
+        Time.timeScale = CurrentGameSpeed;
+    }
+
+    public void ResetGameSpeed()
+    {
+        CurrentGameSpeed = 1f;
+        Time.timeScale = 1f;
     }
 }

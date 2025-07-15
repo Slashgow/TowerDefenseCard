@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Linq;
+using System;
 
 public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 {
@@ -10,6 +11,8 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
     private int remainingCards;
     private List<ShopItem> cardPool;
+
+    public static event Action OnOpenBooster;
 
     public void Initialize(List<ShopItem> pool)
     {
@@ -37,7 +40,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             if (totalWeight <= 0)
                 totalWeight = 1f;
 
-            float roll = Random.value;
+            float roll = UnityEngine.Random.value;
             ShopItem selectedItem = null;
             float cumulativeWeight = 0f;
 
@@ -59,6 +62,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
                 Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
                 remainingCards--;
                 Debug.Log($"{selectedItem.CardPrefab.GetComponent<Card>().CardData.CardName} spawned from booster! {remainingCards} cards left.");
+                OnOpenBooster?.Invoke();
             }
 
             if (remainingCards <= 0)

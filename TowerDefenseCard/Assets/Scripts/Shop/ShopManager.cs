@@ -12,6 +12,8 @@ public class ShopManager : MonoSingleton<ShopManager>
     [SerializeField, HideInInspector] private int currentPlayerCoin;
     public int CurrentPlayerCoin => currentPlayerCoin;
 
+    public static event Action OnPurchaseBooster;
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,7 +32,7 @@ public class ShopManager : MonoSingleton<ShopManager>
 
         currentPlayerCoin -= selectedShop.ShopCost;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
-        
+        OnPurchaseBooster?.Invoke();
         GameObject booster = Instantiate(selectedShop.Booster.gameObject, selectedShop.SpawnPoint.position, Quaternion.identity);
         Booster boosterComponent = booster.GetComponent<Booster>();
 

@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Reseller : MonoBehaviour
 {
+    public event Action OnResell;
+
     public void Resell(List<Card> cards)
     {
         int coinAmount = 0;
@@ -15,5 +18,6 @@ public class Reseller : MonoBehaviour
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 
         CardUtility.DestroyAllCards(cards);
+        OnResell?.Invoke();
     }
 }
