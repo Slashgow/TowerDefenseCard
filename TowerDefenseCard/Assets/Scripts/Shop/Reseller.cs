@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Reseller : MonoBehaviour
 {
-    public event Action OnResell;
+    public static event Action<int> OnResell;
 
     public void Resell(List<Card> cards)
     {
@@ -14,10 +14,16 @@ public class Reseller : MonoBehaviour
             Debug.Log(card);
             coinAmount += card.CardData.Cost;
             CraftingManager.Instance.TryCancelCraft(card);
+
+            if(card is CardStorage)
+            {
+                CardStorage cardStorage = (CardStorage)card;
+                CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
+            }
         }
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 
+        OnResell?.Invoke(cards.Count);
         CardUtility.DestroyAllCards(cards);
-        OnResell?.Invoke();
     }
 }

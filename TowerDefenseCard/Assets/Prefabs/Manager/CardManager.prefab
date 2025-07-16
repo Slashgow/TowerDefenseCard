@@ -107,3 +107,8 @@ MonoBehaviour:
     isDiscovered: 1
   - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
     isDiscovered: 1
+  - card: {fileID: 5356776283567728278, guid: bdce7cf592e8e134bb0625c21fd82b3a, type: 3}
+    isDiscovered: 1
+  - card: {fileID: 5356776283567728278, guid: ee71ccdb7c2e967418408cdfdc328ecc, type: 3}
+    isDiscovered: 1
+  startMaxCardsAllowed: 30

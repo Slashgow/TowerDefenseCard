@@ -37,7 +37,7 @@ public class ShopManager : MonoSingleton<ShopManager>
         Booster boosterComponent = booster.GetComponent<Booster>();
 
         if (boosterComponent != null)
-            boosterComponent.Initialize(selectedShop.ShopItems); 
+            boosterComponent.Initialize(selectedShop); 
         else
             Debug.LogError("BoosterPrefab missing Booster component!");
         

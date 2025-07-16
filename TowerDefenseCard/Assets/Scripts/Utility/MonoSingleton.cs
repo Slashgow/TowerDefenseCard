@@ -40,15 +40,20 @@ using UnityEngine;
             {
                 if (instance == null)
                 {
-                    instance = FindObjectOfType<T>();
+                    instance = FindFirstObjectByType<T>();
                     if (instance == null)
                     {
                         GameObject obj = new GameObject();
                         obj.name = typeof(T).Name;
                         instance = obj.AddComponent<T>();
                         instance.OnMonoSingletonCreated();
+                        //Debug.Log($"Created new instance of {typeof(T).Name} at {obj.scene.name}");
                     }
-                }
+                    else
+                    {
+                        //Debug.Log($"Found existing instance of {typeof(T).Name} at {instance.gameObject.scene.name}");
+                    }
+            }
                 return instance;
             }
         }
@@ -67,16 +72,19 @@ using UnityEngine;
         /// </summary>
         protected virtual void Awake()
         {
+            //Debug.Log($"{typeof(T)} awake");
+            //Debug.Log($"{instance}");
+
             if (instance == null)
             {
                 instance = this as T;
-                Debug.Log($"instance initialized {typeof(T)}");
+                //Debug.Log($"instance initialized {typeof(T)}");
                 // Initialize existing instance
                 InitializeSingleton();
             }
-            else
+            else if(instance != this)
             {
-                Debug.Log($"instance destroy {typeof(T)}");
+                //Debug.Log($"instance destroy {typeof(T)}");
                 // Destory duplicates
                 if (Application.isPlaying)
                 {

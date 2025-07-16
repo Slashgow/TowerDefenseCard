@@ -72,9 +72,9 @@ public class UITime : MonoBehaviour
 
     public void ToggleSpeed()
     {
-        if(speedUpButton.gameObject.activeSelf)
+        if(speedUpButton.gameObject.activeSelf && speedUpButton.interactable)
             OnSpeedUp();
-        else
+        else if(speedDownButton.gameObject.activeSelf && speedDownButton.interactable)
             OnSpeedDown();
     }
 }

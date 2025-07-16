@@ -37,5 +37,8 @@ public enum CardID
     TAMAGO_GOHAN,
     KAPPA,
     LEAVES,
-    BOOSTER
+    BOOSTER,
+    BARN,
+    WAREHOUSE,
+    IDEA
 }

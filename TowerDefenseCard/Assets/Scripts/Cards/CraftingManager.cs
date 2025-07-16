@@ -101,6 +101,13 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     private void Craft(CraftInfo craftInfo, out GameObject craftedCard)
     {
+        if (CardManager.Instance.IsMaxCardsReached)
+        {
+            TryCancelCraft(craftInfo.CraftID);
+            craftedCard = null;
+            return;
+        }
+
         // Destroy input cards
         foreach (var card in craftInfo.StackCards)
         {
@@ -136,6 +143,15 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     {
         int craftID = GetCraftIDByCard(card);
 
+        if (craftID == -1)
+            return;
+
+        OnCraftCancel?.Invoke(craftID);
+        currentCrafts.Remove(GetCraftInfoByID(craftID));
+    }
+
+    public void TryCancelCraft(int craftID)
+    {
         if (craftID == -1)
             return;
 

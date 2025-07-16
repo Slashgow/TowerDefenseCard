@@ -1,8 +1,8 @@
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Linq;
 using System;
+using UnityEngine.Events;
 
 public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 {
@@ -10,13 +10,14 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public int MaxCardCount => maxCardCount;
 
     private int remainingCards;
-    private List<ShopItem> cardPool;
+    private Shop shop;
+    public static event Action<CardID> OnOpenBooster;
+    public UnityEvent OnOpenBoosterUnity;
+    public static event Action OnOpenCardIdea;
 
-    public static event Action OnOpenBooster;
-
-    public void Initialize(List<ShopItem> pool)
+    public void Initialize(Shop shop)
     {
-        cardPool = new List<ShopItem>(pool);
+        this.shop = shop;
         remainingCards = maxCardCount;
     }
 
@@ -32,38 +33,24 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
     private void TrySpawnCardFromShopItemList()
     {
+        if (CardManager.Instance.IsMaxCardsReached)
+            return;
+
         if (remainingCards > 0)
         {
-            // Weighted random selection from the pool
-            float totalWeight = cardPool.Sum(item => item.DropPercentage);
-
-            if (totalWeight <= 0)
-                totalWeight = 1f;
-
-            float roll = UnityEngine.Random.value;
-            ShopItem selectedItem = null;
-            float cumulativeWeight = 0f;
-
-            foreach (var item in cardPool)
+            if(remainingCards == maxCardCount)
             {
-                cumulativeWeight += item.DropPercentage / totalWeight;
-                if (roll <= cumulativeWeight)
-                {
-                    selectedItem = item;
-                    break;
-                }
+                ShopCardIdea selectedShopCardIdea = SelectShopCardIdea();
+                Debug.Log($"Shop card idea : {selectedShopCardIdea}");
+                if (selectedShopCardIdea != null)
+                    SpawnCardIdea(selectedShopCardIdea);
+                else
+                    SpawnCard();
             }
+            else
+                SpawnCard();
 
-            if (selectedItem == null && cardPool.Count > 0)
-                selectedItem = cardPool[0];
-
-            if (selectedItem != null)
-            {
-                Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
-                remainingCards--;
-                Debug.Log($"{selectedItem.CardPrefab.GetComponent<Card>().CardData.CardName} spawned from booster! {remainingCards} cards left.");
-                OnOpenBooster?.Invoke();
-            }
+            OnOpenBoosterUnity?.Invoke();
 
             if (remainingCards <= 0)
             {
@@ -71,5 +58,87 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
                 Debug.Log("Booster exhausted and destroyed!");
             }
         }
+    }
+
+    private void SpawnCard()
+    {
+        ShopItem selectedItem = SelectShopItem();
+
+        Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
+        remainingCards--;
+        Debug.Log($"{selectedItem.CardPrefab.GetComponent<Card>().CardData.CardName} spawned from booster! {remainingCards} cards left.");
+        OnOpenBooster?.Invoke(selectedItem.CardPrefab.GetComponent<Card>().CardData.CardID);
+    }
+
+    private void SpawnCardIdea(ShopCardIdea selectedShopCardIdea)
+    {
+        GameObject cardIdeaVisualInstance = Instantiate(shop.CardIdeaVisualPrefab.gameObject, this.transform.position, Quaternion.identity);
+        cardIdeaVisualInstance.GetComponent<CardIdea>().Initialize(selectedShopCardIdea.CardIdeaPrefab);
+        remainingCards--;
+        OnOpenCardIdea?.Invoke();
+    }
+
+    private ShopItem SelectShopItem()
+    {
+        // Weighted random selection from the pool
+        float totalWeight = shop.ShopItems.Sum(item => item.DropPercentage);
+
+        if (totalWeight <= 0)
+            totalWeight = 1f;
+
+        float roll = UnityEngine.Random.value;
+        ShopItem selectedItem = null;
+        float cumulativeWeight = 0f;
+
+        foreach (var item in shop.ShopItems)
+        {
+            cumulativeWeight += item.DropPercentage / totalWeight;
+            if (roll <= cumulativeWeight)
+            {
+                selectedItem = item;
+                break;
+            }
+        }
+
+        if (selectedItem == null && shop.ShopItems.Count > 0)
+            selectedItem = shop.ShopItems[0];
+
+        return selectedItem;
+    }
+
+    private ShopCardIdea SelectShopCardIdea()
+    {
+        ShopCardIdea selectedShopIdea = null;
+
+        var undiscoveredIdeas = shop.ShopCardIdeas
+                    .Where(idea => CardManager.Instance.AllCards.Any(state => state.Card.CardData.CardID == idea.CardIdeaPrefab.CardData.CardID && !state.isDiscovered))
+                    .ToList();
+
+        if (undiscoveredIdeas.Count <= 0)
+            return selectedShopIdea;
+
+        float totalWeight = undiscoveredIdeas.Sum(item => item.DropPercentage);
+
+        if (totalWeight <= 0)
+            totalWeight = 1f;
+
+        float roll = UnityEngine.Random.value;
+        
+        float cumulativeWeight = 0f;
+
+        foreach (var item in undiscoveredIdeas)
+        {
+            cumulativeWeight += item.DropPercentage / totalWeight;
+            if (roll <= cumulativeWeight)
+            {
+                selectedShopIdea = item;
+                break;
+            }
+        }
+
+        if (selectedShopIdea == null && undiscoveredIdeas.Count > 0)
+            selectedShopIdea = shop.ShopCardIdeas[0];
+
+        return selectedShopIdea;
     }
 }

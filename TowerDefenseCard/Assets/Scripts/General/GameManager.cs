@@ -26,8 +26,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     protected override void Awake()
     {
+        Debug.Log("Game manager awake");
         base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
+        CurrentGameState = GameState.PLAY;
     }
 
     private void Start()

@@ -11,7 +11,7 @@ public class UIPageController : MonoBehaviour
     private UIPage currentPage;
     private UIPage previousPage;
 
-    private void OnEnable() => ShowPage(startPage);
+    private void Start() => ShowPage(startPage);
 
     public void ShowPage(UIPage page)
     {

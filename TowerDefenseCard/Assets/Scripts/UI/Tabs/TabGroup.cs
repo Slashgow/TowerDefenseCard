@@ -6,13 +6,15 @@ namespace TabUI
     public class TabGroup : MonoBehaviour
     {
         [SerializeField] private TabButton defaultTab;
+        public TabButton DefaultTab => defaultTab;
+
         protected List<TabButton> tabButtons;
         [SerializeField] protected Color tabIdle, tabHover, tabActive;
         [SerializeField] private List<UIPage> objectsToSwap = new List<UIPage>();
 
         protected TabButton selectedTab;
 
-        private void Start()
+        private void OnEnable()
         {
             OnTabSelected(defaultTab);
         }
