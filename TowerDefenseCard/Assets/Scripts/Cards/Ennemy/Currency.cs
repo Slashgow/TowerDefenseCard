@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,6 +7,8 @@ public class Currency : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TextMeshProUGUI amountText;
     public int Amount {  get; private set; }
+
+    public static event Action OnHarvestCurrency;
 
     public void Init(int amount)
     {
@@ -15,6 +18,7 @@ public class Currency : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        OnHarvestCurrency?.Invoke();
         ShopManager.Instance.AddPlayerCoin(Amount);
         Destroy(this.gameObject);
     }

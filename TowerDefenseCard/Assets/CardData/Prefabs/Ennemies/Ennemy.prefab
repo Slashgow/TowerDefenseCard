@@ -11,11 +11,14 @@ GameObject:
   - component: {fileID: 672978147476989485}
   - component: {fileID: 3248799991256872661}
   - component: {fileID: 3803351378072727935}
-  - component: {fileID: 7706688115902069185}
   - component: {fileID: 5601609712679972704}
   - component: {fileID: 1416622909516074884}
   - component: {fileID: 8043164391734740855}
   - component: {fileID: -1557039402861704716}
+  - component: {fileID: 146080465950913244}
+  - component: {fileID: 4833971392412208564}
+  - component: {fileID: 1253372721874032751}
+  - component: {fileID: -2455864072246853442}
   m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
@@ -143,44 +146,6 @@ MonoBehaviour:
   moveDuration: 20
   hopDuration: 0.7
   breakDuration: 0.5
---- !u!114 &7706688115902069185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505245852151396201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: badfca3c904bd1c479500f7737664e80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeDuration: 0.3
-  shakeMagnitude: 0.1
-  shakeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!50 &5601609712679972704
 Rigidbody2D:
   serializedVersion: 5
@@ -284,6 +249,89 @@ MonoBehaviour:
   cardSprite: {fileID: 1503847643991101542}
   cardUI: {fileID: 8985639304801262440}
   currencyPrefab: {fileID: 9193156078307443070, guid: 4c8723cb0e9220849aa942bf0ed2b196, type: 3}
+--- !u!114 &146080465950913244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b115664c94fe943bf1922c45ae2fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 4833971392412208564}
+  - {fileID: 1253372721874032751}
+  - {fileID: -2455864072246853442}
+--- !u!114 &4833971392412208564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c24f4863a0e27408c358e0c48c199d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.3
+  shakeMagnitude: 0.3
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1253372721874032751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a42cf16896ee7a43a9c867e97dd8ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endColor: {r: 0.5471698, g: 0, b: 0, a: 1}
+  timeToReachEndColor: 0.3
+  shouldGoBackToOriginColor: 1
+  easing: 4
+--- !u!114 &-2455864072246853442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: c2f5617d140056c44bf7d0cf90309cc7, type: 3}
 --- !u!1 &8981867779452182579
 GameObject:
   m_ObjectHideFlags: 0

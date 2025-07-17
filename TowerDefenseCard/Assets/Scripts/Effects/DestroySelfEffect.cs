@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ImpactEffect : MonoBehaviour
+public class DestroySelfEffect : MonoBehaviour
 {
     public void DestroySelf()
     {

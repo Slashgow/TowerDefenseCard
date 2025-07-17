@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shaker : MonoBehaviour
+public class Shaker : Effect
 {
     [SerializeField, Range(0f, 2f)] private float shakeDuration = 0.3f;
     [SerializeField, Range(0f, 2f)] private float shakeMagnitude = 0.1f;
@@ -9,6 +9,8 @@ public class Shaker : MonoBehaviour
 
     private Vector3 originalPosition;
     private Coroutine coroutine;
+
+    public override void DoEffect() => Shake();
 
     public void Shake()
     {

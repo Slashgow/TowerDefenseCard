@@ -51,11 +51,12 @@ MonoBehaviour:
   - {fileID: 4614458728739418380}
   - {fileID: 2938762960252873703}
   - {fileID: 2578933004074343347}
-  reseller: {fileID: 0}
-  onPurchaseBoosterClip: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
-  onOpenBoosterClip: {fileID: 8300000, guid: 60627aa75ef1fba4b80709fbf3e76fe8, type: 3}
+  onPurchaseBoosterClip: {fileID: 8300000, guid: e407fd9fb866cd8468606df93e4b12c8, type: 3}
+  onOpenBoosterClip: {fileID: 8300000, guid: ef6755fab2349af408fb9f90b21b1363, type: 3}
   onCraftCompletedClip: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
-  onResellClip: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
+  onResellClip: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
+  onHarvestCurrency: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
+  onOpenCardIdea: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
 --- !u!1 &1457461405237576364
 GameObject:
   m_ObjectHideFlags: 0
