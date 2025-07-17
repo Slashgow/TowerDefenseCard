@@ -5,13 +5,13 @@ public class Card : MonoBehaviour
     [SerializeField] protected CardData cardData;
     public CardData CardData => cardData;
 
-    [SerializeField] private SpriteRenderer backgroundSprite;
+    [SerializeField] protected SpriteRenderer backgroundSprite;
     public SpriteRenderer BackgroundSprite => backgroundSprite;
 
     [SerializeField] protected SpriteRenderer cardSprite;
     public SpriteRenderer CardSprite => cardSprite;
 
-    [SerializeField] private CardUI cardUI;
+    [SerializeField] protected CardUI cardUI;
 
     public int StackCount { get; set; }
 

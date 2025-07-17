@@ -661,6 +661,138 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: white_bg
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 417
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e516da6f19e096847a53563b0bd289cf
+      internalID: 548319596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barn
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 196
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3628ac6eed7b1f041beb7a331f914950
+      internalID: -2025812267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warehouse
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 168
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cefe2cf9b7ab2c4682f15977476412b
+      internalID: -1808537298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ink_white_outline
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 230
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6d2df040b69244c9e455955c5f6b32
+      internalID: 412834744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resell_bg
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 15
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29a079440b55e9408f4638508e50b90
+      internalID: -1288849386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idea_bg
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 9
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390a7da1bddde9444b95de272368e2e6
+      internalID: 950898650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -683,19 +815,25 @@ TextureImporter:
       Background_card_red_2: -8563320270700976094
       Background_card_rose_2: -8577067152288242988
       Background_card_yellow_2: -5418162045431731510
+      Barn: -2025812267
       Dragon: -7856288522456671818
       Egg: 4628595108189621392
+      Ink_white_outline: 412834744
       Kami_Essence: 5094689742197395843
       Matcha: -808519488074467349
       Noodle: -1935481588230842126
       Ramen: 2838816098415689600
+      Resell_bg: -1288849386
       Rice: -5571880809950956998
       Sake: 2521777638861226029
       Spicy Ramen: -2194696133534502180
       Tomako gohan: -5520326083218523388
+      Warehouse: -1808537298
       Wasabi: -5061711287021314405
       Water: -3380168821889318058
+      idea_bg: 950898650
       leaves: 8155350991616783726
+      white_bg: 548319596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -185,6 +185,9 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 
     private void OnDrawGizmos()
     {
+        if (cardDamageorData == null)
+            return;
+
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, AttackRange);
     }

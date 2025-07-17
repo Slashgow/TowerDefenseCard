@@ -1,17 +1,19 @@
 using UnityEngine.EventSystems;
-
-public class CardIdea : Card, IPointerUpHandler
+using UnityEngine;
+public class CardIdea : Card, IPointerDownHandler
 {
+    [SerializeField] private CardIdeaUI cardIdeaUI;
+
     private Card card;
 
     public void Initialize(Card card)
     {
-        this.card = card;   
+        this.card = card;
+        cardIdeaUI.SetupCard(cardData.CardName, cardData.Cost.ToString(), card.CardData.CardName);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         CardManager.Instance.CheckCardDiscoveryState(card.CardData.CardID);
-        Destroy(this.gameObject);
     }
 }

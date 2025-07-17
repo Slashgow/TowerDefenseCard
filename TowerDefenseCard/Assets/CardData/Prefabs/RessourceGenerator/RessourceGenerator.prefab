@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6208533192665768891}
   - component: {fileID: 352179694236223436}
   - component: {fileID: 5200605140523250547}
+  - component: {fileID: 2002788825753034525}
+  - component: {fileID: -2417104929657008143}
   m_Layer: 6
   m_Name: RessourceGenerator
   m_TagString: Untagged
@@ -211,6 +213,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.33, y: 1.975}
   m_EdgeRadius: 0
+--- !u!114 &2002788825753034525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c1158edbb20384e84daa23acdbdb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 3648890296828235570, guid: 5f110a857a3bf8447a53e336d55504e9, type: 3}
+--- !u!114 &-2417104929657008143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ec8d88dd95d48409d34357ab4b5056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startXRotationn: 180
+  endXRotation: 0
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

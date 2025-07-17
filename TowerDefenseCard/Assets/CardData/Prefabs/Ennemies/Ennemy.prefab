@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3803351378072727935}
   - component: {fileID: 5601609712679972704}
   - component: {fileID: 1416622909516074884}
+  - component: {fileID: 8043164391734740855}
+  - component: {fileID: -1557039402861704716}
   m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
@@ -213,6 +215,43 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.33, y: 1.975}
   m_EdgeRadius: 0
+--- !u!114 &8043164391734740855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
+  backgroundSprite: {fileID: 0}
+  cardSprite: {fileID: 0}
+  cardUI: {fileID: 0}
+  cardDamageorData: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  impactEffectPrefab: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 5
+  maxHealth: 20
+--- !u!114 &-1557039402861704716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f379b407e9ada174f9eed8d82215c054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyPrefab: {fileID: 9193156078307443070, guid: 4c8723cb0e9220849aa942bf0ed2b196, type: 3}
 --- !u!1 &8981867779452182579
 GameObject:
   m_ObjectHideFlags: 0

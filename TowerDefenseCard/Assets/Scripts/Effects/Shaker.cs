@@ -27,7 +27,7 @@ public class Shaker : MonoBehaviour
 
         while (elapsedTime < shakeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             float curveValue = shakeCurve.Evaluate(elapsedTime / shakeDuration);
             float xOffset = Random.Range(-1f, 1f) * shakeMagnitude * curveValue;
             float yOffset = Random.Range(-1f, 1f) * shakeMagnitude * curveValue;

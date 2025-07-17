@@ -13,6 +13,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public event Action<int> OnCraftCancel = delegate { };
     public event Action<int, CardID> OnCraftComplete = delegate { };
+    public event Action OnDestroyCard = delegate { };
+
 
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
@@ -114,6 +116,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>
             if (card is CardRessourceGenerator)
                 continue;
 
+            OnDestroyCard?.Invoke();
             Destroy(card.gameObject);
         }
 

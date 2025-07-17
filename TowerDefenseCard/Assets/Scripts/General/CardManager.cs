@@ -38,21 +38,37 @@ public class CardManager : MonoSingleton<CardManager>
     private void Start()
     {
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
+        CraftingManager.Instance.OnDestroyCard += CraftingManager_OnDestroyCard;
         Reseller.OnResell += Reseller_OnResell;
+        Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
     }
 
     private void OnDisable()
     {
-        if(CraftingManager.HasInstance)
+        if (CraftingManager.HasInstance)
+        {
             CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftComplete;
-
+            CraftingManager.Instance.OnDestroyCard -= CraftingManager_OnDestroyCard;
+        }
         Booster.OnOpenBooster -= Booster_OnOpenBooster;
+        Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
         Reseller.OnResell -= Reseller_OnResell;
+    }
+    private void CraftingManager_OnDestroyCard()
+    {
+        CurrentNumberOfCards--;
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
     private void Reseller_OnResell(int numberOfReselledCard)
     {
         CurrentNumberOfCards -= numberOfReselledCard;
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+    }
+
+    private void Booster_OnOpenCardIdea()
+    {
+        CurrentNumberOfCards++;
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
 

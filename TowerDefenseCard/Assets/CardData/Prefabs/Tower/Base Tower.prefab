@@ -189,6 +189,8 @@ GameObject:
   - component: {fileID: 3580529832804353018}
   - component: {fileID: 6696755751888011344}
   - component: {fileID: 7340126516312790415}
+  - component: {fileID: 7309589524541091505}
+  - component: {fileID: 640806458668931035}
   m_Layer: 6
   m_Name: Base Tower
   m_TagString: Untagged
@@ -490,6 +492,40 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7309589524541091505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c1158edbb20384e84daa23acdbdb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 3648890296828235570, guid: 5f110a857a3bf8447a53e336d55504e9, type: 3}
+--- !u!114 &640806458668931035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ec8d88dd95d48409d34357ab4b5056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startXRotationn: 180
+  endXRotation: 0
 --- !u!1001 &8382269893518395449
 PrefabInstance:
   m_ObjectHideFlags: 0

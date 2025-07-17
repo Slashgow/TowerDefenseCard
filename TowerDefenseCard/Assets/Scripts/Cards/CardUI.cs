@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CardUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI cardTitleText;
-    [SerializeField] private TextMeshProUGUI cardCoinText;
+    [SerializeField] protected TextMeshProUGUI cardTitleText;
+    [SerializeField] protected TextMeshProUGUI cardCoinText;
 
     public void SetupCard(string cardTitle, string cardCoin)
     {
