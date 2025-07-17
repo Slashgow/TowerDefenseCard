@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
-public class MonoDamageor : CardBaseDamageor
+public class MonoDamageor : BaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;
- 
-
 
     protected override void Attack()
     {

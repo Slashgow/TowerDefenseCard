@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391280489787409089, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ef2af50b63ab3d4badee7c1ac4a89a0, type: 2}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
@@ -76,16 +80,6 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 290643684317168460}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
---- !u!212 &6030116188175425656 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5749855212708433179, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-  m_PrefabInstance: {fileID: 2045989256264772963}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6315274651713453452 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5458517459328159983, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-  m_PrefabInstance: {fileID: 2045989256264772963}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
@@ -103,10 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 4ef2af50b63ab3d4badee7c1ac4a89a0, type: 2}
-  backgroundSprite: {fileID: 6030116188175425656}
-  cardSprite: {fileID: 6315274651713453452}
-  cardUI: {fileID: 9188156823818238049}
   cardDamageorData: {fileID: 11400000, guid: f2c33d87c32e8104b8859ffdde70f047, type: 2}
   enemyLayer:
     serializedVersion: 2
@@ -114,14 +104,3 @@ MonoBehaviour:
   impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   projectileSpeed: 5
---- !u!114 &9188156823818238049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7198497748934006018, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-  m_PrefabInstance: {fileID: 2045989256264772963}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f1971b613a13a47a708036e49b1fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

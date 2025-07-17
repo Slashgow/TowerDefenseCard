@@ -1,9 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class EnnemyCardUI : MonoBehaviour
+public class HealthCardUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI cardTitleText;
     [SerializeField] private TextMeshProUGUI cardHealthText;
 
     private IDamageable damageable;
@@ -13,7 +12,7 @@ public class EnnemyCardUI : MonoBehaviour
         card = GetComponentInParent<Card>();
         damageable = card.GetComponent<IDamageable>();
         damageable.OnTakeDamage += Ennemy_OnTakeDamage;
-        SetupCard(card.CardData.CardName, damageable.MaxHealth);
+        SetupCard(damageable.MaxHealth);
     }
 
     private void OnDisable()
@@ -25,9 +24,8 @@ public class EnnemyCardUI : MonoBehaviour
         cardHealthText.text = currentHealth.ToString();
     }
 
-    public void SetupCard(string cardTitle, float currentHealth)
+    public void SetupCard(float currentHealth)
     {
-        cardTitleText.text = cardTitle;
         cardHealthText.text = currentHealth.ToString();
     }
 }

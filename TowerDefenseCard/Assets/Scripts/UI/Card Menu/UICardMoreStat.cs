@@ -36,14 +36,14 @@ public class UICardMoreStat : MonoBehaviour
         uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
 
-        if(card is not CardBaseDamageor)
+        if(!card.GetComponent<BaseDamageor>())
             cardStatsParents.SetActive(false);
 
         else
         {
             cardStatsParents.SetActive(true);
 
-            CardBaseDamageor cardBaseDamageor = card as CardBaseDamageor;
+            BaseDamageor cardBaseDamageor = card.GetComponent<BaseDamageor>();
             damageValue.text = cardBaseDamageor.CardDamageorData.Damage.ToString();
             attackSpeedValue.text = cardBaseDamageor.CardDamageorData.AttackSpeed.ToString();
             attackRangeValue.text = cardBaseDamageor.CardDamageorData.AttackRange.ToString();

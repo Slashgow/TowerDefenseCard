@@ -29,6 +29,10 @@ public class UpgradeData : ScriptableObject
     [SerializeField] private bool dotDurationBonusPercent; // True for percentage, false for flat
     [SerializeField, Range(0f, 100f)] private float dotDurationBonusPercentValue; // Percentage increase for duration
 
+    [SerializeField, Range(0f, 100f)] private float healthBonusFlat;
+    [SerializeField] private bool healthBonusPercent;
+    [SerializeField, Range(0f,100f)] private float healthBonusPercentValue;
+
     public float DamageBonusFlat => damageBonusFlat;
     public bool DamageBonusIsPercent => damageBonusPercent;
     public float DamageBonusPercentValue => damageBonusPercentValue;
@@ -52,6 +56,10 @@ public class UpgradeData : ScriptableObject
     public float DoTDurationBonusFlat => dotDurationBonusFlat;
     public bool DoTDurationBonusIsPercent => dotDurationBonusPercent;
     public float DoTDurationBonusPercentValue => dotDurationBonusPercentValue;
+
+    public float HealthBonusFlat => healthBonusFlat;
+    public bool HealthBonusIsPercent => healthBonusPercent;
+    public float HealthBonusPercentValue => healthBonusPercentValue;
 
 
     public float GetDamageBonus(float baseValue)
@@ -81,5 +89,10 @@ public class UpgradeData : ScriptableObject
     public float GetDoTDurationBonus(float baseValue)
     {
         return DoTDurationBonusIsPercent ? baseValue * (DoTDurationBonusPercentValue / 100f) : DoTDurationBonusFlat;
+    }
+
+    public float GetHealthBonus(float baseValue)
+    {
+        return HealthBonusIsPercent ? baseValue * (HealthBonusPercentValue / 100f) : HealthBonusFlat;
     }
 }

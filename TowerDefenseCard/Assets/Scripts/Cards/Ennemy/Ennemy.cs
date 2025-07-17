@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(IDamageable))]
-public class Ennemy : MonoBehaviour, ICurrencyDropper
+public class Ennemy : Card, ICurrencyDropper
 {
     [SerializeField] private Currency currencyPrefab;
     
@@ -13,7 +13,7 @@ public class Ennemy : MonoBehaviour, ICurrencyDropper
     {
         damageable = GetComponent<IDamageable>();
         damageable.OnDie += Damageable_OnDie;
-        currencyAmountToDrop = GetComponent<Card>().CardData.Cost;
+        currencyAmountToDrop = CardData.Cost;
     }
 
     private void OnDestroy() => damageable.OnDie -= Damageable_OnDie;

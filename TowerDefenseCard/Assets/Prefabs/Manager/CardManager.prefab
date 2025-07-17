@@ -48,19 +48,19 @@ MonoBehaviour:
   - card: {fileID: 597159905614504105, guid: ffff4daae8667f14f962def17376edc8, type: 3}
     isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}
-    isDiscovered: 1
+    isDiscovered: 0
   - card: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
     isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 4ae74ac77e07a374e9554cf0f4007793, type: 3}
-    isDiscovered: 1
+    isDiscovered: 0
   - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
     isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 8f0a20479d1168b449bdcfc3a65bf27e, type: 3}
-    isDiscovered: 1
+    isDiscovered: 0
   - card: {fileID: 597159905614504105, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
     isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: a175d55a62976314fa50315240f892e8, type: 3}
-    isDiscovered: 1
+    isDiscovered: 0
   - card: {fileID: 5596509187565464847, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
     isDiscovered: 1
   - card: {fileID: 5596509187565464847, guid: 4bd055906a676824ea76e3456e30e177, type: 3}
@@ -69,21 +69,21 @@ MonoBehaviour:
     isDiscovered: 1
   - card: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
     isDiscovered: 1
-  - card: {fileID: 8660076273353320839, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
+  - card: {fileID: 1804478811844947874, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
+  - card: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: a7ab95a979963024084436afee660295, type: 3}
+  - card: {fileID: 1804478811844947874, guid: a7ab95a979963024084436afee660295, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
+  - card: {fileID: 1804478811844947874, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
+  - card: {fileID: 1804478811844947874, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
+  - card: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
+  - card: {fileID: 1804478811844947874, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
     isDiscovered: 1
-  - card: {fileID: 290643684317168460, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
+  - card: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
     isDiscovered: 1
   - card: {fileID: 597159905614504105, guid: 30dea7d650e41da46bc656f902d87d5d, type: 3}
     isDiscovered: 1
@@ -111,4 +111,4 @@ MonoBehaviour:
     isDiscovered: 1
   - card: {fileID: 5356776283567728278, guid: ee71ccdb7c2e967418408cdfdc328ecc, type: 3}
     isDiscovered: 1
-  startMaxCardsAllowed: 30
+  startMaxCardsAllowed: 20

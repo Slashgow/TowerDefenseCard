@@ -2,7 +2,7 @@
 
 public interface IDamageable
 {
-    public int MaxHealth { get; }
+    public float MaxHealth { get; }
     public float CurrentHealth { get; }
     public void TakeDamage(float damage);
     public void Die();

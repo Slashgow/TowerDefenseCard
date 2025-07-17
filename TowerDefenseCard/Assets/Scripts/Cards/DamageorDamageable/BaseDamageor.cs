@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityTimer;
 
-public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
+public abstract class BaseDamageor : BaseUpgradable, IDamageor
 {
     [SerializeField] private CardDamageorData cardDamageorData;
     public CardDamageorData CardDamageorData => cardDamageorData;
@@ -13,7 +12,7 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
 
     protected Timer attackTimer;
 
-    private UpgradeData[] appliedUpgrades = new UpgradeData[0];
+  
     private Dictionary<GameObject, Timer> activeDoTTimers = new Dictionary<GameObject, Timer>(); // Track DoT per enemy
 
     public float AttackRange
@@ -84,9 +83,8 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
         }
     }
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true); // TO DO : Only attack during defense phase
     }
 
@@ -127,60 +125,24 @@ public abstract class CardBaseDamageor : Card, IDamageor, IUpgradable
         }
     }
 
-    private float GetTotalUpgradeMultiplier(float baseValue, System.Func<UpgradeData, float> getMultiplier)
+    public override void ApplyUpgrade(UpgradeData upgrade)
     {
-        return appliedUpgrades.Aggregate(1f, (acc, u) => acc * getMultiplier(u));
+        base.ApplyUpgrade(upgrade);
+
+        if (attackTimer != null)
+            attackTimer.Cancel();
+
+        attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
     }
 
-    private float GetTotalUpgradeFlatBonus(float baseValue, System.Func<UpgradeData, float> getBonus)
+    public override bool RemoveUpgrade(string upgradeName)
     {
-        return appliedUpgrades.Sum(u => getBonus(u));
-    }
+        if (attackTimer != null)
+            attackTimer.Cancel();
 
-    public void ApplyUpgrade(UpgradeData upgrade)
-    {
-        if (CanApplyUpgrade(upgrade))
-        {
-            System.Array.Resize(ref appliedUpgrades, appliedUpgrades.Length + 1);
-            appliedUpgrades[appliedUpgrades.Length - 1] = upgrade;
-            // Update attack timer with new AttackSpeed
-            if (attackTimer != null) 
-                attackTimer.Cancel();
+        attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
 
-            attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
-            Debug.Log($"Applied upgrade {upgrade.UpgradeName} to {gameObject.name}");
-        }
-    }
-
-    public bool CanApplyUpgrade(UpgradeData upgrade)
-    {
-        // Prevent duplicate upgrades (simplistic check; enhance as needed)
-        return !System.Array.Exists(appliedUpgrades, u => u.UpgradeName == upgrade.UpgradeName);
-    }
-
-    public bool RemoveUpgrade(string upgradeName)
-    {
-        int index = System.Array.FindIndex(appliedUpgrades, u => u.UpgradeName == upgradeName);
-        if (index >= 0)
-        {
-            UpgradeData[] newUpgrades = new UpgradeData[appliedUpgrades.Length - 1];
-            System.Array.Copy(appliedUpgrades, 0, newUpgrades, 0, index);
-            System.Array.Copy(appliedUpgrades, index + 1, newUpgrades, index, appliedUpgrades.Length - index - 1);
-            appliedUpgrades = newUpgrades;
-            // Update attack timer with new AttackSpeed
-            if (attackTimer != null) 
-                attackTimer.Cancel();
-
-            attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
-            Debug.Log($"Removed upgrade {upgradeName} from {gameObject.name}");
-            return true;
-        }
-        return false;
-    }
-
-    public UpgradeData[] GetAppliedUpgrades()
-    {
-        return appliedUpgrades;
+        return base.RemoveUpgrade(upgradeName);
     }
 
     private void OnDrawGizmos()

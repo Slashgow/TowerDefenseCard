@@ -37,13 +37,13 @@ public class GameManager : MonoSingleton<GameManager>
         WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
 
-        CardPlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
+        PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
     }
 
     private void OnDestroy()
     {
         SceneLoader.Instance.OnSceneLoaded -= SceneLoader_OnSceneLoaded;
-        CardPlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
+        PlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
     }
 
     private void WaveManager_OnWaveEnd()

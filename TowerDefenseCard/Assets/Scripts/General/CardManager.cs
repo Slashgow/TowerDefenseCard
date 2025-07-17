@@ -40,6 +40,7 @@ public class CardManager : MonoSingleton<CardManager>
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
         CraftingManager.Instance.OnDestroyCard += CraftingManager_OnDestroyCard;
         Reseller.OnResell += Reseller_OnResell;
+        TowerDamageable.OnTowerDie += TowerDamageable_OnTowerDie;
         Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
     }
@@ -54,6 +55,12 @@ public class CardManager : MonoSingleton<CardManager>
         Booster.OnOpenBooster -= Booster_OnOpenBooster;
         Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
         Reseller.OnResell -= Reseller_OnResell;
+        TowerDamageable.OnTowerDie -= TowerDamageable_OnTowerDie;
+    }
+    private void TowerDamageable_OnTowerDie()
+    {
+        CurrentNumberOfCards--;
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
     private void CraftingManager_OnDestroyCard()
     {

@@ -191,6 +191,8 @@ GameObject:
   - component: {fileID: 7340126516312790415}
   - component: {fileID: 7309589524541091505}
   - component: {fileID: 640806458668931035}
+  - component: {fileID: 391280489787409089}
+  - component: {fileID: 1061360421407002469}
   m_Layer: 6
   m_Name: Base Tower
   m_TagString: Untagged
@@ -526,6 +528,35 @@ MonoBehaviour:
     m_RotationOrder: 4
   startXRotationn: 180
   endXRotation: 0
+--- !u!114 &391280489787409089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f88123b47fa284796d68614ab92e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
+  backgroundSprite: {fileID: 5749855212708433179}
+  cardSprite: {fileID: 5458517459328159983}
+  cardUI: {fileID: 7198497748934006018}
+--- !u!114 &1061360421407002469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5571b3f26e1b7848aaa3f8316d92430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1001 &8382269893518395449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -544,7 +575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4952310795043833806, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6017648694841257775, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -621,10 +652,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3628580690939979413}
   m_SourcePrefab: {fileID: 100100000, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
 --- !u!224 &1892792968465658230 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7932883089198233935, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
   m_PrefabInstance: {fileID: 8382269893518395449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2030584818132238152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+  m_PrefabInstance: {fileID: 8382269893518395449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3628580690939979413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030584818132238152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6be285175369cf47946a6f40e0c459c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardHealthText: {fileID: 8514760591168894705}
+--- !u!114 &7198497748934006018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1708550491643092283, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+  m_PrefabInstance: {fileID: 8382269893518395449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030584818132238152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f1971b613a13a47a708036e49b1fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8514760591168894705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178261258640850632, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+  m_PrefabInstance: {fileID: 8382269893518395449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

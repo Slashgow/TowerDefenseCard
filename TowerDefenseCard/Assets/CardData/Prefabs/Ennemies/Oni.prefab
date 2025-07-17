@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1557039402861704716, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 13f2eeb9dc972fb4dab8aeae3fc1ff18, type: 2}
     - target: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: m_Name
       value: Oni
@@ -56,29 +60,20 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 13f2eeb9dc972fb4dab8aeae3fc1ff18, type: 2}
-    m_RemovedComponents:
-    - {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 4146691989593953105}
-    - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 4044123806050831898}
+      insertIndex: -1
+      addedObject: {fileID: 2608532784329646248}
   m_SourcePrefab: {fileID: 100100000, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
---- !u!212 &5451992301913927660 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3248799991256872661, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
-  m_PrefabInstance: {fileID: 7403724813586798905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7042976781341503056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
   m_PrefabInstance: {fileID: 7403724813586798905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4146691989593953105
+--- !u!114 &2608532784329646248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,61 +82,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7042976781341503056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
+  m_Script: {fileID: 11500000, guid: f90a9ae699058da4096ad8873e023762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 13f2eeb9dc972fb4dab8aeae3fc1ff18, type: 2}
-  backgroundSprite: {fileID: 5451992301913927660}
-  cardSprite: {fileID: 8242129425117989215}
-  cardUI: {fileID: 0}
   cardDamageorData: {fileID: 11400000, guid: aed6f8a54888ee245b51a784c74d346a, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
+  impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  projectileSpeed: 5
-  maxHealth: 15
---- !u!114 &4044123806050831898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7042976781341503056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: badfca3c904bd1c479500f7737664e80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeDuration: 0.3
-  shakeMagnitude: 0.1
-  shakeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!212 &8242129425117989215 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1503847643991101542, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
-  m_PrefabInstance: {fileID: 7403724813586798905}
-  m_PrefabAsset: {fileID: 0}
+  projectileSpeed: 10

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AOEDamageor : CardBaseDamageor
+public class AOEDamageor : BaseDamageor
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f, 20f)] private float projectileSpeed = 5f;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 672978147476989485}
   - component: {fileID: 3248799991256872661}
   - component: {fileID: 3803351378072727935}
+  - component: {fileID: 7706688115902069185}
   - component: {fileID: 5601609712679972704}
   - component: {fileID: 1416622909516074884}
   - component: {fileID: 8043164391734740855}
@@ -142,6 +143,44 @@ MonoBehaviour:
   moveDuration: 20
   hopDuration: 0.7
   breakDuration: 0.5
+--- !u!114 &7706688115902069185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: badfca3c904bd1c479500f7737664e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.3
+  shakeMagnitude: 0.1
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!50 &5601609712679972704
 Rigidbody2D:
   serializedVersion: 5
@@ -227,17 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  backgroundSprite: {fileID: 0}
-  cardSprite: {fileID: 0}
-  cardUI: {fileID: 0}
-  cardDamageorData: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  impactEffectPrefab: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  projectileSpeed: 5
   maxHealth: 20
 --- !u!114 &-1557039402861704716
 MonoBehaviour:
@@ -251,6 +279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f379b407e9ada174f9eed8d82215c054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
+  backgroundSprite: {fileID: 3248799991256872661}
+  cardSprite: {fileID: 1503847643991101542}
+  cardUI: {fileID: 8985639304801262440}
   currencyPrefab: {fileID: 9193156078307443070, guid: 4c8723cb0e9220849aa942bf0ed2b196, type: 3}
 --- !u!1 &8981867779452182579
 GameObject:
@@ -427,7 +459,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1906030068988418384}
+    - targetCorrespondingSourceObject: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8985639304801262440}
   m_SourcePrefab: {fileID: 100100000, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+--- !u!114 &2214447746492029725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6740668465635025660, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+  m_PrefabInstance: {fileID: 4841622760457779681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3120218368163384976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
@@ -445,8 +491,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6be285175369cf47946a6f40e0c459c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardTitleText: {fileID: 5089335835936698958}
   cardHealthText: {fileID: 4704477739741628201}
+--- !u!114 &8985639304801262440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120218368163384976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f1971b613a13a47a708036e49b1fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardTitleText: {fileID: 5089335835936698958}
+  cardCoinText: {fileID: 2214447746492029725}
 --- !u!224 &3253750795842420910 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7932883089198233935, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
