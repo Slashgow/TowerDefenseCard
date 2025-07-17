@@ -11,6 +11,7 @@ public class CardPlayerHealth : Card, IDamageable
 
     public event Action<float> OnTakeDamage;
     public event Action OnDie;
+    public static event Action OnPlayerDie;
 
     protected override void OnEnable()
     {
@@ -21,6 +22,7 @@ public class CardPlayerHealth : Card, IDamageable
     public void Die()
     {
         OnDie?.Invoke();
+        OnPlayerDie?.Invoke();
     }
 
     public void TakeDamage(float damage)

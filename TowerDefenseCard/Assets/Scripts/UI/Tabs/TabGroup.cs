@@ -14,7 +14,7 @@ namespace TabUI
 
         protected TabButton selectedTab;
 
-        private void OnEnable()
+        private void Start()
         {
             OnTabSelected(defaultTab);
         }

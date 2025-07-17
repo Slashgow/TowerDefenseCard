@@ -36,6 +36,14 @@ public class GameManager : MonoSingleton<GameManager>
     {
         WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
+
+        CardPlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
+    }
+
+    private void OnDestroy()
+    {
+        SceneLoader.Instance.OnSceneLoaded -= SceneLoader_OnSceneLoaded;
+        CardPlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
     }
 
     private void WaveManager_OnWaveEnd()
@@ -137,5 +145,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         CurrentGameSpeed = 1f;
         Time.timeScale = 1f;
+    }
+    private void CardPlayerHealth_OnPlayerDie()
+    {
+        SceneLoader.Instance.LoadNextScene();
     }
 }
