@@ -43,4 +43,19 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
             Die();
         }
     }
+
+    public override void ApplyUpgrade(UpgradeData upgrade)
+    {
+        float maxHealthBeforeUpgrade = MaxHealth;
+        base.ApplyUpgrade(upgrade);
+        currentHealth = currentHealth + MaxHealth - maxHealthBeforeUpgrade;
+    }
+
+    public override bool RemoveUpgrade(string upgradeName)
+    {
+        float maxHealthWithUpgrade = MaxHealth;
+        bool canRemove = base.RemoveUpgrade(upgradeName);
+        currentHealth = currentHealth - (maxHealthWithUpgrade - MaxHealth);
+        return canRemove;
+    }
 }

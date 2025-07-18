@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class CardUpgrade : Card
 {
@@ -8,35 +9,46 @@ public class CardUpgrade : Card
     {
         base.OnStack(targetCard);
 
-        // Check if the target card implements IDamageor and IUpgradable
-        if (targetCard is IUpgradable)
+        var upgradables = targetCard.GetComponentsInParent<IUpgradable>();
+
+        if (upgradables.Length > 0)
         {
-            IUpgradable upgradable = (IUpgradable)targetCard;
-            if (upgradable.CanApplyUpgrade(upgradeData))
+            foreach ( var upgradable in upgradables)
             {
-                upgradable.ApplyUpgrade(upgradeData);
-                Debug.Log($"Upgrade {upgradeData.UpgradeName} applied to {targetCard.name}");
-            }
-            else
-            {
-                Debug.LogWarning($"Upgrade {upgradeData.UpgradeName} cannot be applied to {targetCard.name} (duplicate or invalid)");
-                // Optionally unstack if duplicate to maintain consistency
-                if (transform.parent == targetCard.transform)
+                //IUpgradable upgradable = (IUpgradable)targetCard;
+                if (upgradable.CanApplyUpgrade(upgradeData))
                 {
-                    transform.SetParent(null, true);
-                    transform.position = Vector3.zero; // Reset position or handle return
+                    upgradable.ApplyUpgrade(upgradeData);
+                    Debug.Log($"Upgrade {upgradeData.UpgradeName} applied to {targetCard.name}");
+                }
+                else
+                {
+                    Debug.LogWarning($"Upgrade {upgradeData.UpgradeName} cannot be applied to {targetCard.name} (duplicate or invalid)");
+                    // Optionally unstack if duplicate to maintain consistency
+                    if (transform.parent == targetCard.transform)
+                    {
+                        transform.SetParent(null, true);
+                        transform.position = Vector3.zero; // Reset position or handle return
+                    }
                 }
             }
         }
         else
         {
-            Debug.LogWarning($"Cannot apply upgrade {upgradeData.UpgradeName} to {targetCard.name}: Target does not support IDamageor or IUpgradable");
+            Debug.LogWarning($"Cannot apply upgrade {upgradeData.UpgradeName} to {targetCard.name}: Target does not support IUpgradable");
             // Unstack if incompatible
             if (transform.parent == targetCard.transform)
             {
                 transform.SetParent(null, true);
                 transform.position = Vector3.zero; // Reset position
             }
+        }
+
+        var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
+        foreach (var childUpgrade in childrenUpgrades)
+        {
+            //Debug.Log($"child upgrade | {childUpgrade}");
+            childUpgrade.OnStack(targetCard);
         }
     }
 
@@ -51,12 +63,22 @@ public class CardUpgrade : Card
     // Handle unstacking when removed
     public override void OnUnstack(Card targetCard)
     {
-        if (targetCard is IUpgradable)
+        var upgradables = targetCard.GetComponentsInParent<IUpgradable>();
+
+        if (upgradables.Length > 0)
         {
-            IUpgradable upgradable = (IUpgradable)targetCard;
-            upgradable.RemoveUpgrade(upgradeData.UpgradeName);
-            Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {targetCard.name}");
+            foreach( var upgradable in upgradables)
+            {
+                upgradable.RemoveUpgrade(upgradeData.UpgradeName);
+                Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {targetCard.name}");
+            }
         }
         base.OnUnstack(targetCard);
+
+        var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
+        foreach (var childUpgrade in childrenUpgrades)
+        {
+            childUpgrade.OnUnstack(targetCard);
+        }
     }
 }
