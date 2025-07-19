@@ -21,7 +21,7 @@ public class UIPageCardsDiscovered : UIPage
         {
             GameObject uiCardMenuGameObject = Instantiate(uiCardMenuPrefab, contentScrollView);
             UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
-            uICardMenu.SetupUICardMenu(card.CardData);
+            uICardMenu.SetupUICardMenu(card.CardData, false);
 
             UICardOutline uICardOutline = uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>();
             uICardOutline.OnSelectCard -= UICardOutline_OnSelectCard;

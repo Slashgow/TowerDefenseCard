@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json.Bson;
 using UnityEngine;
 
 [Serializable]
@@ -11,6 +10,7 @@ public class CardDiscoveryState
     public Card Card => card;
 
     public bool isDiscovered;
+    public bool isClickedAfterNotification;
 }
 
 public class CardManager : MonoSingleton<CardManager>
@@ -127,6 +127,13 @@ public class CardManager : MonoSingleton<CardManager>
         return allCards.First(cardDiscoveryState => cardDiscoveryState.Card.CardData.CardID == cardID).Card;
     }
 
+    public CardDiscoveryState GetCardDiscoveryStateByCardID(CardID cardID) => allCards.First(cardDiscoveryState => cardDiscoveryState.Card.CardData.CardID == cardID);
+
+    public void SetNotificationStatusByCardID(CardID cardID, bool notificationStatus)
+    {
+        GetCardDiscoveryStateByCardID(cardID).isClickedAfterNotification = notificationStatus;
+    }
+
     public void IncreaseMaxCardsAllowed(int additionalCards)
     {
         MaxCardsAllowed += additionalCards;
@@ -139,9 +146,21 @@ public class CardManager : MonoSingleton<CardManager>
     }
 
     [ContextMenu("Set All Cards To Not Discovered")]
-    public void UncheckDiscovered() => allCards.ForEach(cardDiscoveryState => cardDiscoveryState.isDiscovered = false);
+    public void UncheckDiscovered()
+    {
+        allCards.ForEach(cardDiscoveryState => 
+        {
+            cardDiscoveryState.isDiscovered = false;
+            cardDiscoveryState.isClickedAfterNotification = false;
+        });
+    }
 
     [ContextMenu("Set All Cards To Discovered")]
-    public void CheckDiscovered() => allCards.ForEach(cardDiscoveryState => cardDiscoveryState.isDiscovered = true);
-
+    public void CheckDiscovered()
+    {
+        allCards.ForEach(cardDiscoveryState => {
+            cardDiscoveryState.isDiscovered = true;
+            cardDiscoveryState.isClickedAfterNotification = false;
+        });
+    }
 }

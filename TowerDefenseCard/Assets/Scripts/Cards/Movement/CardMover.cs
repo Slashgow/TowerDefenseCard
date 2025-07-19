@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] private bool autoStackOnEnable = true;
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
     [SerializeField, Range(0f, 180f)] private float maxTiltAngle = 20f;
     [SerializeField, Range(0f, 1f)] private float overlapRadius = 0.5f;
@@ -22,6 +23,12 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public event Action OnPointerDownEvent;
     public event Action OnPointerUpEvent;
+
+    private void OnEnable()
+    {
+        if (autoStackOnEnable)
+            TryStackCards();  
+    }
 
     protected override void Start()
     {
@@ -135,7 +142,6 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
-
                 Vector3 newPos = Vector3.zero;
                 newPos.y = -stackingHeight * (otherCard.transform.childCount);
                 transform.localPosition = newPos;

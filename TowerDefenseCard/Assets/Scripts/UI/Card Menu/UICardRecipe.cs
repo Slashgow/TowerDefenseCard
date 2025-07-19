@@ -7,7 +7,11 @@ public class UICardRecipe : UICardMenu
 
     public void SetupUICardRecipe(CardData cardData , int cardAmount)
     {
-        base.SetupUICardMenu(cardData);
+        this.cardData = cardData;
+        cardTitle.text = cardData.CardName;
+        cardCost.text = cardData.Cost.ToString();
+        cardImage.sprite = cardData.CardSprite;
         this.cardAmount.text = cardAmount.ToString();
+        cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
     }
 }

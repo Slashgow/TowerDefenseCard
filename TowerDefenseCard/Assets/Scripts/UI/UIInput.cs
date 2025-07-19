@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,8 @@ public class UIInput : MonoBehaviour
     [SerializeField] private InputActionReference playPauseInputActionReference;
     [SerializeField] private InputActionReference speedUpDownInputActionReference;
 
+    public event Action OnShowPageCollection;
+
     private void Awake()
     {
         toggleCollectionMenuInputActionReference.action.performed += ctx => ShowPage(collectionMenu);
@@ -25,6 +28,9 @@ public class UIInput : MonoBehaviour
 
     public void ShowPage(UIPage page)
     {
+        if (page == collectionMenu)
+            OnShowPageCollection?.Invoke();
+
         bool isPageEnable = page.GetComponent<CanvasGroup>().alpha == 1f;
 
         if (isPageEnable || page == inGameMenu)
@@ -38,16 +44,5 @@ public class UIInput : MonoBehaviour
             uIPageController.ShowPage(page);
             GameManager.Instance.CurrentGameState = GameState.IN_MENU;
         }
-
-        //SetGameState(page == inGameMenu);
-      
-    }
-
-    private void SetGameState(bool enable)
-    {
-        if(enable)
-            GameManager.Instance.CurrentGameState = GameState.IN_MENU;
-        else
-            GameManager.Instance.CurrentGameState = GameState.PLAY;
     }
 }

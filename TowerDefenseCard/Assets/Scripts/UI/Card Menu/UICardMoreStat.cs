@@ -32,7 +32,7 @@ public class UICardMoreStat : MonoBehaviour
         rectTransform.anchoredPosition = Vector2.zero;
 
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
-        uICardMenu.SetupUICardMenu(card.CardData);
+        uICardMenu.SetupUICardMenu(card.CardData, true);
         uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
 

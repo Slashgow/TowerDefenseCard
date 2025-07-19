@@ -30,9 +30,7 @@ public class Reseller : MonoSingleton<Reseller>
 
         for (int i = 0; i < coinAmount; i++)
         {
-            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool();
-            currencyGameObjectInstance.transform.SetParent(null);
-            currencyGameObjectInstance.transform.position = spawnPoint.position; 
+            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
             currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
         }
 

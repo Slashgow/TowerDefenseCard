@@ -14,9 +14,16 @@ public abstract class BaseCardMovement : MonoBehaviour
 
     protected Card card;
 
-    protected virtual void Start()
+    private void Awake()
     {
         card = GetComponent<Card>();
+    }
+
+    protected virtual void Start()
+    {
+        if (card.transform.root.GetComponent<Card>() && card.transform.root.GetComponent<Card>() != card)
+            return;
+
         StartCoroutine(SmoothMoveToClearSpot());
     }
 
