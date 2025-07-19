@@ -2,10 +2,8 @@
 using UnityEngine;
 
 [RequireComponent (typeof(IDamageable))]
-public class DamageableHitEffect : MonoBehaviour
+public class DamageableHitEffect : EffectApplier
 {
-    [SerializeField] private List<Effect> effects;
-
     private IDamageable damageable;
 
     private void Awake() => damageable = GetComponent<IDamageable>();
@@ -13,9 +11,6 @@ public class DamageableHitEffect : MonoBehaviour
     private void OnDisable() => damageable.OnTakeDamage -= Damageable_OnTakeDamage;
     private void Damageable_OnTakeDamage(float currentHealth)
     {
-        foreach (Effect effect in effects)
-        {
-            effect.DoEffect();
-        }
+        DoEffects();
     }
 }

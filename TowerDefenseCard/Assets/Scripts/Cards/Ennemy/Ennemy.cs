@@ -2,9 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(IDamageable))]
 public class Ennemy : Card, ICurrencyDropper
-{
-    [SerializeField] private Currency currencyPrefab;
-    
+{    
     private int currencyAmountToDrop;
     public int CurrencyAmountToDrop => currencyAmountToDrop;
     private IDamageable damageable;
@@ -22,7 +20,13 @@ public class Ennemy : Card, ICurrencyDropper
 
     public void DropCurrency()
     {
-        GameObject currencyGameObjectInstance = Instantiate(currencyPrefab.gameObject, this.transform.position, Quaternion.identity);
-        currencyGameObjectInstance.GetComponent<Currency>().Init(currencyAmountToDrop);
+        for (int i = 0; i < CurrencyAmountToDrop; i++)
+        {
+            GameObject currencyGameObjectInstance = Reseller.Instance.CurrencyPool.GetPrefabFromPool();
+            currencyGameObjectInstance.transform.SetParent(null);
+            currencyGameObjectInstance.transform.position = this.transform.position;
+        }
+        
+        ShopManager.Instance.AddPlayerCoin(CurrencyAmountToDrop);
     }
 }

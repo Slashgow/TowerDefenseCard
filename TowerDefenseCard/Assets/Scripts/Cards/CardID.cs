@@ -40,5 +40,6 @@ public enum CardID
     BOOSTER,
     BARN,
     WAREHOUSE,
-    IDEA
+    IDEA,
+    CURRENCY
 }

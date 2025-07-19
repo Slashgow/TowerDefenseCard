@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 352179694236223436}
   - component: {fileID: 5200605140523250547}
   - component: {fileID: 3292834780892717913}
-  - component: {fileID: 948762789306373271}
   - component: {fileID: -7329629068554335910}
+  - component: {fileID: -1850464236716102835}
   m_Layer: 6
   m_Name: BaseStorage
   m_TagString: Untagged
@@ -212,27 +212,6 @@ MonoBehaviour:
   cardSprite: {fileID: 2477208669114640186}
   cardUI: {fileID: 6868042175936996570}
   numberOfAdditionalCardsAllowed: 10
---- !u!114 &948762789306373271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319473351768311903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ec8d88dd95d48409d34357ab4b5056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0.5
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  startXRotationn: 180
-  endXRotation: 0
 --- !u!114 &-7329629068554335910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +224,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c1158edbb20384e84daa23acdbdb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
   effectPrefab: {fileID: 3648890296828235570, guid: 5f110a857a3bf8447a53e336d55504e9, type: 3}
+--- !u!114 &-1850464236716102835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88c1047f1aa723469c158cee6275c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 1
+  rotationDuration: 0.5
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.002714932
+      value: 0.0018658042
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5129007
+      value: 1
+      inSlope: -0.095589064
+      outSlope: -0.095589064
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.42854145
+    - serializedVersion: 3
+      time: 0.6730491
+      value: 0.7998798
+      inSlope: 0.07593554
+      outSlope: 0.07593554
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.5240186
+    - serializedVersion: 3
+      time: 0.8210175
+      value: 0.99816513
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9157035
+      value: 0.92138046
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationAxis: {x: 1, y: 0, z: 0}
+  startAngle: 180
+  endAngle: 0
+  rotateMode: 0
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public abstract class BaseCardMovement : MonoBehaviour
 
     protected virtual void Start()
     {
+        Debug.Log("move on start");
         card = GetComponent<Card>();
         StartCoroutine(SmoothMoveToClearSpot());
     }
@@ -24,9 +25,10 @@ public abstract class BaseCardMovement : MonoBehaviour
     {
         int iterations = 0;
         Vector3 startPosition = transform.position;
-
+        Debug.Log("move to clear spot");
         while (IsOverlapping() && iterations < maxIterations)
         {
+            Debug.Log("is overlapping");
             Vector2 moveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
             Vector3 targetPosition = transform.position + new Vector3(moveDirection.x * moveStep, moveDirection.y * moveStep, 0f);
 

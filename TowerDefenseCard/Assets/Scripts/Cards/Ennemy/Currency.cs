@@ -1,25 +1,42 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Currency : MonoBehaviour, IPointerDownHandler
+public class Currency : Card, IEndDragHandler
 {
-    [SerializeField] private TextMeshProUGUI amountText;
-    public int Amount {  get; private set; }
+    [SerializeField, Range(0f, 10f)] private float shopDetectionRadius = 1f;
+    [SerializeField] private LayerMask shopLayerMask;
 
-    public static event Action OnHarvestCurrency;
+    private PoolingSystem pool;
 
-    public void Init(int amount)
+    public void Setup(PoolingSystem pool) => this.pool = pool;
+
+    public void OnEndDrag(PointerEventData eventData)
     {
-        Amount = amount;
-        amountText.text = Amount.ToString();
-    }
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, shopDetectionRadius, shopLayerMask);
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        OnHarvestCurrency?.Invoke();
-        ShopManager.Instance.AddPlayerCoin(Amount);
-        Destroy(this.gameObject);
+        if (hit != null)
+        {
+            if(hit.TryGetComponent(out CardShop cardShop))
+            {
+                if (StackCount < cardShop.Shop.ShopCost)
+                    return;
+
+                cardShop.TryPurchaseBooster();
+
+                var currencyChildren = GetComponentsInChildren<Currency>();
+
+                currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
+
+                for (int i = 1; i < cardShop.Shop.ShopCost; i++)
+                {
+                    currencyChildren[i].transform.SetParent(null);
+                    pool.AddToPool(currencyChildren[i].gameObject);
+                }
+                pool.AddToPool(this.gameObject);
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4833971392412208564}
   - component: {fileID: 1253372721874032751}
   - component: {fileID: -2455864072246853442}
+  - component: {fileID: 2860205108729218657}
   m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
@@ -248,7 +249,7 @@ MonoBehaviour:
   backgroundSprite: {fileID: 3248799991256872661}
   cardSprite: {fileID: 1503847643991101542}
   cardUI: {fileID: 8985639304801262440}
-  currencyPrefab: {fileID: 9193156078307443070, guid: 4c8723cb0e9220849aa942bf0ed2b196, type: 3}
+  currencyPrefab: {fileID: 1943351335151867799, guid: 212307dff9b2ebc48a0bdbb2cd118dcb, type: 3}
 --- !u!114 &146080465950913244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c24f4863a0e27408c358e0c48c199d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
   shakeDuration: 0.3
   shakeMagnitude: 0.3
   shakeCurve:
@@ -315,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a42cf16896ee7a43a9c867e97dd8ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
   endColor: {r: 0.5471698, g: 0, b: 0, a: 1}
   timeToReachEndColor: 0.3
   shouldGoBackToOriginColor: 1
@@ -331,7 +334,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
   audioClip: {fileID: 8300000, guid: c2f5617d140056c44bf7d0cf90309cc7, type: 3}
+--- !u!114 &2860205108729218657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88c1047f1aa723469c158cee6275c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 1
+  rotationDuration: 0.5
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.002714932
+      value: 0.0018658042
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5129007
+      value: 1
+      inSlope: -0.095589064
+      outSlope: -0.095589064
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.42854145
+    - serializedVersion: 3
+      time: 0.6730491
+      value: 0.7998798
+      inSlope: 0.07593554
+      outSlope: 0.07593554
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.5240186
+    - serializedVersion: 3
+      time: 0.8210175
+      value: 0.99816513
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9157035
+      value: 0.92138046
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationAxis: {x: 1, y: 0, z: 0}
+  startAngle: 180
+  endAngle: 0
+  rotateMode: 0
 --- !u!1 &8981867779452182579
 GameObject:
   m_ObjectHideFlags: 0

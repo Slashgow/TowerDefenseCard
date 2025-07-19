@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json.Bson;
 using UnityEngine;
 
 [Serializable]
@@ -137,5 +138,10 @@ public class CardManager : MonoSingleton<CardManager>
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
 
+    [ContextMenu("Set All Cards To Not Discovered")]
+    public void UncheckDiscovered() => allCards.ForEach(cardDiscoveryState => cardDiscoveryState.isDiscovered = false);
+
+    [ContextMenu("Set All Cards To Discovered")]
+    public void CheckDiscovered() => allCards.ForEach(cardDiscoveryState => cardDiscoveryState.isDiscovered = true);
 
 }

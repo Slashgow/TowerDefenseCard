@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop de base
       objectReference: {fileID: 0}
+    - target: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: cardData
       value: 

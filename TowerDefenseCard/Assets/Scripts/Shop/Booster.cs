@@ -10,16 +10,15 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public int MaxCardCount => maxCardCount;
 
     private int remainingCards;
+    public int RemainingCards => remainingCards;
     private Shop shop;
     public static event Action<CardID> OnOpenBooster;
     public UnityEvent OnOpenBoosterUnity;
     public static event Action OnOpenCardIdea;
 
-    public void Initialize(Shop shop)
-    {
-        this.shop = shop;
-        remainingCards = maxCardCount;
-    }
+    private void Awake() => remainingCards = maxCardCount;
+
+    public void Initialize(Shop shop) => this.shop = shop;
 
     public void OnPointerUp(PointerEventData eventData)
     {

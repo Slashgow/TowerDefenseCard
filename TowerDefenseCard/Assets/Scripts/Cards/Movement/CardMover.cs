@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -38,15 +39,20 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         if (!card.CardData.IsStackable && card.StackCount > 1) 
             return; // Prevent dragging stacks unless allowed
 
-        if(card.transform.parent != null && card.transform.parent.GetComponent<Card>())
+        if (card.transform.parent != null && card.transform.parent.GetComponent<Card>())
         {
+            var cardParents = card.transform.parent.GetComponentsInParent<Card>();
+            foreach (var cardParent in cardParents)
+            {
+                cardParent.StackCount -= card.StackCount;
+            }
+
             CraftingManager.Instance.TryCancelCraft(this.card);
             if(card.transform.root.TryGetComponent(out  Card cardRoot))
             {
                 card.OnUnstack(cardRoot);
             }
-        }
-            
+        }     
 
         startPosition = transform.position;
         transform.SetParent(null, true);
@@ -121,6 +127,11 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             {
                 card.OnStackInitiate(otherCard);
 
+                var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
+                foreach (var cardParent in cardParents)
+                {
+                    cardParent.StackCount += card.StackCount;
+                }
                 otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);

@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reseller : MonoBehaviour
+public class Reseller : MonoSingleton<Reseller>
 {
-    public static event Action<int> OnResell;
+    [SerializeField] private PoolingSystem currencyPool;
+    [SerializeField] private Transform spawnPoint;
 
+    public PoolingSystem CurrencyPool => currencyPool;
+    public static event Action<int> OnResell;
     public void Resell(List<Card> cards)
     {
         int coinAmount = 0;
+
+        if(cards.Exists(card => card is Currency))
+            return;
+
         foreach (Card card in cards)
         {
             Debug.Log(card);
@@ -21,6 +28,15 @@ public class Reseller : MonoBehaviour
                 CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
             }
         }
+
+        for (int i = 0; i < coinAmount; i++)
+        {
+            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool();
+            currencyGameObjectInstance.transform.SetParent(null);
+            currencyGameObjectInstance.transform.position = spawnPoint.position; 
+            currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
+        }
+
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 
         OnResell?.Invoke(cards.Count);
