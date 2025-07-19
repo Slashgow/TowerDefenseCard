@@ -42,7 +42,7 @@ public class UITime : MonoBehaviour
         speedDownButton.gameObject.SetActive(true);
     }
 
-    private void OnResume()
+    public void OnResume()
     {
         GameManager.Instance.Resume();
         pauseButton.gameObject.SetActive(true);
@@ -52,7 +52,7 @@ public class UITime : MonoBehaviour
         speedDownButton.interactable = true;
     }
 
-    private void OnPause()
+    public void OnPause()
     {
         GameManager.Instance.Pause();
         pauseButton.gameObject.SetActive(false);

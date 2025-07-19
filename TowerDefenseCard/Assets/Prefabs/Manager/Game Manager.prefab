@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3469557823652057111}
   - component: {fileID: 5622248275898673640}
+  - component: {fileID: 3165428572120869791}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -44,4 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb0bfef76aea044899fc8cc98747aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeCraftMode: 5
+  logger: {fileID: 3165428572120869791}
+  delayBeforeCraftTimerStart: 0
+  speedUpGameSpeed: 1
+  OnPauseUnity:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResumeUnity:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3165428572120869791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939210039360983132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 0
+  prefix: GameManager
+  prefixColor: {r: 0, g: 0.80185604, b: 1, a: 1}

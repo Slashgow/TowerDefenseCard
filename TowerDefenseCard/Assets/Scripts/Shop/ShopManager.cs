@@ -4,6 +4,7 @@ using System;
 
 public class ShopManager : MonoSingleton<ShopManager>
 {
+    [SerializeField] private Logger logger;
     [SerializeField] private List<CardShop> cardShops;
     [SerializeField, Range(0, 100)] private int startPlayerCoin = 10;
 
@@ -26,7 +27,7 @@ public class ShopManager : MonoSingleton<ShopManager>
     {
         if (CurrentPlayerCoin < selectedShop.ShopCost)
         {
-            Debug.Log("Not enough YenCoins!");
+            logger.Log("Not enough YenCoins!",this);
             return;
         }
 
@@ -39,9 +40,9 @@ public class ShopManager : MonoSingleton<ShopManager>
         if (boosterComponent != null)
             boosterComponent.Initialize(selectedShop); 
         else
-            Debug.LogError("BoosterPrefab missing Booster component!");
-        
-        Debug.Log("Booster purchased successfully!");
+            logger.LogError("BoosterPrefab missing Booster component!", this);
+
+        logger.Log("Booster purchased successfully!", this);
     }
 
     public void AddPlayerCoin(int coinAmount)

@@ -20,11 +20,12 @@ public class Card : MonoBehaviour
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
         cardUI.SetupCard(cardData.CardName, cardData.Cost.ToString());
+        StackCount = 1;
     }
 
     protected virtual void Start()
     {
-        StackCount = 1; 
+      
     }
 
     public virtual void OnStack(Card targetCard) { /* Default implementation */ }

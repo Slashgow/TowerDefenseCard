@@ -40,7 +40,6 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             if(remainingCards == maxCardCount)
             {
                 ShopCardIdea selectedShopCardIdea = SelectShopCardIdea();
-                Debug.Log($"Shop card idea : {selectedShopCardIdea}");
                 if (selectedShopCardIdea != null)
                     SpawnCardIdea(selectedShopCardIdea);
                 else
@@ -54,7 +53,6 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             if (remainingCards <= 0)
             {
                 Destroy(gameObject);
-                Debug.Log("Booster exhausted and destroyed!");
             }
         }
     }
@@ -65,7 +63,6 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
         Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
         remainingCards--;
-        Debug.Log($"{selectedItem.CardPrefab.GetComponent<Card>().CardData.CardName} spawned from booster! {remainingCards} cards left.");
         OnOpenBooster?.Invoke(selectedItem.CardPrefab.GetComponent<Card>().CardData.CardID);
     }
 

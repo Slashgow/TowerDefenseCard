@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [SerializeField] private Logger logger;
+
     [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
 
     [SerializeField, Range(1f, 5f)] private float speedUpGameSpeed;
@@ -26,10 +28,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     protected override void Awake()
     {
-        Debug.Log("Game manager awake");
         base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
         CurrentGameState = GameState.PLAY;
+        CurrentGameMode = GameMode.CRAFTING;
     }
 
     private void Start()
@@ -53,7 +55,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void SceneLoader_OnSceneLoaded(int buildIndex)
     {
-        Debug.Log("On Scene loaded");
+        logger.Log("On Scene loaded", this);
         StartCoroutine(StartCraftingModeAfterDelay());
     }
 
@@ -66,13 +68,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void SwitchGameMode()
     {
-        Debug.Log("timer completed");
-
         if (CurrentGameMode == GameMode.CRAFTING)
         {
             OnEndCraftMode?.Invoke();
-            CurrentGameMode = GameMode.COMBAT;
-            OnStartCombatMode?.Invoke();
+
+            if (!WaveManager.Instance.IsAllWavesCompleted)
+            {
+                CurrentGameMode = GameMode.COMBAT;
+                OnStartCombatMode?.Invoke();
+            }
         }
         else if (CurrentGameMode == GameMode.COMBAT)
         { 
@@ -93,7 +97,6 @@ public class GameManager : MonoSingleton<GameManager>
         pauseSimulationCoroutine = StartCoroutine(TemporarlyAdjustTimeScale(2));
         OnPause?.Invoke();
         OnPauseUnity?.Invoke();
-        Debug.Log("Game Paused");
     }
     private IEnumerator TemporarlyAdjustTimeScale(int frameToSimulate)
     {
@@ -132,7 +135,6 @@ public class GameManager : MonoSingleton<GameManager>
         CurrentGameSpeed = Time.timeScale;
         OnResume?.Invoke();
         OnResumeUnity?.Invoke();
-        Debug.Log("Game Resumed");
     }
 
     public void SpeedUpGame()

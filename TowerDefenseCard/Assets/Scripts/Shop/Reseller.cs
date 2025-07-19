@@ -18,7 +18,6 @@ public class Reseller : MonoSingleton<Reseller>
 
         foreach (Card card in cards)
         {
-            Debug.Log(card);
             coinAmount += card.CardData.Cost;
             CraftingManager.Instance.TryCancelCraft(card);
 

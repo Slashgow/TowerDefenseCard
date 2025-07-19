@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617382943703516768}
   - component: {fileID: 3300341055215656482}
+  - component: {fileID: 4014195417803570386}
   m_Layer: 0
   m_Name: Shop Manager
   m_TagString: Untagged
@@ -76,8 +77,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7459f3fc79cc23b48a86c75646b89654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logger: {fileID: 4014195417803570386}
   cardShops:
   - {fileID: 0}
   - {fileID: 0}
   startPlayerCoin: 30
   currentPlayerCoin: 0
+--- !u!114 &4014195417803570386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067191662091433155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Shop Manager
+  prefixColor: {r: 1, g: 0.8926479, b: 0, a: 1}

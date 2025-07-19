@@ -13,7 +13,6 @@ public class UIPageCardsDiscovered : UIPage
     public override void Show()
     {
         base.Show();
-        Debug.Log("Show Page cards discovered");
         CardUtility.DestroyAllChildren(contentScrollView);
 
         List<Card> cardDiscovered = CardManager.Instance.GetAllCardsDiscovered();

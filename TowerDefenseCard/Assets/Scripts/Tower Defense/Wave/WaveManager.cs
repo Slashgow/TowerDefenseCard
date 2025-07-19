@@ -13,7 +13,11 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private int indexSortingOrder = 0;
 
+    public event Action<int> OnWaveStart;
     public event Action OnWaveEnd;
+
+    public int NumberOfWaves => waveDataArray.Length;
+    public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataArray.Length);
 
     private void OnEnable()
     {
@@ -78,6 +82,7 @@ public class WaveManager : MonoSingleton<WaveManager>
         if (!isWaveActive && currentWaveIndex < waveDataArray.Length)
         {
             StopAllCoroutines();
+            OnWaveStart?.Invoke(currentWaveIndex + 1);
             StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
         }
     }

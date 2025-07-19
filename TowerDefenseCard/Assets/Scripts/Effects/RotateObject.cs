@@ -21,9 +21,9 @@ public class RotateObject : Effect
         transform.localEulerAngles = currentRotation + startOffset;
 
         transform.DOLocalRotate(currentRotation + endOffset, rotationDuration, rotateMode)
-            .SetEase(rotationCurve) 
-            .SetRelative(false) 
-            .OnComplete(() => Debug.Log($"Rotation from {startAngle}° to {endAngle}° on axis {normalizedAxis} with mode {rotateMode} completed!"));
+            .SetEase(rotationCurve)
+            .SetRelative(false)
+            .SetUpdate(true);
     }
 
     public override void DoEffect() => Rotate();

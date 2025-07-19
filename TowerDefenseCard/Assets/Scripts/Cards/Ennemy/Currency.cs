@@ -28,7 +28,8 @@ public class Currency : Card, IEndDragHandler
 
                 var currencyChildren = GetComponentsInChildren<Currency>();
 
-                currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
+                if(StackCount > cardShop.Shop.ShopCost)
+                    currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
 
                 for (int i = 1; i < cardShop.Shop.ShopCost; i++)
                 {
