@@ -94,13 +94,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8864906581117935152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f90a9ae699058da4096ad8873e023762, type: 3}
+  m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardDamageorData: {fileID: 11400000, guid: 8851e683406e57d4ebe301b5abfb9058, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
+  impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
+  isMonoTarget: 1
+  useProjectile: 1
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  projectileSpeed: 5
+  numberOfProjectilePerAttack: 1
+  projectileSpeed: 10

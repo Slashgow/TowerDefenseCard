@@ -367,7 +367,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -389,7 +389,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -411,7 +411,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -433,7 +433,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -455,7 +455,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -477,7 +477,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -499,7 +499,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,7 +521,7 @@ TextureImporter:
         width: 349
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -530,6 +530,116 @@ TextureImporter:
       bones: []
       spriteID: 2b08cd89823db90499c65d89a7312097
       internalID: 2059365949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_verte_2
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1860
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570b6f67f496980429ba2e0e905de33d
+      internalID: -867035347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_verte_3
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 1864
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5181398ebad5c43ab3379a0fd9c8b8
+      internalID: 179463674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_verte_4
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1865
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34bc54b90f8b5e14aae783694c17962d
+      internalID: -651686583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_verte_5
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1881
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628e5d34d9bd4864cbcd0dc5bc2a716e
+      internalID: -2008516188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_verte_1
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1810
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67583ceee2a5a3749a15b44f627c8f8d
+      internalID: -506876605
       vertices: []
       indices: 
       edges: []
@@ -552,6 +662,7 @@ TextureImporter:
       Effects_1: -3792339887870337536
       Effects_10: 4658627485858765526
       Effects_11: -7125811559464083784
+      Effects_12: 1023017478
       Effects_13: 8004989225374737428
       Effects_14: -5690077226991261269
       Effects_17: -1623089995
@@ -570,8 +681,12 @@ TextureImporter:
       Effects_5: -611186965
       Effects_6: -7466522973678874103
       Effects_7: 6815229166277592208
-      Effects_8: 490391568
       Effects_9: 4090799819692156374
+      boule_verte_1: -506876605
+      boule_verte_2: -867035347
+      boule_verte_3: 179463674
+      boule_verte_4: 490391568
+      boule_verte_5: -2008516188
       smoke_appear_1: 474906326
       smoke_appear_2: -1976432431
       smoke_appear_3: -6026981111418200015

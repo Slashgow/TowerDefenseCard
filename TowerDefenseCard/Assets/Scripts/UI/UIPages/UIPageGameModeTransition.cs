@@ -27,13 +27,8 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField, Range(0f, 1f)] private float endAlpha;
 
     [Header("Tween Text Size")]
-    [SerializeField, Range(0f, 3f)] public float textSizeDuration = 0.5f;
-    [SerializeField] private AnimationCurve textSizeEase;
-    [SerializeField, Range(0f, 200f)] private float startTextSize;
-    [SerializeField, Range(0f, 200f)] private float endTextSize;
+    [SerializeField] TextSizeEffect textSizeEffect;
 
-    private float timeElapsed;
-    private Coroutine textSizeCoroutine;
 
     private IEnumerator Start()
     {
@@ -66,12 +61,13 @@ public class UIPageGameModeTransition : UIPage
         uITime.OnPause();
         uIPageController.ShowPage(this);
         FadeBackgroundAlpha(startAlpha, endAlpha);
-        LerpTextSize(isStartCraftMode, startTextSize, endTextSize);
+        SetTransitionText(isStartCraftMode);
+        textSizeEffect.DoEffect();
     }
 
     private void DoFadeOutEffect(bool isStartCraftMode)
     {
-        Timer.Register(textSizeDuration, onComplete: () =>
+        Timer.Register(textSizeEffect.TextSizeDuration, onComplete: () =>
         {
             uITime.OnResume();
             Hide();
@@ -79,7 +75,8 @@ public class UIPageGameModeTransition : UIPage
         }, useRealTime: true);
 
         FadeBackgroundAlpha(endAlpha, startAlpha);
-        LerpTextSize(isStartCraftMode, endTextSize, startTextSize);
+        SetTransitionText(isStartCraftMode);
+        textSizeEffect.ReverseEffect();
     }
 
     private void FadeBackgroundAlpha(float startAlpha, float endAlpha)
@@ -93,31 +90,13 @@ public class UIPageGameModeTransition : UIPage
             SetUpdate(true);
     }
 
-    private void LerpTextSize(bool isStartCraftMode, float startTextSize, float endTextSize)
+
+    private void SetTransitionText(bool isStartCraftMode)
     {
         if (isStartCraftMode)
             transitionText.text = startCraftPhaseLocalizedString.GetLocalizedString();
         else
             transitionText.text = startCombatPhaseLocalizedString.GetLocalizedString();
-
-        transitionText.fontSize = startTextSize;
-        if(textSizeCoroutine != null)
-        {
-            StopCoroutine(textSizeCoroutine);
-            textSizeCoroutine = null;
-        }
-        textSizeCoroutine = StartCoroutine(LerpTextSizeCoroutine(startTextSize, endTextSize));
     }
 
-    private IEnumerator LerpTextSizeCoroutine(float startTextSize, float endTextSize)
-    {
-        timeElapsed = 0f;
-         while (timeElapsed <= textSizeDuration)
-         {
-            timeElapsed += Time.unscaledDeltaTime;
-            timeElapsed = Mathf.Clamp(timeElapsed, 0, textSizeDuration);
-            transitionText.fontSize = Mathf.Lerp(startTextSize, endTextSize, textSizeEase.Evaluate(timeElapsed / textSizeDuration));
-            yield return null;
-         }
-    }
 }

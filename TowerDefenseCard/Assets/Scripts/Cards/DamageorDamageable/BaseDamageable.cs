@@ -18,7 +18,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
 
     private float currentHealth;
     public float CurrentHealth => currentHealth;
-   
+    public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
     public event Action<float> OnTakeDamage;
     public event Action OnDie;
 
@@ -37,7 +37,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
         OnTakeDamage?.Invoke(currentHealth);
-
+        OnAnyDamageableTakeDamage?.Invoke(damage, this.transform.position);
         if (currentHealth <= 0)
         {
             Die();

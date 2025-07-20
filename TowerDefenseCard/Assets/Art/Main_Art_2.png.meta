@@ -793,6 +793,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bg_Booster
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 14
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ed1529eb5d6e740b375877f6f53d27
+      internalID: -124111500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -831,6 +853,7 @@ TextureImporter:
       Warehouse: -1808537298
       Wasabi: -5061711287021314405
       Water: -3380168821889318058
+      bg_Booster: -124111500
       idea_bg: 950898650
       leaves: 8155350991616783726
       white_bg: 548319596

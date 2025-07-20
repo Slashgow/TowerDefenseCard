@@ -102,7 +102,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319473351768311903}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aacb8bc7b3f0da408d6afb51ad98fdf, type: 3}
   m_Name: 
@@ -114,6 +114,7 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 1
   startMoveDuration: 0.5
+  autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
   overlapRadius: 0.5

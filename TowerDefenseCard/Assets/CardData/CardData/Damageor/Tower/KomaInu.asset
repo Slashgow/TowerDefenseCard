@@ -15,7 +15,7 @@ MonoBehaviour:
   damage: 10
   attackRange: 5
   attackSpeed: 0.3
-  attackArea: 0
+  attackArea: 3
   damageType: 0
   dot: 0
   dotDuration: 0

@@ -27,6 +27,16 @@ public class PoolingSystem : MonoBehaviour
         instance.SetActive(true);
         return instance;
     }
+    public GameObject GetPrefabFromPool(Transform parent)
+    {
+        if (availablePrefab.Count == 0)
+            GrowPool();
+
+        var instance = availablePrefab.Dequeue();
+        instance.transform.SetParent(parent);
+        instance.SetActive(true);
+        return instance;
+    }
 
     public GameObject GetPrefabFromPool(Vector3 position)
     {

@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MonoDamageor : BaseDamageor
 {
+    [Header("Projectile")]
+    [SerializeField] private bool useProjectile = false;
+    [SerializeField, Range(0, 10)] private int numberOfProjectilePerAttack = 1;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0f,20f)] private float projectileSpeed = 5f;
 
@@ -10,12 +14,36 @@ public class MonoDamageor : BaseDamageor
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AttackRange, enemyLayer);
         if (hits.Length > 0)
         {
-            Collider2D target = hits[0]; // Simplest: target the first enemy in range
-            if (target.TryGetComponent<IDamageable>(out var damageable)) // Only targets IDamageable (enemies)
+            if (useProjectile)
+                SetupProjectiles(hits);
+            else
+                AttackImmediately(hits);
+        }
+    }
+
+    private void AttackImmediately(Collider2D[] hits)
+    {
+        Collider2D target = hits[0];
+        if (target.TryGetComponent<IDamageable>(out var damageable))
+        {
+            ApplyDoT(hits[0].gameObject);
+            damageable.TakeDamage(Damage);
+            Instantiate(impactEffectPrefab, target.transform.position, Quaternion.identity);
+        }
+    }
+
+    private void SetupProjectiles(Collider2D[] hits)
+    {
+        for (int i = 0; i < numberOfProjectilePerAttack; i++)
+        {
+            if (i >= hits.Length)
+                return;
+
+            Collider2D target = hits[i];
+            if (target.TryGetComponent<IDamageable>(out var damageable)) 
             {
                 ApplyDoT(hits[0].gameObject);
 
-                //Debug.Log($"hit  {target.name} - damageable");
                 Vector3 direction = (target.transform.position - transform.position).normalized;
 
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 public interface IDamageable
 {
@@ -8,5 +9,6 @@ public interface IDamageable
     public void Die();
 
     public event Action<float> OnTakeDamage;
+    public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
     public event Action OnDie;
 }

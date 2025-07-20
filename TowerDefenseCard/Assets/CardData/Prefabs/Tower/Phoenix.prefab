@@ -101,6 +101,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
-  projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  projectileSpeed: 5
+  impactEffectPrefab: {fileID: 3648890296828235570, guid: f1a0f6c3fc6540a4ba5c8a258d036142, type: 3}
+  isMonoTarget: 1
+  useProjectile: 1
+  projectilePrefab: {fileID: 6281592712183866792, guid: fe70116f619300741b24c358743ef016, type: 3}
+  numberOfProjectilePerAttack: 3
+  projectileSpeed: 15
