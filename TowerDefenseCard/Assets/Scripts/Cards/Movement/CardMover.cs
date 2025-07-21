@@ -114,6 +114,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     private void TryStackCards()
     {
+        //Debug.Log($"try stack card {this.GetInstanceID()} | {this.card.CardData.CardName}");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
 
         foreach (var hit in hits)

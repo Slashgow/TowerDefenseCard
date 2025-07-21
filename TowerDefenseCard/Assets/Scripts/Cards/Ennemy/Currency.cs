@@ -10,6 +10,7 @@ public class Currency : Card, IEndDragHandler
     [SerializeField] private LayerMask shopLayerMask;
 
     private PoolingSystem pool;
+    public PoolingSystem Pool => pool;
 
     public void Setup(PoolingSystem pool) => this.pool = pool;
 
@@ -31,9 +32,9 @@ public class Currency : Card, IEndDragHandler
                 if(StackCount > cardShop.Shop.ShopCost)
                     currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
 
-                for (int i = 1; i < cardShop.Shop.ShopCost; i++)
+                for (int i = 0; i < cardShop.Shop.ShopCost; i++)
                 {
-                    currencyChildren[i].transform.SetParent(null);
+                    //currencyChildren[i].transform.SetParent(null);
                     pool.AddToPool(currencyChildren[i].gameObject);
                 }
                 pool.AddToPool(this.gameObject);

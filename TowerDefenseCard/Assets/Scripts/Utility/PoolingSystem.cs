@@ -65,4 +65,11 @@ public class PoolingSystem : MonoBehaviour
         availablePrefab.Enqueue(instance);
     }
 
+    public void AddToPool(GameObject instance, Transform parent)
+    {
+        instance.SetActive(false);
+        instance.transform.SetParent(transform);
+        availablePrefab.Enqueue(instance);
+    }
+
 }
