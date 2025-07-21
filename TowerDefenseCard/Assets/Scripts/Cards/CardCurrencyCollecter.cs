@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
 {
+    [SerializeField] private Logger logger;
     [SerializeField, Range(0, 100)] private int maxCurrencyAmount = 50;
     [SerializeField, Range(0, 30)] private int spawnAmount = 10;
     [SerializeField] private Vector3 spawnOffset = Vector3.down * 3;
@@ -37,9 +38,10 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
 
     public void DropCurrency()
     {
+        float currentAmountOnDrop = CurrentAmount;
         if(CurrentAmount < spawnAmount)
         {
-            for (int i = 0; i<CurrentAmount; i++)
+            for (int i = 0; i< currentAmountOnDrop; i++)
             {
                 SpawnCurrency();
             }

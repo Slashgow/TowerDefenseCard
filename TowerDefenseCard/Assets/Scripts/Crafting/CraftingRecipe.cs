@@ -9,6 +9,7 @@ public class CraftingRecipe : ScriptableObject
     {
         public CardID cardID;
         public int quantity;
+        public bool isNotDestroyedOnCraft;
     }
 
     [SerializeField] private List<Ingredient> ingredients; 

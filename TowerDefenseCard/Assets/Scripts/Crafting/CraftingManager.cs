@@ -110,17 +110,23 @@ public class CraftingManager : MonoSingleton<CraftingManager>
             return;
         }
 
-        // Destroy input cards
-        foreach (var card in craftInfo.StackCards)
+        for (int i = craftInfo.StackCards.Count - 1; i >= 0; i--)
         {
-            if (card is CardRessourceGenerator)
-                continue;
-
-            OnDestroyCard?.Invoke();
-            Destroy(card.gameObject);
+            bool shouldBeKept = craftInfo.CraftingRecipe.Ingredients.First(ingredient => 
+                                        ingredient.cardID == craftInfo.StackCards[i].CardData.CardID).isNotDestroyedOnCraft;
+            if (!shouldBeKept)
+            {
+                OnDestroyCard?.Invoke();
+                Destroy(craftInfo.StackCards[i].gameObject);
+            }
+            else if(craftInfo.CraftingRecipe.OutputCardID != CardID.BAMBOO &&
+                    craftInfo.CraftingRecipe.OutputCardID != CardID.SAKURA &&
+                    craftInfo.CraftingRecipe.OutputCardID != CardID.JADE &&
+                    craftInfo.CraftingRecipe.OutputCardID != CardID.SPIRIT_ESSENCE)
+            {
+                craftInfo.StackCards[i].transform.SetParent(null);
+            }
         }
-
-       
         // Instantiate output card at the stack's position
         craftedCard = Instantiate(craftInfo.CraftingRecipe.OutputCardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);

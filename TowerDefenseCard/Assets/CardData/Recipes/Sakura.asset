@@ -15,6 +15,10 @@ MonoBehaviour:
   ingredients:
   - cardID: 11
     quantity: 1
+    isNotDestroyedOnCraft: 1
+  - cardID: 42
+    quantity: 1
+    isNotDestroyedOnCraft: 1
   craftingDelay: 10
   outputCardID: 2
   outputCardPrefab: {fileID: 1648138419762282337, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}

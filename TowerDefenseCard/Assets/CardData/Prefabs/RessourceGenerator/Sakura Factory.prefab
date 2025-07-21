@@ -57,6 +57,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 80b7b880a84902c429637cbafecd9983, type: 2}
     - target: {fileID: 7044126976955783116, guid: 8c6f18f48a40d824b81b90ddf42f0af3, type: 3}
+      propertyPath: craftableCardID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126976955783116, guid: 8c6f18f48a40d824b81b90ddf42f0af3, type: 3}
       propertyPath: craftableCardPrefab
       value: 
       objectReference: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}

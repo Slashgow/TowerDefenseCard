@@ -2,22 +2,24 @@
 
 public class CardRessourceGenerator : Card
 {
-    [SerializeField] private Card craftableCardPrefab; // The card to craft (must match a recipe)
+    [SerializeField] private CardID craftableCardID; // The card to craft (must match a recipe)
     [SerializeField] private int craftCount = 1; // Number of cards to craft per cycle
 
     private bool isCrafting = false;
     private int currentCraftID = -1;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        StartCrafting();
+   protected override void OnEnable()
+   {
+       base.OnEnable();
+        //StartCrafting();
+        CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
     }
-
-    private void OnDisable()
-    {
-        StopCrafting();
-    }
+   
+   private void OnDisable()
+   {
+        //StopCrafting();
+        CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
+   }
 
     public void StartCrafting()
     {
@@ -26,7 +28,6 @@ public class CardRessourceGenerator : Card
 
         isCrafting = true;
         InitiateCraft();
-        Debug.Log($"Started continuous crafting of {craftableCardPrefab.name}");
     }
 
     public void StopCrafting()
@@ -45,23 +46,23 @@ public class CardRessourceGenerator : Card
 
     private void InitiateCraft()
     {
-        if (isCrafting && CraftingManager.HasInstance)
+        if (CraftingManager.HasInstance)
         {
             // Ensure the resource card itself can be used as the movedCard for a recipe
             if (CraftingManager.Instance.TryCraft(transform, this))
             {
                 currentCraftID = CraftingManager.Instance.GetCraftIDByCard(this);
 
-                if (currentCraftID != -1)
-                {
-                    CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
-                    Debug.Log($"Initiated craft with ID {currentCraftID}");
-                }
-                else
-                {
-                    Debug.LogWarning("Craft initiation failed, no valid craft ID assigned");
-                    isCrafting = false; // Stop if craft fails
-                }
+                //if (currentCraftID != -1)
+                //{
+                //    CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
+                //    Debug.Log($"Initiated craft with ID {currentCraftID}");
+                //}
+                //else
+                //{
+                //    Debug.LogWarning("Craft initiation failed, no valid craft ID assigned");
+                //    isCrafting = false; // Stop if craft fails
+                //}
             }
             else
             {
@@ -73,9 +74,9 @@ public class CardRessourceGenerator : Card
 
     private void OnCraftComplete(int craftID, CardID outputCardID)
     {
-        if (isCrafting && craftID == currentCraftID)
+        if (craftableCardID == outputCardID)
         {
-            CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
+            Debug.Log("on craft complete reinitate craft");
             currentCraftID = -1;
             InitiateCraft();
         }

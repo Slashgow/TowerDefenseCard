@@ -25,12 +25,15 @@ public class CameraMovement : MonoSingleton<CameraMovement>
     private Vector3 originPosition;
     private bool isRecentering;
 
+    public bool IsDraggindEnable { get; set; }
+
     protected override void Awake()
     {
         base.Awake();
         cam = GetComponent<Camera>();
         inputHandler = GetComponent<CameraInputHandler>();
         originPosition = transform.position;
+        IsDraggindEnable = true;
     }
 
     void Start()
@@ -57,7 +60,9 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         if (isRecentering)
             return;
 
-        HandleDragging();
+        if(IsDraggindEnable)
+            HandleDragging();
+        
         HandleZooming();
         HandleWASDMovement();
         SmoothMovement();

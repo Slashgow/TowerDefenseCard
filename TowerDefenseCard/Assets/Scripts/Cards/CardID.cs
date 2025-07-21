@@ -41,5 +41,6 @@ public enum CardID
     BARN,
     WAREHOUSE,
     IDEA,
-    CURRENCY
+    CURRENCY,
+    WORKER
 }
