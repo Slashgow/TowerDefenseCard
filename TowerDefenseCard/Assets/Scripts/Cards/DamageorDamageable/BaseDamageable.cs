@@ -18,6 +18,10 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
 
     private float currentHealth;
     public float CurrentHealth => currentHealth;
+
+    private bool isDead = false;
+    public bool IsDead => isDead;
+
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
     public event Action<float> OnTakeDamage;
     public event Action OnDie;
@@ -29,6 +33,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
 
     public virtual void Die()
     {
+        isDead = true;
         OnDie?.Invoke();
     }
 

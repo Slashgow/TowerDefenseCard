@@ -12,6 +12,14 @@ public class CraftingRecipe : ScriptableObject
         public bool isNotDestroyedOnCraft;
     }
 
+    [System.Serializable]
+    public struct OutputCard
+    {
+        public CardID cardID;
+        public GameObject cardPrefab;
+        [Range(0f, 100f)] public float dropChance; 
+    }
+
     [SerializeField] private List<Ingredient> ingredients; 
     public List<Ingredient> Ingredients => ingredients;
 

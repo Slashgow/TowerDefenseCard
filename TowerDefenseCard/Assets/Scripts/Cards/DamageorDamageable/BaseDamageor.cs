@@ -106,6 +106,10 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
                 Timer doTTimer = Timer.Register(1f, onComplete: () =>
                                  {
                                      totalTimeElapsed += 1f;
+
+                                     if(damageable.IsDead)
+                                         return;
+
                                      damageable.TakeDamage(DoT);
                                      Instantiate(impactEffectPrefab, enemy.transform.position, Quaternion.identity);
                                  }, 

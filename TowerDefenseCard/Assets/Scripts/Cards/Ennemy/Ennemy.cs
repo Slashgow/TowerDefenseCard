@@ -23,6 +23,7 @@ public class Ennemy : Card, ICurrencyDropper
         for (int i = 0; i < CurrencyAmountToDrop; i++)
         {
             GameObject currencyGameObjectInstance = Reseller.Instance.CurrencyPool.GetPrefabFromPool();
+            currencyGameObjectInstance.GetComponent<Currency>().Setup(Reseller.Instance.CurrencyPool);
             currencyGameObjectInstance.transform.SetParent(null);
             currencyGameObjectInstance.transform.position = this.transform.position;
         }

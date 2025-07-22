@@ -7,6 +7,7 @@ public interface IDamageable
     public float CurrentHealth { get; }
     public void TakeDamage(float damage);
     public void Die();
+    public bool IsDead { get; }
 
     public event Action<float> OnTakeDamage;
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
