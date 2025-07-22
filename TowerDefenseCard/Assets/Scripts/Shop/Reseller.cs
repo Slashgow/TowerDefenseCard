@@ -13,7 +13,7 @@ public class Reseller : MonoSingleton<Reseller>
     {
         int coinAmount = 0;
 
-        if(cards.Exists(card => card is Currency))
+        if(cards.Exists(card => card is Currency || card is CardWorker))
             return;
 
         foreach (Card card in cards)

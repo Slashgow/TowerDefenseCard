@@ -5,23 +5,25 @@ public class CraftCondition : QuestCondition
 {
     [SerializeField] private CardID targetCardId; // Specific card to craft
 
-    private void Start()
+    private void Start() => CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
+    private void OnDestroy()
     {
-        CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
+        if(CraftingManager.HasInstance)
+            CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
     }
 
-    private void OnCraftComplete(int arg1, CardID iD)
+    private void OnCraftComplete(int craftId, CardID outputCardID) => OnActionPerformed(outputCardID);
+
+    public override bool IsCompleted()
     {
-        //OnActionPerformed
+        bool isCompleted = quest.CurrentProgress >= quest.GoalCount;
+        if(isCompleted)
+            CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
+
+        return isCompleted;
     }
 
-    public override bool IsCompleted(Quest quest)
-    {
-        CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
-        return quest.CurrentProgress >= quest.GoalCount;
-    }
-
-    public override void OnActionPerformed(Quest quest, object actionData)
+    public override void OnActionPerformed(object actionData)
     {
         if (actionData is CardID craftedCardId && craftedCardId == targetCardId)
         {

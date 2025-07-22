@@ -22,9 +22,11 @@ public class Quest
     private int currentProgress;
     public int CurrentProgress => currentProgress;
 
-    public bool IsCompleted => condition.IsCompleted(this);
+    public bool IsCompleted => condition.IsCompleted();
 
     public event Action<Quest> OnCompleteQuest;
+
+    public void Setup() => condition.Setup(this);
 
     public void IncrementProgress()
     {

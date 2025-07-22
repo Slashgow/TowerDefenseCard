@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: e940c194ccc12164ca95bcf26a73d464, type: 2}
+    - target: {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90,5 +94,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
+  useProjectile: 0
+  numberOfProjectilePerAttack: 1
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   projectileSpeed: 10

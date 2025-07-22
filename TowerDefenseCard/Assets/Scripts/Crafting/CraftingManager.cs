@@ -103,12 +103,26 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     private void Craft(CraftInfo craftInfo, out GameObject craftedCard)
     {
+        craftedCard = null;
+
         if (CardManager.Instance.IsMaxCardsReached)
         {
             TryCancelCraft(craftInfo.CraftID);
             craftedCard = null;
             return;
         }
+
+        CraftingRecipe.OutputCard? selectedOutput = craftInfo.CraftingRecipe.GetRandomOutputCard();
+
+        if (!selectedOutput.HasValue)
+        {
+            Debug.LogError($"Failed to select output card for recipe {craftInfo.CraftingRecipe.name}");
+            TryCancelCraft(craftInfo.CraftID);
+            return;
+        }
+
+        var outputCard = selectedOutput.Value;
+
 
         for (int i = craftInfo.StackCards.Count - 1; i >= 0; i--)
         {
@@ -119,18 +133,18 @@ public class CraftingManager : MonoSingleton<CraftingManager>
                 OnDestroyCard?.Invoke();
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
-            else if(craftInfo.CraftingRecipe.OutputCardID != CardID.BAMBOO &&
-                    craftInfo.CraftingRecipe.OutputCardID != CardID.SAKURA &&
-                    craftInfo.CraftingRecipe.OutputCardID != CardID.JADE &&
-                    craftInfo.CraftingRecipe.OutputCardID != CardID.SPIRIT_ESSENCE)
+            else if(outputCard.cardID != CardID.BAMBOO &&
+                    outputCard.cardID != CardID.SAKURA &&
+                    outputCard.cardID != CardID.JADE &&
+                    outputCard.cardID != CardID.SPIRIT_ESSENCE)
             {
                 craftInfo.StackCards[i].transform.SetParent(null);
             }
         }
         // Instantiate output card at the stack's position
-        craftedCard = Instantiate(craftInfo.CraftingRecipe.OutputCardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
+        craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);
-        OnCraftComplete?.Invoke(craftInfo.CraftID, craftInfo.CraftingRecipe.OutputCardID);
+        OnCraftComplete?.Invoke(craftInfo.CraftID, outputCard.cardID);
     }
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
@@ -208,7 +222,21 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public CraftingRecipe GetRecipeByOuputCardID(CardID cardID)
     {
-        CraftingRecipe recipe = recipes.FirstOrDefault(recipe => recipe.OutputCardID == cardID);
+        CraftingRecipe recipe = recipes.FirstOrDefault(recipe =>
+             recipe.OutputCards.Any(output => output.cardID == cardID));
         return recipe;
+    }
+
+    public List<(CardID cardID, float chance)> GetPossibleOutputs(CraftingRecipe recipe)
+    {
+        var outputs = new List<(CardID, float)>();
+        if (recipe?.OutputCards != null)
+        {
+            foreach (var output in recipe.OutputCards)
+            {
+                outputs.Add((output.cardID, output.dropChance));
+            }
+        }
+        return outputs;
     }
 }

@@ -33,7 +33,8 @@ public class CardManager : MonoSingleton<CardManager>
     {
         base.Awake();
         MaxCardsAllowed = startMaxCardsAllowed;
-        CurrentNumberOfCards = FindObjectsByType<Card>(FindObjectsSortMode.None).Length;
+        Card[] allStartingCards = FindObjectsByType<Card>(FindObjectsSortMode.None);
+        CurrentNumberOfCards = allStartingCards.Count(card => card is not CardShop);
     }
 
     private void Start()
@@ -44,6 +45,7 @@ public class CardManager : MonoSingleton<CardManager>
         TowerDamageable.OnTowerDie += TowerDamageable_OnTowerDie;
         Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
+        CardExploitation.OnDestroyCardExploitation += CardExploitation_OnDestroyCardExploitation;
     }
 
     private void OnDisable()
@@ -57,7 +59,14 @@ public class CardManager : MonoSingleton<CardManager>
         Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
         Reseller.OnResell -= Reseller_OnResell;
         TowerDamageable.OnTowerDie -= TowerDamageable_OnTowerDie;
+        CardExploitation.OnDestroyCardExploitation -= CardExploitation_OnDestroyCardExploitation;
     }
+    private void CardExploitation_OnDestroyCardExploitation()
+    {
+        CurrentNumberOfCards--;
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+    }
+
     private void TowerDamageable_OnTowerDie()
     {
         CurrentNumberOfCards--;

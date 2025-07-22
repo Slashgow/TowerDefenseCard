@@ -1,5 +1,5 @@
 ﻿public interface IQuestCondition
 {
-    bool IsCompleted(Quest quest);
-    void OnActionPerformed(Quest quest, object actionData);
+    bool IsCompleted();
+    void OnActionPerformed(object actionData);
 }

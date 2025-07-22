@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4159969652909611931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.76, z: 0}
+  m_LocalPosition: {x: -0.92, y: 12.642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ MonoBehaviour:
     m_Knots:
     - Position:
         x: 0
-        y: 7.9400005
+        y: 11.747999
         z: 0
       TangentIn:
         x: 0
@@ -82,26 +82,26 @@ MonoBehaviour:
           z: -0
           w: 0.7071069
     - Position:
-        x: 4.62
-        y: 3.6800003
+        x: 17.69
+        y: 6.3379993
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -2.5074663
+        z: -3.0002673
       TangentOut:
         x: 0
         y: 0
         z: 2.4204144
       Rotation:
         value:
-          x: -0.017640283
-          y: 0.706887
-          z: -0.7068869
-          w: 0.017620603
+          x: 0.004703637
+          y: 0.7070911
+          z: -0.707091
+          w: -0.004723816
     - Position:
-        x: 1.42
-        y: 0.55999947
+        x: 1.75
+        y: 0.658
         z: 0
       TangentIn:
         x: 0
@@ -118,41 +118,41 @@ MonoBehaviour:
           z: 0.7071072
           w: -0
     - Position:
-        x: 4.27
-        y: -3.6100006
+        x: 24.6
+        y: -3.212
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -2.474511
+        z: -10.143344
       TangentOut:
         x: 0
         y: 0
-        z: 2.9873402
+        z: 4.5269356
       Rotation:
         value:
-          x: -0.01476212
-          y: -0.70695263
-          z: 0.70695597
-          w: 0.01460547
+          x: -0.015924003
+          y: 0.70692706
+          z: -0.7069251
+          w: 0.016045641
     - Position:
         x: 1.75
-        y: -8.96
+        y: -9.453
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -0
+        z: -3.8247347
       TangentOut:
         x: 0
         y: 0
-        z: 0
+        z: 2.3866181
       Rotation:
         value:
-          x: -0.70710665
-          y: 0
-          z: -0
-          w: 0.7071069
+          x: -0.23319283
+          y: -0.6675495
+          z: 0.6675502
+          w: 0.23318562
     m_MetaData:
     - Mode: 3
       Tension: 0.5
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 5.98
   m_Capped: 0
-  m_Radius: 0.4
+  m_Radius: 0.09
   m_Range: {x: 0, y: 1}
   m_FlipNormals: 0
   m_Shape:

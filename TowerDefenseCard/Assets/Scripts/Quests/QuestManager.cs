@@ -16,21 +16,9 @@ public class QuestManager : MonoSingleton<QuestManager>
         InitializeQuests();
     }
 
-    private void Start()
-    {
-        // Subscribe to game events
-        //CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
-        //ShopManager.OnPurchaseBooster += OnPurchaseBooster;
-    }
-
+ 
     private void OnDestroy()
     {
-        //if (CraftingManager.HasInstance)
-        //    CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
-        //
-        //if(ShopManager.HasInstance)
-        //    ShopManager.OnPurchaseBooster -= OnPurchaseBooster;
-        //
         foreach (var quest in availableQuests)
         {
             quest.OnCompleteQuest -= OnQuestComplete;
@@ -41,6 +29,7 @@ public class QuestManager : MonoSingleton<QuestManager>
     {
         foreach (var quest in availableQuests)
         {
+            quest.Setup();
             activeQuests[quest.QuestId] = quest;
             quest.ResetProgress();
             quest.OnCompleteQuest += OnQuestComplete;
@@ -56,22 +45,6 @@ public class QuestManager : MonoSingleton<QuestManager>
             logger.Log($"Quest '{quest.Title}' marked as completed and removed from active quests!", this);
         }
     }
-
-    //public void OnCraftComplete(int craftId, CardID outputCardId)
-    //{
-    //    foreach (var quest in activeQuests.Values)
-    //    {
-    //        quest.Condition.OnActionPerformed(quest, outputCardId);
-    //    }
-    //}
-    //
-    //public void OnPurchaseBooster()
-    //{
-    //    foreach (var quest in activeQuests.Values)
-    //    {
-    //        quest.Condition.OnActionPerformed(quest, null);
-    //    }
-    //}
 
     public Quest GetQuest(string questId)
     {

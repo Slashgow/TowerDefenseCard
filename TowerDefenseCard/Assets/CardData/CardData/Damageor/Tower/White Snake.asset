@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b69ae1373e4d14aafafd53fca4bdd0, type: 3}
   m_Name: White Snake
   m_EditorClassIdentifier: 
-  damage: 15
-  attackRange: 8
-  attackSpeed: 0.3
-  attackArea: 3.8
+  damage: 6
+  attackRange: 3
+  attackSpeed: 0.5
+  attackArea: 1.4
   damageType: 0
   dot: 3
   dotDuration: 5

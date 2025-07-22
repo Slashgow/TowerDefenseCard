@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7054737437553243901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_Name
+      value: Shop defense
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d18aa918d146d9498d41f9d8bdc9be9, type: 2}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.booster
+      value: 
+      objectReference: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[0].cardPrefab
+      value: 
+      objectReference: {fileID: 1648138419762282337, guid: a175d55a62976314fa50315240f892e8, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[1].cardPrefab
+      value: 
+      objectReference: {fileID: 6634916277263121288, guid: 466a3a7a2e6ce3c488621a75dc38ca07, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[2].cardPrefab
+      value: 
+      objectReference: {fileID: 1648138419762282337, guid: 19b387a07e75f364fa19081d0fe4340f, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[3].cardPrefab
+      value: 
+      objectReference: {fileID: 1648138419762282337, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[4].cardPrefab
+      value: 
+      objectReference: {fileID: 1648138419762282337, guid: 9a8f5d0e14ca93c43ae650fa6b834d14, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[5].cardPrefab
+      value: 
+      objectReference: {fileID: 1648138419762282337, guid: 721dfd7db680c9944a1c4beddab1c753, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[6].cardPrefab
+      value: 
+      objectReference: {fileID: 6634916277263121288, guid: fd04834d66868454daab3df259235e73, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[7].cardPrefab
+      value: 
+      objectReference: {fileID: 6634916277263121288, guid: cf836f3f3311e5341bd450efc3af4986, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[0].dropPercentage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[1].dropPercentage
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[2].dropPercentage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[3].dropPercentage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[4].dropPercentage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[5].dropPercentage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[6].dropPercentage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopItems.Array.data[7].dropPercentage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[0].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: a7ab95a979963024084436afee660295, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[0].dropPercentage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[1].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[1].dropPercentage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[2].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[2].dropPercentage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[3].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[3].dropPercentage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[4].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[4].dropPercentage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[5].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[5].dropPercentage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[6].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[6].dropPercentage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[7].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[7].dropPercentage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[8].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[8].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[9].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 597159905614504105, guid: a175d55a62976314fa50315240f892e8, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[9].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316222728470766249, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316222728470766249, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753375740935117452, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581586816327266894, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581586816327266894, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}

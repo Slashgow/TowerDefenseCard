@@ -42,5 +42,9 @@ public enum CardID
     WAREHOUSE,
     IDEA,
     CURRENCY,
-    WORKER
+    WORKER,
+    FOREST,
+    RICE_PADDY,
+    FARM,
+    MONTAIN
 }

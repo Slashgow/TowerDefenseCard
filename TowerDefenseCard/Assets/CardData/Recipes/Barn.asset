@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredients:
   - cardID: 4
-    quantity: 3
+    quantity: 1
+    isNotDestroyedOnCraft: 0
   - cardID: 5
-    quantity: 3
+    quantity: 1
+    isNotDestroyedOnCraft: 0
   craftingDelay: 24
-  outputCardID: 38
-  outputCardPrefab: {fileID: 7172993121498254736, guid: bdce7cf592e8e134bb0625c21fd82b3a, type: 3}
+  outputCards:
+  - cardID: 38
+    cardPrefab: {fileID: 7172993121498254736, guid: bdce7cf592e8e134bb0625c21fd82b3a, type: 3}
+    dropChance: 100

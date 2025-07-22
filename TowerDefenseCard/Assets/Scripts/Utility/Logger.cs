@@ -28,4 +28,12 @@ public class Logger : MonoBehaviour
 
         Debug.LogError($"<color={hexColor}>{prefix}</color>: {message}", sender);
     }
+
+    public void LogWarning(object message, Object sender)
+    {
+        if (!showLogs)
+            return;
+
+        Debug.LogWarning($"<color={hexColor}>{prefix}</color>: {message}", sender);
+    }
 }

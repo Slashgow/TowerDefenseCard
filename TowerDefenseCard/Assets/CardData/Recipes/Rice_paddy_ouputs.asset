@@ -10,15 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
-  m_Name: Bamboo
+  m_Name: Rice_paddy_ouputs
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 10
+  - cardID: 44
     quantity: 1
     isNotDestroyedOnCraft: 1
   - cardID: 42
     quantity: 1
     isNotDestroyedOnCraft: 1
-  craftingDelay: 10
-  outputCardID: 0
-  outputCardPrefab: {fileID: 1648138419762282337, guid: ffff4daae8667f14f962def17376edc8, type: 3}
+  craftingDelay: 5
+  outputCards:
+  - cardID: 26
+    cardPrefab: {fileID: 1648138419762282337, guid: 30dea7d650e41da46bc656f902d87d5d, type: 3}
+    dropChance: 33
+  - cardID: 27
+    cardPrefab: {fileID: 1648138419762282337, guid: 31316f98a2186bc42b06a5c0fd7e6b99, type: 3}
+    dropChance: 33
+  - cardID: 36
+    cardPrefab: {fileID: 1648138419762282337, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
+    dropChance: 33

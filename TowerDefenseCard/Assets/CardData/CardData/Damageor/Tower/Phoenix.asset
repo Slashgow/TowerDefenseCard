@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b69ae1373e4d14aafafd53fca4bdd0, type: 3}
   m_Name: Phoenix
   m_EditorClassIdentifier: 
-  damage: 13
-  attackRange: 6
-  attackSpeed: 0.3
-  attackArea: 3.2
+  damage: 8
+  attackRange: 4
+  attackSpeed: 0.4
+  attackArea: 2
   damageType: 0
   dot: 2
   dotDuration: 5

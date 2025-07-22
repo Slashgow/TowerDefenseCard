@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
-  m_Name: Sakura
+  m_Name: Jade_from_factory
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 11
+  - cardID: 17
     quantity: 1
     isNotDestroyedOnCraft: 1
   - cardID: 42
     quantity: 1
     isNotDestroyedOnCraft: 1
   craftingDelay: 10
-  outputCardID: 2
-  outputCardPrefab: {fileID: 1648138419762282337, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
+  outputCards:
+  - cardID: 1
+    cardPrefab: {fileID: 1648138419762282337, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
+    dropChance: 100

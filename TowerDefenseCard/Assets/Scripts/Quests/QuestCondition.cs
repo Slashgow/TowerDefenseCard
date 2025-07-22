@@ -2,6 +2,8 @@
 
 public abstract class QuestCondition : MonoBehaviour, IQuestCondition
 {
-    public abstract bool IsCompleted(Quest quest);
-    public abstract void OnActionPerformed(Quest quest, object actionData);
+    protected Quest quest;
+    public void Setup(Quest quest) => this.quest = quest;
+    public abstract bool IsCompleted();
+    public abstract void OnActionPerformed(object actionData);
 }
