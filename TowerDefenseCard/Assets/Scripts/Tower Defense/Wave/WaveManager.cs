@@ -5,8 +5,7 @@ using System;
 
 public class WaveManager : MonoSingleton<WaveManager>
 {
-    [SerializeField] private WaveData[] waveDataArray; 
-    [SerializeField] private SplineContainer[] paths; 
+    [SerializeField] private WaveDataPaths[] waveDataPaths;
     [SerializeField, Range(0f,10f)] private float initialWaveDelay = 5f; 
     private int currentWaveIndex = 0;
     private bool isWaveActive = false;
@@ -16,8 +15,8 @@ public class WaveManager : MonoSingleton<WaveManager>
     public event Action<int> OnWaveStart;
     public event Action OnWaveEnd;
 
-    public int NumberOfWaves => waveDataArray.Length;
-    public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataArray.Length);
+    public int NumberOfWaves => waveDataPaths.Length;
+    public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataPaths.Length);
 
     private void OnEnable()
     {
@@ -30,22 +29,6 @@ public class WaveManager : MonoSingleton<WaveManager>
         TriggerNextWave();
     }
 
-   //private IEnumerator StartWaveSequence()
-   //{
-   //    indexSortingOrder = 0;
-   //
-   //    yield return new WaitForSeconds(initialWaveDelay);
-   //
-   //    while (currentWaveIndex < waveDataArray.Length)
-   //    {
-   //        yield return StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
-   //        currentWaveIndex++;
-   //        if (currentWaveIndex < waveDataArray.Length)
-   //        {
-   //            yield return new WaitForSeconds(waveDataArray[currentWaveIndex].WaveDelay);
-   //        }
-   //    }
-   //}
 
     private IEnumerator SpawnWave(WaveData waveData)
     {
@@ -54,9 +37,9 @@ public class WaveManager : MonoSingleton<WaveManager>
         {
             for (int i = 0; i < enemy.Count; i++)
             {
-                if (paths.Length > 0)
+                if (waveDataPaths[currentWaveIndex].Paths.Length > 0)
                 {
-                    SplineContainer path = paths[UnityEngine.Random.Range(0, paths.Length)];
+                    SplineContainer path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
                     GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.EvaluatePosition(0, 0), Quaternion.identity);
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
                     newEnemy.GetComponent<EnemyCardMovement>().Init(path);
@@ -79,11 +62,11 @@ public class WaveManager : MonoSingleton<WaveManager>
   
     public void TriggerNextWave()
     {
-        if (!isWaveActive && currentWaveIndex < waveDataArray.Length)
+        if (!isWaveActive && currentWaveIndex < waveDataPaths.Length)
         {
             StopAllCoroutines();
             OnWaveStart?.Invoke(currentWaveIndex + 1);
-            StartCoroutine(SpawnWave(waveDataArray[currentWaveIndex]));
+            StartCoroutine(SpawnWave(waveDataPaths[currentWaveIndex].WaveData));
         }
     }
 }

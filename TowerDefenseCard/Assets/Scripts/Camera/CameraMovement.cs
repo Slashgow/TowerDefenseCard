@@ -9,7 +9,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
     [SerializeField, Range(0f, 50f)] private float keyMoveSpeed = 5f;
     [SerializeField, Range(0f,10f)] private float zoomSpeed = 2f; 
     [SerializeField,Range(0f,10f)] private float minZoom = 2f; 
-    [SerializeField, Range(0f,10f)] private float maxZoom = 10f; 
+    [SerializeField, Range(0f,12f)] private float maxZoom = 10f; 
     [SerializeField,Range(0f,0.5f)] private float smoothTime = 0.1f; 
     [SerializeField] private Vector2 minBounds = new Vector2(-10f, -5f); 
     [SerializeField] private Vector2 maxBounds = new Vector2(10f, 5f);

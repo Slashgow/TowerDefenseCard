@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doEffectOnEnable: 1
   transitionText: {fileID: 7324686975185311839}
-  textSizeDuration: 0.4
+  textSizeDuration: 0.2
   textSizeEase:
     serializedVersion: 2
     m_Curve:

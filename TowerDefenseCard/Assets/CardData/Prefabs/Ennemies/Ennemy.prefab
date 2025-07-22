@@ -119,7 +119,7 @@ MonoBehaviour:
   maxIterations: 10
   startMoveDuration: 0.5
   moveSpeed: 2
-  loop: 1
+  loop: 0
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -249,7 +249,6 @@ MonoBehaviour:
   backgroundSprite: {fileID: 3248799991256872661}
   cardSprite: {fileID: 1503847643991101542}
   cardUI: {fileID: 8985639304801262440}
-  currencyPrefab: {fileID: 1943351335151867799, guid: 212307dff9b2ebc48a0bdbb2cd118dcb, type: 3}
 --- !u!114 &146080465950913244
 MonoBehaviour:
   m_ObjectHideFlags: 0

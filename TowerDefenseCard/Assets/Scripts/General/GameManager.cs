@@ -15,10 +15,18 @@ public class GameManager : MonoSingleton<GameManager>
     public bool IsPaused { get; private set; }
     public float CurrentGameSpeed { get; private set; }
 
+    public UnityEvent OnStartCraftModeUnity;
     public event Action OnStartCraftMode;
+
+    public UnityEvent OnEndCraftModeUnity;
     public event Action OnEndCraftMode;
+
+    public UnityEvent OnStartCombatModeUnity;
     public event Action OnStartCombatMode;
+
+    public UnityEvent OnEndCombatModeUnity;
     public event Action OnEndCombatMode;
+
     public event Action OnPause; 
     public event Action OnResume;
     public UnityEvent OnPauseUnity;
@@ -70,18 +78,22 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (CurrentGameMode == GameMode.CRAFTING)
         {
+            OnEndCraftModeUnity?.Invoke();
             OnEndCraftMode?.Invoke();
 
             if (!WaveManager.Instance.IsAllWavesCompleted)
             {
                 CurrentGameMode = GameMode.COMBAT;
+                OnStartCombatModeUnity?.Invoke();
                 OnStartCombatMode?.Invoke();
             }
         }
         else if (CurrentGameMode == GameMode.COMBAT)
-        { 
+        {
+            OnEndCombatModeUnity?.Invoke();
             OnEndCombatMode?.Invoke();
-            CurrentGameMode = GameMode.CRAFTING; 
+            CurrentGameMode = GameMode.CRAFTING;
+            OnStartCraftModeUnity?.Invoke();
             OnStartCraftMode?.Invoke();
         }
     }
