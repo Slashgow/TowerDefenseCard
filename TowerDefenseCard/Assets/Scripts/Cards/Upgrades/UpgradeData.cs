@@ -33,6 +33,10 @@ public class UpgradeData : ScriptableObject
     [SerializeField] private bool healthBonusPercent;
     [SerializeField, Range(0f,100f)] private float healthBonusPercentValue;
 
+    [SerializeField, Range(0f, 100f)] private float healBonusFlat;
+    [SerializeField] private bool healBonusPercent;
+    [SerializeField, Range(0f, 100f)] private float healBonusPercentValue;
+
     public float DamageBonusFlat => damageBonusFlat;
     public bool DamageBonusIsPercent => damageBonusPercent;
     public float DamageBonusPercentValue => damageBonusPercentValue;
@@ -60,6 +64,10 @@ public class UpgradeData : ScriptableObject
     public float HealthBonusFlat => healthBonusFlat;
     public bool HealthBonusIsPercent => healthBonusPercent;
     public float HealthBonusPercentValue => healthBonusPercentValue;
+
+    public float HealBonusFlat => healBonusFlat;
+    public bool HealBonusIsPercent => healBonusPercent;
+    public float HealBonusPercentValue => healBonusPercentValue;
 
 
     public float GetDamageBonus(float baseValue)
@@ -94,5 +102,9 @@ public class UpgradeData : ScriptableObject
     public float GetHealthBonus(float baseValue)
     {
         return HealthBonusIsPercent ? baseValue * (HealthBonusPercentValue / 100f) : HealthBonusFlat;
+    }
+    public float GetHealBonus(float baseValue)
+    {
+        return HealBonusIsPercent ? baseValue * (HealBonusPercentValue / 100f) : HealBonusFlat;
     }
 }

@@ -8,24 +8,31 @@ public class UISpawner : MonoBehaviour
     public Canvas worldSpaceCanvas;
 
     [Header("Settings")]
-    public Vector3 worldOffset = Vector3.up * 2f;
+    [SerializeField] private Vector3 worldOffset = Vector3.up * 2f;
+    [SerializeField] protected Color damageColor;
+    [SerializeField] protected Color healColor;
 
-    public void SpawnTextAbove(Vector3 targetWorldPosition, string text)
+    public void SpawnTextAbove(Vector3 targetWorldPosition, string text, Color color)
     {
         GameObject instance = uiPrefabPool.GetPrefabFromPool(worldSpaceCanvas.transform);
 
         instance.transform.position = targetWorldPosition + worldOffset;
 
-        instance.GetComponent<TextMeshProUGUI>().text = text;
+        var textmesh = instance.GetComponent<TextMeshProUGUI>();
+        textmesh.text = text;
+        textmesh.color = color;
     }
 
-    public GameObject GetSpawnTextAbove(Vector3 targetWorldPosition, string text)
+    public GameObject GetSpawnTextAbove(Vector3 targetWorldPosition, string text, Color color)
     {
         GameObject instance = uiPrefabPool.GetPrefabFromPool(worldSpaceCanvas.transform);
 
         instance.transform.position = targetWorldPosition + worldOffset;
 
-        instance.GetComponent<TextMeshProUGUI>().text = text;
+        var textmesh = instance.GetComponent<TextMeshProUGUI>();
+        textmesh.text = text;
+        textmesh.color = color;
+
         return instance;
     }
 }

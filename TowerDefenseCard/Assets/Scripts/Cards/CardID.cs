@@ -46,5 +46,6 @@ public enum CardID
     FOREST,
     RICE_PADDY,
     FARM,
-    MONTAIN
+    MONTAIN,
+    OKUNINUSHI
 }

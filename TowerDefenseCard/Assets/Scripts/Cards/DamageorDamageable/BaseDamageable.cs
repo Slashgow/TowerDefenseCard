@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public abstract class BaseDamageable : BaseUpgradable, IDamageable
+public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
 {
     [SerializeField, Range(0, 300)] private float maxHealth = 20;
     public float MaxHealth
@@ -23,8 +23,10 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
     public bool IsDead => isDead;
 
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
+    public static event Action<float, Vector3> OnAnyHealableHealed;
     public event Action<float> OnTakeDamage;
     public event Action OnDie;
+    public event Action<float> OnHeal;
 
     private void OnEnable()
     {
@@ -62,5 +64,13 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable
         bool canRemove = base.RemoveUpgrade(upgradeName);
         currentHealth = currentHealth - (maxHealthWithUpgrade - MaxHealth);
         return canRemove;
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0f, MaxHealth);
+        OnHeal?.Invoke(currentHealth);
+        OnAnyHealableHealed?.Invoke(amount, this.transform.position);
     }
 }

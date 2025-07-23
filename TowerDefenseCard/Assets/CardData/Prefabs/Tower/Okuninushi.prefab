@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2045989256264772963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 391280489787409089, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: c01386e7213250c47a2a524b35ae4343, type: 2}
+    - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2edb5d92d342e2a4c9c167134f590a72, type: 2}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458517459328159983, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458517459328159983, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458517459328159983, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_Name
+      value: Okuninushi
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 1501268333560246768}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4468032278833713684}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2842202987775143125}
+  m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+--- !u!114 &4462761689286350051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2416808471045339520, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+  m_PrefabInstance: {fileID: 2045989256264772963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aacb8bc7b3f0da408d6afb51ad98fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!120 &8771198215926233324 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 7340126516312790415, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+  m_PrefabInstance: {fileID: 2045989256264772963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8864906581117935152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+  m_PrefabInstance: {fileID: 2045989256264772963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1501268333560246768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40acc779d8e164c44974977252978af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 4468032278833713684}
+  cardHealerData: {fileID: 11400000, guid: aea56286fbebdaa459cdcdd2a8f5faef, type: 2}
+  healableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  autoHeal: 1
+--- !u!114 &4468032278833713684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: 'Healer '
+  prefixColor: {r: 0.98381424, g: 1, b: 0.41037738, a: 1}
+--- !u!114 &2842202987775143125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4d286bfe531bb45a418742ae27d18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeIndicator: {fileID: 8771198215926233324}
+  cardMover: {fileID: 4462761689286350051}
+  showDuringMovement: 1

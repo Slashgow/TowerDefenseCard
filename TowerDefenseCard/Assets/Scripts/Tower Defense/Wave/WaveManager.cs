@@ -22,6 +22,8 @@ public class WaveManager : MonoSingleton<WaveManager>
     {
         GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+
+        ShowOnlyFirstPathVisual();
     }
 
     private void GameManager_OnStartCombatMode()
@@ -52,6 +54,8 @@ public class WaveManager : MonoSingleton<WaveManager>
         isWaveActive = false;
         currentWaveIndex++;
         OnWaveEnd?.Invoke();
+        ShowNextWaveVisuals();
+        HidePreviousWaveVisuals();
     }
 
     private bool AreAllEnemiesDefeated()
@@ -67,6 +71,45 @@ public class WaveManager : MonoSingleton<WaveManager>
             StopAllCoroutines();
             OnWaveStart?.Invoke(currentWaveIndex + 1);
             StartCoroutine(SpawnWave(waveDataPaths[currentWaveIndex].WaveData));
+        }
+    }
+
+    private void ShowNextWaveVisuals()
+    {
+        if (currentWaveIndex >= waveDataPaths.Length)
+            return;
+
+        foreach (var path in waveDataPaths[currentWaveIndex].Paths)
+        {
+            path.gameObject.SetActive(true);
+        }
+    }
+
+    private void HidePreviousWaveVisuals()
+    {
+        if (currentWaveIndex == 0)
+            return;
+
+        foreach (var path in waveDataPaths[currentWaveIndex - 1].Paths)
+        {
+            path.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowOnlyFirstPathVisual()
+    {
+        foreach (var path in waveDataPaths[0].Paths)
+        {
+            path.gameObject.SetActive(true);
+        }
+
+        for (int i = 1; i < waveDataPaths.Length; i++)
+        {
+            WaveDataPaths waveDataPath = waveDataPaths[i];
+            foreach (var path in waveDataPath.Paths)
+            {
+                path.gameObject.SetActive(false);
+            }
         }
     }
 }
