@@ -9,6 +9,9 @@ public class CardData : ScriptableObject
     [SerializeField] private string cardName; 
     public string CardName => cardName;
 
+    [SerializeField, TextArea] private string cardDescription;
+    public string CardDescription => cardDescription;
+
     [SerializeField] private Sprite cardSprite;
     public Sprite CardSprite => cardSprite;
 

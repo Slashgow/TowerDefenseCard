@@ -31,12 +31,14 @@ public class UICardMoreStat : MonoBehaviour
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         rectTransform.anchoredPosition = Vector2.zero;
 
+        descriptionValue.text = card.CardData.CardDescription;
+
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
         uICardMenu.SetupUICardMenu(card.CardData, true);
         uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
-
-        if(!card.GetComponent<BaseDamageor>())
+    
+        if (!card.GetComponent<BaseDamageor>())
             cardStatsParents.SetActive(false);
 
         else

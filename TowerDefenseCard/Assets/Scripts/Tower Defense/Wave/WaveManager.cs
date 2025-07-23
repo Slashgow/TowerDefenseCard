@@ -44,7 +44,7 @@ public class WaveManager : MonoSingleton<WaveManager>
                     SplineContainer path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
                     GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.EvaluatePosition(0, 0), Quaternion.identity);
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
-                    newEnemy.GetComponent<EnemyCardMovement>().Init(path);
+                    newEnemy.GetComponent<AutoCardMovement>().Init(path);
                     yield return new WaitForSeconds(enemy.SpawnInterval);
                 }
                 indexSortingOrder += 3;
@@ -60,7 +60,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private bool AreAllEnemiesDefeated()
     {
-        return FindObjectsByType<EnemyCardMovement>(FindObjectsSortMode.None).Length == 0;
+        return FindObjectsByType<HopCardMovement>(FindObjectsSortMode.None).Length == 0;
     }
 
   

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 672978147476989485}
   - component: {fileID: 3248799991256872661}
-  - component: {fileID: 3803351378072727935}
   - component: {fileID: 5601609712679972704}
   - component: {fileID: 1416622909516074884}
   - component: {fileID: 8043164391734740855}
@@ -99,54 +98,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3803351378072727935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505245852151396201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0474f54b13d315a49bef3fedb55e2cb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionLayerMaskCards:
-    serializedVersion: 2
-    m_Bits: 320
-  moveStep: 0.1
-  checkRadius: 0.5
-  maxIterations: 10
-  startMoveDuration: 0.5
-  moveSpeed: 2
-  loop: 0
-  animationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  moveDuration: 20
-  hopDuration: 0.7
-  breakDuration: 0.5
 --- !u!50 &5601609712679972704
 Rigidbody2D:
   serializedVersion: 5
@@ -317,6 +268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doEffectOnEnable: 0
+  useColorTheme: 0
+  colorTheme: 0
+  colorID: 0
   endColor: {r: 0.5471698, g: 0, b: 0, a: 1}
   timeToReachEndColor: 0.3
   shouldGoBackToOriginColor: 1

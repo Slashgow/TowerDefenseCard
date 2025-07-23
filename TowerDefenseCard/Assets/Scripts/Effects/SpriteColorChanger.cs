@@ -1,10 +1,15 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-
 [RequireComponent (typeof(SpriteRenderer))]
-public class SpriteColorChanger : Effect
+public class SpriteColorChanger : Effect, IColorable
 {
+    [Header("Color Theme")]
+    [SerializeField] private bool useColorTheme;
+    [SerializeField] private ColorTheme colorTheme;
+    [SerializeField] private ColorID colorID;
+
+    [Header("Settings")]
     [SerializeField] private Color endColor;
     [SerializeField, Range(0f, 5f)] private float timeToReachEndColor;
     [SerializeField] private bool shouldGoBackToOriginColor;
@@ -14,11 +19,30 @@ public class SpriteColorChanger : Effect
     private Color originColor;
     private Tween colorTween;
 
+    public bool UseColorTheme => useColorTheme;
+    public ColorTheme ColorTheme => colorTheme;
+    public ColorID ColorID => colorID;
+
     protected virtual void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originColor = spriteRenderer.color;
     }
+
+    private void Start()
+    {
+        if (useColorTheme)
+            endColor = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, colorID);
+
+        ColorThemeManager.OnChangeColorTheme += OnChangeColorTheme;
+    }
+
+    public void OnChangeColorTheme(ColorTheme newColorTheme)
+    {
+        endColor = ColorThemeManager.Instance.GetColorByThemeAndID(newColorTheme, colorID);
+        DoEffect();
+    }
+
     public override void DoEffect() => ChangeColor();
 
     public void ChangeColor()
@@ -38,7 +62,8 @@ public class SpriteColorChanger : Effect
     {
         if (colorTween != null)
             colorTween.Kill();
+
+        ColorThemeManager.OnChangeColorTheme -= OnChangeColorTheme;
     }
 
-  
 }
