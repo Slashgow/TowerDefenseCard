@@ -19,6 +19,10 @@ public class Shaker : Effect
             StopCoroutine(coroutine);
             coroutine = null;
         }
+
+        if(TryGetComponent(out AutoCardMovement autoCardMovement))
+            autoCardMovement.StopMoving();
+
         coroutine = StartCoroutine(ShakeCoroutine());
     }
 
@@ -39,5 +43,8 @@ public class Shaker : Effect
         }
 
         transform.position = originalPosition;
+
+        if (TryGetComponent(out AutoCardMovement autoCardMovement))
+            autoCardMovement.StartMoving();
     }
 }

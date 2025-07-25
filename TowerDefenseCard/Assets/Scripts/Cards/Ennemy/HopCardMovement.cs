@@ -17,7 +17,7 @@ public class HopCardMovement : AutoCardMovement
     private Vector3 hopStartPosition;
     private Vector3 hopTargetPosition;
 
-    protected override void StartMoving()
+    public override void StartMoving()
     {
         base.StartMoving();
         StartNextHop();
@@ -86,7 +86,7 @@ public class HopCardMovement : AutoCardMovement
             });
     }
 
-    protected override void StopMoving()
+    public override void StopMoving()
     {
         base.StopMoving();
 

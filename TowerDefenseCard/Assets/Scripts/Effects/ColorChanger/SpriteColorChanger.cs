@@ -6,7 +6,6 @@ public class SpriteColorChanger : Effect, IColorable
 {
     [Header("Color Theme")]
     [SerializeField] private bool useColorTheme;
-    [SerializeField] private ColorTheme colorTheme;
     [SerializeField] private ColorID colorID;
 
     [Header("Settings")]
@@ -20,7 +19,6 @@ public class SpriteColorChanger : Effect, IColorable
     private Tween colorTween;
 
     public bool UseColorTheme => useColorTheme;
-    public ColorTheme ColorTheme => colorTheme;
     public ColorID ColorID => colorID;
 
     protected virtual void Awake()
@@ -32,7 +30,7 @@ public class SpriteColorChanger : Effect, IColorable
     private void Start()
     {
         if (useColorTheme)
-            endColor = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, colorID);
+            OnChangeColorTheme(ColorThemeManager.Instance.CurrentColorTheme);
 
         ColorThemeManager.OnChangeColorTheme += OnChangeColorTheme;
     }

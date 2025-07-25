@@ -5,5 +5,6 @@ public enum ColorID
 {
     PRIMARY,
     SECONDARY,
-    THIRD
+    THIRD,
+    FOURTH
 }

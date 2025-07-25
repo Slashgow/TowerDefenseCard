@@ -12,10 +12,10 @@ public class ContinuousCardMovement : AutoCardMovement
     private float tiltTimer = 0f;
     private Vector3 originalRotation;
 
-    protected override void StartMoving()
+    public override void StartMoving()
     {
         base.StartMoving();
-        originalRotation = transform.eulerAngles;
+        originalRotation = Vector3.zero;
     }
 
     private void Update()
@@ -68,18 +68,21 @@ public class ContinuousCardMovement : AutoCardMovement
         float tiltValue = Mathf.Sin(tiltTimer * 2f * Mathf.PI) * tiltAmount;
 
         Vector3 currentRotation = originalRotation;
-        currentRotation.z = originalRotation.z + tiltValue - 180f;
+        currentRotation.z = originalRotation.z + tiltValue;// - 180f;
         currentRotation.x = 0f; // Force X rotation to 0
         currentRotation.y = 0f;
         transform.eulerAngles = currentRotation;
     }
 
-    protected override void StopMoving()
+    public override void StopMoving()
     {
         base.StopMoving();
 
         if (transform != null)
-            transform.eulerAngles = originalRotation;
+        {
+            transform.eulerAngles = originalRotation; // + new Vector3(0f,0f,-180f);
+        }
+            
     }
 
     private void OnDestroy()

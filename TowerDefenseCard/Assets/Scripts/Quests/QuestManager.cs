@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestManager : MonoSingleton<QuestManager>
+public class QuestManager : MonoBehaviour
 {
     [SerializeField] private Logger logger;
     [SerializeField] private List<Quest> availableQuests = new List<Quest>();
     private Dictionary<string, Quest> activeQuests = new Dictionary<string, Quest>();
 
+    public int AvailableQuestCount => availableQuests.Count;
+    public int CompletedQuestCount => availableQuests.Count - activeQuests.Keys.Count;
+    public List<Quest> AvailableQuests => availableQuests;
+
     public event Action<Quest> OnQuestCompleted;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         InitializeQuests();
     }
 

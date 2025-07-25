@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8585377194453804981}
   - component: {fileID: 3285652685104885487}
+  - component: {fileID: 5254013692215437180}
   m_Layer: 0
   m_Name: Color Theme Manager
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08d4b95656bd8642855f3141ac3a7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logger: {fileID: 5254013692215437180}
   colorsThemes:
   - colorTheme: 0
     colors:
@@ -53,6 +55,8 @@ MonoBehaviour:
       color: {r: 0.7176471, g: 0.5176471, b: 0.24313727, a: 1}
     - colorID: 2
       color: {r: 1, g: 0.8352942, b: 0.3529412, a: 0.5019608}
+    - colorID: 3
+      color: {r: 0.6392157, g: 0.18039216, b: 0.18039216, a: 1}
   - colorTheme: 1
     colors:
     - colorID: 0
@@ -61,3 +65,21 @@ MonoBehaviour:
       color: {r: 0.7568628, g: 0.50980395, b: 0.4901961, a: 1}
     - colorID: 2
       color: {r: 0.909804, g: 0.7137255, b: 0.7137255, a: 0.5019608}
+    - colorID: 3
+      color: {r: 0.6784314, g: 0.42352945, b: 0.41960788, a: 1}
+  CurrentColorTheme: 0
+--- !u!114 &5254013692215437180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920290997311866782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Color Manager
+  prefixColor: {r: 0.909804, g: 0.7137255, b: 0.7137255, a: 1}

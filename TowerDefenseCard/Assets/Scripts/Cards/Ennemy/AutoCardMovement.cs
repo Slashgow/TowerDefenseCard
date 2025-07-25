@@ -34,6 +34,6 @@ public abstract class AutoCardMovement : BaseCardMovement
             Debug.LogWarning("Spline length is zero or invalid for " + gameObject.name);
     }
 
-    protected virtual void StartMoving() => isMoving = true;
-    protected virtual void StopMoving() => isMoving = false;
+    public virtual void StartMoving() => isMoving = true;
+    public virtual void StopMoving() => isMoving = false;
 }

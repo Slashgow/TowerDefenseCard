@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ColorThemeManager : PersistentMonoSingleton<ColorThemeManager>
 {
-    [SerializeField] private ColorTheme startupColorTheme;
+    [SerializeField] private Logger logger;
     [SerializeField] private List<ColorsTheme> colorsThemes = new List<ColorsTheme>();
 
     public static event Action<ColorTheme> OnChangeColorTheme;
@@ -15,6 +15,7 @@ public class ColorThemeManager : PersistentMonoSingleton<ColorThemeManager>
 
     public void ChanceColorTheme(ColorTheme targetColorTheme)
     {
+        logger.Log($"Change color theme to : {targetColorTheme}", this);
         CurrentColorTheme = targetColorTheme;
         OnChangeColorTheme?.Invoke(targetColorTheme);
     }

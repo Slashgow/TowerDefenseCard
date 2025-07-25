@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: e940c194ccc12164ca95bcf26a73d464, type: 2}
+    - target: {fileID: 4833971392412208564, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: maxHealth
       value: 25
@@ -120,10 +124,10 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 10
   startMoveDuration: 0.5
-  moveSpeed: 4
+  moveSpeed: 3
   loop: 0
   tiltAmount: 15
-  tiltSpeed: 1
+  tiltSpeed: 3
   animationCurve:
     serializedVersion: 2
     m_Curve:

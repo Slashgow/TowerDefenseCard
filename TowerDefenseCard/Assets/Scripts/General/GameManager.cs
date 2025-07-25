@@ -39,7 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
         base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
         CurrentGameState = GameState.PLAY;
-        CurrentGameMode = GameMode.CRAFTING;
+        StartCraftMode();
     }
 
     private void Start()
@@ -78,24 +78,46 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (CurrentGameMode == GameMode.CRAFTING)
         {
-            OnEndCraftModeUnity?.Invoke();
-            OnEndCraftMode?.Invoke();
+            EndCraftMode();
 
             if (!WaveManager.Instance.IsAllWavesCompleted)
             {
-                CurrentGameMode = GameMode.COMBAT;
-                OnStartCombatModeUnity?.Invoke();
-                OnStartCombatMode?.Invoke();
+                StartCombatMode();
             }
         }
         else if (CurrentGameMode == GameMode.COMBAT)
         {
-            OnEndCombatModeUnity?.Invoke();
-            OnEndCombatMode?.Invoke();
-            CurrentGameMode = GameMode.CRAFTING;
-            OnStartCraftModeUnity?.Invoke();
-            OnStartCraftMode?.Invoke();
+            EndCombatMode();
+            StartCraftMode();
         }
+    }
+
+    private void EndCraftMode()
+    {
+        OnEndCraftModeUnity?.Invoke();
+        OnEndCraftMode?.Invoke();
+    }
+
+    private void EndCombatMode()
+    {
+        OnEndCombatModeUnity?.Invoke();
+        OnEndCombatMode?.Invoke();
+    }
+
+    private void StartCombatMode()
+    {
+        CurrentGameMode = GameMode.COMBAT;
+        logger.Log("Start Combat mode", this);
+        OnStartCombatModeUnity?.Invoke();
+        OnStartCombatMode?.Invoke();
+    }
+
+    private void StartCraftMode()
+    {
+        CurrentGameMode = GameMode.CRAFTING;
+        logger.Log("Start craft mode", this);
+        OnStartCraftModeUnity?.Invoke();
+        OnStartCraftMode?.Invoke();
     }
 
     public void Pause()
