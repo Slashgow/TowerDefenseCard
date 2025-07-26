@@ -144,7 +144,7 @@ RectTransform:
   m_Father: {fileID: 5011974391317058902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 7561151614537038333}
   - component: {fileID: 5953992018801283880}
   - component: {fileID: 1189326108897951799}
+  - component: {fileID: 370330943698970083}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -463,6 +464,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &370330943698970083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8678716627107707412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 0
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0
+  shouldGoBackToOriginColor: 0
+  easing: 0
 --- !u!1 &8740876482599875563
 GameObject:
   m_ObjectHideFlags: 0

@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 5996208146510133295}
   - component: {fileID: 2133879389215457088}
   - component: {fileID: 5663627428690374047}
+  - component: {fileID: 8372789698207737023}
   m_Layer: 5
   m_Name: Recipes
   m_TagString: Untagged
@@ -237,6 +238,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8372789698207737023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24443873441142525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 0
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0.5
+  shouldGoBackToOriginColor: 0
+  easing: 4
 --- !u!1 &64887549996355521
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 298.60956}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &612053838311742823
@@ -489,7 +509,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2304597310002678639}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.5565001
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -573,6 +593,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultTab: {fileID: 6077582812532059923}
+  useColorTheme: 1
+  tabIdleColorID: 0
+  tabHoverColorID: 4
+  tabActiveColorID: 3
+  timeToReachEndColor: 0
+  easing: 4
   tabIdle: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}
   tabHover: {r: 0.48627454, g: 0.10980393, b: 0.10980393, a: 1}
   tabActive: {r: 0.6392157, g: 0.18039216, b: 0.18039216, a: 1}
@@ -731,6 +757,7 @@ GameObject:
   - component: {fileID: 917517226806949564}
   - component: {fileID: 9124043572822435213}
   - component: {fileID: 1785240157358662404}
+  - component: {fileID: 7298411092354154431}
   m_Layer: 5
   m_Name: Right Menu
   m_TagString: Untagged
@@ -848,6 +875,25 @@ MonoBehaviour:
   descriptionValue: {fileID: 2850017815655751602}
   recipeParent: {fileID: 343608754159906546}
   pairCardAndCostPrefab: {fileID: 3167682820422909871, guid: 2e4a71a4de83dd240baff11ec29f083d, type: 3}
+--- !u!114 &7298411092354154431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693413198917553844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 3
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0.5
+  shouldGoBackToOriginColor: 0
+  easing: 4
 --- !u!1 &740433280439558018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,9 +2551,9 @@ RectTransform:
   - {fileID: 2065146145828547775}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 837, y: 84}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5201127864426038949
@@ -2750,6 +2796,7 @@ GameObject:
   - component: {fileID: 5660448224934732189}
   - component: {fileID: 4391943814249878348}
   - component: {fileID: 82720635647977129}
+  - component: {fileID: 5807568769984930306}
   m_Layer: 5
   m_Name: Left Menu
   m_TagString: Untagged
@@ -2816,6 +2863,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5807568769984930306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937228179841275158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 3
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0.5
+  shouldGoBackToOriginColor: 0
+  easing: 4
 --- !u!1 &4111463691663424751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,9 +3495,9 @@ RectTransform:
   - {fileID: 3515593723216350405}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 129, y: 84}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6519874431125508335
@@ -3589,9 +3655,9 @@ RectTransform:
   - {fileID: 6979253010129847652}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 483, y: 84}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3963824868739656015

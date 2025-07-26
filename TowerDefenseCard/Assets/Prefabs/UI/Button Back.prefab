@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7730413985369052548}
   - component: {fileID: 6417016944017594135}
   - component: {fileID: 3928933271555813992}
+  - component: {fileID: 1904815485003274933}
   m_Layer: 5
   m_Name: Button Back
   m_TagString: Untagged
@@ -208,3 +209,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1904815485003274933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861031207051546499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330c4e94410dfa14eb7574ed3dfebadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useColorTheme: 1
+  normalColorID: 3
+  highlitedColorID: 4
+  pressedColorID: 0

@@ -1139,6 +1139,7 @@ GameObject:
   - component: {fileID: 7053205054852231741}
   - component: {fileID: 6956666395876573281}
   - component: {fileID: 5920007713182769860}
+  - component: {fileID: 1428188244249398846}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1205,6 +1206,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1428188244249398846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845369873049606475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 3
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0.5
+  shouldGoBackToOriginColor: 0
+  easing: 4
 --- !u!1 &4856702378469219277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1751,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultTab: {fileID: 3143172500829072619}
+  useColorTheme: 1
+  tabIdleColorID: 0
+  tabHoverColorID: 4
+  tabActiveColorID: 3
+  timeToReachEndColor: 0
+  easing: 4
   tabIdle: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}
   tabHover: {r: 0.48627454, g: 0.10980393, b: 0.10980393, a: 1}
   tabActive: {r: 0.6392157, g: 0.18039216, b: 0.18039216, a: 1}
@@ -2694,7 +2720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8015803332100239971, guid: a8e1f928e17e03b4dbe17594906a8c18, type: 3}
       propertyPath: m_text
-      value: S
+      value: E
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

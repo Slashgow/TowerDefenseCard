@@ -1,12 +1,20 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace TabUI
 {
-    public class TabGroup : MonoBehaviour
+    public class TabGroup : MonoBehaviour, IColorable
     {
         [SerializeField] private TabButton defaultTab;
         public TabButton DefaultTab => defaultTab;
+
+        [SerializeField] private bool useColorTheme;
+        [SerializeField] private ColorID tabIdleColorID, tabHoverColorID, tabActiveColorID;
+
+        [Header("Settings")]
+        [SerializeField, Range(0f, 5f)] private float timeToReachEndColor;
+        [SerializeField] private Ease easing;
 
         protected List<TabButton> tabButtons;
         [SerializeField] protected Color tabIdle, tabHover, tabActive;
@@ -14,8 +22,16 @@ namespace TabUI
 
         protected TabButton selectedTab;
 
+        public bool UseColorTheme => useColorTheme;
+        public ColorID ColorID => tabIdleColorID;
+
         private void Start()
         {
+            if (useColorTheme)
+                OnChangeColorTheme(ColorThemeManager.Instance.CurrentColorTheme);
+
+            ColorThemeManager.OnChangeColorTheme += OnChangeColorTheme;
+
             OnTabSelected(defaultTab);
         }
 
@@ -32,7 +48,7 @@ namespace TabUI
             ResetTabs();
 
             if(selectedTab != null && tabButton != selectedTab)
-                tabButton.Background.color = tabHover;
+                tabButton.Background.DOColor(tabHover, timeToReachEndColor).SetEase(easing).SetUpdate(true);
         }
 
         public void OnTabExit(TabButton tabButton)
@@ -50,7 +66,7 @@ namespace TabUI
             selectedTab.Select();
 
             ResetTabs();
-            tabButton.Background.color = tabActive;
+            tabButton.Background.DOColor(tabActive, timeToReachEndColor).SetEase(easing).SetUpdate(true);
 
             int index = tabButton.transform.GetSiblingIndex();
             for(int i = 0; i < objectsToSwap.Count; i++)
@@ -69,8 +85,20 @@ namespace TabUI
                 if(selectedTab != null && tabButton == selectedTab)
                     continue;
 
-                tabButton.Background.color = tabIdle;
+                tabButton.Background.DOColor(tabIdle, timeToReachEndColor).SetEase(easing).SetUpdate(true);
             }
+        }
+
+        public void OnChangeColorTheme(ColorTheme colorTheme)
+        {
+            tabIdle = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabIdleColorID);
+            tabHover = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabHoverColorID);
+            tabActive = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabActiveColorID);
+        }
+
+        private void OnDestroy()
+        {
+            ColorThemeManager.OnChangeColorTheme -= OnChangeColorTheme;
         }
     }
 

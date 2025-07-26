@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7983982685086423065}
   - component: {fileID: 8012000373455647471}
+  - component: {fileID: 1142363454318125724}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -87,6 +88,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &1142363454318125724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275335598882314731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330c4e94410dfa14eb7574ed3dfebadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useColorTheme: 1
+  normalColorID: 0
+  highlitedColorID: 4
+  pressedColorID: 3
 --- !u!1 &414177326041673586
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +252,7 @@ GameObject:
   - component: {fileID: 3692875305453792696}
   - component: {fileID: 6265320691110801599}
   - component: {fileID: 8878027534086863538}
+  - component: {fileID: 1416998929205639171}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -349,6 +367,25 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1416998929205639171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191647899137899259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ea061d2715f947b49ef06d8a578b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 4
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0
+  shouldGoBackToOriginColor: 0
+  easing: 0
 --- !u!1 &1616671063369458470
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +720,7 @@ GameObject:
   - component: {fileID: 5918196774289487907}
   - component: {fileID: 3355517748496277543}
   - component: {fileID: 8329838963105203223}
+  - component: {fileID: 251227888129217934}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -814,6 +852,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &251227888129217934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354773346297636939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330c4e94410dfa14eb7574ed3dfebadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useColorTheme: 1
+  normalColorID: 0
+  highlitedColorID: 4
+  pressedColorID: 3
 --- !u!1 &5569225314234306894
 GameObject:
   m_ObjectHideFlags: 0
