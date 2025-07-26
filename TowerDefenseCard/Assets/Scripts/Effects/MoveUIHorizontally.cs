@@ -1,13 +1,12 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
-public class MoveOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MoveUIHorizontally : Effect
 {
     private RectTransform rectTransform;
 
-    [SerializeField, Range(-200f,30f)]
+    [SerializeField, Range(-200f, 30f)]
     private float xEndPivot;
 
     [SerializeField, Range(0f, 5f)]
@@ -19,6 +18,9 @@ public class MoveOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private Tween moveTween;
     private Vector2 originPivot;
 
+    public UnityEvent OnMoveEnd;
+    public UnityEvent OnResetEnd;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -29,10 +31,13 @@ public class MoveOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         //Debug.Log("on mouse over");
 
-        if(moveTween != null)
+        if (moveTween != null)
             moveTween.Kill();
 
-        moveTween = rectTransform.DOPivotX(xEndPivot, duration).SetEase(easing).SetUpdate(true);
+        moveTween = rectTransform.DOPivotX(xEndPivot, duration)
+            .SetEase(easing)
+            .SetUpdate(true)
+            .OnComplete(() => OnMoveEnd?.Invoke());
 
     }
 
@@ -42,7 +47,10 @@ public class MoveOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExit
         if (moveTween != null)
             moveTween.Kill();
 
-        moveTween = rectTransform.DOPivotX(originPivot.x, duration).SetEase(easing).SetUpdate(true);
+        moveTween = rectTransform.DOPivotX(originPivot.x, duration)
+            .SetEase(easing)
+            .SetUpdate(true)
+            .OnComplete(() => OnResetEnd?.Invoke()); ;
     }
 
     private void OnDisable()
@@ -50,13 +58,5 @@ public class MoveOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExit
         rectTransform.pivot = originPivot;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        MoveHorizontally();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        ResetPosition();
-    }
+    public override void DoEffect() => MoveHorizontally();
 }
