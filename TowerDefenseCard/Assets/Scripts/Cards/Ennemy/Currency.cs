@@ -37,7 +37,7 @@ public class Currency : Card, IEndDragHandler
                     //currencyChildren[i].transform.SetParent(null);
                     pool.AddToPool(currencyChildren[i].gameObject);
                 }
-                pool.AddToPool(this.gameObject);
+                //pool.AddToPool(this.gameObject);
             }
         }
     }

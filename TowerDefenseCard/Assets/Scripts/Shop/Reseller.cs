@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reseller : MonoSingleton<Reseller>
 {
+    [SerializeField] private Logger logger;
     [SerializeField] private PoolingSystem currencyPool;
     [SerializeField] private Transform spawnPoint;
 
@@ -30,6 +31,7 @@ public class Reseller : MonoSingleton<Reseller>
 
         for (int i = 0; i < coinAmount; i++)
         {
+            logger.Log($"spawn currency | {i} | coint amount {coinAmount} ", this);
             GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
             currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
         }

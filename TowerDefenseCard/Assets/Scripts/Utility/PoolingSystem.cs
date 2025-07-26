@@ -11,7 +11,8 @@ public class PoolingSystem : MonoBehaviour
 
     private Queue<GameObject> availablePrefab = new Queue<GameObject>();
 
-    public int AvailablePrefabCount() => availablePrefab.Count;
+    public int AvailablePrefabCount => availablePrefab.Count;
+    
 
     private void Awake()
     {
@@ -54,7 +55,6 @@ public class PoolingSystem : MonoBehaviour
         for (int i = 0; i < growPoolSize; i++)
         {
             var instanceToAdd = Instantiate(prefab);
-            instanceToAdd.transform.SetParent(transform);
             AddToPool(instanceToAdd);
         }
     }

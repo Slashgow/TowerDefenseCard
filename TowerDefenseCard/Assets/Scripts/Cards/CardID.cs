@@ -47,5 +47,6 @@ public enum CardID
     RICE_PADDY,
     FARM,
     MONTAIN,
-    OKUNINUSHI
+    OKUNINUSHI,
+    TEMPLE
 }

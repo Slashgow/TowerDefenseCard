@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2005709813885786554}
   - component: {fileID: 3480928540257184197}
   - component: {fileID: 7925853574352928478}
+  - component: {fileID: 762338929933020729}
   m_Layer: 7
   m_Name: Reseller
   m_TagString: Untagged
@@ -102,6 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01b2b0878082749afcd2b40390743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logger: {fileID: 762338929933020729}
+  currencyPool: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!61 &7925853574352928478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,6 +152,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.32, y: 1.965}
   m_EdgeRadius: 0
+--- !u!114 &762338929933020729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771684347030703182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Reseller
+  prefixColor: {r: 0.8113208, g: 0.77108073, b: 0, a: 1}
 --- !u!1001 &91120401091423560
 PrefabInstance:
   m_ObjectHideFlags: 0

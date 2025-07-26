@@ -5,7 +5,7 @@ using UnityTimer;
 public class HopCardMovement : AutoCardMovement
 {
     [Header("General Movement")]
-    [SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+    //[SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
     [Tooltip("Duration of smooth hop per step")]
     [SerializeField, Range(0f, 1f)] private float hopDuration = 0.1f;
     [Tooltip("Pause time after each hop")]
@@ -48,15 +48,15 @@ public class HopCardMovement : AutoCardMovement
         }
 
         // Get current and target positions
-        float currentProgress = currentDistance / splineLength;
-        float targetProgress = targetDistance / splineLength;
+        //float currentProgress = currentDistance / splineLength;
+        //float targetProgress = targetDistance / splineLength;
 
         // Apply animation curve
-        float curvedCurrentProgress = animationCurve.Evaluate(currentProgress);
-        float curvedTargetProgress = animationCurve.Evaluate(targetProgress);
+       //float curvedCurrentProgress = animationCurve.Evaluate(currentProgress);
+       //float curvedTargetProgress = animationCurve.Evaluate(targetProgress);
 
-        hopStartPosition = splineContainer.EvaluatePosition(0, curvedCurrentProgress);
-        hopTargetPosition = splineContainer.EvaluatePosition(0, curvedTargetProgress);
+        hopStartPosition = spline.GetSampleAtDistance(currentDistance).location;
+        hopTargetPosition = spline.GetSampleAtDistance(targetDistance).location;
 
         // Start hop timer
         currentHopTimer = Timer.Register(hopDuration,

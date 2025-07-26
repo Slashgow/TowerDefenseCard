@@ -19,6 +19,9 @@ MonoBehaviour:
   - cardID: 1
     quantity: 1
     isNotDestroyedOnCraft: 0
+  - cardID: 42
+    quantity: 1
+    isNotDestroyedOnCraft: 1
   craftingDelay: 19
   outputCards:
   - cardID: 17

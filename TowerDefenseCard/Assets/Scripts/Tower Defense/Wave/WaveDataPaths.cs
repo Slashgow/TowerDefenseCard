@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Splines;
 using System;
+using SplineMesh;
 
 [Serializable]
 public class WaveDataPaths
@@ -8,6 +8,6 @@ public class WaveDataPaths
     [SerializeField] private WaveData waveData;
     public WaveData WaveData => waveData;
 
-    [SerializeField] private SplineContainer[] paths;
-    public SplineContainer[] Paths => paths;
+    [SerializeField] private Spline[] paths;
+    public Spline[] Paths => paths;
 }

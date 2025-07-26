@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Barn
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 4
-    quantity: 1
+  - cardID: 0
+    quantity: 2
     isNotDestroyedOnCraft: 0
-  - cardID: 5
-    quantity: 1
+  - cardID: 2
+    quantity: 2
     isNotDestroyedOnCraft: 0
   craftingDelay: 24
   outputCards:

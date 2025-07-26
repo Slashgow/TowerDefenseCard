@@ -7,7 +7,7 @@ public class ContinuousCardMovement : AutoCardMovement
     [SerializeField, Range(0f, 45f)] private float tiltAmount = 15f;
     [Tooltip("Speed of tilt alternation (cycles per second)")]
     [SerializeField, Range(0f, 5f)] private float tiltSpeed = 1f;
-    [SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+    //[SerializeField] private AnimationCurve animationCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     private float tiltTimer = 0f;
     private Vector3 originalRotation;
@@ -51,10 +51,10 @@ public class ContinuousCardMovement : AutoCardMovement
                 currentDistance = splineLength;
         }
 
-        float progress = currentDistance / splineLength;
-        float curvedProgress = animationCurve.Evaluate(progress);
+        //float progress = currentDistance / splineLength;
+        //float curvedProgress = animationCurve.Evaluate(progress);
 
-        Vector3 newPosition = splineContainer.EvaluatePosition(0, curvedProgress);
+        Vector3 newPosition = spline.GetSampleAtDistance(currentDistance).location;
         transform.position = newPosition;
     }
 

@@ -108,11 +108,13 @@ public class UIQuestManager : UIPage, IPointerExitHandler
     {
         UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
         uiQuest.SetQuestAsCompleted();
+        titleMainQuestCountText.text = $"({mainQuestManager.CompletedQuestCount}/{mainQuestManager.AvailableQuestCount})";
     }
     private void SecondaryQuestManager_OnQuestCompleted(Quest quest)
     {
         UIQuest uiQuest = GetSecondaryUIQuestByQuestID(quest.QuestId);
         uiQuest.SetQuestAsCompleted();
+        titleSecondaryQuestCountText.text = $"({secondaryQuestManager.CompletedQuestCount}/{secondaryQuestManager.AvailableQuestCount})";
     }
 
     private void OnClickOnPinToggle(bool isOn) => isPin = isOn;

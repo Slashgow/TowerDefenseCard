@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Splines;
+
 using System;
+using SplineMesh;
 
 public class WaveManager : MonoSingleton<WaveManager>
 {
@@ -17,6 +18,9 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     public int NumberOfWaves => waveDataPaths.Length;
     public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataPaths.Length);
+
+    private int amountOfSpawnedEnemies;
+    private int amountOfEnemiesInCurrentWave;
 
     private void OnEnable()
     {
@@ -34,15 +38,18 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private IEnumerator SpawnWave(WaveData waveData)
     {
+        amountOfSpawnedEnemies = 0;
         isWaveActive = true;
+        SetAmountOfEnemiesInCurrentWave();
         foreach (var enemy in waveData.EnnemyWaves)
         {
             for (int i = 0; i < enemy.Count; i++)
             {
                 if (waveDataPaths[currentWaveIndex].Paths.Length > 0)
                 {
-                    SplineContainer path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
-                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.EvaluatePosition(0, 0), Quaternion.identity);
+                    Spline path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
+                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.GetSampleAtDistance(0f).location, Quaternion.identity);
+                    amountOfSpawnedEnemies++;
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
                     newEnemy.GetComponent<AutoCardMovement>().Init(path);
                     yield return new WaitForSeconds(enemy.SpawnInterval);
@@ -60,9 +67,18 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private bool AreAllEnemiesDefeated()
     {
-        return FindObjectsByType<HopCardMovement>(FindObjectsSortMode.None).Length == 0;
+        return FindObjectsByType<HopCardMovement>(FindObjectsSortMode.None).Length == 0 && 
+            amountOfSpawnedEnemies >= amountOfEnemiesInCurrentWave;
     }
 
+    private void SetAmountOfEnemiesInCurrentWave()
+    {
+        amountOfEnemiesInCurrentWave = 0;
+        foreach (var waveEnemy in waveDataPaths[currentWaveIndex].WaveData.EnnemyWaves)
+        {
+            amountOfEnemiesInCurrentWave += waveEnemy.Count;
+        }
+    }
   
     public void TriggerNextWave()
     {

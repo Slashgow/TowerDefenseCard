@@ -1,30 +1,31 @@
-﻿using UnityEngine;
-using UnityEngine.Splines;
+﻿using SplineMesh;
+using UnityEngine;
+
 
 public abstract class AutoCardMovement : BaseCardMovement
 {
     [SerializeField, Range(0f, 10f)] protected float moveSpeed = 2f;
     [SerializeField] protected bool loop = true;
 
-    protected SplineContainer splineContainer;
+    protected Spline spline;
     protected float splineLength;
     protected bool isMoving = false;
     protected float currentDistance = 0f;
     protected bool hasCompletedFirstLoop = false;
 
-    public virtual void Init(SplineContainer spawnedSplineContainer)
+    public virtual void Init(Spline spawnedSpline)
     {
         hasCompletedFirstLoop = false;
 
-        if (spawnedSplineContainer == null)
+        if (spawnedSpline == null)
         {
             Debug.LogWarning("SplineContainer not assigned to " + this.gameObject.name);
             return;
         }
 
-        splineContainer = spawnedSplineContainer;
+        spline = spawnedSpline;
 
-        splineLength = splineContainer.Spline.GetLength();
+        splineLength = spline.Length;
         if (splineLength > 0)
         {
             currentDistance = 0f;
