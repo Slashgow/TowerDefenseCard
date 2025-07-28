@@ -5,6 +5,7 @@ public class UICardMoreStat : MonoBehaviour
 {
     [SerializeField] private UIPageCardsDiscovered uIPageCardsDiscovered;
     [SerializeField] private GameObject cardPictureParent, cardStatsParents;
+    [SerializeField] private TextMeshProUGUI upgradeDescription;
     [SerializeField] private TextMeshProUGUI damageValue, attackSpeedValue, attackRangeValue, AttackAreaValue, DotDamageValue, DotDurationValue;
     [SerializeField] private TextMeshProUGUI descriptionValue;
     [SerializeField] private Transform recipeParent;
@@ -52,6 +53,15 @@ public class UICardMoreStat : MonoBehaviour
             AttackAreaValue.text = cardBaseDamageor.CardDamageorData.AttackArea.ToString();
             DotDamageValue.text = cardBaseDamageor.CardDamageorData.DoT.ToString();
             DotDurationValue.text = cardBaseDamageor.CardDamageorData.DoTDuration.ToString();
+        }
+
+        CardUpgrade cardUpgrade = card.GetComponent<CardUpgrade>();
+        if (cardUpgrade == null)
+            upgradeDescription.gameObject.SetActive(false);
+        else
+        {
+            upgradeDescription.gameObject.SetActive(true);
+            upgradeDescription.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
         }
 
         

@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 391280489787409089}
   - component: {fileID: 1061360421407002469}
   - component: {fileID: -2765101116321023618}
+  - component: {fileID: 2139443655130780671}
   m_Layer: 6
   m_Name: Base Tower
   m_TagString: Untagged
@@ -616,6 +617,19 @@ MonoBehaviour:
   startAngle: 180
   endAngle: 0
   rotateMode: 0
+--- !u!114 &2139443655130780671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806e736a987755c4485d481325defc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeFeared: 1
 --- !u!1001 &8382269893518395449
 PrefabInstance:
   m_ObjectHideFlags: 0

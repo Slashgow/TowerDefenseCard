@@ -4,6 +4,7 @@ using UnityEngine;
 public class CardUpgrade : Card
 {
     [SerializeField] private UpgradeData upgradeData;
+    public UpgradeData UpgradeData => upgradeData;
 
     public override void OnStack(Card targetCard)
     {

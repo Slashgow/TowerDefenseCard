@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "NewUpgradeData", menuName = "William/UpgradeData")]
 public class UpgradeData : ScriptableObject
 {
     public string UpgradeName; // e.g., "MATCHA", "RAMEN"
+
+    [SerializeField] private LocalizedString upgradeLocalizedDescription;
+    public LocalizedString UpgradeLocalizedDescription => upgradeLocalizedDescription; 
 
     [SerializeField, Range(0f, 100f)] private float damageBonusFlat; 
     [SerializeField] private bool damageBonusPercent; 

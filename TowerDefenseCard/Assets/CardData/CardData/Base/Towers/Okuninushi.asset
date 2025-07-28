@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 47
   cardName: 'Okuninushi '
+  cardDescription: 
   cardSprite: {fileID: 0}
-  cardBackgroundSprite: {fileID: -773140731, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardBackgroundSprite: {fileID: -5947617582768455614, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 28

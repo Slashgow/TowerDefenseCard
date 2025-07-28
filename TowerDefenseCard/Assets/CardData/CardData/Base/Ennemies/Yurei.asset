@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: TBD_Health
+  m_Name: Yurei
   m_EditorClassIdentifier: 
-  cardID: 34
-  cardName: Tamgo Gohan
+  cardID: 49
+  cardName: Yurei
   cardDescription: 
-  cardSprite: {fileID: 2288121804208525011, guid: 56a4ba8ceb4641144a314bbf1855bcdc, type: 3}
-  cardBackgroundSprite: {fileID: -5418162045431731510, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
-  isStackable: 1
-  cost: 6
+  cardSprite: {fileID: 0}
+  cardBackgroundSprite: {fileID: -2533790215428652826, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  isStackable: 0
+  cost: 1

@@ -83,7 +83,7 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
         }
     }
 
-    protected void Start()
+    protected void OnEnable()
     {
         attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true); // TO DO : Only attack during defense phase
     }
@@ -158,7 +158,7 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
         Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 
-    private void OnDestroy()
+    protected virtual void OnDisable()
     {
         Timer.Cancel(attackTimer);
         foreach (var timer in activeDoTTimers.Values)

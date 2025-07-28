@@ -48,5 +48,6 @@ public enum CardID
     FARM,
     MONTAIN,
     OKUNINUSHI,
-    TEMPLE
+    TEMPLE,
+    YUREI
 }

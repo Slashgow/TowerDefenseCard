@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 29
   cardName: Water
+  cardDescription: 
   cardSprite: {fileID: -3380168821889318058, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
-  cardBackgroundSprite: {fileID: -1615953430, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardBackgroundSprite: {fileID: -5418162045431731510, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 2
