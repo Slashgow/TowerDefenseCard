@@ -4,11 +4,16 @@ using System.Collections;
 using System;
 using SplineMesh;
 
-public class WaveManager : MonoSingleton<WaveManager>
+public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 {
     [SerializeField] private WaveDataPaths[] waveDataPaths;
-    [SerializeField, Range(0f,10f)] private float initialWaveDelay = 5f; 
+    [SerializeField, Range(0f,10f)] private float initialWaveDelay = 5f;
+
+    private int currentEnnemyCount;
+    private int currentWaveEnnemyIndex = 0;
     private int currentWaveIndex = 0;
+    public int CurrentWaveIndex => currentWaveIndex;
+
     private bool isWaveActive = false;
 
     private int indexSortingOrder = 0;
@@ -38,13 +43,16 @@ public class WaveManager : MonoSingleton<WaveManager>
 
     private IEnumerator SpawnWave(WaveData waveData)
     {
-        amountOfSpawnedEnemies = 0;
         isWaveActive = true;
         SetAmountOfEnemiesInCurrentWave();
-        foreach (var enemy in waveData.EnnemyWaves)
+        for (int j = currentWaveEnnemyIndex; j < waveData.EnnemyWaves.Count; j++)
         {
-            for (int i = 0; i < enemy.Count; i++)
+            currentWaveEnnemyIndex = j;
+            WaveData.WaveEnemy enemy = waveData.EnnemyWaves[j];
+            
+            for (int i = currentEnnemyCount; i < enemy.Count; i++)
             {
+                currentEnnemyCount = i;
                 if (waveDataPaths[currentWaveIndex].Paths.Length > 0)
                 {
                     Spline path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
@@ -55,14 +63,23 @@ public class WaveManager : MonoSingleton<WaveManager>
                     yield return new WaitForSeconds(enemy.SpawnInterval);
                 }
                 indexSortingOrder += 3;
+                currentEnnemyCount = 0;
             }
         }
         yield return new WaitUntil(() => AreAllEnemiesDefeated()); // Wait until all enemies are gone
         isWaveActive = false;
         currentWaveIndex++;
         OnWaveEnd?.Invoke();
+        ResetWaveParameters();
         ShowNextWaveVisuals();
         HidePreviousWaveVisuals();
+    }
+
+    private void ResetWaveParameters()
+    {
+        currentEnnemyCount = 0;
+        currentWaveEnnemyIndex = 0;
+        amountOfSpawnedEnemies = 0;
     }
 
     private bool AreAllEnemiesDefeated()
@@ -127,5 +144,21 @@ public class WaveManager : MonoSingleton<WaveManager>
                 path.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void Load(GameSaveData saveData)
+    {
+        this.currentWaveIndex = saveData.currentWaveIndex;
+        this.currentWaveEnnemyIndex = saveData.currentWaveEnnemyIndex;
+        this.currentEnnemyCount = saveData.currentEnnemyCount;
+        this.amountOfSpawnedEnemies = saveData.amountOfSpawnedEnemies;
+    }
+
+    public void Save(GameSaveData saveData)
+    {
+        saveData.currentWaveIndex = this.currentWaveIndex;
+        saveData.currentWaveEnnemyIndex = this.currentWaveEnnemyIndex;
+        saveData.currentEnnemyCount = this.currentEnnemyCount;
+        saveData.amountOfSpawnedEnemies = this.amountOfSpawnedEnemies;
     }
 }

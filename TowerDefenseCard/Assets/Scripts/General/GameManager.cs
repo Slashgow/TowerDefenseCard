@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoSingleton<GameManager>
+public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
 {
     [SerializeField] private Logger logger;
 
@@ -34,20 +34,35 @@ public class GameManager : MonoSingleton<GameManager>
 
     private Coroutine pauseSimulationCoroutine;
 
+    public void Load(GameSaveData saveData)
+    {
+        CurrentGameMode = saveData.gameMode;
+    }
+    public void Save(GameSaveData saveData)
+    {
+        saveData.gameMode = CurrentGameMode;
+    }
+
     protected override void Awake()
     {
         base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
         CurrentGameState = GameState.PLAY;
-        StartCraftMode();
+        //StartCraftMode();
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
 
         PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
+
+        yield return new WaitForSeconds(1f);
+        if (CurrentGameMode == GameMode.CRAFTING)
+            StartCraftMode();
+        else if (CurrentGameMode == GameMode.COMBAT)
+            StartCombatMode();
     }
 
     private void OnDestroy()
@@ -64,7 +79,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void SceneLoader_OnSceneLoaded(int buildIndex)
     {
         logger.Log("On Scene loaded", this);
-        StartCoroutine(StartCraftingModeAfterDelay());
+        //StartCoroutine(StartCraftingModeAfterDelay());
     }
 
     public IEnumerator StartCraftingModeAfterDelay()

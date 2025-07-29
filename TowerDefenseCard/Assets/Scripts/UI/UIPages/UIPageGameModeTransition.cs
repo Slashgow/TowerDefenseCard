@@ -30,13 +30,10 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField] TextSizeEffect textSizeEffect;
 
 
-    private IEnumerator Start()
+    private void Start()
     {
         GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
-
-        yield return new WaitForSeconds(3f);
-        DoTransitionEffect(true);
     }
 
     private void OnDestroy()

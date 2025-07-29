@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797772780826817529}
   - component: {fileID: 7798893384937904930}
+  - component: {fileID: 4660115536851744549}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -45,105 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
-  - card: {fileID: 597159905614504105, guid: ffff4daae8667f14f962def17376edc8, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 4ae74ac77e07a374e9554cf0f4007793, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 8f0a20479d1168b449bdcfc3a65bf27e, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: a175d55a62976314fa50315240f892e8, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5596509187565464847, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5596509187565464847, guid: 4bd055906a676824ea76e3456e30e177, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5596509187565464847, guid: c8db6d0c29342c5498853135601b606b, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: a7ab95a979963024084436afee660295, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 30dea7d650e41da46bc656f902d87d5d, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 31316f98a2186bc42b06a5c0fd7e6b99, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 19b387a07e75f364fa19081d0fe4340f, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 9a8f5d0e14ca93c43ae650fa6b834d14, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 597159905614504105, guid: 721dfd7db680c9944a1c4beddab1c753, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 2861984798354678937, guid: 084d7fa5371385441829650d7f4c02fb, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5356776283567728278, guid: bdce7cf592e8e134bb0625c21fd82b3a, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
-  - card: {fileID: 5356776283567728278, guid: ee71ccdb7c2e967418408cdfdc328ecc, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
   - card: {fileID: 4160426979278005275, guid: cf836f3f3311e5341bd450efc3af4986, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -156,10 +58,139 @@ MonoBehaviour:
   - card: {fileID: 4160426979278005275, guid: fd04834d66868454daab3df259235e73, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
+  - card: {fileID: 7898742673250954903, guid: 34ee4035fc858a3429dc929166186b02, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   - card: {fileID: 5582891460866795087, guid: b18e1ff2e28c29d47a925c8b713ddc5d, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 5582891460866795087, guid: 40dda6b0b4949c54ebf123a1890388db, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: c8db6d0c29342c5498853135601b606b, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 4bd055906a676824ea76e3456e30e177, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 8f0a20479d1168b449bdcfc3a65bf27e, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: b1dc602b3b1882e45a4286d4da3b887a, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: ffff4daae8667f14f962def17376edc8, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 19b387a07e75f364fa19081d0fe4340f, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 31316f98a2186bc42b06a5c0fd7e6b99, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 30dea7d650e41da46bc656f902d87d5d, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 9a8f5d0e14ca93c43ae650fa6b834d14, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 721dfd7db680c9944a1c4beddab1c753, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: a175d55a62976314fa50315240f892e8, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 4ae74ac77e07a374e9554cf0f4007793, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5356776283567728278, guid: bdce7cf592e8e134bb0625c21fd82b3a, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5356776283567728278, guid: ee71ccdb7c2e967418408cdfdc328ecc, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: a7ab95a979963024084436afee660295, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: b5b4569e69d0f514bbc886d7848a1ddd, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: 35b5640d336bb6241acaca3e0e37914f, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: 90209e5a5c0c42c4ea176cfb91e2352d, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 7145617489399811045, guid: 83c0d1029c19c8c4593214861be193db, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 1804478811844947874, guid: 5e78ce467ebc8c541b47de94698f8092, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 2861984798354678937, guid: 084d7fa5371385441829650d7f4c02fb, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   startMaxCardsAllowed: 20
+--- !u!114 &4660115536851744549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350302098779990314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e35e8ff3dd3864ea3fd3289edda376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabScanPath: Assets/CardData/Prefabs
+  includeSubfolders: 1
+  clearListBeforeScanning: 0
+  autoSetDiscoveredOnScan: 0
+  excludedFolders:
+  - Assets/CardData/Prefabs/Shop
+  - Assets/CardData/Prefabs/Idea
+  - Assets/CardData/Prefabs/Ennemies
+  cardManager: {fileID: 7798893384937904930}

@@ -1,6 +1,13 @@
+using System;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+[Serializable]
+public struct CardSaveData
+{
+
+}
+
+public class Card : MonoBehaviour, ILoadable, ISavable
 {
     [SerializeField] protected CardData cardData;
     public CardData CardData => cardData;
@@ -32,4 +39,13 @@ public class Card : MonoBehaviour
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
     public virtual void OnUnstack(Card targetCard) { /* Default implementation */ }
 
+    public void Load(GameSaveData gameSaveData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Save(GameSaveData gameSaveData)
+    {
+        throw new System.NotImplementedException();
+    }
 }

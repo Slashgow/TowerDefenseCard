@@ -15,7 +15,7 @@ public class CardDiscoveryState
 
 public class CardManager : MonoSingleton<CardManager>
 {
-    [SerializeField] private List<CardDiscoveryState> allCards = new List<CardDiscoveryState>();
+   public List<CardDiscoveryState> allCards = new List<CardDiscoveryState>();
     public List<CardDiscoveryState> AllCards => allCards;
 
     [SerializeField, Range(0, 100)] private int startMaxCardsAllowed = 30;

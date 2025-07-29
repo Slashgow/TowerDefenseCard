@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-public class ShopManager : MonoSingleton<ShopManager>
+public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 {
     [SerializeField] private Logger logger;
     [SerializeField] private List<CardShop> cardShops;
@@ -15,13 +15,13 @@ public class ShopManager : MonoSingleton<ShopManager>
 
     public static event Action OnPurchaseBooster;
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
-        currentPlayerCoin = startPlayerCoin;
-    }
+        if(!GameSaveSystem.saveExists)
+            currentPlayerCoin = startPlayerCoin;
 
-    private void Start() => OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+        OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+    }
 
     public void TryPurchaseBooster(Shop selectedShop)
     {
@@ -50,4 +50,7 @@ public class ShopManager : MonoSingleton<ShopManager>
         currentPlayerCoin += coinAmount;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
+
+    public void Load(GameSaveData gameSaveData) => currentPlayerCoin = gameSaveData.currentPlayerCoin;
+    public void Save(GameSaveData gameSaveData) => gameSaveData.currentPlayerCoin = currentPlayerCoin;
 }

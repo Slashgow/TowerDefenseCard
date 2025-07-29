@@ -4,7 +4,7 @@ using System.Linq;
 using UnityTimer;
 using System;
 
-public class CraftingManager : MonoSingleton<CraftingManager>
+public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavable
 {
     [SerializeField, Range(0f, 500f)] private float timeCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
@@ -15,15 +15,15 @@ public class CraftingManager : MonoSingleton<CraftingManager>
     public event Action<int, CardID> OnCraftComplete = delegate { };
     public event Action OnDestroyCard = delegate { };
 
-
+    [SerializeField, HideInInspector] private float timeElapsed = 0f;
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
-    public float TimeCraftMode => timeCraftMode;
+    public float TimeCraftMode => timeCraftMode - timeElapsed;
   
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
-    private void OnEnable()
+    private void Start()
     {
         if(GameManager.HasInstance)
             GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
@@ -184,9 +184,15 @@ public class CraftingManager : MonoSingleton<CraftingManager>
 
     public void StartCraftingModeTimer()
     {
-        CraftingModeDurationTimer = Timer.Register(timeCraftMode, 
-            onComplete: GameManager.Instance.SwitchGameMode, 
-            onUpdate: timeElapsed => OnTickTimeCraftingMode?.Invoke(timeElapsed));
+        CraftingModeDurationTimer = Timer.Register(TimeCraftMode, 
+            onComplete: () => {
+                GameManager.Instance.SwitchGameMode();
+                timeElapsed = 0;
+                }, 
+            onUpdate: timeElapsed => {
+                OnTickTimeCraftingMode?.Invoke(timeElapsed);
+                this.timeElapsed = timeElapsed;
+                });
     }
 
     public int GetCraftIDByCard(Card card)
@@ -238,5 +244,15 @@ public class CraftingManager : MonoSingleton<CraftingManager>
             }
         }
         return outputs;
+    }
+
+    public void Load(GameSaveData gameSaveData)
+    {
+        this.timeElapsed = gameSaveData.craftTimeElapsed;
+    }
+
+    public void Save(GameSaveData gameSaveData)
+    {
+        gameSaveData.craftTimeElapsed = this.timeElapsed;
     }
 }
