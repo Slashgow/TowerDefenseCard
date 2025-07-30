@@ -4,6 +4,8 @@ using System.Collections.Generic;
 [Serializable]
 public class GameSaveData 
 {
+    public int currentNumberOfCards;
+    public int maxCardsAllowed;
     public float craftTimeElapsed;
     public int currentPlayerCoin;
     public GameMode gameMode;

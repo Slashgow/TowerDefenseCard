@@ -48,6 +48,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         waveManager.Save(saveData);
         shopManager.Save(saveData);
         craftingManager.Save(saveData);
+        cardManager.Save(saveData);
         SaveCards(saveData);
     }
     private void SaveCards(GameSaveData saveData)
@@ -116,6 +117,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         waveManager.Load(saveData);
         shopManager.Load(saveData);
         craftingManager.Load(saveData);
+        cardManager.Load(saveData);
         LoadCards(saveData);
     }
 
@@ -177,8 +179,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             currentWaveEnnemyIndex = 0,
             currentEnnemyCount = 0,
             amountOfSpawnedEnemies = 0,
-            currentPlayerCoin = 0,
+            currentPlayerCoin = shopManager.StartPlayerCoin,
             craftTimeElapsed = 0,
+            maxCardsAllowed = cardManager.StartMaxCardsAllowed,
+            currentNumberOfCards = cardManager.GetCurrentNumberOfCards()
         };
         Load(saveData);
     }

@@ -7,6 +7,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     [SerializeField] private Logger logger;
     [SerializeField] private List<CardShop> cardShops;
     [SerializeField, Range(0, 100)] private int startPlayerCoin = 10;
+    public int StartPlayerCoin => startPlayerCoin;
 
     public event Action<int> OnUpdatePlayerCoin = delegate { };
 
@@ -17,9 +18,6 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
     private void Start()
     {
-        if(!GameSaveSystem.saveExists)
-            currentPlayerCoin = startPlayerCoin;
-
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 
@@ -51,6 +49,6 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 
-    public void Load(GameSaveData gameSaveData) => currentPlayerCoin = gameSaveData.currentPlayerCoin;
+    public void Load(GameSaveData gameSaveData) => AddPlayerCoin(gameSaveData.currentPlayerCoin);
     public void Save(GameSaveData gameSaveData) => gameSaveData.currentPlayerCoin = currentPlayerCoin;
 }

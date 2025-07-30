@@ -13,12 +13,13 @@ public class CardDiscoveryState
     public bool isClickedAfterNotification;
 }
 
-public class CardManager : MonoSingleton<CardManager>
+public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 {
    public List<CardDiscoveryState> allCards = new List<CardDiscoveryState>();
     public List<CardDiscoveryState> AllCards => allCards;
 
     [SerializeField, Range(0, 100)] private int startMaxCardsAllowed = 30;
+    public int StartMaxCardsAllowed => startMaxCardsAllowed;
     public int MaxCardsAllowed { get; private set; }
     public int CurrentNumberOfCards { get; private set; }
     public bool IsMaxCardsReached => CurrentNumberOfCards >= MaxCardsAllowed;
@@ -29,12 +30,10 @@ public class CardManager : MonoSingleton<CardManager>
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
 
-    protected override void Awake()
+    public int GetCurrentNumberOfCards()
     {
-        base.Awake();
-        MaxCardsAllowed = startMaxCardsAllowed;
         Card[] allStartingCards = FindObjectsByType<Card>(FindObjectsSortMode.None);
-        CurrentNumberOfCards = allStartingCards.Count(card => card is not CardShop);
+        return allStartingCards.Count(card => card is not CardShop);
     }
 
     private void Start()
@@ -171,5 +170,19 @@ public class CardManager : MonoSingleton<CardManager>
             cardDiscoveryState.isDiscovered = true;
             cardDiscoveryState.isClickedAfterNotification = false;
         });
+    }
+
+    public void Save(GameSaveData gameSaveData)
+    {
+        gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
+        gameSaveData.maxCardsAllowed = MaxCardsAllowed;
+    }
+
+    public void Load(GameSaveData gameSaveData)
+    {
+        CurrentNumberOfCards = gameSaveData.currentNumberOfCards;
+        MaxCardsAllowed = gameSaveData.maxCardsAllowed;
+        OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
 }
