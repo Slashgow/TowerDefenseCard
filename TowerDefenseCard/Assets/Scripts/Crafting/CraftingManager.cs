@@ -49,6 +49,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         if (IsCardsInOnGoingCraft(stackCards))
         {
             movedCard.transform.SetParent(null);
+            movedCard.OnUnstack(parentCard);
             return false;
         }
             

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class GameSaveData 
@@ -10,4 +11,10 @@ public class GameSaveData
     public int currentWaveEnnemyIndex;
     public int currentEnnemyCount;
     public int amountOfSpawnedEnemies;
+    public List<StackSaveData> cardStacks;
+
+    public GameSaveData()
+    {
+        cardStacks = new List<StackSaveData>();
+    }
 }

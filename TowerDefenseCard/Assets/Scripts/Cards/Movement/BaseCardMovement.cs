@@ -13,22 +13,34 @@ public abstract class BaseCardMovement : MonoBehaviour
     [SerializeField, Range(0f, 2f)] private float startMoveDuration = 0.5f;
 
     protected Card card;
+    private Coroutine coroutine;
 
     private void Awake()
     {
         card = GetComponent<Card>();
     }
 
-    protected virtual void Start()
+    protected virtual void OnEnable()
     {
         if (card.transform.root.GetComponent<Card>() && card.transform.root.GetComponent<Card>() != card)
             return;
 
-        StartCoroutine(SmoothMoveToClearSpot());
+        coroutine = StartCoroutine(SmoothMoveToClearSpot());
+    }
+
+    public void StopSmoothMove()
+    {
+        Debug.Log($"stop smooth move {card.CardData.CardID}");
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
     }
 
     private IEnumerator SmoothMoveToClearSpot()
     {
+        Debug.Log($"start smooth move {card.CardData.CardID}");
         int iterations = 0;
         Vector3 startPosition = transform.position;
         while (iterations < maxIterations)
@@ -57,7 +69,7 @@ public abstract class BaseCardMovement : MonoBehaviour
         InitializeSortOrder();
     }
 
-    private void InitializeSortOrder()
+    public void InitializeSortOrder()
     {
         if (IsOverlapping())
         {

@@ -56,4 +56,17 @@ public static class CardUtility
             GameObject.Destroy(transform.GetChild(i).gameObject);
         }
     }
+
+    public static void AddCardAndChildrenToList(Card card, List<Card> list)
+    {
+        list.Add(card);
+
+        if (card.StackedCards == null)
+            return;
+
+        foreach (Card stackedCard in card.StackedCards)
+        {
+            AddCardAndChildrenToList(stackedCard, list);
+        }
+    }
 }

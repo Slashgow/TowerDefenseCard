@@ -24,15 +24,16 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     public event Action OnPointerDownEvent;
     public event Action OnPointerUpEvent;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         if (autoStackOnEnable)
-            TryStackCards();  
+            TryStackCards();
+
+        base.OnEnable();
     }
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
         mainCamera = Camera.main;
     }
 
@@ -133,12 +134,15 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
-                card.OnStackInitiate(otherCard);
+                card.OnStack(otherCard);
 
                 var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
-                foreach (var cardParent in cardParents)
+                if(cardParents != null)
                 {
-                    cardParent.StackCount += card.StackCount;
+                    foreach (var cardParent in cardParents)
+                    {
+                        cardParent.StackCount += card.StackCount;
+                    }
                 }
                 otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card

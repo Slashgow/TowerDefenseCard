@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private WaveManager waveManager;
     [SerializeField] private ShopManager shopManager;
     [SerializeField] private CraftingManager craftingManager;
+    [SerializeField] private CardManager cardManager;
 
     [SerializeField] private Logger logger;
     
@@ -46,12 +48,42 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         waveManager.Save(saveData);
         shopManager.Save(saveData);
         craftingManager.Save(saveData);
-
+        SaveCards(saveData);
+    }
+    private void SaveCards(GameSaveData saveData)
+    {
         Card[] cardsOnBoard = FindObjectsByType<Card>(FindObjectsSortMode.None);
+        HashSet<Card> processedCards = new HashSet<Card>();
+
         foreach (Card card in cardsOnBoard)
         {
+            if (card is CardShop)
+                continue;
 
+            if (card.IsStackRoot() && !processedCards.Contains(card))
+            {
+                StackSaveData stackData = new StackSaveData();
+
+                // Get the entire stack starting from this root
+                List<Card> stackCards = CardUtility.GetAllCards(card.gameObject);
+
+                foreach (Card stackCard in stackCards)
+                {
+                    CardSaveData cardSaveData = new CardSaveData(
+                        stackCard.CardData.CardID,
+                        stackCard.transform,
+                        stackCard.StackCount
+                    );
+
+                    stackData.AddCard(cardSaveData);
+                    processedCards.Add(stackCard);
+                }
+
+                saveData.cardStacks.Add(stackData);
+            }
         }
+
+        logger.Log($"Saved {saveData.cardStacks.Count} card stacks with total cards: {processedCards.Count}", this);
     }
 
     public void LoadGame()
@@ -84,6 +116,56 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         waveManager.Load(saveData);
         shopManager.Load(saveData);
         craftingManager.Load(saveData);
+        LoadCards(saveData);
+    }
+
+    private void LoadCards(GameSaveData saveData)
+    {
+       //// Clear existing cards
+       //Card[] existingCards = FindObjectsByType<Card>(FindObjectsSortMode.None);
+       //foreach (Card card in existingCards)
+       //{
+       //    DestroyImmediate(card.gameObject);
+       //}
+
+        // Load each stack
+        foreach (StackSaveData stackData in saveData.cardStacks)
+        {
+            LoadStack(stackData);
+        }
+
+        logger.Log($"Loaded {saveData.cardStacks.Count} card stacks", this);
+    }
+
+    private void LoadStack(StackSaveData stackData)
+    {
+        if (stackData.cards.Count == 0) 
+            return;
+
+        for (int i = 0; i < stackData.cards.Count; i++)
+        {
+            CardSaveData cardData = stackData.cards[i];
+
+            Card newCardPrefab = cardManager.GetCardPrefabByCardID(cardData.cardID);
+            Card newCard = Instantiate(newCardPrefab, cardData.position, cardData.rotation);
+
+            if (newCard == null)
+            {
+                logger.LogError($"Failed to instantiate card with ID: {cardData.cardID}", this);
+                continue;
+            }
+
+            if(newCard.TryGetComponent(out BaseCardMovement baseCardMovement))
+            {
+                baseCardMovement.StopSmoothMove();
+                baseCardMovement.InitializeSortOrder();
+            }
+
+            newCard.transform.position = cardData.position;
+            newCard.transform.rotation = cardData.rotation;
+            newCard.transform.localScale = cardData.scale;
+            newCard.StackCount = cardData.stackCount;
+        }
     }
 
     private void LoadDefault()
