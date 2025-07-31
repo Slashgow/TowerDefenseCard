@@ -6,7 +6,7 @@ public class BoosterCardUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI remainingCardText;
     [SerializeField] private Booster booster;
 
-    private void OnEnable()
+    private void Start()
     {
         remainingCardText.text = booster.RemainingCards.ToString();
         booster.OnOpenBoosterUnity.AddListener(OnOpenBooster);

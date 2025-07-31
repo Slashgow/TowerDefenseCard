@@ -14,12 +14,11 @@ public class QuestManager : MonoBehaviour
 
     public event Action<Quest> OnQuestCompleted;
 
-    private void Awake()
-    {
-        InitializeQuests();
-    }
+    private void Awake() => SetupQuests();
 
- 
+    private void Start() => InitializeQuests();
+
+
     private void OnDestroy()
     {
         foreach (var quest in availableQuests)
@@ -28,16 +27,24 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private void InitializeQuests()
+    private void SetupQuests()
     {
         foreach (var quest in availableQuests)
         {
             quest.Setup();
-            activeQuests[quest.QuestId] = quest;
-            quest.ResetProgress();
-            quest.OnCompleteQuest += OnQuestComplete;
         }
     }
+
+    private void InitializeQuests()
+    {
+        foreach (var quest in availableQuests)
+        {
+            activeQuests[quest.QuestId] = quest;
+            quest.OnCompleteQuest += OnQuestComplete;
+            quest.CheckProgress();
+        }
+    }
+
 
     private void OnQuestComplete(Quest quest)
     {

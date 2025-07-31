@@ -23,8 +23,10 @@ public class FOVMeshRenderer : MonoBehaviour
     {
         // Create child object for the mesh
         GameObject fovObject = new GameObject("FOV_Mesh");
+        transform.rotation = Quaternion.identity;
         fovObject.transform.SetParent(transform);
         fovObject.transform.localPosition = Vector3.zero;
+      
 
         meshFilter = fovObject.AddComponent<MeshFilter>();
         meshRenderer = fovObject.AddComponent<MeshRenderer>();
@@ -39,7 +41,7 @@ public class FOVMeshRenderer : MonoBehaviour
         }
         fovMaterial.color = fovColor;
         meshRenderer.material = fovMaterial;
-        meshRenderer.sortingOrder = -1; // Behind other sprites
+        //meshRenderer.sortingOrder = -1; // Behind other sprites
     }
 
     private void Update()
@@ -88,8 +90,8 @@ public class FOVMeshRenderer : MonoBehaviour
         for (int i = 0; i < fovResolution; i++)
         {
             triangles[triangleIndex] = 0; // Center
-            triangles[triangleIndex + 1] = i + 2; // Reversed order
-            triangles[triangleIndex + 2] = i + 1; // Reversed order
+            triangles[triangleIndex + 1] = i + 1; // Reversed order
+            triangles[triangleIndex + 2] = i + 2; // Reversed order
             triangleIndex += 3;
         }
 

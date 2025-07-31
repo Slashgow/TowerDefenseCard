@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [System.Serializable]
-public class Quest
+public class Quest : ILoadable, ISavable
 {
     [SerializeField] private string questId;
     public string QuestId => questId;
@@ -40,5 +40,25 @@ public class Quest
     public void ResetProgress()
     {
         currentProgress = 0;
+    }
+
+    public void CheckProgress()
+    {
+        if (IsCompleted)
+            OnCompleteQuest?.Invoke(this);
+    }
+
+    public void Save(GameSaveData gameSaveData)
+    {
+        gameSaveData.AddQuestSaveData(new QuestSaveData
+        {
+            questID = this.questId,
+            currentProgress = this.currentProgress,
+        });
+    }
+    public void Load(GameSaveData gameSaveData)
+    {
+        QuestSaveData questSaveData = gameSaveData.GetQuestSaveDataByQuestID(this.questId);
+        this.currentProgress = questSaveData.currentProgress;
     }
 }

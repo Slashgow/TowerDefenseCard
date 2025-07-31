@@ -2,13 +2,15 @@
 using UnityEngine;
 
 [Serializable]
-public struct CardSaveData
+public class CardSaveData
 {
     public CardID cardID;
     public Vector3 position;
     public Quaternion rotation;
     public Vector3 scale;
     public int stackCount;
+    public BoosterSaveData boosterSaveData;
+    public CardIdeaSaveData cardIdeaSaveData;
 
     public CardSaveData(CardID cardID, Transform transform, int stackCount)
     {
@@ -17,5 +19,28 @@ public struct CardSaveData
         this.rotation = transform.rotation;
         this.scale = transform.localScale;
         this.stackCount = stackCount;
+        boosterSaveData = null;
+        cardIdeaSaveData = null;
+    }
+
+    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData)
+    {
+        this.cardID = cardID;
+        this.position = transform.position;
+        this.rotation = transform.rotation;
+        this.scale = transform.localScale;
+        this.stackCount = stackCount;
+        this.boosterSaveData = boosterSaveData;
+        cardIdeaSaveData = null;
+    }
+    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData)
+    {
+        this.cardID = cardID;
+        this.position = transform.position;
+        this.rotation = transform.rotation;
+        this.scale = transform.localScale;
+        this.stackCount = stackCount;
+        this.boosterSaveData = boosterSaveData;
+        this.cardIdeaSaveData = cardIdeaSaveData;
     }
 }

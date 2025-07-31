@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +12,19 @@ public class CardDiscoveryState
 
     public bool isDiscovered;
     public bool isClickedAfterNotification;
+}
+
+[Serializable]
+public class CardManagerSaveData
+{
+    [SerializeField]
+    public List<CardDiscoveryState> allCards;
+
+    public CardManagerSaveData(List<CardDiscoveryState> allCards)
+    {
+        //allCards = new List<CardDiscoveryState>();
+        this.allCards = allCards;
+    }
 }
 
 public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
@@ -176,6 +190,18 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     {
         gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
         gameSaveData.maxCardsAllowed = MaxCardsAllowed;
+
+
+        try
+        {
+            string json = JsonUtility.ToJson(new CardManagerSaveData(allCards), true);
+            File.WriteAllText(GameSaveSystem.savePathCardDiscovered, json);
+            Debug.Log($"Game saved to {GameSaveSystem.savePathCardDiscovered}", this);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Failed to save game: {e.Message}", this);
+        }
     }
 
     public void Load(GameSaveData gameSaveData)
@@ -184,5 +210,33 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         MaxCardsAllowed = gameSaveData.maxCardsAllowed;
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+
+        try
+        {
+            if (File.Exists(GameSaveSystem.savePathCardDiscovered))
+            {
+                string json = File.ReadAllText(GameSaveSystem.savePathCardDiscovered);
+                CardManagerSaveData saveData = JsonUtility.FromJson<CardManagerSaveData>(json);
+
+                if(saveData.allCards.Count == allCards.Count)
+                {
+                    for (int i = 0; i < saveData.allCards.Count; i++)
+                    {
+                        CardDiscoveryState cardDiscoveryState = saveData.allCards[i];
+                        allCards[i].isDiscovered = cardDiscoveryState.isDiscovered;
+                        allCards[i].isClickedAfterNotification = cardDiscoveryState.isClickedAfterNotification;
+                    }
+                }
+                Debug.Log($"Game loaded from {GameSaveSystem.savePathCardDiscovered}", this);
+            }
+            else
+            {
+                Debug.Log("No save file found, using default GameMode", this);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Failed to load game: {e.Message}", this);
+        }
     }
 }

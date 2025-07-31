@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour, ILoadable, ISavable
+public class Card : MonoBehaviour
 {
     [SerializeField] protected CardData cardData;
     public CardData CardData => cardData;
@@ -67,17 +67,5 @@ public class Card : MonoBehaviour, ILoadable, ISavable
 
         CardUtility.AddCardAndChildrenToList(root, stack);
         return stack;
-    }
-
-
-
-    public void Load(GameSaveData gameSaveData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Save(GameSaveData gameSaveData)
-    {
-        throw new System.NotImplementedException();
     }
 }

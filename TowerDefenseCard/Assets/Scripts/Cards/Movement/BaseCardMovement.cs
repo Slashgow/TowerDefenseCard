@@ -15,7 +15,7 @@ public abstract class BaseCardMovement : MonoBehaviour
     protected Card card;
     private Coroutine coroutine;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         card = GetComponent<Card>();
     }

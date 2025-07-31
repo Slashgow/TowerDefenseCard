@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +9,13 @@ public class Currency : Card, IEndDragHandler
 
     private PoolingSystem pool;
     public PoolingSystem Pool => pool;
+
+    protected override void Start()
+    {
+        base.Start();
+        if(pool == null)
+            pool = Reseller.Instance.CurrencyPool;
+    }
 
     public void Setup(PoolingSystem pool) => this.pool = pool;
 
@@ -30,7 +35,11 @@ public class Currency : Card, IEndDragHandler
                 var currencyChildren = GetComponentsInChildren<Currency>();
 
                 if(StackCount > cardShop.Shop.ShopCost)
+                {
                     currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
+                    currencyChildren[cardShop.Shop.ShopCost].OnUnstack(currencyChildren[cardShop.Shop.ShopCost-1]);
+                }
+                   
 
                 for (int i = 0; i < cardShop.Shop.ShopCost; i++)
                 {

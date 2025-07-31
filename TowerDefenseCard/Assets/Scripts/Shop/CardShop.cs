@@ -17,7 +17,7 @@ public class CardShop : Card
     protected override void Start()
     {
         base.Start();
-        if (spawnBoosterOnStart)
+        if (spawnBoosterOnStart && !GameSaveSystem.saveExists)
         {
             TryPurchaseBooster();
         }

@@ -8,14 +8,14 @@ public class HealthCardUI : MonoBehaviour
     private IDamageable damageable;
     private IHealable healable;
     private Card card;
-    private void OnEnable()
+    private void Start()
     {
         card = GetComponentInParent<Card>();
         damageable = card.GetComponent<IDamageable>();
         healable = card.GetComponent<IHealable>();
         damageable.OnTakeDamage += Ennemy_OnTakeDamage;
         healable.OnHeal += Healable_OnHeal;
-        SetupCard(damageable.MaxHealth);
+        SetupCard(damageable.CurrentHealth);
     }
 
     private void Healable_OnHeal(float currentHealth)

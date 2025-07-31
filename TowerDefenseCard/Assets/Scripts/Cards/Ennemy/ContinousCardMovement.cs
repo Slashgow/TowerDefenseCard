@@ -12,6 +12,12 @@ public class ContinuousCardMovement : AutoCardMovement
     private float tiltTimer = 0f;
     private Vector3 originalRotation;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        originalRotation = Vector3.zero;
+    }
+
     public override void StartMoving()
     {
         base.StartMoving();

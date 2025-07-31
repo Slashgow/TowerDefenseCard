@@ -16,7 +16,11 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public UnityEvent OnOpenBoosterUnity;
     public static event Action OnOpenCardIdea;
 
-    private void Awake() => remainingCards = maxCardCount;
+    private void Awake()
+    {
+        if(remainingCards <= 0)
+            remainingCards = maxCardCount;
+    }
 
     public void Initialize(Shop shop) => this.shop = shop;
 
@@ -136,5 +140,20 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             selectedShopIdea = shop.ShopCardIdeas[0];
 
         return selectedShopIdea;
+    }
+
+    public void Load(BoosterSaveData boosterSaveData)
+    {
+        remainingCards = boosterSaveData.remainingCards;
+        shop = boosterSaveData.shop;
+    }
+
+    public BoosterSaveData Save()
+    {
+        return new BoosterSaveData
+        {
+            remainingCards = this.remainingCards,
+            shop = this.shop
+        };
     }
 }

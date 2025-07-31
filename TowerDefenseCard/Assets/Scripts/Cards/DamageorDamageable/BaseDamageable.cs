@@ -16,7 +16,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
         }
     }
 
-    private float currentHealth;
+    protected float currentHealth;
     public float CurrentHealth => currentHealth;
 
     private bool isDead = false;
@@ -28,7 +28,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
     public event Action OnDie;
     public event Action<float> OnHeal;
 
-    private void OnEnable()
+    protected virtual void Awake()
     {
         currentHealth = maxHealth;
     }

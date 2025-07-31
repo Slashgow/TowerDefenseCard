@@ -16,4 +16,10 @@ public class CardIdea : Card, IPointerDownHandler
     {
         CardManager.Instance.CheckCardDiscoveryState(card.CardData.CardID);
     }
+
+    public CardIdeaSaveData Save() => new CardIdeaSaveData { card = this.card };
+    public void Load(CardIdeaSaveData cardIdeaSaveData)
+    {
+        Initialize(cardIdeaSaveData.card);
+    }
 }

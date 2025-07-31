@@ -10,11 +10,15 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private ShopManager shopManager;
     [SerializeField] private CraftingManager craftingManager;
     [SerializeField] private CardManager cardManager;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private QuestManager mainQuestManager;
+    [SerializeField] private QuestManager secondaryQuestManager;
 
     [SerializeField] private Logger logger;
     
     private static string saveFilePath;
     public static bool saveExists => File.Exists(saveFilePath);
+    public static string savePathCardDiscovered => Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
 
     protected override void Awake()
     {
@@ -22,7 +26,6 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
         LoadGame();
     }
-
 
     public void SaveGame()
     {
@@ -49,7 +52,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         shopManager.Save(saveData);
         craftingManager.Save(saveData);
         cardManager.Save(saveData);
+        playerHealth.Save(saveData);
         SaveCards(saveData);
+        mainQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
+        secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
     }
     private void SaveCards(GameSaveData saveData)
     {
@@ -61,6 +67,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             if (card is CardShop)
                 continue;
 
+            if (card.GetComponent<PlayerHealth>())
+                continue;
+
             if (card.IsStackRoot() && !processedCards.Contains(card))
             {
                 StackSaveData stackData = new StackSaveData();
@@ -70,15 +79,34 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
 
                 foreach (Card stackCard in stackCards)
                 {
+                    BoosterSaveData boosterSaveData = null;
+                    if (stackCard is Booster)
+                    {
+                        Booster booster = stackCard as Booster;
+                        boosterSaveData = booster.Save();
+                    }
+
+                    CardIdeaSaveData cardIdeaSaveData = null;   
+                    if(stackCard is CardIdea)
+                    {
+                        CardIdea cardIdea = stackCard as CardIdea;
+                        cardIdeaSaveData = cardIdea.Save();
+                    }
+
                     CardSaveData cardSaveData = new CardSaveData(
                         stackCard.CardData.CardID,
                         stackCard.transform,
-                        stackCard.StackCount
+                        stackCard.StackCount,
+                        boosterSaveData,
+                        cardIdeaSaveData
                     );
 
                     stackData.AddCard(cardSaveData);
                     processedCards.Add(stackCard);
                 }
+
+                if(card.TryGetComponent(out AutoCardMovement autoCardMovement))
+                    autoCardMovement.Save(saveData);
 
                 saveData.cardStacks.Add(stackData);
             }
@@ -118,7 +146,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         shopManager.Load(saveData);
         craftingManager.Load(saveData);
         cardManager.Load(saveData);
+        playerHealth.Load(saveData);
         LoadCards(saveData);
+        mainQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
+        secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
     }
 
     private void LoadCards(GameSaveData saveData)
@@ -133,13 +164,13 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         // Load each stack
         foreach (StackSaveData stackData in saveData.cardStacks)
         {
-            LoadStack(stackData);
+            LoadStack(stackData, saveData);
         }
 
         logger.Log($"Loaded {saveData.cardStacks.Count} card stacks", this);
     }
 
-    private void LoadStack(StackSaveData stackData)
+    private void LoadStack(StackSaveData stackData, GameSaveData saveData)
     {
         if (stackData.cards.Count == 0) 
             return;
@@ -163,10 +194,26 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 baseCardMovement.InitializeSortOrder();
             }
 
+            if(newCard is Booster)
+            {
+                Booster booster = (Booster)newCard;
+                booster.Load(cardData.boosterSaveData);
+            }
+
+            else if(newCard is CardIdea)
+            {
+                CardIdea cardIdea = (CardIdea)newCard;
+                cardIdea.Load(cardData.cardIdeaSaveData);
+            }
+
             newCard.transform.position = cardData.position;
             newCard.transform.rotation = cardData.rotation;
             newCard.transform.localScale = cardData.scale;
-            newCard.StackCount = cardData.stackCount;
+            //newCard.StackCount = cardData.stackCount;
+
+            if (newCard.TryGetComponent(out AutoCardMovement autoCardMovement))
+                autoCardMovement.Load(saveData);
+
         }
     }
 
@@ -174,6 +221,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     {
         GameSaveData saveData = new GameSaveData()
         {
+            currentPlayerHealth = playerHealth.MaxHealth,
             gameMode = GameMode.CRAFTING,
             currentWaveIndex = 0,
             currentWaveEnnemyIndex = 0,
