@@ -15,16 +15,26 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private QuestManager secondaryQuestManager;
 
     [SerializeField] private Logger logger;
-    
-    private static string saveFilePath;
+
+
+    public static readonly string saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
+    public static readonly string savePathCardDiscovered = Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
     public static bool saveExists => File.Exists(saveFilePath);
-    public static string savePathCardDiscovered => Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
+  
 
     protected override void Awake()
     {
         base.Awake();
-        saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
         LoadGame();
+    }
+
+    public static void ResetSave()
+    {
+        if(saveExists)
+        {
+            File.Delete(saveFilePath);
+            File.Delete(savePathCardDiscovered);
+        }
     }
 
     public void SaveGame()
@@ -80,17 +90,23 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 foreach (Card stackCard in stackCards)
                 {
                     BoosterSaveData boosterSaveData = null;
+                    CardIdeaSaveData cardIdeaSaveData = null;
+                    int currentAmountOfCurrency = 0;
+
                     if (stackCard is Booster)
                     {
                         Booster booster = stackCard as Booster;
                         boosterSaveData = booster.Save();
                     }
-
-                    CardIdeaSaveData cardIdeaSaveData = null;   
-                    if(stackCard is CardIdea)
+                    else if(stackCard is CardIdea)
                     {
                         CardIdea cardIdea = stackCard as CardIdea;
                         cardIdeaSaveData = cardIdea.Save();
+                    }
+                    else if(stackCard is CardCurrencyCollecter)
+                    {
+                        CardCurrencyCollecter cardCurrencyCollecter = (CardCurrencyCollecter)stackCard;
+                        currentAmountOfCurrency = cardCurrencyCollecter.Save();
                     }
 
                     CardSaveData cardSaveData = new CardSaveData(
@@ -98,7 +114,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                         stackCard.transform,
                         stackCard.StackCount,
                         boosterSaveData,
-                        cardIdeaSaveData
+                        cardIdeaSaveData,
+                        currentAmountOfCurrency
                     );
 
                     stackData.AddCard(cardSaveData);
@@ -204,6 +221,13 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             {
                 CardIdea cardIdea = (CardIdea)newCard;
                 cardIdea.Load(cardData.cardIdeaSaveData);
+            }
+
+            else if(newCard is CardCurrencyCollecter)
+            {
+                CardCurrencyCollecter cardCurrencyCollecter = (CardCurrencyCollecter)newCard;
+                cardCurrencyCollecter.Load(cardData);
+                
             }
 
             newCard.transform.position = cardData.position;

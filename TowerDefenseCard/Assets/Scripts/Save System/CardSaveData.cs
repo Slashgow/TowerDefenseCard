@@ -11,6 +11,7 @@ public class CardSaveData
     public int stackCount;
     public BoosterSaveData boosterSaveData;
     public CardIdeaSaveData cardIdeaSaveData;
+    public int currentAmountOfCurrency;
 
     public CardSaveData(CardID cardID, Transform transform, int stackCount)
     {
@@ -33,7 +34,7 @@ public class CardSaveData
         this.boosterSaveData = boosterSaveData;
         cardIdeaSaveData = null;
     }
-    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData)
+    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency)
     {
         this.cardID = cardID;
         this.position = transform.position;
@@ -42,5 +43,6 @@ public class CardSaveData
         this.stackCount = stackCount;
         this.boosterSaveData = boosterSaveData;
         this.cardIdeaSaveData = cardIdeaSaveData;
+        this.currentAmountOfCurrency = currentAmountOfCurrency;
     }
 }

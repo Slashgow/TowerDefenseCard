@@ -49,5 +49,6 @@ public enum CardID
     MONTAIN,
     OKUNINUSHI,
     TEMPLE,
-    YUREI
+    YUREI,
+    CHEST
 }

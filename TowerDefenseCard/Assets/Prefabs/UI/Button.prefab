@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8641498386132544390}
   - component: {fileID: 4353123435000191641}
   - component: {fileID: 2014233225033498506}
+  - component: {fileID: 5627859768116803282}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -134,9 +135,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c750dd92f0631c14fb58ec18e6ca09aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
   xEndPivot: 1.2
   duration: 0.3
   easing: 4
+  OnMoveEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetEnd:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5627859768116803282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352282890616632429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330c4e94410dfa14eb7574ed3dfebadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useColorTheme: 1
+  normalColorID: 3
+  highlitedColorID: 4
+  pressedColorID: 0
 --- !u!1 &6325206213288325740
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +172,7 @@ GameObject:
   - component: {fileID: 1553544396252288479}
   - component: {fileID: 6011043909954284293}
   - component: {fileID: 8762370756118284102}
+  - component: {fileID: 2574737800778754656}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -273,3 +298,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2574737800778754656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6325206213288325740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275a957bd17b454459c62a0f911eaa9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  useColorTheme: 1
+  colorID: 0
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  timeToReachEndColor: 0
+  shouldGoBackToOriginColor: 0
+  easing: 0

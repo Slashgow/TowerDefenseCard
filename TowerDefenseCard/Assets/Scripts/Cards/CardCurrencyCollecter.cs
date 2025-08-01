@@ -13,11 +13,12 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
 
     public int CurrentAmount { get; private set; }
 
-    private void Awake()
-    {
-        CurrentAmount = 0;
-    }
-
+   // private void Awake()
+   // {
+   //     if(!GameSaveSystem.saveExists)
+   //         CurrentAmount = 0;
+   // }
+   //
     public void CollectCurrency(Currency[] currencies)
     {
         if(CurrentAmount + currencies.Length > maxCurrencyAmount)
@@ -64,10 +65,15 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
         OnUpdateCurrentAmount?.Invoke(CurrentAmount);
     }
 
-    public void OnPointerUp(PointerEventData eventData) => DropCurrency();
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        logger.Log($"on pointer up", this);
+        DropCurrency();
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
+        logger.Log($"on drop", this);
         Currency[] currencies = eventData.pointerDrag.GetComponentsInChildren<Currency>();
 
         if (currencies.Length <= 0)
@@ -75,4 +81,15 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
 
         CollectCurrency(currencies);
     }
+
+    public int Save()
+    {
+        return CurrentAmount;
+    }
+
+    public void Load(CardSaveData cardSaveData)
+    {
+        CurrentAmount = cardSaveData.currentAmountOfCurrency;
+    }
+
 }

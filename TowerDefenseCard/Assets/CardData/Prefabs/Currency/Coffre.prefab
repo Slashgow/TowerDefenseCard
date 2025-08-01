@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bf697d1d5815544bfd25cd60fcb45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: c5f3bafe661b95f429b93a39f5b1fb4f, type: 2}
+  cardData: {fileID: 11400000, guid: a0b256aa3c3486e468f408d5fd26f478, type: 2}
   backgroundSprite: {fileID: 5793447513779673074}
   cardSprite: {fileID: 2477208669114640186}
   cardUI: {fileID: 6868042175936996570}
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showLogs: 1
   prefix: Card Currency Collecter
-  prefixColor: {r: 0.36320752, g: 0.62657195, b: 1, a: 1}
+  prefixColor: {r: 0.3820755, g: 0.63763666, b: 1, a: 1}
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0
