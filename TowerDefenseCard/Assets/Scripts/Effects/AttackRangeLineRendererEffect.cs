@@ -1,4 +1,4 @@
-﻿public class AttackRangeEffect : RangeEffect
+﻿public class AttackRangeLineRendererEffect : LineRendererRangeEffect
 {
     private IDamageor damageorSource;
     private void Awake()

@@ -1,4 +1,4 @@
-﻿public class HealRangeEffect : RangeEffect
+﻿public class HealRangeEffect : LineRendererRangeEffect
 {
     private IHealer healer;
     private void Awake()

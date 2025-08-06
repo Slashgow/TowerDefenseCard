@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Projectile : MonoBehaviour
     private GameObject impactEffectPrefab;
 
     private Vector3 originPosition;
+
+    public event Action<BaseDamageable> OnProjectileHit;
 
     public void Initialize(Vector3 direction, float speed, float damage, LayerMask enemyLayer, bool isMonoTarget, float attackArea, GameObject impactEffectPrefab, float attackRange)
     {
@@ -38,6 +41,7 @@ public class Projectile : MonoBehaviour
             {
                 singleDamageable.TakeDamage(damage);
                 Instantiate(impactEffectPrefab, this.transform.position, Quaternion.identity);
+                OnProjectileHit?.Invoke(singleHit.GetComponent<BaseDamageable>());
                 Destroy(gameObject);
             }
             else
@@ -49,6 +53,7 @@ public class Projectile : MonoBehaviour
                     {
                         if (hit.TryGetComponent<IDamageable>(out var damageable))
                         {
+                            OnProjectileHit?.Invoke(singleHit.GetComponent<BaseDamageable>());
                             damageable.TakeDamage(damage);
                             Instantiate(impactEffectPrefab, hit.transform.position, Quaternion.identity);
                         }

@@ -1,55 +1,49 @@
 ﻿using UnityEngine;
-using System.Collections;
+using DG.Tweening;
 
 public class Shaker : Effect
 {
     [SerializeField, Range(0f, 2f)] private float shakeDuration = 0.3f;
-    [SerializeField, Range(0f, 2f)] private float shakeMagnitude = 0.1f;
+    [SerializeField, Range(0f, 10f)] private float shakeMagnitude = 0.1f;
     [SerializeField] private AnimationCurve shakeCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
+    [SerializeField, Range(0, 20)] private int shakeVibrato = 10;
+    [SerializeField, Range(0f,180f)] private float shakeRandomness = 90f;
 
-    private Vector3 originalPosition;
-    private Coroutine coroutine;
+    private float originalRotation;
+    private Tween shakeTween;
+
+    private ContinuousCardMovement continuousCardMovement;
+    private void Awake() => continuousCardMovement = GetComponent<ContinuousCardMovement>();
 
     public override void DoEffect() => Shake();
 
     public void Shake()
     {
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-            coroutine = null;
-        }
+        if (continuousCardMovement != null)
+            continuousCardMovement.StopTilt();
 
-        if(TryGetComponent(out AutoCardMovement autoCardMovement))
-            autoCardMovement.StopMoving();
+        shakeTween?.Kill();
 
-        coroutine = StartCoroutine(ShakeCoroutine());
+        originalRotation = transform.eulerAngles.z;
+
+        shakeTween = transform.DOShakeRotation(
+            shakeDuration,
+            new Vector3(0, 0, shakeMagnitude),
+            shakeVibrato,
+            shakeRandomness,
+            randomnessMode : ShakeRandomnessMode.Harmonic)
+            .SetEase(shakeCurve)
+            .OnComplete(() => {
+                transform.rotation = Quaternion.Euler(0, 0, originalRotation);
+
+                if(continuousCardMovement != null)
+                    continuousCardMovement.StartTilt();
+
+                });
     }
 
-    private IEnumerator ShakeCoroutine()
+    private void OnDestroy()
     {
-        originalPosition = transform.position;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < shakeDuration)
-        {
-            elapsedTime += Time.unscaledDeltaTime;
-            float curveValue = shakeCurve.Evaluate(elapsedTime / shakeDuration);
-            float xOffset = Random.Range(-1f, 1f) * shakeMagnitude * curveValue;
-            float yOffset = Random.Range(-1f, 1f) * shakeMagnitude * curveValue;
-
-            transform.position = originalPosition + new Vector3(xOffset, yOffset, 0f);
-            yield return null;
-        }
-
-        transform.position = originalPosition;
-
-        if (TryGetComponent(out AutoCardMovement autoCardMovement))
-        {
-            TryGetComponent(out IStunnable stunnable);
-            if (stunnable == null || (stunnable != null && !stunnable.IsStunned))
-                autoCardMovement.StartMoving();
-        }
-            
+        shakeTween?.Kill();
     }
 }

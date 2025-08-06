@@ -7,6 +7,7 @@ public abstract class AutoCardMovement : BaseCardMovement, ILoadable, ISavable
     [SerializeField, Range(0f, 10f)] protected float moveSpeed = 2f;
     [SerializeField] protected bool loop = true;
 
+    public float MoveSpeed => moveSpeed;
     protected Spline spline;
     protected float splineLength;
     protected bool isMoving = false;

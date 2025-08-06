@@ -11,6 +11,7 @@ public class ContinuousCardMovement : AutoCardMovement
 
     private float tiltTimer = 0f;
     private Vector3 originalRotation;
+    private bool canTilt = true;
 
     protected override void Awake()
     {
@@ -66,7 +67,7 @@ public class ContinuousCardMovement : AutoCardMovement
 
     private void UpdateTilt()
     {
-        if (tiltSpeed <= 0f || tiltAmount <= 0f) 
+        if (!canTilt || tiltSpeed <= 0f || tiltAmount <= 0f) 
             return;
 
         tiltTimer += Time.deltaTime * tiltSpeed;
@@ -90,6 +91,9 @@ public class ContinuousCardMovement : AutoCardMovement
         }
             
     }
+
+    public void StopTilt() => canTilt = false;
+    public void StartTilt() => canTilt = true;
 
     private void OnDestroy()
     {

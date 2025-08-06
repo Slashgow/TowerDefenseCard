@@ -71,10 +71,17 @@ public class SimpleDamageor : BaseDamageor
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 Quaternion rotation = Quaternion.Euler(0, 0, angle - 90f); // Adjust -90f for 2D up vector
 
-                GameObject projectile = Instantiate(projectilePrefab, transform.position, rotation);
-                Projectile projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.Initialize(direction, projectileSpeed, Damage, enemyLayer, isMonoTarget, AttackArea, impactEffectPrefab, AttackRange);
+                GameObject projectileGameObjectInstance = Instantiate(projectilePrefab, transform.position, rotation);
+                Projectile projectileInstance = projectileGameObjectInstance.GetComponent<Projectile>();
+                projectileInstance.OnProjectileHit -= ProjectileInstance_OnProjectileHit;
+                projectileInstance.OnProjectileHit += ProjectileInstance_OnProjectileHit;
+                projectileInstance.Initialize(direction, projectileSpeed, Damage, enemyLayer, isMonoTarget, AttackArea, impactEffectPrefab, AttackRange);
             }
         }
+    }
+
+    private void ProjectileInstance_OnProjectileHit(BaseDamageable baseDamageable)
+    {
+        OnAttack(baseDamageable);
     }
 }

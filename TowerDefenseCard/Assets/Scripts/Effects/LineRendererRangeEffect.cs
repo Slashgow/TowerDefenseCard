@@ -1,7 +1,6 @@
-﻿using FirstGearGames.Utilities.Structures;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class RangeEffect: MonoBehaviour
+public abstract class LineRendererRangeEffect: MonoBehaviour
 {
     [SerializeField] private LineRenderer rangeIndicator;
     [SerializeField] private CardMover cardMover;

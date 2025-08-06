@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8660076273353320839}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1905207580491856102}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -102,8 +105,32 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
-  isMonoTarget: 1
+  isMonoTarget: 0
   useProjectile: 1
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  numberOfProjectilePerAttack: 1
+  numberOfProjectilePerAttack: 3
   projectileSpeed: 20
+--- !u!114 &1905207580491856102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eaf7b72ea93c544a44b7951cbd2da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSyncWithDamageor: 1
+  pushbackCooldown: 5
+  pushbackDistance: 4
+  pushbackChance: 100
+  usePushbackRange: 0
+  pushbackRange: 8
+  pushbackFieldOfView: 90
+  canCausePushback: 1
+  pushbackEffectPrefab: {fileID: 0}
+  pushbackableLayer:
+    serializedVersion: 2
+    m_Bits: 256
