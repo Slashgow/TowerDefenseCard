@@ -4,9 +4,10 @@ using UnityTimer;
 public class SimpleFearor : MonoBehaviour, IFearor
 {
     [Header("Fear Settings")]
-    [SerializeField] private float fearDuration = 3f;
+    [SerializeField, Range(0f,10f)] private float fearCooldown = 2f;
+    [SerializeField, Range(0f, 10f)] private float fearDuration = 3f;
     [SerializeField, Range(0f, 100f)] private float fearChance = 25f;
-    [SerializeField] private float fearRange = 8f;
+    [SerializeField, Range(0f, 15f)] private float fearRange = 8f;
     [SerializeField, Range(0f, 360f)] private float fearFieldOfView = 90f;
     [SerializeField] private bool canCauseFear = true;
     [SerializeField] private GameObject fearEffectPrefab;
@@ -14,6 +15,7 @@ public class SimpleFearor : MonoBehaviour, IFearor
 
     private Timer fearTimer;
 
+    public float FearCooldown => fearCooldown;
     public float FearDuration => fearDuration;
     public float FearChance => fearChance;
     public float FearRange => fearRange;
@@ -23,7 +25,7 @@ public class SimpleFearor : MonoBehaviour, IFearor
     private void Start()
     {
         if (canCauseFear)
-            fearTimer = Timer.Register(2f, FearNearbyTargets, isLooped: true);
+            fearTimer = Timer.Register(fearCooldown, FearNearbyTargets, isLooped: true);
     }
 
     public void FearNearbyTargets()
@@ -79,7 +81,7 @@ public class SimpleFearor : MonoBehaviour, IFearor
 
         if (enabled && (fearTimer == null || fearTimer.isCompleted))
         {
-            fearTimer = Timer.Register(2f, FearNearbyTargets, isLooped: true);
+            fearTimer = Timer.Register(fearCooldown, FearNearbyTargets, isLooped: true);
         }
         else if (!enabled && fearTimer != null)
         {

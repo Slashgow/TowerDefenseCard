@@ -45,6 +45,11 @@ public class Shaker : Effect
         transform.position = originalPosition;
 
         if (TryGetComponent(out AutoCardMovement autoCardMovement))
-            autoCardMovement.StartMoving();
+        {
+            TryGetComponent(out IStunnable stunnable);
+            if (stunnable == null || (stunnable != null && !stunnable.IsStunned))
+                autoCardMovement.StartMoving();
+        }
+            
     }
 }

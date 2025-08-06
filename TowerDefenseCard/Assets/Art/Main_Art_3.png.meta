@@ -1,0 +1,666 @@
+fileFormatVersion: 2
+guid: 8972b6e8c3542654fb85bbc730dc5887
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6253517410398963179
+    second: Main_Art_3_0
+  - first:
+      213: 8716159946767587312
+    second: Main_Art_3_1
+  - first:
+      213: -8716613674731640347
+    second: Main_Art_3_2
+  - first:
+      213: -4143283894688188625
+    second: Main_Art_3_3
+  - first:
+      213: -2691099437750804697
+    second: Main_Art_3_4
+  - first:
+      213: 8191404852540910256
+    second: Main_Art_3_5
+  - first:
+      213: -51899055133062711
+    second: Main_Art_3_6
+  - first:
+      213: 1259918723687806422
+    second: Main_Art_3_7
+  - first:
+      213: -5326301224695899157
+    second: Main_Art_3_8
+  - first:
+      213: 3935265141704091616
+    second: Main_Art_3_9
+  - first:
+      213: -3728912844668146605
+    second: Main_Art_3_10
+  - first:
+      213: 5898493925193238171
+    second: Main_Art_3_11
+  - first:
+      213: -4744442850647965423
+    second: Main_Art_3_12
+  - first:
+      213: 5711968385590565903
+    second: Main_Art_3_13
+  - first:
+      213: -3177509829168960523
+    second: Main_Art_3_14
+  - first:
+      213: -5988697213089725177
+    second: Main_Art_3_15
+  - first:
+      213: 5838708693980440687
+    second: Main_Art_3_16
+  - first:
+      213: -7035091936464457285
+    second: Main_Art_3_17
+  - first:
+      213: -1550589322196436461
+    second: Main_Art_3_18
+  - first:
+      213: 4934969664582651115
+    second: Main_Art_3_19
+  - first:
+      213: -6807645766161893517
+    second: Main_Art_3_20
+  - first:
+      213: 7808436337280192668
+    second: Main_Art_3_21
+  - first:
+      213: 1269738717029116760
+    second: Main_Art_3_22
+  - first:
+      213: 2359792013141848766
+    second: Main_Art_3_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bg_booster_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1623
+        width: 266
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be50d83c3f4f8c650800000000000000
+      internalID: 6253517410398963179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_orange
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1640
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7d1989a4506f870800000000000000
+      internalID: 8716159946767587312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_blue_kami
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1632
+        width: 266
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9ee41ab0e580780800000000000000
+      internalID: -8716613674731640347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fujin
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1701
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f277385ff391086c0800000000000000
+      internalID: -4143283894688188625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raijin
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 1707
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f1c95c15b47aad0800000000000000
+      internalID: -2691099437750804697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amaterasu
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 1712
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0baac1f3057bda170800000000000000
+      internalID: 8191404852540910256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Susanoo
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1253
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c98d96951e974ff0800000000000000
+      internalID: -51899055133062711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1255
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5764367612c7110800000000000000
+      internalID: 1259918723687806422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1266
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bebd54f814d2516b0800000000000000
+      internalID: -5326301224695899157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rice_paddy
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 1251
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9641f039f8abd150800000000000000
+      internalID: 5898493925193238171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mountain
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 868
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb621245a737e3d0800000000000000
+      internalID: -3177509829168960523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OKUNINUSHI
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1260
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7054a6a3d9fd3eca0800000000000000
+      internalID: -5988697213089725177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yamata_no_orochi
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1246
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6860b35f92470150800000000000000
+      internalID: 5838708693980440687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worker
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 860
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb132d448255e5e90800000000000000
+      internalID: -7035091936464457285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeNeko
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 844
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ab7f11a333b7ae0800000000000000
+      internalID: -1550589322196436461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nekomata
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 849
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec07ca63c88c7440800000000000000
+      internalID: 4934969664582651115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farm
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 842
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3777a3f7e326681a0800000000000000
+      internalID: -6807645766161893517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 856
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9096d65a732d5c60800000000000000
+      internalID: 7808436337280192668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yurei
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 452
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ba412c2a40f9110800000000000000
+      internalID: 1269738717029116760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_portal
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 331
+        width: 487
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2bf1f455aafb020800000000000000
+      internalID: 2359792013141848766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 58d889fafe3415544b6c38da777d437d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Amaterasu: 8191404852540910256
+      BakeNeko: -1550589322196436461
+      Chest: 7808436337280192668
+      Ennemy_portal: 2359792013141848766
+      Farm: -6807645766161893517
+      Forest: -5326301224695899157
+      Main_Art_3_10: -3728912844668146605
+      Main_Art_3_12: -4744442850647965423
+      Main_Art_3_13: 5711968385590565903
+      Main_Art_3_9: 3935265141704091616
+      Mountain: -3177509829168960523
+      Nekomata: 4934969664582651115
+      OKUNINUSHI: -5988697213089725177
+      Raijin: -2691099437750804697
+      Rice_paddy: 5898493925193238171
+      Susanoo: -51899055133062711
+      Temple: 1259918723687806422
+      Worker: -7035091936464457285
+      Yamata_no_orochi: 5838708693980440687
+      Yurei: 1269738717029116760
+      bg_blue_kami: -8716613674731640347
+      bg_booster_2: 6253517410398963179
+      bg_orange: 8716159946767587312
+      fujin: -4143283894688188625
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -30,7 +30,7 @@ public abstract class BaseCardMovement : MonoBehaviour
 
     public void StopSmoothMove()
     {
-        Debug.Log($"stop smooth move {card.CardData.CardID}");
+        //Debug.Log($"stop smooth move {card.CardData.CardID}");
         if(coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -40,7 +40,7 @@ public abstract class BaseCardMovement : MonoBehaviour
 
     private IEnumerator SmoothMoveToClearSpot()
     {
-        Debug.Log($"start smooth move {card.CardData.CardID}");
+        //Debug.Log($"start smooth move {card.CardData.CardID}");
         int iterations = 0;
         Vector3 startPosition = transform.position;
         while (iterations < maxIterations)

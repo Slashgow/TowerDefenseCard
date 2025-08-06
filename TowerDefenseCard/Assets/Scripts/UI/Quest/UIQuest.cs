@@ -15,6 +15,7 @@ public class UIQuest : MonoBehaviour
         questDescriptionText.text = questDescription;  
         toggleIsDone.isOn = isQuestDone;
         this.quest = quest;
+        toggleIsDone.interactable = false;
     }
 
     public void SetQuestAsCompleted() => toggleIsDone.isOn = true;

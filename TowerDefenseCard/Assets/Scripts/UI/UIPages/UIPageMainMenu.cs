@@ -26,10 +26,10 @@ public class UIPageMainMenu : UIPage
         if(GameSaveSystem.saveExists)
             warningDeleteSavePopUp.SetActive(true);
         else
-            SceneLoader.Instance.LoadNextScene();
+            SceneLoader.Instance.LoadNextSceneAsync();
     }
 
-    private void OnClickContinueGameButton() => SceneLoader.Instance.LoadNextScene();
+    private void OnClickContinueGameButton() => SceneLoader.Instance.LoadNextSceneAsync();
 
     public override void Show()
     {

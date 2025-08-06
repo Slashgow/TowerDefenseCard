@@ -3,6 +3,6 @@
     protected override void OnClickDoActionButton()
     {
         GameSaveSystem.ResetSave();
-        SceneLoader.Instance.LoadNextScene();
+        SceneLoader.Instance.LoadNextSceneAsync();
     }
 }

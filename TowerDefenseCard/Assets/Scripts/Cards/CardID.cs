@@ -50,5 +50,12 @@ public enum CardID
     OKUNINUSHI,
     TEMPLE,
     YUREI,
-    CHEST
+    CHEST,
+    FUJIN,
+    RAIJIN,
+    AMATERASU,
+    SUSANOO,
+    YAMATA_NO_OROCHI,
+    BAKENEKO,
+    NEKOMATA
 }

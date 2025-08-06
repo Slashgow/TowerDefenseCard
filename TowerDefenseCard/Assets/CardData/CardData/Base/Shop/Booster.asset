@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 37
   cardName: Booster
+  cardDescription: 
   cardSprite: {fileID: 0}
-  cardBackgroundSprite: {fileID: -124111500, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
+  cardBackgroundSprite: {fileID: 6253517410398963179, guid: 8972b6e8c3542654fb85bbc730dc5887, type: 3}
   isStackable: 0
   cost: 0

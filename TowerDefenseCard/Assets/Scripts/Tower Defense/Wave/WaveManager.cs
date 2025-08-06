@@ -84,7 +84,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     private bool AreAllEnemiesDefeated()
     {
-        return FindObjectsByType<HopCardMovement>(FindObjectsSortMode.None).Length == 0 && 
+        return FindObjectsByType<AutoCardMovement>(FindObjectsSortMode.None).Length == 0 && 
             amountOfSpawnedEnemies >= amountOfEnemiesInCurrentWave;
     }
 

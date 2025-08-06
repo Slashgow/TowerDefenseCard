@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 42
   cardName: Worker
-  cardSprite: {fileID: 0}
+  cardDescription: 
+  cardSprite: {fileID: -7035091936464457285, guid: 8972b6e8c3542654fb85bbc730dc5887, type: 3}
   cardBackgroundSprite: {fileID: 6375175182499689699, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 0

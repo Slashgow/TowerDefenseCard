@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityTimer;
 
@@ -11,7 +12,8 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
     [SerializeField] protected GameObject impactEffectPrefab;
 
     protected Timer attackTimer;
-
+    public event Action<BaseDamageable> OnAttackEvent;
+    protected void OnAttack(BaseDamageable damageable) => OnAttackEvent?.Invoke(damageable);
   
     private Dictionary<GameObject, Timer> activeDoTTimers = new Dictionary<GameObject, Timer>(); // Track DoT per enemy
 
@@ -83,13 +85,17 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
         }
     }
 
+    private bool canAttack = true;
+    public bool CanAttack => canAttack;
+    public void StartAttack() => canAttack = true;
+    public void StopAttack() => canAttack = false;
+
     protected void OnEnable()
     {
         attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true); // TO DO : Only attack during defense phase
     }
 
     protected abstract void Attack();
-
     protected void ApplyDoT(GameObject enemy)
     {
         if (DoT > 0 && DoTDuration > 0)
@@ -107,7 +113,7 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
                                  {
                                      totalTimeElapsed += 1f;
 
-                                     if(damageable.IsDead)
+                                     if(damageable.IsDead || !canAttack)
                                          return;
 
                                      damageable.TakeDamage(DoT);

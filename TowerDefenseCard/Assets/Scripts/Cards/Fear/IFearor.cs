@@ -1,5 +1,6 @@
 ﻿public interface IFearor
 {
+    float FearCooldown { get; }
     float FearDuration { get; }
     float FearChance { get; }
     float FearRange { get; }

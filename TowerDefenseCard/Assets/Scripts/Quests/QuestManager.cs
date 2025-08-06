@@ -32,6 +32,7 @@ public class QuestManager : MonoBehaviour
         foreach (var quest in availableQuests)
         {
             quest.Setup();
+            activeQuests[quest.QuestId] = quest;
         }
     }
 
@@ -39,7 +40,7 @@ public class QuestManager : MonoBehaviour
     {
         foreach (var quest in availableQuests)
         {
-            activeQuests[quest.QuestId] = quest;
+          
             quest.OnCompleteQuest += OnQuestComplete;
             quest.CheckProgress();
         }

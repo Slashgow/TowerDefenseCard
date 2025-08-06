@@ -13,6 +13,9 @@ public class SimpleDamageor : BaseDamageor
 
     protected override void Attack()
     {
+        if (!CanAttack)
+            return;
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AttackRange, enemyLayer);
         if (hits.Length > 0)
         {
@@ -32,12 +35,12 @@ public class SimpleDamageor : BaseDamageor
         }
         else
         {
-            Collider2D[] targets = Physics2D.OverlapCircleAll(hits[0].transform.position, AttackArea, enemyLayer);
+            //Collider2D[] targets = Physics2D.OverlapCircleAll(hits[0].transform.position, AttackArea, enemyLayer);
 
-            for (int i = 0; i < targets.Length; i++)
+            for (int i = 0; i < hits.Length; i++)
             {
-                if (targets[i].TryGetComponent<IDamageable>(out var damageable))
-                    HitDamageable(targets[i], damageable);
+                if (hits[i].TryGetComponent<IDamageable>(out var damageable))
+                    HitDamageable(hits[i], damageable);
             }
         }
     }
@@ -45,6 +48,7 @@ public class SimpleDamageor : BaseDamageor
     private void HitDamageable(Collider2D hit, IDamageable damageable)
     {
         ApplyDoT(hit.gameObject);
+        OnAttack(hit.GetComponent<BaseDamageable>());
         damageable.TakeDamage(Damage);
         Instantiate(impactEffectPrefab, hit.transform.position, Quaternion.identity);
     }

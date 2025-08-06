@@ -17,13 +17,16 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private Logger logger;
 
 
-    public static readonly string saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
-    public static readonly string savePathCardDiscovered = Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
+    public static string saveFilePath;
+    public static string savePathCardDiscovered;
     public static bool saveExists => File.Exists(saveFilePath);
   
 
     protected override void Awake()
     {
+        saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
+        savePathCardDiscovered = Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
+
         base.Awake();
         LoadGame();
     }
@@ -208,7 +211,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             if(newCard.TryGetComponent(out BaseCardMovement baseCardMovement))
             {
                 baseCardMovement.StopSmoothMove();
-                baseCardMovement.InitializeSortOrder();
+                //baseCardMovement.InitializeSortOrder();
             }
 
             if(newCard is Booster)
