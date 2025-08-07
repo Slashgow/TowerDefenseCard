@@ -66,4 +66,13 @@ public class QuestManager : MonoBehaviour
     {
         return new List<Quest>(activeQuests.Values);
     }
+
+    private void OnValidate()
+    {
+        for (int i = 0; i<transform.childCount; i++)
+        {
+            var child = transform.GetChild(i);
+            child.name = $"Quest {i + 1}";
+        }
+    }
 }

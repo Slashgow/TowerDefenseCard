@@ -1,5 +1,7 @@
 ﻿public class PurchaseBoosterCondition : QuestCondition
 {
+
+
     private void Start() => ShopManager.OnPurchaseBooster += OnPurchaseBooster;
     private void OnDestroy() => ShopManager.OnPurchaseBooster -= OnPurchaseBooster;
     private void OnPurchaseBooster()

@@ -26,6 +26,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
     private bool isRecentering;
 
     public bool IsDraggindEnable { get; set; }
+    public bool IsZoomingEnable { get; set; }
 
     protected override void Awake()
     {
@@ -34,6 +35,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         inputHandler = GetComponent<CameraInputHandler>();
         originPosition = transform.position;
         IsDraggindEnable = true;
+        IsZoomingEnable = true;
     }
 
     void Start()
@@ -63,7 +65,9 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         if(IsDraggindEnable)
             HandleDragging();
         
-        HandleZooming();
+        if(IsZoomingEnable)
+            HandleZooming();
+
         HandleWASDMovement();
         SmoothMovement();
         SmoothZooming();

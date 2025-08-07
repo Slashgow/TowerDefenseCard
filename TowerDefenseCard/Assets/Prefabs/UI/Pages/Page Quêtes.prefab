@@ -187,6 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3411366386375460054}
   - component: {fileID: 378272750455234316}
+  - component: {fileID: 5850513731245149637}
   m_Layer: 5
   m_Name: Content main quests
   m_TagString: Untagged
@@ -211,7 +212,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &378272750455234316
 MonoBehaviour:
@@ -239,6 +240,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5850513731245149637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315076301590193947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &527479017632079845
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIQuestPrefab: {fileID: 8299878757786134498, guid: 4257d70d0cbb18040adabf1f0a0d2fa4, type: 3}
+  autoPinOnAwake: 1
   pinToggle: {fileID: 3159579616276646620}
   uiQuestTab: {fileID: 4180938997330282001}
   mainQuestManager: {fileID: 0}
@@ -1410,6 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiQuestManager: {fileID: 2300874102197498052}
+  autoShowOnStart: 1
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -2795,6 +2812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2947041065742219047}
   - component: {fileID: 3357745108485072249}
+  - component: {fileID: 3732664182593949247}
   m_Layer: 5
   m_Name: Content secondary quest
   m_TagString: Untagged
@@ -2819,7 +2837,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3357745108485072249
 MonoBehaviour:
@@ -2847,6 +2865,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3732664182593949247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484137533613473615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &8903988972653444770
 GameObject:
   m_ObjectHideFlags: 0

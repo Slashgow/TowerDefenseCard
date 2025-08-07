@@ -7,10 +7,11 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UIQuestManager : UIPage, IPointerExitHandler
+public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField] private UIQuest UIQuestPrefab;
 
+    [SerializeField] private bool autoPinOnAwake = true;
     [SerializeField] private Toggle pinToggle;
     [SerializeField] private UIQuestTab uiQuestTab;
 
@@ -47,6 +48,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler
         mainQuestManager.OnQuestCompleted += MainQuestManager_OnQuestCompleted;
         secondaryQuestManager.OnQuestCompleted += SecondaryQuestManager_OnQuestCompleted;
 
+        isPin = autoPinOnAwake;
         pinToggle.isOn = isPin;
         pinToggle.onValueChanged.AddListener(OnClickOnPinToggle);
 
@@ -125,9 +127,19 @@ public class UIQuestManager : UIPage, IPointerExitHandler
         {
             OnExitNotPin?.Invoke();
         }
-          
+
+        CameraMovement.Instance.IsDraggindEnable = true;
+        CameraMovement.Instance.IsZoomingEnable = true;
+
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        CameraMovement.Instance.IsDraggindEnable = false;
+        CameraMovement.Instance.IsZoomingEnable = false;
     }
 
     private UIQuest GetMainUIQuestByQuestID(string questID)=>  mainUIQuests.FirstOrDefault(uiQuest => uiQuest.Quest.QuestId == questID);
     private UIQuest GetSecondaryUIQuestByQuestID(string questID) => secondaryUIQuests.FirstOrDefault(uiQuest => uiQuest.Quest.QuestId == questID);
+
+ 
 }

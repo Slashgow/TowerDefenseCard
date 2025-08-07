@@ -5,17 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : PersistentMonoSingleton<SceneLoader>
 {
-    [SerializeField] private Animator transitionAnimator;
-    [SerializeField, Range(0, 10f)] private float transitionTime;
-
+    private float transitionTime;
+    private Animator transitionAnimator;
     private float timeElapsed = 0f;
-
-    public readonly int END_SCENE = Animator.StringToHash("EndScene");
 
     public event Action<int> OnSceneLoaded;
 
     private void OnEnable() => SceneManager.sceneLoaded += SceneManager_sceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        TransitionManager transitionManager = FindFirstObjectByType<TransitionManager>();
+        RegisterTransitionAnimator(transitionManager.Animator, transitionManager.TransitionTime);
+    }
+    public void RegisterTransitionAnimator(Animator animator, float transitionTime)
+    {
+        transitionAnimator = animator;
+        this.transitionTime = transitionTime;
+    }
+
+    public void UnregisterTransitionAnimator()
+    {
+        transitionAnimator = null;
+        transitionTime = 0f;
+    }
 
     private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
@@ -29,7 +44,7 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene( (SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCount + 1));
+        SceneManager.LoadScene( (SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCountInBuildSettings));
     }
 
     public void LoadNextSceneAsync()
@@ -39,15 +54,22 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
 
     private IEnumerator LoadNextSceneAsyncCoroutine()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCount + 1));
-
         timeElapsed = 0f;
-        transitionAnimator.SetTrigger(END_SCENE);
+        transitionAnimator.SetTrigger("EndScene");
 
-        while (!asyncLoad.isDone && transitionTime < timeElapsed)
+        while (timeElapsed < transitionTime)
         {
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCountInBuildSettings));
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        transitionAnimator.SetTrigger("StartScene");
     }
 }

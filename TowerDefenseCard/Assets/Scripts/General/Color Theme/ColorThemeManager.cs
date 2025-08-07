@@ -4,14 +4,17 @@ using System.Linq;
 using UnityEngine;
 
 
-public class ColorThemeManager : PersistentMonoSingleton<ColorThemeManager>
+public class ColorThemeManager : MonoSingleton<ColorThemeManager>
 {
+    [SerializeField] private ColorTheme startColorTheme = ColorTheme.Rose;
     [SerializeField] private Logger logger;
     [SerializeField] private List<ColorsTheme> colorsThemes = new List<ColorsTheme>();
 
     public static event Action<ColorTheme> OnChangeColorTheme;
 
     public ColorTheme CurrentColorTheme;
+
+    private void Start() => ChanceColorTheme(startColorTheme);
 
     public void ChanceColorTheme(ColorTheme targetColorTheme)
     {

@@ -109,6 +109,7 @@ MonoBehaviour:
   backgroundSprite: {fileID: 5793447513779673074}
   cardSprite: {fileID: 2477208669114640186}
   cardUI: {fileID: 6868042175936996570}
+  spawnBoosterOnStart: 0
   shop:
     shopCost: 0
     shopItems: []

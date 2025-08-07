@@ -235,5 +235,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 149693458406921073}
   m_SourcePrefab: {fileID: 100100000, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+--- !u!1 &7316529704785690274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &149693458406921073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4621707ab0adafb438cc53aa76051eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardNamesColor: {r: 0.9647059, g: 0.9529412, b: 0.9254902, a: 1}
+  tooltipGameObject: {fileID: 0}
+  tooltipText: {fileID: 0}
+  cardShop: {fileID: 8871913060487438698}
+--- !u!114 &8871913060487438698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582c0bea4611fdd429c7a25482c703f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
