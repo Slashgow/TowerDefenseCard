@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "NewCardData", menuName = "William/CardData")]
 public class CardData : ScriptableObject
@@ -6,11 +7,11 @@ public class CardData : ScriptableObject
     [SerializeField] private CardID cardID;
     public CardID CardID => cardID;
 
-    [SerializeField] private string cardName; 
-    public string CardName => cardName;
+    [SerializeField] private LocalizedString cardName; 
+    public LocalizedString CardName => cardName;
 
-    [SerializeField, TextArea] private string cardDescription;
-    public string CardDescription => cardDescription;
+    [SerializeField] private LocalizedString cardDescription;
+    public LocalizedString CardDescription => cardDescription;
 
     [SerializeField] private Sprite cardSprite;
     public Sprite CardSprite => cardSprite;

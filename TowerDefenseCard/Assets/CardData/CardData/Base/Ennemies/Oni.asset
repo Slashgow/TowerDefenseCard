@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Oni
   m_EditorClassIdentifier: 
   cardID: 9
-  cardName: Oni
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719338418177
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: -791273899, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: -2533790215428652826, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 0
   cost: 1
+  references:
+    version: 2
+    RefIds: []

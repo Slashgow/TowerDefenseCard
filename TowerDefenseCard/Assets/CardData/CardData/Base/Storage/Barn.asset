@@ -13,9 +13,28 @@ MonoBehaviour:
   m_Name: Barn
   m_EditorClassIdentifier: 
   cardID: 38
-  cardName: Barn
-  cardDescription: 
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535651
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719338418180
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: -2025812267, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   cardBackgroundSprite: {fileID: 8716159946767587312, guid: 8972b6e8c3542654fb85bbc730dc5887, type: 3}
   isStackable: 1
   cost: 36
+  references:
+    version: 2
+    RefIds: []

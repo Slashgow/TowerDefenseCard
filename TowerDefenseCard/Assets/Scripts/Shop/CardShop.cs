@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class CardShop : Card
 {
@@ -11,12 +12,16 @@ public class CardShop : Card
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
-        cardUI.SetupCard(cardData.CardName, shop.ShopCost.ToString());
+        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.ShopCost.ToString());
     }
 
     protected override void Start()
     {
         base.Start();
+
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChange;
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChange;
+
         if (spawnBoosterOnStart && !GameSaveSystem.saveExists)
         {
             TryPurchaseBooster();
@@ -24,4 +29,10 @@ public class CardShop : Card
     }
 
     public void TryPurchaseBooster() => ShopManager.Instance.TryPurchaseBooster(this.shop);
+
+    private void OnLocaleChange(UnityEngine.Localization.Locale Locale)
+    {
+        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.ShopCost.ToString());
+    }
+
 }

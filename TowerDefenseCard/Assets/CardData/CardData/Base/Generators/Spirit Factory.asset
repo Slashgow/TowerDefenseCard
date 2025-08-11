@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Spirit Factory
   m_EditorClassIdentifier: 
   cardID: 18
-  cardName: Spirit Factory
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535627
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719334223883
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 1879450607, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: 2878311640646176475, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1
   cost: 28
+  references:
+    version: 2
+    RefIds: []

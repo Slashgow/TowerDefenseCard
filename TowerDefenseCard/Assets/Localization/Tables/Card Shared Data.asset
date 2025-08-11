@@ -1,0 +1,492 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Card Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Card
+  m_TableCollectionNameGuidString: 39567ff0bf25fe0498764248f1413610
+  m_Entries:
+  - m_Id: 5058903535616
+    m_Key: BAMBOO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535617
+    m_Key: BAMBOO_PLANK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535618
+    m_Key: SAKURA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535619
+    m_Key: SAKURA_BRICK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535620
+    m_Key: JADE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535621
+    m_Key: AMETHYST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535622
+    m_Key: SPIRIT_ESSENCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535623
+    m_Key: KAMI_ESSENCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535624
+    m_Key: BAMBOO_GENERATOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535625
+    m_Key: SAKURA_GENERATOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535626
+    m_Key: JADE_GENERATOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535627
+    m_Key: SPIRIT_GENERATOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535628
+    m_Key: TOORI_GATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535629
+    m_Key: ARCHER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535630
+    m_Key: HACHIMAN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535631
+    m_Key: AKITA_INU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535632
+    m_Key: KOMAINU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535633
+    m_Key: RED_CROWN_CRANE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535634
+    m_Key: PHOENIX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535635
+    m_Key: WHITE_SNAKE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535636
+    m_Key: DRAGON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535637
+    m_Key: RICE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535638
+    m_Key: NOODLES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535639
+    m_Key: EGG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535640
+    m_Key: LEAVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535641
+    m_Key: WATER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535642
+    m_Key: WASABI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535643
+    m_Key: MATCHA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535644
+    m_Key: RAMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535645
+    m_Key: SPICY_RAMEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535646
+    m_Key: SAKE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535647
+    m_Key: TAMAGO_GOHAN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535648
+    m_Key: ONI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535649
+    m_Key: TENGU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535650
+    m_Key: KAPPA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535651
+    m_Key: BARN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535652
+    m_Key: WAREHOUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535653
+    m_Key: TBD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535654
+    m_Key: FUJIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535655
+    m_Key: RAIJIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535656
+    m_Key: AMATERASU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535657
+    m_Key: SUSANOO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535658
+    m_Key: OKUNINUSHI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535659
+    m_Key: YAMATA NO OROCHI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535660
+    m_Key: TEMPLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535661
+    m_Key: FOREST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535662
+    m_Key: RICE_PADDY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535663
+    m_Key: FARM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535664
+    m_Key: MONTAIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535665
+    m_Key: WORKER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535666
+    m_Key: BAKENEKO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535667
+    m_Key: YUREI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535668
+    m_Key: NEKOMATA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535669
+    m_Key: CHEST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223872
+    m_Key: BAMBOO_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223873
+    m_Key: BAMBOO_PLANK_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223874
+    m_Key: SAKURA_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223875
+    m_Key: SAKURA_BRICK_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223876
+    m_Key: JADE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223877
+    m_Key: AMETHYST_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223878
+    m_Key: SPIRIT_ESSENCE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223879
+    m_Key: KAMI_ESSENCE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223880
+    m_Key: BAMBOO_GENERATOR_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223881
+    m_Key: SAKURA_GENERATOR_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223882
+    m_Key: JADE_GENERATOR_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223883
+    m_Key: SPIRIT_GENERATOR_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223884
+    m_Key: TOORI_GATE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223885
+    m_Key: ARCHER_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223886
+    m_Key: HACHIMAN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223887
+    m_Key: AKITA_INU_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223888
+    m_Key: KOMAINU_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223889
+    m_Key: RED_CROWN_CRANE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223890
+    m_Key: PHOENIX_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223891
+    m_Key: WHITE_SNAKE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223892
+    m_Key: DRAGON_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223893
+    m_Key: RICE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223894
+    m_Key: NOODLES_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223895
+    m_Key: EGG_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223896
+    m_Key: LEAVES_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223897
+    m_Key: WATER_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223898
+    m_Key: WASABI_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223899
+    m_Key: MATCHA_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223900
+    m_Key: RAMEN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223901
+    m_Key: SPICY_RAMEN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223902
+    m_Key: SAKE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418176
+    m_Key: TAMAGO_GOHAN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418177
+    m_Key: ONI_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418178
+    m_Key: TENGU_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418179
+    m_Key: KAPPA_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418180
+    m_Key: BARN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418181
+    m_Key: WAREHOUSE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418182
+    m_Key: TBD_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418183
+    m_Key: FUJIN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418184
+    m_Key: RAIJIN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418185
+    m_Key: AMATERASU_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418186
+    m_Key: SUSANOO_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418187
+    m_Key: OKUNINUSHI_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418188
+    m_Key: YAMATA NO OROCHI_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418189
+    m_Key: TEMPLE_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418190
+    m_Key: FOREST_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418191
+    m_Key: RICE_PADDY_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418192
+    m_Key: FARM_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418193
+    m_Key: MONTAIN_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418194
+    m_Key: WORKER_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418195
+    m_Key: BAKENEKO_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418196
+    m_Key: YUREI_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418197
+    m_Key: NEKOMATA_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418198
+    m_Key: CHEST_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13170582614016
+    m_Key: INK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13220360613888
+    m_Key: INK_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14117820035072
+    m_Key: IDEA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14947591778304
+    m_Key: BOOSTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15009080274944
+    m_Key: BASE_PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15465194057728
+    m_Key: FOOD_PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15567262445568
+    m_Key: DEFENSE_PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15660074004480
+    m_Key: ENGINEERING PACK
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5581259818915594373
+  references:
+    version: 2
+    RefIds:
+    - rid: 5581259818915594373
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1754922873647

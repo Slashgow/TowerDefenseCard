@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Idea
   m_EditorClassIdentifier: 
   cardID: 40
-  cardName: New Idea!
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 14117820035072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 14117820035072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 0}
   cardBackgroundSprite: {fileID: 950898650, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 0
   cost: 2
+  references:
+    version: 2
+    RefIds: []

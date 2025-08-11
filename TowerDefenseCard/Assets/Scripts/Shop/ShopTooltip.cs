@@ -32,11 +32,11 @@ public class ShopTooltip : MonoBehaviour
         cardIdeaNames.Clear();
         foreach (ShopItem shopItem in cardShop.Shop.ShopItems)
         {
-            cardNames.Add(shopItem.CardPrefab.GetComponent<Card>().CardData.CardName);
+            cardNames.Add(shopItem.CardPrefab.GetComponent<Card>().CardData.CardName.GetLocalizedString());
         }
         foreach(ShopCardIdea shopCardIdea in cardShop.Shop.ShopCardIdeas)
         {
-            cardIdeaNames.Add(shopCardIdea.CardIdeaPrefab.CardData.CardName);
+            cardIdeaNames.Add(shopCardIdea.CardIdeaPrefab.CardData.CardName.GetLocalizedString());
         }
 
         tooltipText.text = $"<color={hexaCardNamesColor}> Can provide : ";

@@ -15,7 +15,7 @@ public class UICardMenu : MonoBehaviour
     public virtual void SetupUICardMenu(CardData cardData, bool disableNotification)
     { 
         this.cardData = cardData;
-        cardTitle.text = cardData.CardName;
+        cardTitle.text = cardData.CardName.GetLocalizedString();
         cardCost.text = cardData.Cost.ToString();
         cardImage.sprite = cardData.CardSprite;
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;

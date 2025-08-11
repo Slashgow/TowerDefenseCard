@@ -1,0 +1,492 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Card_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 39567ff0bf25fe0498764248f1413610, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5058903535616
+    m_Localized: Bamboo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535617
+    m_Localized: Planche de bambou
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535618
+    m_Localized: Sakura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535619
+    m_Localized: Brique de sakura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535620
+    m_Localized: Jade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535621
+    m_Localized: Amethyste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535622
+    m_Localized: Essence d'esprit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535623
+    m_Localized: Essence de Dieu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535624
+    m_Localized: Usine de Bambou
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535625
+    m_Localized: Usine de Sakura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535626
+    m_Localized: Usine de Jade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535627
+    m_Localized: Usine d'esprit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535628
+    m_Localized: Toori
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535629
+    m_Localized: Archer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535630
+    m_Localized: Hachiman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535631
+    m_Localized: Akita Inu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535632
+    m_Localized: Komainu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535633
+    m_Localized: Grue japonaise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535634
+    m_Localized: Phoenix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535635
+    m_Localized: Serpent Blanc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535636
+    m_Localized: Dragon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535637
+    m_Localized: Riz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535638
+    m_Localized: Nouilles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535639
+    m_Localized: Oeuf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535640
+    m_Localized: Feuilles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535641
+    m_Localized: Eau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535642
+    m_Localized: Wasabi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535643
+    m_Localized: Matcha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535644
+    m_Localized: Ramen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535645
+    m_Localized: "Ramen \xE9pic\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535646
+    m_Localized: Sake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535647
+    m_Localized: Tamago Gohan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535648
+    m_Localized: Oni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535649
+    m_Localized: Tengu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535650
+    m_Localized: Kappa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535651
+    m_Localized: Grange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535652
+    m_Localized: "Entrep\xF4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535653
+    m_Localized: TBD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535654
+    m_Localized: Fujin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535655
+    m_Localized: Raijin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535656
+    m_Localized: Amaterasu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535657
+    m_Localized: Susanoo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535658
+    m_Localized: Okuninushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535659
+    m_Localized: Yamata no Orochi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535660
+    m_Localized: Temple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535661
+    m_Localized: "For\xEAt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535662
+    m_Localized: "Rizi\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535663
+    m_Localized: Ferme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535664
+    m_Localized: Montagne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535665
+    m_Localized: Travailleur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535666
+    m_Localized: Bakeneko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535667
+    m_Localized: Yurei
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535668
+    m_Localized: Nekomata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5058903535669
+    m_Localized: Coffre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223872
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223873
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223874
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223875
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223876
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223877
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223878
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223879
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223880
+    m_Localized: "Un b\xE2timent utilitaire qui g\xE9n\xE8re du Bambou."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223881
+    m_Localized: "Un b\xE2timent utilitaire qui g\xE9n\xE8re des Sakuras."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223882
+    m_Localized: "Un b\xE2timent utilitaire qui g\xE9n\xE8re de la Jade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223883
+    m_Localized: "Un b\xE2timent utilitaire qui g\xE9n\xE8re de l'Amethyste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223884
+    m_Localized: "Un b\xE2timent d\xE9fensif permettant de r\xE9duire la vitesse
+      des ennemis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223885
+    m_Localized: "Un archer tirant des fl\xE8ches monocibles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223886
+    m_Localized: "Dieu de la guerre.\nIl tire trois fl\xE8ches \xE0 la fois."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223887
+    m_Localized: "Un chien loyal mordant un ennemi \xE0 la fois."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223888
+    m_Localized: "Mi-chien, mi-lion, mordant les ennemis en AOE.\nSes d\xE9gats sont
+      renforc\xE9s si un autre Komainu est dans sa port\xE9e d'attaque"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223889
+    m_Localized: "Grue japonaise.\nIl inflige de faibles d\xE9g\xE2ts en AOE en 
+      battant ses ailes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223890
+    m_Localized: "Cr\xE9ature mythologique, br\xFBle ses ennemis sur la dur\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223891
+    m_Localized: "Serpent blanc empoissant un ennemi \xE0 la fois."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223892
+    m_Localized: "Cr\xE9ature mythologique, lance des boules de feus sur ses ennemis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223893
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223894
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223895
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223896
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223897
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223898
+    m_Localized: Ressource de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223899
+    m_Localized: Augmente la vitesse d'attaque
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223900
+    m_Localized: "Augmente les d\xE9g\xE2ts"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223901
+    m_Localized: "Ajoute des d\xE9g\xE2ts de brulure."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719334223902
+    m_Localized: Augmente la zone d'attaque
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418176
+    m_Localized: "Augmente la port\xE9e d'attaque"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418177
+    m_Localized: "Un d\xE9mon infligeant des d\xE9g\xE2ts monocibles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418178
+    m_Localized: "Un d\xE9mon infligeant des d\xE9g\xE2ts monocibles. Court rapidement"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418179
+    m_Localized: "Une cr\xE9ature semblable \xE0 une tortue infligeant des d\xE9g\xE2ts
+      monocibles"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418180
+    m_Localized: Permet de stocker un faible nombre de cartes en plus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418181
+    m_Localized: "Permet de stocker une grande quantit\xE9 de cartes en plus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418183
+    m_Localized: Dieu du vent, peut repousser les ennemis en zone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418184
+    m_Localized: Dieu de la foudre, foudroie les ennemis en zone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418185
+    m_Localized: Dieu du soleil, peut aveugler les ennemis en zone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418186
+    m_Localized: "Dieu des temp\xEAtes, peut stun les ennemis en zone."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418187
+    m_Localized: "Dieu de l'agriculture et de la m\xE9decine, peut soigner ses alli\xE9s
+      en zone."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418188
+    m_Localized: "Serpents \xE0 8 t\xEAtes, empoisonnent ses ennemis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418189
+    m_Localized: "Lieu sacr\xE9, n\xE9cessaire pour pour craft des Dieux."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418190
+    m_Localized: "Cette carte peut \xEAtre exploit\xE9e pour obtenir des ressources
+      de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418191
+    m_Localized: "Cette carte peut \xEAtre exploit\xE9e pour obtenir des ressources
+      de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418192
+    m_Localized: "Cette carte peut \xEAtre exploit\xE9e pour obtenir des ressources
+      de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418193
+    m_Localized: "Cette carte peut \xEAtre exploit\xE9e pour obtenir des ressources
+      de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418194
+    m_Localized: "Un travailleur d\xE9di\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418195
+    m_Localized: Court vite et griffe ses ennemis en zone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418196
+    m_Localized: Aveugle tout les ennemis se trouvant dans son champ de vision.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418197
+    m_Localized: "Court vite. Envoie des boules de feu, laissant ses ennemis br\xFBler."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12719338418198
+    m_Localized: Peut contenir de l'encre.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13170582614016
+    m_Localized: Encre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13220360613888
+    m_Localized: Monnaie du jeu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14117820035072
+    m_Localized: "Id\xE9e de carte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14947591778304
+    m_Localized: Booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15009080274944
+    m_Localized: Pack de base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15465194057728
+    m_Localized: Pack de nourriture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15567262445568
+    m_Localized: "Pack de d\xE9fense"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15660074004480
+    m_Localized: "Pack d'ing\xE9nierie"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

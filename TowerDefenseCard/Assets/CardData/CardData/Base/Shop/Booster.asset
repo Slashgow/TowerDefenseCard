@@ -13,9 +13,28 @@ MonoBehaviour:
   m_Name: Booster
   m_EditorClassIdentifier: 
   cardID: 37
-  cardName: Booster
-  cardDescription: 
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 14947591778304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 14947591778304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 0}
   cardBackgroundSprite: {fileID: 6253517410398963179, guid: 8972b6e8c3542654fb85bbc730dc5887, type: 3}
   isStackable: 0
   cost: 0
+  references:
+    version: 2
+    RefIds: []

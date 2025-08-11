@@ -1,5 +1,6 @@
-using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 public class CardIdea : Card, IPointerDownHandler
 {
     [SerializeField] private CardIdeaUI cardIdeaUI;
@@ -9,8 +10,21 @@ public class CardIdea : Card, IPointerDownHandler
     public void Initialize(Card card)
     {
         this.card = card;
-        cardIdeaUI.SetupCard(cardData.CardName, cardData.Cost.ToString(), card.CardData.CardName);
+        cardIdeaUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString(), card.CardData.CardName.GetLocalizedString());
     }
+
+    private void OnLocaleChange(UnityEngine.Localization.Locale Locale)
+    {
+        cardIdeaUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString(), card.CardData.CardName.GetLocalizedString());
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChange;
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChange;
+    }
+
 
     public void OnPointerDown(PointerEventData eventData)
     {

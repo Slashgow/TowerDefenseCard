@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Torii Gate
   m_EditorClassIdentifier: 
   cardID: 7
-  cardName: Toori Gate
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535628
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719334223884
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 1312731569831349898, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: -773140731, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 1
   cost: 18
+  references:
+    version: 2
+    RefIds: []

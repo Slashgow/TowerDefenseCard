@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: Tengu Shrine
   m_EditorClassIdentifier: 
   cardID: 8
-  cardName: Tengu
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535649
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719338418178
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 8504883195135373499, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: -2533790215428652826, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   isStackable: 0
   cost: 1
+  references:
+    version: 2
+    RefIds: []

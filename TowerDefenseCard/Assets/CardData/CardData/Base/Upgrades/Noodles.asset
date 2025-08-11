@@ -13,9 +13,28 @@ MonoBehaviour:
   m_Name: Noodles
   m_EditorClassIdentifier: 
   cardID: 27
-  cardName: Noodles
-  cardDescription: 
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535638
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719334223894
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: -1935481588230842126, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   cardBackgroundSprite: {fileID: -5418162045431731510, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 2
+  references:
+    version: 2
+    RefIds: []

@@ -32,7 +32,7 @@ public class UICardMoreStat : MonoBehaviour
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         rectTransform.anchoredPosition = Vector2.zero;
 
-        descriptionValue.text = card.CardData.CardDescription;
+        descriptionValue.text = card.CardData.CardDescription.GetLocalizedString();
 
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
         uICardMenu.SetupUICardMenu(card.CardData, true);

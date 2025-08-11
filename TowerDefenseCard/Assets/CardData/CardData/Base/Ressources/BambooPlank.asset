@@ -13,9 +13,28 @@ MonoBehaviour:
   m_Name: BambooPlank
   m_EditorClassIdentifier: 
   cardID: 4
-  cardName: Bamboo Plank
-  cardDescription: 
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535617
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719334223873
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 13222060, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: -4312154775806992197, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 6
+  references:
+    version: 2
+    RefIds: []

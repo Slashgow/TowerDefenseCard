@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class Card : MonoBehaviour
 {
@@ -26,14 +27,20 @@ public class Card : MonoBehaviour
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
-        cardUI.SetupCard(cardData.CardName, cardData.Cost.ToString());
+        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
         StackCount = 1;
         StackedCards = new List<Card>();
     }
 
+    private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale Locale)
+    {
+        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
+    }
+
     protected virtual void Start()
     {
-      
+        LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
+        LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
     }
 
     public virtual void OnStack(Card targetCard)

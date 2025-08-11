@@ -13,9 +13,28 @@ MonoBehaviour:
   m_Name: TBD_Health
   m_EditorClassIdentifier: 
   cardID: 34
-  cardName: Tamgo Gohan
-  cardDescription: 
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 5058903535653
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 12719338418182
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   cardSprite: {fileID: 2288121804208525011, guid: 56a4ba8ceb4641144a314bbf1855bcdc, type: 3}
   cardBackgroundSprite: {fileID: -5418162045431731510, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 6
+  references:
+    version: 2
+    RefIds: []
