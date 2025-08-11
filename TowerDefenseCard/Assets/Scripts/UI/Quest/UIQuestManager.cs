@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
@@ -67,7 +68,27 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     private void Start()
     {
         InitializeQuestsUI();
+
+        LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
+        LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
     }
+
+    private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale locale)
+    {
+        for (int i = 0; i < mainQuestManager.AvailableQuests.Count; i++)
+        {
+            Quest quest = mainQuestManager.AvailableQuests[i];
+            mainUIQuests[i].Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
+
+        }
+        for (int i = 0; i < secondaryQuestManager.AvailableQuests.Count; i++)
+        {
+            Quest quest = secondaryQuestManager.AvailableQuests[i];
+            secondaryUIQuests[i].Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
+
+        }
+    }
+
     private void ToggleScrollRectMainQuest()
     {
         bool enable = scrollRectMainQuest.gameObject.activeSelf;
@@ -93,7 +114,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         {
             GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewMainQuest);
             UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
-            uIQuestInstance.Setup(quest.Description, quest.IsCompleted, quest);
+            uIQuestInstance.Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
             mainUIQuests.Add(uIQuestInstance);
 
         }
@@ -101,7 +122,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         {
             GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewSecondaryQuest);
             UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
-            uIQuestInstance.Setup(quest.Description, quest.IsCompleted, quest);
+            uIQuestInstance.Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
             secondaryUIQuests.Add(uIQuestInstance);
         }
     }

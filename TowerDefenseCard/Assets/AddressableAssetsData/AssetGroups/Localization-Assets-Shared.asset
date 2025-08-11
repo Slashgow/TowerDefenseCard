@@ -20,6 +20,16 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19a162fd40b7956449e63f69762674b7
+    m_Address: Assets/Localization/Tables/Secondary_Quest Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21e217473ef47cb49a44b3c6b9bb0c92
+    m_Address: Assets/Localization/Tables/Quest Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 39567ff0bf25fe0498764248f1413610
     m_Address: Assets/Localization/Tables/Card Shared Data.asset
     m_ReadOnly: 1

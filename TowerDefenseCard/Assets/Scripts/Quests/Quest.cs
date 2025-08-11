@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [System.Serializable]
 public class Quest : ILoadable, ISavable
@@ -7,11 +8,11 @@ public class Quest : ILoadable, ISavable
     [SerializeField] private string questId;
     public string QuestId => questId;
 
-    [SerializeField] private string title;
-    public string Title => title;
+    [SerializeField] private LocalizedString title;
+    public LocalizedString Title => title;
 
-    [SerializeField] private string description;
-    public string Description => description;
+    [SerializeField] private LocalizedString description;
+    public LocalizedString Description => description;
 
     [SerializeField] private QuestCondition condition;
     public QuestCondition Condition => condition;

@@ -141,20 +141,71 @@ MonoBehaviour:
   logger: {fileID: 671026881947969945}
   availableQuests:
   - questId: Chest
-    title: Chest
-    description: Craft a Chest
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 20785262592
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 71767027712
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 525439848770912124}
     goalCount: 1
   - questId: Barn
-    title: Barn
-    description: Craft a Barn
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 161038594048
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 199974318080
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 1506988919479403828}
     goalCount: 1
   - questId: Warehouse
-    title: Warehouse
-    description: Craft a warehouse
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 284816699392
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 365649326080
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 3509188638453161618}
     goalCount: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &671026881947969945
 MonoBehaviour:
   m_ObjectHideFlags: 0

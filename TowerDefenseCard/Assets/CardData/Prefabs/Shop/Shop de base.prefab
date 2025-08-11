@@ -245,6 +245,27 @@ MonoBehaviour:
   tooltipGameObject: {fileID: 0}
   tooltipText: {fileID: 0}
   cardShop: {fileID: 8871913060487438698}
+  startCardTooltip:
+    m_TableReference:
+      m_TableCollectionName: GUID:0973f375f04bcf845b691bad9cad1996
+    m_TableEntryReference:
+      m_KeyId: 18142812422139904
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  startIdeaTooltip:
+    m_TableReference:
+      m_TableCollectionName: GUID:0973f375f04bcf845b691bad9cad1996
+    m_TableEntryReference:
+      m_KeyId: 18142953854070784
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &8871913060487438698 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}

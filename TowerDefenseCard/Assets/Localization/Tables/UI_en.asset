@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 0973f375f04bcf845b691bad9cad1996, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 29220007936
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159717388288
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221281382400
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9735336861495296
+    m_Localized: Time to craft some defense !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9735488665939968
+    m_Localized: Time to defend your base !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11899626284511232
+    m_Localized: Main quests
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11899729611190272
+    m_Localized: Secondary Quests
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12950300141154304
+    m_Localized: Increase attack speed by 100%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142812422139904
+    m_Localized: 'Can provide :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142953854070784
+    m_Localized: 'Ideas :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153704987684864
+    m_Localized: Start new game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153792875130880
+    m_Localized: Continue game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153881119092736
+    m_Localized: Collection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153994721816576
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154051017764864
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154257629179904
+    m_Localized: Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154306400546816
+    m_Localized: Window Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154393440743424
+    m_Localized: Framerate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154495727235072
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154612152725504
+    m_Localized: Main volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154701009055744
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154774728142848
+    m_Localized: Sound effect volume
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

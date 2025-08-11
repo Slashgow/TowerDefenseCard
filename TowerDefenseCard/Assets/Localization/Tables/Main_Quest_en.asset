@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Main_Quest_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 21e217473ef47cb49a44b3c6b9bb0c92, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 175555080192
+    m_Localized: Open First Booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324591284224
+    m_Localized: Open your first booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485824524288
+    m_Localized: Use Forest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 533366960128
+    m_Localized: Exploit a Forest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691941011456
+    m_Localized: purchase booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752053776384
+    m_Localized: Purchaste your first booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940189282304
+    m_Localized: craft bamboo plank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 992248983552
+    m_Localized: Craft two bamboo planks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1147232710656
+    m_Localized: 'Sakura Bricks '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1227645906944
+    m_Localized: Craft two sakura bricks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355500875776
+    m_Localized: bamboo Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1423649927168
+    m_Localized: Craft a bamboo factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1542516502528
+    m_Localized: Sakura Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1608094445568
+    m_Localized: Craft a sakura Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706996133888
+    m_Localized: Archer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742345728000
+    m_Localized: Craft an archer
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

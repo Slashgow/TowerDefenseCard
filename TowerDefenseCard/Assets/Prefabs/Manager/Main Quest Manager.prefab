@@ -324,45 +324,176 @@ MonoBehaviour:
   logger: {fileID: 5552157956665236890}
   availableQuests:
   - questId: OpenFirstBooster
-    title: Open First Booster
-    description: Open your First booster
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 175555080192
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 324591284224
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 386970793131609297}
     goalCount: 2
   - questId: UseCardForest
-    title: Use Forest
-    description: Exploit a Forest
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 485824524288
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 533366960128
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 8363642092357133697}
     goalCount: 3
   - questId: BuyFirstBooster
-    title: purchase booster
-    description: Purchaste your first booster
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 691941011456
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 752053776384
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 3288850185214155598}
     goalCount: 2
   - questId: Bamboo Plank
-    title: craft bamboo
-    description: Craft two bamboo planks
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 940189282304
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 992248983552
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 5426033686656557094}
     goalCount: 2
   - questId: 'SakuraBricks '
-    title: 'Sakura Bricks '
-    description: Craft two sakura bricks
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1147232710656
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1227645906944
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 6639373078356056970}
     goalCount: 2
   - questId: Bamboo Factory
-    title: bamboo Factory
-    description: Craft a bamboo factory
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1355500875776
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1423649927168
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 1270814747188998983}
     goalCount: 1
   - questId: SakuraFactory
-    title: Sakura Factory
-    description: Craft a sakura Factory
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1542516502528
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1608094445568
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 6782851557319356427}
     goalCount: 1
   - questId: Archer
-    title: Archer
-    description: Craft an archer
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1706996133888
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 1742345728000
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     condition: {fileID: 226149382550471929}
     goalCount: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5552157956665236890
 MonoBehaviour:
   m_ObjectHideFlags: 0

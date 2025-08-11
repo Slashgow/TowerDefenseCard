@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: TextTable Shared Data
+  m_Name: UI Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: TextTable
+  m_TableCollectionName: UI
   m_TableCollectionNameGuidString: 0973f375f04bcf845b691bad9cad1996
   m_Entries:
   - m_Id: 29220007936
@@ -45,6 +45,62 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12950300141154304
     m_Key: MatchaUpgradeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142812422139904
+    m_Key: START_CARD_TOOLTIP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142953854070784
+    m_Key: START_IDEA_TOOLTIP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153704987684864
+    m_Key: START_NEW_GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153792875130880
+    m_Key: CONTINUE_GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153881119092736
+    m_Key: COLLECTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153994721816576
+    m_Key: CREDIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154051017764864
+    m_Key: RESOLUTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154257629179904
+    m_Key: QUALITY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154306400546816
+    m_Key: WINDOW_MODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154393440743424
+    m_Key: FRAMERATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154495727235072
+    m_Key: V_SYNC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154612152725504
+    m_Key: MAIN_VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154701009055744
+    m_Key: MUSIC_VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154774728142848
+    m_Key: SFX_VOLUME
     m_Metadata:
       m_Items: []
   m_Metadata:

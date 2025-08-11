@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class ShopTooltip : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class ShopTooltip : MonoBehaviour
     [SerializeField] private GameObject tooltipGameObject;
     [SerializeField] private TextMeshProUGUI tooltipText;
     [SerializeField] private CardShop cardShop;
+    [SerializeField] private LocalizedString startCardTooltip, startIdeaTooltip;
 
     private List<string> cardNames = new List<string>();
     private List<string> cardIdeaNames = new List<string>();
@@ -20,6 +23,14 @@ public class ShopTooltip : MonoBehaviour
         SetupTooltipText();
         tooltipGameObject.SetActive(false);
     }
+
+    private void Start()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
+        LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
+    }
+
+    private void LocalizationSettings_SelectedLocaleChanged(Locale locale) => SetupTooltipText();
 
     private void OnMouseEnter()
     {
@@ -39,7 +50,7 @@ public class ShopTooltip : MonoBehaviour
             cardIdeaNames.Add(shopCardIdea.CardIdeaPrefab.CardData.CardName.GetLocalizedString());
         }
 
-        tooltipText.text = $"<color={hexaCardNamesColor}> Can provide : ";
+        tooltipText.text = $"<color={hexaCardNamesColor}> {startCardTooltip.GetLocalizedString()} ";
         for (int i = 0; i < cardNames.Count; i++)
         {
             string cardName = cardNames[i];
@@ -53,7 +64,7 @@ public class ShopTooltip : MonoBehaviour
             tooltipText.text += $"{cardName}, ";
         }
 
-        tooltipText.text += "Ideas : ";
+        tooltipText.text += $"{startIdeaTooltip.GetLocalizedString()} ";
         for(int i = 0;i < cardIdeaNames.Count; i++)
         {
             string cardIdeaName = cardIdeaNames[i];

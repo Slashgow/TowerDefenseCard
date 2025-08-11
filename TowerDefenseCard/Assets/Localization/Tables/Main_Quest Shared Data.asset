@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Main_Quest Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Main_Quest
+  m_TableCollectionNameGuidString: 21e217473ef47cb49a44b3c6b9bb0c92
+  m_Entries:
+  - m_Id: 175555080192
+    m_Key: OPEN_FIRST_BOOSTER_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324591284224
+    m_Key: OPEN_FIRST_BOOSTER_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485824524288
+    m_Key: USE_FOREST_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 533366960128
+    m_Key: USE_FOREST_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 691941011456
+    m_Key: BUY_FIRST_BOOSTER_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752053776384
+    m_Key: BUY_FIRST_BOOSTER_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940189282304
+    m_Key: BAMBOO_PLANK_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 992248983552
+    m_Key: BAMBOO_PLANK_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1147232710656
+    m_Key: SAKURA_BRICK_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1227645906944
+    m_Key: SAKURA_BRICK_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1355500875776
+    m_Key: BAMBOO_FACTORY_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1423649927168
+    m_Key: BAMBOO_FACTORY_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1542516502528
+    m_Key: SAKURA_FACTORY_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1608094445568
+    m_Key: SAKURA_FACTORY_D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1706996133888
+    m_Key: ARCHER_T
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742345728000
+    m_Key: ARCHER_D
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5581259827707641953
+  references:
+    version: 2
+    RefIds:
+    - rid: 5581259827707641953
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1754937895045

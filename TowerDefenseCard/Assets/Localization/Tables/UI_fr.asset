@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: TextTable_fr
+  m_Name: UI_fr
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: fr
@@ -48,6 +48,62 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12950300141154304
     m_Localized: Augmente l'attaque speed de 100%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142812422139904
+    m_Localized: 'Peut fournir :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18142953854070784
+    m_Localized: "Id\xE9es :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153704987684864
+    m_Localized: "D\xE9marrez une nouvelle partie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153792875130880
+    m_Localized: Continuez la partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153881119092736
+    m_Localized: Collection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18153994721816576
+    m_Localized: "Cr\xE9dits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154051017764864
+    m_Localized: "R\xE9solution"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154257629179904
+    m_Localized: "Qualit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154306400546816
+    m_Localized: "Mode de fen\xEAtre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154393440743424
+    m_Localized: "Fr\xE9quence d'images"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154495727235072
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154612152725504
+    m_Localized: Volume principale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154701009055744
+    m_Localized: Volume de la musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18154774728142848
+    m_Localized: Volumes des effets sonores
     m_Metadata:
       m_Items: []
   references:

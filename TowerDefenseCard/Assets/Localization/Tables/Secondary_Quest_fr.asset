@@ -10,44 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: TextTable_en
+  m_Name: Secondary_Quest_fr
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 0973f375f04bcf845b691bad9cad1996, type: 2}
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 19a162fd40b7956449e63f69762674b7, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 29220007936
-    m_Localized: Start
+  - m_Id: 20785262592
+    m_Localized: Coffre
     m_Metadata:
       m_Items: []
-  - m_Id: 159717388288
-    m_Localized: Settings
+  - m_Id: 71767027712
+    m_Localized: Craftez un coffre
     m_Metadata:
       m_Items: []
-  - m_Id: 221281382400
-    m_Localized: Quit
+  - m_Id: 161038594048
+    m_Localized: Grange
     m_Metadata:
       m_Items: []
-  - m_Id: 9735336861495296
-    m_Localized: Time to craft some defense !
+  - m_Id: 199974318080
+    m_Localized: Craftez une grange
     m_Metadata:
       m_Items: []
-  - m_Id: 9735488665939968
-    m_Localized: Time to defend your base !
+  - m_Id: 284816699392
+    m_Localized: "Entrep\xF4t"
     m_Metadata:
       m_Items: []
-  - m_Id: 11899626284511232
-    m_Localized: Main quests
-    m_Metadata:
-      m_Items: []
-  - m_Id: 11899729611190272
-    m_Localized: Secondary Quests
-    m_Metadata:
-      m_Items: []
-  - m_Id: 12950300141154304
-    m_Localized: Increase attack speed by 100%
+  - m_Id: 365649326080
+    m_Localized: "Craftez un entrep\xF4t"
     m_Metadata:
       m_Items: []
   references:
