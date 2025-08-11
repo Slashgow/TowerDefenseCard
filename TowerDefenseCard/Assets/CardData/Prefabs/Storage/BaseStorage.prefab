@@ -115,6 +115,7 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 1
   startMoveDuration: 0.5
+  autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
   overlapRadius: 0.5
@@ -211,7 +212,7 @@ MonoBehaviour:
   backgroundSprite: {fileID: 5793447513779673074}
   cardSprite: {fileID: 2477208669114640186}
   cardUI: {fileID: 6868042175936996570}
-  numberOfAdditionalCardsAllowed: 10
+  numberOfAdditionalCardsAllowed: 5
 --- !u!114 &-7329629068554335910
 MonoBehaviour:
   m_ObjectHideFlags: 0

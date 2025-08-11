@@ -543,7 +543,7 @@ TextureImporter:
         width: 165
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -565,7 +565,7 @@ TextureImporter:
         width: 165
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -587,7 +587,7 @@ TextureImporter:
         width: 165
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -609,7 +609,7 @@ TextureImporter:
         width: 165
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,7 +631,7 @@ TextureImporter:
         width: 165
         height: 165
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -640,6 +640,116 @@ TextureImporter:
       bones: []
       spriteID: 67583ceee2a5a3749a15b44f627c8f8d
       internalID: -506876605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_rouge_2
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1614
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e5b5ae78b528d4587219960dfce073
+      internalID: -877957981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_rouge_3
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 1617
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e244a0a92b5e49a499c3334a2e452e86
+      internalID: 1077454795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_rouge_4
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 1617
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130445edeec01c24ab32581824d2a491
+      internalID: -209030741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_rouge_5
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 1632
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efded151e88451b44bfe504a8c8a0e62
+      internalID: -5690077226991261269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boule_rouge_1
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1566
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93652b7c12a14a64982b24632b097c84
+      internalID: 524559339
       vertices: []
       indices: 
       edges: []
@@ -664,7 +774,7 @@ TextureImporter:
       Effects_11: -7125811559464083784
       Effects_12: 1023017478
       Effects_13: 8004989225374737428
-      Effects_14: -5690077226991261269
+      Effects_16: -2140452357
       Effects_17: -1623089995
       Effects_18: 2082201464
       Effects_19: 1586429837
@@ -682,6 +792,11 @@ TextureImporter:
       Effects_6: -7466522973678874103
       Effects_7: 6815229166277592208
       Effects_9: 4090799819692156374
+      boule_rouge_1: 524559339
+      boule_rouge_2: -877957981
+      boule_rouge_3: 1077454795
+      boule_rouge_4: -209030741
+      boule_rouge_5: -5690077226991261269
       boule_verte_1: -506876605
       boule_verte_2: -867035347
       boule_verte_3: 179463674

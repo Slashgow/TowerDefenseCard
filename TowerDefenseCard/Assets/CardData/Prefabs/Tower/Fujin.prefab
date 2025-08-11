@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDamageorData: {fileID: 11400000, guid: 8851e683406e57d4ebe301b5abfb9058, type: 2}
+  cardDamageorData: {fileID: 11400000, guid: ccb6f73998b07c4429cd8641bbdf4879, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
   isMonoTarget: 0
   useProjectile: 1
-  projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
+  projectilePrefab: {fileID: 6281592712183866792, guid: 27a913d9eb013d34e93c5c6bd1feb8cb, type: 3}
   numberOfProjectilePerAttack: 3
   projectileSpeed: 20
 --- !u!114 &1905207580491856102
@@ -130,7 +130,7 @@ MonoBehaviour:
   pushbackRange: 8
   pushbackFieldOfView: 90
   canCausePushback: 1
-  pushbackEffectPrefab: {fileID: 0}
+  pushbackEffectPrefab: {fileID: 8228910324818098059, guid: 0fe88e8bf6cb5db42be9f0f01802efdf, type: 3}
   pushbackableLayer:
     serializedVersion: 2
     m_Bits: 256

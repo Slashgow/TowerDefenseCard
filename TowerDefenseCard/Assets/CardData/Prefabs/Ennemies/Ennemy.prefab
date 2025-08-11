@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3533297676931664919}
   - component: {fileID: 4370179582870678725}
   - component: {fileID: 9049170852316884219}
+  - component: {fileID: 1182287520136083720}
   m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
@@ -422,6 +423,19 @@ MonoBehaviour:
   pushbackTime: 0.2
   pushbackEase: 6
   returnEase: 7
+--- !u!114 &1182287520136083720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806e736a987755c4485d481325defc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeFeared: 1
 --- !u!1 &8981867779452182579
 GameObject:
   m_ObjectHideFlags: 0

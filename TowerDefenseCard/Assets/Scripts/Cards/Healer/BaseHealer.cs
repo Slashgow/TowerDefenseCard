@@ -8,6 +8,7 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
     [Header("Healer Settings")]
     [SerializeField] private Logger logger;
     [SerializeField] private CardHealerData cardHealerData;
+    [SerializeField] private GameObject healEffectPrefab;
     [SerializeField] protected LayerMask healableLayer = -1;
 
     protected Timer cooldownTimer;
@@ -53,6 +54,9 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
             target.Heal(HealAmount);
             StartCooldown();
             OnHealPerformed(target);
+
+            if (healEffectPrefab != null && target is MonoBehaviour targetMono)
+                Instantiate(healEffectPrefab, targetMono.transform.position, Quaternion.identity);
         }
     }
 

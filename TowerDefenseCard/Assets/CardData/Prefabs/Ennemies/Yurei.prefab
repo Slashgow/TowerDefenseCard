@@ -61,9 +61,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e940c194ccc12164ca95bcf26a73d464, type: 2}
     - target: {fileID: 4370179582870678725, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      propertyPath: isMonoTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370179582870678725, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: cardDamageorData
       value: 
-      objectReference: {fileID: 11400000, guid: 01c6ddba0f1f7c84fb6a2383cbbdf30e, type: 2}
+      objectReference: {fileID: 11400000, guid: 1a0c13a47ede54145b887b43bd6f8f2f, type: 2}
     - target: {fileID: 4833971392412208564, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -126,13 +130,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a9f506171abbc46a12110f647f54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fearCooldown: 2
+  autoSyncWithDamageor: 0
+  fearCooldown: 3
   fearDuration: 3
   fearChance: 100
+  useFearRange: 1
   fearRange: 8
   fearFieldOfView: 90
   canCauseFear: 1
-  fearEffectPrefab: {fileID: 0}
+  fearEffectSpawnOffset: {x: 0, y: 1.4, z: 0}
+  fearEffectPrefab: {fileID: 2826001506265422524, guid: 0002529cc35856943b6ff200230ca5b3, type: 3}
   fearableLayer:
     serializedVersion: 2
     m_Bits: 64

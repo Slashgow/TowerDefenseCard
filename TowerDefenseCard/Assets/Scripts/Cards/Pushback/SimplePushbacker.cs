@@ -28,7 +28,7 @@ public class SimplePushbacker : MonoBehaviour, IPushbacker
 
     private void Awake()
     {
-        if (usePushbackRange)
+        if (usePushbackRange && !autoSyncWithDamageor)
             return;
 
         damageor = GetComponent<IDamageor>();

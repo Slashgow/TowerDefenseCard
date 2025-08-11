@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8660076273353320839}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 302900240306617904}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -97,13 +100,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDamageorData: {fileID: 11400000, guid: 8851e683406e57d4ebe301b5abfb9058, type: 2}
+  cardDamageorData: {fileID: 11400000, guid: 1e66bfeaae892764f907b3b2806be281, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
-  isMonoTarget: 1
-  useProjectile: 1
+  impactEffectPrefab: {fileID: 2690164370368500022, guid: 2391d73be2e73ee4a83ede4cbc254087, type: 3}
+  isMonoTarget: 0
+  useProjectile: 0
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   numberOfProjectilePerAttack: 1
   projectileSpeed: 20
+--- !u!114 &302900240306617904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed3cc1c8f1df30429690e9a7d9218ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSyncWithDamageor: 1
+  stunCooldown: 5
+  stunDuration: 3
+  stunChance: 25
+  useStunRange: 0
+  stunRange: 8
+  stunFieldOfView: 90
+  canCauseStun: 1
+  stunEffectPrefab: {fileID: 6598289021450838525, guid: 16653d4888bac294c84133a0fadd8018, type: 3}
+  stunnableLayer:
+    serializedVersion: 2
+    m_Bits: 256

@@ -68,12 +68,21 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7001455847151747302, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: rangeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a886fa52b42676b46b3e590935abfdbe, type: 2}
+    - target: {fileID: 7340126516312790415, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b91cf5c012d1e7f4eb8a6b935b532a25, type: 2}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
       value: Okuninushi
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+    - {fileID: 7001455847151747302, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -82,10 +91,13 @@ PrefabInstance:
       addedObject: {fileID: 1501268333560246768}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4468032278833713684}
+      addedObject: {fileID: 2842202987775143125}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2842202987775143125}
+      addedObject: {fileID: 9212205400589574670}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4468032278833713684}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!114 &4462761689286350051 stripped
 MonoBehaviour:
@@ -122,25 +134,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logger: {fileID: 4468032278833713684}
   cardHealerData: {fileID: 11400000, guid: aea56286fbebdaa459cdcdd2a8f5faef, type: 2}
+  healEffectPrefab: {fileID: 8511672877208484916, guid: 2ce20130da04f3345b82ee3aabfa89dc, type: 3}
   healableLayer:
     serializedVersion: 2
     m_Bits: 64
   autoHeal: 1
---- !u!114 &4468032278833713684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8864906581117935152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showLogs: 1
-  prefix: 'Healer '
-  prefixColor: {r: 0.98381424, g: 1, b: 0.41037738, a: 1}
 --- !u!114 &2842202987775143125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,3 +154,34 @@ MonoBehaviour:
   rangeIndicator: {fileID: 8771198215926233324}
   cardMover: {fileID: 4462761689286350051}
   showDuringMovement: 1
+--- !u!114 &9212205400589574670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f135067954d6b27448d6c56d5c9a64a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardMover: {fileID: 4462761689286350051}
+  showDuringMovement: 1
+  rangeMaterial: {fileID: 2100000, guid: a886fa52b42676b46b3e590935abfdbe, type: 2}
+  segments: 64
+--- !u!114 &4468032278833713684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: 'Healer '
+  prefixColor: {r: 0.98381424, g: 1, b: 0.41037738, a: 1}

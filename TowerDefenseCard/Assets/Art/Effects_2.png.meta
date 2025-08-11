@@ -1052,6 +1052,512 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Eclair_6
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1510
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5598c0c6dd2a5fe4c97cb9cba1842b1c
+      internalID: 1127665434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclair_1
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 1239
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3b2f1abb75e1f499fd272b6e00d302
+      internalID: 1885862093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclair_2
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1237
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70138349f94c6534298037fc3d62ff2c
+      internalID: -2078246275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1272
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de60330de3395d548ace69b599b2d667
+      internalID: 1938503966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_2
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1269
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dfc08ec40ee624ea49f70e2f4fce4b
+      internalID: 2013017886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1269
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76bbdc4a057eff4da0964e60526c940
+      internalID: 1609109890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_4
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1272
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b8a20f018ba3b4388444c608de3b9d
+      internalID: 1285722786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1203
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de33eee491ee1c545ba6849cfca5eb13
+      internalID: 527931118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclair_3
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 1229
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e64947e10be0ec49a5b73fef32ff70c
+      internalID: 1776778422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclair_4
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 1229
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a470f3d9e7606245a721b0fb08f6e5e
+      internalID: -1589394847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eclair_5
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 1225
+        width: 160
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1487acf51128a544192ccf392b0ca10c
+      internalID: 777947819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1197
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fa1df3a7010424e85b2609f804f629
+      internalID: -70674954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_6
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1198
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45978958d9592d4d96ad25ed2b9711c
+      internalID: 1215390264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_7
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1199
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79b2c790732df0459a112eb45f78119
+      internalID: -566986277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_8
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1197
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b5dc7dd45f0e641b9e816c6e751139
+      internalID: 954833016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_3
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 654
+        width: 495
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc22ed22279ed9a4ea8a328eb42d2127
+      internalID: 2142450364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_4
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 677
+        width: 495
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2031ce60083ed449b309f90be27bd8f
+      internalID: 535614540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 646
+        width: 495
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a6a8d32b70c7943aa530083f38870e
+      internalID: 506597725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 646
+        width: 495
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8e8e1dc93dad14cb154686a7ac4ee5
+      internalID: 1511430201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 219
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bbb9abbae994b4f96c14e8807c776c
+      internalID: 828517619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun_2
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 231
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365f354cde0d3dd408caa4924d1a3ddf
+      internalID: 613257646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 245
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324a57f23a48f9641a8cba88768a157d
+      internalID: -1526231722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sun_4
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 254
+        width: 408
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5cf11eb0179ba4a96721a57131b36d
+      internalID: -942572976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1067,10 +1573,40 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Blessed Arrow: 1686391646005013121
+      Blind: 527931118
+      Eclair_1: 1885862093
+      Eclair_2: -2078246275
+      Eclair_3: 1776778422
+      Eclair_4: -1589394847
+      Eclair_5: 777947819
+      Eclair_6: 1127665434
+      Effects_2_12: 110477660
+      Effects_2_14: -367634246
+      Effects_2_15: 1322604009
+      Effects_2_17: -568430767
+      Effects_2_20: 1721726304
+      Effects_2_22: -1051920426
+      Effects_2_24: -792122289
       Hit_1: -4186624429161969759
       Hit_2: -2398173373044727832
       Hit_3: 1226579222223638084
       Hit_4: 6800932208647356323
+      Stun_1: 1938503966
+      Stun_2: 2013017886
+      Stun_3: 1609109890
+      Stun_4: 1285722786
+      Stun_5: -70674954
+      Stun_6: 1215390264
+      Stun_7: -566986277
+      Stun_8: 954833016
+      Sun_1: 828517619
+      Sun_2: 613257646
+      Sun_3: -1526231722
+      Sun_4: -942572976
+      Wind_1: 506597725
+      Wind_2: 1511430201
+      Wind_3: 2142450364
+      Wind_4: 535614540
       bite_1: 3174251497171369960
       bite_2: -2625315331296424994
       bite_3: 6309467632454299905

@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDamageorData: {fileID: 11400000, guid: 8851e683406e57d4ebe301b5abfb9058, type: 2}
+  cardDamageorData: {fileID: 11400000, guid: 8a1f0197df8c68f439ef7679ed1558f7, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
+  impactEffectPrefab: {fileID: 4155917297465584293, guid: eac2a999181e4a748b24f3448bc93b3c, type: 3}
   isMonoTarget: 0
   useProjectile: 0
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
@@ -130,7 +130,8 @@ MonoBehaviour:
   stunRange: 8
   stunFieldOfView: 90
   canCauseStun: 1
-  stunEffectPrefab: {fileID: 0}
+  stunEffectSpawnOffset: {x: 0, y: 1.4, z: 0}
+  stunEffectPrefab: {fileID: 6598289021450838525, guid: 16653d4888bac294c84133a0fadd8018, type: 3}
   stunnableLayer:
     serializedVersion: 2
     m_Bits: 256

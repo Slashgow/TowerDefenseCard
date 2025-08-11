@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8660076273353320839}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7007565808206178187}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -97,13 +100,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDamageorData: {fileID: 11400000, guid: 8851e683406e57d4ebe301b5abfb9058, type: 2}
+  cardDamageorData: {fileID: 11400000, guid: c1c9f7e0049a214489ae0e9332c15da4, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  impactEffectPrefab: {fileID: 1403098070205132456, guid: d7a34ec476a08e240b442c29ff22d039, type: 3}
-  isMonoTarget: 1
+  impactEffectPrefab: {fileID: 1099293400771488274, guid: 022b92effa211b843839ecf9da5e47a6, type: 3}
+  isMonoTarget: 0
   useProjectile: 1
-  projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  numberOfProjectilePerAttack: 1
+  projectilePrefab: {fileID: 6281592712183866792, guid: fe70116f619300741b24c358743ef016, type: 3}
+  numberOfProjectilePerAttack: 3
   projectileSpeed: 20
+--- !u!114 &7007565808206178187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a9f506171abbc46a12110f647f54bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSyncWithDamageor: 1
+  fearCooldown: 5
+  fearDuration: 1.5
+  fearChance: 100
+  useFearRange: 0
+  fearRange: 8
+  fearFieldOfView: 90
+  canCauseFear: 1
+  fearEffectSpawnOffset: {x: 0, y: 1.4, z: 0}
+  fearEffectPrefab: {fileID: 2826001506265422524, guid: 0002529cc35856943b6ff200230ca5b3, type: 3}
+  fearableLayer:
+    serializedVersion: 2
+    m_Bits: 256

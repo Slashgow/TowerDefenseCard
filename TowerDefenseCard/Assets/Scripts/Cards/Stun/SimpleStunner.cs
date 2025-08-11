@@ -12,6 +12,7 @@ public class SimpleStunner : MonoBehaviour, IStunner
     [SerializeField, Range(0f, 15f)] private float stunRange = 8f;
     [SerializeField, Range(0f, 360f)] private float stunFieldOfView = 90f;
     [SerializeField] private bool canCauseStun = true;
+    [SerializeField] private Vector3 stunEffectSpawnOffset;
     [SerializeField] private GameObject stunEffectPrefab;
     [SerializeField] private LayerMask stunnableLayer = -1;
 
@@ -27,7 +28,7 @@ public class SimpleStunner : MonoBehaviour, IStunner
 
     private void Awake()
     {
-        if (useStunRange)
+        if (useStunRange && !autoSyncWithDamageor)
             return;
 
         damageor = GetComponent<IDamageor>();
@@ -92,7 +93,10 @@ public class SimpleStunner : MonoBehaviour, IStunner
 
         if (stunEffectPrefab != null && target is MonoBehaviour targetMono)
         {
-            Instantiate(stunEffectPrefab, targetMono.transform.position, Quaternion.identity);
+            GameObject stunEffectInstance = Instantiate(stunEffectPrefab, targetMono.transform);
+            stunEffectInstance.transform.localRotation = Quaternion.identity;
+            stunEffectInstance.transform.localPosition = stunEffectSpawnOffset;
+            Timer.Register(stunDuration, onComplete: () =>  Destroy(stunEffectInstance));
         }
 
         string targetName = target is MonoBehaviour mono ? mono.gameObject.name : "Unknown";
