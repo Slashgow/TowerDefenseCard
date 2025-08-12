@@ -47,9 +47,9 @@ public class TextMeshProUGUIColorChanger : Effect, IColorable
             colorTween.Kill();
 
         if (!shouldGoBackToOriginColor)
-            colorTween = textMeshProUGUI.DOColor(endColor, timeToReachEndColor).SetEase(easing);
+            colorTween = textMeshProUGUI.DOColor(endColor, timeToReachEndColor).SetEase(easing).SetUpdate(true);
         else
-            colorTween = textMeshProUGUI.DOColor(endColor, timeToReachEndColor).SetEase(easing).OnComplete(() => colorTween.Rewind());
+            colorTween = textMeshProUGUI.DOColor(endColor, timeToReachEndColor).SetEase(easing).SetUpdate(true).OnComplete(() => colorTween.Rewind());
     }
 
     private void OnDestroy()

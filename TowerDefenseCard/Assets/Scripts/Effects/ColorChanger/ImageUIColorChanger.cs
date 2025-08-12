@@ -53,9 +53,9 @@ public class ImageUIColorChanger : Effect, IColorable
             colorTween.Kill();
 
         if (!shouldGoBackToOriginColor)
-            colorTween = image.DOColor(endColor, timeToReachEndColor).SetEase(easing);
+            colorTween = image.DOColor(endColor, timeToReachEndColor).SetEase(easing).SetUpdate(true);
         else
-            colorTween = image.DOColor(endColor, timeToReachEndColor).SetEase(easing).OnComplete(() => colorTween.Rewind());
+            colorTween = image.DOColor(endColor, timeToReachEndColor).SetEase(easing).SetUpdate(true).OnComplete(() => colorTween.Rewind());
     }
 
     private void OnDestroy()

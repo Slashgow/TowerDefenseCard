@@ -27,12 +27,12 @@ namespace TabUI
 
         private void Start()
         {
+            OnTabSelected(defaultTab);
+
             if (useColorTheme)
                 OnChangeColorTheme(ColorThemeManager.Instance.CurrentColorTheme);
 
             ColorThemeManager.OnChangeColorTheme += OnChangeColorTheme;
-
-            OnTabSelected(defaultTab);
         }
 
         public void Subscribe(TabButton tabButton)
@@ -94,6 +94,8 @@ namespace TabUI
             tabIdle = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabIdleColorID);
             tabHover = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabHoverColorID);
             tabActive = ColorThemeManager.Instance.GetColorByThemeAndID(colorTheme, tabActiveColorID);
+
+            OnTabSelected(selectedTab);
         }
 
         private void OnDestroy()

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 public class CameraInputHandler : MonoBehaviour
 {
@@ -31,18 +32,28 @@ public class CameraInputHandler : MonoBehaviour
     {
         cam = GetComponent<Camera>();
 
-        dragStartInputActionReference.action.performed += ctx => { 
-            isDragging = true; 
-            dragOrigin = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        };
-        dragStartInputActionReference.action.canceled += ctx => isDragging = false;
-        dragInputActionReference.action.performed += ctx => dragInput = ctx.ReadValue<Vector2>();
-        zoomInputActionReference.action.performed += ctx => zoomInput = ctx.ReadValue<Vector2>().y;
-        zoomInputActionReference.action.canceled += ctx => zoomInput = ctx.ReadValue<Vector2>().y;
-        recenterInputActionReference.action.performed += ctx => OnRecenterCamera?.Invoke();
-        moveInputActionReference.action.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); 
-        moveInputActionReference.action.canceled += ctx => moveInput = Vector2.zero; 
+        dragStartInputActionReference.action.performed += DragStartPerformed;
+        dragStartInputActionReference.action.canceled += DragStartCanceled;
+        dragInputActionReference.action.performed += DragPerformed;
+        zoomInputActionReference.action.performed += ZoomPerformed;
+        zoomInputActionReference.action.canceled += ZoomCanceled;
+        recenterInputActionReference.action.performed += RecenterPerformed;
+        moveInputActionReference.action.performed += MovePerformed; 
+        moveInputActionReference.action.canceled += MoveCanceled; 
     }
+
+    public void DragStartPerformed(CallbackContext context)
+    {
+        isDragging = true;
+        dragOrigin = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    }
+    public void DragStartCanceled(CallbackContext context) => isDragging = false;
+    public void DragPerformed(CallbackContext context) => dragInput = context.ReadValue<Vector2>();
+    public void ZoomPerformed(CallbackContext context) => zoomInput = context.ReadValue<Vector2>().y;
+    public void ZoomCanceled(CallbackContext context) => zoomInput = context.ReadValue<Vector2>().y;
+    public void RecenterPerformed(CallbackContext context) => OnRecenterCamera?.Invoke();
+    public void MovePerformed(CallbackContext context) => moveInput = context.ReadValue<Vector2>();
+    public void MoveCanceled(CallbackContext context) => moveInput = Vector2.zero;
 
     void OnEnable()
     {
@@ -52,6 +63,15 @@ public class CameraInputHandler : MonoBehaviour
     void OnDisable()
     {
         playerInputActionAsset.Disable();
+
+        dragStartInputActionReference.action.performed -= DragStartPerformed;
+        dragStartInputActionReference.action.canceled -= DragStartCanceled;
+        dragInputActionReference.action.performed -= DragPerformed;
+        zoomInputActionReference.action.performed -= ZoomPerformed;
+        zoomInputActionReference.action.canceled -= ZoomCanceled;
+        recenterInputActionReference.action.performed -= RecenterPerformed;
+        moveInputActionReference.action.performed -= MovePerformed;
+        moveInputActionReference.action.canceled -= MoveCanceled;
     }
 
 }

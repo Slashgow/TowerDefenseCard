@@ -37,11 +37,7 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
         OnSceneLoaded?.Invoke(scene.buildIndex);
     }
 
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
+    public void LoadMainMenu() => LoadSceneAsync(0);
     public void LoadNextScene()
     {
         SceneManager.LoadScene( (SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCountInBuildSettings));
@@ -49,21 +45,23 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
 
     public void LoadNextSceneAsync()
     {
-        StartCoroutine(LoadNextSceneAsyncCoroutine());
+        StartCoroutine(LoadSceneAsyncCoroutine((SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCountInBuildSettings)));
     }
 
-    private IEnumerator LoadNextSceneAsyncCoroutine()
+    public void LoadSceneAsync(int buildIndex) => StartCoroutine(LoadSceneAsyncCoroutine(buildIndex));
+
+    private IEnumerator LoadSceneAsyncCoroutine(int buildIndex)
     {
         timeElapsed = 0f;
         transitionAnimator.SetTrigger("EndScene");
 
         while (timeElapsed < transitionTime)
         {
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.unscaledDeltaTime;
             yield return null;
         }
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % (SceneManager.sceneCountInBuildSettings));
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
 
         while (!asyncLoad.isDone)
         {

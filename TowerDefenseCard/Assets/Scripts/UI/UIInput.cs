@@ -17,12 +17,22 @@ public class UIInput : MonoBehaviour
 
     private void Awake()
     {
-        toggleCollectionMenuInputActionReference.action.performed += ctx => ShowPage(collectionMenu);
-        toggleSettingMenuInputActionReference.action.performed += ctx => ShowPage(settingsMenu);
+        toggleCollectionMenuInputActionReference.action.performed += ToggleCollectionMenuPerformed;
+        toggleSettingMenuInputActionReference.action.performed += ToggleSettingsMenuPerformed;
         playPauseInputActionReference.action.performed += PlayPause;
         speedUpDownInputActionReference.action.performed += SpeedUpDown;
     }
 
+    private void OnDestroy()
+    {
+        toggleCollectionMenuInputActionReference.action.performed -= ToggleCollectionMenuPerformed;
+        toggleSettingMenuInputActionReference.action.performed -= ToggleSettingsMenuPerformed;
+        playPauseInputActionReference.action.performed -= PlayPause;
+        speedUpDownInputActionReference.action.performed -= SpeedUpDown;
+    }
+
+    private void ToggleCollectionMenuPerformed(InputAction.CallbackContext context) => ShowPage(collectionMenu);
+    private void ToggleSettingsMenuPerformed(InputAction.CallbackContext context) => ShowPage(settingsMenu);
     private void SpeedUpDown(InputAction.CallbackContext obj) => uiTime.ToggleSpeed();
     private void PlayPause(InputAction.CallbackContext obj) => uiTime.TogglePlayResume();
 

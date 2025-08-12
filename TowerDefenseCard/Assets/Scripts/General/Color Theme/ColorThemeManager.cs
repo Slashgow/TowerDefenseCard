@@ -13,6 +13,11 @@ public class ColorThemeManager : MonoSingleton<ColorThemeManager>
     public static event Action<ColorTheme> OnChangeColorTheme;
 
     public ColorTheme CurrentColorTheme;
+    protected override void Awake()
+    {
+        base.Awake();
+        CurrentColorTheme = startColorTheme;
+    }
 
     private void Start() => ChanceColorTheme(startColorTheme);
 
