@@ -2,7 +2,7 @@
 using SplineMesh;
 
 [Serializable]
-public struct AutoCardMovementData
+public class AutoCardMovementData
 {
     public CardID cardID;
     public Spline spline;

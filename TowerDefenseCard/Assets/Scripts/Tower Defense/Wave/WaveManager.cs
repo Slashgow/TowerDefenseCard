@@ -31,9 +31,9 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     {
         GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
-
-        ShowOnlyFirstPathVisual();
     }
+
+    private void Start() => ShowOnlyFirstPathVisual();
 
     private void GameManager_OnStartCombatMode()
     {
@@ -131,7 +131,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     private void ShowOnlyFirstPathVisual()
     {
-        for (int i = 1; i < waveDataPaths.Length; i++)
+        for (int i = 0; i < waveDataPaths.Length; i++)
         {
             WaveDataPaths waveDataPath = waveDataPaths[i];
             foreach (var path in waveDataPath.Paths)
@@ -139,8 +139,9 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
                 path.gameObject.SetActive(false);
             }
         }
-        foreach (var path in waveDataPaths[0].Paths)
+        foreach (var path in waveDataPaths[currentWaveIndex].Paths)
         {
+            Debug.Log($"Enabling path visuals for wave {currentWaveIndex}");
             path.gameObject.SetActive(true);
         }
     }
