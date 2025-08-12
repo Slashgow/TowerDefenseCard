@@ -98,6 +98,7 @@ MonoBehaviour:
   warningDeleteSavePopUp: {fileID: 0}
   startButton: {fileID: 2407524909560739132}
   continueGameButton: {fileID: 2052060476220158567}
+  quitButton: {fileID: 3406476916800573931}
 --- !u!1001 &1382422594185726834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,6 +216,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f31b171a4c3274d81f2233ace0c4ae, type: 3}
+--- !u!114 &3406476916800573931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4353123435000191641, guid: e0f31b171a4c3274d81f2233ace0c4ae, type: 3}
+  m_PrefabInstance: {fileID: 1382422594185726834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3983535787787135862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2623072691467427844, guid: e0f31b171a4c3274d81f2233ace0c4ae, type: 3}

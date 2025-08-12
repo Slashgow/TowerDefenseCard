@@ -10,7 +10,7 @@ public class GameModeProgressBarUI : MonoBehaviour
     private void Start()
     {
         filledImage.fillAmount = 0;
-        totalTimeCraftingMode = CraftingManager.Instance.TimeCraftMode;
+        totalTimeCraftingMode = CraftingManager.Instance.OrginalTimeCraftMode;
         GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
         GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
         CraftingManager.Instance.OnTickTimeCraftingMode -= CraftingManager_OnTickTimeCraftingMode;

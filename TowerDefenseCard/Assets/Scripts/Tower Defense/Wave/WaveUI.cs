@@ -9,7 +9,7 @@ public class WaveUI : MonoBehaviour
     {
         WaveManager.Instance.OnWaveStart += WaveManager_OnWaveStart;
 
-        waveText.text = $"0/{WaveManager.Instance.NumberOfWaves}";
+        waveText.text = $"{WaveManager.Instance.CurrentWaveIndex}/{WaveManager.Instance.NumberOfWaves}";
     }
 
     private void OnDestroy()

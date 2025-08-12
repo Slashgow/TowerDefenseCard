@@ -50,6 +50,12 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         return allStartingCards.Count(card => card is not CardShop);
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        TryLoadDiscoveredCard();
+    }
+
     private void Start()
     {
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
@@ -211,6 +217,11 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
 
+        TryLoadDiscoveredCard();
+    }
+
+    private void TryLoadDiscoveredCard()
+    {
         try
         {
             if (File.Exists(SavePath.SavePathCardDiscovered))
@@ -218,7 +229,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
                 string json = File.ReadAllText(SavePath.SavePathCardDiscovered);
                 CardManagerSaveData saveData = JsonUtility.FromJson<CardManagerSaveData>(json);
 
-                if(saveData.allCards.Count == allCards.Count)
+                if (saveData.allCards.Count == allCards.Count)
                 {
                     for (int i = 0; i < saveData.allCards.Count; i++)
                     {

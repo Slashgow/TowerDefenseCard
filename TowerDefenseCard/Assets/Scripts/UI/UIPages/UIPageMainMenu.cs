@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,17 +9,20 @@ public class UIPageMainMenu : UIPage
     [SerializeField] private GameObject warningDeleteSavePopUp;
     [SerializeField] private Button startButton;
     [SerializeField] private Button continueGameButton;
+    [SerializeField] private Button quitButton;
 
     private void OnEnable()
     {
         startButton.onClick.AddListener(OnClickStartButton);
         continueGameButton.onClick.AddListener(OnClickContinueGameButton);
+        quitButton.onClick.AddListener(OnClickQuitButton);
     }
 
     private void OnDisable()
     {
         startButton.onClick.RemoveListener(OnClickStartButton);
         continueGameButton.onClick.RemoveListener(OnClickContinueGameButton);
+        quitButton.onClick.AddListener(OnClickQuitButton);
     }
 
     private void OnClickStartButton()
@@ -30,6 +34,8 @@ public class UIPageMainMenu : UIPage
     }
 
     private void OnClickContinueGameButton() => SceneLoader.Instance.LoadNextSceneAsync();
+
+    private void OnClickQuitButton() => Application.Quit();
 
     public override void Show()
     {

@@ -6,7 +6,7 @@ using System;
 
 public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavable
 {
-    [SerializeField, Range(0f, 500f)] private float timeCraftMode;
+    [SerializeField, Range(0f, 500f)] private float originalTimeCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
@@ -18,7 +18,9 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
-    public float TimeCraftMode => timeCraftMode - timeElapsed;
+
+    public float OrginalTimeCraftMode => originalTimeCraftMode; 
+    public float TimeCraftMode => originalTimeCraftMode - timeElapsed;
   
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
@@ -185,13 +187,14 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public void StartCraftingModeTimer()
     {
+        float startingTimeElapsed = timeElapsed;
         CraftingModeDurationTimer = Timer.Register(TimeCraftMode, 
             onComplete: () => {
                 GameManager.Instance.SwitchGameMode();
                 timeElapsed = 0;
                 }, 
             onUpdate: timeElapsed => {
-                OnTickTimeCraftingMode?.Invoke(timeElapsed);
+                OnTickTimeCraftingMode?.Invoke(timeElapsed + startingTimeElapsed);
                 this.timeElapsed = timeElapsed;
                 });
     }
