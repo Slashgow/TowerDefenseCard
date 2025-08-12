@@ -271,6 +271,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  shakeVibrato: 10
+  shakeRandomness: 90
 --- !u!114 &2357896661907563021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doEffectOnEnable: 1
+  useColorTheme: 0
+  colorID: 0
   endColor: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}
   timeToReachEndColor: 0.3
   shouldGoBackToOriginColor: 1
@@ -543,6 +547,10 @@ PrefabInstance:
       value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 400844306281401263, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400844306281401263, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_fontColor.b
       value: 0.92549026
       objectReference: {fileID: 0}
@@ -587,7 +595,15 @@ PrefabInstance:
       value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7413001293297818440, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413001293297818440, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413001293297818440, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}

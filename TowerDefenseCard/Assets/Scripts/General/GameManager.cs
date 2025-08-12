@@ -143,6 +143,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         IsPaused = true;
         Time.timeScale = 0f;
         CurrentGameSpeed = Time.timeScale;
+        MusicManager.Instance.PitchDownMusic();
         pauseSimulationCoroutine = StartCoroutine(TemporarlyAdjustTimeScale(2));
         OnPause?.Invoke();
         OnPauseUnity?.Invoke();
@@ -182,6 +183,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         Physics2D.simulationMode = SimulationMode2D.FixedUpdate;
         Time.timeScale = 1f;
         CurrentGameSpeed = Time.timeScale;
+        MusicManager.Instance.ResumePitchMusic();
         OnResume?.Invoke();
         OnResumeUnity?.Invoke();
     }

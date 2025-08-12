@@ -4,6 +4,10 @@ public class AnimationEnableEffect : Effect
 {
     [SerializeField] private GameObject effectPrefab;
 
-    private void OnEnable() => DoEffect();
-    public override void DoEffect() => Instantiate(effectPrefab, this.transform.position, Quaternion.identity);//, this.transform);
+    public override void DoEffect()
+    {
+        GameObject effectInstance = Instantiate(effectPrefab, this.transform);
+        effectInstance.transform.localPosition = Vector3.zero;
+        effectInstance.transform.localRotation = Quaternion.identity;
+    }
 }

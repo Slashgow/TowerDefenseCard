@@ -106,6 +106,7 @@ MonoBehaviour:
     m_Bits: 256
   impactEffectPrefab: {fileID: 4155917297465584293, guid: eac2a999181e4a748b24f3448bc93b3c, type: 3}
   isMonoTarget: 0
+  maxNumberOfTargets: 6
   useProjectile: 0
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   numberOfProjectilePerAttack: 1

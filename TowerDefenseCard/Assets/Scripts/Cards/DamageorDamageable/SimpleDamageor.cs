@@ -4,6 +4,7 @@ using UnityEngine;
 public class SimpleDamageor : BaseDamageor
 {
     [SerializeField] private bool isMonoTarget = true;
+    [SerializeField, Range(0,10)] private int maxNumberOfTargets = 1;
 
     [Header("Projectile")]
     [SerializeField] private bool useProjectile = false;
@@ -39,6 +40,9 @@ public class SimpleDamageor : BaseDamageor
 
             for (int i = 0; i < hits.Length; i++)
             {
+                if(i >= maxNumberOfTargets - 1)
+                    return;
+
                 if (hits[i].TryGetComponent<IDamageable>(out var damageable))
                     HitDamageable(hits[i], damageable);
             }

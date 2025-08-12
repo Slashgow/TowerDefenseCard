@@ -10,26 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c849ccd188c494dada5325139a1436, type: 3}
-  m_Name: 2nd wave
+  m_Name: Wave_success_2_archer
   m_EditorClassIdentifier: 
   ennemyWaves:
   - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
-    count: 2
-    spawnInterval: 3
-  - enemyPrefab: {fileID: 3430349243848366076, guid: 108c5d8ba608c7242a3dfedb1f110f96, type: 3}
-    count: 3
-    spawnInterval: 1.5
-  - enemyPrefab: {fileID: 3430349243848366076, guid: 768477438ddda1741bf0ed0feb671bf2, type: 3}
-    count: 3
-    spawnInterval: 1
-  - enemyPrefab: {fileID: 3430349243848366076, guid: 108c5d8ba608c7242a3dfedb1f110f96, type: 3}
-    count: 3
-    spawnInterval: 1
-  - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
-    count: 4
+    count: 1
     spawnInterval: 2
   - enemyPrefab: {fileID: 3430349243848366076, guid: 5de5ee9fd40b5c143a8523b8a310d3c7, type: 3}
-    count: 4
+    count: 3
+    spawnInterval: 3
+  - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
+    count: 2
     spawnInterval: 2
+  - enemyPrefab: {fileID: 3430349243848366076, guid: 5de5ee9fd40b5c143a8523b8a310d3c7, type: 3}
+    count: 3
+    spawnInterval: 3
   waveDelay: 0
   delayBuffer: 5

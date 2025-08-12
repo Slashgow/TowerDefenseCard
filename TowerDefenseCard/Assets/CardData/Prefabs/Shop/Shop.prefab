@@ -393,6 +393,10 @@ PrefabInstance:
       value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 400844306281401263, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400844306281401263, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_fontColor.b
       value: 0.92549026
       objectReference: {fileID: 0}
@@ -431,6 +435,14 @@ PrefabInstance:
     - target: {fileID: 6740668465635025660, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413001293297818440, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413001293297818440, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7529411838301124465, guid: 05f99ec7a9734cd4da8d8135d4574877, type: 3}
       propertyPath: m_Name

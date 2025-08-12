@@ -102,7 +102,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   impactEffectPrefab: {fileID: 2630266462519130207, guid: 3f47d7aec16e96c47a5a6888ac612868, type: 3}
-  isMonoTarget: 1
+  isMonoTarget: 0
   useProjectile: 0
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   numberOfProjectilePerAttack: 1

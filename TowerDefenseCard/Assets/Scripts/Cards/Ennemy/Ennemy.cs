@@ -24,8 +24,9 @@ public class Ennemy : Card, ICurrencyDropper
         {
             GameObject currencyGameObjectInstance = Reseller.Instance.CurrencyPool.GetPrefabFromPool();
             currencyGameObjectInstance.GetComponent<Currency>().Setup(Reseller.Instance.CurrencyPool);
-            currencyGameObjectInstance.transform.SetParent(null);
             currencyGameObjectInstance.transform.position = this.transform.position;
+            currencyGameObjectInstance.transform.SetParent(null);
+            currencyGameObjectInstance.GetComponent<BaseCardMovement>().SmoothMoveToClearSpot();
         }
         
         ShopManager.Instance.AddPlayerCoin(CurrencyAmountToDrop);

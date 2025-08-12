@@ -71,8 +71,8 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         currentWaveIndex++;
         OnWaveEnd?.Invoke();
         ResetWaveParameters();
-        ShowNextWaveVisuals();
         HidePreviousWaveVisuals();
+        ShowNextWaveVisuals();
     }
 
     private void ResetWaveParameters()
@@ -131,11 +131,6 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     private void ShowOnlyFirstPathVisual()
     {
-        foreach (var path in waveDataPaths[0].Paths)
-        {
-            path.gameObject.SetActive(true);
-        }
-
         for (int i = 1; i < waveDataPaths.Length; i++)
         {
             WaveDataPaths waveDataPath = waveDataPaths[i];
@@ -143,6 +138,10 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
             {
                 path.gameObject.SetActive(false);
             }
+        }
+        foreach (var path in waveDataPaths[0].Paths)
+        {
+            path.gameObject.SetActive(true);
         }
     }
 

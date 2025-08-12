@@ -7,6 +7,7 @@ public abstract class BaseCardMovement : MonoBehaviour
     [SerializeField] protected LayerMask detectionLayerMaskCards;
 
     [Header("Start Movement")]
+    [SerializeField] private bool autoStartMove = true;
     [SerializeField, Range(0f, 3f)] private float moveStep = 0.1f;
     [SerializeField, Range(0f, 1f)] private float checkRadius = 0.5f;
     [SerializeField, Range(0, 10)] private int maxIterations = 10;
@@ -25,8 +26,13 @@ public abstract class BaseCardMovement : MonoBehaviour
         if (card.transform.root.GetComponent<Card>() && card.transform.root.GetComponent<Card>() != card)
             return;
 
-        coroutine = StartCoroutine(SmoothMoveToClearSpot());
+        if (!autoStartMove)
+            return;
+
+        SmoothMoveToClearSpot();
     }
+
+    public void SmoothMoveToClearSpot() => coroutine = StartCoroutine(SmoothMoveToClearSpotCoroutine());
 
     public void StopSmoothMove()
     {
@@ -38,7 +44,7 @@ public abstract class BaseCardMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator SmoothMoveToClearSpot()
+    private IEnumerator SmoothMoveToClearSpotCoroutine()
     {
         //Debug.Log($"start smooth move {card.CardData.CardID}");
         int iterations = 0;

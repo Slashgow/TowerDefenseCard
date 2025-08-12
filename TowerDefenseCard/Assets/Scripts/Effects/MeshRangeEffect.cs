@@ -17,12 +17,12 @@ public abstract class MeshRangeEffect : MonoBehaviour
     private void Start()
     {
         CreateRangeIndicator();
-        ShowRange(false);
+        ShowRange(!showDuringMovement);
     }
 
     private void OnEnable()
     {
-        if (cardMover != null)
+        if (cardMover != null && showDuringMovement)
         {
             cardMover.OnPointerDownEvent += CardMover_OnPointerDownEvent;
             cardMover.OnPointerUpEvent += CardMover_OnPointerUpEvent;
