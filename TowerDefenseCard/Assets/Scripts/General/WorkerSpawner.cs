@@ -9,7 +9,7 @@ public class WorkerSpawner : MonoSingleton<WorkerSpawner>
 
     private void Start()
     {
-        if(GameSaveSystem.saveExists)
+        if(SavePath.SaveExists)
             return;
 
         for (int i = 0; i < startAmountOfWorker; i++)

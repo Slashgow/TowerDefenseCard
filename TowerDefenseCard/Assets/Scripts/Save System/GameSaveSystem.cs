@@ -16,27 +16,18 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
 
     [SerializeField] private Logger logger;
 
-
-    public static string saveFilePath;
-    public static string savePathCardDiscovered;
-    public static bool saveExists => File.Exists(saveFilePath);
-  
-
     protected override void Awake()
     {
-        saveFilePath = Path.Combine(Application.persistentDataPath, "gameSave.json");
-        savePathCardDiscovered = Path.Combine(Application.persistentDataPath, "cardDiscoveredSave.json");
-
         base.Awake();
         LoadGame();
     }
 
     public static void ResetSave()
     {
-        if(saveExists)
+        if(SavePath.SaveExists)
         {
-            File.Delete(saveFilePath);
-            File.Delete(savePathCardDiscovered);
+            File.Delete(SavePath.SaveFilePath);
+            File.Delete(SavePath.SavePathCardDiscovered);
         }
     }
 
@@ -49,8 +40,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             Save(saveData);
 
             string json = JsonUtility.ToJson(saveData, true);
-            File.WriteAllText(saveFilePath, json);
-            logger.Log($"Game saved to {saveFilePath}", this);
+            File.WriteAllText(SavePath.SaveFilePath, json);
+            logger.Log($"Game saved to {SavePath.SaveFilePath}", this);
         }
         catch (Exception e)
         {
@@ -139,12 +130,12 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     {
         try
         {
-            if (File.Exists(saveFilePath))
+            if (File.Exists(SavePath.SaveFilePath))
             {
-                string json = File.ReadAllText(saveFilePath);
+                string json = File.ReadAllText(SavePath.SaveFilePath);
                 GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
                 Load(saveData);
-                logger.Log($"Game loaded from {saveFilePath}", this);
+                logger.Log($"Game loaded from {SavePath.SaveFilePath}", this);
             }
             else
             {

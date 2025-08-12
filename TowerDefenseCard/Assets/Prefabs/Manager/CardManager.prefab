@@ -214,6 +214,9 @@ MonoBehaviour:
   - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
+  - card: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   startMaxCardsAllowed: 20
 --- !u!114 &4660115536851744549
 MonoBehaviour:

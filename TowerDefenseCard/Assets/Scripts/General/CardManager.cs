@@ -195,8 +195,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         try
         {
             string json = JsonUtility.ToJson(new CardManagerSaveData(allCards), true);
-            File.WriteAllText(GameSaveSystem.savePathCardDiscovered, json);
-            Debug.Log($"Game saved to {GameSaveSystem.savePathCardDiscovered}", this);
+            File.WriteAllText(SavePath.SavePathCardDiscovered, json);
+            Debug.Log($"Game saved to {SavePath.SavePathCardDiscovered}", this);
         }
         catch (Exception e)
         {
@@ -213,9 +213,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
         try
         {
-            if (File.Exists(GameSaveSystem.savePathCardDiscovered))
+            if (File.Exists(SavePath.SavePathCardDiscovered))
             {
-                string json = File.ReadAllText(GameSaveSystem.savePathCardDiscovered);
+                string json = File.ReadAllText(SavePath.SavePathCardDiscovered);
                 CardManagerSaveData saveData = JsonUtility.FromJson<CardManagerSaveData>(json);
 
                 if(saveData.allCards.Count == allCards.Count)
@@ -227,7 +227,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
                         allCards[i].isClickedAfterNotification = cardDiscoveryState.isClickedAfterNotification;
                     }
                 }
-                Debug.Log($"Game loaded from {GameSaveSystem.savePathCardDiscovered}", this);
+                Debug.Log($"Game loaded from {SavePath.SavePathCardDiscovered}", this);
             }
             else
             {

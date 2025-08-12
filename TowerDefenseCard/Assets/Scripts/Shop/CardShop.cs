@@ -22,7 +22,7 @@ public class CardShop : Card
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChange;
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChange;
 
-        if (spawnBoosterOnStart && !GameSaveSystem.saveExists)
+        if (spawnBoosterOnStart && !SavePath.SaveExists)
         {
             TryPurchaseBooster();
         }
