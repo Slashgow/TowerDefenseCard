@@ -37,7 +37,7 @@ public class Currency : Card, IEndDragHandler
                 if(StackCount > cardShop.Shop.ShopCost)
                 {
                     currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
-                    currencyChildren[cardShop.Shop.ShopCost].OnUnstack(currencyChildren[cardShop.Shop.ShopCost-1]);
+                    currencyChildren[cardShop.Shop.ShopCost].OnUnstack();
                 }
                    
 

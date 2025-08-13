@@ -143,7 +143,7 @@ MonoBehaviour:
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
-  stackingHeight: 0.085
+  stackingHeight: 0.35
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5

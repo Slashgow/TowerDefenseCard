@@ -50,15 +50,17 @@ public class Card : MonoBehaviour
         targetCard.StackedCards.Add(this);
     }
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
-    public virtual void OnUnstack(Card targetCard) 
+    public virtual void OnUnstack() 
     {
-        Debug.Log($"Unstack {this.cardData.CardID} from {targetCard.cardData.CardID}");
         if (StackParent != null)
         {
+            Debug.Log($"Unstack {this.cardData.CardID} from {StackParent.cardData.CardID}");
             StackParent.StackedCards.Remove(this);
             StackParent = null;
         }
-        StackedCards.Clear();
+        
+        if(!GetComponentInChildren<Card>())
+            StackedCards.Clear();
     }
     public bool IsStackRoot() => StackParent == null;
 

@@ -99,6 +99,10 @@ public class MusicManager : MonoSingleton<MusicManager>
             GameManager.Instance.OnStartCraftMode -= StartCraftMusic;
             GameManager.Instance.OnStartCombatMode -= StartCombatMusic;
         }
+
+        fadeTween?.Kill();
+        volumeFadeOutTween?.Kill();
+        volumeFadeInTween?.Kill(); 
     }
 
 }

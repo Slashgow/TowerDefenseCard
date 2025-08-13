@@ -62,24 +62,24 @@ public class CardUpgrade : Card
     }
 
     // Handle unstacking when removed
-    public override void OnUnstack(Card targetCard)
+    public override void OnUnstack()
     {
-        var upgradables = targetCard.GetComponentsInParent<IUpgradable>();
+        var upgradables = StackParent.GetComponentsInParent<IUpgradable>();
 
         if (upgradables.Length > 0)
         {
             foreach( var upgradable in upgradables)
             {
                 upgradable.RemoveUpgrade(upgradeData.UpgradeName);
-                Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {targetCard.name}");
+                Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {StackParent.name}");
             }
         }
-        base.OnUnstack(targetCard);
+        base.OnUnstack();
 
         var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
         foreach (var childUpgrade in childrenUpgrades)
         {
-            childUpgrade.OnUnstack(targetCard);
+            childUpgrade.OnUnstack();
         }
     }
 }

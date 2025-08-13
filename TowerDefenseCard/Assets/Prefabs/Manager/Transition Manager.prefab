@@ -152,7 +152,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1501, y: 2048}
+  m_SizeDelta: {x: 1502, y: 2048}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &780089261996646882
 CanvasRenderer:
@@ -276,7 +276,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406138738193603998}
-  - component: {fileID: 6567730053782957260}
   - component: {fileID: 886273896517295465}
   m_Layer: 0
   m_Name: Transition Manager
@@ -301,28 +300,6 @@ Transform:
   - {fileID: 3412805621293656154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6567730053782957260
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449787465239656111}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 64a0968f272caa142abf487869a0dc31, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &886273896517295465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,8 +312,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5a6c4885fdebe4585fc7392de6bd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6567730053782957260}
   transitionTime: 1
+  transitionEase: 7
+  rightTransform: {fileID: 6819159552762599602}
+  leftTransform: {fileID: 9214456427352168135}
+  canvasGroup: {fileID: 7145247723712380658}
+  startRightAnchoredPositionStart: -1500
+  startLeftAnchoredPositionStart: 0
+  endRightAnchoredPositionStart: 0
+  endLeftAnchoredPositionStart: -1577
+  startRightAnchoredPositionEnd: 0
+  startLeftAnchoredPositionEnd: -1577
+  endRightAnchoredPositionEnd: -1500
+  endLeftAnchoredPositionEnd: 0
 --- !u!1 &7567357671429934841
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 2634, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1501, y: 2048}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1537263682691251769

@@ -58,7 +58,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             CraftingManager.Instance.TryCancelCraft(this.card);
             if(card.transform.root.TryGetComponent(out  Card cardRoot))
             {
-                card.OnUnstack(cardRoot);
+                card.OnUnstack();
             }
         }     
 
@@ -129,20 +129,21 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
             Card otherCard = hit.GetComponent<Card>();
             //Debug.Log(otherCard);
-            if (otherCard.transform.childCount > 3)
-            {
-                if (otherCard.GetComponent<MeshRangeEffect>())
-                {
-                    if (otherCard.transform.childCount > 4)
-                        continue;
-                }
-                else
-                    continue;
-            }
-               
 
-            if (otherCard.GetComponent<MeshRangeEffect>() && otherCard.transform.childCount > 4)
+            if (otherCard.StackedCards.Count > 0)
                 continue;
+
+            //if (otherCard.transform.childCount > 3)
+            //{
+            //    if (otherCard.GetComponent<MeshRangeEffect>())
+            //    {
+            //        if (otherCard.transform.childCount > 4)
+            //            continue;
+            //    }
+            //    else
+            //        continue;
+            //}
+               
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
@@ -160,7 +161,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
                 Vector3 newPos = Vector3.zero;
-                newPos.y = -stackingHeight * (otherCard.transform.childCount);
+                newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
                 transform.localPosition = newPos;
                 CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
 

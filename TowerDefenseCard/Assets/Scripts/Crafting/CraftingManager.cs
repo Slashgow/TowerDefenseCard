@@ -51,7 +51,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         if (IsCardsInOnGoingCraft(stackCards))
         {
             movedCard.transform.SetParent(null);
-            movedCard.OnUnstack(parentCard);
+            movedCard.OnUnstack();
             return false;
         }
             
@@ -73,9 +73,14 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 {
                     if (cardCounts.ContainsKey(ingredient.cardID) && cardCounts[ingredient.cardID] > ingredient.quantity)
                     {
-                        Card cardToRemove = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
-                        cardToRemove.transform.SetParent(null);
-                        stackCards.Remove(cardToRemove);
+                        int surplueCount = cardCounts[ingredient.cardID] - ingredient.quantity;
+                        for (int i = 0; i < surplueCount; i++)
+                        {
+                            Card cardToRemove = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
+                            cardToRemove.transform.SetParent(null);
+                            cardToRemove.OnUnstack();
+                            stackCards.Remove(cardToRemove);
+                        }
                     }
                 }
                 currentCrafts.Add(new CraftInfo(stackParent, recipe, stackCards, CardUtility.GenerateUniqueID()));
@@ -133,12 +138,14 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                                         ingredient.cardID == craftInfo.StackCards[i].CardData.CardID).isNotDestroyedOnCraft;
             if (!shouldBeKept)
             {
+                craftInfo.StackCards[i].OnUnstack();
                 OnDestroyCard?.Invoke();
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
-            else if(!outputCard.cardPrefab.GetComponent<CardRessource>())
+            else if(!craftInfo.StackCards.Any(card => card is CardExploitation || card is CardRessourceGenerator))  //!outputCard.cardPrefab.GetComponent<CardRessource>())
             {
                 craftInfo.StackCards[i].transform.SetParent(null);
+               
             }
         }
         // Instantiate output card at the stack's position

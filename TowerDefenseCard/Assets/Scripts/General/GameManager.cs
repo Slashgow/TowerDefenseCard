@@ -48,6 +48,8 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         base.Awake();
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
         CurrentGameState = GameState.PLAY;
+        CurrentGameSpeed = 1f;
+        Time.timeScale = CurrentGameSpeed;
         //StartCraftMode();
     }
 

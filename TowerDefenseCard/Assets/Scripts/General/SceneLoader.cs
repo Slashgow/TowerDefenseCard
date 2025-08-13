@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : PersistentMonoSingleton<SceneLoader>
 {
-    private float transitionTime;
-    private Animator transitionAnimator;
+    private TransitionManager transitionManager;
     private float timeElapsed = 0f;
 
     public event Action<int> OnSceneLoaded;
@@ -18,19 +17,10 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
     {
         base.Awake();
         TransitionManager transitionManager = FindFirstObjectByType<TransitionManager>();
-        RegisterTransitionAnimator(transitionManager.Animator, transitionManager.TransitionTime);
+        RegisterTransitionAnimator(transitionManager);
     }
-    public void RegisterTransitionAnimator(Animator animator, float transitionTime)
-    {
-        transitionAnimator = animator;
-        this.transitionTime = transitionTime;
-    }
-
-    public void UnregisterTransitionAnimator()
-    {
-        transitionAnimator = null;
-        transitionTime = 0f;
-    }
+    public void RegisterTransitionAnimator(TransitionManager transitionManager) => this.transitionManager = transitionManager;
+    public void UnregisterTransitionAnimator() => this.transitionManager = null;
 
     private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
@@ -53,9 +43,9 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
     private IEnumerator LoadSceneAsyncCoroutine(int buildIndex)
     {
         timeElapsed = 0f;
-        transitionAnimator.SetTrigger("EndScene");
+        transitionManager.EndSceneAnimation();
 
-        while (timeElapsed < transitionTime)
+        while (timeElapsed < transitionManager.TransitionTime)
         {
             timeElapsed += Time.unscaledDeltaTime;
             yield return null;
@@ -67,7 +57,5 @@ public class SceneLoader : PersistentMonoSingleton<SceneLoader>
         {
             yield return null;
         }
-
-        transitionAnimator.SetTrigger("StartScene");
     }
 }

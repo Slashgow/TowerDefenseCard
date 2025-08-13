@@ -111,17 +111,19 @@ MonoBehaviour:
   detectionLayerMaskCards:
     serializedVersion: 2
     m_Bits: 64
+  autoStartMove: 1
   moveStep: 2
   checkRadius: 0.5
   maxIterations: 1
   startMoveDuration: 0.5
+  autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
   overlapRadius: 0.5
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
-  stackingHeight: 0.085
+  stackingHeight: 0.35
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5
