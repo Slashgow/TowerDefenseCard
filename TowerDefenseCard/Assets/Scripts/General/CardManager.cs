@@ -197,7 +197,11 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
         gameSaveData.maxCardsAllowed = MaxCardsAllowed;
 
+        TrySaveDiscoveredCards();
+    }
 
+    public void TrySaveDiscoveredCards()
+    {
         try
         {
             string json = JsonUtility.ToJson(new CardManagerSaveData(allCards), true);

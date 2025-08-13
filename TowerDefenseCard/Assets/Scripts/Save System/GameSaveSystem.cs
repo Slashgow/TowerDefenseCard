@@ -27,7 +27,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         if(SavePath.SaveExists)
         {
             File.Delete(SavePath.SaveFilePath);
-            File.Delete(SavePath.SavePathCardDiscovered);
+            //File.Delete(SavePath.SavePathCardDiscovered);
         }
     }
 

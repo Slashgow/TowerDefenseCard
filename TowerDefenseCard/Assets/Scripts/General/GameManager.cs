@@ -201,6 +201,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     }
     private void CardPlayerHealth_OnPlayerDie()
     {
+        CardManager.Instance.TrySaveDiscoveredCards();
         SceneLoader.Instance.LoadNextSceneAsync();
     }
 }

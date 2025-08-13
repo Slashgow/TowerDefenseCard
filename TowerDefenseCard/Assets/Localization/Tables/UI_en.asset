@@ -106,6 +106,24 @@ MonoBehaviour:
     m_Localized: Sound effect volume
     m_Metadata:
       m_Items: []
+  - m_Id: 18722303783596032
+    m_Localized: You're about to go back to the main menu, the game will be automatically
+      saved. Do you want to continue ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18722704662589440
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18722746169421824
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18723001313128448
+    m_Localized: "You're about to delete your save and start a new game, \nAre you
+      sure ?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

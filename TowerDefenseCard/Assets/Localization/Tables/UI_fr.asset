@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18153704987684864
-    m_Localized: "D\xE9marrez une nouvelle partie"
+    m_Localized: Nouvelle partie
     m_Metadata:
       m_Items: []
   - m_Id: 18153792875130880
@@ -104,6 +104,24 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 18154774728142848
     m_Localized: Volumes des effets sonores
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18722303783596032
+    m_Localized: "Vous \xEAtes sur le point de retourner au menu principal. Le jeu
+      va \xEAtre automatiquement sauvegard\xE9. Voulez-vous continuer ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18722704662589440
+    m_Localized: Oui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18722746169421824
+    m_Localized: Non
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18723001313128448
+    m_Localized: "Vous \xEAtes sur le point de supprimer votre sauvegarde et de commencer
+      une nouvelle partie,\nEtes-vous s\xFBr ?"
     m_Metadata:
       m_Items: []
   references:

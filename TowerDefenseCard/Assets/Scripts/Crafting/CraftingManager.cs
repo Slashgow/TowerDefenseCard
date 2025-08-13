@@ -136,10 +136,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 OnDestroyCard?.Invoke();
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
-            else if(outputCard.cardID != CardID.BAMBOO &&
-                    outputCard.cardID != CardID.SAKURA &&
-                    outputCard.cardID != CardID.JADE &&
-                    outputCard.cardID != CardID.SPIRIT_ESSENCE)
+            else if(!outputCard.cardPrefab.GetComponent<CardRessource>())
             {
                 craftInfo.StackCards[i].transform.SetParent(null);
             }
