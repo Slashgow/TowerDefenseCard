@@ -2,19 +2,26 @@
 using UnityEngine;
 
 
-public abstract class AutoCardMovement : BaseCardMovement, ILoadable, ISavable
+public abstract class AutoCardMovement : BaseCardMovement
 {
     [SerializeField, Range(0f, 10f)] protected float moveSpeed = 2f;
     [SerializeField] protected bool loop = true;
 
     public float MoveSpeed => moveSpeed;
+    protected SplineID splineID = SplineID.NONE;
     protected Spline spline;
     protected float splineLength;
     protected bool isMoving = false;
     protected float currentDistance = 0f;
     protected bool hasCompletedFirstLoop = false;
 
-    public virtual void Init(Spline spawnedSpline)
+    private void Start()
+    {
+        if(splineID != SplineID.NONE)
+            spline = SplineManager.Instance.GetSplineByID(splineID);
+    }
+
+    public virtual void Init(SplineData spawnedSpline)
     {
         hasCompletedFirstLoop = false;
 
@@ -24,7 +31,8 @@ public abstract class AutoCardMovement : BaseCardMovement, ILoadable, ISavable
             return;
         }
 
-        spline = spawnedSpline;
+        splineID = spawnedSpline.SplineID;
+        spline = spawnedSpline.Spline;
 
         splineLength = spline.Length;
         if (splineLength > 0)
@@ -36,27 +44,26 @@ public abstract class AutoCardMovement : BaseCardMovement, ILoadable, ISavable
             Debug.LogWarning("Spline length is zero or invalid for " + gameObject.name);
     }
 
-    public void Load(GameSaveData gameSaveData)
+    public void Load(AutoCardMovementData autoCardMovementData)
     {
-        AutoCardMovementData autoCardMovementData = gameSaveData.GetAutoCardMovementDataByCardID(GetComponent<Card>().CardData.CardID);
-        this.spline = autoCardMovementData.spline;
+        this.splineID = autoCardMovementData.splineID;
         this.splineLength = autoCardMovementData.splineLength;
         this.isMoving = autoCardMovementData.isMoving;
         this.currentDistance = autoCardMovementData.currentDistance;
         this.hasCompletedFirstLoop = autoCardMovementData.hasCompletedFirstLoop;
     }
 
-    public void Save(GameSaveData gameSaveData)
+    public AutoCardMovementData Save()
     {
-        gameSaveData.AddAutoCardMovement(new AutoCardMovementData
+        return new AutoCardMovementData
         {
             cardID = GetComponent<Card>().CardData.CardID,
-            spline = this.spline,
+            splineID = this.splineID,
             splineLength = this.splineLength,
             isMoving = this.isMoving,
             currentDistance = this.currentDistance,
             hasCompletedFirstLoop = this.hasCompletedFirstLoop,
-        });
+        };
     }
 
     public virtual void StartMoving() => isMoving = true;

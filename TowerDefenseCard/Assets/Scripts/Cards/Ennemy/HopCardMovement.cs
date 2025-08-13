@@ -16,10 +16,12 @@ public class HopCardMovement : AutoCardMovement
     private Timer currentBreakTimer;
     private Vector3 hopStartPosition;
     private Vector3 hopTargetPosition;
+    private bool startHopping = false;  
 
     public override void StartMoving()
     {
         base.StartMoving();
+        startHopping = true;
         StartNextHop();
     }
 
@@ -105,7 +107,12 @@ public class HopCardMovement : AutoCardMovement
 
     private void Update()
     {
-        // Maintain 2D z-position for layering
+        if(!isMoving) 
+            return;
+
+        if(isMoving && !startHopping)
+          StartMoving();
+            
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 

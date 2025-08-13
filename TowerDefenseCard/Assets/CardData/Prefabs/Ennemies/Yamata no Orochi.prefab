@@ -106,6 +106,7 @@ MonoBehaviour:
   detectionLayerMaskCards:
     serializedVersion: 2
     m_Bits: 320
+  autoStartMove: 0
   moveStep: 0.1
   checkRadius: 0.5
   maxIterations: 10
@@ -126,12 +127,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a9f506171abbc46a12110f647f54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoSyncWithDamageor: 1
   fearCooldown: 2
   fearDuration: 3
   fearChance: 100
+  useFearRange: 0
   fearRange: 8
   fearFieldOfView: 90
   canCauseFear: 1
+  fearEffectSpawnOffset: {x: 0, y: 1, z: 0}
   fearEffectPrefab: {fileID: 0}
   fearableLayer:
     serializedVersion: 2

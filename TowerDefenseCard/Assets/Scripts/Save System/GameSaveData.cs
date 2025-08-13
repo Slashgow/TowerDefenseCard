@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 [Serializable]
 public class GameSaveData 
@@ -33,6 +34,12 @@ public class GameSaveData
     public AutoCardMovementData GetAutoCardMovementDataByCardID(CardID cardID)
     {
         return autoCardMovementDatas.FirstOrDefault(autoCardMovementData => autoCardMovementData.cardID == cardID);
+    }
+
+    public AutoCardMovementData GetAutoCardMovementDataByIDAndDistance(CardID cardID, float currentDistance)
+    {
+        return autoCardMovementDatas.FirstOrDefault(autoCardMovementData => autoCardMovementData.cardID == cardID 
+                                                    && autoCardMovementData.currentDistance == currentDistance);
     }
 
     public void AddQuestSaveData(QuestSaveData questSaveData)

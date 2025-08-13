@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
 using System;
-using SplineMesh;
 
 public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 {
@@ -55,11 +53,12 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
                 currentEnnemyCount = i;
                 if (waveDataPaths[currentWaveIndex].Paths.Length > 0)
                 {
-                    Spline path = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
-                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, path.GetSampleAtDistance(0f).location, Quaternion.identity);
+                    SplineID pathID = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
+                    SplineData pathData = SplineManager.Instance.GetSplineDataByID(pathID);
+                    GameObject newEnemy = Instantiate(enemy.EnemyPrefab, pathData.Spline.GetSampleAtDistance(0f).location, Quaternion.identity);
                     amountOfSpawnedEnemies++;
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
-                    newEnemy.GetComponent<AutoCardMovement>().Init(path);
+                    newEnemy.GetComponent<AutoCardMovement>().Init(pathData);
                     yield return new WaitForSeconds(enemy.SpawnInterval);
                 }
                 indexSortingOrder += 3;
@@ -112,10 +111,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         if (currentWaveIndex >= waveDataPaths.Length)
             return;
 
-        foreach (var path in waveDataPaths[currentWaveIndex].Paths)
-        {
-            path.gameObject.SetActive(true);
-        }
+        SplineManager.Instance.ToggleVisuals(waveDataPaths[currentWaveIndex].Paths, true);
     }
 
     private void HidePreviousWaveVisuals()
@@ -123,10 +119,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         if (currentWaveIndex == 0)
             return;
 
-        foreach (var path in waveDataPaths[currentWaveIndex - 1].Paths)
-        {
-            path.gameObject.SetActive(false);
-        }
+        SplineManager.Instance.ToggleVisuals(waveDataPaths[currentWaveIndex - 1].Paths, false);
     }
 
     private void ShowOnlyFirstPathVisual()
@@ -134,16 +127,10 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         for (int i = 0; i < waveDataPaths.Length; i++)
         {
             WaveDataPaths waveDataPath = waveDataPaths[i];
-            foreach (var path in waveDataPath.Paths)
-            {
-                path.gameObject.SetActive(false);
-            }
+            SplineManager.Instance.ToggleVisuals(waveDataPaths[i].Paths, false);
+
         }
-        foreach (var path in waveDataPaths[currentWaveIndex].Paths)
-        {
-            Debug.Log($"Enabling path visuals for wave {currentWaveIndex}");
-            path.gameObject.SetActive(true);
-        }
+        SplineManager.Instance.ToggleVisuals(waveDataPaths[currentWaveIndex].Paths, true);
     }
 
     public void Load(GameSaveData saveData)

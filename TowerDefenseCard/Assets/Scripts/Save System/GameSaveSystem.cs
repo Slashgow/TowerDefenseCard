@@ -85,6 +85,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 {
                     BoosterSaveData boosterSaveData = null;
                     CardIdeaSaveData cardIdeaSaveData = null;
+                    AutoCardMovementData autoCardMovementData = null;
                     int currentAmountOfCurrency = 0;
 
                     if (stackCard is Booster)
@@ -102,22 +103,24 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                         CardCurrencyCollecter cardCurrencyCollecter = (CardCurrencyCollecter)stackCard;
                         currentAmountOfCurrency = cardCurrencyCollecter.Save();
                     }
+                    else if (stackCard.TryGetComponent(out AutoCardMovement autoCardMovement))
+                    {
+                        autoCardMovementData = autoCardMovement.Save();
+                    }
 
-                    CardSaveData cardSaveData = new CardSaveData(
-                        stackCard.CardData.CardID,
-                        stackCard.transform,
-                        stackCard.StackCount,
-                        boosterSaveData,
-                        cardIdeaSaveData,
-                        currentAmountOfCurrency
-                    );
+                        CardSaveData cardSaveData = new CardSaveData(
+                            stackCard.CardData.CardID,
+                            stackCard.transform,
+                            stackCard.StackCount,
+                            boosterSaveData,
+                            cardIdeaSaveData,
+                            currentAmountOfCurrency,
+                            autoCardMovementData
+                        );
 
                     stackData.AddCard(cardSaveData);
                     processedCards.Add(stackCard);
                 }
-
-                if(card.TryGetComponent(out AutoCardMovement autoCardMovement))
-                    autoCardMovement.Save(saveData);
 
                 saveData.cardStacks.Add(stackData);
             }
@@ -224,14 +227,13 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 
             }
 
+            else if (newCard.TryGetComponent(out AutoCardMovement autoCardMovement))
+                autoCardMovement.Load(cardData.autoCardMovementSaveData);
+
             newCard.transform.position = cardData.position;
             newCard.transform.rotation = cardData.rotation;
             newCard.transform.localScale = cardData.scale;
             //newCard.StackCount = cardData.stackCount;
-
-            if (newCard.TryGetComponent(out AutoCardMovement autoCardMovement))
-                autoCardMovement.Load(saveData);
-
         }
     }
 
