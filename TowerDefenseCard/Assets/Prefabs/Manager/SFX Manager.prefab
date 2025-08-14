@@ -57,6 +57,7 @@ MonoBehaviour:
   onResellClip: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
   onHarvestCurrency: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
   onOpenCardIdea: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
+  onCompleteQuest: {fileID: 8300000, guid: 36fb0314f23c56a44b3999cea39ec5c1, type: 3}
 --- !u!1 &1457461405237576364
 GameObject:
   m_ObjectHideFlags: 0

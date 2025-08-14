@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doEffectOnEnable: 0
   shakeDuration: 0.4
-  shakeMagnitude: 0.075
+  shakeMagnitude: 10
   shakeCurve:
     serializedVersion: 2
     m_Curve:
@@ -307,6 +307,7 @@ MonoBehaviour:
   detectionLayerMaskCards:
     serializedVersion: 2
     m_Bits: 64
+  autoStartMove: 1
   moveStep: 2
   checkRadius: 0.5
   maxIterations: 1

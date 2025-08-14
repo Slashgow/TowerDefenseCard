@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Spicy Ramen
   m_EditorClassIdentifier: 
   UpgradeName: Attack Speed
+  upgradeLocalizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:0973f375f04bcf845b691bad9cad1996
+    m_TableEntryReference:
+      m_KeyId: 19157082681241600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   damageBonusFlat: 0
   damageBonusPercent: 0
   damageBonusPercentValue: 0
@@ -31,3 +40,12 @@ MonoBehaviour:
   dotDurationBonusFlat: 0
   dotDurationBonusPercent: 0
   dotDurationBonusPercentValue: 0
+  healthBonusFlat: 0
+  healthBonusPercent: 0
+  healthBonusPercentValue: 0
+  healBonusFlat: 0
+  healBonusPercent: 0
+  healBonusPercentValue: 0
+  references:
+    version: 2
+    RefIds: []

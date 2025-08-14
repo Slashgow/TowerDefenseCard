@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 9049170852316884219}
   - component: {fileID: 1182287520136083720}
   - component: {fileID: 7147628001615255226}
+  - component: {fileID: -2794949444939509766}
   m_Layer: 8
   m_Name: Ennemy
   m_TagString: Untagged
@@ -375,6 +376,7 @@ MonoBehaviour:
     m_Bits: 64
   impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
   isMonoTarget: 1
+  maxNumberOfTargets: 1
   useProjectile: 0
   projectilePrefab: {fileID: 0}
   numberOfProjectilePerAttack: 1
@@ -453,6 +455,20 @@ MonoBehaviour:
   showDuringMovement: 0
   rangeMaterial: {fileID: 2100000, guid: 62e302a161788ce479d67328bffafd89, type: 2}
   segments: 64
+--- !u!114 &-2794949444939509766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505245852151396201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c1158edbb20384e84daa23acdbdb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 1
+  effectPrefab: {fileID: 3648890296828235570, guid: 5f110a857a3bf8447a53e336d55504e9, type: 3}
 --- !u!1 &8981867779452182579
 GameObject:
   m_ObjectHideFlags: 0

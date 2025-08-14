@@ -13,6 +13,7 @@ public class QuestManager : MonoBehaviour
     public List<Quest> AvailableQuests => availableQuests;
 
     public event Action<Quest> OnQuestCompleted;
+    public static event Action OnAnyQuestCompleted;
 
     private void Awake() => SetupQuests();
 
@@ -53,6 +54,7 @@ public class QuestManager : MonoBehaviour
         {
             activeQuests.Remove(quest.QuestId); 
             OnQuestCompleted?.Invoke(quest);
+            OnAnyQuestCompleted?.Invoke();
             logger.Log($"Quest '{quest.Title}' marked as completed and removed from active quests!", this);
         }
     }

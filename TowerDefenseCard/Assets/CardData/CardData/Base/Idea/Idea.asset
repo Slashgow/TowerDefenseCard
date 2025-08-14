@@ -33,7 +33,7 @@ MonoBehaviour:
     m_LocalVariables: []
   cardSprite: {fileID: 0}
   cardBackgroundSprite: {fileID: 950898650, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
-  isStackable: 0
+  isStackable: 1
   cost: 2
   references:
     version: 2

@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c1158edbb20384e84daa23acdbdb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doEffectOnEnable: 0
+  doEffectOnEnable: 1
   effectPrefab: {fileID: 3648890296828235570, guid: 5f110a857a3bf8447a53e336d55504e9, type: 3}
 --- !u!114 &7261374961265092090
 MonoBehaviour:
