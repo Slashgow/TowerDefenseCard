@@ -37,15 +37,16 @@ public class Currency : Card, IEndDragHandler
                 if(StackCount > cardShop.Shop.ShopCost)
                 {
                     currencyChildren[cardShop.Shop.ShopCost].transform.SetParent(null);
-                    currencyChildren[cardShop.Shop.ShopCost].OnUnstack();
                 }
                    
 
                 for (int i = 0; i < cardShop.Shop.ShopCost; i++)
                 {
-                    //currencyChildren[i].transform.SetParent(null);
+                    currencyChildren[i].OnUnstack();
                     pool.AddToPool(currencyChildren[i].gameObject);
                 }
+
+                currencyChildren[cardShop.Shop.ShopCost].OnUnstack();
                 //pool.AddToPool(this.gameObject);
             }
         }

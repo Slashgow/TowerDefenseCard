@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
     // List of cards stacked on top of this card
     public List<Card> StackedCards { get; private set; }
 
-    private List<Card> entireStack = new List<Card>();
+    private List<Card> entireStackParent;
 
 
     protected virtual void OnEnable()
@@ -32,6 +32,16 @@ public class Card : MonoBehaviour
         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
         StackCount = 1;
         StackedCards = new List<Card>();
+        entireStackParent = new List<Card>();
+        StackParent = null;
+    }
+
+    private void OnDisable()
+    {
+        StackCount = 1;
+        StackedCards = new List<Card>();
+        entireStackParent = new List<Card>();
+        StackParent = null;
     }
 
     private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale Locale)
@@ -47,12 +57,14 @@ public class Card : MonoBehaviour
 
     public virtual void OnStack(Card targetCard)
     {
-        Debug.Log($"Stack {this.cardData.CardID} on {targetCard.cardData.CardID}");
+        Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
         StackParent = targetCard;
 
-        entireStack.Clear();
-        entireStack = StackParent.GetEntireStack();
-        foreach (Card card in entireStack)
+        if(entireStackParent != null)
+            entireStackParent.Clear();
+
+        entireStackParent = StackParent.GetEntireStack();
+        foreach (Card card in entireStackParent)
         {
             if (card == this)
                 continue;
@@ -67,24 +79,28 @@ public class Card : MonoBehaviour
     {
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} from {StackParent.cardData.CardID}");
+            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
-            entireStack.Clear();
-            entireStack = StackParent.GetEntireStack();
-            foreach (Card card in entireStack)
+            if (entireStackParent != null)
+                entireStackParent.Clear();
+
+            entireStackParent = StackParent.GetEntireStack();
+            foreach (Card card in entireStackParent)
             {
                 if (card == this)
                     continue;
 
-                card.StackCount -= this.StackCount;
+                card.StackCount -=  this.StackCount;
+                Mathf.Clamp(card.StackCount, 1, int.MaxValue); 
             }
 
             StackParent = null;
+
         }
-        
-        if(!GetComponentInChildren<Card>())
+
+        if (!GetComponentInChildren<Card>())
             StackedCards.Clear();
     }
     public bool IsStackRoot() => StackParent == null;
@@ -92,10 +108,17 @@ public class Card : MonoBehaviour
     public List<Card> GetEntireStack()
     {
         List<Card> stack = new List<Card>();
+        HashSet<Card> visited = new HashSet<Card>();
 
         Card root = this;
         while (root.StackParent != null)
         {
+            if (visited.Contains(root))
+            {
+                Debug.LogError("Circular reference detected in stack hierarchy!");
+                break;
+            }
+            visited.Add(root);
             root = root.StackParent;
         }
 

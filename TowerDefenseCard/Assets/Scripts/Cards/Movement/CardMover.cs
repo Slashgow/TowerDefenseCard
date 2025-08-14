@@ -147,9 +147,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
-                card.OnStack(otherCard);
-
-                var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
+                
+                //var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
                 //if(cardParents != null)
                 //{
                 //    foreach (var cardParent in cardParents)
@@ -160,6 +159,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 //otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
+                card.OnStack(otherCard);
+
                 Vector3 newPos = Vector3.zero;
                 newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
                 transform.localPosition = newPos;
