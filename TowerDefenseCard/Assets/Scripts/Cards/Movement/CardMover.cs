@@ -49,11 +49,11 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
         if (card.transform.parent != null && card.transform.parent.GetComponent<Card>())
         {
-            var cardParents = card.transform.parent.GetComponentsInParent<Card>();
-            foreach (var cardParent in cardParents)
-            {
-                cardParent.StackCount -= card.StackCount;
-            }
+            //var cardParents = card.transform.parent.GetComponentsInParent<Card>();
+            //foreach (var cardParent in cardParents)
+            //{
+            //    cardParent.StackCount -= card.StackCount;
+            //}
 
             CraftingManager.Instance.TryCancelCraft(this.card);
             if(card.transform.root.TryGetComponent(out  Card cardRoot))
@@ -150,14 +150,14 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 card.OnStack(otherCard);
 
                 var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
-                if(cardParents != null)
-                {
-                    foreach (var cardParent in cardParents)
-                    {
-                        cardParent.StackCount += card.StackCount;
-                    }
-                }
-                otherCard.StackCount += card.StackCount;
+                //if(cardParents != null)
+                //{
+                //    foreach (var cardParent in cardParents)
+                //    {
+                //        cardParent.StackCount += card.StackCount;
+                //    }
+                //}
+                //otherCard.StackCount += card.StackCount;
                 // Make the dragged card a child of the target card
                 transform.SetParent(otherCard.transform, false);
                 Vector3 newPos = Vector3.zero;

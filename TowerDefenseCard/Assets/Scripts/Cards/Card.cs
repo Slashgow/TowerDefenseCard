@@ -22,6 +22,8 @@ public class Card : MonoBehaviour
     // List of cards stacked on top of this card
     public List<Card> StackedCards { get; private set; }
 
+    private List<Card> entireStack = new List<Card>();
+
 
     protected virtual void OnEnable()
     {
@@ -47,6 +49,17 @@ public class Card : MonoBehaviour
     {
         Debug.Log($"Stack {this.cardData.CardID} on {targetCard.cardData.CardID}");
         StackParent = targetCard;
+
+        entireStack.Clear();
+        entireStack = StackParent.GetEntireStack();
+        foreach (Card card in entireStack)
+        {
+            if (card == this)
+                continue;
+
+            card.StackCount += this.StackCount;
+        }
+
         targetCard.StackedCards.Add(this);
     }
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
@@ -55,7 +68,19 @@ public class Card : MonoBehaviour
         if (StackParent != null)
         {
             Debug.Log($"Unstack {this.cardData.CardID} from {StackParent.cardData.CardID}");
+
             StackParent.StackedCards.Remove(this);
+
+            entireStack.Clear();
+            entireStack = StackParent.GetEntireStack();
+            foreach (Card card in entireStack)
+            {
+                if (card == this)
+                    continue;
+
+                card.StackCount -= this.StackCount;
+            }
+
             StackParent = null;
         }
         
