@@ -111,7 +111,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         craftedCard = null;
 
-        if (CardManager.Instance.IsMaxCardsReached)
+        if (CardManager.Instance.IsMaxCardsReached && IsAdditionalCardAfterCraft(craftInfo))
         {
             TryCancelCraft(craftInfo.CraftID);
             craftedCard = null;
@@ -251,6 +251,19 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         return outputs;
     }
 
+
+    private bool IsAdditionalCardAfterCraft(CraftInfo craftInfo)
+    {
+        int numberOfDestroyedCard = craftInfo.CraftingRecipe.Ingredients.Sum(ingredient => {
+                        return ingredient.isNotDestroyedOnCraft ? 0 : ingredient.quantity;
+                        });
+        int numberOfRemainingCards = craftInfo.CraftingRecipe.Ingredients.Sum(ingredient => {
+            return ingredient.isNotDestroyedOnCraft ? ingredient.quantity : 0;
+        }) + 1; 
+
+        Debug.Log($"Crafting Recipe: {craftInfo.CraftingRecipe.name}, Number of Remaining Cards: {numberOfRemainingCards}, Number of Destroyed Cards: {numberOfDestroyedCard}");
+        return numberOfRemainingCards > numberOfDestroyedCard;
+    }
     public void Load(GameSaveData gameSaveData)
     {
         this.timeElapsed = gameSaveData.craftTimeElapsed;

@@ -195,7 +195,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public void Save(GameSaveData gameSaveData)
     {
         gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
-        gameSaveData.maxCardsAllowed = MaxCardsAllowed;
+        gameSaveData.maxCardsAllowed = startMaxCardsAllowed;
 
         TrySaveDiscoveredCards();
     }

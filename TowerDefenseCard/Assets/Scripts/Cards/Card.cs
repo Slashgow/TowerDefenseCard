@@ -85,7 +85,7 @@ public class Card : MonoBehaviour
     {
         transform.SetParent(null, true);
 
-        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {
@@ -119,7 +119,7 @@ public class Card : MonoBehaviour
         if(setParent)
             transform.SetParent(null, true);
 
-        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {

@@ -130,12 +130,26 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     private void MainQuestManager_OnQuestCompleted(Quest quest)
     {
         UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
+
+        if (uiQuest == null)
+        {
+            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            return;
+        }
+
         uiQuest.SetQuestAsCompleted();
         titleMainQuestCountText.text = $"({mainQuestManager.CompletedQuestCount}/{mainQuestManager.AvailableQuestCount})";
     }
     private void SecondaryQuestManager_OnQuestCompleted(Quest quest)
     {
         UIQuest uiQuest = GetSecondaryUIQuestByQuestID(quest.QuestId);
+
+        if(uiQuest == null)
+        {
+            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            return;
+        }
+
         uiQuest.SetQuestAsCompleted();
         titleSecondaryQuestCountText.text = $"({secondaryQuestManager.CompletedQuestCount}/{secondaryQuestManager.AvailableQuestCount})";
     }
