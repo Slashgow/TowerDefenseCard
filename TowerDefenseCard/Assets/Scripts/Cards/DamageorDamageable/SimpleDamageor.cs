@@ -40,7 +40,7 @@ public class SimpleDamageor : BaseDamageor
 
             for (int i = 0; i < hits.Length; i++)
             {
-                if(i >= maxNumberOfTargets - 1)
+                if(i > maxNumberOfTargets - 1)
                     return;
 
                 if (hits[i].TryGetComponent<IDamageable>(out var damageable))

@@ -16,9 +16,10 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public UnityEvent OnOpenBoosterUnity;
     public static event Action OnOpenCardIdea;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if(remainingCards <= 0)
+        base.Awake();
+        if (remainingCards <= 0)
             remainingCards = maxCardCount;
     }
 

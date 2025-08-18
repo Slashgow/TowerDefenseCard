@@ -8,7 +8,7 @@ public class CardShop : Card
     [SerializeField] private Shop shop;
     public Shop Shop => shop;   
 
-    protected override void OnEnable()
+    protected override void Awake()
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;

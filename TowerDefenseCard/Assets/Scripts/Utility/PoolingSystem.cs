@@ -13,6 +13,8 @@ public class PoolingSystem : MonoBehaviour
 
     public int AvailablePrefabCount => availablePrefab.Count;
     
+    private Vector3 spawnPositionOffset = Vector3.zero;
+    private const float MAX_SPAWN_OFFSET = 500f;
 
     private void Awake()
     {
@@ -54,14 +56,27 @@ public class PoolingSystem : MonoBehaviour
     {
         for (int i = 0; i < growPoolSize; i++)
         {
-            var instanceToAdd = Instantiate(prefab);
+            var instanceToAdd = Instantiate(prefab, transform.position + spawnPositionOffset, Quaternion.identity);
+            AdjustSpawnPositionOffset();
             AddToPool(instanceToAdd);
         }
     }
+
+    private void AdjustSpawnPositionOffset()
+    {
+        spawnPositionOffset += new Vector3(2f, 0f, 0f);
+        if(spawnPositionOffset.x > MAX_SPAWN_OFFSET)
+        {
+            spawnPositionOffset = new Vector3(0f, 0f, 0f);
+        }
+    }
+
     public void AddToPool(GameObject instance)
     {
         instance.SetActive(false);
         instance.transform.SetParent(transform);
+        instance.transform.position = transform.position + spawnPositionOffset;
+        AdjustSpawnPositionOffset();
         availablePrefab.Enqueue(instance);
     }
 
@@ -69,6 +84,8 @@ public class PoolingSystem : MonoBehaviour
     {
         instance.SetActive(false);
         instance.transform.SetParent(transform);
+        instance.transform.position = transform.position + spawnPositionOffset;
+        AdjustSpawnPositionOffset();
         availablePrefab.Enqueue(instance);
     }
 

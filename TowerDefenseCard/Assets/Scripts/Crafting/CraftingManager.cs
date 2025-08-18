@@ -50,7 +50,6 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         if (IsCardsInOnGoingCraft(stackCards))
         {
-            movedCard.transform.SetParent(null);
             movedCard.OnUnstack();
             return false;
         }
@@ -77,7 +76,6 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                         for (int i = 0; i < surplueCount; i++)
                         {
                             Card cardToRemove = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
-                            cardToRemove.transform.SetParent(null);
                             cardToRemove.OnUnstack();
                             stackCards.Remove(cardToRemove);
                         }
@@ -144,8 +142,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             }
             else if(!craftInfo.StackCards.Any(card => card is CardExploitation || card is CardRessourceGenerator))  //!outputCard.cardPrefab.GetComponent<CardRessource>())
             {
-                craftInfo.StackCards[i].transform.SetParent(null);
-               
+                craftInfo.StackCards[i].OnUnstack();
             }
         }
         // Instantiate output card at the stack's position

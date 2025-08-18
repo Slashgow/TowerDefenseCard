@@ -8,9 +8,8 @@ public class CardRessourceGenerator : Card
     private bool isCrafting = false;
     private int currentCraftID = -1;
 
-   protected override void OnEnable()
+   protected void OnEnable()
    {
-       base.OnEnable();
         //StartCrafting();
         CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
     }

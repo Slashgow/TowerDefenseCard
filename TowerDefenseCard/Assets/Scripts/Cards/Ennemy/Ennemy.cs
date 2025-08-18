@@ -7,8 +7,9 @@ public class Ennemy : Card, ICurrencyDropper
     public int CurrencyAmountToDrop => currencyAmountToDrop;
     private IDamageable damageable;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         damageable = GetComponent<IDamageable>();
         damageable.OnDie += Damageable_OnDie;
         currencyAmountToDrop = CardData.Cost;

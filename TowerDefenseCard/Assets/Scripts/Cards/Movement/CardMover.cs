@@ -49,21 +49,11 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
         if (card.transform.parent != null && card.transform.parent.GetComponent<Card>())
         {
-            //var cardParents = card.transform.parent.GetComponentsInParent<Card>();
-            //foreach (var cardParent in cardParents)
-            //{
-            //    cardParent.StackCount -= card.StackCount;
-            //}
-
             CraftingManager.Instance.TryCancelCraft(this.card);
-            if(card.transform.root.TryGetComponent(out  Card cardRoot))
-            {
-                card.OnUnstack();
-            }
+            card.OnUnstack();
         }     
 
         startPosition = transform.position;
-        transform.SetParent(null, true);
         isDragging = true;
 
         CardUtility.AssignSortingOrderRecursively(card.transform, 20);
@@ -115,12 +105,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     private void TryStackCards()
     {
-        //Debug.Log($"try stack card {this.GetInstanceID()} | {this.card.CardData.CardName}");
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
 
         foreach (var hit in hits)
         {
-            //Debug.Log(hit.name);
             if (hit.gameObject == this.gameObject)
                 continue;
 
@@ -128,37 +116,12 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 continue;
 
             Card otherCard = hit.GetComponent<Card>();
-            //Debug.Log(otherCard);
 
             if (otherCard.StackedCards.Count > 0)
                 continue;
 
-            //if (otherCard.transform.childCount > 3)
-            //{
-            //    if (otherCard.GetComponent<MeshRangeEffect>())
-            //    {
-            //        if (otherCard.transform.childCount > 4)
-            //            continue;
-            //    }
-            //    else
-            //        continue;
-            //}
-               
-
             if (otherCard != null && otherCard.CardData.IsStackable)
             {
-                
-                //var cardParents = otherCard.GetComponentsInParent<Card>().Skip(1);
-                //if(cardParents != null)
-                //{
-                //    foreach (var cardParent in cardParents)
-                //    {
-                //        cardParent.StackCount += card.StackCount;
-                //    }
-                //}
-                //otherCard.StackCount += card.StackCount;
-                // Make the dragged card a child of the target card
-                transform.SetParent(otherCard.transform, false);
                 card.OnStack(otherCard);
 
                 Vector3 newPos = Vector3.zero;
@@ -177,7 +140,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         pos2D.z = 0.0f;
         transform.position = pos2D;
         CardUtility.AssignSortingOrderRecursively(card.transform, 0);
-        transform.SetParent(startParent, false);
+        this.card.OnUnstack();
+        //transform.SetParent(startParent, false);
     }
 
 

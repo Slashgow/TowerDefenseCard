@@ -10,8 +10,12 @@ public class RotateObject : Effect
     [SerializeField, Range(-360f, 360f)] private float startAngle = 0f; 
     [SerializeField, Range(-360f, 360f)] private float endAngle = 180f; 
     [SerializeField] private RotateMode rotateMode = RotateMode.Fast; 
+
+    private Tween rotationTween;
     public void Rotate()
     {
+        rotationTween?.Kill();
+
         Vector3 currentRotation = transform.localEulerAngles;
         Vector3 normalizedAxis = rotationAxis.normalized;
 
@@ -20,7 +24,7 @@ public class RotateObject : Effect
 
         transform.localEulerAngles = currentRotation + startOffset;
 
-        transform.DOLocalRotate(currentRotation + endOffset, rotationDuration, rotateMode)
+        rotationTween = transform.DOLocalRotate(currentRotation + endOffset, rotationDuration, rotateMode)
             .SetEase(rotationCurve)
             .SetRelative(false)
             .SetUpdate(true);
@@ -30,6 +34,7 @@ public class RotateObject : Effect
 
     private void OnDisable()
     {
+        rotationTween?.Kill();
         this.transform.rotation = Quaternion.identity;
     }
 

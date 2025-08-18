@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -15,29 +16,30 @@ public class Card : MonoBehaviour
 
     [SerializeField] protected CardUI cardUI;
 
-    public int StackCount { get; set; }
+    public int StackCount { get; set; } = 1;
     // Reference to the stack this card belongs to(null if it's a root card)
-    public Card StackParent { get; set; }
+    public Card StackParent { get; set; } = null;
 
     // List of cards stacked on top of this card
-    public List<Card> StackedCards { get; private set; }
+    public List<Card> StackedCards { get; private set; } = new List<Card>();
 
-    private List<Card> entireStackParent;
+    private List<Card> entireStackParent = new List<Card>();
 
 
-    protected virtual void OnEnable()
+    protected virtual void Awake()
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
-        StackCount = 1;
-        StackedCards = new List<Card>();
-        entireStackParent = new List<Card>();
-        StackParent = null;
+        //StackCount = 1;
+        //StackedCards = new List<Card>();
+        //entireStackParent = new List<Card>();
+        //StackParent = null;
     }
 
     private void OnDisable()
     {
+        this.OnUnstack(false);
         StackCount = 1;
         StackedCards = new List<Card>();
         entireStackParent = new List<Card>();
@@ -58,6 +60,9 @@ public class Card : MonoBehaviour
     public virtual void OnStack(Card targetCard)
     {
         Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
+
+        transform.SetParent(targetCard.transform, false);
+
         StackParent = targetCard;
 
         if(entireStackParent != null)
@@ -72,11 +77,16 @@ public class Card : MonoBehaviour
             card.StackCount += this.StackCount;
         }
 
+
         targetCard.StackedCards.Add(this);
     }
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
     public virtual void OnUnstack() 
     {
+        transform.SetParent(null, true);
+
+        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+
         if (StackParent != null)
         {
             Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
@@ -94,6 +104,40 @@ public class Card : MonoBehaviour
 
                 card.StackCount -=  this.StackCount;
                 Mathf.Clamp(card.StackCount, 1, int.MaxValue); 
+            }
+
+            StackParent = null;
+
+        }
+
+        if (!GetComponentInChildren<Card>())
+            StackedCards.Clear();
+    }
+
+    public virtual void OnUnstack(bool setParent)
+    {
+        if(setParent)
+            transform.SetParent(null, true);
+
+        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+
+        if (StackParent != null)
+        {
+            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+
+            StackParent.StackedCards.Remove(this);
+
+            if (entireStackParent != null)
+                entireStackParent.Clear();
+
+            entireStackParent = StackParent.GetEntireStack();
+            foreach (Card card in entireStackParent)
+            {
+                if (card == this)
+                    continue;
+
+                card.StackCount -= this.StackCount;
+                Mathf.Clamp(card.StackCount, 1, int.MaxValue);
             }
 
             StackParent = null;

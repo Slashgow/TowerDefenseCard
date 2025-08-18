@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Torii Gate
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 0
-    quantity: 3
+  - cardID: 4
+    quantity: 2
+    isNotDestroyedOnCraft: 0
+  - cardID: 15
+    quantity: 1
     isNotDestroyedOnCraft: 0
   - cardID: 42
     quantity: 1
