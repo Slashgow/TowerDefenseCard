@@ -8,4 +8,5 @@ public enum ColorID
     THIRD,
     FOURTH,
     FIFTH,
+    SIXTH
 }

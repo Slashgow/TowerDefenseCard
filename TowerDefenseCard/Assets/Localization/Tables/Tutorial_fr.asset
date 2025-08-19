@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: ddc349f0a26451848b441f5abb364850, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22915969024
+    m_Localized: Le but du jeu est de garder votre royaume en vie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22966300672
+    m_Localized: "Le jeu alterne entre une phase de pr\xE9paration o\xF9 vous devez
+      craft un maximum de cartes d\xE9fense et une phase de d\xE9fense o\xF9 vous
+      devez emp\xEAcher les enemis d'atteindre votre royaume."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494976
+    m_Localized: "La phase de d\xE9fense d\xE9bute quand la barre de progression
+      est compl\xE9t\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494977
+    m_Localized: "Vous pouvez voir le nombre de vagues \xE0 vaincre pour remporter
+      la partie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494978
+    m_Localized: Vous pouvez acheter des boosters de cartes dans les boutiques.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494979
+    m_Localized: Ouvrez des boosters en cliquant dessus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360233590784
+    m_Localized: "Vous pouvez acc\xE9der \xE0 vos id\xE9es de craft ici."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145216
+    m_Localized: "Vous pouvez mettre le jeu en pause pour pr\xE9parer sereinement
+      vos d\xE9fenses."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145217
+    m_Localized: "Il est possible d'acc\xE9l\xE9rer le temps pour craft plus vite."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145218
+    m_Localized: Les raccourcis sont disponibles ici.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

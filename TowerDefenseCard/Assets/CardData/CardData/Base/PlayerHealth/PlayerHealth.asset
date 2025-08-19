@@ -31,8 +31,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  cardSprite: {fileID: 590607674, guid: aca456cfa94b9744d81d86335173709b, type: 3}
-  cardBackgroundSprite: {fileID: 548319596, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
+  cardSprite: {fileID: -358515166766894482, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  cardBackgroundSprite: {fileID: 0}
   isStackable: 0
   cost: 0
   references:

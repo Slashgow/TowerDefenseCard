@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class UITime : MonoBehaviour
 {
+    [SerializeField] private UIInput uiInput;
     [SerializeField] private Button pauseButton, resumeButton;
     [SerializeField] private Button speedUpButton, speedDownButton;
 
@@ -28,6 +29,9 @@ public class UITime : MonoBehaviour
 
     private void OnSpeedDown()
     {
+        if(!uiInput.IsReceivingInput)
+            return;
+
         GameManager.Instance.ResetGameSpeed();
 
         speedUpButton.gameObject.SetActive(true);
@@ -36,6 +40,9 @@ public class UITime : MonoBehaviour
 
     private void OnSpeedUp()
     {
+        if (!uiInput.IsReceivingInput)
+            return;
+
         GameManager.Instance.SpeedUpGame();
 
         speedUpButton.gameObject.SetActive(false);
@@ -44,6 +51,9 @@ public class UITime : MonoBehaviour
 
     public void OnResume()
     {
+        if (!uiInput.IsReceivingInput)
+            return;
+
         GameManager.Instance.Resume();
         pauseButton.gameObject.SetActive(true);
         resumeButton.gameObject.SetActive(false);
@@ -54,6 +64,9 @@ public class UITime : MonoBehaviour
 
     public void OnPause()
     {
+        if (!uiInput.IsReceivingInput)
+            return;
+
         GameManager.Instance.Pause();
         pauseButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(true);

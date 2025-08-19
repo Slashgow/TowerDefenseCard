@@ -30,6 +30,9 @@ public class UIButtonCardMenu : MonoBehaviour
     }
     private void ShowCollectionMenu()
     {
+        if(!uIInput.IsReceivingInput)
+            return;
+
         notificationImage.gameObject.SetActive(false);
         uIInput.ShowPage(collectionMenu);
     }

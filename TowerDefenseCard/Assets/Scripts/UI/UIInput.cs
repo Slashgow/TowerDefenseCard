@@ -14,14 +14,19 @@ public class UIInput : MonoBehaviour
     [SerializeField] private InputActionReference speedUpDownInputActionReference;
 
     public event Action OnShowPageCollection;
-
+    public bool IsReceivingInput { get; private set; }
     private void Awake()
     {
+        IsReceivingInput = true;
+
         toggleCollectionMenuInputActionReference.action.performed += ToggleCollectionMenuPerformed;
         toggleSettingMenuInputActionReference.action.performed += ToggleSettingsMenuPerformed;
         playPauseInputActionReference.action.performed += PlayPause;
         speedUpDownInputActionReference.action.performed += SpeedUpDown;
     }
+
+    public void StartReceivingInput() => IsReceivingInput = true;
+    public void StopRecevingInput() => IsReceivingInput = false;
 
     private void OnDestroy()
     {
@@ -31,10 +36,37 @@ public class UIInput : MonoBehaviour
         speedUpDownInputActionReference.action.performed -= SpeedUpDown;
     }
 
-    private void ToggleCollectionMenuPerformed(InputAction.CallbackContext context) => ShowPage(collectionMenu);
-    private void ToggleSettingsMenuPerformed(InputAction.CallbackContext context) => ShowPage(settingsMenu);
-    private void SpeedUpDown(InputAction.CallbackContext obj) => uiTime.ToggleSpeed();
-    private void PlayPause(InputAction.CallbackContext obj) => uiTime.TogglePlayResume();
+    private void ToggleCollectionMenuPerformed(InputAction.CallbackContext context)
+    {
+        if(!IsReceivingInput)
+            return;
+
+        ShowPage(collectionMenu);
+    }
+
+    private void ToggleSettingsMenuPerformed(InputAction.CallbackContext context)
+    {
+        if (!IsReceivingInput)
+            return;
+
+        ShowPage(settingsMenu);
+    }
+
+    private void SpeedUpDown(InputAction.CallbackContext obj)
+    {
+        if (!IsReceivingInput)
+            return;
+
+        uiTime.ToggleSpeed();
+    }
+
+    private void PlayPause(InputAction.CallbackContext obj)
+    {
+        if (!IsReceivingInput)
+            return;
+
+        uiTime.TogglePlayResume();
+    }
 
     public void ShowPage(UIPage page)
     {

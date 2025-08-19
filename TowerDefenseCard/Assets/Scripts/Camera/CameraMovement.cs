@@ -27,6 +27,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
 
     public bool IsDraggindEnable { get; set; }
     public bool IsZoomingEnable { get; set; }
+    public bool IsMovingWithWASD { get; set; }
 
     protected override void Awake()
     {
@@ -36,6 +37,7 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         originPosition = transform.position;
         IsDraggindEnable = true;
         IsZoomingEnable = true;
+        IsMovingWithWASD = true;
     }
 
     void Start()
@@ -45,6 +47,21 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         targetZoom = cam.orthographicSize;
     }
     private void OnDestroy() => inputHandler.OnRecenterCamera -= InputHandler_OnRecenterCamera;
+
+    public void StopAllMovement()
+    {
+        IsDraggindEnable = false;
+        IsZoomingEnable = false;
+        IsMovingWithWASD = false;
+    }
+
+    public void ResumeAllMovement()
+    {
+        IsDraggindEnable = true;
+        IsZoomingEnable = true;
+        IsMovingWithWASD = true;
+    }
+
     private void InputHandler_OnRecenterCamera()
     {
         isRecentering = true;
@@ -68,7 +85,9 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         if(IsZoomingEnable)
             HandleZooming();
 
-        HandleWASDMovement();
+        if(IsMovingWithWASD)
+            HandleWASDMovement();
+
         SmoothMovement();
         SmoothZooming();
     }

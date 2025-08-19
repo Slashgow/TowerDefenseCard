@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08d4b95656bd8642855f3141ac3a7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startColorTheme: 1
   logger: {fileID: 5254013692215437180}
   colorsThemes:
   - colorTheme: 0
@@ -59,6 +60,8 @@ MonoBehaviour:
       color: {r: 0.6392157, g: 0.18039216, b: 0.18039216, a: 1}
     - colorID: 4
       color: {r: 0.48627454, g: 0.10980393, b: 0.10980393, a: 1}
+    - colorID: 5
+      color: {r: 0.7843138, g: 0.2901961, b: 0.21176472, a: 1}
   - colorTheme: 1
     colors:
     - colorID: 0
@@ -71,6 +74,8 @@ MonoBehaviour:
       color: {r: 0.7568628, g: 0.50980395, b: 0.4901961, a: 1}
     - colorID: 4
       color: {r: 0.6784314, g: 0.42352945, b: 0.41960788, a: 1}
+    - colorID: 5
+      color: {r: 0.909804, g: 0.7137255, b: 0.7137255, a: 1}
   CurrentColorTheme: 0
 --- !u!114 &5254013692215437180
 MonoBehaviour:

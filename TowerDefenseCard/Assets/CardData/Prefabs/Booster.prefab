@@ -307,7 +307,7 @@ MonoBehaviour:
   detectionLayerMaskCards:
     serializedVersion: 2
     m_Bits: 64
-  autoStartMove: 1
+  autoStartMove: 0
   moveStep: 2
   checkRadius: 0.5
   maxIterations: 1

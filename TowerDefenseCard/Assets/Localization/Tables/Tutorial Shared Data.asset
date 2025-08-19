@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Tutorial Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Tutorial
+  m_TableCollectionNameGuidString: ddc349f0a26451848b441f5abb364850
+  m_Entries:
+  - m_Id: 22915969024
+    m_Key: TUTO_GOAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22966300672
+    m_Key: TUTO_PHASES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494976
+    m_Key: TUTO_DEFENSE_PROGRESS_BAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494977
+    m_Key: TUTO_NUMBER_WAVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494978
+    m_Key: TUTO_BOOSTER_SHOPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22970494979
+    m_Key: TUTO_OPEN_BOOSTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360233590784
+    m_Key: TUTO_CRAFT_IDEAS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145216
+    m_Key: TUTO_PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145217
+    m_Key: TUTO_SPEED_UP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360267145218
+    m_Key: TUTO_SETTINGS
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5581259999775293550
+  references:
+    version: 2
+    RefIds:
+    - rid: 5581259999775293550
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1755603468917
