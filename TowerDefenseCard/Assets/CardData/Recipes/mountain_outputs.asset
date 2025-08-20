@@ -23,7 +23,7 @@ MonoBehaviour:
   outputCards:
   - cardID: 16
     cardPrefab: {fileID: 1648138419762282337, guid: a175d55a62976314fa50315240f892e8, type: 3}
-    dropChance: 20
+    dropChance: 10
   - cardID: 3
     cardPrefab: {fileID: 1648138419762282337, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
-    dropChance: 80
+    dropChance: 90

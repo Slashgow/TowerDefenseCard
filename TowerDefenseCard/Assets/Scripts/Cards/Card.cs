@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -59,7 +58,7 @@ public class Card : MonoBehaviour
 
     public virtual void OnStack(Card targetCard)
     {
-        Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
+        //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
         transform.SetParent(targetCard.transform, false);
 
@@ -89,7 +88,7 @@ public class Card : MonoBehaviour
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
@@ -123,7 +122,7 @@ public class Card : MonoBehaviour
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 

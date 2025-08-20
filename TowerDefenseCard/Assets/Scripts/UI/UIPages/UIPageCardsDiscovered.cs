@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPageCardsDiscovered : UIPage
 {
@@ -24,6 +25,17 @@ public class UIPageCardsDiscovered : UIPage
             uICardMenu.SetupUICardMenu(card.CardData, false);
 
             UICardOutline uICardOutline = uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>();
+
+            if(card is Currency)
+            {
+                uICardOutline.GetComponent<Image>().color = new Color32(255, 213, 90, 255);
+                RectTransform rectTransform = uiCardMenuGameObject.transform.GetChild(1).GetComponent<RectTransform>();
+                Vector2 sizeDelta = rectTransform.sizeDelta;
+                rectTransform.sizeDelta = sizeDelta * 0.5f;
+                uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
+            }
+                
+
             uICardOutline.OnSelectCard -= UICardOutline_OnSelectCard;
             uICardOutline.OnSelectCard += UICardOutline_OnSelectCard;
         }

@@ -23,10 +23,13 @@ MonoBehaviour:
   outputCards:
   - cardID: 0
     cardPrefab: {fileID: 1648138419762282337, guid: ffff4daae8667f14f962def17376edc8, type: 3}
-    dropChance: 40
+    dropChance: 35
   - cardID: 2
     cardPrefab: {fileID: 1648138419762282337, guid: 0c01b661e9df1c645ac17f8ff06fab28, type: 3}
-    dropChance: 40
+    dropChance: 35
   - cardID: 1
     cardPrefab: {fileID: 1648138419762282337, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
-    dropChance: 20
+    dropChance: 15
+  - cardID: 41
+    cardPrefab: {fileID: 319473351768311903, guid: 212307dff9b2ebc48a0bdbb2cd118dcb, type: 3}
+    dropChance: 15

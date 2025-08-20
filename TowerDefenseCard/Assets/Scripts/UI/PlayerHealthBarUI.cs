@@ -7,8 +7,12 @@ public class PlayerHealthBarUI : MonoBehaviour
     [SerializeField] private Image fillImage;
     private void OnEnable()
     {
-        fillImage.fillAmount = 1f;
         playerHealth.OnPlayerTakeDamageUnity.AddListener(UpdateHealthBar);
+    }
+
+    private void Start()
+    {
+        UpdateHealthBar();
     }
     private void OnDisable()
     {

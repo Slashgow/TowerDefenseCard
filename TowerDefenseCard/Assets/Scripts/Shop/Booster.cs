@@ -10,6 +10,9 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public int MaxCardCount => maxCardCount;
 
     private int remainingCards;
+
+   
+
     public int RemainingCards => remainingCards;
     private Shop shop;
     public static event Action<CardID> OnOpenBooster;
@@ -44,7 +47,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
         {
             if(remainingCards == maxCardCount)
             {
-                ShopCardIdea selectedShopCardIdea = SelectShopCardIdea();
+                ShopCardIdea selectedShopCardIdea = SelectShopCardIdeaOrdered(shop.DropChanceBonus);
                 if (selectedShopCardIdea != null)
                     SpawnCardIdea(selectedShopCardIdea);
                 else
@@ -142,6 +145,43 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
         return selectedShopIdea;
     }
+
+    private ShopCardIdea SelectShopCardIdeaOrdered(float dropChanceBonus)
+    {
+        foreach (var idea in shop.ShopCardIdeas)
+        {
+            bool isUndiscovered = CardManager.Instance.AllCards.Any(state =>
+                state.Card.CardData.CardID == idea.CardIdeaPrefab.CardData.CardID && !state.isDiscovered);
+
+            if (isUndiscovered)
+            {
+                float effectiveDropChance = idea.DropPercentage;
+                //Debug.Log($"Effective drop chance for {idea.CardIdeaPrefab.CardData.CardID}: {effectiveDropChance}");
+                if (shop.LastAttemptedCardIdea == idea && shop.LastAttemptCardIdeaFailed)
+                {
+                    effectiveDropChance += dropChanceBonus;
+                    effectiveDropChance = Mathf.Min(effectiveDropChance, 100f); 
+                }
+
+                float roll = UnityEngine.Random.value * 100f; 
+                //Debug.Log($"Rolled: {roll} for {idea.CardIdeaPrefab.CardData.CardID} with effective drop chance: {effectiveDropChance}");
+                if (roll <= effectiveDropChance)
+                {
+                    shop.ResetLastAttemptedCardIdea();
+                    return idea;
+                }
+                else
+                {
+                    shop.SetLastAttemptedCardIdea(idea);
+                    return null;
+                }
+            }
+        }
+
+        shop.ResetLastAttemptedCardIdea();
+        return null;
+    }
+
 
     public void Load(BoosterSaveData boosterSaveData)
     {

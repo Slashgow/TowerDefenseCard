@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UICardMoreStat : MonoBehaviour
 {
@@ -38,7 +39,16 @@ public class UICardMoreStat : MonoBehaviour
         uICardMenu.SetupUICardMenu(card.CardData, true);
         uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
-    
+
+        if (card is Currency)
+        {
+            uiCardMenuGameObject.transform.GetChild(0).GetComponent<Image>().color = new Color32(255, 213, 90, 255);
+            RectTransform rectTransformImage = uiCardMenuGameObject.transform.GetChild(1).GetComponent<RectTransform>();
+            Vector2 sizeDelta = rectTransformImage.sizeDelta;
+            rectTransformImage.sizeDelta = sizeDelta * 0.5f;
+            uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
+        }
+
         if (!card.GetComponent<BaseDamageor>())
             cardStatsParents.SetActive(false);
 

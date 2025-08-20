@@ -34,7 +34,7 @@ MonoBehaviour:
   cardSprite: {fileID: -5142840990626629552, guid: aca456cfa94b9744d81d86335173709b, type: 3}
   cardBackgroundSprite: {fileID: -4312154775806992197, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
-  cost: 2
+  cost: 1
   references:
     version: 2
     RefIds: []
