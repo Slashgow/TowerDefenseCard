@@ -101,7 +101,7 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 10
   startMoveDuration: 0.5
-  moveSpeed: 2
+  moveSpeed: 5
   loop: 0
   hopDuration: 0.7
   breakDuration: 0.5

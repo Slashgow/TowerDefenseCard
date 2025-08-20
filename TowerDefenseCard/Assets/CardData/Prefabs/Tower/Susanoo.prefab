@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: e67bc84461d76aa418bfd97a3a9ffc88, type: 2}
+    - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 

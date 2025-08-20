@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3248799991256872661, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82f8bb2845ee7e34dbc0f32d0cf2938f, type: 2}
     - target: {fileID: 3418386468252434860, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: cardData
       value: 
@@ -94,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: maxHealth
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -129,7 +133,7 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 10
   startMoveDuration: 0.5
-  moveSpeed: 4.5
+  moveSpeed: 3
   loop: 0
   tiltAmount: 15
-  tiltSpeed: 3
+  tiltSpeed: 1.5

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 4ef2af50b63ab3d4badee7c1ac4a89a0, type: 2}
+    - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: maxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
@@ -103,6 +107,7 @@ MonoBehaviour:
     m_Bits: 256
   impactEffectPrefab: {fileID: 8928194753602737192, guid: 5179b7021b7dcab43a699f7ad1d49aa1, type: 3}
   isMonoTarget: 1
+  maxNumberOfTargets: 1
   useProjectile: 0
   projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
   numberOfProjectilePerAttack: 1

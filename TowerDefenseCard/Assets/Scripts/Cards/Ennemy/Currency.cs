@@ -37,6 +37,9 @@ public class Currency : Card, IEndDragHandler
 
                     for (int i = 0; i < availableCurrency; i++)
                     {
+                        if(currencyChildren.Length <= i)
+                            break;
+
                         currencyChildren[i].OnUnstack();
                         pool.AddToPool(currencyChildren[i].gameObject);
                     }

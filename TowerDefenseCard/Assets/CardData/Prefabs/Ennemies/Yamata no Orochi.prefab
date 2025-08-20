@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       propertyPath: maxHealth
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -113,8 +113,8 @@ MonoBehaviour:
   startMoveDuration: 0.5
   moveSpeed: 3
   loop: 0
-  tiltAmount: 15
-  tiltSpeed: 3
+  tiltAmount: 35
+  tiltSpeed: 2
 --- !u!114 &6364766436305840458
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
+  m_Name: Fujin
+  m_EditorClassIdentifier: 
+  ingredients:
+  - cardID: 16
+    quantity: 1
+    isNotDestroyedOnCraft: 0
+  - cardID: 48
+    quantity: 1
+    isNotDestroyedOnCraft: 1
+  - cardID: 42
+    quantity: 1
+    isNotDestroyedOnCraft: 1
+  - cardID: 36
+    quantity: 3
+    isNotDestroyedOnCraft: 0
+  craftingDelay: 19
+  outputCards:
+  - cardID: 51
+    cardPrefab: {fileID: 8864906581117935152, guid: 186b67377681bef46b82aba80571b5a0, type: 3}
+    dropChance: 100

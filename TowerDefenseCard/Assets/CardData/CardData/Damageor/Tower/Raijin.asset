@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b69ae1373e4d14aafafd53fca4bdd0, type: 3}
   m_Name: Raijin
   m_EditorClassIdentifier: 
-  damage: 14
+  damage: 15
   attackRange: 10
   attackSpeed: 0.5
   attackArea: 0
