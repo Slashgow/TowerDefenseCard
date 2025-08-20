@@ -28,11 +28,20 @@ public class CardShop : Card
         }
     }
 
-    public void TryPurchaseBooster() => ShopManager.Instance.TryPurchaseBooster(this.shop);
+    public void TryPurchaseBooster()
+    {
+        ShopManager.Instance.TryPurchaseBooster(this.shop);
+        shop.ResetShopCost();
+        UpdateCardShopData();
+    }
 
     private void OnLocaleChange(UnityEngine.Localization.Locale Locale)
     {
-        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.ShopCost.ToString());
+        UpdateCardShopData();
     }
 
+    public void UpdateCardShopData()
+    {
+        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.CurrentShopCost.ToString());
+    }
 }

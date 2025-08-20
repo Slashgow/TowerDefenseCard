@@ -23,13 +23,13 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
     public void TryPurchaseBooster(Shop selectedShop)
     {
-        if (CurrentPlayerCoin < selectedShop.ShopCost)
+        if (CurrentPlayerCoin < selectedShop.CurrentShopCost)
         {
             logger.Log("Not enough YenCoins!",this);
             return;
         }
 
-        currentPlayerCoin -= selectedShop.ShopCost;
+        currentPlayerCoin -= selectedShop.CurrentShopCost;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
         OnPurchaseBooster?.Invoke();
         GameObject booster = Instantiate(selectedShop.Booster.gameObject, selectedShop.SpawnPoint.position, Quaternion.identity);
@@ -46,6 +46,17 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     public void AddPlayerCoin(int coinAmount)
     {
         currentPlayerCoin += coinAmount;
+        OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+    }
+
+    public void RemovePlayerCoin(int coinAmount)
+    {
+        if (coinAmount > currentPlayerCoin)
+        {
+            logger.LogError("Not enough coins to remove!", this);
+            return;
+        }
+        currentPlayerCoin -= coinAmount;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 

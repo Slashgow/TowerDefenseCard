@@ -27,26 +27,41 @@ public class Currency : Card, IEndDragHandler
         {
             if(hit.TryGetComponent(out CardShop cardShop))
             {
-                if (StackCount < cardShop.Shop.ShopCost)
-                    return;
-
-                cardShop.TryPurchaseBooster();
-
                 var currencyChildren = GetComponentsInChildren<Currency>();
+                int availableCurrency = StackCount;
+                int requiredCost = cardShop.Shop.CurrentShopCost;
 
-                if(StackCount > cardShop.Shop.ShopCost)
+                if (availableCurrency < requiredCost)
                 {
-                    currencyChildren[cardShop.Shop.ShopCost].OnUnstack();
-                }
-                   
+                    cardShop.Shop.CurrentShopCost = requiredCost - availableCurrency;
 
-                for (int i = 0; i < cardShop.Shop.ShopCost; i++)
-                {
-                    currencyChildren[i].OnUnstack();
-                    pool.AddToPool(currencyChildren[i].gameObject);
+                    for (int i = 0; i < availableCurrency; i++)
+                    {
+                        currencyChildren[i].OnUnstack();
+                        pool.AddToPool(currencyChildren[i].gameObject);
+                    }
+
+                    ShopManager.Instance.RemovePlayerCoin(availableCurrency);
+                    cardShop.UpdateCardShopData();
                 }
-               
-                //pool.AddToPool(this.gameObject);
+                else
+                {
+                    cardShop.TryPurchaseBooster();
+
+                    if (availableCurrency > requiredCost)
+                    {
+                        currencyChildren[requiredCost].OnUnstack();
+                    }
+
+                    for (int i = 0; i < requiredCost; i++)
+                    {
+                        currencyChildren[i].OnUnstack();
+                        pool.AddToPool(currencyChildren[i].gameObject);
+                    }
+                }
+
+              
+                //cardShop.TryPurchaseBooster();
             }
         }
     }

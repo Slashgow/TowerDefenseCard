@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 [Serializable]
 public class Shop
@@ -28,6 +29,28 @@ public class Shop
 
     public ShopCardIdea LastAttemptedCardIdea { get; private set; } = null;
     public bool LastAttemptCardIdeaFailed { get; private set; } = false;
+
+    private int currentShopCost;
+    public int CurrentShopCost
+    {
+        get
+        {
+            if (currentShopCost <= 0)
+                currentShopCost = shopCost;
+
+            return currentShopCost;
+        }
+        set
+        {
+            currentShopCost = Mathf.Max(0, value); 
+        }
+    }
+
+
+    public void ResetShopCost()
+    {
+        currentShopCost = shopCost;
+    }
 
     public void SetLastAttemptedCardIdea(ShopCardIdea cardIdea)
     {
