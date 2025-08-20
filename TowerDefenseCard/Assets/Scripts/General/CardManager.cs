@@ -119,6 +119,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     {
         Debug.Log("card manager - on craft complete");
         CheckCardDiscoveryState(outputCardID);
+
+        if (outputCardID == CardID.CURRENCY)
+            return;
+
         CurrentNumberOfCards++;
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
