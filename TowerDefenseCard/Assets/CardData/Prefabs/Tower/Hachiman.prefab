@@ -83,6 +83,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: 2
       addedObject: {fileID: 290643684317168460}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7270193555129871896}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -106,9 +109,75 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   impactEffectPrefab: {fileID: 1403098070205132456, guid: f61885ad32f235041be6931dcadcd92c, type: 3}
+  OnLaunchAttackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7270193555129871896}
+        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isMonoTarget: 1
   maxNumberOfTargets: 1
   useProjectile: 1
   projectilePrefab: {fileID: 6281592712183866792, guid: 524f6527fd2fa484dae6483a447f5004, type: 3}
   numberOfProjectilePerAttack: 3
   projectileSpeed: 20
+--- !u!114 &7270193555129871896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88c1047f1aa723469c158cee6275c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  rotationDuration: 0.2
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -0.018784784
+      outSlope: -0.018784784
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16140762
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.006416539
+      outSlope: -0.006416539
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4091783
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationAxis: {x: 0, y: 0, z: 1}
+  startAngle: 0
+  endAngle: -15
+  rotateMode: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityTimer;
 
 public abstract class BaseHealer : BaseUpgradable, IHealer
@@ -13,6 +14,8 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
 
     protected Timer cooldownTimer;
     protected bool canHealNow = true;
+
+    public UnityEvent OnHeal;
 
     public float HealAmount
     {
@@ -70,6 +73,7 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
 
     protected virtual void OnHealPerformed(IHealable target)
     {
+        OnHeal?.Invoke();
         OnAnyHealPerformed?.Invoke(HealAmount);
         logger.Log($"{gameObject.name} healed {((MonoBehaviour)target).gameObject.name} for {HealAmount} HP", this);
     }

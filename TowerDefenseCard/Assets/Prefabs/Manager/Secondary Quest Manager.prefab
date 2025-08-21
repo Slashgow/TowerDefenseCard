@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2555592529089204168}
   - component: {fileID: 3509188638453161618}
   m_Layer: 0
-  m_Name: Quest 3
+  m_Name: Quest 3_Warehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 39
+--- !u!1 &1770630343354304073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7172692995864776917}
+  - component: {fileID: 8735524550377196331}
+  m_Layer: 0
+  m_Name: Quest 7_Jade Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7172692995864776917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770630343354304073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8735524550377196331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770630343354304073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc02a70f624d1c44e9ae1ca1de01a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCardId: 17
+--- !u!1 &1800372578703070684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5769548284726061842}
+  - component: {fileID: 4620780991961083833}
+  m_Layer: 0
+  m_Name: Quest 10_Storage50
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5769548284726061842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800372578703070684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4620780991961083833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800372578703070684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4621e159c63e341aa07be4a99c9051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfCardCountCondition: 50
 --- !u!1 &1935397274272529786
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +146,7 @@ GameObject:
   - component: {fileID: 7946563891773330033}
   - component: {fileID: 525439848770912124}
   m_Layer: 0
-  m_Name: Quest 1
+  m_Name: Quest 1_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +180,186 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 50
+--- !u!1 &4108989729883468269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3202891968308763386}
+  - component: {fileID: 104223318817992340}
+  m_Layer: 0
+  m_Name: Quest 11_Storage100
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3202891968308763386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108989729883468269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &104223318817992340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108989729883468269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4621e159c63e341aa07be4a99c9051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfCardCountCondition: 100
+--- !u!1 &4344758242015252065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238320441794776328}
+  - component: {fileID: 3333179646426974128}
+  m_Layer: 0
+  m_Name: Quest 9_Storage30
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238320441794776328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344758242015252065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3333179646426974128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344758242015252065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4621e159c63e341aa07be4a99c9051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfCardCountCondition: 30
+--- !u!1 &5608008604279192519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6682557130293625631}
+  - component: {fileID: 3950917503763731607}
+  m_Layer: 0
+  m_Name: Quest 8_SpiritFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6682557130293625631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608008604279192519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3950917503763731607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608008604279192519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc02a70f624d1c44e9ae1ca1de01a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCardId: 18
+--- !u!1 &5846037223037349972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2268160247866842475}
+  - component: {fileID: 3487736306305938297}
+  m_Layer: 0
+  m_Name: Quest 5_RicePaddy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2268160247866842475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846037223037349972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3487736306305938297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846037223037349972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7914e00b511b46f4dbf888c39f93e0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardExploitationID: 44
 --- !u!1 &6443825432113676544
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +394,14 @@ Transform:
   - {fileID: 7946563891773330033}
   - {fileID: 3665671325359207774}
   - {fileID: 2555592529089204168}
+  - {fileID: 4305992561798715877}
+  - {fileID: 2268160247866842475}
+  - {fileID: 4154785238059143960}
+  - {fileID: 7172692995864776917}
+  - {fileID: 6682557130293625631}
+  - {fileID: 1238320441794776328}
+  - {fileID: 5769548284726061842}
+  - {fileID: 3202891968308763386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5125379354834326331
@@ -203,6 +481,174 @@ MonoBehaviour:
       m_LocalVariables: []
     condition: {fileID: 3509188638453161618}
     goalCount: 1
+  - questId: Farm
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3488847877238784
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3488894832472064
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 2331985012975660631}
+    goalCount: 1
+  - questId: RicePaddy
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3488952881639424
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489019231334400
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 3487736306305938297}
+    goalCount: 1
+  - questId: Matcha
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489085555863552
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489139339423744
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 6028164634012996269}
+    goalCount: 1
+  - questId: Jade Factory
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489199787732992
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489310819348480
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 8735524550377196331}
+    goalCount: 1
+  - questId: SpiritFactory
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489390137831424
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489526578540544
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 3950917503763731607}
+    goalCount: 1
+  - questId: Storage30
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489598355664896
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489786088517632
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 3333179646426974128}
+    goalCount: 1
+  - questId: Storage50
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489864572334080
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489868867301376
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 4620780991961083833}
+    goalCount: 1
+  - questId: Storage100
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489870612131840
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 3489872155635712
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 104223318817992340}
+    goalCount: 1
   references:
     version: 2
     RefIds: []
@@ -221,6 +667,51 @@ MonoBehaviour:
   showLogs: 1
   prefix: Quest Manager
   prefixColor: {r: 0.1273585, g: 1, b: 0.6689976, a: 1}
+--- !u!1 &6802323363913426900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4154785238059143960}
+  - component: {fileID: 6028164634012996269}
+  m_Layer: 0
+  m_Name: Quest 6_Matcha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4154785238059143960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802323363913426900}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6028164634012996269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802323363913426900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc02a70f624d1c44e9ae1ca1de01a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCardId: 14
 --- !u!1 &6965456133370742988
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +723,7 @@ GameObject:
   - component: {fileID: 3665671325359207774}
   - component: {fileID: 1506988919479403828}
   m_Layer: 0
-  m_Name: Quest 2
+  m_Name: Quest 2_Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,3 +757,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 38
+--- !u!1 &7060263377523611565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4305992561798715877}
+  - component: {fileID: 2331985012975660631}
+  m_Layer: 0
+  m_Name: Quest 4_Farm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4305992561798715877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060263377523611565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9150155651898759991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2331985012975660631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060263377523611565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7914e00b511b46f4dbf888c39f93e0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardExploitationID: 45

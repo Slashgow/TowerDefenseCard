@@ -43,6 +43,7 @@ public class Card : MonoBehaviour
         StackedCards = new List<Card>();
         entireStackParent = new List<Card>();
         StackParent = null;
+        this.transform.localScale = Vector3.one;
     }
 
     private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale Locale)
@@ -78,6 +79,7 @@ public class Card : MonoBehaviour
 
 
         targetCard.StackedCards.Add(this);
+        this.transform.localScale = Vector3.one;
     }
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
     public virtual void OnUnstack() 

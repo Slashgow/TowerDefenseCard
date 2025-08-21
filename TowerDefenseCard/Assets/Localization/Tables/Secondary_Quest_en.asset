@@ -42,6 +42,70 @@ MonoBehaviour:
     m_Localized: Craft a warehouse
     m_Metadata:
       m_Items: []
+  - m_Id: 3488847877238784
+    m_Localized: Farm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3488894832472064
+    m_Localized: Use a farm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3488952881639424
+    m_Localized: Rice Paddy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489019231334400
+    m_Localized: Use a rice paddy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489085555863552
+    m_Localized: Matcha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489139339423744
+    m_Localized: Craft a matcha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489199787732992
+    m_Localized: Jade Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489310819348480
+    m_Localized: Craft a Jade Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489390137831424
+    m_Localized: Spirit Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489526578540544
+    m_Localized: 'Craft a '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489598355664896
+    m_Localized: Storage 30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489786088517632
+    m_Localized: Increase your card storage to 30.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489864572334080
+    m_Localized: Storage 50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489870612131840
+    m_Localized: Storage 100
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489868867301376
+    m_Localized: Increase your card storage to 50.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3489872155635712
+    m_Localized: Increase your card storage to 100.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

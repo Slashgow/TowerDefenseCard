@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityTimer;
 
 public abstract class BaseDamageor : BaseUpgradable, IDamageor
@@ -13,6 +14,8 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
 
     protected Timer attackTimer;
     public event Action<BaseDamageable> OnAttackEvent;
+    public UnityEvent OnLaunchAttackEvent;
+    protected void OnLaunchAttack() => OnLaunchAttackEvent?.Invoke();
     protected void OnAttack(BaseDamageable damageable) => OnAttackEvent?.Invoke(damageable);
   
     private Dictionary<GameObject, Timer> activeDoTTimers = new Dictionary<GameObject, Timer>(); // Track DoT per enemy

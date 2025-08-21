@@ -74,7 +74,14 @@ public class QuestManager : MonoBehaviour
         for (int i = 0; i<transform.childCount; i++)
         {
             var child = transform.GetChild(i);
-            child.name = $"Quest {i + 1}";
+
+            if(availableQuests.Count <= i)
+            {
+                Debug.LogWarning($"QuestManager: Not enough quests available to assign to child {i}. Available: {availableQuests.Count}, Required: {i + 1}");
+                break;
+            }
+
+            child.name = $"Quest {i + 1}_{availableQuests[i].QuestId}";
         }
     }
 }

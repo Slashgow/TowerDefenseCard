@@ -20,6 +20,8 @@ public class SimpleDamageor : BaseDamageor
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AttackRange, enemyLayer);
         if (hits.Length > 0)
         {
+            OnLaunchAttack();
+
             if (useProjectile)
                 SetupProjectiles(hits);
             else
