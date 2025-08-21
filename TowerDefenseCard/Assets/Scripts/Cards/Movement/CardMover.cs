@@ -42,6 +42,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         //Debug.Log($"on pointer down {this.name}");
         OnPointerDownEvent?.Invoke();
 
+        CardManager.Instance.ToggleCardsOutline(card);
         CameraMovement.Instance.IsDraggindEnable = false;
 
         if (!card.CardData.IsStackable && card.StackCount > 1) 
@@ -83,6 +84,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         isDragging = false;
         transform.rotation = Quaternion.identity; 
         HandleDrop();
+        CardManager.Instance.HideAllCardsOutline();
         CameraMovement.Instance.IsDraggindEnable = true;
     }
 

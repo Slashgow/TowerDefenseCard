@@ -66,35 +66,35 @@ PrefabInstance:
       objectReference: {fileID: 6634916277263121288, guid: cf836f3f3311e5341bd450efc3af4986, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[0].dropPercentage
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[1].dropPercentage
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[2].dropPercentage
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[3].dropPercentage
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[4].dropPercentage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[5].dropPercentage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[6].dropPercentage
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[7].dropPercentage
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[0].cardIdeaPrefab

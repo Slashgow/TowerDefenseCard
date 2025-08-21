@@ -127,10 +127,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8865195030773042718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.2}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7856878047292854
 CanvasRenderer:
@@ -161,7 +161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -997937720, guid: aca456cfa94b9744d81d86335173709b, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 3344123908949889378}
   - component: {fileID: 4483843226396517446}
   m_Layer: 5
-  m_Name: Player Health Bar
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ RectTransform:
   m_GameObject: {fileID: 6277856849452266905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01389803, y: 0.01389803, z: 0.01389803}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9177754934783350588}
@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.47}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 2.3430176}
+  m_SizeDelta: {x: 281.2924, y: 29.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4754347746122687415
 Canvas:
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3344123908949889378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,5 +382,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0cded1eabe5314aaa675f05267ccd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  damageable: {fileID: 0}
   fillImage: {fileID: 1046909767601283852}

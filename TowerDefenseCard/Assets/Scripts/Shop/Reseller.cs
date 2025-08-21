@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Reseller : MonoSingleton<Reseller>
 {
     [SerializeField] private Logger logger;
     [SerializeField] private PoolingSystem currencyPool;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private SpriteShapeRenderer cardOutine;
+    public SpriteShapeRenderer CardOutline => cardOutine;
 
     public PoolingSystem CurrencyPool => currencyPool;
     public static event Action<int> OnResell;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        cardOutine.enabled = false;
+    }
     public void Resell(List<Card> cards)
     {
         int coinAmount = 0;

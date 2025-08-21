@@ -40,6 +40,11 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private List<CardID> discoveredCardIDs = new List<CardID>();
 
+    private List<Card> cardsOnBoard = new List<Card>();
+    public List<Card> CardsOnBoard => new List<Card>(cardsOnBoard);
+    public event Action<Card> OnCardAddedToBoard = delegate { };
+    public event Action<Card> OnCardRemovedFromBoard = delegate { };
+
     public event Action OnDiscoverNewCard = delegate { };
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
@@ -80,6 +85,62 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         TowerDamageable.OnTowerDie -= TowerDamageable_OnTowerDie;
         CardExploitation.OnDestroyCardExploitation -= CardExploitation_OnDestroyCardExploitation;
     }
+
+    public void AddCardToBoard(Card card)
+    {
+        if (card != null && !cardsOnBoard.Contains(card))
+        {
+            cardsOnBoard.Add(card);
+            OnCardAddedToBoard?.Invoke(card);   
+        }
+    }
+
+    public void RemoveCardFromBoard(Card card)
+    {
+        if (card != null && cardsOnBoard.Contains(card))
+        {
+            cardsOnBoard.Remove(card);
+            OnCardRemovedFromBoard?.Invoke(card);
+        }
+    }
+
+    public void ToggleCardsOutline(Card movedCard)
+    {
+        if(movedCard is Currency)
+        {
+            Reseller.Instance.CardOutline.enabled = false;
+            cardsOnBoard.ForEach(card => 
+            {
+                if(card == movedCard || card.StackedCards.Count > 0 || card.EntireStackParent.Contains(movedCard))
+                    card.CardOutline.enabled = false;
+                else if (card is CardShop || card is Currency || card is CardCurrencyCollecter)
+                    card.CardOutline.enabled = true;
+                else
+                    card.CardOutline.enabled = false;
+            });
+        }
+        else
+        {
+            Reseller.Instance.CardOutline.enabled = movedCard is CardWorker ? false : true;
+            cardsOnBoard.ForEach(card =>
+            {
+                if (card is CardShop || card is Currency || card is CardCurrencyCollecter || !card.CardData.IsStackable
+                    || card.StackedCards.Count > 0 || card == movedCard || card.EntireStackParent.Contains(movedCard))
+                    card.CardOutline.enabled = false;
+                else if (card is CardExploitation && movedCard is not CardWorker)
+                    card.CardOutline.enabled = false;
+                else
+                    card.CardOutline.enabled = true;
+            });
+        }
+    }
+
+    public void HideAllCardsOutline()
+    {
+        Reseller.Instance.CardOutline.enabled = false;
+        cardsOnBoard.ForEach(card => card.CardOutline.enabled = false);
+    }
+
     private void CardExploitation_OnDestroyCardExploitation()
     {
         CurrentNumberOfCards--;
