@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Events;
 
 public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 {
     [SerializeField] private Logger logger;
-    [SerializeField] private List<CardShop> cardShops;
     [SerializeField, Range(0, 100)] private int startPlayerCoin = 10;
     public int StartPlayerCoin => startPlayerCoin;
 
@@ -15,6 +15,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     public int CurrentPlayerCoin => currentPlayerCoin;
 
     public static event Action OnPurchaseBooster;
+    public UnityEvent OnPurchaseBoosterUnity;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
         currentPlayerCoin -= selectedShop.CurrentShopCost;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+        OnPurchaseBoosterUnity?.Invoke();
         OnPurchaseBooster?.Invoke();
         GameObject booster = Instantiate(selectedShop.Booster.gameObject, selectedShop.SpawnPoint.position, Quaternion.identity);
         Booster boosterComponent = booster.GetComponent<Booster>();

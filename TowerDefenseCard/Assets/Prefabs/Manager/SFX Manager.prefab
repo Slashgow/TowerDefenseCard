@@ -51,12 +51,20 @@ MonoBehaviour:
   - {fileID: 4614458728739418380}
   - {fileID: 2938762960252873703}
   - {fileID: 2578933004074343347}
-  onPurchaseBoosterClip: {fileID: 8300000, guid: e407fd9fb866cd8468606df93e4b12c8, type: 3}
-  onOpenBoosterClip: {fileID: 8300000, guid: ef6755fab2349af408fb9f90b21b1363, type: 3}
-  onCraftCompletedClip: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
-  onResellClip: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
-  onHarvestCurrency: {fileID: 8300000, guid: 37d6426b502c00749844c4197eff022e, type: 3}
-  onOpenCardIdea: {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
+  popSounds:
+  - {fileID: 8300000, guid: ef6755fab2349af408fb9f90b21b1363, type: 3}
+  - {fileID: 8300000, guid: 5569c4e25e058814f99273c4f80bae50, type: 3}
+  - {fileID: 8300000, guid: bf3ba74b544cabd4ab3604c3abc7e256, type: 3}
+  - {fileID: 8300000, guid: 791fc58cfce9f9c48b598cec829fab6e, type: 3}
+  - {fileID: 8300000, guid: 07f815d9184a33047845d993564048b7, type: 3}
+  - {fileID: 8300000, guid: fbfe204efada1b548ab53a5f353526f5, type: 3}
+  - {fileID: 8300000, guid: 60627aa75ef1fba4b80709fbf3e76fe8, type: 3}
+  - {fileID: 8300000, guid: e543b8e2456d56a418b9984e477732e1, type: 3}
+  coinSounds:
+  - {fileID: 8300000, guid: e407fd9fb866cd8468606df93e4b12c8, type: 3}
+  - {fileID: 8300000, guid: 0cabc9086fa4e87438d9f8318a44a2c4, type: 3}
+  - {fileID: 8300000, guid: 229f6180cf983a0438aff4cab386d915, type: 3}
+  - {fileID: 8300000, guid: b03f5c7c252a2164891445838dcc2ae8, type: 3}
   onCompleteQuest: {fileID: 8300000, guid: 36fb0314f23c56a44b3999cea39ec5c1, type: 3}
 --- !u!1 &1457461405237576364
 GameObject:

@@ -86,6 +86,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4041499170402236097}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6462413898232847911}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7484290458589300746}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -112,9 +118,9 @@ MonoBehaviour:
   OnLaunchAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4041499170402236097}
-        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
-        m_MethodName: DoEffect
+      - m_Target: {fileID: 7484290458589300746}
+        m_TargetAssemblyTypeName: EffectApplier, Assembly-CSharp
+        m_MethodName: DoEffects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -181,3 +187,35 @@ MonoBehaviour:
   startAngle: 0
   endAngle: -15
   rotateMode: 0
+--- !u!114 &6462413898232847911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  audioClips:
+  - {fileID: 8300000, guid: 98b34e382ba7ba140a2a8ec4f1c7f025, type: 3}
+  - {fileID: 8300000, guid: d5517b1f88c7b134c9263f66cca85a60, type: 3}
+  - {fileID: 8300000, guid: 76dfb76d4a920e540ad459b580af3059, type: 3}
+--- !u!114 &7484290458589300746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77bba0f777f3aa4086bfa23b496fffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 6462413898232847911}
+  - {fileID: 4041499170402236097}

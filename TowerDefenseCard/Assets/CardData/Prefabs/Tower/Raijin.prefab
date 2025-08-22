@@ -82,57 +82,25 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8660076273353320839}
-    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6230767502743674813}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8660076273353320839}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5278480038971390032}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4270098411505425995}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8238054561194617458}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
   m_PrefabInstance: {fileID: 2045989256264772963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8660076273353320839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8864906581117935152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardDamageorData: {fileID: 11400000, guid: 8a1f0197df8c68f439ef7679ed1558f7, type: 2}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  impactEffectPrefab: {fileID: 4155917297465584293, guid: eac2a999181e4a748b24f3448bc93b3c, type: 3}
-  OnLaunchAttackEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4270098411505425995}
-        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
-        m_MethodName: DoEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  isMonoTarget: 0
-  maxNumberOfTargets: 6
-  useProjectile: 0
-  projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
-  numberOfProjectilePerAttack: 1
-  projectileSpeed: 20
 --- !u!114 &6230767502743674813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +126,59 @@ MonoBehaviour:
   stunnableLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &8660076273353320839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardDamageorData: {fileID: 11400000, guid: 8a1f0197df8c68f439ef7679ed1558f7, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  impactEffectPrefab: {fileID: 4155917297465584293, guid: eac2a999181e4a748b24f3448bc93b3c, type: 3}
+  OnLaunchAttackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5278480038971390032}
+        m_TargetAssemblyTypeName: EffectApplier, Assembly-CSharp
+        m_MethodName: DoEffects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isMonoTarget: 0
+  maxNumberOfTargets: 6
+  useProjectile: 0
+  projectilePrefab: {fileID: 6281592712183866792, guid: 046207bb06d654949aca7fea2d849ff3, type: 3}
+  numberOfProjectilePerAttack: 1
+  projectileSpeed: 20
+--- !u!114 &5278480038971390032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77bba0f777f3aa4086bfa23b496fffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 4270098411505425995}
+  - {fileID: 8238054561194617458}
 --- !u!114 &4270098411505425995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,3 +230,20 @@ MonoBehaviour:
   startAngle: 0
   endAngle: -15
   rotateMode: 0
+--- !u!114 &8238054561194617458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  audioClips:
+  - {fileID: 8300000, guid: 2c477c60876605c498a247ffc5727a85, type: 3}
+  - {fileID: 8300000, guid: ab2f446db8be9c046bf229ad459cbb06, type: 3}
+  - {fileID: 8300000, guid: 5fa177af52f6d6b409de8c149eb84256, type: 3}

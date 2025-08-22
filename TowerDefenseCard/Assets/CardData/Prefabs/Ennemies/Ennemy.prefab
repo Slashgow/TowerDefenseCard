@@ -286,7 +286,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doEffectOnEnable: 0
-  audioClip: {fileID: 8300000, guid: c2f5617d140056c44bf7d0cf90309cc7, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: e3d80ac46959f444d82793f905a804a3, type: 3}
+  - {fileID: 8300000, guid: c2f5617d140056c44bf7d0cf90309cc7, type: 3}
+  - {fileID: 8300000, guid: 1d457d8cdea7f684bb8da7708fdfb87a, type: 3}
+  - {fileID: 8300000, guid: 5e4e13e9b8baac84db871fab0ca0818c, type: 3}
+  - {fileID: 8300000, guid: 82c3433b91ef8d848b63792163c69ab0, type: 3}
 --- !u!114 &1253372721874032751
 MonoBehaviour:
   m_ObjectHideFlags: 0

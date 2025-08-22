@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.U2D;
 
 public class Reseller : MonoSingleton<Reseller>
@@ -13,6 +14,7 @@ public class Reseller : MonoSingleton<Reseller>
 
     public PoolingSystem CurrencyPool => currencyPool;
     public static event Action<int> OnResell;
+    public UnityEvent OnResellUnity;
 
     protected override void Awake()
     {
@@ -47,6 +49,7 @@ public class Reseller : MonoSingleton<Reseller>
 
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 
+        OnResellUnity?.Invoke();
         OnResell?.Invoke(cards.Count);
         CardUtility.DestroyAllCards(cards);
     }

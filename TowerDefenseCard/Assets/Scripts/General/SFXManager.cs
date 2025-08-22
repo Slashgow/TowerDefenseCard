@@ -6,8 +6,11 @@ public class SFXManager : MonoSingleton<SFXManager>
     [Header("References")]
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
 
+    [SerializeField] private List<AudioClip> popSounds = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> coinSounds = new List<AudioClip>();
+
     [Header("AudioClips")]
-    [SerializeField] private AudioClip onPurchaseBoosterClip, onOpenBoosterClip, onCraftCompletedClip, onResellClip, onHarvestCurrency, onOpenCardIdea, onCompleteQuest;
+    [SerializeField] private AudioClip onCompleteQuest;
 
     private int currentAudioSourceIndex;
 
@@ -21,12 +24,12 @@ public class SFXManager : MonoSingleton<SFXManager>
         QuestManager.OnAnyQuestCompleted += QuestManager_OnAnyQuestCompleted;
     }
 
-  
+
     private void OnDisable()
     {
-        if(CraftingManager.HasInstance)
+        if (CraftingManager.HasInstance)
             CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftComplete;
-        
+
         Reseller.OnResell -= Reseller_OnResell;
         Booster.OnOpenBooster -= Booster_OnOpenBooster;
         Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
@@ -34,11 +37,11 @@ public class SFXManager : MonoSingleton<SFXManager>
         QuestManager.OnAnyQuestCompleted -= QuestManager_OnAnyQuestCompleted;
     }
 
-    private void Booster_OnOpenCardIdea() => PlayAudioClip(onOpenCardIdea);
-    private void ShopManager_OnPurchaseBooster() => PlayAudioClip(onPurchaseBoosterClip);
-    private void Booster_OnOpenBooster(CardID cardID) => PlayAudioClip(onOpenBoosterClip);
-    private void Reseller_OnResell(int numberOfReselledCard) => PlayAudioClip(onResellClip);
-    private void CraftingManager_OnCraftComplete(int arg1, CardID arg2) => PlayAudioClip(onCraftCompletedClip);
+    private void Booster_OnOpenCardIdea() => PlayRandomAudioClip(popSounds);
+    private void ShopManager_OnPurchaseBooster() => PlayRandomAudioClip(coinSounds);
+    private void Booster_OnOpenBooster(CardID cardID) => PlayRandomAudioClip(popSounds);
+    private void Reseller_OnResell(int numberOfReselledCard) => PlayRandomAudioClip(coinSounds);
+    private void CraftingManager_OnCraftComplete(int arg1, CardID arg2) => PlayRandomAudioClip(popSounds);
     private void QuestManager_OnAnyQuestCompleted() => PlayAudioClip(onCompleteQuest);
 
 
@@ -47,5 +50,12 @@ public class SFXManager : MonoSingleton<SFXManager>
         audioSources[currentAudioSourceIndex].clip = audioClip;
         audioSources[currentAudioSourceIndex].Play();
         currentAudioSourceIndex = (currentAudioSourceIndex + 1) % audioSources.Count;
+    }
+
+    public void PlayRandomAudioClip(List<AudioClip> audioClips)
+    {
+        int randomIndex = Random.Range(0, audioClips.Count);
+        AudioClip randomClip = audioClips[randomIndex];
+        PlayAudioClip(randomClip);
     }
 }

@@ -40,6 +40,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private List<CardID> discoveredCardIDs = new List<CardID>();
 
+    [SerializeField] private bool showOutlineTooltip = true;
+
     private List<Card> cardsOnBoard = new List<Card>();
     public List<Card> CardsOnBoard => new List<Card>(cardsOnBoard);
     public event Action<Card> OnCardAddedToBoard = delegate { };
@@ -106,7 +108,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     public void ToggleCardsOutline(Card movedCard)
     {
-        if(movedCard is Currency)
+        if(!showOutlineTooltip)
+            return;
+
+        if (movedCard is Currency)
         {
             Reseller.Instance.CardOutline.enabled = false;
             cardsOnBoard.ForEach(card => 

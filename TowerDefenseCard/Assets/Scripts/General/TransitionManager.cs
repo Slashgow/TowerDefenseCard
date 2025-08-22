@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class TransitionManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource transitionAudioSource;
+    [SerializeField] private AudioClip transitionClip, transitionReverseClip;
+
     [SerializeField, Range(0, 10f)] private float transitionTime;
     [SerializeField] private Ease transitionEase = Ease.InOutQuad;
 
@@ -34,6 +37,9 @@ public class TransitionManager : MonoBehaviour
 
     public void StartSceneAnimation()
     {
+        transitionAudioSource.clip = transitionReverseClip;
+        transitionAudioSource.Play();
+
         rightTransform.anchoredPosition = new Vector2(startRightAnchoredPositionStart, 0f);
         leftTransform.anchoredPosition = new Vector2(startLeftAnchoredPositionStart, 0f);
 
@@ -54,6 +60,8 @@ public class TransitionManager : MonoBehaviour
 
     public void EndSceneAnimation()
     {
+        transitionAudioSource.clip = transitionClip;
+        transitionAudioSource.Play();
 
         canvasGroup.alpha = 1f;
         canvasGroup.interactable = true;

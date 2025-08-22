@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3480928540257184197}
   - component: {fileID: 7925853574352928478}
   - component: {fileID: 762338929933020729}
+  - component: {fileID: 9167312501443487182}
   m_Layer: 7
   m_Name: Reseller
   m_TagString: Untagged
@@ -108,6 +109,21 @@ MonoBehaviour:
   currencyPool: {fileID: 0}
   spawnPoint: {fileID: 0}
   cardOutine: {fileID: 6251452786921464789}
+  OnResellUnity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9167312501443487182}
+        m_TargetAssemblyTypeName: CameraShaker, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &7925853574352928478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,6 +185,20 @@ MonoBehaviour:
   showLogs: 1
   prefix: Reseller
   prefixColor: {r: 0.8113208, g: 0.77108073, b: 0, a: 1}
+--- !u!114 &9167312501443487182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771684347030703182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2b1d0d640ef34fb4f99d5f161b540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  MyShake: {fileID: 11400000, guid: c8b2c482a0fec754f875f920694459d6, type: 2}
 --- !u!1001 &91120401091423560
 PrefabInstance:
   m_ObjectHideFlags: 0

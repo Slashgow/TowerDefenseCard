@@ -81,11 +81,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 290643684317168460}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5502626519092053467}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -9092219985719603499}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5193488101015342769}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &8864906581117935152 stripped
 GameObject:
@@ -112,9 +118,9 @@ MonoBehaviour:
   OnLaunchAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -9092219985719603499}
-        m_TargetAssemblyTypeName: RotateObject, Assembly-CSharp
-        m_MethodName: DoEffect
+      - m_Target: {fileID: 5502626519092053467}
+        m_TargetAssemblyTypeName: EffectApplier, Assembly-CSharp
+        m_MethodName: DoEffects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -130,6 +136,21 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6281592712183866792, guid: fe70116f619300741b24c358743ef016, type: 3}
   numberOfProjectilePerAttack: 3
   projectileSpeed: 20
+--- !u!114 &5502626519092053467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77bba0f777f3aa4086bfa23b496fffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: -9092219985719603499}
+  - {fileID: 5193488101015342769}
 --- !u!114 &-9092219985719603499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +202,22 @@ MonoBehaviour:
   startAngle: 0
   endAngle: -15
   rotateMode: 0
+--- !u!114 &5193488101015342769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864906581117935152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  audioClips:
+  - {fileID: 8300000, guid: 22d5d9cbc528c634abbdd0b0f31c071b, type: 3}
+  - {fileID: 8300000, guid: fb5d759751bd32e4cbacb1177f75ad4f, type: 3}
+  - {fileID: 8300000, guid: dbe3acca23d3f954282c781a877df978, type: 3}
+  - {fileID: 8300000, guid: be9d69f3bfc3fbb4787d29a38979017c, type: 3}
+  - {fileID: 8300000, guid: 2093a7e12bf97a44a9d5d189ff2ccc6b, type: 3}

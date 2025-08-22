@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class SoundEffect : Effect
 {
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private List<AudioClip> audioClips;
 
     public override void DoEffect()
     {
-        SFXManager.Instance.PlayAudioClip(audioClip);
+        SFXManager.Instance.PlayRandomAudioClip(audioClips);
     }
 }
