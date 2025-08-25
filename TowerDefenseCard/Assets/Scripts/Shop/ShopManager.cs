@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System;
 using UnityEngine.Events;
 
@@ -13,6 +12,9 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
     [SerializeField, HideInInspector] private int currentPlayerCoin;
     public int CurrentPlayerCoin => currentPlayerCoin;
+
+    [SerializeField] private CardShop cheapestShop;
+    public int MinimumShopCost => cheapestShop.Shop.ShopCost;
 
     public static event Action OnPurchaseBooster;
     public UnityEvent OnPurchaseBoosterUnity;

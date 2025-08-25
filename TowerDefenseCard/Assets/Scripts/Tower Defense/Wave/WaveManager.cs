@@ -5,6 +5,8 @@ using System;
 public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 {
     [SerializeField] private WaveDataPaths[] waveDataPaths;
+    public WaveDataPaths[] WaveDataPaths => waveDataPaths;
+
     [SerializeField, Range(0f,10f)] private float initialWaveDelay = 5f;
 
     private int currentEnnemyCount;
@@ -21,6 +23,9 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     public int NumberOfWaves => waveDataPaths.Length;
     public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataPaths.Length);
+
+    public Vector3 CurrentWaveFirstPathStartPosition => SplineManager.Instance.GetSplineDataByID(waveDataPaths[currentWaveIndex].Paths[0])
+        .Spline.GetSampleAtDistance(0f).location;
 
     private int amountOfSpawnedEnemies;
     private int amountOfEnemiesInCurrentWave;

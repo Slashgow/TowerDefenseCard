@@ -74,19 +74,35 @@ public class UICardMoreStat : MonoBehaviour
             upgradeDescription.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
         }
 
-        
-        CraftingRecipe craftingRecipe = CraftingManager.Instance.GetRecipeByOuputCardID(card.CardData.CardID);
+
 
         CardUtility.DestroyAllChildren(recipeParent);
 
-        if (craftingRecipe == null)
-            return;
-
-        foreach (CraftingRecipe.Ingredient ingredient in craftingRecipe.Ingredients)
+        if (card is CardExploitation)
         {
-            GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
-            UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
-            uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity);
+            CardExploitation cardExploitation =(CardExploitation)card;
+
+            foreach (CraftingRecipe.OutputCard outputCard in cardExploitation.CraftingRecipe.OutputCards)
+            {
+                GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
+                UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
+                string dropChance = $"{outputCard.dropChance} %";
+                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(outputCard.cardID).CardData, dropChance);
+            }
+        }
+        else
+        {
+            CraftingRecipe craftingRecipe = CraftingManager.Instance.GetRecipeByOuputCardID(card.CardData.CardID);
+
+            if (craftingRecipe == null)
+                return;
+
+            foreach (CraftingRecipe.Ingredient ingredient in craftingRecipe.Ingredients)
+            {
+                GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
+                UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
+                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity);
+            }
         }
     }
 

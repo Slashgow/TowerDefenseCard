@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.U2D;
@@ -85,6 +86,13 @@ public class Card : MonoBehaviour
     {
         //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
+        if (this.StackedCards.Contains(targetCard))
+        {
+            Debug.LogWarning($"{this.cardData.CardID} {this.GetInstanceID()} try to use {targetCard.cardData.CardID}{targetCard.GetInstanceID()} as parent " +
+                $"but it his child ");
+            targetCard.OnUnstack();
+        }
+
         transform.SetParent(targetCard.transform, false);
 
         StackParent = targetCard;
@@ -101,8 +109,8 @@ public class Card : MonoBehaviour
             card.StackCount += this.StackCount;
         }
 
-
         targetCard.StackedCards.Add(this);
+        
         this.transform.localScale = Vector3.one;
     }
     public virtual void OnStackInitiate(Card targetCard) { /* Default implementation */ }
@@ -114,7 +122,7 @@ public class Card : MonoBehaviour
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
@@ -152,7 +160,7 @@ public class Card : MonoBehaviour
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
@@ -179,6 +187,38 @@ public class Card : MonoBehaviour
             StackedCards.Clear();
     }
     public bool IsStackRoot() => StackParent == null;
+
+
+    public Card GetLastCardInStack()
+    {
+        Card currentCard = this;
+
+        currentCard = GetComponentsInChildren<Card>().Last();
+        //HashSet<Card> visited = new HashSet<Card>();
+        //int maxIterations = 100; 
+        //int iterations = 0;
+        //
+        //while (currentCard.StackedCards.Count > 0 && iterations < maxIterations)
+        //{
+        //    if (visited.Contains(currentCard))
+        //    {
+        //        Debug.LogError($"Circular reference detected in stack hierarchy for card {currentCard.CardData.CardID}!");
+        //        break;
+        //    }
+        //
+        //    visited.Add(currentCard);
+        //
+        //    currentCard = currentCard.StackedCards[currentCard.StackedCards.Count - 1];
+        //    iterations++;
+        //}
+        //
+        //if (iterations >= maxIterations)
+        //{
+        //    Debug.LogWarning($"GetLastCardInStack reached maximum iterations ({maxIterations}) for card {this.CardData.CardID}. Possible deep stack or circular reference.");
+        //}
+
+        return currentCard;
+    }
 
     public List<Card> GetEntireStack()
     {

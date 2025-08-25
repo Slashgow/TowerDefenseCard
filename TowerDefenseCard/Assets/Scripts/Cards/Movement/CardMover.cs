@@ -75,6 +75,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         Vector3 delta = mousePos - (Vector3)startPosition;
         float tiltAngle = Mathf.Clamp(delta.x * 10f, -maxTiltAngle, maxTiltAngle); // Tilt based on movement
         transform.rotation = Quaternion.Euler(0, 0, tiltAngle);
+
+        if(CardMovementInput.Instance.IsMagnetCardActive)
+            MagnetSameTypeOfCard();
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -146,6 +149,53 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         //transform.SetParent(startParent, false);
     }
 
+
+    private void MagnetSameTypeOfCard()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
+
+        foreach (var hit in hits)
+        {
+            if (hit.gameObject == this.gameObject)
+                continue;
+
+
+            if (hit.transform.IsChildOf(this.transform))
+                continue;
+
+            Card otherCard = hit.GetComponent<Card>();
+            if (otherCard == null)
+                continue;
+
+            //if (otherCard.StackedCards.Count > 0)
+            //    continue;
+
+            if (otherCard.StackParent != null)
+                continue;
+
+            if (!otherCard.CardData.IsStackable)
+                continue;
+
+            if (otherCard.CardData == this.card.CardData ||
+                otherCard.CardData.CardID == this.card.CardData.CardID)
+            {
+                Card targetCard = this.card.GetLastCardInStack();
+
+                otherCard.OnStack(targetCard);
+
+                Vector3 newPos = Vector3.zero;
+                newPos.y = -stackingHeight * (targetCard.StackedCards.Count);
+                otherCard.transform.localPosition = newPos;
+
+                CardUtility.AssignSortingOrderRecursively(otherCard.transform,
+                    targetCard.CardSprite.sortingOrder + targetCard.transform.childCount);
+
+                if (CraftingManager.Instance.TryCraft(targetCard.transform.root, otherCard))
+                    continue;
+            }
+        }
+
+    }
 
     private void OnDrawGizmosSelected()
     {

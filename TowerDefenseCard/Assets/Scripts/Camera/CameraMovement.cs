@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 
 public class CameraMovement : MonoSingleton<CameraMovement>
 {
+    [Header("Start Combat Settings")]
+    [SerializeField, Range(0f, 3f)] private float timeToDezoom = 1f;
+    [SerializeField, Range(0f, 20f)] private float zoomOutSize = 10f;
+    [SerializeField, Range(0f, 3f)] private float timeToMoveToFirstPath = 1f;
+
+    [Header("Camera Movement Settings")]
     [SerializeField, Range(0f,10f)] private float dragMoveSpeed = 5f;
     [SerializeField, Range(0f, 50f)] private float keyMoveSpeed = 5f;
     [SerializeField, Range(0f,10f)] private float zoomSpeed = 2f; 
@@ -45,8 +51,42 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         inputHandler.OnRecenterCamera += InputHandler_OnRecenterCamera;
         targetPosition = transform.position;
         targetZoom = cam.orthographicSize;
+
+        GameManager.Instance.OnStartCombatMode += OnStartCombat;
     }
-    private void OnDestroy() => inputHandler.OnRecenterCamera -= InputHandler_OnRecenterCamera;
+
+    private void OnDestroy()
+    {
+        inputHandler.OnRecenterCamera -= InputHandler_OnRecenterCamera;
+
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnStartCombatMode -= OnStartCombat;    
+    }
+
+    private void OnStartCombat()
+    {
+        isRecentering = true;
+        Vector3 startWavePosition = WaveManager.Instance.CurrentWaveFirstPathStartPosition;
+        startWavePosition.z = transform.position.z;
+      
+        Sequence sequence = DOTween.Sequence().SetUpdate(true);
+
+        sequence.Append(this.transform.DOMove(startWavePosition, timeToMoveToFirstPath)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                targetPosition = transform.position;
+            }));
+
+        sequence.Append(this.cam.DOOrthoSize(zoomOutSize, timeToDezoom)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                targetZoom = zoomOutSize;
+                isRecentering = false;
+            }));
+    }
+
 
     public void StopAllMovement()
     {

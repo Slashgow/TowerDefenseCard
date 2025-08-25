@@ -14,4 +14,14 @@ public class UICardRecipe : UICardMenu
         this.cardAmount.text = cardAmount.ToString();
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
     }
+
+    public void SetupUICardRecipe(CardData cardData, string dropChance)
+    {
+        this.cardData = cardData;
+        cardTitle.text = cardData.CardName.GetLocalizedString();
+        cardCost.text = cardData.Cost.ToString();
+        cardImage.sprite = cardData.CardSprite;
+        this.cardAmount.text = dropChance;
+        cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
+    }
 }

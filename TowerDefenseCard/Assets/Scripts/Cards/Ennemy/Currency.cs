@@ -27,18 +27,28 @@ public class Currency : Card, IEndDragHandler
         {
             if(hit.TryGetComponent(out CardShop cardShop))
             {
+                // BUG : currencycount different stackcount
                 var currencyChildren = GetComponentsInChildren<Currency>();
-                int availableCurrency = StackCount;
+                int availableCurrency = currencyChildren.Length; //StackCount;
                 int requiredCost = cardShop.Shop.CurrentShopCost;
+
+                if(StackCount != currencyChildren.Length)
+                {
+                    Debug.LogWarning($"Currency StackCount {StackCount} different from children count {currencyChildren.Length}");
+                }
+                Debug.Log($"Try Purchase Booster {availableCurrency} / {requiredCost} || currency children {currencyChildren.Length}");
 
                 if (availableCurrency < requiredCost)
                 {
+                    if(CardManager.Instance.TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost) // -availableCurrency
+                        return;
+
                     cardShop.Shop.CurrentShopCost = requiredCost - availableCurrency;
 
                     for (int i = 0; i < availableCurrency; i++)
                     {
-                        if(currencyChildren.Length <= i)
-                            break;
+                        //if(currencyChildren.Length <= i)
+                        //    break;
 
                         currencyChildren[i].OnUnstack();
                         pool.AddToPool(currencyChildren[i].gameObject);
@@ -58,8 +68,8 @@ public class Currency : Card, IEndDragHandler
 
                     for (int i = 0; i < requiredCost; i++)
                     {
-                        if(currencyChildren.Length <= i)
-                            break;
+                        //if(currencyChildren.Length <= i)
+                        //    break;
 
                         currencyChildren[i].OnUnstack();
                         pool.AddToPool(currencyChildren[i].gameObject);

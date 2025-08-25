@@ -47,6 +47,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public event Action<Card> OnCardAddedToBoard = delegate { };
     public event Action<Card> OnCardRemovedFromBoard = delegate { };
 
+    public int TotalCostCardsOnBoard => cardsOnBoard.Sum(card => card.CardData.Cost);
+
     public event Action OnDiscoverNewCard = delegate { };
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
@@ -118,8 +120,15 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
             {
                 if(card == movedCard || card.StackedCards.Count > 0 || card.EntireStackParent.Contains(movedCard))
                     card.CardOutline.enabled = false;
-                else if (card is CardShop || card is Currency || card is CardCurrencyCollecter)
+                else if (card is Currency || card is CardCurrencyCollecter)
                     card.CardOutline.enabled = true;
+                else if (card is CardShop)
+                {
+                    if (TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost) // -availableCurrency
+                        card.CardOutline.enabled = false;
+                    else
+                        card.CardOutline.enabled = true;
+                }
                 else
                     card.CardOutline.enabled = false;
             });
@@ -127,6 +136,14 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         else
         {
             Reseller.Instance.CardOutline.enabled = movedCard is CardWorker ? false : true;
+
+            if (ShopManager.Instance.CurrentPlayerCoin < ShopManager.Instance.MinimumShopCost)
+            {
+                if (CardManager.Instance.TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost)
+                    Reseller.Instance.CardOutline.enabled = false;
+            }
+
+
             cardsOnBoard.ForEach(card =>
             {
                 if (card is CardShop || card is Currency || card is CardCurrencyCollecter || !card.CardData.IsStackable

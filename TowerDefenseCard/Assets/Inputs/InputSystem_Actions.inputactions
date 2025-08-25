@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MagnetSameTypeOfCard",
+                    "type": "Button",
+                    "id": "b19d6e06-b6b3-4734-88a9-348791dea0ac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -241,6 +250,17 @@
                     "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b3244976-f5ce-4228-89d1-6abe14ba09cb",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MagnetSameTypeOfCard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

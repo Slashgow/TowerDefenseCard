@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.U2D;
@@ -27,6 +28,12 @@ public class Reseller : MonoSingleton<Reseller>
 
         if(cards.Exists(card => card is Currency || card is CardWorker))
             return;
+
+        if(ShopManager.Instance.CurrentPlayerCoin < ShopManager.Instance.MinimumShopCost)
+        {
+            if (CardManager.Instance.TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost)
+                return;
+        }
 
         foreach (Card card in cards)
         {
