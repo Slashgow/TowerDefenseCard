@@ -242,6 +242,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  WaveLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:0973f375f04bcf845b691bad9cad1996
+    m_TableEntryReference:
+      m_KeyId: 23081406769262592
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   uIPageController: {fileID: 0}
   uITime: {fileID: 0}
   transitionDuration: 4

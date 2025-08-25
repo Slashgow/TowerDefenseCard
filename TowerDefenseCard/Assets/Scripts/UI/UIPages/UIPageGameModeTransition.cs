@@ -13,7 +13,7 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField] private Logger logger;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI transitionText;
-    [SerializeField] private LocalizedString startCombatPhaseLocalizedString, startCraftPhaseLocalizedString;
+    [SerializeField] private LocalizedString startCombatPhaseLocalizedString, startCraftPhaseLocalizedString, WaveLocalizedString;
     [SerializeField] private UIPageController uIPageController;
     [SerializeField] private UITime uITime;
 
@@ -90,10 +90,12 @@ public class UIPageGameModeTransition : UIPage
 
     private void SetTransitionText(bool isStartCraftMode)
     {
+        transitionText.text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
+
         if (isStartCraftMode)
-            transitionText.text = startCraftPhaseLocalizedString.GetLocalizedString();
+            transitionText.text += startCraftPhaseLocalizedString.GetLocalizedString();
         else
-            transitionText.text = startCombatPhaseLocalizedString.GetLocalizedString();
+            transitionText.text += startCombatPhaseLocalizedString.GetLocalizedString();
     }
 
 }
