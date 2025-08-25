@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,19 @@ public class UITime : MonoBehaviour
     private void OnEnable()
     {
         pauseButton.onClick.AddListener(OnPause);
-        resumeButton.onClick.AddListener(OnResume);
+        resumeButton.onClick.AddListener(() => OnResume(false));
 
         speedUpButton.onClick.AddListener(OnSpeedUp);
         speedDownButton.onClick.AddListener(OnSpeedDown);
 
         resumeButton.gameObject.SetActive(false);
         speedDownButton.gameObject.SetActive(false);
+
+        uiInput.OnStartReceivingInput += OnStartReceivingInput;
+        uiInput.OnStopReceivingInput += OnStopReceivingInput;
     }
 
+   
     private void OnDisable()
     {
         pauseButton.onClick.RemoveAllListeners();
@@ -49,9 +54,9 @@ public class UITime : MonoBehaviour
         speedDownButton.gameObject.SetActive(true);
     }
 
-    public void OnResume()
+    public void OnResume(bool bypassInput)
     {
-        if (!uiInput.IsReceivingInput)
+        if (!bypassInput && !uiInput.IsReceivingInput)
             return;
 
         GameManager.Instance.Resume();
@@ -80,7 +85,7 @@ public class UITime : MonoBehaviour
         if(pauseButton.gameObject.activeSelf)
             OnPause();
         else
-            OnResume();
+            OnResume(false);
     }
 
     public void ToggleSpeed()
@@ -90,4 +95,21 @@ public class UITime : MonoBehaviour
         else if(speedDownButton.gameObject.activeSelf && speedDownButton.interactable)
             OnSpeedDown();
     }
+
+    private void OnStopReceivingInput()
+    {
+        pauseButton.interactable = false;
+        resumeButton.interactable = false;
+        speedUpButton.interactable = false;
+        speedDownButton.interactable = false;
+    }
+
+    private void OnStartReceivingInput()
+    {
+        pauseButton.interactable = true;
+        resumeButton.interactable = true;
+        speedUpButton.interactable = true;
+        speedDownButton.interactable = true;
+    }
+
 }

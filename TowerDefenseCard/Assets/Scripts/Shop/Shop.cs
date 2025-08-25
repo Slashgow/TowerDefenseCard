@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 [Serializable]
 public class Shop
 {
     [SerializeField, Range(0, 50)] private int shopCost;
     public int ShopCost => shopCost;
+
+    [SerializeField] private bool isFirstBoosterRigged = false;
+    public bool IsFirstBoosterRigged => isFirstBoosterRigged;
+
+    [SerializeField] private ShopItem firstCardPrefabRiggedBooster;
+    public ShopItem FirstCardPrefabRiggedBooster => firstCardPrefabRiggedBooster;
+    public bool isFirstBoosterOpened { get; set; } = false;
 
     [SerializeField] private List<ShopItem> shopItems = new List<ShopItem>();
     public List<ShopItem> ShopItems => shopItems;

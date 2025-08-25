@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.EventSystems;
-using System.Linq;
 using System;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 {
@@ -10,9 +11,6 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public int MaxCardCount => maxCardCount;
 
     private int remainingCards;
-
-   
-
     public int RemainingCards => remainingCards;
     private Shop shop;
     public static event Action<CardID> OnOpenBooster;
@@ -67,8 +65,16 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
     private void SpawnCard()
     {
-        ShopItem selectedItem = SelectShopItem();
+        ShopItem selectedItem = null;
 
+        if (shop.IsFirstBoosterRigged && !shop.isFirstBoosterOpened)
+        {
+            selectedItem = shop.FirstCardPrefabRiggedBooster;
+            shop.isFirstBoosterOpened = true;
+        }
+        else
+            selectedItem = SelectShopItem();
+          
         Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
         remainingCards--;
         OnOpenBooster?.Invoke(selectedItem.CardPrefab.GetComponent<Card>().CardData.CardID);

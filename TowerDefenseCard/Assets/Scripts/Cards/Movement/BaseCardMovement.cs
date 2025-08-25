@@ -32,6 +32,8 @@ public abstract class BaseCardMovement : MonoBehaviour
         SmoothMoveToClearSpot();
     }
 
+    public void DisableAutoMoveOnEnable() => autoStartMove = false;
+
     public void SmoothMoveToClearSpot() => coroutine = StartCoroutine(SmoothMoveToClearSpotCoroutine());
 
     public void StopSmoothMove()

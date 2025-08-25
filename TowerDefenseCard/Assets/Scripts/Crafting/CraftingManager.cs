@@ -6,7 +6,7 @@ using System;
 
 public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavable
 {
-    [SerializeField, Range(0f, 500f)] private float originalTimeCraftMode;
+    [SerializeField, Range(0f, 500f)] private List<float> originalTotalTimesCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
@@ -19,8 +19,9 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
 
-    public float OrginalTimeCraftMode => originalTimeCraftMode; 
-    public float TimeCraftMode => originalTimeCraftMode - timeElapsed;
+    public List<float> OriginalTotalTimesCraftMode => originalTotalTimesCraftMode; 
+    public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
+    public float TimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] - timeElapsed;
   
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();

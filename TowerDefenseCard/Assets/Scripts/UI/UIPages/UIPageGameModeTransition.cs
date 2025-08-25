@@ -32,7 +32,7 @@ public class UIPageGameModeTransition : UIPage
 
     private void Start()
     {
-        GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+        GameManager.Instance.OnEndCraftMode += GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
     }
 
@@ -40,7 +40,7 @@ public class UIPageGameModeTransition : UIPage
     {
         if (GameManager.HasInstance)
         {
-            GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
+            GameManager.Instance.OnEndCraftMode -= GameManager_OnStartCombatMode;
             GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
         }
     }
@@ -66,7 +66,7 @@ public class UIPageGameModeTransition : UIPage
     {
         Timer.Register(textSizeEffect.TextSizeDuration, onComplete: () =>
         {
-            uITime.OnResume();
+            uITime.OnResume(true);
             Hide();
             logger.Log("Transition Finished", this);
         }, useRealTime: true);
@@ -90,12 +90,14 @@ public class UIPageGameModeTransition : UIPage
 
     private void SetTransitionText(bool isStartCraftMode)
     {
-        transitionText.text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
 
         if (isStartCraftMode)
-            transitionText.text += startCraftPhaseLocalizedString.GetLocalizedString();
+            transitionText.text = startCraftPhaseLocalizedString.GetLocalizedString();
         else
+        {
+            transitionText.text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
             transitionText.text += startCombatPhaseLocalizedString.GetLocalizedString();
+        }  
     }
 
 }

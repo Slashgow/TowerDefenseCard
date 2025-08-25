@@ -10,6 +10,9 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     [SerializeField, Range(0f,10f)] private float delayBeforeCraftTimerStart;
 
     [SerializeField, Range(1f, 5f)] private float speedUpGameSpeed;
+
+    [SerializeField] private bool allowPauseDuringCombat = false;
+    public bool AllowPauseDuringCombat => allowPauseDuringCombat;
     public GameMode CurrentGameMode {  get; private set; }
     public GameState CurrentGameState { get; set; }
     public bool IsPaused { get; private set; }

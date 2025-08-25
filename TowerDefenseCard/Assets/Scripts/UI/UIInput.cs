@@ -14,6 +14,9 @@ public class UIInput : MonoBehaviour
     [SerializeField] private InputActionReference speedUpDownInputActionReference;
 
     public event Action OnShowPageCollection;
+
+    public event Action OnStartReceivingInput;
+    public event Action OnStopReceivingInput;
     public bool IsReceivingInput { get; private set; }
     private void Awake()
     {
@@ -25,8 +28,26 @@ public class UIInput : MonoBehaviour
         speedUpDownInputActionReference.action.performed += SpeedUpDown;
     }
 
-    public void StartReceivingInput() => IsReceivingInput = true;
-    public void StopRecevingInput() => IsReceivingInput = false;
+    private void Start()
+    {
+        if (!GameManager.Instance.AllowPauseDuringCombat)
+        {
+            GameManager.Instance.OnStartCombatMode += StopRecevingInput;
+            GameManager.Instance.OnEndCombatMode += StartReceivingInput;
+        }
+    }
+
+    public void StartReceivingInput()
+    {
+        IsReceivingInput = true;
+        OnStartReceivingInput?.Invoke();
+    }
+
+    public void StopRecevingInput()
+    {
+        IsReceivingInput = false;
+        OnStopReceivingInput?.Invoke();
+    }
 
     private void OnDestroy()
     {
@@ -34,6 +55,12 @@ public class UIInput : MonoBehaviour
         toggleSettingMenuInputActionReference.action.performed -= ToggleSettingsMenuPerformed;
         playPauseInputActionReference.action.performed -= PlayPause;
         speedUpDownInputActionReference.action.performed -= SpeedUpDown;
+
+        if (GameManager.HasInstance && !GameManager.Instance.AllowPauseDuringCombat)
+        {
+            GameManager.Instance.OnStartCombatMode -= StopRecevingInput;
+            GameManager.Instance.OnEndCombatMode -= StartReceivingInput;
+        }
     }
 
     private void ToggleCollectionMenuPerformed(InputAction.CallbackContext context)
