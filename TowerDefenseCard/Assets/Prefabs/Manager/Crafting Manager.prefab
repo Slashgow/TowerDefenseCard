@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ece1b3fc59ef348933309047a5a772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalTimeCraftMode: 500
+  originalTotalTimesCraftMode:
+  - 5
+  - 250
+  - 200
+  - 150
+  - 100
+  - 100
   recipes:
   - {fileID: 11400000, guid: 6d0e1e127ccb3264296f86b99b6e9b08, type: 2}
   - {fileID: 11400000, guid: 9917c24be31d2b84f8dac81826842a5a, type: 2}
@@ -85,6 +91,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff313dccc19f500428b760356787644a, type: 2}
   - {fileID: 11400000, guid: ed49142f5355a1748925bd6e0340a288, type: 2}
   - {fileID: 11400000, guid: 4bc40ec9c2e68dc4b8039a01414ed47d, type: 2}
+  - {fileID: 11400000, guid: d2b298e485a16204081ef8531c8bfe6d, type: 2}
+  - {fileID: 11400000, guid: 095bfd4a526a123448ec4bff499bc2ef, type: 2}
+  - {fileID: 11400000, guid: 787f2b5013be86d4aa5dd2086d322512, type: 2}
+  - {fileID: 11400000, guid: 4a4ce7f82b724f04d90b6d4d71df940f, type: 2}
+  - {fileID: 11400000, guid: 4db08ced84ad5f046bb012f2714d381c, type: 2}
+  - {fileID: 11400000, guid: 02b0fac648137f64582b69bc4385c03a, type: 2}
+  - {fileID: 11400000, guid: 6aa113ebba6de8d4193c1cf593954223, type: 2}
+  - {fileID: 11400000, guid: 6e87325d2d686c340a45223a3207166b, type: 2}
   cooldownBarPrefab: {fileID: 5366261039685075114, guid: 05c0c4a21dc340540911cb28546c2564, type: 3}
   cooldownBarOffset: 1.2
   timeElapsed: 0

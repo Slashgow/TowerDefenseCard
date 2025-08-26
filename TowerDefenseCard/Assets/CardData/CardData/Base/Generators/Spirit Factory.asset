@@ -32,7 +32,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   cardSprite: {fileID: 1879450607, guid: aca456cfa94b9744d81d86335173709b, type: 3}
-  cardBackgroundSprite: {fileID: 2878311640646176475, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardBackgroundSprite: {fileID: -8563320270700976094, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 14
   references:

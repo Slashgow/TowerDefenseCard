@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
-  m_Name: Jade Factory
+  m_Name: Sakura Brick Factory
   m_EditorClassIdentifier: 
-  cardID: 17
+  cardID: 63
   cardName:
     m_TableReference:
       m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
     m_TableEntryReference:
-      m_KeyId: 5058903535626
+      m_KeyId: 5379627403309056
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -26,12 +26,12 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
     m_TableEntryReference:
-      m_KeyId: 12719334223882
+      m_KeyId: 5379684647170048
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  cardSprite: {fileID: 1687640730, guid: aca456cfa94b9744d81d86335173709b, type: 3}
+  cardSprite: {fileID: -9197449427629750923, guid: ba30cc8b7b008cc4885b76205f49e07e, type: 3}
   cardBackgroundSprite: {fileID: -8563320270700976094, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
   isStackable: 1
   cost: 14

@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
+  - card: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   - card: {fileID: 9047908134774282088, guid: ef7fbb60b247a9643b4c04bbd8d8d24c, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -97,10 +100,22 @@ MonoBehaviour:
   - card: {fileID: 5582891460866795087, guid: 40dda6b0b4949c54ebf123a1890388db, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 4efd486af8e4f3e47a7c5643b59464d7, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 77b4b9d90cadbd6478aac9c778093a2e, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   - card: {fileID: 5596509187565464847, guid: 5fdca0ce60a6882488bf2ceaa7929980, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 5596509187565464847, guid: c8db6d0c29342c5498853135601b606b, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: 0d7fd28867a70b2458f8f987a7a0e167, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 5596509187565464847, guid: a0bc906e9e680684aaf3b73fcaa88af7, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 5596509187565464847, guid: 4bd055906a676824ea76e3456e30e177, type: 3}
@@ -214,10 +229,8 @@ MonoBehaviour:
   - card: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-  - card: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
-    isDiscovered: 0
-    isClickedAfterNotification: 0
   startMaxCardsAllowed: 20
+  showOutlineTooltip: 1
 --- !u!114 &4660115536851744549
 MonoBehaviour:
   m_ObjectHideFlags: 0

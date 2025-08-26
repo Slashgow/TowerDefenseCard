@@ -621,6 +621,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: House
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 450
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9307b325055a8c549a0d3207ac91094f
+      internalID: -507829390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Straw
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 447
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1de45eafddfa84b9071fbdbc896811
+      internalID: -1766418821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -641,6 +685,7 @@ TextureImporter:
       Ennemy_portal: 2359792013141848766
       Farm: -6807645766161893517
       Forest: -5326301224695899157
+      House: -507829390
       Main_Art_3_10: -3728912844668146605
       Main_Art_3_12: -4744442850647965423
       Main_Art_3_13: 5711968385590565903
@@ -650,6 +695,7 @@ TextureImporter:
       OKUNINUSHI: -5988697213089725177
       Raijin: -2691099437750804697
       Rice_paddy: 5898493925193238171
+      Straw: -1766418821
       Susanoo: -51899055133062711
       Temple: 1259918723687806422
       Worker: -7035091936464457285
