@@ -121,6 +121,14 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         CraftingRecipe.OutputCard? selectedOutput = craftInfo.CraftingRecipe.GetRandomOutputCard();
 
+        // prevent crafting attack cards if max defense cards reached
+        if (CardManager.Instance.IsMaxDefenseCardsReached && selectedOutput.Value.cardPrefab.GetComponent<CardDefense>())
+        {
+            TryCancelCraft(craftInfo.CraftID);
+            craftedCard = null;
+            return;
+        }
+
         if (!selectedOutput.HasValue)
         {
             Debug.LogError($"Failed to select output card for recipe {craftInfo.CraftingRecipe.name}");

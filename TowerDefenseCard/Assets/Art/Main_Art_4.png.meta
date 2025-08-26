@@ -163,23 +163,133 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main_Art_4_2
+      name: Tanuki_happy_1
       rect:
         serializedVersion: 2
-        x: 1385
-        y: 1215
-        width: 7
-        height: 7
+        x: 115
+        y: 732
+        width: 467
+        height: 467
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2347d5ca4255d2da0800000000000000
-      internalID: -5968020315197049806
+      spriteID: 980462442e522234c98632a286012484
+      internalID: -906768733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanuki_happy_2
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 724
+        width: 467
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565e52139600e634dbd9a2c170528d1a
+      internalID: 773370902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanuki_surprise
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 724
+        width: 467
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d996354130accc46aac0f5d48fdabdb
+      internalID: -1392680081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanuki_angry
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 276
+        width: 467
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84427465cde5b75408904be4a2a721ec
+      internalID: -333511106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubble_left
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 153
+        width: 605
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b848fc196646874ea8c6bf000828e0b
+      internalID: 1932419422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubble_right
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 154
+        width: 605
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4694ce5343e126548aeef4e6616d28c3
+      internalID: -1898408066
       vertices: []
       indices: 
       edges: []
@@ -198,9 +308,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Bubble_left: 1932419422
+      Bubble_right: -1898408066
       Main_Art_4_2: -5968020315197049806
       Player_full_health: -358515166766894482
       Player_mid_health: -7462836963997099464
+      Tanuki_angry: -333511106
+      Tanuki_happy_1: -906768733
+      Tanuki_happy_2: 773370902
+      Tanuki_surprise: -1392680081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

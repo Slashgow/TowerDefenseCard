@@ -19,48 +19,171 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 22915969024
-    m_Localized: Le but du jeu est de garder votre royaume en vie.
+    m_Localized: "\xC9coute bien, d\xE9fenseur ! Ta mission est simple : pr\xE9server
+      l'int\xE9grit\xE9 de mon royaume. Essaie de ne pas tout g\xE2cher."
     m_Metadata:
       m_Items: []
   - m_Id: 22966300672
-    m_Localized: "Le jeu alterne entre une phase de pr\xE9paration o\xF9 vous devez
-      craft un maximum de cartes d\xE9fense et une phase de d\xE9fense o\xF9 vous
-      devez emp\xEAcher les enemis d'atteindre votre royaume."
+    m_Localized: "Ecoute-moi ! Tout d'abord, tu fabriques des cartes de d\xE9fense
+      - fais-en beaucoup, tu en auras besoin. Ensuite, tu les UTILISES pour emp\xEAcher
+      les ennemis d'envahir MON royaume. Compris ?"
     m_Metadata:
       m_Items: []
   - m_Id: 22970494976
-    m_Localized: "La phase de d\xE9fense d\xE9bute quand la barre de progression
-      est compl\xE9t\xE9e."
+    m_Localized: "Quand la barre de progression est compl\xE8te, c'est l'heure du
+      spectacle ! Il est temps de prouver que tu m\xE9rites de rester mon d\xE9fenseur."
     m_Metadata:
       m_Items: []
   - m_Id: 22970494977
-    m_Localized: "Vous pouvez voir le nombre de vagues \xE0 vaincre pour remporter
-      la partie."
+    m_Localized: "Ce nombre indique le nombre de vagues que tu dois survivre avant
+      que je te d\xE9clare comp\xE9tent. Pas de pression !"
     m_Metadata:
       m_Items: []
   - m_Id: 22970494978
-    m_Localized: Vous pouvez acheter des boosters de cartes dans les boutiques.
+    m_Localized: "Ach\xE8tes des boosters dans les boutiques, car tu auras besoin
+      de toute l'aide possible !"
     m_Metadata:
       m_Items: []
   - m_Id: 22970494979
-    m_Localized: Ouvrez des boosters en cliquant dessus.
+    m_Localized: "Cliques sur ces boosters pour les ouvrir. Un concept r\xE9volutionnaire,
+      je sais"
     m_Metadata:
       m_Items: []
   - m_Id: 9360233590784
-    m_Localized: "Vous pouvez acc\xE9der \xE0 vos id\xE9es de craft ici."
+    m_Localized: "Toutes tes id\xE9es de craft, soigneusement organis\xE9es. Je t'en
+      prie, mes excellentes comp\xE9tences en organisation sont \xE0 ton service
+      !"
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145216
-    m_Localized: "Vous pouvez mettre le jeu en pause pour pr\xE9parer sereinement
-      vos d\xE9fenses."
+    m_Localized: "N'h\xE9sites pas \xE0 faire une pause et \xE0 r\xE9fl\xE9chir,
+      je sais que la strat\xE9gie n'est pas ton point fort."
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145217
-    m_Localized: "Il est possible d'acc\xE9l\xE9rer le temps pour craft plus vite."
+    m_Localized: "Acc\xE9l\xE9ration du temps disponible pour les impatients. Utilises-la
+      si tu sais vraiment ce que tu fais."
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145218
-    m_Localized: Les raccourcis sont disponibles ici.
+    m_Localized: "Les raccourcis sont l\xE0 parce que je suis assez g\xE9n\xE9reux
+      pour te faciliter la vie. Vas jeter un oeil dessus apr\xE8s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160626044928
+    m_Localized: Limite de carte atteinte ! Je sais, c'est choquant. Au lieu de paniquer,
+      pourquoi ne pas essayer de construire une grange ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160672182272
+    m_Localized: "D\xE9fenses maximales atteintes ! Essaie plut\xF4t de construire
+      une maison au lieu de me regarder d'un air impuissant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160680570880
+    m_Localized: "S\xE9rieusement! Tu pr\xE9tends d\xE9fendre mon royaume et tu n'as
+      pas encore craft de cartes d\xE9fense ?!\nQu'est-ce que tu attends ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160684765184
+    m_Localized: Comment tu ferais sans moi ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160688959488
+    m_Localized: "Attention ! Notre royaume est menac\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160688959489
+    m_Localized: Toujours debout ! Enfin... presque debout.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160697348096
+    m_Localized: On testait juste leur puissance de frappe. Pour la science !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160701542400
+    m_Localized: "Une ex\xE9cution parfaite ! ... pour se faire frapper par tout."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160705736704
+    m_Localized: "Eh bien, \xE7a sera d\xE9duit de ton salaire... si je te payais
+      vraiment."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160709931008
+    m_Localized: "Ne t'inqui\xE8te pas, je suis s\xFBr que les ennemis seront plus
+      gentils la prochaine fois. Ils ont l'air raisonnables."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160718319616
+    m_Localized: "Remarquable ! \xC0 ce rythme, je vais devoir trouver un nouveau
+      royaume d'ici mardi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160722513920
+    m_Localized: "Excellent travail ! Je commen\xE7ais \xE0 m'ennuyer de voir mes
+      murs intacts de toute fa\xE7on."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160730902528
+    m_Localized: "Et voil\xE0, mes amis, comment on fait. Prenez des notes !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160730902529
+    m_Localized: "Pas une \xE9gratignure sur mon magnifique royaume. Je suppose que
+      tu vas demander une augmentation maintenant ?\nComment \xE7a, tu n'es pas pay\xE9
+      ?\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160735096832
+    m_Localized: "Parfait ! Fais \xE7a \xE0 chaque fois et tout ira bien entre nous."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160743485440
+    m_Localized: "Une d\xE9fense naturellement sans faille ! C'est pour \xE7a que
+      je vous paie... n'est-ce pas ?\nComment \xE7a, tu n'es pas pay\xE9 ? "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160747679744
+    m_Localized: "Aucun d\xE9g\xE2t ? Je devrais probablement vous remercier... mais
+      je ne le ferai pas. C'est ton travail !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160751874048
+    m_Localized: "Le temple est termin\xE9 ! Maintenant, passons aux choses s\xE9rieuses
+      : il est temps de sortir l'artillerie lourde !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160756068352
+    m_Localized: "Et voil\xE0 ! C'est ton premier pas pour \xE9viter de te ridiculiser
+      compl\xE8tement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160764456960
+    m_Localized: "Premier craft termin\xE9 ! Regardez qui a trouv\xE9 comment fabriquer
+      quelque chose d'utile !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160768651264
+    m_Localized: "Une usine ! Enfin quelqu'un qui comprend l'efficacit\xE9. Maintenant,
+      on avance !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160772845568
+    m_Localized: "Conseil de pro de votre g\xE9n\xE9reux souverain : maintiens la
+      touche Maj enfonc\xE9e tout en d\xE9pla\xE7ant les cartes pour attirer les
+      cartes similaires. De rien !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160777039872
+    m_Localized: "Tu manques d'encre pour tes boosters ? Vends simplement quelques
+      cartes ! C'est ce qu'on appelle une \xAB r\xE9duction strat\xE9gique des effectifs
+      \xBB - renseignes-toi !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160777039873
+    m_Localized: "D\xE9poses des encres sur la boutique pour obtenir un booster !
+      Ce n'est pas sorcier, c'est juste du shopping basique."
     m_Metadata:
       m_Items: []
   references:

@@ -45,6 +45,11 @@ public class Reseller : MonoSingleton<Reseller>
                 CardStorage cardStorage = (CardStorage)card;
                 CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
             }
+            else if(card is CardDefenseStorage)
+            {
+                CardDefenseStorage cardDefenseStorage = (CardDefenseStorage)card;
+                CardManager.Instance.DecreaseMaxCardsDefenseAllowed(cardDefenseStorage.NumberOfAdditionalCardsDefenseAllowed);
+            }
         }
 
         for (int i = 0; i < coinAmount; i++)

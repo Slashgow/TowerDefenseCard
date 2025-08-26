@@ -36,6 +36,13 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public int StartMaxCardsAllowed => startMaxCardsAllowed;
     public int MaxCardsAllowed { get; private set; }
     public int CurrentNumberOfCards { get; private set; }
+
+    [SerializeField, Range(0, 100)] private int startMaxCardsDefenseAllowed = 2;
+    public int StartMaxCardsDefenseAllowed => startMaxCardsDefenseAllowed;
+    public int MaxCardsDefenseAllowed { get; private set; }
+    public int CurrentNumberOfDefenseCards { get; private set; }
+    public bool IsMaxDefenseCardsReached => CurrentNumberOfDefenseCards >= MaxCardsDefenseAllowed;
+
     public bool IsMaxCardsReached => CurrentNumberOfCards >= MaxCardsAllowed;
 
     private List<CardID> discoveredCardIDs = new List<CardID>();
@@ -52,11 +59,18 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public event Action OnDiscoverNewCard = delegate { };
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
+    public event Action<int, int> OnUpdateNumberOfDefenseCards;
+    public event Action<int, int> OnUpdateMaxNumberOfDefenseCards;
 
     public int GetCurrentNumberOfCards()
     {
         Card[] allStartingCards = FindObjectsByType<Card>(FindObjectsSortMode.None);
         return allStartingCards.Count(card => card is not CardShop);
+    }
+
+    public int GetCurrentNumberOfDefenseCards()
+    {
+        return FindObjectsByType<CardDefense>(FindObjectsSortMode.None).Length;
     }
 
     protected override void Awake()
@@ -74,6 +88,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
         CardExploitation.OnDestroyCardExploitation += CardExploitation_OnDestroyCardExploitation;
+        CardDefense.OnDestroyAnyCardDefense += CardDefense_OnDestroyAnyCardDefense;
+        CardDefense.OnCreateAnyCardDefense += CardDefense_OnCreateAnyCardDefense;
     }
 
     private void OnDisable()
@@ -88,6 +104,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Reseller.OnResell -= Reseller_OnResell;
         TowerDamageable.OnTowerDie -= TowerDamageable_OnTowerDie;
         CardExploitation.OnDestroyCardExploitation -= CardExploitation_OnDestroyCardExploitation;
+        CardDefense.OnDestroyAnyCardDefense -= CardDefense_OnDestroyAnyCardDefense;
+        CardDefense.OnCreateAnyCardDefense -= CardDefense_OnCreateAnyCardDefense;
     }
 
     public void AddCardToBoard(Card card)
@@ -260,6 +278,28 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
     }
 
+    public void IncreaseMaxCardsDefenseAllowed(int additionalCards)
+    {
+        MaxCardsDefenseAllowed += additionalCards;
+        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+    }
+    public void DecreaseMaxCardsDefenseAllowed(int additionalCards)
+    {
+        MaxCardsDefenseAllowed -= additionalCards;
+        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+    }
+    private void CardDefense_OnCreateAnyCardDefense()
+    {
+        CurrentNumberOfDefenseCards++;
+        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+    }
+
+    private void CardDefense_OnDestroyAnyCardDefense()
+    {
+        CurrentNumberOfDefenseCards--;
+        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+    }
+
     [ContextMenu("Set All Cards To Not Discovered")]
     public void UncheckDiscovered()
     {
@@ -282,7 +322,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public void Save(GameSaveData gameSaveData)
     {
         gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
-        gameSaveData.maxCardsAllowed = startMaxCardsAllowed;
+        gameSaveData.maxCardsAllowed = MaxCardsAllowed;
+        gameSaveData.maxDefenseCardsAllowed = MaxCardsDefenseAllowed;
+        gameSaveData.currentNumberOfDefenseCards = CurrentNumberOfDefenseCards;
 
         TrySaveDiscoveredCards();
     }
@@ -305,9 +347,12 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     {
         CurrentNumberOfCards = gameSaveData.currentNumberOfCards;
         MaxCardsAllowed = gameSaveData.maxCardsAllowed;
+        CurrentNumberOfDefenseCards = gameSaveData.currentNumberOfDefenseCards;
+        MaxCardsDefenseAllowed = gameSaveData.maxDefenseCardsAllowed;
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
-
+        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+        OnUpdateNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
         TryLoadDiscoveredCard();
     }
 

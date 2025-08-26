@@ -19,45 +19,168 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 22915969024
-    m_Localized: The goal of the game is to keep your kingdom alive.
+    m_Localized: 'Listen up, defender! Your job is simple: keep my kingdom in one
+      piece. Try not to mess it up.'
     m_Metadata:
       m_Items: []
   - m_Id: 22966300672
-    m_Localized: The game alternates between a preparation phase, where you must
-      craft as many defense cards as possible, and a defense phase, where you must
-      prevent enemies from reaching your kingdom.
+    m_Localized: Pay attention! First, you craft defense cards - make lots, you'll
+      need them. Then you actually USE them to stop enemies from waltzing into MY
+      kingdom. Got it?
     m_Metadata:
       m_Items: []
   - m_Id: 22970494976
-    m_Localized: The defense phase begins when the progress bar is complete.
+    m_Localized: Progress bar complete means showtime! Time to prove you're worth
+      keeping around as my defender.
     m_Metadata:
       m_Items: []
   - m_Id: 22970494977
-    m_Localized: You can see the number of waves you need to defeat to win the game.
+    m_Localized: That number shows how many waves you need to survive before I declare
+      you competent. No pressure!
     m_Metadata:
       m_Items: []
   - m_Id: 22970494978
-    m_Localized: You can buy card boosters in shops.
+    m_Localized: Buy boosters from shops - because apparently you need all the help
+      you can get!
     m_Metadata:
       m_Items: []
   - m_Id: 22970494979
-    m_Localized: Open boosters by clicking on them
+    m_Localized: Click those boosters to open them. Revolutionary concept, I know
     m_Metadata:
       m_Items: []
   - m_Id: 9360233590784
-    m_Localized: You can access your craft ideas here.
+    m_Localized: All your crafting ideas, neatly organized. You're welcome for my
+      excellent organization skills!
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145216
-    m_Localized: You can pause the game to calmly prepare your defenses.
+    m_Localized: Feel free to pause and think - I know strategy isn't your strong
+      suit.
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145217
-    m_Localized: It is possible to speed up time to craft faster.
+    m_Localized: Time acceleration available for the impatient. Use it if you actually
+      know what you're doing.
     m_Metadata:
       m_Items: []
   - m_Id: 9360267145218
-    m_Localized: Shortcuts are available here.
+    m_Localized: Shortcuts are here because I'm generous enough to make your life
+      easier. Have an eye on them after.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160626044928
+    m_Localized: Card limit reached! Shocking, I know. Maybe try building a barn
+      instead of panicking?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160672182272
+    m_Localized: Maximum defenses reached! Try constructing a house instead of staring
+      at me helplessly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160680570880
+    m_Localized: 'Seriously! You claim to defend my kingdom, and you haven''t crafted
+      any defense cards yet?!
+
+      What are you waiting for?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160684765184
+    m_Localized: How would you do without me ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160688959488
+    m_Localized: 'Watch out! Our kingdom is threatened! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160688959489
+    m_Localized: Still standing! Well... mostly standing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160697348096
+    m_Localized: We were just testing their damage output. For science!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160701542400
+    m_Localized: Perfect execution! ...of getting hit by everything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160705736704
+    m_Localized: Well, that's coming out of your paycheck... if I actually paid you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160709931008
+    m_Localized: Don't worry, I'm sure the enemies will be gentler next time. They
+      seem reasonable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160718319616
+    m_Localized: Outstanding! At this rate, I'll need to find a new kingdom by Tuesday.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160722513920
+    m_Localized: Excellent work! I was getting bored of my walls being intact anyway.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160730902528
+    m_Localized: And that, folks, is how it's done. Take notes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160730902529
+    m_Localized: 'Not a scratch on my beautiful kingdom. I suppose you''ll want a
+      raise now?
+
+      What do you mean you are not paid?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160735096832
+    m_Localized: Perfect! Now do that every time and we'll get along just fine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160743485440
+    m_Localized: 'Naturally flawless defense! That''s what I pay you for... right?
+
+      What
+      do you mean you are not paid?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160747679744
+    m_Localized: Zero damage? I should probably thank you... but I won't. It's your
+      job!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160751874048
+    m_Localized: Temple complete! Now we're talking - time for the big guns!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160756068352
+    m_Localized: There we go! Your first step toward not completely embarrassing
+      yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160764456960
+    m_Localized: First craft complete! Look who figured out how to make something
+      useful!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160768651264
+    m_Localized: A factory! Finally, someone who understands efficiency. Now we're
+      getting somewhere!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160772845568
+    m_Localized: 'Pro tip from your generous ruler: Hold Shift while moving cards
+      to magnet similar ones together. You''re welcome!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160777039872
+    m_Localized: Short on ink for boosters? Just sell some cards! It's called 'strategic
+      downsizing' - look it up!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2672160777039873
+    m_Localized: Drop ink on the shop for boosters! It's not rocket science, just
+      basic shopping
     m_Metadata:
       m_Items: []
   references:

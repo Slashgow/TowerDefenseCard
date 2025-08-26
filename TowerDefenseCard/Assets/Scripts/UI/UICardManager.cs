@@ -1,26 +1,23 @@
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class UICardManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI numberOfCardText;
+    [SerializeField] private TextMeshProUGUI numberOfDefenseCardText;
 
-    [Header("Outline Animation")]
-    [SerializeField] private UIOutlineUnscaled uiOutlineUnscaled;
-    [SerializeField, Range(0f, 20f)] private float minWidthOutline = 8f;
-    [SerializeField, Range(0f, 20f)] private float maxWidthOutline = 16f;
-    [SerializeField, Range(0f, 5f)] private float cycleDuration = 3f;
-    [SerializeField] private Ease ease;
-
-    private Tween outlineTween;
+    [SerializeField] private UIOutlineUnscaled uiOutlineUnscaledCard, uiOutlineUnscaledCardDefense;
+    [SerializeField] private OutlineWidthEffect outlineWidthEffectCards, outlineWidthEffectCardDefense;
 
     private void Start()
     {
         CardManager.Instance.OnUpdateNumberOfCards += CardManager_OnUpdateNumberOfCards;
         CardManager.Instance.OnUpdateMaxNumberOfCards += CardManager_OnUpdateNumberOfCards;
+        CardManager.Instance.OnUpdateNumberOfDefenseCards += CardManager_OnUpdateNumberOfDefenseCards;
+        CardManager.Instance.OnUpdateMaxNumberOfDefenseCards += CardManager_OnUpdateNumberOfDefenseCards;
 
         CardManager_OnUpdateNumberOfCards(CardManager.Instance.CurrentNumberOfCards, CardManager.Instance.MaxCardsAllowed);
+        CardManager_OnUpdateNumberOfDefenseCards(CardManager.Instance.CurrentNumberOfDefenseCards, CardManager.Instance.MaxCardsDefenseAllowed);
     }
 
     private void OnDisable()
@@ -29,29 +26,47 @@ public class UICardManager : MonoBehaviour
         {
             CardManager.Instance.OnUpdateNumberOfCards -= CardManager_OnUpdateNumberOfCards;
             CardManager.Instance.OnUpdateMaxNumberOfCards -= CardManager_OnUpdateNumberOfCards;
+            CardManager.Instance.OnUpdateNumberOfDefenseCards -= CardManager_OnUpdateNumberOfDefenseCards;
+            CardManager.Instance.OnUpdateMaxNumberOfDefenseCards -= CardManager_OnUpdateNumberOfDefenseCards;
         }
     }
 
     private void CardManager_OnUpdateNumberOfCards(int numberOfCards, int maxNumberOfCards)
     {
-        UpdateText(numberOfCards, maxNumberOfCards);
+        UpdateText(numberOfCardText, numberOfCards, maxNumberOfCards);
 
         if (CardManager.Instance.IsMaxCardsReached)
         {
-            outlineTween = DOTween.To(() => uiOutlineUnscaled._outlineWidth, x => uiOutlineUnscaled._outlineWidth = x, maxWidthOutline, cycleDuration).
-                SetLoops(-1, LoopType.Yoyo);
-            uiOutlineUnscaled.enabled = true;
+            outlineWidthEffectCards.DoEffect();
+            uiOutlineUnscaledCard.enabled = true;
         }
 
         else
         {
-            outlineTween?.Kill();
-            uiOutlineUnscaled.enabled = false;
+            outlineWidthEffectCards.StopEffect();
+            uiOutlineUnscaledCard.enabled = false;
         }
     }
 
-    private void UpdateText(int numberOfCards, int maxNumberOfCards)
+    private void CardManager_OnUpdateNumberOfDefenseCards(int currentNumberOfDefenseCard, int maxNumberOfDefenseCard)
     {
-        numberOfCardText.text = $"{numberOfCards}/{maxNumberOfCards}";
+        UpdateText(numberOfDefenseCardText, currentNumberOfDefenseCard, maxNumberOfDefenseCard);
+
+        if (CardManager.Instance.IsMaxDefenseCardsReached)
+        {
+            outlineWidthEffectCardDefense.DoEffect();
+            uiOutlineUnscaledCardDefense.enabled = true;
+        }
+
+        else
+        {
+            outlineWidthEffectCardDefense.StopEffect();
+            uiOutlineUnscaledCardDefense.enabled = false;
+        }
+    }
+
+    private void UpdateText(TextMeshProUGUI text, int numberOfCards, int maxNumberOfCards)
+    {
+        text.text = $"{numberOfCards}/{maxNumberOfCards}";
     }
 }

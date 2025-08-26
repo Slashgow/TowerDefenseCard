@@ -250,7 +250,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             currentPlayerCoin = shopManager.StartPlayerCoin,
             craftTimeElapsed = 0,
             maxCardsAllowed = cardManager.StartMaxCardsAllowed,
-            currentNumberOfCards = cardManager.GetCurrentNumberOfCards()
+            currentNumberOfCards = cardManager.GetCurrentNumberOfCards(),
+            maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
+            currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards()
         };
         Load(saveData);
     }

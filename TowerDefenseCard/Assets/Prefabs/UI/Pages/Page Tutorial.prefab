@@ -302,6 +302,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 1
+  rebuildOnUpdate: 0
 --- !u!1 &1041225413914032765
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +452,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &1242538228846552195
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +814,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &1785687356466492668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1320,7 @@ RectTransform:
   - {fileID: 7365661984805477057}
   - {fileID: 3187493472891528596}
   - {fileID: 4963854199077965078}
+  - {fileID: 4967827739885733112}
   m_Father: {fileID: 2006380417545272373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1744,6 +1748,7 @@ MonoBehaviour:
   _cornerSegments: 4
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &3581073247211372417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2443,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4822860685354988462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4967827739885733112}
+  - component: {fileID: 1014517955954643547}
+  - component: {fileID: 6951600492529011810}
+  m_Layer: 5
+  m_Name: Tanuki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4967827739885733112
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822860685354988462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 697590526540151951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 184.8}
+  m_SizeDelta: {x: 233.5, y: 233.5}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!222 &1014517955954643547
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822860685354988462}
+  m_CullTransparentMesh: 1
+--- !u!114 &6951600492529011810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822860685354988462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5003251475785860091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,6 +2594,7 @@ MonoBehaviour:
   _cornerSegments: 4
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &5279287320428567261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +2818,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &5455779763600674582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,6 +3256,7 @@ MonoBehaviour:
   _cornerSegments: 4
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &6705517476896016779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +3754,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &7370698973029414969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4228,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &8030716506901601638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4303,7 @@ MonoBehaviour:
   _cornerSegments: 1
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &8170088992651478714
 GameObject:
   m_ObjectHideFlags: 0

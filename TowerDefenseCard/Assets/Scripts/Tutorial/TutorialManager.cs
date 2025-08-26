@@ -2,12 +2,15 @@ using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoSingleton<TutorialManager>
 {
     [SerializeField] private UIInput uiInput;
     [SerializeField] private Logger logger;
     [SerializeField] private CanvasGroup tutorialCanvasGroup;
+    [SerializeField] private ScrollTextWithVoice scrollTextWithVoice;
+    [SerializeField] private Image tanukiImage;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TutorialStep[] tutorialSteps;
 
@@ -46,9 +49,9 @@ public class TutorialManager : MonoSingleton<TutorialManager>
         tutorialCanvasGroup.blocksRaycasts = true;
         foreach (var step in tutorialSteps)
         {
-            step.Hide();
+            step.Hide(scrollTextWithVoice);
         }
-        tutorialSteps[currentStepIndex].Show(descriptionText);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
     }
 
     public void StopTutorial()
@@ -66,7 +69,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 
     public void ShowNextStep()
     {
-        tutorialSteps[currentStepIndex].Hide();
+        tutorialSteps[currentStepIndex].Hide(scrollTextWithVoice);
         currentStepIndex = Mathf.Clamp(currentStepIndex + 1, 0, tutorialSteps.Length);
 
         if (currentStepIndex == tutorialSteps.Length)
@@ -75,14 +78,14 @@ public class TutorialManager : MonoSingleton<TutorialManager>
             return;
         }
 
-        tutorialSteps[currentStepIndex].Show(descriptionText);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
     }
 
     public void ShowPreviousStep()
     {
-        tutorialSteps[currentStepIndex].Hide();
+        tutorialSteps[currentStepIndex].Hide(scrollTextWithVoice);
         currentStepIndex = Mathf.Clamp(currentStepIndex - 1, 0, tutorialSteps.Length - 1);
-        tutorialSteps[currentStepIndex].Show(descriptionText);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
     }
     public void Save()
     {
