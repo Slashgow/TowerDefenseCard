@@ -14,12 +14,15 @@ public class OutlineWidthEffect : Effect
 
     public override void DoEffect()
     {
+        uiOutlineUnscaled.enabled = true;
+
         outlineTween = DOTween.To(() => uiOutlineUnscaled._outlineWidth, x => uiOutlineUnscaled._outlineWidth = x, maxWidthOutline, cycleDuration).
-                SetLoops(-1, LoopType.Yoyo);
+                SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
 
     public void StopEffect()
     {
+        uiOutlineUnscaled.enabled = false;
         outlineTween?.Kill();
     }
 }

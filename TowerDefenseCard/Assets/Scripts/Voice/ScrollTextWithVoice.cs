@@ -39,7 +39,11 @@ public class ScrollTextWithVoice : MonoBehaviour
     public void StopTypingText()
     {
         if(textMeshProUGUI != null)
+        {
             textMeshProUGUI.text = string.Empty;
+            textMeshProUGUI.enableAutoSizing = true;
+        }
+           
 
         if (coroutine != null)
         {
@@ -51,6 +55,8 @@ public class ScrollTextWithVoice : MonoBehaviour
 
     private IEnumerator TypeTextCoroutine(string text, float keepShowingDuration)
     {
+        ApplyOptimalFontSize(text);
+
         isTyping = true;
         textMeshProUGUI.text = string.Empty;
 
@@ -99,8 +105,22 @@ public class ScrollTextWithVoice : MonoBehaviour
         if(keepShowingDuration > 0f)
         {
             textMeshProUGUI.text = string.Empty;
+            textMeshProUGUI.enableAutoSizing = true;
             OnHideTextComplete?.Invoke();
         }
            
+    }
+
+    private void ApplyOptimalFontSize(string text)
+    {
+        textMeshProUGUI.text = text;
+
+        if (textMeshProUGUI.enableAutoSizing)
+        {
+            textMeshProUGUI.ForceMeshUpdate();
+            float calculatedSize = textMeshProUGUI.fontSize;
+            textMeshProUGUI.enableAutoSizing = false;
+            textMeshProUGUI.fontSize = calculatedSize;
+        }
     }
 }

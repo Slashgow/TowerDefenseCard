@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5639541207000238514}
   - component: {fileID: 5505664405334818388}
   - component: {fileID: 8036735548580289788}
+  - component: {fileID: 3023841619693705200}
   m_Layer: 5
   m_Name: Notification Image
   m_TagString: Untagged
@@ -75,3 +76,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3023841619693705200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345744203815380319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7297f6bfbdd084eb8ee79f4a43c8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 1
+  endScale: 1.2
+  duration: 0.7
+  easing: 4
+  loops: -1
+  loopType: 1

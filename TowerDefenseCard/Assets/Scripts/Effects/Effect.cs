@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public abstract class Effect : MonoBehaviour
 {
     [SerializeField] private bool doEffectOnEnable = false;

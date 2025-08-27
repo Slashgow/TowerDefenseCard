@@ -16,6 +16,9 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     [SerializeField] private Toggle pinToggle;
     [SerializeField] private UIQuestTab uiQuestTab;
 
+    [Header("Quest Highlighting")]
+    [SerializeField] private bool enableQuestHighlighting = true;
+
     [Header("Main Quests")]
     [SerializeField] private QuestManager mainQuestManager;
     [SerializeField] private TextMeshProUGUI titleMainQuestCountText;
@@ -35,6 +38,8 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
     private List<UIQuest> mainUIQuests = new List<UIQuest>();
     private List<UIQuest> secondaryUIQuests = new List<UIQuest>();
+    private UIQuest currentHighlightedMainQuest;
+    private UIQuest currentHighlightedSecondaryQuest;
 
     protected override void Awake()
     {
@@ -71,6 +76,12 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
         LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
+
+        if (enableQuestHighlighting)
+        {
+            HighlightNextQuest(ref currentHighlightedMainQuest, true);
+            HighlightNextQuest(ref currentHighlightedSecondaryQuest, false);
+        }
     }
 
     private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale locale)
@@ -139,6 +150,12 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         uiQuest.SetQuestAsCompleted();
         titleMainQuestCountText.text = $"({mainQuestManager.CompletedQuestCount}/{mainQuestManager.AvailableQuestCount})";
+
+        if (enableQuestHighlighting && currentHighlightedMainQuest == uiQuest)
+        {
+            currentHighlightedMainQuest = null;
+            HighlightNextQuest(ref currentHighlightedMainQuest, true);
+        }
     }
     private void SecondaryQuestManager_OnQuestCompleted(Quest quest)
     {
@@ -152,7 +169,41 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         uiQuest.SetQuestAsCompleted();
         titleSecondaryQuestCountText.text = $"({secondaryQuestManager.CompletedQuestCount}/{secondaryQuestManager.AvailableQuestCount})";
+
+        if (enableQuestHighlighting && currentHighlightedMainQuest == uiQuest)
+        {
+            currentHighlightedMainQuest = null;
+            HighlightNextQuest(ref currentHighlightedSecondaryQuest, false);
+        }
     }
+
+    private void HighlightNextQuest(ref UIQuest currentHighlightedQuest, bool isMainQuest)
+    {
+        if (currentHighlightedQuest != null)
+        {
+            currentHighlightedQuest.StopHighlight();
+            currentHighlightedQuest = null;
+        }
+
+        UIQuest nextQuest = FindNextQuestToHighlight(isMainQuest);
+
+        if (nextQuest != null)
+        {
+            currentHighlightedQuest = nextQuest;
+            currentHighlightedQuest.StartHighlight();
+        }
+    }
+
+    private UIQuest FindNextQuestToHighlight(bool isMainQuest)
+    {
+        UIQuest nextMainQuest;
+        if (isMainQuest)
+            nextMainQuest = mainUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted);
+        else
+            nextMainQuest = secondaryUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted);
+        return nextMainQuest; 
+    }
+
 
     private void OnClickOnPinToggle(bool isOn) => isPin = isOn;
 
