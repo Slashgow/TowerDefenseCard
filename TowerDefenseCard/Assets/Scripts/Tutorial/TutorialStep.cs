@@ -25,9 +25,9 @@ public class TutorialStep
    
         focusGameObject.SetActive(true); 
     }
-    public void Show(ScrollTextWithVoice scrollTextWithVoice, Image tanukiImage)
+    public void Show(ScrollTextWithVoice scrollTextWithVoice, Image tanukiImage, TextMeshProUGUI textMeshProUGUI)
     {
-        scrollTextWithVoice.TypeText(Description.GetLocalizedString());
+        scrollTextWithVoice.TypeText(Description.GetLocalizedString(), textMeshProUGUI);
         tanukiImage.sprite = tanukiSprite;
 
         if (focusGameObject == null)

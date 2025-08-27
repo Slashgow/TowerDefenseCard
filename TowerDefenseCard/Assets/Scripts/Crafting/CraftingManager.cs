@@ -18,6 +18,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
     private Timer CraftingModeDurationTimer;
     public event Action<float> OnTickTimeCraftingMode;
+    public event Action OnHalfTimeCraftingMode;
+    private bool hasTriggeredHalfTimeEvent = false;
 
     public List<float> OriginalTotalTimesCraftMode => originalTotalTimesCraftMode; 
     public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
@@ -203,10 +205,17 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 GameManager.Instance.SwitchGameMode();
                 timeElapsed = 0;
                 }, 
-            onUpdate: timeElapsed => {
+            onUpdate: timeElapsed =>
+            {
                 OnTickTimeCraftingMode?.Invoke(timeElapsed + startingTimeElapsed);
                 this.timeElapsed = timeElapsed;
-                });
+
+                if (this.timeElapsed + startingTimeElapsed >= OriginaCurrentTotalTimeCraftMode / 2f && !hasTriggeredHalfTimeEvent)
+                {
+                    OnHalfTimeCraftingMode?.Invoke();
+                    hasTriggeredHalfTimeEvent = true;
+                }
+            });
     }
 
     public int GetCraftIDByCard(Card card)

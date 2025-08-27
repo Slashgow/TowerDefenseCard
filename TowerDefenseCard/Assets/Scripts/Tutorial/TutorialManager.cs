@@ -51,7 +51,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
         {
             step.Hide(scrollTextWithVoice);
         }
-        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage, descriptionText);
     }
 
     public void StopTutorial()
@@ -78,14 +78,14 @@ public class TutorialManager : MonoSingleton<TutorialManager>
             return;
         }
 
-        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage, descriptionText);
     }
 
     public void ShowPreviousStep()
     {
         tutorialSteps[currentStepIndex].Hide(scrollTextWithVoice);
         currentStepIndex = Mathf.Clamp(currentStepIndex - 1, 0, tutorialSteps.Length - 1);
-        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage);
+        tutorialSteps[currentStepIndex].Show(scrollTextWithVoice, tanukiImage, descriptionText);
     }
     public void Save()
     {

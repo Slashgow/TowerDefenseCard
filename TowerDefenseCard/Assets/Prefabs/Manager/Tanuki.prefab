@@ -1,0 +1,470 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4595087871376421685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2958951412727252083}
+  - component: {fileID: -1249795567576312280}
+  - component: {fileID: 6930343964962083189}
+  - component: {fileID: 3537702614228494212}
+  m_Layer: 0
+  m_Name: Tanuki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2958951412727252083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595087871376421685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1249795567576312280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595087871376421685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fa532179b85124c8c443d3e4cdaff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollTextWithVoice: {fileID: 6930343964962083189}
+  tanukiText: {fileID: 0}
+  bubbleImage: {fileID: 0}
+  tanukiImage: {fileID: 0}
+  lastLineDurationThresholdForTeasing: 120
+  keepShowingDuration: 15
+  defaultTanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  timeBeforeStartTutoText: 15
+  timeBetweenTextInQueue: 3
+  linesWhenPlayerHit:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160688959488
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesAfterWaveNoHit:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160730902528
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160730902529
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160735096832
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -333511106, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160743485440
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160747679744
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesAfterWaveHit:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160688959489
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160697348096
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160701542400
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -333511106, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160705736704
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160709931008
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -333511106, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160718319616
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160722513920
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesMaxCardsReached:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160626044928
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesMaxDefenseReached:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160672182272
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -333511106, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesLateDefense:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160680570880
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -333511106, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesTeasing:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160684765184
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesOnCraftTemple:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160751874048
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesOnCraftFirstDefense:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160756068352
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesOnFirstCraftComplete:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160764456960
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesOnFirstFactoryComplete:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160768651264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesStackShortcuts:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160772845568
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesTutoSellForBooster:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160777039872
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesTutoDropInkOnShopToBuy:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 2672160777039873
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &6930343964962083189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595087871376421685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0b0fc59f772ef40b730d6ae6037931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3537702614228494212}
+  voiceDatas:
+  - {fileID: 8300000, guid: e983ea58a1899ea4a988f33dfe35131a, type: 3}
+  - {fileID: 8300000, guid: 2fa8a05f4af4f1a41b501676a5b6dbb8, type: 3}
+  - {fileID: 8300000, guid: f7e3a6ce5cd771d41bf7896c5c78eba2, type: 3}
+  - {fileID: 8300000, guid: 2b20d494b3d416f4c9193703e4b8fffd, type: 3}
+  - {fileID: 8300000, guid: d89d7798417aaee4080037792d31e615, type: 3}
+  - {fileID: 8300000, guid: 7035c034c59bd7e4ca47d46c040c4543, type: 3}
+  - {fileID: 8300000, guid: 4a56a89e8ebef0f45923fae880e9376e, type: 3}
+  - {fileID: 8300000, guid: b2741a4f80550584bada09ccb746bb0c, type: 3}
+  - {fileID: 8300000, guid: 04228998f011907429ada570e61cb43f, type: 3}
+  - {fileID: 8300000, guid: 68030269f2ef30346829b5e66edda2f6, type: 3}
+  - {fileID: 8300000, guid: a10d72b94857ab04cac898181e41d80c, type: 3}
+  - {fileID: 8300000, guid: 89dfe60cbac33f840a7508ea5b05247c, type: 3}
+  - {fileID: 8300000, guid: 89b80f9bf29068f4d82691c75b4b1ea0, type: 3}
+  - {fileID: 8300000, guid: a00a12e51256762438edcd02a4b89bf0, type: 3}
+  - {fileID: 8300000, guid: 9a3da2aeb3cdf2a4587bf4cd08b3b3a5, type: 3}
+  - {fileID: 8300000, guid: d18e1db7f9d420247a60e33f3a848934, type: 3}
+  - {fileID: 8300000, guid: a6cecd4bdaeba214585f7d64033e3612, type: 3}
+  - {fileID: 8300000, guid: fc6e1a5aa72a3294795876b84938837b, type: 3}
+  - {fileID: 8300000, guid: 58a38d948f65f0c45a6b821a09b4a58e, type: 3}
+  - {fileID: 8300000, guid: 67f7d0f80f3ad3a42b58efbafb8e8f3d, type: 3}
+  - {fileID: 8300000, guid: 4e5f4282aff493c439023a6d00b348c6, type: 3}
+  - {fileID: 8300000, guid: 2fdd03823b9093745963811d5f47f169, type: 3}
+  - {fileID: 8300000, guid: 658014e7a54c6194697ce22a8ccd6a24, type: 3}
+  - {fileID: 8300000, guid: d939082c0af0aaa4dbbb98ed12b30859, type: 3}
+  - {fileID: 8300000, guid: 536e756325ed3a344b2260d3da3eabc0, type: 3}
+  - {fileID: 8300000, guid: 1636c4db353182c47a8ad1da1b8982eb, type: 3}
+  typingSpeed: 0.005
+  volumeVariation: 0.1
+  pitchVariation: 0.1
+  soundFrequency: 1
+  skipSoundForSpaces: 1
+--- !u!82 &3537702614228494212
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595087871376421685}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7885289292835928984, guid: 8042f6c5fcec5fa48a18ff8043c59eea, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

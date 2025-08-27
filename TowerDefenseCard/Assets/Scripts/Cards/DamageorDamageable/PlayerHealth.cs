@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class PlayerHealth : BaseDamageable, ILoadable, ISavable
 {
     public static event Action OnPlayerDie;
+    public static event Action OnPlayerHit;
     public UnityEvent OnPlayerTakeDamageUnity;
 
     protected override void Awake()
@@ -13,7 +14,7 @@ public class PlayerHealth : BaseDamageable, ILoadable, ISavable
     public override void TakeDamage(float damage)
     {
         OnPlayerTakeDamageUnity?.Invoke();
-
+        OnPlayerHit?.Invoke();
         base.TakeDamage(damage);
     }
 

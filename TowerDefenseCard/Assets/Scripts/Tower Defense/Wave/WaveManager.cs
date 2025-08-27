@@ -30,11 +30,19 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     private int amountOfSpawnedEnemies;
     private int amountOfEnemiesInCurrentWave;
 
+    private bool playerWasHitThisWave = false;
+    public static event Action OnPlayerWasHitThisWave;
+    public static event Action OnPlayerWasNotHitThisWave;
+
     private void OnEnable()
     {
         GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+
+        PlayerHealth.OnPlayerHit += PlayerHealth_OnPlayerHit;
     }
+
+    private void PlayerHealth_OnPlayerHit() => playerWasHitThisWave = true;
 
     private void Start() => ShowOnlyFirstPathVisual();
 
@@ -74,6 +82,12 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         isWaveActive = false;
         currentWaveIndex++;
         OnWaveEnd?.Invoke();
+
+        if(!playerWasHitThisWave)
+            OnPlayerWasNotHitThisWave?.Invoke();
+        else
+            OnPlayerWasHitThisWave?.Invoke();
+
         ResetWaveParameters();
         HidePreviousWaveVisuals();
         ShowNextWaveVisuals();
@@ -84,6 +98,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         currentEnnemyCount = 0;
         currentWaveEnnemyIndex = 0;
         amountOfSpawnedEnemies = 0;
+        playerWasHitThisWave = false;
     }
 
     private bool AreAllEnemiesDefeated()

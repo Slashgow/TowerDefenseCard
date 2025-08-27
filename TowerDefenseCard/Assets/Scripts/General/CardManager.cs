@@ -61,6 +61,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public event Action<int, int> OnUpdateMaxNumberOfCards;
     public event Action<int, int> OnUpdateNumberOfDefenseCards;
     public event Action<int, int> OnUpdateMaxNumberOfDefenseCards;
+    public event Action OnMaxCardsReached;
+    public event Action OnMaxCardsDefenseReached;
 
     public int GetCurrentNumberOfCards()
     {
@@ -180,52 +182,36 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Reseller.Instance.CardOutline.enabled = false;
         cardsOnBoard.ForEach(card => card.CardOutline.enabled = false);
     }
+    private void UpdateCurrentNumberOfCard(int additionnalCard)
+    {
+        CurrentNumberOfCards += additionnalCard;
+        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
 
-    private void CardExploitation_OnDestroyCardExploitation()
-    {
-        CurrentNumberOfCards--;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
-    }
-
-    private void TowerDamageable_OnTowerDie()
-    {
-        CurrentNumberOfCards--;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
-    }
-    private void CraftingManager_OnDestroyCard()
-    {
-        CurrentNumberOfCards--;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
-    }
-    private void Reseller_OnResell(int numberOfReselledCard)
-    {
-        CurrentNumberOfCards -= numberOfReselledCard;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+        if(IsMaxCardsReached)
+            OnMaxCardsReached?.Invoke();
     }
 
-    private void Booster_OnOpenCardIdea()
-    {
-        CurrentNumberOfCards++;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
-    }
+    private void CardExploitation_OnDestroyCardExploitation() => UpdateCurrentNumberOfCard(-1);
+    private void TowerDamageable_OnTowerDie() => UpdateCurrentNumberOfCard(-1);
+    private void CraftingManager_OnDestroyCard() => UpdateCurrentNumberOfCard(-1);
+    private void Reseller_OnResell(int numberOfReselledCard) => UpdateCurrentNumberOfCard(-numberOfReselledCard);
+    private void Booster_OnOpenCardIdea() => UpdateCurrentNumberOfCard(1);
 
     private void Booster_OnOpenBooster(CardID cardID)
     {
         CheckCardDiscoveryState(cardID);
-        CurrentNumberOfCards++;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+        UpdateCurrentNumberOfCard(1);
     }
 
     private void CraftingManager_OnCraftComplete(int craftID, CardID outputCardID)
     {
-        Debug.Log("card manager - on craft complete");
+        //Debug.Log("card manager - on craft complete");
         CheckCardDiscoveryState(outputCardID);
 
         if (outputCardID == CardID.CURRENCY)
             return;
 
-        CurrentNumberOfCards++;
-        OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
+        UpdateCurrentNumberOfCard(1);
     }
 
     public void CheckCardDiscoveryState(CardID outputCardID)
@@ -288,17 +274,17 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         MaxCardsDefenseAllowed -= additionalCards;
         OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
     }
-    private void CardDefense_OnCreateAnyCardDefense()
+    private void CardDefense_OnCreateAnyCardDefense() => UpdateNumberOfDefenseCards(1);
+    private void CardDefense_OnDestroyAnyCardDefense() => UpdateNumberOfDefenseCards(-1);
+    private void UpdateNumberOfDefenseCards(int additionnalCard)
     {
-        CurrentNumberOfDefenseCards++;
+        CurrentNumberOfDefenseCards += additionnalCard;
         OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
+
+        if(IsMaxDefenseCardsReached)
+            OnMaxCardsDefenseReached?.Invoke();
     }
 
-    private void CardDefense_OnDestroyAnyCardDefense()
-    {
-        CurrentNumberOfDefenseCards--;
-        OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
-    }
 
     [ContextMenu("Set All Cards To Not Discovered")]
     public void UncheckDiscovered()

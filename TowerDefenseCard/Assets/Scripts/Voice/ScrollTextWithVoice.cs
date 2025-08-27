@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ScrollTextWithVoice : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textMeshProUGUI;
-
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private List<AudioClip> voiceDatas;
@@ -20,15 +18,29 @@ public class ScrollTextWithVoice : MonoBehaviour
     
     private bool isTyping;
     private Coroutine coroutine;
+    private TextMeshProUGUI textMeshProUGUI;
 
-    public void TypeText(string text)
+    public event Action OnHideTextComplete;
+
+    public void TypeText(string text, TextMeshProUGUI textMeshProUGUI)
     {
+        this.textMeshProUGUI = textMeshProUGUI;
         StopTypingText();
-        coroutine = StartCoroutine(TypeTextCoroutine(text));
+        coroutine = StartCoroutine(TypeTextCoroutine(text,0f));
+    }
+
+    public void TypeText(string text, TextMeshProUGUI textMeshProUGUI, float keepShowingDuration)
+    {
+        this.textMeshProUGUI = textMeshProUGUI;
+        StopTypingText();
+        coroutine = StartCoroutine(TypeTextCoroutine(text, keepShowingDuration));
     }
 
     public void StopTypingText()
     {
+        if(textMeshProUGUI != null)
+            textMeshProUGUI.text = string.Empty;
+
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -37,7 +49,7 @@ public class ScrollTextWithVoice : MonoBehaviour
         }
     }
 
-    private IEnumerator TypeTextCoroutine(string text)
+    private IEnumerator TypeTextCoroutine(string text, float keepShowingDuration)
     {
         isTyping = true;
         textMeshProUGUI.text = string.Empty;
@@ -82,6 +94,13 @@ public class ScrollTextWithVoice : MonoBehaviour
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
         isTyping = false;
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f + keepShowingDuration);
+
+        if(keepShowingDuration > 0f)
+        {
+            textMeshProUGUI.text = string.Empty;
+            OnHideTextComplete?.Invoke();
+        }
+           
     }
 }
