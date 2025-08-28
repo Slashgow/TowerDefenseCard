@@ -116,7 +116,7 @@ MonoBehaviour:
   autoSyncWithDamageor: 1
   pushbackCooldown: 5
   pushbackDistance: 4
-  pushbackChance: 100
+  pushbackChance: 50
   usePushbackRange: 0
   pushbackRange: 8
   pushbackFieldOfView: 90

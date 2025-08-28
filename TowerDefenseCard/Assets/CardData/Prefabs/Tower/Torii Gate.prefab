@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 3ea02f71e22c4b64f853f7c9d9856fe2, type: 2}
+    - target: {fileID: 2512170766306994665, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: combatMoveConditionner
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
@@ -76,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7035608351006909019, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
       value: Torii Gate
@@ -83,6 +91,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     - {fileID: 7001455847151747302, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+    - {fileID: 1987891837020106568, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

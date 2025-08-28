@@ -209,6 +209,116 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bg_card_marron
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1637
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb6da90749d11648a5752ace827c638
+      internalID: 1818768302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_boss_rose
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 957
+        width: 519
+        height: 676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b5837133b463f44bd5c358ae44824d
+      internalID: 2078790121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yami_alive
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1161
+        width: 454
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd45b7366a324d43b73dc05a576f9b9
+      internalID: 1184859872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yami_dead
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1161
+        width: 454
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e913072611ee10f4b95c237d33afb277
+      internalID: 43710019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shuriken
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 1487
+        width: 117
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5175c3764ad8f04abe0f95dce2221f2
+      internalID: 1121975513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -227,6 +337,11 @@ TextureImporter:
       Bamboo_plank_factory: -1123946058749082279
       Kami_essence_factory: -4162777096168388130
       Sakura_brick_factory: -9197449427629750923
+      Yami_alive: 1184859872
+      Yami_dead: 43710019
+      bg_boss_rose: 2078790121
+      bg_card_marron: 1818768302
+      shuriken: 1121975513
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

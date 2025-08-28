@@ -11,6 +11,7 @@ public class CombatMoveCondtionner : MonoBehaviour
     [SerializeField] private CardMover cardMover;
     
     private BaseDamageor damageor;
+    private BaseHealer healer;
 
     private Timer cooldownTimer;
 
@@ -21,6 +22,7 @@ public class CombatMoveCondtionner : MonoBehaviour
     private void Awake()
     {
         damageor = GetComponent<BaseDamageor>();
+        healer = GetComponent<BaseHealer>();
 
         cardMover.OnPointerDownEvent += CardMover_OnPointerDownEvent;
         cardMover.OnPointerUpEvent += CardMover_OnPointerUpEvent;
@@ -39,7 +41,11 @@ public class CombatMoveCondtionner : MonoBehaviour
     private void OnStartCraftMode()
     {
         cardMover.enabled = true;
-        damageor.StartAttack();
+
+        if(damageor != null)
+            damageor.StartAttack();
+        else if(healer != null)
+            healer.StartHeal();
     }
 
     private void CardMover_OnPointerUpEvent()
@@ -47,7 +53,11 @@ public class CombatMoveCondtionner : MonoBehaviour
         if(GameManager.Instance.CurrentGameMode != GameMode.COMBAT)
             return;
 
-        damageor.StartAttack();
+        if(damageor != null)
+            damageor.StartAttack();
+        else if(healer != null)
+            healer.StartHeal();
+
         cardMover.DisableAutoMoveOnEnable();
         cardMover.enabled = false;
         OnStartCooldown?.Invoke();
@@ -62,6 +72,9 @@ public class CombatMoveCondtionner : MonoBehaviour
         if (GameManager.Instance.CurrentGameMode != GameMode.COMBAT)
             return;
 
-        damageor.StopAttack();
+        if(damageor != null)
+            damageor.StopAttack();
+        else if(healer != null)
+            healer.StopHeal();
     }
 }

@@ -50,6 +50,9 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
 
     public abstract bool CanHeal();
 
+    public void StartHeal() => canHealNow = true;
+    public void StopHeal() => canHealNow = false;
+
     public virtual void PerformHeal(IHealable target)
     {
         if (target != null && target.IsAlive && CanHeal())

@@ -116,7 +116,7 @@ MonoBehaviour:
   autoSyncWithDamageor: 1
   stunCooldown: 1
   stunDuration: 3
-  stunChance: 50
+  stunChance: 20
   useStunRange: 0
   stunRange: 8
   stunFieldOfView: 90

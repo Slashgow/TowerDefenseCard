@@ -65,7 +65,7 @@ public class ContinuousCardMovement : AutoCardMovement
         transform.position = newPosition;
     }
 
-    private void UpdateTilt()
+    protected void UpdateTilt()
     {
         if (!canTilt || tiltSpeed <= 0f || tiltAmount <= 0f) 
             return;

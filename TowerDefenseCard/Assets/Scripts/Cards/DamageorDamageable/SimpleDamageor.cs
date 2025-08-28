@@ -10,7 +10,7 @@ public class SimpleDamageor : BaseDamageor
     [SerializeField] private bool useProjectile = false;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField, Range(0, 10)] private int numberOfProjectilePerAttack = 1;
-    [SerializeField, Range(0f, 20f)] private float projectileSpeed = 5f;
+    [SerializeField, Range(0f, 40f)] private float projectileSpeed = 5f;
 
     protected override void Attack()
     {

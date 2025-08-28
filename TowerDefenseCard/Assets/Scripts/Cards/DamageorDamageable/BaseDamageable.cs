@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
 {
-    [SerializeField, Range(0, 300)] private float maxHealth = 20;
+    [SerializeField, Range(0, 600)] private float maxHealth = 20;
     public float MaxHealth
     {
         get

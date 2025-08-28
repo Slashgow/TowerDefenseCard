@@ -116,7 +116,7 @@ MonoBehaviour:
   autoSyncWithDamageor: 1
   fearCooldown: 5
   fearDuration: 1.5
-  fearChance: 100
+  fearChance: 30
   useFearRange: 0
   fearRange: 8
   fearFieldOfView: 90

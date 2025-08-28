@@ -9,10 +9,13 @@ public abstract class AutoCardMovement : BaseCardMovement
 
     public float MoveSpeed => moveSpeed;
     protected SplineID splineID = SplineID.NONE;
+    public SplineID SplineID => splineID;
+
     protected Spline spline;
     protected float splineLength;
     protected bool isMoving = false;
     protected float currentDistance = 0f;
+    public float CurrentDistance => currentDistance;
     protected bool hasCompletedFirstLoop = false;
 
     private void Start()
