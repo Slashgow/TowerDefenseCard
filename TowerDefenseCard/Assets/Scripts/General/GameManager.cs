@@ -18,6 +18,8 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     public bool IsPaused { get; private set; }
     public float CurrentGameSpeed { get; private set; }
 
+    public bool isFinished { get; private set; }
+
     public UnityEvent OnStartCraftModeUnity;
     public event Action OnStartCraftMode;
 
@@ -29,6 +31,8 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
 
     public UnityEvent OnEndCombatModeUnity;
     public event Action OnEndCombatMode;
+
+    public event Action OnDefeatAllWaves;
 
     public event Action OnPause; 
     public event Action OnResume;
@@ -52,6 +56,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         SceneLoader.Instance.OnSceneLoaded += SceneLoader_OnSceneLoaded;
         CurrentGameState = GameState.PLAY;
         CurrentGameSpeed = 1f;
+        isFinished = false;
         Time.timeScale = CurrentGameSpeed;
         //StartCraftMode();
     }
@@ -61,7 +66,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
 
-        PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
+        //PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
 
         yield return new WaitForSeconds(1f);
         if (CurrentGameMode == GameMode.CRAFTING)
@@ -73,7 +78,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     private void OnDestroy()
     {
         SceneLoader.Instance.OnSceneLoaded -= SceneLoader_OnSceneLoaded;
-        PlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
+        //PlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
     }
 
     private void WaveManager_OnWaveEnd()
@@ -108,7 +113,16 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         else if (CurrentGameMode == GameMode.COMBAT)
         {
             EndCombatMode();
-            StartCraftMode();
+
+            if (WaveManager.Instance.IsAllWavesCompleted)
+            {
+                isFinished = true;
+                OnDefeatAllWaves?.Invoke();
+            }
+            else
+            {
+                StartCraftMode();
+            }  
         }
     }
 
@@ -204,7 +218,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         CurrentGameSpeed = 1f;
         Time.timeScale = 1f;
     }
-    private void CardPlayerHealth_OnPlayerDie()
+    public void SaveCardsAndBackToMainMenu()
     {
         GameSaveSystem.ResetSave();
         CardManager.Instance.TrySaveDiscoveredCards();

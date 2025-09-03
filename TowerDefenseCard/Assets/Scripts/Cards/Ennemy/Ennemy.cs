@@ -17,7 +17,10 @@ public class Ennemy : Card, ICurrencyDropper
 
     private void OnDestroy() => damageable.OnDie -= Damageable_OnDie;
 
-    private void Damageable_OnDie() => DropCurrency();
+    protected virtual void Damageable_OnDie()
+    {
+        DropCurrency();
+    }
 
     public void DropCurrency()
     {

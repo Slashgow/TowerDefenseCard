@@ -144,6 +144,21 @@ MonoBehaviour:
     m_Localized: Wave
     m_Metadata:
       m_Items: []
+  - m_Id: 24524943222239232
+    m_Localized: 'Game Over
+
+      Your Kingdom has crambled...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24525334974427136
+    m_Localized: 'Congratulations!
+
+      You defeated Yami and survived all the
+      waves.
+
+      Thank you for playing the game!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

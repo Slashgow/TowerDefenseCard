@@ -14,6 +14,7 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI transitionText;
     [SerializeField] private LocalizedString startCombatPhaseLocalizedString, startCraftPhaseLocalizedString, WaveLocalizedString;
+    [SerializeField] private LocalizedString defeatAllWavesLocalizedString, playerDieLocalizedString;
     [SerializeField] private UIPageController uIPageController;
     [SerializeField] private UITime uITime;
 
@@ -34,7 +35,11 @@ public class UIPageGameModeTransition : UIPage
     {
         GameManager.Instance.OnEndCraftMode += GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
+        GameManager.Instance.OnDefeatAllWaves += GameManager_OnDefeatAllWaves;
+        PlayerHealth.OnPlayerDie += PlayerHealth_OnPlayerDie;
     }
+
+
 
     private void OnDestroy()
     {
@@ -42,37 +47,53 @@ public class UIPageGameModeTransition : UIPage
         {
             GameManager.Instance.OnEndCraftMode -= GameManager_OnStartCombatMode;
             GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
+            GameManager.Instance.OnDefeatAllWaves -= GameManager_OnDefeatAllWaves;
         }
+        PlayerHealth.OnPlayerDie -= PlayerHealth_OnPlayerDie;
     }
 
-    private void GameManager_OnStartCraftMode() => DoTransitionEffect(true);
-    private void GameManager_OnStartCombatMode() => DoTransitionEffect(false);
+    private void GameManager_OnStartCraftMode() => DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString());
+    private void GameManager_OnStartCombatMode()
+    {
+        string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
+        text += startCombatPhaseLocalizedString.GetLocalizedString();
+        DoTransitionEffect(text);
+    }
 
-    private void DoTransitionEffect(bool isStartCraftMode)
+    private void GameManager_OnDefeatAllWaves() => DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString());
+    private void PlayerHealth_OnPlayerDie() => DoTransitionEffect(playerDieLocalizedString.GetLocalizedString());
+
+    private void DoTransitionEffect(string text)
     {
         Timer.Register(transitionDuration, onComplete: () =>
         {
-           DoFadeOutEffect(isStartCraftMode);
+           DoFadeOutEffect(text);
         }, useRealTime: true);
 
         uITime.OnPause();
         uIPageController.ShowPage(this);
         FadeBackgroundAlpha(startAlpha, endAlpha);
-        SetTransitionText(isStartCraftMode);
+        SetTransitionText(text);
         textSizeEffect.DoEffect();
     }
 
-    private void DoFadeOutEffect(bool isStartCraftMode)
+    private void DoFadeOutEffect(string text)
     {
         Timer.Register(textSizeEffect.TextSizeDuration, onComplete: () =>
         {
             uITime.OnResume(true);
             Hide();
+
+            if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)
+            {
+                GameManager.Instance.SaveCardsAndBackToMainMenu();
+            }
+
             logger.Log("Transition Finished", this);
         }, useRealTime: true);
 
         FadeBackgroundAlpha(endAlpha, startAlpha);
-        SetTransitionText(isStartCraftMode);
+        SetTransitionText(text);
         textSizeEffect.ReverseEffect();
     }
 
@@ -87,17 +108,6 @@ public class UIPageGameModeTransition : UIPage
             SetUpdate(true);
     }
 
-
-    private void SetTransitionText(bool isStartCraftMode)
-    {
-
-        if (isStartCraftMode)
-            transitionText.text = startCraftPhaseLocalizedString.GetLocalizedString();
-        else
-        {
-            transitionText.text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
-            transitionText.text += startCombatPhaseLocalizedString.GetLocalizedString();
-        }  
-    }
+    private void SetTransitionText(string text) => transitionText.text = text;
 
 }

@@ -7,6 +7,7 @@ public class UIQuest : MonoBehaviour
     [SerializeField] private Toggle toggleIsDone;
     [SerializeField] private TextMeshProUGUI questDescriptionText;
     [SerializeField] private OutlineWidthEffect outlineEffect;
+    [SerializeField] private ParticleSystem completeParticleSystem;
 
     private Quest quest;
     public Quest Quest => quest;
@@ -18,6 +19,7 @@ public class UIQuest : MonoBehaviour
         toggleIsDone.isOn = isQuestDone;
         this.quest = quest;
         toggleIsDone.interactable = false;
+        completeParticleSystem.gameObject.SetActive(false);
 
         if (outlineEffect != null)
         {
@@ -29,6 +31,8 @@ public class UIQuest : MonoBehaviour
     public void SetQuestAsCompleted()
     {
         toggleIsDone.isOn = true;
+        completeParticleSystem.gameObject.SetActive(true);
+        completeParticleSystem.Play();
 
         if (IsHighlighted)
             StopHighlight();

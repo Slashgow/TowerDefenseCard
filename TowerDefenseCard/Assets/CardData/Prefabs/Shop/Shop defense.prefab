@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.size
@@ -43,15 +43,15 @@ PrefabInstance:
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[2].cardPrefab
       value: 
-      objectReference: {fileID: 1648138419762282337, guid: 19b387a07e75f364fa19081d0fe4340f, type: 3}
+      objectReference: {fileID: 6634916277263121288, guid: e75577e0fcc16394f8fd71a16d27b062, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[3].cardPrefab
       value: 
-      objectReference: {fileID: 1648138419762282337, guid: b31a0c5a5c1ed2845872979f5837b967, type: 3}
+      objectReference: {fileID: 1648138419762282337, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[4].cardPrefab
       value: 
-      objectReference: {fileID: 1648138419762282337, guid: 9a8f5d0e14ca93c43ae650fa6b834d14, type: 3}
+      objectReference: {fileID: 1648138419762282337, guid: fd07456cf21c41349a0b2242a4cc464d, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[5].cardPrefab
       value: 
@@ -66,23 +66,23 @@ PrefabInstance:
       objectReference: {fileID: 6634916277263121288, guid: cf836f3f3311e5341bd450efc3af4986, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[0].dropPercentage
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[1].dropPercentage
-      value: 80
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[2].dropPercentage
-      value: 4
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[3].dropPercentage
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[4].dropPercentage
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[5].dropPercentage

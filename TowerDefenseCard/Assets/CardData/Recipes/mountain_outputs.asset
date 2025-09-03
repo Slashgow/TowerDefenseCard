@@ -26,4 +26,10 @@ MonoBehaviour:
     dropChance: 10
   - cardID: 3
     cardPrefab: {fileID: 1648138419762282337, guid: 9e18453458afe99488eebfebe58f7e3a, type: 3}
-    dropChance: 90
+    dropChance: 50
+  - cardID: 59
+    cardPrefab: {fileID: 1648138419762282337, guid: fd07456cf21c41349a0b2242a4cc464d, type: 3}
+    dropChance: 5
+  - cardID: 59
+    cardPrefab: {fileID: 1648138419762282337, guid: 2efaf4726d1915e4daf365e1b06f1ffb, type: 3}
+    dropChance: 35

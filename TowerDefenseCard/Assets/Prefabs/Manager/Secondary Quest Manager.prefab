@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7946563891773330033}
   - component: {fileID: 525439848770912124}
   m_Layer: 0
-  m_Name: Quest 1_Chest
+  m_Name: Quest 1_Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,27 +418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logger: {fileID: 671026881947969945}
   availableQuests:
-  - questId: Chest
-    title:
-      m_TableReference:
-        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
-      m_TableEntryReference:
-        m_KeyId: 20785262592
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    description:
-      m_TableReference:
-        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
-      m_TableEntryReference:
-        m_KeyId: 71767027712
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    condition: {fileID: 525439848770912124}
-    goalCount: 1
   - questId: Barn
     title:
       m_TableReference:
@@ -459,6 +438,27 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     condition: {fileID: 1506988919479403828}
+    goalCount: 1
+  - questId: Chest
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 20785262592
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:19a162fd40b7956449e63f69762674b7
+      m_TableEntryReference:
+        m_KeyId: 71767027712
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 525439848770912124}
     goalCount: 1
   - questId: Warehouse
     title:
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 3665671325359207774}
   - component: {fileID: 1506988919479403828}
   m_Layer: 0
-  m_Name: Quest 2_Barn
+  m_Name: Quest 2_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
