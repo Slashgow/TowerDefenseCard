@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 {
@@ -13,6 +12,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     private int remainingCards;
     public int RemainingCards => remainingCards;
     private Shop shop;
+    public static event Action OnDestroyBooster;
     public static event Action<CardID> OnOpenBooster;
     public UnityEvent OnOpenBoosterUnity;
     public static event Action OnOpenCardIdea;
@@ -58,6 +58,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
             if (remainingCards <= 0)
             {
+                OnDestroyBooster?.Invoke();
                 Destroy(gameObject);
             }
         }

@@ -81,7 +81,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         //PlayerHealth.OnPlayerDie -= CardPlayerHealth_OnPlayerDie;
     }
 
-    private void WaveManager_OnWaveEnd()
+    private void WaveManager_OnWaveEnd(int currentWaveIndex)
     {
         SwitchGameMode();
     }

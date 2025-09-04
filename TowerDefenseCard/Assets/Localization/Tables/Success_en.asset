@@ -1,0 +1,271 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Success_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 48be452218381ca4485341b272b6e3a8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 21770924032
+    m_Localized: Open your first booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21808672768
+    m_Localized: Open 50 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061376
+    m_Localized: Open 250 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061377
+    m_Localized: Open 500 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061378
+    m_Localized: Open 1000 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061379
+    m_Localized: Open 100 booster during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061380
+    m_Localized: Increase your card storage to 30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061381
+    m_Localized: Increase your card storage to 50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061382
+    m_Localized: Increase your card storage to 100
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061383
+    m_Localized: Survive to the first wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061384
+    m_Localized: Survive to the third wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061385
+    m_Localized: Survive to the sixth wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061386
+    m_Localized: Defeat the final boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061387
+    m_Localized: Craft your first card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061388
+    m_Localized: Craft a total of 250 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061389
+    m_Localized: Craft a total of 1000 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061390
+    m_Localized: Craft a total of 10 000 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061391
+    m_Localized: Sell a total of 100 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061392
+    m_Localized: Sell a total of 500 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061393
+    m_Localized: Sell a total of 2500 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061394
+    m_Localized: Sell a total of 5000 cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061395
+    m_Localized: Craft your first factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061396
+    m_Localized: Craft 4 different factories during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061397
+    m_Localized: Craft 8 different factories during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061398
+    m_Localized: Craft a temple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061399
+    m_Localized: Craft your first defense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061400
+    m_Localized: Craft 4 defense different during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061401
+    m_Localized: Craft 8 defense different during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061402
+    m_Localized: Accumulate 100 ink during a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061403
+    m_Localized: Discover all cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061404
+    m_Localized: Craft a chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061405
+    m_Localized: Booster Addict 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061406
+    m_Localized: Booster Addict 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061407
+    m_Localized: Booster Addict 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061408
+    m_Localized: Booster Addict 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061409
+    m_Localized: Reroller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061410
+    m_Localized: Storage 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061411
+    m_Localized: Storage 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061412
+    m_Localized: Storage 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061413
+    m_Localized: Survivor 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061414
+    m_Localized: Survivor 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061415
+    m_Localized: Survivor 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061416
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061417
+    m_Localized: Crafter 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061418
+    m_Localized: Crafter 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061419
+    m_Localized: Crafter 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061420
+    m_Localized: Crafter 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061421
+    m_Localized: Seller 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061422
+    m_Localized: Seller 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061423
+    m_Localized: Seller 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061424
+    m_Localized: Seller 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061425
+    m_Localized: Industrialist 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061426
+    m_Localized: Industrialist 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061427
+    m_Localized: Industrialist 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061428
+    m_Localized: Kami Seeker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061429
+    m_Localized: Defender 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061430
+    m_Localized: Defender 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061431
+    m_Localized: Defender 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061432
+    m_Localized: Thrifty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061433
+    m_Localized: Explorator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061434
+    m_Localized: Ink Collecter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326860402688
+    m_Localized: Newbie
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

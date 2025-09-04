@@ -2,32 +2,174 @@
 
 public class SuccessManager : MonoSingleton<SuccessManager>
 {
+    [Header("Newbie")]
+    [SerializeField] private SuccessData openFirstBoosterSuccess;
+
+    [Header("Booster Addict")]
+    [SerializeField] private SuccessData open50BoosterSuccess;
+    [SerializeField] private SuccessData open250BoosterSuccess;
+    [SerializeField] private SuccessData open500BoosterSuccess;
+    [SerializeField] private SuccessData open1000BoosterSuccess;
+
+    [Header("Reroller")]
+    [SerializeField] private SuccessData open100BoosterDuringAGame;
+
+    [Header("Storage")]
+    [SerializeField] private SuccessData cardStorage30Success;
+    [SerializeField] private SuccessData cardStorage50Success;
+    [SerializeField] private SuccessData cardStorage100Success;
+
+    [Header("Survivor")]
+    [SerializeField] private SuccessData wave1Success;
+    [SerializeField] private SuccessData wave3Success;
+    [SerializeField] private SuccessData wave6Success;
+
+    [Header("General")]
+    [SerializeField] private SuccessData waveBossSuccess;
+
+    [Header("Crafter")]
     [SerializeField] private SuccessData firstCraftSuccess;
-    public SuccessData FirstCraftSuccess => firstCraftSuccess;
+    [SerializeField] private SuccessData craft250Cards;
+    [SerializeField] private SuccessData craft1000Cards;
+    [SerializeField] private SuccessData craft10000Cards;
 
+    [Header("Seller")]
+    [SerializeField] private SuccessData sell100CardsSuccess;
+    [SerializeField] private SuccessData sell500CardsSuccess;
+    [SerializeField] private SuccessData sell2500CardsSuccess;
+    [SerializeField] private SuccessData sell5000CardsSuccess;
+
+    [Header("Industrialist")]
     [SerializeField] private SuccessData firstFactorySuccess;
-    public SuccessData FirstFactorySuccess => firstFactorySuccess;
+    [SerializeField] private SuccessData craft4DifferentFactoriesSuccess;
+    [SerializeField] private SuccessData craft8DifferentFactoriesSuccess;
 
+    [Header("Kami Seeker")]
     [SerializeField] private SuccessData craftTempleSuccess;
-    public SuccessData CraftTempleSuccess => craftTempleSuccess;
 
+    [Header("Defender")]
     [SerializeField] private SuccessData craftFirstDefenseSuccess;
+    [SerializeField] private SuccessData craft4DifferentDefenseSuccess;
+    [SerializeField] private SuccessData craft8DifferentDefenseSuccess;
+
+    [Header("Thrifty")]
+    [SerializeField] private SuccessData accumulate100InkAGameSuccess;
+
+    [Header("Explorator")]
+    [SerializeField] private SuccessData discoverAllCardsSuccess;
+
+    [Header("Ink Collecter")]
+    [SerializeField] private SuccessData craftChestSuccess;
+
+    public SuccessData CraftTempleSuccess => craftTempleSuccess;
+    public SuccessData FirstCraftSuccess => firstCraftSuccess;
+    public SuccessData FirstFactorySuccess => firstFactorySuccess;
     public SuccessData CraftFirstDefenseSuccess => craftFirstDefenseSuccess;
+
+    private SuccessStatData successStatData;
 
     private void Start()
     {
+        ShopManager.Instance.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
+        Reseller.OnResell += Reseller_OnResell;
+        WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
+        CardManager.Instance.OnUpdateMaxNumberOfCards += CardManager_OnUpdateMaxNumberOfCards;
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftCompleted;
+        Booster.OnDestroyBooster += Booster_OnDestroyBooster;
     }
 
     private void OnDestroy()
     {
+        Booster.OnDestroyBooster -= Booster_OnDestroyBooster;
+        Reseller.OnResell -= Reseller_OnResell;
+
         if (CraftingManager.HasInstance)
             CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftCompleted;
+
+        if(CardManager.HasInstance)
+            CardManager.Instance.OnUpdateMaxNumberOfCards -= CardManager_OnUpdateMaxNumberOfCards;
+
+        if(WaveManager.HasInstance)
+            WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
+
+        if(ShopManager.HasInstance)
+            ShopManager.Instance.OnUpdatePlayerCoin -= ShopManager_OnUpdatePlayerCoin;
+    }
+
+    private void ShopManager_OnUpdatePlayerCoin(int currentPlayerCoin)
+    {
+        if (currentPlayerCoin >= 100)
+            accumulate100InkAGameSuccess.Complete();
+    }
+
+    private void Reseller_OnResell(int cardCount)
+    {
+        successStatData.soldCardCounterAllTime += cardCount;
+
+        if (successStatData.soldCardCounterAllTime >= 5000)
+            sell5000CardsSuccess.Complete();
+        else if (successStatData.soldCardCounterAllTime >= 2500)
+            sell2500CardsSuccess.Complete();
+        else if (successStatData.soldCardCounterAllTime >= 500)
+            sell500CardsSuccess.Complete();
+        else if (successStatData.soldCardCounterAllTime >= 100)
+            sell100CardsSuccess.Complete();
+    }
+
+
+    private void WaveManager_OnWaveEnd(int currentWaveIndex)
+    {
+        if (WaveManager.Instance.IsAllWavesCompleted)
+            waveBossSuccess.Complete();
+        else if (currentWaveIndex > 6)
+            wave6Success.Complete();
+        else if (currentWaveIndex > 3)
+            wave3Success.Complete();
+        else if (currentWaveIndex > 1)
+            wave1Success.Complete();
+    }
+
+    private void CardManager_OnUpdateMaxNumberOfCards(int currentNumberOfCard, int maxCardsAllowed)
+    {
+        if (maxCardsAllowed >= 100)
+            cardStorage100Success.Complete();
+        else if (maxCardsAllowed >= 50)
+            cardStorage50Success.Complete();
+        else if (maxCardsAllowed >= 30)
+            cardStorage30Success.Complete();
+    }
+
+    private void Booster_OnDestroyBooster()
+    {
+        successStatData.boosterOpenedCounterAllTime++;
+        successStatData.boosterOpenedCounterInGame++;
+
+        if(successStatData.boosterOpenedCounterInGame > 100)
+            open100BoosterDuringAGame.Complete();
+
+        if(successStatData.boosterOpenedCounterAllTime >= 1000)
+            open1000BoosterSuccess.Complete();
+        else if(successStatData.boosterOpenedCounterAllTime >= 500)
+            open500BoosterSuccess.Complete();
+        else if(successStatData.boosterOpenedCounterAllTime >= 250)
+            open250BoosterSuccess.Complete();
+        else if (successStatData.boosterOpenedCounterAllTime >= 1)
+            openFirstBoosterSuccess.Complete();
     }
 
     private void CraftingManager_OnCraftCompleted(int craftID, CardID outputCardID)
     {
-        firstCraftSuccess.Complete();
+        successStatData.craftedCardCounterAllTime++;
+
+        if(successStatData.craftedCardCounterAllTime >= 10000)
+            craft10000Cards.Complete();
+        else if(successStatData.craftedCardCounterAllTime >= 1000)
+            craft1000Cards.Complete();
+        else if (successStatData.craftedCardCounterAllTime >= 250)
+            craft250Cards.Complete();
+        else if (successStatData.craftedCardCounterAllTime >= 1)
+            firstCraftSuccess.Complete();
+
 
         switch (outputCardID)
         {
@@ -44,7 +186,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.SAKURA_BRICK:
                 break;
             case CardID.ARCHER:
-                craftFirstDefenseSuccess.Complete();
+                CheckSuccessDefense(CardID.ARCHER);
                 break;
             case CardID.TORII_GATE:
                 break;
@@ -53,10 +195,10 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.ONI:
                 break;
             case CardID.BAMBOO_FACTORY:
-                firstFactorySuccess.Complete();
+                CheckSuccessFactories(CardID.BAMBOO_FACTORY);
                 break;
             case CardID.SAKURA_FACTORY:
-                firstFactorySuccess.Complete();
+                CheckSuccessFactories(CardID.SAKURA_FACTORY);
                 break;
             case CardID.SHOP:
                 break;
@@ -69,27 +211,31 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.KAMI_ESSENCE:
                 break;
             case CardID.JADE_FACTORY:
-                firstFactorySuccess.Complete();
+                CheckSuccessFactories(CardID.JADE_FACTORY);
                 break;
             case CardID.SPIRIT_FACTORY:
-                firstFactorySuccess.Complete();
+                CheckSuccessFactories(CardID.SPIRIT_FACTORY);
                 break;
             case CardID.HACHIMAN:
+                CheckSuccessDefense(CardID.HACHIMAN);
                 break;
             case CardID.AKITA_INU:
-                craftFirstDefenseSuccess.Complete();
+                CheckSuccessDefense(CardID.AKITA_INU);
                 break;
             case CardID.KOMAINU:
+                CheckSuccessDefense(CardID.KOMAINU);
                 break;
             case CardID.RED_CROWN_CRATE:
-                craftFirstDefenseSuccess.Complete();
+                CheckSuccessDefense(CardID.RED_CROWN_CRATE);
                 break;
             case CardID.PHOENIX:
+                CheckSuccessDefense(CardID.PHOENIX);
                 break;
             case CardID.WHITE_SNAKE:
-                craftFirstDefenseSuccess.Complete();
+                CheckSuccessDefense(CardID.WHITE_SNAKE);
                 break;
             case CardID.DRAGON:
+                CheckSuccessDefense(CardID.DRAGON);
                 break;
             case CardID.RICE:
                 break;
@@ -134,6 +280,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.MONTAIN:
                 break;
             case CardID.OKUNINUSHI:
+                CheckSuccessDefense(CardID.OKUNINUSHI);
                 break;
             case CardID.TEMPLE:
                 craftTempleSuccess.Complete();
@@ -141,14 +288,19 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.YUREI:
                 break;
             case CardID.CHEST:
+                craftChestSuccess.Complete();
                 break;
             case CardID.FUJIN:
+                CheckSuccessDefense(CardID.FUJIN);
                 break;
             case CardID.RAIJIN:
+                CheckSuccessDefense(CardID.RAIJIN);
                 break;
             case CardID.AMATERASU:
+                CheckSuccessDefense(CardID.AMATERASU);
                 break;
             case CardID.SUSANOO:
+                CheckSuccessDefense(CardID.SUSANOO);
                 break;
             case CardID.YAMATA_NO_OROCHI:
                 break;
@@ -161,13 +313,43 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             case CardID.STRAW:
                 break;
             case CardID.KAMI_FACTORY:
+                CheckSuccessFactories(CardID.KAMI_FACTORY);
                 break;
             case CardID.AMETHYSTE_FACTORY:
+                CheckSuccessFactories(CardID.AMETHYSTE_FACTORY);
                 break;
             case CardID.BAMBOO_PLANK_FACTORY:
+                CheckSuccessFactories(CardID.BAMBOO_PLANK_FACTORY);
                 break;
             case CardID.SAKURA_BRICK_FACTORY:
+                CheckSuccessFactories(CardID.SAKURA_BRICK_FACTORY);
                 break;
         }
+    }
+
+    private void CheckSuccessFactories(CardID factoryID)
+    {
+        if (!successStatData.factoriesIDThisGame.Contains(factoryID))
+            successStatData.factoriesIDThisGame.Add(factoryID);
+
+        if (successStatData.factoriesIDThisGame.Count >= 8)
+            craft8DifferentFactoriesSuccess.Complete();
+        else if (successStatData.factoriesIDThisGame.Count >= 4)
+            craft4DifferentFactoriesSuccess.Complete();
+        else if (successStatData.factoriesIDThisGame.Count >= 1)
+            firstFactorySuccess.Complete();
+    }
+
+    private void CheckSuccessDefense(CardID defenseID)
+    {
+        if (!successStatData.defenseIDThisGame.Contains(defenseID))
+            successStatData.defenseIDThisGame.Add(defenseID);
+
+        if (successStatData.defenseIDThisGame.Count >= 8)
+            craft8DifferentDefenseSuccess.Complete();
+        else if (successStatData.defenseIDThisGame.Count >= 4)
+            craft4DifferentDefenseSuccess.Complete();
+        else if (successStatData.defenseIDThisGame.Count >= 1)
+            craftFirstDefenseSuccess.Complete();
     }
 }

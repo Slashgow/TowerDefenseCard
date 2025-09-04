@@ -1,0 +1,271 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Success_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 48be452218381ca4485341b272b6e3a8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 21770924032
+    m_Localized: Ouvre ton premier booster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21808672768
+    m_Localized: Ouvre 50 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061376
+    m_Localized: Ouvre 250 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061377
+    m_Localized: Ouvre 500 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061378
+    m_Localized: Ouvre 1000 boosters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061379
+    m_Localized: Ouvre 100 boosters en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061380
+    m_Localized: "Augmente ton stockage de cartes \xE0 30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061381
+    m_Localized: "Augmente ton stockage de cartes \xE0 50"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061382
+    m_Localized: "Augmente ton stockage de cartes \xE0 100"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061383
+    m_Localized: "Survis \xE0 la premi\xE8re vague"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061384
+    m_Localized: "Survis \xE0 la troisi\xE8me vague"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061385
+    m_Localized: "Survis \xE0 la sixi\xE8me vague"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061386
+    m_Localized: Terrasse le boss final
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061387
+    m_Localized: "Craft ta premi\xE8re carte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061388
+    m_Localized: Craft un total de 250 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061389
+    m_Localized: Craft un total de 1000 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061390
+    m_Localized: Craft un total de 10 000 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061391
+    m_Localized: Vends un total de 100 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061392
+    m_Localized: Vends un total de 500 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061393
+    m_Localized: Vends un total de 2500 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061394
+    m_Localized: Vends un total de 5000 cartes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061395
+    m_Localized: "Craft ta premi\xE8re usine"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061396
+    m_Localized: "Craft 4 usines diff\xE9rentes en une partie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061397
+    m_Localized: "Craft 8 usines diff\xE9rentes en une partie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061398
+    m_Localized: Craft un temple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061399
+    m_Localized: "Craft ta premi\xE8re d\xE9fense"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061400
+    m_Localized: "Craft 4 d\xE9fense diff\xE9rentes en une partie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061401
+    m_Localized: "Craft 8 d\xE9fense diff\xE9rentes en une partie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061402
+    m_Localized: Accumule 100 encres en une partie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061403
+    m_Localized: "D\xE9couvre toutes les cartes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061404
+    m_Localized: Craft un coffre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061405
+    m_Localized: Accro aux boosters 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061406
+    m_Localized: Accro aux boosters 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061407
+    m_Localized: Accro aux boosters 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061408
+    m_Localized: Accro aux boosters 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061409
+    m_Localized: Reroller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061410
+    m_Localized: Stockage 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061411
+    m_Localized: Stockage 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061412
+    m_Localized: Stockage 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061413
+    m_Localized: Survivant 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061414
+    m_Localized: Survivant 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061415
+    m_Localized: Survivant 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061416
+    m_Localized: "G\xE9n\xE9ral"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061417
+    m_Localized: Crafter 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061418
+    m_Localized: Crafter 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061419
+    m_Localized: Crafter 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061420
+    m_Localized: Crafter 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061421
+    m_Localized: Vendeur 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061422
+    m_Localized: Vendeur 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061423
+    m_Localized: Vendeur 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061424
+    m_Localized: Vendeur 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061425
+    m_Localized: Industriel 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061426
+    m_Localized: Industriel 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061427
+    m_Localized: Industriel 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061428
+    m_Localized: Industriel 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061429
+    m_Localized: "D\xE9fenseur 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061430
+    m_Localized: "D\xE9fenseur 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061431
+    m_Localized: "D\xE9fenseur 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061432
+    m_Localized: Econome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061433
+    m_Localized: Explorateur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21817061434
+    m_Localized: Collectionneur d'encre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326860402688
+    m_Localized: Novice
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

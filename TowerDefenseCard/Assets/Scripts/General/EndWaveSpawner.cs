@@ -4,12 +4,14 @@ public class EndWaveSpawner : CardSpawner
     {
         base.Start();
 
-        WaveManager.Instance.OnWaveEnd += SpawnCard;
+        WaveManager.Instance.OnWaveEnd += SpawnCardAtEndOfWave;
     }
 
     private void OnDestroy()
     {
         if (WaveManager.HasInstance)
-            WaveManager.Instance.OnWaveEnd -= SpawnCard;
+            WaveManager.Instance.OnWaveEnd -= SpawnCardAtEndOfWave;
     }
+
+    public void SpawnCardAtEndOfWave(int waveIndex) => SpawnCard();
 }

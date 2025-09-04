@@ -19,7 +19,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     private int indexSortingOrder = 0;
 
     public event Action<int> OnWaveStart;
-    public event Action OnWaveEnd;
+    public event Action<int> OnWaveEnd;
 
     public int NumberOfWaves => waveDataPaths.Length;
     public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataPaths.Length);
@@ -81,7 +81,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         yield return new WaitUntil(() => AreAllEnemiesDefeated()); // Wait until all enemies are gone
         isWaveActive = false;
         currentWaveIndex++;
-        OnWaveEnd?.Invoke();
+        OnWaveEnd?.Invoke(currentWaveIndex);
 
         if(!playerWasHitThisWave)
             OnPlayerWasNotHitThisWave?.Invoke();
