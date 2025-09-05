@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3130170948382611672}
   - component: {fileID: 8998983918522567540}
+  - component: {fileID: 8225348087508722943}
+  - component: {fileID: 5812286087154017729}
   m_Layer: 0
   m_Name: Success Manager
   m_TagString: Untagged
@@ -63,6 +65,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   open50BoosterSuccess:
     title:
@@ -83,6 +86,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   open250BoosterSuccess:
     title:
@@ -103,6 +107,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   open500BoosterSuccess:
     title:
@@ -123,6 +128,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   open1000BoosterSuccess:
     title:
@@ -143,6 +149,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   open100BoosterDuringAGame:
     title:
@@ -163,6 +170,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   cardStorage30Success:
     title:
@@ -183,6 +191,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   cardStorage50Success:
     title:
@@ -203,6 +212,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   cardStorage100Success:
     title:
@@ -223,6 +233,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   wave1Success:
     title:
@@ -243,6 +254,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   wave3Success:
     title:
@@ -263,6 +275,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   wave6Success:
     title:
@@ -283,6 +296,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   waveBossSuccess:
     title:
@@ -303,6 +317,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   firstCraftSuccess:
     title:
@@ -323,6 +338,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft250Cards:
     title:
@@ -343,6 +359,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft1000Cards:
     title:
@@ -363,6 +380,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft10000Cards:
     title:
@@ -383,6 +401,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   sell100CardsSuccess:
     title:
@@ -403,6 +422,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   sell500CardsSuccess:
     title:
@@ -423,6 +443,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   sell2500CardsSuccess:
     title:
@@ -443,6 +464,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   sell5000CardsSuccess:
     title:
@@ -463,6 +485,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   firstFactorySuccess:
     title:
@@ -483,6 +506,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft4DifferentFactoriesSuccess:
     title:
@@ -503,6 +527,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft8DifferentFactoriesSuccess:
     title:
@@ -523,6 +548,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craftTempleSuccess:
     title:
@@ -543,6 +569,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craftFirstDefenseSuccess:
     title:
@@ -563,6 +590,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft4DifferentDefenseSuccess:
     title:
@@ -583,6 +611,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craft8DifferentDefenseSuccess:
     title:
@@ -603,6 +632,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   accumulate100InkAGameSuccess:
     title:
@@ -623,6 +653,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   discoverAllCardsSuccess:
     title:
@@ -643,6 +674,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   craftChestSuccess:
     title:
@@ -663,7 +695,37 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    sprite: {fileID: 0}
     isDone: 0
   references:
     version: 2
     RefIds: []
+--- !u!114 &8225348087508722943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784195736596741508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Success Save System
+  prefixColor: {r: 0.05248642, g: 1, b: 0, a: 1}
+--- !u!114 &5812286087154017729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784195736596741508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78c7296de537524b96891e24ff07125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  successManager: {fileID: 8998983918522567540}
+  logger: {fileID: 8225348087508722943}

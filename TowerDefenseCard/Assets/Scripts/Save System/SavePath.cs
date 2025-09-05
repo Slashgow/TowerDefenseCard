@@ -6,6 +6,18 @@ public static class SavePath
     private static string saveFilePath;
     private static string savePathCardDiscovered;
     private static string savePathTutorial;
+    private static string savePathSuccess;
+
+    public static string SavePathSuccess
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(savePathSuccess))
+                savePathSuccess = Path.Combine(Application.persistentDataPath, "successSave.json");
+
+            return savePathSuccess;
+        }
+    }
 
     public static string SaveFilePath
     {
@@ -39,4 +51,5 @@ public static class SavePath
         }
     }
     public static bool SaveExists => File.Exists(SaveFilePath);
+    public static bool SaveSuccessExists => File.Exists(SavePathSuccess);
 }

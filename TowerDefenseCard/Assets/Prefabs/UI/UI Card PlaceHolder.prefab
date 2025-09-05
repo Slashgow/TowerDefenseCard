@@ -381,6 +381,7 @@ MonoBehaviour:
   _cornerSegments: 4
   _mappingBias: 0.5
   _fillCenter: 0
+  rebuildOnUpdate: 0
 --- !u!1 &3784546645268052214
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,8 +529,8 @@ GameObject:
   - component: {fileID: 1537750182571210685}
   - component: {fileID: 5439961230139786035}
   - component: {fileID: 2985000755750090099}
-  - component: {fileID: 3364245336450270680}
   - component: {fileID: 7386546340210925572}
+  - component: {fileID: 5833008129099242876}
   m_Layer: 5
   m_Name: card background
   m_TagString: Untagged
@@ -594,22 +595,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3364245336450270680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5031837435404668416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e76aeccc903a1c4ab4b42b1febcaa5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uICardMenu: {fileID: 2362225147406040921}
-  uiOutline: {fileID: 478790708690942309}
-  hoverColor: {r: 0.96470594, g: 0.95294124, b: 0.92549026, a: 1}
-  selectedColor: {r: 1, g: 0.8352942, b: 0.3529412, a: 1}
 --- !u!114 &7386546340210925572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +608,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notificationImage: {fileID: 5001572883567446853}
+--- !u!114 &5833008129099242876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031837435404668416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1cabed5a382ca4c9ef7b52199ea0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiOutline: {fileID: 478790708690942309}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  selectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &3089768889985423289
 PrefabInstance:
   m_ObjectHideFlags: 0

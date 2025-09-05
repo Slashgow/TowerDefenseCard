@@ -24,7 +24,7 @@ public class UIPageCardsDiscovered : UIPage
             UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
             uICardMenu.SetupUICardMenu(card.CardData, false);
 
-            UICardOutline uICardOutline = uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>();
+            UICardOutlineSelector uICardOutline = uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutlineSelector>();
 
             if(card is Currency)
             {
@@ -34,14 +34,14 @@ public class UIPageCardsDiscovered : UIPage
                 rectTransform.sizeDelta = sizeDelta * 0.5f;
                 uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
             }
-                
 
-            uICardOutline.OnSelectCard -= UICardOutline_OnSelectCard;
-            uICardOutline.OnSelectCard += UICardOutline_OnSelectCard;
+
+            uICardMenu.OnSelectEvent -= UICardMenu_OnSelectCard;
+            uICardMenu.OnSelectEvent += UICardMenu_OnSelectCard;
         }
     }
 
-    private void UICardOutline_OnSelectCard(CardID cardID)
+    private void UICardMenu_OnSelectCard(CardID cardID)
     {
         OnSelectCard?.Invoke(CardManager.Instance.GetCardPrefabByCardID(cardID));
     }

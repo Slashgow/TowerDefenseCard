@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class UICardOutline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField] private UICardMenu uICardMenu;

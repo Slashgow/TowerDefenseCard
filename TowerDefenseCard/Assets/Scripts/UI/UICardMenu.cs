@@ -1,8 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UICardMenu : MonoBehaviour
+public class UICardMenu : MonoBehaviour, IUISelectable<CardID>
 {
     [SerializeField] protected Image cardBackgroundImage;
     [SerializeField] protected Image cardImage;
@@ -12,6 +13,11 @@ public class UICardMenu : MonoBehaviour
 
     protected CardData cardData;
     public CardID CardID => cardData.CardID;
+
+    public event Action<CardID> OnSelectEvent;
+    public CardID GetSelectableData() => CardID;
+    public void OnSelect(CardID data) => OnSelectEvent?.Invoke(data);
+
     public virtual void SetupUICardMenu(CardData cardData, bool disableNotification)
     { 
         this.cardData = cardData;

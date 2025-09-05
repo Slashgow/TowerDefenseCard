@@ -13,6 +13,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private QuestManager mainQuestManager;
     [SerializeField] private QuestManager secondaryQuestManager;
+    [SerializeField] private SuccessSaveSystem successSaveSystem;
 
     [SerializeField] private Logger logger;
 
@@ -27,6 +28,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         if(SavePath.SaveExists)
         {
             File.Delete(SavePath.SaveFilePath);
+            SuccessSaveSystem.ResetSaveStatsByGame();
             //File.Delete(SavePath.SavePathCardDiscovered);
         }
     }
@@ -57,6 +59,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         craftingManager.Save(saveData);
         cardManager.Save(saveData);
         playerHealth.Save(saveData);
+        successSaveSystem.Save();
         SaveCards(saveData);
         mainQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
         secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
@@ -161,6 +164,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         craftingManager.Load(saveData);
         cardManager.Load(saveData);
         playerHealth.Load(saveData);
+        successSaveSystem.Load();
         LoadCards(saveData);
         mainQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
         secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));

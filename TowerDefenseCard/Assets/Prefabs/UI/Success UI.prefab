@@ -221,6 +221,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4504675382549051481}
   - component: {fileID: 345813040845813266}
+  - component: {fileID: 4978380028712190618}
+  - component: {fileID: 4098614669562736646}
+  - component: {fileID: 7398662565262853400}
+  - component: {fileID: 2610375779857487353}
   m_Layer: 5
   m_Name: Success UI
   m_TagString: Untagged
@@ -247,7 +251,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &345813040845813266
 MonoBehaviour:
@@ -275,3 +279,67 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4978380028712190618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906607294005972233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c2a94ffbdd371479dff0529cda19a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  successTitle: {fileID: 473292652069270544}
+  successImage: {fileID: 9164603779522202689}
+--- !u!222 &4098614669562736646
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906607294005972233}
+  m_CullTransparentMesh: 1
+--- !u!114 &7398662565262853400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906607294005972233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86bdcf43ac2df64e975545d0d7fe60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: b447968b8eff9cd48997487e236c8935, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: fb2cacae69f636c42b9092aa77a8df5b, type: 3}
+  _outlineWidth: 18
+  _cornerRadius: 9
+  _cornerSegments: 4
+  _mappingBias: 0.5
+  _fillCenter: 0
+  rebuildOnUpdate: 0
+--- !u!114 &2610375779857487353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906607294005972233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3458e42ac51993449ebac9ffa0fb268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiOutline: {fileID: 7398662565262853400}
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  selectedColor: {r: 1, g: 1, b: 1, a: 1}

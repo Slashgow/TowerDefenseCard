@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UICardMoreStat : MonoBehaviour
 {
+    [Header("Cards")]
     [SerializeField] private UIPageCardsDiscovered uIPageCardsDiscovered;
     [SerializeField] private GameObject cardPictureParent, cardStatsParents;
     [SerializeField] private TextMeshProUGUI upgradeDescription;
@@ -12,17 +13,55 @@ public class UICardMoreStat : MonoBehaviour
     [SerializeField] private Transform recipeParent;
     [SerializeField] private GameObject pairCardAndCostPrefab;
 
+    [Header("Success")]
+    [SerializeField] private UIPageSuccess uIPageSuccess;
+    [SerializeField] private TextMeshProUGUI successDescriptionText;
+
     private void OnEnable()
     {
         descriptionValue.text = string.Empty;
         cardStatsParents.SetActive(false);
         uIPageCardsDiscovered.OnSelectCard += UIPageCardsDiscovered_OnSelectCard;
+
+        successDescriptionText.text = string.Empty;
+        uIPageSuccess.OnSelectSuccess += UIPageSuccess_OnSelectSuccess;
     }
 
-    private void OnDisable() => uIPageCardsDiscovered.OnSelectCard -= UIPageCardsDiscovered_OnSelectCard;
+    private void OnDisable()
+    {
+        uIPageCardsDiscovered.OnSelectCard -= UIPageCardsDiscovered_OnSelectCard;
+        uIPageSuccess.OnSelectSuccess -= UIPageSuccess_OnSelectSuccess;
+    }
+
+    private void UIPageSuccess_OnSelectSuccess(SuccessData successData)
+    {
+        ClearCardContent();
+        DisplaySuccessInfo(successData);
+    }
+    private void ClearCardContent()
+    {
+        CardUtility.DestroyAllChildren(cardPictureParent.transform);
+        cardStatsParents.SetActive(false);
+
+        if (upgradeDescription != null)
+            upgradeDescription.gameObject.SetActive(false);
+
+        CardUtility.DestroyAllChildren(recipeParent);
+        recipeParent.gameObject.SetActive(false);
+        descriptionValue.text = string.Empty;
+    }
+    private void DisplaySuccessInfo(SuccessData successData)
+    {
+        if (successData == null) 
+            return;
+
+        successDescriptionText.text = successData.Description.GetLocalizedString();
+    }
 
     private void UIPageCardsDiscovered_OnSelectCard(Card card)
     {
+        successDescriptionText.text = string.Empty;
+
         CardUtility.DestroyAllChildren(cardPictureParent.transform);
 
         GameObject uiCardMenuGameObject = Instantiate(uIPageCardsDiscovered.UICardMenuPrefab, cardPictureParent.transform);
@@ -38,7 +77,7 @@ public class UICardMoreStat : MonoBehaviour
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
         uICardMenu.SetupUICardMenu(card.CardData, true);
         uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
-        uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutline>().enabled = false;
+        uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutlineSelector>().enabled = false;
 
         if (card is Currency)
         {
@@ -75,7 +114,7 @@ public class UICardMoreStat : MonoBehaviour
         }
 
 
-
+        recipeParent.gameObject.SetActive(true);   
         CardUtility.DestroyAllChildren(recipeParent);
 
         if (card is CardExploitation)

@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SuccessManager : MonoSingleton<SuccessManager>
 {
+    [SerializeField] private bool listenToSuccessCompletion = true;
+
     [Header("Newbie")]
     [SerializeField] private SuccessData openFirstBoosterSuccess;
 
@@ -67,9 +71,115 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     public SuccessData CraftFirstDefenseSuccess => craftFirstDefenseSuccess;
 
     private SuccessStatData successStatData;
+    public SuccessStatData SuccessStatData => successStatData; 
+    private List<SuccessData> allSuccessData;
+    public List<SuccessData > AllSuccessData => allSuccessData;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if(allSuccessData == null)
+            InitializeSuccessList();
+    }
+    public void LoadDefault()
+    {
+        InitializeSuccessList();
+        InitializeSuccessStatData();
+    }
+
+    public void LoadFromSuccessSaveData(SuccessSaveData successSaveData)
+    {
+        InitializeSuccessList();
+
+        if (successSaveData.successCompletionStates != null &&
+            successSaveData.successCompletionStates.Count == allSuccessData.Count)
+        {
+            for (int i = 0; i < allSuccessData.Count; i++)
+            {
+                allSuccessData[i].isDone = successSaveData.successCompletionStates[i];
+            }
+        }
+
+        successStatData = new SuccessStatData(successSaveData.successStatData.boosterOpenedCounterAllTime,
+                successSaveData.successStatData.boosterOpenedCounterInGame, successSaveData.successStatData.craftedCardCounterAllTime,
+                successSaveData.successStatData.soldCardCounterAllTime,
+                successSaveData.successStatData.factoriesIDThisGame,
+                successSaveData.successStatData.defenseIDThisGame);
+        
+    }
+
+    private void InitializeSuccessStatData() => successStatData = new SuccessStatData();
+
+    private void InitializeSuccessList()
+    {
+        allSuccessData = new List<SuccessData>
+        {
+            // Newbie
+            openFirstBoosterSuccess,
+            
+            // Booster Addict
+            open50BoosterSuccess,
+            open250BoosterSuccess,
+            open500BoosterSuccess,
+            open1000BoosterSuccess,
+            
+            // Reroller
+            open100BoosterDuringAGame,
+            
+            // Storage
+            cardStorage30Success,
+            cardStorage50Success,
+            cardStorage100Success,
+            
+            // Survivor
+            wave1Success,
+            wave3Success,
+            wave6Success,
+            
+            // General
+            waveBossSuccess,
+            
+            // Crafter
+            firstCraftSuccess,
+            craft250Cards,
+            craft1000Cards,
+            craft10000Cards,
+            
+            // Seller
+            sell100CardsSuccess,
+            sell500CardsSuccess,
+            sell2500CardsSuccess,
+            sell5000CardsSuccess,
+            
+            // Industrialist
+            firstFactorySuccess,
+            craft4DifferentFactoriesSuccess,
+            craft8DifferentFactoriesSuccess,
+            
+            // Kami Seeker
+            craftTempleSuccess,
+            
+            // Defender
+            craftFirstDefenseSuccess,
+            craft4DifferentDefenseSuccess,
+            craft8DifferentDefenseSuccess,
+            
+            // Thrifty
+            accumulate100InkAGameSuccess,
+            
+            // Explorator
+            discoverAllCardsSuccess,
+            
+            // Ink Collector
+            craftChestSuccess
+        };
+    }
 
     private void Start()
     {
+        if (!listenToSuccessCompletion)
+            return;
+
         ShopManager.Instance.OnUpdatePlayerCoin += ShopManager_OnUpdatePlayerCoin;
         Reseller.OnResell += Reseller_OnResell;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
@@ -80,6 +190,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
     private void OnDestroy()
     {
+        if (!listenToSuccessCompletion)
+            return;
+
         Booster.OnDestroyBooster -= Booster_OnDestroyBooster;
         Reseller.OnResell -= Reseller_OnResell;
 
