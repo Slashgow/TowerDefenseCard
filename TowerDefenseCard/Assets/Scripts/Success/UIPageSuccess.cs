@@ -31,6 +31,7 @@ public class UIPageSuccess : UIPage
         }
 
     }
+
     private void UISuccess_OnSuccessSelected(SuccessData successData)
     {
         OnSelectSuccess?.Invoke(successData);

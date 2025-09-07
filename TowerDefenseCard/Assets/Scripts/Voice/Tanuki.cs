@@ -162,9 +162,9 @@ public class Tanuki : MonoBehaviour
             ShowTanukiText(linesLateDefense);
     }
 
-    private void OnCompleteCraftTemple() => ShowTanukiText(linesOnCraftTemple);
-    private void OnCompleteFirstDefense() => ShowTanukiText(linesOnCraftFirstDefense);
-    private void OnCompleteFirstFactory() => ShowTanukiText(linesOnFirstFactoryComplete);
-    private void OnCompleteFirstCraft() => ShowTanukiText(linesOnFirstCraftComplete);
+    private void OnCompleteCraftTemple(SuccessData successData) => ShowTanukiText(linesOnCraftTemple);
+    private void OnCompleteFirstDefense(SuccessData successData) => ShowTanukiText(linesOnCraftFirstDefense);
+    private void OnCompleteFirstFactory(SuccessData successData) => ShowTanukiText(linesOnFirstFactoryComplete);
+    private void OnCompleteFirstCraft(SuccessData successData) => ShowTanukiText(linesOnFirstCraftComplete);
 
 }

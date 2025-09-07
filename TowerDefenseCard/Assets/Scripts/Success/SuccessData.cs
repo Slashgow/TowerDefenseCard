@@ -11,11 +11,14 @@ public class SuccessData
     [SerializeField] private LocalizedString description;
     public LocalizedString Description => description;
 
-    [SerializeField] private Sprite sprite;
-    public Sprite Sprite => sprite;
+    [SerializeField] private Sprite spriteLocked;
+    public Sprite SpriteLocked => spriteLocked;
+
+    [SerializeField] private Sprite spriteUnlocked;
+    public Sprite SpriteUnlocked => spriteUnlocked;
 
     public bool isDone;
-    public Action OnComplete;
+    public Action<SuccessData> OnComplete;
 
     public void Complete()
     {
@@ -23,6 +26,6 @@ public class SuccessData
             return;
 
         isDone = true;
-        OnComplete?.Invoke();
+        OnComplete?.Invoke(this);
     }
 }

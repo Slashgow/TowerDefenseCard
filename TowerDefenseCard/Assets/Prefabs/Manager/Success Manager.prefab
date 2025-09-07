@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293471b85d3b3594aa5e933642b32047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listenToSuccessCompletion: 1
   openFirstBoosterSuccess:
     title:
       m_TableReference:
@@ -65,7 +66,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -2056872769, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 1116660266, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   open50BoosterSuccess:
     title:
@@ -86,7 +88,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -583206923, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: -1934051674, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   open250BoosterSuccess:
     title:
@@ -107,7 +110,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -459040611, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 462555542, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   open500BoosterSuccess:
     title:
@@ -128,7 +132,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 525506468, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: -680434125, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   open1000BoosterSuccess:
     title:
@@ -149,7 +154,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -425380872, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 483584362, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   open100BoosterDuringAGame:
     title:
@@ -170,7 +176,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -64082471, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 109266674, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   cardStorage30Success:
     title:
@@ -191,7 +198,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -2061680872, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 844577083, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   cardStorage50Success:
     title:
@@ -212,7 +220,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -2105605916, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -56355530, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   cardStorage100Success:
     title:
@@ -233,7 +242,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -1556995123, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 611417046, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   wave1Success:
     title:
@@ -254,7 +264,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1668558767, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -2021326692, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   wave3Success:
     title:
@@ -275,7 +286,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 620720344, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1935643647, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   wave6Success:
     title:
@@ -296,7 +308,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1079486378, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -701435725, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   waveBossSuccess:
     title:
@@ -317,7 +330,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -887403308, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -64256643, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   firstCraftSuccess:
     title:
@@ -338,7 +352,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 83731100, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1207227780, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craft250Cards:
     title:
@@ -359,7 +374,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1370456072, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1422721223, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craft1000Cards:
     title:
@@ -380,7 +396,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 237202721, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1273075782, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craft10000Cards:
     title:
@@ -401,7 +418,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 2100186364, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -1778626560, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   sell100CardsSuccess:
     title:
@@ -422,7 +440,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 2080084047, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 590965342, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   sell500CardsSuccess:
     title:
@@ -443,7 +462,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -1585220849, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: -1883590902, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   sell2500CardsSuccess:
     title:
@@ -464,7 +484,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -998900849, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: -19158278, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   sell5000CardsSuccess:
     title:
@@ -485,7 +506,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -1616035766, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 774074579, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   firstFactorySuccess:
     title:
@@ -506,7 +528,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -124737479, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 1648047278, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   craft4DifferentFactoriesSuccess:
     title:
@@ -527,7 +550,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -1732360609, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 1233087698, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   craft8DifferentFactoriesSuccess:
     title:
@@ -548,7 +572,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -165152358, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 201738700, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   craftTempleSuccess:
     title:
@@ -569,7 +594,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1653063257, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 713925049, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   craftFirstDefenseSuccess:
     title:
@@ -590,7 +616,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -1199962279, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -950300696, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craft4DifferentDefenseSuccess:
     title:
@@ -611,7 +638,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -240967692, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 2105258109, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craft8DifferentDefenseSuccess:
     title:
@@ -632,7 +660,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1507427938, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: -2056810803, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   accumulate100InkAGameSuccess:
     title:
@@ -653,7 +682,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 126647011, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1707840023, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   discoverAllCardsSuccess:
     title:
@@ -674,7 +704,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: 1999955942, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 857347848, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   craftChestSuccess:
     title:
@@ -695,7 +726,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    sprite: {fileID: 0}
+    spriteLocked: {fileID: -906060726, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
+    spriteUnlocked: {fileID: 1559729376, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
   references:
     version: 2

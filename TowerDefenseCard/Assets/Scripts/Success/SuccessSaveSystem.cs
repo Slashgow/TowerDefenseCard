@@ -29,7 +29,7 @@ public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
         }
     }
 
-    private void OnSuccessCompleted() => Save();
+    private void OnSuccessCompleted(SuccessData successData) => Save();
 
     public void Save()
     {
