@@ -60,7 +60,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     [SerializeField] private SuccessData accumulate100InkAGameSuccess;
 
     [Header("Explorator")]
-    [SerializeField] private SuccessData discoverAllCardsSuccess;
+    [SerializeField] private SuccessData discoverAllCardsSuccess; // TO DO
 
     [Header("Ink Collecter")]
     [SerializeField] private SuccessData craftChestSuccess;
@@ -173,6 +173,41 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             // Ink Collector
             craftChestSuccess
         };
+    }
+
+    public List<SuccessData> GetCompletedSuccessData()
+    {
+        List<SuccessData> completedSuccess = new List<SuccessData>();
+
+        foreach (SuccessData success in allSuccessData)
+        {
+            if (success.isDone)
+                completedSuccess.Add(success);
+        }
+
+        return completedSuccess;
+    }
+
+    public int GetCompletedSuccessCount() => GetCompletedSuccessData().Count;
+
+    public List<SuccessData> GetUncompletedSuccessData()
+    {
+        List<SuccessData> uncompletedSuccess = new List<SuccessData>();
+
+        foreach (SuccessData success in allSuccessData)
+        {
+            if (!success.isDone)
+                uncompletedSuccess.Add(success);
+        }
+
+        return uncompletedSuccess;
+    }
+    public float GetCompletionPercentage()
+    {
+        if (allSuccessData.Count == 0) return 0f;
+
+        int completedCount = GetCompletedSuccessData().Count;
+        return (float)completedCount / allSuccessData.Count * 100f;
     }
 
     private void Start()

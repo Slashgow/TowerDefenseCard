@@ -92,7 +92,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         CardExploitation.OnDestroyCardExploitation += CardExploitation_OnDestroyCardExploitation;
         CardDefense.OnDestroyAnyCardDefense += CardDefense_OnDestroyAnyCardDefense;
         CardDefense.OnCreateAnyCardDefense += CardDefense_OnCreateAnyCardDefense;
+        Stealable.OnDestroy += IStealable_OnDestroy;
     }
+
+  
 
     private void OnDisable()
     {
@@ -108,6 +111,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         CardExploitation.OnDestroyCardExploitation -= CardExploitation_OnDestroyCardExploitation;
         CardDefense.OnDestroyAnyCardDefense -= CardDefense_OnDestroyAnyCardDefense;
         CardDefense.OnCreateAnyCardDefense -= CardDefense_OnCreateAnyCardDefense;
+        Stealable.OnDestroy -= IStealable_OnDestroy;
     }
 
     public void AddCardToBoard(Card card)
@@ -191,6 +195,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
             OnMaxCardsReached?.Invoke();
     }
 
+    private void IStealable_OnDestroy() => UpdateCurrentNumberOfCard(-1);
     private void CardExploitation_OnDestroyCardExploitation() => UpdateCurrentNumberOfCard(-1);
     private void TowerDamageable_OnTowerDie() => UpdateCurrentNumberOfCard(-1);
     private void CraftingManager_OnDestroyCard() => UpdateCurrentNumberOfCard(-1);

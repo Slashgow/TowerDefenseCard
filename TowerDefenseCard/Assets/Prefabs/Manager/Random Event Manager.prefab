@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2055820835080972977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6955340700502625658}
+  - component: {fileID: 4786743418040213}
+  - component: {fileID: 6874852337606724108}
+  m_Layer: 0
+  m_Name: Random Event Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6955340700502625658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055820835080972977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5935729923285418695}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4786743418040213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055820835080972977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b2f4d1590a946438a468484d1b29a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logger: {fileID: 6874852337606724108}
+  eventSettings:
+    minSpawnInterval: 10
+    maxSpawnInterval: 20
+    minimumWaveToStart: 0
+    spawnProbability: 1
+    enemyPrefabs:
+    - {fileID: 7042976781341503056, guid: c60b33f01c7e57646a9b2c12ce48b05d, type: 3}
+    spawnRadius: 15
+    spawnRadiusVariation: 1
+    canTargetDefenseCards: 0
+    canTargetWorkerCards: 0
+    canTargetCurrencyCards: 0
+    canTargetShopCards: 0
+    canTargetRessourceCards: 1
+    canTargetRessourceGeneratorCards: 1
+    canTargetCardExploitation: 0
+    spawnBoundsCenter: {fileID: 5935729923285418695}
+    maxSpawnDistance: 20
+  enableRandomEvents: 1
+  warningEffectPrefab: {fileID: 0}
+  warningDuration: 2
+--- !u!114 &6874852337606724108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055820835080972977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Random event manager
+  prefixColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &4811304430238813353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5935729923285418695}
+  m_Layer: 0
+  m_Name: Spawn Bound Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5935729923285418695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811304430238813353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6955340700502625658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class UIPageCardsDiscovered : UIPage
@@ -9,6 +11,8 @@ public class UIPageCardsDiscovered : UIPage
     public GameObject UICardMenuPrefab => uiCardMenuPrefab;
 
     [SerializeField] private Transform contentScrollView;
+    [SerializeField] private TextMeshProUGUI cardDiscoverCounterText;
+    [SerializeField] private LocalizedString cardDiscoverLocalizedString;
 
     public event Action<Card> OnSelectCard;
     public override void Show()
@@ -17,6 +21,8 @@ public class UIPageCardsDiscovered : UIPage
         CardUtility.DestroyAllChildren(contentScrollView);
 
         List<Card> cardDiscovered = CardManager.Instance.GetAllCardsDiscovered();
+
+        cardDiscoverCounterText.text = $"{cardDiscoverLocalizedString.GetLocalizedString()} : {cardDiscovered.Count}/{CardManager.Instance.AllCards.Count}";
 
         foreach (Card card in cardDiscovered)
         {
