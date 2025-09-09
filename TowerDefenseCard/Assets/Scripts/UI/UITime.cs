@@ -21,15 +21,23 @@ public class UITime : MonoBehaviour
 
         uiInput.OnStartReceivingInput += OnStartReceivingInput;
         uiInput.OnStopReceivingInput += OnStopReceivingInput;
+
+        uiInput.OnPauseBlocked += UiInput_OnPauseBlocked;
+        uiInput.OnPauseUnBlocked += UiInput_OnPauseUnBlocked;
     }
 
-   
+    
+
     private void OnDisable()
     {
         pauseButton.onClick.RemoveAllListeners();
         resumeButton.onClick.RemoveAllListeners();
         speedUpButton.onClick.RemoveAllListeners();
         speedDownButton.onClick.RemoveAllListeners();
+        uiInput.OnStartReceivingInput -= OnStartReceivingInput;
+        uiInput.OnStopReceivingInput -= OnStopReceivingInput;
+        uiInput.OnPauseBlocked -= UiInput_OnPauseBlocked;
+        uiInput.OnPauseUnBlocked -= UiInput_OnPauseUnBlocked;
     }
 
     private void OnSpeedDown()
@@ -112,4 +120,15 @@ public class UITime : MonoBehaviour
         speedDownButton.interactable = true;
     }
 
+    private void UiInput_OnPauseUnBlocked()
+    {
+        pauseButton.interactable = true;
+        resumeButton.interactable = true;
+    }
+
+    private void UiInput_OnPauseBlocked()
+    {
+        pauseButton.interactable = false;
+        resumeButton.interactable = false;
+    }
 }

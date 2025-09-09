@@ -29,6 +29,8 @@ public class CardManagerSaveData
 
 public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 {
+    [SerializeField] private bool listenToEvents = true;
+
    public List<CardDiscoveryState> allCards = new List<CardDiscoveryState>();
     public List<CardDiscoveryState> AllCards => allCards;
 
@@ -64,6 +66,32 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public event Action OnMaxCardsReached;
     public event Action OnMaxCardsDefenseReached;
 
+    private int ennemyCount;
+    public int EnnemyCount
+    {
+        get
+        {
+            if(ennemyCount == 0)
+                ennemyCount = AllCards.Count(cardDiscoveryState => cardDiscoveryState.Card is Ennemy);
+
+            return ennemyCount;
+        }
+    }
+
+    private int cardWithoutEnnemyCount;
+    public int CardWithoutEnnemyCount
+    {
+        get
+        {
+            if(cardWithoutEnnemyCount == 0)
+                cardWithoutEnnemyCount = AllCards.Count - EnnemyCount - 3; // booster and card idea
+
+            return cardWithoutEnnemyCount;
+        }
+    }
+
+    public int AllDiscoverableCards => AllCards.Count - 3;// booster and card idea
+
     public int GetCurrentNumberOfCards()
     {
         Card[] allStartingCards = FindObjectsByType<Card>(FindObjectsSortMode.None);
@@ -83,6 +111,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private void Start()
     {
+        if (!listenToEvents)
+            return;
+
+        WaveManager.Instance.OnSpawnEnnemy += WaveManager_OnSpawnEnnemy;
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
         CraftingManager.Instance.OnDestroyCard += CraftingManager_OnDestroyCard;
         Reseller.OnResell += Reseller_OnResell;
@@ -95,10 +127,11 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Stealable.OnDestroy += IStealable_OnDestroy;
     }
 
-  
-
     private void OnDisable()
     {
+        if (!listenToEvents)
+            return;
+
         if (CraftingManager.HasInstance)
         {
             CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftComplete;
@@ -112,6 +145,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         CardDefense.OnDestroyAnyCardDefense -= CardDefense_OnDestroyAnyCardDefense;
         CardDefense.OnCreateAnyCardDefense -= CardDefense_OnCreateAnyCardDefense;
         Stealable.OnDestroy -= IStealable_OnDestroy;
+
+        if(WaveManager.HasInstance)
+            WaveManager.Instance.OnSpawnEnnemy -= WaveManager_OnSpawnEnnemy;
     }
 
     public void AddCardToBoard(Card card)
@@ -207,6 +243,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         CheckCardDiscoveryState(cardID);
         UpdateCurrentNumberOfCard(1);
     }
+
+
+    private void WaveManager_OnSpawnEnnemy(CardID cardID) => CheckCardDiscoveryState(cardID);
+
 
     private void CraftingManager_OnCraftComplete(int craftID, CardID outputCardID)
     {

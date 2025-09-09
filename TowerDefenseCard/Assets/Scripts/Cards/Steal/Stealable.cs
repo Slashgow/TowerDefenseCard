@@ -27,7 +27,15 @@ public class Stealable : MonoBehaviour, IStealable
             baseCardMovement.enabled = false;
 
         if(card != null)
+        {
             card.OnUnstack();
+
+            if(card.StackedCards != null && card.StackedCards.Count > 0)
+            {
+                card.StackedCards[0].OnUnstack();
+            }
+        }
+            
 
         Follower follower = this.AddComponent<Follower>();
         follower.SetupFollower(stealerTransform, offset);

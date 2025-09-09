@@ -16,6 +16,9 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
     [SerializeField] private GameObject warningEffectPrefab;
     [SerializeField, Range(0f, 5f)] private float warningDuration = 2f;
 
+    [Header("Player Health")]
+    [SerializeField] private Card playerHealth;
+
     private Timer spawnTimer;
     private bool isActive = false;
     private float nextSpawnTime;
@@ -108,25 +111,6 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
             logger.Log("Random events disabled or invalid settings", this);
             return false;
         }
-
-        //if (WaveManager.Instance.CurrentWaveIndex <= eventSettings.MinimumWaveToStart)
-        //{
-        //    logger.Log($"Not enough waves completed. Current: {WaveManager.Instance.CurrentWaveIndex}, Required: {eventSettings.MinimumWaveToStart}", this);
-        //    return false;
-        //}
-        //
-        //if (!HasDefenseCardsOnBoard())
-        //{
-        //    logger.Log("No defense cards on board", this);
-        //    return false;
-        //}
-        //
-        //if (GetValidTargetCards().Count == 0)
-        //{
-        //    logger.Log("No valid target cards on board", this);
-        //    return false;
-        //}
-
         return true;
     }
 
@@ -199,16 +183,48 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
 
         spawnTimer = Timer.Register(spawnInterval, () =>
         {
-            if (ShouldSpawnEnemy())
-                SpawnRandomEnemy();
+            if(TryGetValidTarget(out Card card))
+            {
+                if (ShouldSpawnEnemy(card))
+                    SpawnRandomEnemy(card);
+            }
 
-            ScheduleNextSpawn();    
+            ScheduleNextSpawn();
         });
 
         logger.Log($"Next spawn scheduled in {spawnInterval:F1} seconds", this);
     }
 
-    private bool ShouldSpawnEnemy()
+    public void MoveToNewTarget(SimpleStealer stealer)
+    {
+        if(TryGetValidTarget(out Card card))
+        {
+            if (ShouldSpawnEnemy(card))
+            {
+                logger.Log($"moving to new target {card.CardData.CardName}", this);
+                stealer.JumpCardMovement.MoveTo(card.transform.position);
+                return;
+            }
+        }
+        logger.Log($"no target found, moving to player health {card.CardData.CardName}", this);
+        stealer.JumpCardMovement.MoveTo(playerHealth.transform.position);
+    }
+
+    public bool TryGetValidTarget(out Card card)
+    {
+        List<Card> validTargets = GetValidTargetCards();
+
+        if (validTargets.Count == 0)
+        {
+            logger.Log("No valid target cards available for spawning", this);
+            card = null;
+            return false;
+        }
+        card = validTargets[UnityEngine.Random.Range(0, validTargets.Count)];
+        return true;
+    }
+
+    private bool ShouldSpawnEnemy(Card targetCard)
     {
         if (GameManager.Instance.CurrentGameMode != GameMode.CRAFTING)
             return false;
@@ -219,7 +235,7 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
             return false;
         }
 
-        if (CardManager.Instance.TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost)
+        if (CardManager.Instance.TotalCostCardsOnBoard -  targetCard.CardData.Cost - eventSettings.EnemyPrefabs[0].CardData.Cost < ShopManager.Instance.MinimumShopCost)
         {
             logger.Log($"Not enough ressources", this);
             return false;
@@ -248,30 +264,22 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
         return true;
     }
 
-    private void SpawnRandomEnemy()
+    private void SpawnRandomEnemy(Card targetCard)
     {
         try
         {
-            GameObject enemyPrefab = eventSettings.EnemyPrefabs[UnityEngine.Random.Range(0, eventSettings.EnemyPrefabs.Length)];
-            List<Card> validTargets = GetValidTargetCards();
-
-            if (validTargets.Count == 0)
-            {
-                logger.Log("No valid target cards available for spawning", this);
-                return;
-            }
-
-            Card targetCard = validTargets[UnityEngine.Random.Range(0, validTargets.Count)];
+            Ennemy enemyPrefab = eventSettings.EnemyPrefabs[UnityEngine.Random.Range(0, eventSettings.EnemyPrefabs.Length)];
+  
             Vector3 spawnPosition = GetSpawnPositionAroundCard(targetCard);
 
             if (warningEffectPrefab != null && warningDuration > 0)
             {
                 ShowWarningEffect(spawnPosition);
-                Timer.Register(warningDuration, () => DoSpawnEnemy(enemyPrefab, spawnPosition, targetCard));
+                Timer.Register(warningDuration, () => DoSpawnEnemy(enemyPrefab.gameObject, spawnPosition, targetCard));
             }
             else
             {
-                DoSpawnEnemy(enemyPrefab, spawnPosition, targetCard);
+                DoSpawnEnemy(enemyPrefab.gameObject, spawnPosition, targetCard);
             }
 
             OnRandomEventTriggered?.Invoke();
@@ -318,7 +326,13 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
 
         JumpCardMovement jumpMovement = newEnemy.GetComponent<JumpCardMovement>();
         if (jumpMovement != null)
+        {
+            if (targetCard == null)
+                targetCard = playerHealth;
+
             jumpMovement.MoveTo(targetCard.transform.position);
+        }
+            
         else
             logger.LogWarning($"RandomEventManager: Enemy {enemyPrefab.name} doesn't have JumpCardMovement component!", this);
 
@@ -359,8 +373,10 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
             logger.LogError("Cannot force spawn: Invalid settings!", this);
             return;
         }
-
-        SpawnRandomEnemy();
+        if (TryGetValidTarget(out Card card))
+        {
+            SpawnRandomEnemy(card);
+        }
     }
 
     public void ForceSpawnEnemyAtCard(Card targetCard)
@@ -371,9 +387,9 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
             return;
         }
 
-        GameObject enemyPrefab = eventSettings.EnemyPrefabs[UnityEngine.Random.Range(0, eventSettings.EnemyPrefabs.Length)];
+        Ennemy enemyPrefab = eventSettings.EnemyPrefabs[UnityEngine.Random.Range(0, eventSettings.EnemyPrefabs.Length)];
         Vector3 spawnPosition = GetSpawnPositionAroundCard(targetCard);
-        DoSpawnEnemy(enemyPrefab, spawnPosition, targetCard);
+        DoSpawnEnemy(enemyPrefab.gameObject, spawnPosition, targetCard);
     }
 
     public void SetRandomEventsEnabled(bool enabled)

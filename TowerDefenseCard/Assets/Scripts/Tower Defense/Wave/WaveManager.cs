@@ -33,6 +33,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     private bool playerWasHitThisWave = false;
     public static event Action OnPlayerWasHitThisWave;
     public static event Action OnPlayerWasNotHitThisWave;
+    public event Action<CardID> OnSpawnEnnemy;
 
     private void OnEnable()
     {
@@ -60,7 +61,8 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         {
             currentWaveEnnemyIndex = j;
             WaveData.WaveEnemy enemy = waveData.EnnemyWaves[j];
-            
+
+
             for (int i = currentEnnemyCount; i < enemy.Count; i++)
             {
                 currentEnnemyCount = i;
@@ -69,6 +71,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
                     SplineID pathID = waveDataPaths[currentWaveIndex].Paths[UnityEngine.Random.Range(0, waveDataPaths[currentWaveIndex].Paths.Length)];
                     SplineData pathData = SplineManager.Instance.GetSplineDataByID(pathID);
                     GameObject newEnemy = Instantiate(enemy.EnemyPrefab, pathData.Spline.GetSampleAtDistance(0f).location, Quaternion.identity);
+                    OnSpawnEnnemy?.Invoke(enemy.EnemyPrefab.GetComponent<Card>().CardData.CardID);
                     amountOfSpawnedEnemies++;
                     CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
                     newEnemy.GetComponent<AutoCardMovement>().Init(pathData);

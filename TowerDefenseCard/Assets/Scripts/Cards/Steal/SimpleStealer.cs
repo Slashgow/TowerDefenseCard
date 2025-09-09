@@ -17,6 +17,7 @@ public class SimpleStealer : MonoBehaviour, IStealer
 
     private BaseDamageable damageable;
     private JumpCardMovement jumpCardMovement;
+    public JumpCardMovement JumpCardMovement => jumpCardMovement;
 
     private void Awake()
     {
@@ -65,5 +66,7 @@ public class SimpleStealer : MonoBehaviour, IStealer
                 return;
             }
         }
+
+        RandomEventManager.Instance.MoveToNewTarget(this);
     }
 }

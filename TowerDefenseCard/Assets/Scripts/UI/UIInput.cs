@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json.Converters;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,11 +18,14 @@ public class UIInput : MonoBehaviour
 
     public event Action OnStartReceivingInput;
     public event Action OnStopReceivingInput;
+    public event Action OnPauseBlocked;
+    public event Action OnPauseUnBlocked;
     public bool IsReceivingInput { get; private set; }
+    public bool IsPauseBlocked { get; private set; }
     private void Awake()
     {
         IsReceivingInput = true;
-
+        IsPauseBlocked = false;
         toggleCollectionMenuInputActionReference.action.performed += ToggleCollectionMenuPerformed;
         toggleSettingMenuInputActionReference.action.performed += ToggleSettingsMenuPerformed;
         playPauseInputActionReference.action.performed += PlayPause;
@@ -32,8 +36,8 @@ public class UIInput : MonoBehaviour
     {
         if (!GameManager.Instance.AllowPauseDuringCombat)
         {
-            GameManager.Instance.OnStartCombatMode += StopRecevingInput;
-            GameManager.Instance.OnEndCombatMode += StartReceivingInput;
+            GameManager.Instance.OnStartCombatMode += OnPauseBlocked;
+            GameManager.Instance.OnEndCombatMode += OnPauseUnBlocked;
         }
     }
 
@@ -49,6 +53,18 @@ public class UIInput : MonoBehaviour
         OnStopReceivingInput?.Invoke();
     }
 
+    public void BlockPause()
+    {
+        IsPauseBlocked = true;
+        OnPauseBlocked?.Invoke();
+    }
+
+    public void UnBlockPause()
+    {
+        IsPauseBlocked = false;
+        OnPauseUnBlocked?.Invoke();
+    }
+
     private void OnDestroy()
     {
         toggleCollectionMenuInputActionReference.action.performed -= ToggleCollectionMenuPerformed;
@@ -58,8 +74,8 @@ public class UIInput : MonoBehaviour
 
         if (GameManager.HasInstance && !GameManager.Instance.AllowPauseDuringCombat)
         {
-            GameManager.Instance.OnStartCombatMode -= StopRecevingInput;
-            GameManager.Instance.OnEndCombatMode -= StartReceivingInput;
+            GameManager.Instance.OnStartCombatMode -= OnPauseBlocked;
+            GameManager.Instance.OnEndCombatMode -= OnPauseUnBlocked;
         }
     }
 
@@ -90,6 +106,9 @@ public class UIInput : MonoBehaviour
     private void PlayPause(InputAction.CallbackContext obj)
     {
         if (!IsReceivingInput)
+            return;
+
+        if (IsPauseBlocked)
             return;
 
         uiTime.TogglePlayResume();

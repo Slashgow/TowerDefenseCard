@@ -22,7 +22,7 @@ public class UIPageCardsDiscovered : UIPage
 
         List<Card> cardDiscovered = CardManager.Instance.GetAllCardsDiscovered();
 
-        cardDiscoverCounterText.text = $"{cardDiscoverLocalizedString.GetLocalizedString()} : {cardDiscovered.Count}/{CardManager.Instance.AllCards.Count}";
+        cardDiscoverCounterText.text = $"{cardDiscoverLocalizedString.GetLocalizedString()} : {cardDiscovered.Count}/{CardManager.Instance.AllDiscoverableCards}";
 
         foreach (Card card in cardDiscovered)
         {

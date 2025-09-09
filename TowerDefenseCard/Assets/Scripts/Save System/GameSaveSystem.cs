@@ -164,7 +164,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         craftingManager.Load(saveData);
         cardManager.Load(saveData);
         playerHealth.Load(saveData);
-        successSaveSystem.Load();
+        //successSaveSystem.Load();
         LoadCards(saveData);
         mainQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
         secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));

@@ -7,6 +7,11 @@ public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
     [SerializeField] private SuccessManager successManager;
     [SerializeField] private Logger logger;
 
+    protected override void Awake()
+    {
+        Load();
+    }
+
     private void Start()
     {
         if (successManager == null)
