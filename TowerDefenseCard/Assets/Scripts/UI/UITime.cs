@@ -8,7 +8,7 @@ public class UITime : MonoBehaviour
     [SerializeField] private Button pauseButton, resumeButton;
     [SerializeField] private Button speedUpButton, speedDownButton;
 
-    private void OnEnable()
+    private void Start()
     {
         pauseButton.onClick.AddListener(OnPause);
         resumeButton.onClick.AddListener(() => OnResume(false));
@@ -24,9 +24,22 @@ public class UITime : MonoBehaviour
 
         uiInput.OnPauseBlocked += UiInput_OnPauseBlocked;
         uiInput.OnPauseUnBlocked += UiInput_OnPauseUnBlocked;
+
+        GameSettingsManager.OnChangePauseSettings += GameSettingsManager_OnChangePauseSettings;
+
+        if (GameSettingsManager.Instance.IsPauseEnable)
+        {
+            pauseButton.interactable = true;
+            resumeButton.interactable = true;
+        }
+        else
+        {
+            pauseButton.interactable = false;
+            resumeButton.interactable = false;
+        }
     }
 
-    
+ 
 
     private void OnDisable()
     {
@@ -38,6 +51,7 @@ public class UITime : MonoBehaviour
         uiInput.OnStopReceivingInput -= OnStopReceivingInput;
         uiInput.OnPauseBlocked -= UiInput_OnPauseBlocked;
         uiInput.OnPauseUnBlocked -= UiInput_OnPauseUnBlocked;
+        GameSettingsManager.OnChangePauseSettings -= GameSettingsManager_OnChangePauseSettings;
     }
 
     private void OnSpeedDown()
@@ -80,6 +94,9 @@ public class UITime : MonoBehaviour
         if (!uiInput.IsReceivingInput)
             return;
 
+        if (!GameSettingsManager.Instance.IsPauseEnable)
+            return;
+
         GameManager.Instance.Pause();
         pauseButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(true);
@@ -106,6 +123,8 @@ public class UITime : MonoBehaviour
 
     private void OnStopReceivingInput()
     {
+        Debug.Log("on stop receive input");
+       
         pauseButton.interactable = false;
         resumeButton.interactable = false;
         speedUpButton.interactable = false;
@@ -114,20 +133,35 @@ public class UITime : MonoBehaviour
 
     private void OnStartReceivingInput()
     {
-        pauseButton.interactable = true;
-        resumeButton.interactable = true;
+        Debug.Log(" on start receive input");
+
+        if (GameSettingsManager.Instance.IsPauseEnable && !uiInput.IsPauseBlocked)
+        {
+            pauseButton.interactable = true;
+            resumeButton.interactable = true;
+        }
         speedUpButton.interactable = true;
         speedDownButton.interactable = true;
     }
 
+    private void GameSettingsManager_OnChangePauseSettings(bool value)
+    {
+        if (value && !uiInput.IsPauseBlocked)
+            UiInput_OnPauseUnBlocked();
+        else
+            UiInput_OnPauseBlocked();
+    }
+
     private void UiInput_OnPauseUnBlocked()
     {
+        Debug.Log(" on pause unblocked");
         pauseButton.interactable = true;
         resumeButton.interactable = true;
     }
 
     private void UiInput_OnPauseBlocked()
     {
+        Debug.Log(" on pause blocked");
         pauseButton.interactable = false;
         resumeButton.interactable = false;
     }

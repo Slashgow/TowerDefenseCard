@@ -16,7 +16,8 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField] private LocalizedString startCombatPhaseLocalizedString, startCraftPhaseLocalizedString, WaveLocalizedString;
     [SerializeField] private LocalizedString defeatAllWavesLocalizedString, playerDieLocalizedString;
     [SerializeField] private UIPageController uIPageController;
-    [SerializeField] private UITime uITime;
+    [SerializeField] private UITime uiTime;
+    [SerializeField] private UIInput uiInput;
 
     [Header("Transition")]
     [SerializeField, Range(0f, 5f)] public float transitionDuration;
@@ -70,7 +71,9 @@ public class UIPageGameModeTransition : UIPage
            DoFadeOutEffect(text);
         }, useRealTime: true);
 
-        uITime.OnPause();
+        GameSettingsManager.Instance.AllowTemporaryPause();
+        uiTime.OnPause();
+        uiInput.StopRecevingInput();
         uIPageController.ShowPage(this);
         FadeBackgroundAlpha(startAlpha, endAlpha);
         SetTransitionText(text);
@@ -81,7 +84,9 @@ public class UIPageGameModeTransition : UIPage
     {
         Timer.Register(textSizeEffect.TextSizeDuration, onComplete: () =>
         {
-            uITime.OnResume(true);
+            GameSettingsManager.Instance.BackToPreviousPauseSetting();
+            uiInput.StartReceivingInput();
+            uiTime.OnResume(true);
             Hide();
 
             if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)

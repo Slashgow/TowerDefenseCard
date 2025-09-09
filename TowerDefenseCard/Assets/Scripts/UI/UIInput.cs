@@ -36,8 +36,8 @@ public class UIInput : MonoBehaviour
     {
         if (!GameManager.Instance.AllowPauseDuringCombat)
         {
-            GameManager.Instance.OnStartCombatMode += OnPauseBlocked;
-            GameManager.Instance.OnEndCombatMode += OnPauseUnBlocked;
+            GameManager.Instance.OnStartCombatMode += BlockPause;
+            GameManager.Instance.OnEndCombatMode += UnBlockPause;
         }
     }
 
@@ -74,8 +74,8 @@ public class UIInput : MonoBehaviour
 
         if (GameManager.HasInstance && !GameManager.Instance.AllowPauseDuringCombat)
         {
-            GameManager.Instance.OnStartCombatMode -= OnPauseBlocked;
-            GameManager.Instance.OnEndCombatMode -= OnPauseUnBlocked;
+            GameManager.Instance.OnStartCombatMode -= BlockPause;
+            GameManager.Instance.OnEndCombatMode -= UnBlockPause;
         }
     }
 

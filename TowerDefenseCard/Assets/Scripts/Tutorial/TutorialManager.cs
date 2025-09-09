@@ -40,6 +40,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
 
     public void StartTutorial()
     {
+        GameSettingsManager.Instance.AllowTemporaryPause();
         GameManager.Instance.Pause();
         uiInput.StopRecevingInput();
         CameraMovement.Instance.StopAllMovement();
@@ -64,6 +65,7 @@ public class TutorialManager : MonoSingleton<TutorialManager>
         OnStopTutorial?.Invoke();
         CameraMovement.Instance.ResumeAllMovement();
         uiInput.StartReceivingInput();
+        GameSettingsManager.Instance.BackToPreviousPauseSetting();
         GameManager.Instance.Resume();
     }
 

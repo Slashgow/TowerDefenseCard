@@ -156,6 +156,9 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
 
     public void Pause()
     {
+        if (!GameSettingsManager.Instance.IsPauseEnable)
+            return;
+
         if (IsPaused)
             return;
 
