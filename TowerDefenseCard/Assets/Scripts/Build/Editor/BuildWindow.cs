@@ -118,7 +118,7 @@ public class BuildWindow : EditorWindow
         Debug.Log($"saved build path {buildPath}");
 
         PlayerPrefs.SetString(BUILD_PATH_KEY, buildPath);
-        buildPath = $"{buildPath}/{major}.{minor}.{patch}";
+        buildPath = $"{buildPath}/{Application.productName}_{major}.{minor}.{patch}";
         if (!Directory.Exists(buildPath))
         {
             Directory.CreateDirectory(buildPath);

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class GameSettingsManager : MonoSingleton<GameSettingsManager>
 {
@@ -22,6 +21,9 @@ public class GameSettingsManager : MonoSingleton<GameSettingsManager>
 
         IsPauseEnable = PlayerPrefs.GetInt(IS_PAUSE_ENABLE_ID, defaultPauseEnable ? 1 : 0) == 1;
         IsScreenShakeEnable = PlayerPrefs.GetInt(IS_SCREEN_SHAKE_ENABLE_ID, defaultScreenShake ? 1 : 0) == 1;
+
+        Debug.Log($"Is Pause Enable on awake : {IsPauseEnable}");
+        Debug.Log($"IsScreenShakeEnable on awake : {IsScreenShakeEnable}");
     }
 
     private void Start()
@@ -38,7 +40,6 @@ public class GameSettingsManager : MonoSingleton<GameSettingsManager>
     public void SetIsScreenShakeEnable(bool value)
     {
         IsScreenShakeEnable = value;
-        // TO DO add option
         PlayerPrefs.SetInt(IS_SCREEN_SHAKE_ENABLE_ID, IsScreenShakeEnable ? 1 : 0);
     }
 
@@ -46,8 +47,8 @@ public class GameSettingsManager : MonoSingleton<GameSettingsManager>
     {
         IsPauseEnable = value;
         OnChangePauseSettings?.Invoke(value);
-        // TO DO add option
         PlayerPrefs.SetInt(IS_PAUSE_ENABLE_ID , IsPauseEnable ? 1 :0);
+        Debug.Log($"save Is Pause Enable : {IsPauseEnable}");
     }
 
     public void AllowTemporaryPause()
@@ -60,7 +61,7 @@ public class GameSettingsManager : MonoSingleton<GameSettingsManager>
 
     public void BackToPreviousPauseSetting()
     {
-        IsPauseEnable = isTemporaryPauseSave;
+        IsPauseEnable = true;
         UIGameSettings.Instance.SetPauseToggle(IsPauseEnable);
         OnChangePauseSettings?.Invoke(IsPauseEnable);
     }

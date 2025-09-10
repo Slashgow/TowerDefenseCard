@@ -319,6 +319,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KasaObake_bras_bas
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1722
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6109b6cda3068d94b800bc5ad8ad428d
+      internalID: -1848370466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KasaObake_bras_haut
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1740
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef389b43cf9f7e4a8045f5b7fe0541b
+      internalID: -1284774192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -336,6 +380,8 @@ TextureImporter:
       Amethyst_factory: 3336034324925400877
       Bamboo_plank_factory: -1123946058749082279
       Kami_essence_factory: -4162777096168388130
+      KasaObake_bras_bas: -1848370466
+      KasaObake_bras_haut: -1284774192
       Sakura_brick_factory: -9197449427629750923
       Yami_alive: 1184859872
       Yami_dead: 43710019

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public interface IStealer
 {
@@ -7,4 +8,6 @@ public interface IStealer
     public LayerMask StealableLayerMask { get; }
     public float StealRange { get; }
     public void StealTarget();
+
+    public event Action OnSteal;
 }

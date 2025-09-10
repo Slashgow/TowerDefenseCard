@@ -78,7 +78,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9116245976811751092}
+    - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3487297582032804274}
   m_SourcePrefab: {fileID: 100100000, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+--- !u!114 &926361174095843533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1557039402861704716, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+  m_PrefabInstance: {fileID: 7403724813586798905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042976781341503056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f379b407e9ada174f9eed8d82215c054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7042976781341503056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
@@ -129,3 +143,33 @@ MonoBehaviour:
   stealableLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  OnStealUnity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3487297582032804274}
+        m_TargetAssemblyTypeName: CardSpriteSwapper, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3487297582032804274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042976781341503056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37dbe58d0a25ed44a2ab2cc06321ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  card: {fileID: 926361174095843533}
+  newSprite: {fileID: -1284774192, guid: ba30cc8b7b008cc4885b76205f49e07e, type: 3}

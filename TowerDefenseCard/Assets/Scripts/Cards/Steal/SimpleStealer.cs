@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class SimpleStealer : MonoBehaviour, IStealer
@@ -17,6 +18,10 @@ public class SimpleStealer : MonoBehaviour, IStealer
 
     private BaseDamageable damageable;
     private JumpCardMovement jumpCardMovement;
+
+    public event Action OnSteal;
+    public UnityEvent OnStealUnity;
+
     public JumpCardMovement JumpCardMovement => jumpCardMovement;
 
     private void Awake()
@@ -62,6 +67,8 @@ public class SimpleStealer : MonoBehaviour, IStealer
             {
                 stealable.ApplySteal(transform, carryOffset);
                 currentStealable = stealable;
+                OnSteal?.Invoke();
+                OnStealUnity?.Invoke();
                 jumpCardMovement.MoveTo(jumpCardMovement.OriginalPosition);
                 return;
             }
