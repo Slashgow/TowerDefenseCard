@@ -35,12 +35,16 @@ public class CombatMoveCondtionner : MonoBehaviour
         cardMover.OnPointerDownEvent -= CardMover_OnPointerDownEvent;
         cardMover.OnPointerUpEvent -= CardMover_OnPointerUpEvent;
 
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnStartCraftMode -= OnStartCraftMode;
+
         cooldownTimer?.Cancel();
     }
 
     private void OnStartCraftMode()
     {
-        cardMover.enabled = true;
+        if(cardMover != null)
+            cardMover.enabled = true;
 
         if(damageor != null)
             damageor.StartAttack();
