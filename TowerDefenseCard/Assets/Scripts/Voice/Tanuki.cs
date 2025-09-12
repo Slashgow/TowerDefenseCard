@@ -19,6 +19,7 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private Sprite defaultTanukiSprite;
     [SerializeField, Range(0f, 20f)] private float timeBeforeStartTutoText = 15f;
     [SerializeField, Range(0f, 10f)] private float timeBetweenTextInQueue = 3f;
+    [SerializeField] private bool canHaveSameLineSuccessively = false;
 
     [Header("Lines")]
     [SerializeField] private TanukiLine linesWhenPlayerHit;
@@ -44,6 +45,9 @@ public class Tanuki : MonoBehaviour
 
     public void ShowTanukiText(TanukiLine tanukiLine)
     {
+        if(dialogueQueue.Count > 0 && !canHaveSameLineSuccessively && dialogueQueue.Peek() == tanukiLine)
+            return;
+
         dialogueQueue.Enqueue(tanukiLine);
 
         if (!isDisplayingText)

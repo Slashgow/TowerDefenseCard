@@ -88,7 +88,7 @@ public class UIPageGameModeTransition : UIPage
             uiInput.StartReceivingInput();
             uiTime.OnResume(true);
             Hide();
-
+            GameManager.Instance.CurrentGameState = GameState.PLAY;
             if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)
             {
                 GameManager.Instance.SaveCardsAndBackToMainMenu();
