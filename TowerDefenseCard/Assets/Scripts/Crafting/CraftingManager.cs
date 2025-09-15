@@ -124,12 +124,12 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         CraftingRecipe.OutputCard? selectedOutput = craftInfo.CraftingRecipe.GetRandomOutputCard();
 
         // prevent crafting attack cards if max defense cards reached
-        if (CardManager.Instance.IsMaxDefenseCardsReached && selectedOutput.Value.cardPrefab.GetComponent<CardDefense>())
-        {
-            TryCancelCraft(craftInfo.CraftID);
-            craftedCard = null;
-            return;
-        }
+        //if (CardManager.Instance.IsMaxDefenseCardsReached && selectedOutput.Value.cardPrefab.GetComponent<CardDefense>())
+        //{
+        //    TryCancelCraft(craftInfo.CraftID);
+        //    craftedCard = null;
+        //    return;
+        //}
 
         if (!selectedOutput.HasValue)
         {
@@ -139,6 +139,13 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         }
 
         var outputCard = selectedOutput.Value;
+
+        if (WillExceedMaxDefenseCards(craftInfo, outputCard))
+        {
+            TryCancelCraft(craftInfo.CraftID);
+            craftedCard = null;
+            return;
+        }
 
 
         for (int i = craftInfo.StackCards.Count - 1; i >= 0; i--)
@@ -281,6 +288,33 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         Debug.Log($"Crafting Recipe: {craftInfo.CraftingRecipe.name}, Number of Remaining Cards: {numberOfRemainingCards}, Number of Destroyed Cards: {numberOfDestroyedCard}");
         return numberOfRemainingCards > numberOfDestroyedCard;
+    }
+
+    private bool WillExceedMaxDefenseCards(CraftInfo craftInfo, CraftingRecipe.OutputCard outputCard)
+    {
+        bool isOutputDefenseCard = outputCard.cardPrefab.GetComponent<CardDefense>() != null;
+
+        if (!isOutputDefenseCard)
+            return false; 
+
+        int defenseCardsToDestroy = 0;
+        foreach (var card in craftInfo.StackCards)
+        {
+            bool isDefenseCard = card.GetComponent<CardDefense>() != null;
+            bool willBeDestroyed = !craftInfo.CraftingRecipe.Ingredients
+                .First(ingredient => ingredient.cardID == card.CardData.CardID)
+                .isNotDestroyedOnCraft;
+
+            if (isDefenseCard && willBeDestroyed)
+            {
+                defenseCardsToDestroy++;
+            }
+        }
+
+        int netDefenseCardChange = 1 - defenseCardsToDestroy;
+        int currentDefenseCards = CardManager.Instance.CurrentNumberOfDefenseCards; 
+
+        return (currentDefenseCards + netDefenseCardChange) > CardManager.Instance.MaxCardsDefenseAllowed;
     }
     public void Load(GameSaveData gameSaveData)
     {

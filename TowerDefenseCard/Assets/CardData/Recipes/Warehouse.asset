@@ -22,7 +22,7 @@ MonoBehaviour:
   - cardID: 38
     quantity: 2
     isNotDestroyedOnCraft: 0
-  craftingDelay: 56
+  craftingDelay: 30
   outputCards:
   - cardID: 39
     cardPrefab: {fileID: 7172993121498254736, guid: ee71ccdb7c2e967418408cdfdc328ecc, type: 3}

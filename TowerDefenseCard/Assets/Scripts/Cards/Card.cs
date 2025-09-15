@@ -69,7 +69,7 @@ public class Card : MonoBehaviour
         LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
         LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
     }
-    private void OnDestroy() => UnregisterFromCardManager();
+    protected virtual void OnDestroy() => UnregisterFromCardManager();
     private void RegisterWithCardManager()
     {
         if (CardManager.HasInstance)

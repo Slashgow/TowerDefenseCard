@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d997fd330ccf8a2458126b7916a57a0f, type: 2}
     - target: {fileID: 3292834780892717913, guid: c3bc4b58286190944b86922248ea9394, type: 3}
       propertyPath: numberOfAdditionalCardsAllowed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3753375740935117452, guid: c3bc4b58286190944b86922248ea9394, type: 3}
       propertyPath: m_LocalPosition.x

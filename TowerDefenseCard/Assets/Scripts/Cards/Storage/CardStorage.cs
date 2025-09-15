@@ -11,4 +11,14 @@ public class CardStorage : Card
 
         CardManager.Instance.IncreaseMaxCardsAllowed(numberOfAdditionalCardsAllowed);
     }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        if(CardManager.HasInstance)
+        {
+            CardManager.Instance.DecreaseMaxCardsAllowed(numberOfAdditionalCardsAllowed);
+        }
+    }
 }

@@ -40,12 +40,12 @@ public class Reseller : MonoSingleton<Reseller>
             coinAmount += card.CardData.Cost;
             CraftingManager.Instance.TryCancelCraft(card);
 
-            if(card is CardStorage)
-            {
-                CardStorage cardStorage = (CardStorage)card;
-                CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
-            }
-            else if(card is CardDefenseStorage)
+            //if(card is CardStorage)
+            //{
+            //    CardStorage cardStorage = (CardStorage)card;
+            //    CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
+            //}
+            if(card is CardDefenseStorage)
             {
                 CardDefenseStorage cardDefenseStorage = (CardDefenseStorage)card;
                 CardManager.Instance.DecreaseMaxCardsDefenseAllowed(cardDefenseStorage.NumberOfAdditionalCardsDefenseAllowed);
