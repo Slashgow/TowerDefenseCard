@@ -158,7 +158,11 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 OnDestroyCard?.Invoke();
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
-            else if(!craftInfo.StackCards.Any(card => card is CardExploitation || card is CardRessourceGenerator))  //!outputCard.cardPrefab.GetComponent<CardRessource>())
+            else if (craftInfo.StackCards.Any(card => card is CardRessourceGenerator) && craftInfo.CraftingRecipe.OutputCards[0].cardPrefab.GetComponent<CardRessourceGenerator>())
+            {
+                craftInfo.StackCards[i].OnUnstack();
+            }
+            else if (!craftInfo.StackCards.Any(card => card is CardExploitation || card is CardRessourceGenerator))  //!outputCard.cardPrefab.GetComponent<CardRessource>())
             {
                 craftInfo.StackCards[i].OnUnstack();
             }

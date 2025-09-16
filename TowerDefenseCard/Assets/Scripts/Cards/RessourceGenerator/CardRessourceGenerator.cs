@@ -51,7 +51,7 @@ public class CardRessourceGenerator : Card
             if (CraftingManager.Instance.TryCraft(transform, this))
             {
                 currentCraftID = CraftingManager.Instance.GetCraftIDByCard(this);
-
+                Debug.Log($"Ressource Generator : Initiated craft with ID {currentCraftID}");
                 //if (currentCraftID != -1)
                 //{
                 //    CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
