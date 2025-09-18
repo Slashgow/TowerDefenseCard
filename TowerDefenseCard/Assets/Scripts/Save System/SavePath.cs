@@ -7,6 +7,7 @@ public static class SavePath
     private static string savePathCardDiscovered;
     private static string savePathTutorial;
     private static string savePathSuccess;
+    private static string questSaveFilePath;
 
     public static string SavePathSuccess
     {
@@ -50,6 +51,18 @@ public static class SavePath
             return savePathTutorial;
         }
     }
+
+    public static string QuestSaveFilePath
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(questSaveFilePath))
+                questSaveFilePath = Path.Combine(Application.persistentDataPath, "questSave.json");
+
+            return questSaveFilePath;
+        }
+    }
     public static bool SaveExists => File.Exists(SaveFilePath);
     public static bool SaveSuccessExists => File.Exists(SavePathSuccess);
+    public static bool QuestSaveExists => File.Exists(QuestSaveFilePath);
 }

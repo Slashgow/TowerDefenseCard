@@ -45,11 +45,18 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
         {
             if(remainingCards == maxCardCount)
             {
-                ShopCardIdea selectedShopCardIdea = SelectShopCardIdeaOrdered(shop.DropChanceBonus);
-                if (selectedShopCardIdea != null)
-                    SpawnCardIdea(selectedShopCardIdea);
-                else
+                if (shop.IsFirstBoosterRigged && !shop.isFirstBoosterOpened)
                     SpawnCard();
+
+                else
+                {
+                    ShopCardIdea selectedShopCardIdea = SelectShopCardIdeaOrdered(shop.DropChanceBonus);
+                    if (selectedShopCardIdea != null)
+                        SpawnCardIdea(selectedShopCardIdea);
+                    else
+                        SpawnCard();
+                }
+                
             }
             else
                 SpawnCard();
@@ -70,13 +77,22 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
         if (shop.IsFirstBoosterRigged && !shop.isFirstBoosterOpened)
         {
-            selectedItem = shop.FirstCardPrefabRiggedBooster;
-            shop.isFirstBoosterOpened = true;
+            selectedItem = shop.GetNextRiggedCard();
+
+            if (!shop.HasMoreRiggedCards())
+                shop.isFirstBoosterOpened = true;
         }
-        else
+        if (selectedItem == null)
             selectedItem = SelectShopItem();
-          
+         
+        
         Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
+
+        if (selectedItem.CardPrefab.GetComponent<Currency>())
+        {
+            ShopManager.Instance.AddPlayerCoin(1);
+        }
+
         remainingCards--;
         OnOpenBooster?.Invoke(selectedItem.CardPrefab.GetComponent<Card>().CardData.CardID);
     }

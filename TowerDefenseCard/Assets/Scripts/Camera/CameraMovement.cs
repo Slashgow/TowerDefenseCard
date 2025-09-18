@@ -22,7 +22,9 @@ public class CameraMovement : MonoSingleton<CameraMovement>
     [SerializeField, Range(0f, 2f)] private float recenterDuration = 0.5f;
     [SerializeField] private Ease recenterEasing;
 
-    private Camera cam;
+    [SerializeField] private Camera cam;
+
+
     private Vector3 targetPosition;
     private float targetZoom;
     private Vector3 velocity = Vector3.zero;
@@ -34,16 +36,17 @@ public class CameraMovement : MonoSingleton<CameraMovement>
     public bool IsDraggindEnable { get; set; }
     public bool IsZoomingEnable { get; set; }
     public bool IsMovingWithWASD { get; set; }
+    public bool IsMovementLocked { get; set; }
 
     protected override void Awake()
     {
         base.Awake();
-        cam = GetComponent<Camera>();
         inputHandler = GetComponent<CameraInputHandler>();
         originPosition = transform.position;
         IsDraggindEnable = true;
         IsZoomingEnable = true;
         IsMovingWithWASD = true;
+        IsMovementLocked = false;
     }
 
     void Start()
@@ -87,7 +90,47 @@ public class CameraMovement : MonoSingleton<CameraMovement>
             }));
     }
 
-
+    public void ZoomInstantTo(float targetZoom) => this.cam.orthographicSize = targetZoom;
+    public void MoveAndZoomToSequentially(float timeToMove, float timeToZoom, float targetZoom, Vector3 targetPosition, Action onComplete)
+    {
+        isRecentering = true;
+        Sequence sequence = DOTween.Sequence().SetUpdate(true);
+        sequence.Append(this.transform.DOMove(targetPosition, timeToMove)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                this.targetPosition = transform.position;
+            }));
+        sequence.Append(this.cam.DOOrthoSize(targetZoom, timeToZoom)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                this.targetZoom = targetZoom;
+                isRecentering = false;
+                onComplete?.Invoke();
+            }));
+    }
+    public void MoveAndZoomToSameTime(float timeToMove, float timeToZoom, float targetZoom, Vector3 targetPosition, Action onCompleteMove, Action onCompleteZoom)
+    {
+        isRecentering = true;
+        this.transform.DOMove(targetPosition, timeToMove)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                this.targetPosition = transform.position;
+                onCompleteMove?.Invoke();
+            });
+        this.cam.DOOrthoSize(targetZoom, timeToZoom)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => {
+                this.targetZoom = targetZoom;
+                isRecentering = false;
+                onCompleteZoom?.Invoke();
+            });
+    }
+    public void LockMovement() => IsMovementLocked = true;
+    public void UnlockMovement() => IsMovementLocked = false;
     public void StopAllMovement()
     {
         IsDraggindEnable = false;
@@ -119,7 +162,10 @@ public class CameraMovement : MonoSingleton<CameraMovement>
         if (isRecentering)
             return;
 
-        if(IsDraggindEnable)
+        if(IsMovementLocked)
+            return;
+
+        if (IsDraggindEnable)
             HandleDragging();
         
         if(IsZoomingEnable)

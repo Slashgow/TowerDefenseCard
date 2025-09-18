@@ -27,6 +27,9 @@ public class Currency : Card, IEndDragHandler
         {
             if(hit.TryGetComponent(out CardShop cardShop))
             {
+                if(!cardShop.Shop.IsUnlocked)
+                    return;
+
                 // BUG : currencycount different stackcount
                 var currencyChildren = GetComponentsInChildren<Currency>();
                 int availableCurrency = currencyChildren.Length; //StackCount;
@@ -59,7 +62,7 @@ public class Currency : Card, IEndDragHandler
                 }
                 else
                 {
-                    cardShop.TryPurchaseBooster();
+                    cardShop.TryPurchaseBooster(false);
 
                     if (availableCurrency > requiredCost)
                     {

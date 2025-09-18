@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 533366960128
-    m_Localized: Exploit a Forest
+    m_Localized: Drop the Worker on the Forest
     m_Metadata:
       m_Items: []
   - m_Id: 691941011456
@@ -168,6 +168,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3490695665283072
     m_Localized: Craft Okuninushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625774899982336
+    m_Localized: Sell card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625861650771968
+    m_Localized: Sell a card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625961584259072
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626020522618880
+    m_Localized: Use the upper right button or SPACE to pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626189435629568
+    m_Localized: Open craft menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626310986559488
+    m_Localized: Use the upper left button or TAB to see your craft recipes.
     m_Metadata:
       m_Items: []
   references:

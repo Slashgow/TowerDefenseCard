@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 
 [System.Serializable]
-public class Quest : ILoadable, ISavable
+public class Quest
 {
     [SerializeField] private string questId;
     public string QuestId => questId;
@@ -23,14 +23,21 @@ public class Quest : ILoadable, ISavable
     private int currentProgress;
     public int CurrentProgress => currentProgress;
 
-    public bool IsCompleted => condition.IsCompleted();
+    [SerializeField] private bool isLocked = true; 
+    public bool IsLocked => isLocked;
+
+    public bool IsCompleted => condition.IsCompleted() && !isLocked;
 
     public event Action<Quest> OnCompleteQuest;
+    public event Action<Quest> OnUnlockQuest;
 
     public void Setup() => condition.Setup(this);
 
     public void IncrementProgress()
     {
+        if (isLocked)
+            return;
+
         currentProgress++;
         if (IsCompleted)
         {
@@ -45,21 +52,32 @@ public class Quest : ILoadable, ISavable
 
     public void CheckProgress()
     {
+        if (isLocked)
+            return;
+
         if (IsCompleted)
             OnCompleteQuest?.Invoke(this);
     }
-
-    public void Save(GameSaveData gameSaveData)
+    public void UnlockQuest()
     {
-        gameSaveData.AddQuestSaveData(new QuestSaveData
+        isLocked = false;
+        OnUnlockQuest?.Invoke(this);
+    }
+
+    public void LockQuest() => isLocked = true;
+
+    public void Save(QuestSaveContainer questSaveContainer)
+    {
+        questSaveContainer.AddMainQuestSaveData(new QuestSaveData
         {
             questID = this.questId,
             currentProgress = this.currentProgress,
+            isLocked = this.isLocked
         });
     }
-    public void Load(GameSaveData gameSaveData)
+    public void Load(QuestSaveData questSaveData)
     {
-        QuestSaveData questSaveData = gameSaveData.GetQuestSaveDataByQuestID(this.questId);
         this.currentProgress = questSaveData.currentProgress;
+        this.isLocked = questSaveData.isLocked;
     }
 }

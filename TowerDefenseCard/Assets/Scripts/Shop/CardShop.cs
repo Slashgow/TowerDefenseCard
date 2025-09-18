@@ -12,27 +12,33 @@ public class CardShop : Card
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
-        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.ShopCost.ToString());
+
+        shop.OnUnlock += UpdateCardShopData;
     }
 
     protected override void Start()
     {
         base.Start();
 
+        UpdateUI();
+
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChange;
         LocalizationSettings.SelectedLocaleChanged += OnLocaleChange;
 
         if (spawnBoosterOnStart && !SavePath.SaveExists)
         {
-            TryPurchaseBooster();
+            TryPurchaseBooster(true);
         }
     }
 
-    public void TryPurchaseBooster()
+    public void TryPurchaseBooster(bool bypassLocked)
     {
+        if (!bypassLocked && !shop.IsUnlocked)
+            return;
+
         ShopManager.Instance.TryPurchaseBooster(this.shop);
         shop.ResetShopCost();
-        UpdateCardShopData();
+        UpdateUI();
     }
 
     private void OnLocaleChange(UnityEngine.Localization.Locale Locale)
@@ -43,5 +49,16 @@ public class CardShop : Card
     public void UpdateCardShopData()
     {
         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.CurrentShopCost.ToString());
+    }
+    private void UpdateCardShopDataLock()
+    {
+        cardUI.SetupCard(shop.LockUIDescription, shop.ShopCost.ToString());
+    }
+    private void UpdateUI()
+    {
+        if (shop.IsUnlocked)
+            UpdateCardShopData();
+        else
+            UpdateCardShopDataLock();
     }
 }

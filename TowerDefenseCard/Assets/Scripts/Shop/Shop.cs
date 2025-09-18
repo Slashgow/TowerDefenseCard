@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Shop
+public class Shop : IUnlockable
 {
     [SerializeField, Range(0, 50)] private int shopCost;
     public int ShopCost => shopCost;
@@ -11,8 +11,11 @@ public class Shop
     [SerializeField] private bool isFirstBoosterRigged = false;
     public bool IsFirstBoosterRigged => isFirstBoosterRigged;
 
-    [SerializeField] private ShopItem firstCardPrefabRiggedBooster;
-    public ShopItem FirstCardPrefabRiggedBooster => firstCardPrefabRiggedBooster;
+    [SerializeField] private List<ShopItem> riggedBoosterCards = new List<ShopItem>();
+    public List<ShopItem> RiggedBoosterCards => riggedBoosterCards;
+
+    private int riggedCardIndex = 0;
+    public int RiggedCardIndex => riggedCardIndex;
     public bool isFirstBoosterOpened { get; set; } = false;
 
     [SerializeField] private List<ShopItem> shopItems = new List<ShopItem>();
@@ -52,11 +55,12 @@ public class Shop
         }
     }
 
+    private bool isUnlocked = false;
+    public event Action OnUnlock;
+    public bool IsUnlocked => isUnlocked;
+    public string LockUIDescription => "????";
 
-    public void ResetShopCost()
-    {
-        currentShopCost = shopCost;
-    }
+    public void ResetShopCost() => currentShopCost = shopCost;
 
     public void SetLastAttemptedCardIdea(ShopCardIdea cardIdea)
     {
@@ -68,5 +72,22 @@ public class Shop
     {
         LastAttemptedCardIdea = null;
         LastAttemptCardIdeaFailed = false;
+    }
+    public ShopItem GetNextRiggedCard()
+    {
+        if (riggedBoosterCards == null || riggedBoosterCards.Count == 0 || riggedCardIndex >= riggedBoosterCards.Count)
+            return null;
+
+        ShopItem card = riggedBoosterCards[riggedCardIndex];
+        riggedCardIndex++;
+        return card;
+    }
+
+    public bool HasMoreRiggedCards() => riggedBoosterCards != null && riggedCardIndex < riggedBoosterCards.Count;
+    public void ResetRiggedCardIndex() => riggedCardIndex = 0;
+    public void Unlock()
+    {
+        isUnlocked = true;
+        OnUnlock?.Invoke();
     }
 }

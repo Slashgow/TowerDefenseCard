@@ -184,7 +184,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
                     card.CardOutline.enabled = true;
                 else if (card is CardShop)
                 {
-                    if (TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost) // -availableCurrency
+                    CardShop cardShop = (CardShop)card;
+                    if (TotalCostCardsOnBoard < ShopManager.Instance.MinimumShopCost || !cardShop.Shop.IsUnlocked) // -availableCurrency
                         card.CardOutline.enabled = false;
                     else
                         card.CardOutline.enabled = true;

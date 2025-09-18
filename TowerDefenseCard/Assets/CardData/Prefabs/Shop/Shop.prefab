@@ -37,6 +37,7 @@ Transform:
   - {fileID: 2294713214603451997}
   - {fileID: 2806465245093658798}
   - {fileID: 8639243492212447185}
+  - {fileID: 1276512049353291640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5793447513779673074
@@ -114,8 +115,10 @@ MonoBehaviour:
   spawnBoosterOnStart: 0
   shop:
     shopCost: 0
+    isFirstBoosterRigged: 0
+    riggedBoosterCards: []
     shopItems: []
-    spawnPoint: {fileID: 0}
+    spawnPoint: {fileID: 1276512049353291640}
     booster: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
     dropChanceBonus: 10
     shopCardIdeas: []
@@ -367,6 +370,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7793989429010167968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276512049353291640}
+  m_Layer: 9
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1276512049353291640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793989429010167968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.358, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3753375740935117452}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2965096033597908879
 PrefabInstance:
   m_ObjectHideFlags: 0

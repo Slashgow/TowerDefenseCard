@@ -9,6 +9,5 @@ using UnityEngine;
         public void InitializeSingleton();
 
         public void ClearSingleton();
-
-    }
+}
 

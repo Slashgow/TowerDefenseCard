@@ -52,7 +52,9 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         dropButtonSecondaryQuest.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, 180f);
 
         mainQuestManager.OnQuestCompleted += MainQuestManager_OnQuestCompleted;
+        mainQuestManager.OnQuestUnlocked += MainQuestManager_OnQuestUnlocked;
         secondaryQuestManager.OnQuestCompleted += SecondaryQuestManager_OnQuestCompleted;
+        secondaryQuestManager.OnQuestUnlocked += SecondaryQuestManager_OnQuestUnlocked;
 
         isPin = autoPinOnAwake;
         pinToggle.isOn = isPin;
@@ -62,6 +64,8 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             Hide();
     }
 
+
+
     private void OnDestroy()
     {
         dropButtonMainQuest.onClick.RemoveListener(ToggleScrollRectMainQuest);
@@ -69,6 +73,8 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         mainQuestManager.OnQuestCompleted -= MainQuestManager_OnQuestCompleted;
         secondaryQuestManager.OnQuestCompleted -= SecondaryQuestManager_OnQuestCompleted;
         pinToggle.onValueChanged.RemoveListener(OnClickOnPinToggle);
+        mainQuestManager.OnQuestUnlocked -= MainQuestManager_OnQuestUnlocked;
+        secondaryQuestManager.OnQuestUnlocked -= SecondaryQuestManager_OnQuestUnlocked;
     }
     private void Start()
     {
@@ -175,6 +181,32 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             currentHighlightedMainQuest = null;
             HighlightNextQuest(ref currentHighlightedSecondaryQuest, false);
         }
+    }
+
+    private void SecondaryQuestManager_OnQuestUnlocked(Quest quest)
+    {
+        UIQuest uiQuest = GetSecondaryUIQuestByQuestID(quest.QuestId);
+
+        if (uiQuest == null)
+        {
+            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            return;
+        }
+
+        uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
+    }
+
+    private void MainQuestManager_OnQuestUnlocked(Quest quest)
+    {
+        UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
+        Debug.Log("Main Quest Manager, on quest unlocked");
+        if (uiQuest == null)
+        {
+            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            return;
+        }
+
+        uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
     }
 
     private void HighlightNextQuest(ref UIQuest currentHighlightedQuest, bool isMainQuest)

@@ -50,6 +50,13 @@ public class GameSaveData
 
     public QuestSaveData GetQuestSaveDataByQuestID(string questID)
     {
-        return questSaveDatas.FirstOrDefault(questSaveData => questSaveData.questID == questID);
+        QuestSaveData questSaveData = questSaveDatas.FirstOrDefault(questSaveData => questSaveData.questID == questID);
+
+        if(questSaveData.questID == null)
+        {
+            questSaveData.isLocked = true;
+            questSaveData.currentProgress = 0;
+        }
+        return questSaveData;
     }
 }

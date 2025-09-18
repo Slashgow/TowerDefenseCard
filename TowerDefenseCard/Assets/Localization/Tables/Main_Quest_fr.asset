@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 533366960128
-    m_Localized: "Exploitez une f\xF4ret"
+    m_Localized: "D\xE9posez le Villageois sur la For\xEAt"
     m_Metadata:
       m_Items: []
   - m_Id: 485824524288
@@ -168,6 +168,32 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3490695665283072
     m_Localized: Craftez Okuninushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625774899982336
+    m_Localized: Vendez une carte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625861650771968
+    m_Localized: Vendez une carte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625961584259072
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626020522618880
+    m_Localized: "Utilisez le bouton en haut \xE0 droite ou ESPACE pour mettre en
+      pause"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626189435629568
+    m_Localized: Ouvrir le menu des recettes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13626310986559488
+    m_Localized: "Utilisez le bouton en haut \xE0 gauche ou TAB pour voir vos recettes
+      de craft"
     m_Metadata:
       m_Items: []
   references:

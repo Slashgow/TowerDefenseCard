@@ -11,8 +11,6 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private CraftingManager craftingManager;
     [SerializeField] private CardManager cardManager;
     [SerializeField] private PlayerHealth playerHealth;
-    [SerializeField] private QuestManager mainQuestManager;
-    [SerializeField] private QuestManager secondaryQuestManager;
     [SerializeField] private SuccessSaveSystem successSaveSystem;
 
     [SerializeField] private Logger logger;
@@ -61,8 +59,6 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         playerHealth.Save(saveData);
         successSaveSystem.Save();
         SaveCards(saveData);
-        mainQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
-        secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Save(saveData));
     }
     private void SaveCards(GameSaveData saveData)
     {
@@ -166,8 +162,6 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         playerHealth.Load(saveData);
         //successSaveSystem.Load();
         LoadCards(saveData);
-        mainQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
-        secondaryQuestManager.AvailableQuests.ForEach(quest => quest.Load(saveData));
     }
 
     private void LoadCards(GameSaveData saveData)
