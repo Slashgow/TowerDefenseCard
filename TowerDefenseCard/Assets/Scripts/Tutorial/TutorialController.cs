@@ -36,6 +36,7 @@ public class TutorialController : MonoSingleton<TutorialController>
     [SerializeField] private CardShop defensePackCardShop;
     [SerializeField] private CardShop engineeringkCardShop;
     [SerializeField] private CardShop foodPackCardShop;
+    [SerializeField] private GameObject enableAnimationPrefab;
 
     [Header("Start Settings")]
     [SerializeField, Range(0f, 20f)] private float startZoom;
@@ -121,6 +122,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                 showBasePackSettings.ZoomOrthoSize, showBasePackSettings.CameraTransform.position, () =>
             {
                 isBasePackUnlocked = true;
+                Instantiate(enableAnimationPrefab, basePackCardShop.transform.position, Quaternion.identity);
                 basePackCardShop.Shop.Unlock();
                 Save();
                 MoveCameraBack(showBasePackSettings.TimeBeforeGoingBackToOriginalPosition, showBasePackSettings.GoBackToOriginalPositionTime);
@@ -133,6 +135,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                 showDefensePackSettings.ZoomOrthoSize, showDefensePackSettings.CameraTransform.position, () =>
                 {
                     isDefensePackUnlocked = true;
+                    Instantiate(enableAnimationPrefab, defensePackCardShop.transform.position, Quaternion.identity);
                     defensePackCardShop.Shop.Unlock();
                     Save();
                     MoveCameraBack(showDefensePackSettings.TimeBeforeGoingBackToOriginalPosition, showDefensePackSettings.GoBackToOriginalPositionTime);
@@ -145,6 +148,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                 showEngineeringPackSettings.ZoomOrthoSize, showEngineeringPackSettings.CameraTransform.position, () =>
                 {
                     isEngineeringPackUnlocked = true;
+                    Instantiate(enableAnimationPrefab, engineeringkCardShop.transform.position, Quaternion.identity);
                     engineeringkCardShop.Shop.Unlock();
                     Save();
                     MoveCameraBack(showEngineeringPackSettings.TimeBeforeGoingBackToOriginalPosition, showEngineeringPackSettings.GoBackToOriginalPositionTime);
@@ -157,6 +161,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                 showFoodPackSettings.ZoomOrthoSize, showFoodPackSettings.CameraTransform.position, () =>
                 {
                     isFoodPackUnlocked = true;
+                    Instantiate(enableAnimationPrefab, foodPackCardShop.transform.position, Quaternion.identity);
                     foodPackCardShop.Shop.Unlock();
                     Save();
                     MoveCameraBack(showFoodPackSettings.TimeBeforeGoingBackToOriginalPosition, showFoodPackSettings.GoBackToOriginalPositionTime);

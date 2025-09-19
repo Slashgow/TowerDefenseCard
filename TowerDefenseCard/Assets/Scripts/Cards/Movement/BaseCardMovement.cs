@@ -8,6 +8,8 @@ public abstract class BaseCardMovement : MonoBehaviour
 
     [Header("Start Movement")]
     [SerializeField] private bool autoStartMove = true;
+    [SerializeField] private bool isStartMoveRandom = true;
+    [SerializeField] private Vector2 startMoveNonRandomDirection = Vector2.down;
     [SerializeField, Range(0f, 3f)] private float moveStep = 0.1f;
     [SerializeField, Range(0f, 1f)] private float checkRadius = 0.5f;
     [SerializeField, Range(0, 10)] private int maxIterations = 10;
@@ -53,7 +55,8 @@ public abstract class BaseCardMovement : MonoBehaviour
         Vector3 startPosition = transform.position;
         while (iterations < maxIterations)
         {
-            Vector2 moveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+            Vector2 moveDirection = isStartMoveRandom ? new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized :
+                startMoveNonRandomDirection;
             Vector3 targetPosition = transform.position + new Vector3(moveDirection.x * moveStep, moveDirection.y * moveStep, 0f);
 
             float elapsedTime = 0f;

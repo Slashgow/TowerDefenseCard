@@ -57,6 +57,7 @@ public class Shop : IUnlockable
 
     private bool isUnlocked = false;
     public event Action OnUnlock;
+    public static event Action OnAnyShopUnlock;
     public bool IsUnlocked => isUnlocked;
     public string LockUIDescription => "????";
 
@@ -88,6 +89,7 @@ public class Shop : IUnlockable
     public void Unlock()
     {
         isUnlocked = true;
+        OnAnyShopUnlock?.Invoke();
         OnUnlock?.Invoke();
     }
 }

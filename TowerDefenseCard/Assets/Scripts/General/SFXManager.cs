@@ -11,11 +11,13 @@ public class SFXManager : MonoSingleton<SFXManager>
 
     [Header("AudioClips")]
     [SerializeField] private AudioClip onCompleteQuest;
+    [SerializeField] private AudioClip onUnlockShop;
 
     private int currentAudioSourceIndex;
 
     private void Start()
     {
+        Shop.OnAnyShopUnlock += Shop_OnAnyShopUnlock;
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
         Reseller.OnResell += Reseller_OnResell;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
@@ -24,7 +26,7 @@ public class SFXManager : MonoSingleton<SFXManager>
         QuestManager.OnAnyQuestCompleted += QuestManager_OnAnyQuestCompleted;
     }
 
-
+  
     private void OnDisable()
     {
         if (CraftingManager.HasInstance)
@@ -35,6 +37,7 @@ public class SFXManager : MonoSingleton<SFXManager>
         Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
         ShopManager.OnPurchaseBooster -= ShopManager_OnPurchaseBooster;
         QuestManager.OnAnyQuestCompleted -= QuestManager_OnAnyQuestCompleted;
+        Shop.OnAnyShopUnlock -= Shop_OnAnyShopUnlock;
     }
 
     private void Booster_OnOpenCardIdea() => PlayRandomAudioClip(popSounds);
@@ -43,6 +46,7 @@ public class SFXManager : MonoSingleton<SFXManager>
     private void Reseller_OnResell(int numberOfReselledCard) => PlayRandomAudioClip(coinSounds);
     private void CraftingManager_OnCraftComplete(int arg1, CardID arg2) => PlayRandomAudioClip(popSounds);
     private void QuestManager_OnAnyQuestCompleted() => PlayAudioClip(onCompleteQuest);
+    private void Shop_OnAnyShopUnlock() => PlayAudioClip(onUnlockShop);
 
 
     public void PlayAudioClip(AudioClip audioClip)

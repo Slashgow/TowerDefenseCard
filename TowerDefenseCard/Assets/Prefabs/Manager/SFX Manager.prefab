@@ -66,6 +66,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 229f6180cf983a0438aff4cab386d915, type: 3}
   - {fileID: 8300000, guid: b03f5c7c252a2164891445838dcc2ae8, type: 3}
   onCompleteQuest: {fileID: 8300000, guid: df7f862f1039d4649a59bd2f960fa5c3, type: 3}
+  onUnlockShop: {fileID: 8300000, guid: 5ae57f703d25ee24ba2ee7ffae87d317, type: 3}
 --- !u!1 &1457461405237576364
 GameObject:
   m_ObjectHideFlags: 0
