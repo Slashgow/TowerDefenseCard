@@ -754,6 +754,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cloud_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 70
+        width: 590
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df62ae8fc7fb98409c0ea257a357e26
+      internalID: -1561595251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_1
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 407
+        width: 559
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5517553f36eb674e986f2b3393ad6b2
+      internalID: 359141609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_3
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 23
+        width: 590
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6fb19d27ac6a24f9baeb25ab58e255
+      internalID: -1399809986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud_2
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 10
+        width: 559
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec75588bc3931e544927d6af6747982a
+      internalID: -2129555416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -788,7 +876,6 @@ TextureImporter:
       Effects_29: 1431634933
       Effects_3: -6140521989939545447
       Effects_31: 1257598460
-      Effects_5: -611186965
       Effects_6: -7466522973678874103
       Effects_7: 6815229166277592208
       Effects_9: 4090799819692156374
@@ -802,6 +889,10 @@ TextureImporter:
       boule_verte_3: 179463674
       boule_verte_4: 490391568
       boule_verte_5: -2008516188
+      cloud_1: 359141609
+      cloud_2: -2129555416
+      cloud_3: -611186965
+      cloud_4: -1561595251
       smoke_appear_1: 474906326
       smoke_appear_2: -1976432431
       smoke_appear_3: -6026981111418200015

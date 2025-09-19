@@ -7,6 +7,7 @@ using UnityEngine;
 public class ColorThemeManager : MonoSingleton<ColorThemeManager>
 {
     [SerializeField] private ColorTheme startColorTheme = ColorTheme.Rose;
+    [SerializeField] private bool startWithRandomColorTheme = false;
     [SerializeField] private Logger logger;
     [SerializeField] private List<ColorsTheme> colorsThemes = new List<ColorsTheme>();
 
@@ -16,7 +17,14 @@ public class ColorThemeManager : MonoSingleton<ColorThemeManager>
     protected override void Awake()
     {
         base.Awake();
+
         CurrentColorTheme = startColorTheme;
+
+        if (startWithRandomColorTheme)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, Enum.GetValues(typeof(ColorTheme)).Length);
+            startColorTheme = (ColorTheme)randomIndex;
+        }
     }
 
     private void Start() => ChanceColorTheme(startColorTheme);

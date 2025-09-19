@@ -37,6 +37,9 @@ public class MusicManager : MonoSingleton<MusicManager>
 
     private void Start()
     {
+        if (!GameManager.HasInstance)
+            return;
+
         GameManager.Instance.OnStartCraftMode += StartCraftMusic;
         GameManager.Instance.OnStartCombatMode += StartCombatMusic;
     }
