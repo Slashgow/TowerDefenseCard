@@ -194,6 +194,14 @@ MonoBehaviour:
     m_Localized: Use the upper left button or TAB to see your craft recipes.
     m_Metadata:
       m_Items: []
+  - m_Id: 14063896073990144
+    m_Localized: Speed up/down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14064140912291840
+    m_Localized: Use the upper right button or E to speed up/down
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

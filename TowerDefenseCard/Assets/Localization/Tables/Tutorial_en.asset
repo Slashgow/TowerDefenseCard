@@ -183,6 +183,43 @@ MonoBehaviour:
       basic shopping
     m_Metadata:
       m_Items: []
+  - m_Id: 11237037883912192
+    m_Localized: "      Move Camera\n     <sprite name=w>\n<sprite name=a><sprite
+      name=s><sprite name=d> or <sprite name=ml>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237342583320576
+    m_Localized: 'Zoom
+
+      <sprite name=mm>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237449185751040
+    m_Localized: 'Pause
+
+      <sprite name=space>
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237566206832640
+    m_Localized: 'Speed up/down
+
+      <sprite name=e>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237837666381824
+    m_Localized: 'Show craft menu
+
+      <sprite name=tab>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237961654202368
+    m_Localized: 'Magnet same type of cards
+
+      hold <sprite name=shift>'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

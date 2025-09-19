@@ -186,6 +186,37 @@ MonoBehaviour:
       Ce n'est pas sorcier, c'est juste du shopping basique."
     m_Metadata:
       m_Items: []
+  - m_Id: 11237037883912192
+    m_Localized: "D\xE9placer la cam\xE9ra\n     <sprite name=z>\n<sprite name=q><sprite
+      name=s><sprite name=d> or <sprite name=ml>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237342583320576
+    m_Localized: 'Zoomer
+
+      <sprite name=mm>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237449185751040
+    m_Localized: 'Pause
+
+      <sprite name=space>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237566206832640
+    m_Localized: "Acc\xE9l\xE9rer/Ralentir\n<sprite name=e>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237837666381824
+    m_Localized: 'Voir le menu des crafts
+
+      <sprite name=tab>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11237961654202368
+    m_Localized: "Aimanter cartes de m\xEAme type\nMaintenir <sprite name=shift>"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

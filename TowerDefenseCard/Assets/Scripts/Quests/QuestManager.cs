@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -98,16 +99,10 @@ public class QuestManager : MonoBehaviour
         }
         SaveQuestProgress();
     }
-
-    public Quest GetQuest(string questId)
-    {
-        return activeQuests.ContainsKey(questId) ? activeQuests[questId] : null;
-    }
-
-    public List<Quest> GetActiveQuests()
-    {
-        return new List<Quest>(activeQuests.Values);
-    }
+    
+    public Quest GetQuestByID(string questId) => availableQuests.FirstOrDefault(q => q.QuestId == questId);
+    public Quest GetActiveQuestByID(string questId) => activeQuests.ContainsKey(questId) ? activeQuests[questId] : null;
+    public List<Quest> GetActiveQuests() => new List<Quest>(activeQuests.Values);
     private void SaveQuestProgress()
     {
         try

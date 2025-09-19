@@ -39,6 +39,8 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     public UnityEvent OnPauseUnity;
     public UnityEvent OnResumeUnity;
 
+    public event Action OnSpeedUp;
+
     private Coroutine pauseSimulationCoroutine;
 
     public void Load(GameSaveData saveData)
@@ -214,6 +216,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     {
         CurrentGameSpeed = speedUpGameSpeed;
         Time.timeScale = CurrentGameSpeed;
+        OnSpeedUp?.Invoke();
     }
 
     public void ResetGameSpeed()

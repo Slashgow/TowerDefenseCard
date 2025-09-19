@@ -1,4 +1,6 @@
-﻿public class PauseCondition : QuestCondition
+﻿
+
+public class PauseCondition : QuestCondition
 {
     private void Start() => GameManager.Instance.OnPause += GameManager_OnPause;
     private void OnDestroy() => GameManager.Instance.OnPause -= GameManager_OnPause;

@@ -65,4 +65,5 @@ public static class SavePath
     public static bool SaveExists => File.Exists(SaveFilePath);
     public static bool SaveSuccessExists => File.Exists(SavePathSuccess);
     public static bool QuestSaveExists => File.Exists(QuestSaveFilePath);
+    public static bool TutorialSaveExists => File.Exists(SavePathTutorial);
 }

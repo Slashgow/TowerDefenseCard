@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3988604651324426627}
   - component: {fileID: 3581945533476828497}
   m_Layer: 0
-  m_Name: Quest 21_Susanoo
+  m_Name: Quest 22_Susanoo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1128534431886111573}
   - component: {fileID: 2848508461406759917}
   m_Layer: 0
-  m_Name: Quest 19_Fujin
+  m_Name: Quest 20_Fujin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 688680384721702339}
   - component: {fileID: 5258648557199746727}
   m_Layer: 0
-  m_Name: Quest 20_Raijin
+  m_Name: Quest 21_Raijin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5954395852021874302}
   - component: {fileID: 5597331212207616966}
   m_Layer: 0
-  m_Name: Quest 12_AkitaInu
+  m_Name: Quest 13_AkitaInu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 5509736477031912154}
   - component: {fileID: 5427258070229270780}
   m_Layer: 0
-  m_Name: Quest 16_Hachiman
+  m_Name: Quest 17_Hachiman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 299799662752392757}
   - component: {fileID: 3650734080597979023}
   m_Layer: 0
-  m_Name: Quest 17_Dragon
+  m_Name: Quest 18_Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 6673767768456557579}
   - component: {fileID: 6856871288931216174}
   m_Layer: 0
-  m_Name: Quest 15_Temple
+  m_Name: Quest 16_Temple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 8180455184194809836}
   - component: {fileID: 7983741458701172068}
   m_Layer: 0
-  m_Name: Quest 13_Torii Gate
+  m_Name: Quest 14_Torii Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 1846074071156962077}
   - component: {fileID: 6763654258346137590}
   m_Layer: 0
-  m_Name: Quest 22_Okuninushi
+  m_Name: Quest 23_Okuninushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,6 +717,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 47
+--- !u!1 &4679868748704728783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3489267147880582272}
+  - component: {fileID: 1488333931061695889}
+  m_Layer: 0
+  m_Name: Quest 10_speedup_down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3489267147880582272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679868748704728783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6744237406276751983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488333931061695889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679868748704728783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337445b826af7dc49a73578d6bfbc3b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5027221286857722165
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +772,7 @@ GameObject:
   - component: {fileID: 4591904941144412433}
   - component: {fileID: 7808302902195712193}
   m_Layer: 0
-  m_Name: Quest 18_Amaterasu
+  m_Name: Quest 19_Amaterasu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +817,7 @@ GameObject:
   - component: {fileID: 6527628310666978823}
   - component: {fileID: 7213308970379518789}
   m_Layer: 0
-  m_Name: Quest 14_Komainu
+  m_Name: Quest 15_Komainu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,6 +936,7 @@ Transform:
   - {fileID: 2461685856940829932}
   - {fileID: 3231402592361738743}
   - {fileID: 2160108563813461847}
+  - {fileID: 3489267147880582272}
   - {fileID: 4451038622912373862}
   - {fileID: 2853450685677888461}
   - {fileID: 5954395852021874302}
@@ -1118,6 +1163,28 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     condition: {fileID: 1270814747188998983}
+    goalCount: 1
+    isLocked: 1
+  - questId: speedup_down
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 14063896073990144
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 14064140912291840
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 1488333931061695889}
     goalCount: 1
     isLocked: 1
   - questId: SakuraFactory
@@ -1435,7 +1502,7 @@ GameObject:
   - component: {fileID: 4451038622912373862}
   - component: {fileID: 6782851557319356427}
   m_Layer: 0
-  m_Name: Quest 10_SakuraFactory
+  m_Name: Quest 11_SakuraFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1524,7 +1591,7 @@ GameObject:
   - component: {fileID: 2853450685677888461}
   - component: {fileID: 226149382550471929}
   m_Layer: 0
-  m_Name: Quest 11_Archer
+  m_Name: Quest 12_Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
