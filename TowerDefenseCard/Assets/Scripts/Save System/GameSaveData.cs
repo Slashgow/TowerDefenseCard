@@ -17,6 +17,10 @@ public class GameSaveData
     public int currentWaveEnnemyIndex;
     public int currentEnnemyCount;
     public int amountOfSpawnedEnemies;
+    public bool isBasePackFirstTimeOpened;
+    public bool isDefensePackFirstTimeOpened;
+    public bool isEngineeringPackFirstTimeOpened;
+    public bool isFoodPackFirstTimeOpened;
     public List<StackSaveData> cardStacks;
     public List<AutoCardMovementData> autoCardMovementDatas;
     public List<QuestSaveData> questSaveDatas;

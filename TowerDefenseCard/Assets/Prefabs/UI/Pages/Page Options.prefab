@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 6458732338888851117}
   - component: {fileID: 4403942785515803035}
   - component: {fileID: 1444934513551678770}
+  - component: {fileID: 3978438894470783112}
   m_Layer: 5
   m_Name: Tab Button Audio
   m_TagString: Untagged
@@ -444,6 +445,18 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3978438894470783112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655146407678100204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &888653308266850476
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +994,7 @@ GameObject:
   - component: {fileID: 4979425182165503080}
   - component: {fileID: 2680509399215434028}
   - component: {fileID: 3143172500829072619}
+  - component: {fileID: 2967737120754902092}
   m_Layer: 5
   m_Name: Tab Button Video
   m_TagString: Untagged
@@ -1065,6 +1079,18 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2967737120754902092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633937510948351750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3825551863475557957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1103,7 @@ GameObject:
   - component: {fileID: 585887395484199748}
   - component: {fileID: 3895739250249233417}
   - component: {fileID: 2877693799009758257}
+  - component: {fileID: 7867766029951059337}
   m_Layer: 5
   m_Name: Tab Button Languages
   m_TagString: Untagged
@@ -1161,6 +1188,18 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7867766029951059337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825551863475557957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3845369873049606475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1661,7 @@ GameObject:
   - component: {fileID: 5817827231513888446}
   - component: {fileID: 3158519231815786849}
   - component: {fileID: 289304303345084851}
+  - component: {fileID: 6689097298214148383}
   m_Layer: 5
   m_Name: Tab Button Inputs
   m_TagString: Untagged
@@ -1706,6 +1746,18 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6689097298214148383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637529015959534225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8340352460387658113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +3003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_fontSize
-      value: 49.4
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_enableAutoSizing
@@ -3144,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_fontSize
-      value: 49.4
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_enableAutoSizing

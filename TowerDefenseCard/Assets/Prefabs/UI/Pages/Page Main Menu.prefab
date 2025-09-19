@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 6374310104039942964}
   - component: {fileID: 4251697763111960694}
   - component: {fileID: 4005839145825927220}
+  - component: {fileID: 1449829914399020787}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -695,6 +696,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://bsky.app/profile/inkolor.bsky.social
+--- !u!114 &1449829914399020787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108732956458143501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6450959832296052364
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +787,7 @@ GameObject:
   - component: {fileID: 6745556905724225997}
   - component: {fileID: 4987531932206396210}
   - component: {fileID: 3956541692377887444}
+  - component: {fileID: 874082695304942909}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -911,6 +925,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://x.com/Inkolor_
+--- !u!114 &874082695304942909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737330444182731347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8945989426649898123
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +951,7 @@ GameObject:
   - component: {fileID: 4202434529432266451}
   - component: {fileID: 8598703998313793123}
   - component: {fileID: 1793426651655053991}
+  - component: {fileID: 8235612978068719283}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1062,6 +1089,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://www.instagram.com/inkolor_games/
+--- !u!114 &8235612978068719283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945989426649898123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e4553d904e544fab4512d887ac15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1382422594185726834
 PrefabInstance:
   m_ObjectHideFlags: 0

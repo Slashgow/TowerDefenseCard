@@ -5,6 +5,9 @@ using UnityEngine;
 [Serializable]
 public class Shop : IUnlockable
 {
+    [SerializeField] private ShopID shopID;
+    public ShopID ShopID => shopID;
+
     [SerializeField, Range(0, 50)] private int shopCost;
     public int ShopCost => shopCost;
 

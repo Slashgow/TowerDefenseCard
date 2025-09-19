@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9d18aa918d146d9498d41f9d8bdc9be9, type: 2}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.booster
       value: 
       objectReference: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}

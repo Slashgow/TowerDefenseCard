@@ -11,6 +11,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     [SerializeField] private CraftingManager craftingManager;
     [SerializeField] private CardManager cardManager;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private CardShop basePackCardShop;
+    [SerializeField] private CardShop defensePackCardShop;
+    [SerializeField] private CardShop engineeringPackCardShop;
+    [SerializeField] private CardShop foodPackCardShop;
     [SerializeField] private SuccessSaveSystem successSaveSystem;
 
     [SerializeField] private Logger logger;
@@ -58,6 +62,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         cardManager.Save(saveData);
         playerHealth.Save(saveData);
         successSaveSystem.Save();
+        basePackCardShop.Save(saveData);
+        defensePackCardShop.Save(saveData);
+        engineeringPackCardShop.Save(saveData);
+        foodPackCardShop.Save(saveData);
         SaveCards(saveData);
     }
     private void SaveCards(GameSaveData saveData)
@@ -160,6 +168,10 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         craftingManager.Load(saveData);
         cardManager.Load(saveData);
         playerHealth.Load(saveData);
+        basePackCardShop.Load(saveData);
+        defensePackCardShop.Load(saveData);
+        engineeringPackCardShop.Load(saveData);
+        foodPackCardShop.Load(saveData);
         //successSaveSystem.Load();
         LoadCards(saveData);
     }
@@ -250,7 +262,11 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             maxCardsAllowed = cardManager.StartMaxCardsAllowed,
             currentNumberOfCards = cardManager.GetCurrentNumberOfCards(),
             maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
-            currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards()
+            currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards(),
+            isBasePackFirstTimeOpened = false,
+            isDefensePackFirstTimeOpened = false,
+            isEngineeringPackFirstTimeOpened = false,
+            isFoodPackFirstTimeOpened = false
         };
         Load(saveData);
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-public class CardShop : Card
+public class CardShop : Card, ILoadable, ISavable
 {
     [SerializeField] private bool spawnBoosterOnStart;
 
@@ -60,5 +60,48 @@ public class CardShop : Card
             UpdateCardShopData();
         else
             UpdateCardShopDataLock();
+    }
+
+    public void Load(GameSaveData gameSaveData)
+    {
+        switch (shop.ShopID)
+        {
+            case ShopID.BASE:
+                this.shop.isFirstBoosterOpened = gameSaveData.isBasePackFirstTimeOpened;
+                break;
+            case ShopID.DEFENSE:
+                this.shop.isFirstBoosterOpened = gameSaveData.isDefensePackFirstTimeOpened;
+                break;
+            case ShopID.ENGINEERING:
+                this.shop.isFirstBoosterOpened = gameSaveData.isEngineeringPackFirstTimeOpened;
+                break;
+            case ShopID.FOOD:
+                this.shop.isFirstBoosterOpened = gameSaveData.isFoodPackFirstTimeOpened;
+                break;
+            default:
+                break;
+        }
+        
+    }
+
+    public void Save(GameSaveData gameSaveData)
+    {
+        switch (shop.ShopID)
+        {
+            case ShopID.BASE:
+                gameSaveData.isBasePackFirstTimeOpened = this.shop.isFirstBoosterOpened;
+                break;
+            case ShopID.DEFENSE:
+                gameSaveData.isDefensePackFirstTimeOpened = this.shop.isFirstBoosterOpened;
+                break;
+            case ShopID.ENGINEERING:
+                gameSaveData.isEngineeringPackFirstTimeOpened = this.shop.isFirstBoosterOpened;
+                break;
+            case ShopID.FOOD:
+                gameSaveData.isFoodPackFirstTimeOpened = this.shop.isFirstBoosterOpened;
+                break;
+            default:
+                break;
+        }
     }
 }
