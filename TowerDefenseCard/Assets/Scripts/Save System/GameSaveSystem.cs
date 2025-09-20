@@ -35,6 +35,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         }
     }
 
+
     public void SaveGame()
     {
         try
@@ -262,7 +263,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             maxCardsAllowed = cardManager.StartMaxCardsAllowed,
             currentNumberOfCards = cardManager.GetCurrentNumberOfCards(),
             maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
-            currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards(),
+            //currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards(),
             isBasePackFirstTimeOpened = false,
             isDefensePackFirstTimeOpened = false,
             isEngineeringPackFirstTimeOpened = false,

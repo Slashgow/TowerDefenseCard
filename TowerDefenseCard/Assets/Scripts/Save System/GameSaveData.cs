@@ -8,7 +8,7 @@ public class GameSaveData
     public float currentPlayerHealth;
     public int currentNumberOfCards;
     public int maxCardsAllowed;
-    public int currentNumberOfDefenseCards;
+    //public int currentNumberOfDefenseCards;
     public int maxDefenseCardsAllowed;
     public float craftTimeElapsed;
     public int currentPlayerCoin;

@@ -66,4 +66,18 @@ public static class SavePath
     public static bool SaveSuccessExists => File.Exists(SavePathSuccess);
     public static bool QuestSaveExists => File.Exists(QuestSaveFilePath);
     public static bool TutorialSaveExists => File.Exists(SavePathTutorial);
+
+    public static void ResetAllSaves()
+    {
+        if (SaveExists)
+            File.Delete(SaveFilePath);
+        if (SaveSuccessExists)
+            File.Delete(SavePathSuccess);
+        if (QuestSaveExists)
+            File.Delete(QuestSaveFilePath);
+        if (TutorialSaveExists)
+            File.Delete(SavePathTutorial);
+        if (File.Exists(SavePathCardDiscovered))
+            File.Delete(SavePathCardDiscovered);
+    }
 }

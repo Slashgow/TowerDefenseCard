@@ -11,8 +11,9 @@ public class CardDefense : Card
         OnCreateAnyCardDefense?.Invoke();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         OnDestroyAnyCardDefense?.Invoke();
     }
 }
