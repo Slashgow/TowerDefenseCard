@@ -193,6 +193,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             return;
         }
 
+        contentScrollViewSecondaryQuest.localPosition = scrollRectSecondaryQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
     }
 
@@ -206,6 +207,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             return;
         }
 
+        contentScrollViewMainQuest.localPosition = scrollRectMainQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
     }
 
