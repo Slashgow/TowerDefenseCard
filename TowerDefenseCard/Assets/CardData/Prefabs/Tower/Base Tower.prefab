@@ -295,6 +295,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   autoStartMove: 1
+  isStartMoveRandom: 1
+  startMoveNonRandomDirection: {x: 0, y: -1}
   moveStep: 2
   checkRadius: 0.5
   maxIterations: 1
@@ -307,6 +309,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
+  detectionLayerMaskShop:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!50 &1068575674518649929
 Rigidbody2D:
   serializedVersion: 5

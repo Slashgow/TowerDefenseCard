@@ -144,7 +144,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         Vector3 pos2D = transform.position;
         pos2D.z = 0.0f;
         transform.position = pos2D;
-        CardUtility.AssignSortingOrderRecursively(card.transform, 0);
+        CardUtility.AssignSortingOrderRecursively(card.transform, 3);
         this.card.OnUnstack();
         //transform.SetParent(startParent, false);
     }

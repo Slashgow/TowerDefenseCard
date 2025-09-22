@@ -121,6 +121,13 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private void CooldownBarUI_OnCraftDelayEnd(int craftID)
     {
         CraftInfo craftInfo = currentCrafts.First(currentCraft => currentCraft.CraftID == craftID);
+
+        if (craftInfo == null)
+        {
+            Debug.LogWarning($"No CraftInfo found for craftID {craftID}.");
+            return;
+        }
+
         Craft(craftInfo, out GameObject craftedCard);
     }
 
