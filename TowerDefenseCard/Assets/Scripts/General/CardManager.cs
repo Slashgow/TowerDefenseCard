@@ -59,6 +59,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public int TotalCostCardsOnBoard => cardsOnBoard.Sum(card => card.CardData.Cost);
 
     public event Action OnDiscoverNewCard = delegate { };
+    public event Action OnDiscoverArcher = delegate { };
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
     public event Action<int, int> OnUpdateNumberOfDefenseCards;
@@ -272,6 +273,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
             matchingCardIDState.isDiscovered = true;
             discoveredCardIDs.Add(matchingCardIDState.Card.CardData.CardID);
             OnDiscoverNewCard?.Invoke();
+
+            if(outputCardID == CardID.ARCHER)
+                OnDiscoverArcher?.Invoke();
         }
     }
 

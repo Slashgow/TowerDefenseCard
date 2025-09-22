@@ -17,6 +17,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
     private Timer CraftingModeDurationTimer;
+    public event Action OnStartCraftTimer;
     public event Action<float> OnTickTimeCraftingMode;
     public event Action OnHalfTimeCraftingMode;
     private bool hasTriggeredHalfTimeEvent = false;
@@ -32,15 +33,28 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         if(GameManager.HasInstance)
             GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
+
+        if (CardManager.HasInstance)
+            CardManager.Instance.OnDiscoverArcher += GameManager_OnStartCraftMode;
     }
 
     private void OnDisable()
     {
         if(GameManager.HasInstance)
             GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
+
+        if (CardManager.HasInstance)
+            CardManager.Instance.OnDiscoverArcher -= GameManager_OnStartCraftMode;
     }
 
-    private void GameManager_OnStartCraftMode() => StartCraftingModeTimer();
+    private void GameManager_OnStartCraftMode()
+    {
+        CardDiscoveryState cardDiscoveryStateArcher = CardManager.Instance.GetCardDiscoveryStateByCardID(CardID.ARCHER);
+        if (cardDiscoveryStateArcher == null || !cardDiscoveryStateArcher.isDiscovered)
+            return;
+
+        StartCraftingModeTimer();
+    }
 
     public bool TryCraft(Transform stackParent, Card movedCard)
     {
@@ -211,6 +225,9 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     public void StartCraftingModeTimer()
     {
         float startingTimeElapsed = timeElapsed;
+
+        OnStartCraftTimer?.Invoke();
+
         CraftingModeDurationTimer = Timer.Register(TimeCraftMode, 
             onComplete: () => {
                 GameManager.Instance.SwitchGameMode();
@@ -329,4 +346,207 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         gameSaveData.craftTimeElapsed = this.timeElapsed;
     }
+
+
+#if UNITY_EDITOR
+    public void EmulateCraftForEditor(CraftingRecipe recipe, CardID forcedOutputCardID)
+    {
+        if (recipe == null)
+        {
+            Debug.LogError("Recipe is null for editor emulation");
+            return;
+        }
+
+        // Find the output card data
+        var selectedOutput = recipe.OutputCards.FirstOrDefault(o => o.cardID == forcedOutputCardID);
+  
+
+        // Generate a unique craft ID for the emulation
+        int craftID = CardUtility.GenerateUniqueID();
+
+        // Check if we can spawn the card (same checks as in normal crafting)
+        if (CardManager.Instance.IsMaxCardsReached)
+        {
+            Debug.LogWarning("[EMULATOR] Cannot emulate craft - max cards reached");
+            return;
+        }
+
+        // Check defense card limits if applicable
+        bool isOutputDefenseCard = selectedOutput.cardPrefab.GetComponent<CardDefense>() != null;
+        if (isOutputDefenseCard && CardManager.Instance.CurrentNumberOfDefenseCards >= CardManager.Instance.MaxCardsDefenseAllowed)
+        {
+            Debug.LogWarning("[EMULATOR] Cannot emulate craft - max defense cards reached");
+            return;
+        }
+
+        // Find a suitable spawn position (you might want to adjust this)
+        Vector3 spawnPosition = Vector3.zero;
+        if (Camera.main != null)
+        {
+            spawnPosition = Camera.main.transform.position + Vector3.forward * 5f;
+        }
+
+        // Instantiate the output card
+        GameObject craftedCard = Instantiate(selectedOutput.cardPrefab, spawnPosition, Quaternion.identity);
+
+        // Trigger the craft complete event
+        OnCraftComplete?.Invoke(craftID, forcedOutputCardID);
+
+        Debug.Log($"[CRAFTING EMULATOR] Successfully created {forcedOutputCardID} at position {spawnPosition}");
+    }
+#endif
+#if UNITY_EDITOR
+    public void EmulateFullCraftForEditor(CraftingRecipe recipe, CardID forcedOutputCardID)
+    {
+        if (recipe == null)
+        {
+            Debug.LogError("Recipe is null for editor emulation");
+            return;
+        }
+
+        // Find the output card data
+        var selectedOutput = recipe.OutputCards.FirstOrDefault(o => o.cardID == forcedOutputCardID);
+     
+
+        Debug.Log($"[FULL CRAFT EMULATOR] Starting full craft emulation for {recipe.name}");
+
+        // Check if we have enough space for all the cards we're about to create
+        int totalCardsToCreate = recipe.Ingredients.Sum(i => i.quantity);
+        if (CardManager.Instance.CurrentNumberOfCards + totalCardsToCreate > CardManager.Instance.MaxCardsAllowed)
+        {
+            Debug.LogWarning("[FULL CRAFT EMULATOR] Cannot emulate - would exceed max card limit");
+            return;
+        }
+
+        // Find suitable spawn position
+        Vector3 basePosition = Vector3.zero;
+        if (Camera.main != null)
+        {
+            basePosition = Camera.main.transform.position + Vector3.forward * 5f;
+        }
+
+        // Create all ingredient cards and collect them
+        List<GameObject> createdIngredients = new List<GameObject>();
+        Transform stackParent = null;
+
+        try
+        {
+            for (int i = 0; i < recipe.Ingredients.Count; i++)
+            {
+                var ingredient = recipe.Ingredients[i];
+
+                for (int quantity = 0; quantity < ingredient.quantity; quantity++)
+                {
+                    // Get the card prefab for this ingredient
+                    GameObject ingredientPrefab = GetCardPrefabByCardID(ingredient.cardID);
+
+                    if (ingredientPrefab == null)
+                    {
+                        Debug.LogError($"[FULL CRAFT EMULATOR] Could not find prefab for card ID: {ingredient.cardID}");
+                        CleanupCreatedCards(createdIngredients);
+                        return;
+                    }
+
+                    // Calculate position for stacking
+                    Vector3 spawnPosition = basePosition + Vector3.up * (createdIngredients.Count * 0.1f);
+
+                    // Instantiate the ingredient card
+                    GameObject ingredientCard = Instantiate(ingredientPrefab, spawnPosition, Quaternion.identity);
+                    createdIngredients.Add(ingredientCard);
+
+                    // Set up the stack - first card is the parent
+                    if (stackParent == null)
+                    {
+                        stackParent = ingredientCard.transform;
+                    }
+                    else if (quantity > 0 || i > 0) // Stack additional cards
+                    {
+                        ingredientCard.transform.SetParent(stackParent);
+                        ingredientCard.transform.localPosition = Vector3.down * (createdIngredients.Count - 1) * 0.35f;
+                    }
+
+                    Debug.Log($"[FULL CRAFT EMULATOR] Created ingredient: {ingredient.cardID} ({quantity + 1}/{ingredient.quantity})");
+                }
+            }
+
+            Debug.Log($"[FULL CRAFT EMULATOR] Created {createdIngredients.Count} ingredient cards");
+
+            // Wait a frame to ensure all cards are properly initialized
+            UnityEditor.EditorApplication.delayCall += () => {
+                // Get the moved card (we'll use the last created card as the "moved" card)
+                Card movedCard = createdIngredients.LastOrDefault()?.GetComponent<Card>();
+
+                if (movedCard == null)
+                {
+                    Debug.LogError("[FULL CRAFT EMULATOR] Could not get Card component from created ingredients");
+                    CleanupCreatedCards(createdIngredients);
+                    return;
+                }
+
+                // Temporarily override the recipe's random output to force our selected output
+                var originalOutputCards = recipe.OutputCards.ToList();
+
+                // Create a temporary output list with only our selected card at 100% chance
+                var tempOutput = new CraftingRecipe.OutputCard
+                {
+                    cardID = forcedOutputCardID,
+                    cardPrefab = selectedOutput.cardPrefab,
+                    dropChance = 1.0f
+                };
+
+                // Use reflection to temporarily modify the output cards
+                var outputCardsField = typeof(CraftingRecipe).GetField("OutputCards",
+                    System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+
+                if (outputCardsField != null)
+                {
+                    outputCardsField.SetValue(recipe, new CraftingRecipe.OutputCard[] { tempOutput });
+                }
+
+                // Try to craft using the normal crafting system
+                //bool craftSuccess = TryCraft(stackParent, movedCard);
+
+                // Restore original output cards
+                if (outputCardsField != null)
+                {
+                    outputCardsField.SetValue(recipe, originalOutputCards.ToArray());
+                }
+
+                //if (craftSuccess)
+                //{
+                //    Debug.Log($"[FULL CRAFT EMULATOR] Successfully initiated craft! Output will be: {forcedOutputCardID}");
+                //}
+                //else
+                //{
+                //    Debug.LogError("[FULL CRAFT EMULATOR] TryCraft failed - cleaning up created cards");
+                //    CleanupCreatedCards(createdIngredients);
+                //}
+            };
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[FULL CRAFT EMULATOR] Exception during emulation: {e.Message}");
+            CleanupCreatedCards(createdIngredients);
+        }
+    }
+
+    private GameObject GetCardPrefabByCardID(CardID cardID)
+    {
+        return CardManager.Instance.GetCardPrefabByCardID(cardID).gameObject;
+    }
+
+    private void CleanupCreatedCards(List<GameObject> cardsToCleanup)
+    {
+        foreach (var card in cardsToCleanup)
+        {
+            if (card != null)
+            {
+                DestroyImmediate(card);
+            }
+        }
+        cardsToCleanup.Clear();
+        Debug.Log("[FULL CRAFT EMULATOR] Cleaned up created cards");
+    }
+#endif
+
 }
