@@ -27,7 +27,7 @@ public class UIPageMainMenu : UIPage
 
     private void OnClickStartButton()
     {
-        if(SavePath.SaveExists)
+        if(SavePath.SaveExists || SavePath.AutoSaveExists)
             warningDeleteSavePopUp.SetActive(true);
         else
             SceneLoader.Instance.LoadNextSceneAsync();
@@ -41,7 +41,7 @@ public class UIPageMainMenu : UIPage
     {
         base.Show();
 
-        if(SavePath.SaveExists)
+        if(SavePath.SaveExists || SavePath.AutoSaveExists)
             continueGameButton.gameObject.SetActive(true);
         else
             continueGameButton.gameObject.SetActive(false);

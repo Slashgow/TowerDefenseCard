@@ -36,7 +36,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     }
 
 
-    public void SaveGame()
+    public void SaveGame() => SaveGame(SavePath.SaveFilePath);
+
+    public void SaveGame(string filePath)
     {
         try
         {
@@ -45,12 +47,14 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             Save(saveData);
 
             string json = JsonUtility.ToJson(saveData, true);
-            File.WriteAllText(SavePath.SaveFilePath, json);
-            logger.Log($"Game saved to {SavePath.SaveFilePath}", this);
+            File.WriteAllText(filePath, json);
+
+            string saveType = filePath.Contains("AutoSaves") ? "Auto" : "Manual";
+            logger.Log($"{saveType} game saved to {filePath}", this);
         }
         catch (Exception e)
         {
-            logger.LogError($"Failed to save game: {e.Message}", this);
+            logger.LogError($"Failed to save game to {filePath}: {e.Message}", this);
         }
     }
 
@@ -137,16 +141,19 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         logger.Log($"Saved {saveData.cardStacks.Count} card stacks with total cards: {processedCards.Count}", this);
     }
 
+
     public void LoadGame()
     {
         try
         {
-            if (File.Exists(SavePath.SaveFilePath))
+            string mostRecentSavePath = SavePath.GetMostRecentSavePath();
+
+            if (!string.IsNullOrEmpty(mostRecentSavePath))
             {
-                string json = File.ReadAllText(SavePath.SaveFilePath);
-                GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
-                Load(saveData);
-                logger.Log($"Game loaded from {SavePath.SaveFilePath}", this);
+                LoadGameFromPath(mostRecentSavePath);
+
+                string saveType = mostRecentSavePath.Contains("AutoSaves") ? "auto save" : "manual save";
+                logger.Log($"Game loaded from {saveType}: {mostRecentSavePath}", this);
             }
             else
             {
@@ -157,6 +164,74 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         catch (Exception e)
         {
             logger.LogError($"Failed to load game: {e.Message}", this);
+            LoadDefault();
+        }
+    }
+
+    public void LoadGameFromPath(string filePath)
+    {
+        try
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
+                Load(saveData);
+                logger.Log($"Game loaded from {filePath}", this);
+            }
+            else
+            {
+                logger.LogError($"Save file not found: {filePath}", this);
+                LoadDefault();
+            }
+        }
+        catch (Exception e)
+        {
+            logger.LogError($"Failed to load game from {filePath}: {e.Message}", this);
+            LoadDefault();
+        }
+    }
+
+
+    public void LoadManualSave()
+    {
+        try
+        {
+            if (SavePath.SaveExists)
+            {
+                LoadGameFromPath(SavePath.SaveFilePath);
+            }
+            else
+            {
+                logger.Log("No manual save file found", this);
+                LoadDefault();
+            }
+        }
+        catch (Exception e)
+        {
+            logger.LogError($"Failed to load manual save: {e.Message}", this);
+            LoadDefault();
+        }
+    }
+
+
+    public void LoadAutoSave()
+    {
+        try
+        {
+            if (SavePath.AutoSaveExists)
+            {
+                LoadGameFromPath(SavePath.AutoSaveFilePath);
+            }
+            else
+            {
+                logger.Log("No auto save file found", this);
+                LoadDefault();
+            }
+        }
+        catch (Exception e)
+        {
+            logger.LogError($"Failed to load auto save: {e.Message}", this);
             LoadDefault();
         }
     }
