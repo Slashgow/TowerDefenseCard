@@ -7,6 +7,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     [SerializeField] private Logger logger;
+    [SerializeField] private bool unlockFirstQuestOnStart = true;
     [SerializeField] private bool isMainQuestManager = true;
     [SerializeField] private List<Quest> availableQuests = new List<Quest>();
     private Dictionary<string, Quest> activeQuests = new Dictionary<string, Quest>();
@@ -26,8 +27,12 @@ public class QuestManager : MonoBehaviour
         LoadQuestProgress();
     }
 
-    private void Start() => InitializeQuests();
+    private void Start()
+    {
+        CardManager.Instance.OnDiscoverBarn += CardManager_OnDiscoverBarn;
 
+        InitializeQuests();
+    }
 
     private void OnDestroy()
     {
@@ -35,6 +40,23 @@ public class QuestManager : MonoBehaviour
         {
             quest.OnCompleteQuest -= OnQuestComplete;
         }
+
+        if(CardManager.HasInstance)
+            CardManager.Instance.OnDiscoverBarn -= CardManager_OnDiscoverBarn;
+    }
+    private void CardManager_OnDiscoverBarn()
+    {
+        if (isMainQuestManager)
+            return;
+
+        if (availableQuests.Count == 0)
+            return;
+
+        Quest nextQuest = availableQuests[0];
+        nextQuest.UnlockQuest();
+        OnQuestUnlocked?.Invoke(nextQuest);
+        nextQuest.CheckProgress();
+        SaveQuestProgress();
     }
 
     private void SetupQuests()
@@ -44,7 +66,7 @@ public class QuestManager : MonoBehaviour
             quest.Setup();
             activeQuests[quest.QuestId] = quest;
         }
-        if (availableQuests.Count > 0)
+        if (availableQuests.Count > 0 && unlockFirstQuestOnStart)
         {
             availableQuests[0].UnlockQuest();
         }
@@ -90,6 +112,7 @@ public class QuestManager : MonoBehaviour
             {
                 nextQuest.UnlockQuest();
                 OnQuestUnlocked?.Invoke(nextQuest);
+                nextQuest.CheckProgress();
                 logger.Log($"Quest '{nextQuest.Title}' has been unlocked!", this);
             }
         }

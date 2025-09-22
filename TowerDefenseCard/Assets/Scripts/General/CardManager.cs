@@ -60,6 +60,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     public event Action OnDiscoverNewCard = delegate { };
     public event Action OnDiscoverArcher = delegate { };
+    public event Action OnDiscoverBarn = delegate { };
     public event Action<int, int> OnUpdateNumberOfCards;
     public event Action<int, int> OnUpdateMaxNumberOfCards;
     public event Action<int, int> OnUpdateNumberOfDefenseCards;
@@ -276,6 +277,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
             if(outputCardID == CardID.ARCHER)
                 OnDiscoverArcher?.Invoke();
+            else if(outputCardID == CardID.BARN)
+                OnDiscoverBarn?.Invoke();
         }
     }
 

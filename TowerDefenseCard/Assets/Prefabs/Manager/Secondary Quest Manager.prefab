@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logger: {fileID: 671026881947969945}
+  unlockFirstQuestOnStart: 0
   isMainQuestManager: 0
   availableQuests:
   - questId: Barn

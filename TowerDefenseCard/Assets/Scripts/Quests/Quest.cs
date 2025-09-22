@@ -35,10 +35,11 @@ public class Quest
 
     public void IncrementProgress()
     {
+        currentProgress++;
+
         if (isLocked)
             return;
 
-        currentProgress++;
         if (IsCompleted)
         {
             OnCompleteQuest?.Invoke(this); // Trigger event when completed
