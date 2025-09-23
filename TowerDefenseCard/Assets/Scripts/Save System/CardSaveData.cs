@@ -14,6 +14,19 @@ public class CardSaveData
     public AutoCardMovementData autoCardMovementSaveData;
     public int currentAmountOfCurrency;
 
+    public CardSaveData()
+    {
+        cardID = CardID.BAMBOO;
+        position = Vector3.zero;
+        rotation = Quaternion.identity;
+        scale = Vector3.one;
+        stackCount = 1;
+        boosterSaveData = null;
+        cardIdeaSaveData = null;
+        currentAmountOfCurrency = 0;
+        autoCardMovementSaveData = null;
+    }
+
     public CardSaveData(CardID cardID, Transform transform, int stackCount)
     {
         this.cardID = cardID;

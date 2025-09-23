@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Nekomata
   m_EditorClassIdentifier: 
   damage: 15
-  attackRange: 1
-  attackSpeed: 0.6
+  attackRange: 3
+  attackSpeed: 1
   attackArea: 0
   damageType: 0
   dot: 0

@@ -1,0 +1,4784 @@
+{
+    "currentPlayerHealth": 200.0,
+    "currentNumberOfCards": 85,
+    "maxCardsAllowed": 90,
+    "maxDefenseCardsAllowed":10,
+    "craftTimeElapsed": 0.0,
+    "currentPlayerCoin": 50,
+    "gameMode": 0,
+    "currentWaveIndex": 6,
+    "currentWaveEnnemyIndex": 0,
+    "currentEnnemyCount": 0,
+    "amountOfSpawnedEnemies": 0,
+    "isBasePackFirstTimeOpened": false,
+    "isDefensePackFirstTimeOpened": false,
+    "isEngineeringPackFirstTimeOpened": false,
+    "isFoodPackFirstTimeOpened": false,
+    "cardStacks": [
+        {
+            "cards": [
+                {
+                    "cardID": 52,
+                    "position": {
+                        "x": 11.840970993041993,
+                        "y": -5.767451286315918,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 39,
+                    "position": {
+                        "x": -0.4977836608886719,
+                        "y": 2.845959424972534,
+                        "z": -9.755867004394532
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 51,
+                    "position": {
+                        "x": 5.7311859130859379,
+                        "y": -13.846010208129883,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -3.772430419921875,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 16,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -4.122430801391602,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 15,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -4.47243070602417,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 14,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -4.822430610656738,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 13,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -5.172430515289307,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 12,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -5.522430419921875,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 11,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -5.872430324554443,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 10,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -6.222430229187012,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 9,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -6.57243013381958,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 8,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -6.922430038452148,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 7,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -7.272429943084717,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 6,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -7.622429847717285,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 5,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -7.972430229187012,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 4,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -8.322430610656739,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 3,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -8.672430992126465,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 2,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 19.74974250793457,
+                        "y": -9.022430419921875,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 53,
+                    "position": {
+                        "x": -16.636526107788087,
+                        "y": -6.262672424316406,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 42,
+                    "position": {
+                        "x": -6.378247261047363,
+                        "y": -5.853813648223877,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 19,
+                    "position": {
+                        "x": 5.738351345062256,
+                        "y": -6.182615756988525,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 42,
+                    "position": {
+                        "x": -4.50342321395874,
+                        "y": -5.757014751434326,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 39,
+                    "position": {
+                        "x": -14.783454895019532,
+                        "y": 3.402799606323242,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 4,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -14.783454895019532,
+                        "y": 3.052799701690674,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 3,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -14.783454895019532,
+                        "y": 2.7027993202209474,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 2,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -14.783454895019532,
+                        "y": 2.352799415588379,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 11,
+                    "position": {
+                        "x": -10.943819046020508,
+                        "y": -0.6574773788452148,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 51,
+                    "position": {
+                        "x": -11.45472526550293,
+                        "y": -6.520591735839844,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -0.9372108578681946,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 34,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -1.2872108221054078,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 33,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -1.6372108459472657,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 32,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -1.987210750579834,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 31,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -2.3372108936309816,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 30,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -2.687211036682129,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 29,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -3.0372109413146974,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 28,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -3.3872106075286867,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 27,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -3.737210512161255,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 26,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -4.087210655212402,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 25,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -4.437211036682129,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 24,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -4.787210941314697,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 23,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -5.137210845947266,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 22,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -5.487211227416992,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 21,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -5.837211608886719,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 20,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -6.187211990356445,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 19,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -6.537211894989014,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 18,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -6.887211322784424,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 17,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -7.237210750579834,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 16,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -7.5872111320495609,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 15,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -7.937210559844971,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 14,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -8.287209510803223,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 13,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -8.637208938598633,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 12,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -8.987211227416993,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 11,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -9.337211608886719,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 10,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -9.687213897705079,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 9,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -10.037214279174805,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 8,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -10.387214660644532,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 7,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -10.737215042114258,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 6,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -11.087213516235352,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 5,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -11.437213897705079,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 4,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -11.787214279174805,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 3,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -12.137215614318848,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 2,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 17.51613998413086,
+                        "y": -12.487215042114258,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 21,
+                    "position": {
+                        "x": 8.381487846374512,
+                        "y": -6.267248153686523,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 54,
+                    "position": {
+                        "x": -1.5830914974212647,
+                        "y": -5.466737270355225,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 10,
+                    "position": {
+                        "x": -8.860330581665039,
+                        "y": -0.5965726971626282,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 50,
+                    "position": {
+                        "x": -18.86039924621582,
+                        "y": 2.4044244289398195,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 43,
+                    "position": {
+                        "x": -8.716208457946778,
+                        "y": -5.901817321777344,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 2,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 46,
+                    "position": {
+                        "x": -8.716208457946778,
+                        "y": -6.251817226409912,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 17,
+                    "position": {
+                        "x": -3.9852468967437746,
+                        "y": -0.7790645360946655,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 18,
+                    "position": {
+                        "x": -6.590306758880615,
+                        "y": -0.5865972638130188,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 25,
+                    "position": {
+                        "x": 0.7890128493309021,
+                        "y": -6.063780784606934,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 3.0236871242523195,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 12,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 2.673687219619751,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 11,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 2.3236873149871828,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 10,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 1.9736878871917725,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 9,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 1.623687982559204,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 8,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 1.2736876010894776,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 7,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.668149948120118,
+                        "y": 0.923687219619751,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 6,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 23,
+                    "position": {
+                        "x": -16.856060028076173,
+                        "y": 1.6556675434112549,
+                        "z": -12.135089874267579
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 5,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.856060028076173,
+                        "y": 1.3056671619415284,
+                        "z": -12.135089874267579
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 4,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.856060028076173,
+                        "y": 0.9556677341461182,
+                        "z": -12.135089874267579
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 3,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -16.856060028076173,
+                        "y": 0.6056673526763916,
+                        "z": -12.135089874267579
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 2,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                },
+                {
+                    "cardID": 6,
+                    "position": {
+                        "x": -17.034650802612306,
+                        "y": 0.3301241397857666,
+                        "z": -10.517601013183594
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 48,
+                    "position": {
+                        "x": 3.224919319152832,
+                        "y": -6.637333869934082,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shop": {
+                            "shopID": 0,
+                            "shopCost": 0,
+                            "isFirstBoosterRigged": false,
+                            "riggedBoosterCards": [],
+                            "shopItems": [],
+                            "spawnPoint": {
+                                "instanceID": 0
+                            },
+                            "booster": {
+                                "instanceID": 0
+                            },
+                            "dropChanceBonus": 10.0,
+                            "shopCardIdeas": [],
+                            "cardIdeaVisualPrefab": {
+                                "instanceID": 0
+                            }
+                        }
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        }
+    ],
+    "autoCardMovementDatas": [],
+    "questSaveDatas": []
+}
