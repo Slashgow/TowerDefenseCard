@@ -15,6 +15,7 @@ public class Reseller : MonoSingleton<Reseller>
 
     public PoolingSystem CurrencyPool => currencyPool;
     public static event Action<int> OnResell;
+    public static event Action<CardID> OnResellCardID;
     public UnityEvent OnResellUnity;
 
     protected override void Awake()
@@ -39,17 +40,6 @@ public class Reseller : MonoSingleton<Reseller>
         {
             coinAmount += card.CardData.Cost;
             CraftingManager.Instance.TryCancelCraft(card);
-
-            //if(card is CardStorage)
-            //{
-            //    CardStorage cardStorage = (CardStorage)card;
-            //    CardManager.Instance.DecreaseMaxCardsAllowed(cardStorage.NumberOfAdditionalCardsAllowed);
-            //}
-            if(card is CardDefenseStorage)
-            {
-                CardDefenseStorage cardDefenseStorage = (CardDefenseStorage)card;
-                CardManager.Instance.DecreaseMaxCardsDefenseAllowed(cardDefenseStorage.NumberOfAdditionalCardsDefenseAllowed);
-            }
         }
 
         for (int i = 0; i < coinAmount; i++)
@@ -63,6 +53,8 @@ public class Reseller : MonoSingleton<Reseller>
 
         OnResellUnity?.Invoke();
         OnResell?.Invoke(cards.Count);
+
+        cards.ForEach(card => OnResellCardID?.Invoke(card.CardData.CardID));
         CardUtility.DestroyAllCards(cards);
     }
 }

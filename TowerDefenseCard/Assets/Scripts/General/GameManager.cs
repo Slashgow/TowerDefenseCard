@@ -226,7 +226,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     }
     public void SaveCardsAndBackToMainMenu()
     {
-        GameSaveSystem.ResetSave();
+        GameSaveSystem.ResetGameSave();
         CardManager.Instance.TrySaveDiscoveredCards();
         SceneLoader.Instance.LoadNextSceneAsync();
     }

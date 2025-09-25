@@ -105,41 +105,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2861984798354678937, guid: 084d7fa5371385441829650d7f4c02fb, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
-      propertyPath: shop.shopCardIdeas.Array.data[0].dropPercentage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[1].cardIdeaPrefab
       value: 
       objectReference: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
-    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
-      propertyPath: shop.shopCardIdeas.Array.data[1].dropPercentage
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[2].cardIdeaPrefab
       value: 
       objectReference: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
-      propertyPath: shop.shopCardIdeas.Array.data[2].dropPercentage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[3].cardIdeaPrefab
       value: 
       objectReference: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
-      propertyPath: shop.shopCardIdeas.Array.data[3].dropPercentage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[4].cardIdeaPrefab
       value: 
       objectReference: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
-    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
-      propertyPath: shop.shopCardIdeas.Array.data[4].dropPercentage
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[5].cardIdeaPrefab
       value: 

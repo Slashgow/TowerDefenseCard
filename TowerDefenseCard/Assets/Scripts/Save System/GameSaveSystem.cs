@@ -25,11 +25,11 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         LoadGame();
     }
 
-    public static void ResetSave()
+    public static void ResetGameSave()
     {
         if(SavePath.SaveExists)
         {
-            File.Delete(SavePath.SaveFilePath);
+            SavePath.DeleteGameSaves();
             SuccessSaveSystem.ResetSaveStatsByGame();
             //File.Delete(SavePath.SavePathCardDiscovered);
         }
@@ -335,9 +335,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             amountOfSpawnedEnemies = 0,
             currentPlayerCoin = shopManager.StartPlayerCoin,
             craftTimeElapsed = 0,
-            maxCardsAllowed = cardManager.StartMaxCardsAllowed,
+            //maxCardsAllowed = cardManager.StartMaxCardsAllowed,
             currentNumberOfCards = cardManager.GetCurrentNumberOfCards(),
-            maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
+            //maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
             //currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards(),
             isBasePackFirstTimeOpened = false,
             isDefensePackFirstTimeOpened = false,

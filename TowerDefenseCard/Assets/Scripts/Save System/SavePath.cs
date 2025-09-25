@@ -148,4 +148,12 @@ public static class SavePath
         if (File.Exists(SavePathCardDiscovered))
             File.Delete(SavePathCardDiscovered);
     }
+
+    public static void DeleteGameSaves()
+    {
+        if (SaveExists)
+            File.Delete(SaveFilePath);
+        if (AutoSaveExists)
+            File.Delete(AutoSaveFilePath);
+    }
 }

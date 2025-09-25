@@ -2,7 +2,7 @@
 {
     protected override void OnClickDoActionButton()
     {
-        GameSaveSystem.ResetSave();
+        GameSaveSystem.ResetGameSave();
         SceneLoader.Instance.LoadNextSceneAsync();
     }
 }

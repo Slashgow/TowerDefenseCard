@@ -235,6 +235,14 @@ public class RandomEventManager : MonoSingleton<RandomEventManager>, ISavable, I
             return false;
         }
 
+        logger.Log($"Time until next wave: {CraftingManager.Instance.TimeCraftMode:F1}s", this);
+        if (CraftingManager.Instance.TimeCraftMode <= eventSettings.MaxTimeRemainingBeforeWaveStartAllowed)
+        {
+            logger.Log($"Too close to next wave. Time remaining: {CraftingManager.Instance.TimeCraftMode:F1}s, Allowed: {eventSettings.MaxTimeRemainingBeforeWaveStartAllowed:F1}s", this);
+            return false;
+        }
+           
+
         if (CardManager.Instance.TotalCostCardsOnBoard -  targetCard.CardData.Cost - eventSettings.EnemyPrefabs[0].CardData.Cost < ShopManager.Instance.MinimumShopCost)
         {
             logger.Log($"Not enough ressources", this);

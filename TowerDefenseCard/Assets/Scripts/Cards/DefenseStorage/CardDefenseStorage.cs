@@ -14,9 +14,15 @@ public class CardDefenseStorage : Card
     {
         base.Start();
 
-        if (SavePath.SaveExists)
-            return;
-
         CardManager.Instance.IncreaseMaxCardsDefenseAllowed(numberOfAdditionalCardsDefenseAllowed);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        if (CardManager.HasInstance)
+        {
+            CardManager.Instance.DecreaseMaxCardsDefenseAllowed(numberOfAdditionalCardsDefenseAllowed);
+        }
     }
 }

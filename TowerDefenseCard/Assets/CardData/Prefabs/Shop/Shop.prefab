@@ -114,14 +114,25 @@ MonoBehaviour:
   cardOutline: {fileID: 2561309630235832373}
   spawnBoosterOnStart: 0
   shop:
+    shopID: 0
     shopCost: 0
     isFirstBoosterRigged: 0
     riggedBoosterCards: []
     shopItems: []
     spawnPoint: {fileID: 1276512049353291640}
     booster: {fileID: 7816645221492113121, guid: ed2145659b839284fb81a64c0b66977f, type: 3}
-    dropChanceBonus: 10
-    shopCardIdeas: []
+    dropChanceBonus: 25
+    shopCardIdeas:
+    - dropPercentage: 100
+      cardIdeaPrefab: {fileID: 2861984798354678937, guid: 084d7fa5371385441829650d7f4c02fb, type: 3}
+    - dropPercentage: 50
+      cardIdeaPrefab: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
+    - dropPercentage: 50
+      cardIdeaPrefab: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
+    - dropPercentage: 50
+      cardIdeaPrefab: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
+    - dropPercentage: 50
+      cardIdeaPrefab: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
     cardIdeaVisualPrefab: {fileID: -230825123419585, guid: 5c0b48fa9d2b54940ad0ed4ce6d30ac3, type: 3}
 --- !u!50 &352179694236223436
 Rigidbody2D:

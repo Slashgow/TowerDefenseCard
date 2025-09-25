@@ -9,6 +9,7 @@ public class RandomEventSettings
     [SerializeField, Range(10f, 300f)] private float maxSpawnInterval = 120f;
     [SerializeField, Range(0, 20)] private int minimumWaveToStart = 2;
     [SerializeField, Range(0f, 1f)] private float spawnProbability = 0.7f;
+    [SerializeField, Range(0f, 100f)] private float maxTimeRemainingBeforeWaveStartAllowed = 60f;
 
     [Header("Enemy Configuration")]
     [SerializeField] private Ennemy[] enemyPrefabs;
@@ -32,6 +33,7 @@ public class RandomEventSettings
     public float MaxSpawnInterval => maxSpawnInterval;
     public int MinimumWaveToStart => minimumWaveToStart;
     public float SpawnProbability => spawnProbability;
+    public float MaxTimeRemainingBeforeWaveStartAllowed => maxTimeRemainingBeforeWaveStartAllowed;
     public Ennemy[] EnemyPrefabs => enemyPrefabs;
     public float SpawnRadius => spawnRadius;
     public float SpawnRadiusVariation => spawnRadiusVariation;

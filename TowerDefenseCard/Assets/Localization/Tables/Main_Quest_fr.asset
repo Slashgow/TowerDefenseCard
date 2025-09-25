@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1742345728000
-    m_Localized: Craftez un archer
+    m_Localized: Craftez deux archers
     m_Metadata:
       m_Items: []
   - m_Id: 3488820853338112
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3488976566874112
-    m_Localized: Craftez deux Akita Inu
+    m_Localized: Craftez un Akita Inu
     m_Metadata:
       m_Items: []
   - m_Id: 3489065217683456
@@ -202,6 +202,23 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 14064140912291840
     m_Localized: "Utilisez le bouton en haut \xE0 droite ou E pour acc\xE9l\xE9rer/ralentir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16159655913189376
+    m_Localized: maison
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16159707314384896
+    m_Localized: "Augmentez votre nombre de cartes d\xE9fense autoris\xE9 avec une
+      maison"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16162661379469312
+    m_Localized: "Vendez une carte id\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16162822302330880
+    m_Localized: "venteCardId\xE9e"
     m_Metadata:
       m_Items: []
   references:

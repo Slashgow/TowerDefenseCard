@@ -9,9 +9,6 @@ public class CardStorage : Card
     {
         base.Start();
 
-        if (SavePath.SaveExists)
-            return;
-
         CardManager.Instance.IncreaseMaxCardsAllowed(numberOfAdditionalCardsAllowed);
     }
 

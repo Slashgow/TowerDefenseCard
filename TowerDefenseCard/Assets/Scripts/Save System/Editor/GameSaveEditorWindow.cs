@@ -392,8 +392,6 @@ public class GameSaveEditorWindow : EditorWindow
             // Card limits
             GUILayout.Label("🃏 Card Limits", EditorStyles.boldLabel);
             saveData.currentNumberOfCards = EditorGUILayout.IntField("Current Cards", saveData.currentNumberOfCards);
-            saveData.maxCardsAllowed = EditorGUILayout.IntField("Max Cards", saveData.maxCardsAllowed);
-            saveData.maxDefenseCardsAllowed = EditorGUILayout.IntField("Max Defense Cards", saveData.maxDefenseCardsAllowed);
 
             GUILayout.Space(5);
 
@@ -564,8 +562,6 @@ public class GameSaveEditorWindow : EditorWindow
         saveData.currentPlayerCoin = quickPlayerCoins;
         saveData.gameMode = quickGameMode;
         saveData.currentWaveIndex = quickWave;
-        saveData.maxCardsAllowed = 10; // Default
-        saveData.maxDefenseCardsAllowed = 5; // Default
 
         // Generate cards from selected dictionary
         GenerateCardsFromDictionary(selectedCardsWithQuantities);
@@ -665,8 +661,6 @@ public class GameSaveEditorWindow : EditorWindow
             currentPlayerCoin = 100,
             gameMode = GameMode.CRAFTING,
             currentWaveIndex = 0,
-            maxCardsAllowed = 10,
-            maxDefenseCardsAllowed = 5,
             cardStacks = new List<StackSaveData>(),
             questSaveDatas = new List<QuestSaveData>(),
             autoCardMovementDatas = new List<AutoCardMovementData>()

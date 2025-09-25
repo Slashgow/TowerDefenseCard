@@ -361,8 +361,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public void Save(GameSaveData gameSaveData)
     {
         gameSaveData.currentNumberOfCards = CurrentNumberOfCards;
-        gameSaveData.maxCardsAllowed = MaxCardsAllowed;
-        gameSaveData.maxDefenseCardsAllowed = MaxCardsDefenseAllowed;
+        //gameSaveData.maxCardsAllowed = MaxCardsAllowed;
+        //gameSaveData.maxDefenseCardsAllowed = MaxCardsDefenseAllowed;
         //gameSaveData.currentNumberOfDefenseCards = CurrentNumberOfDefenseCards;
 
         TrySaveDiscoveredCards();
@@ -385,9 +385,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public void Load(GameSaveData gameSaveData)
     {
         CurrentNumberOfCards = gameSaveData.currentNumberOfCards;
-        MaxCardsAllowed = gameSaveData.maxCardsAllowed;
+        MaxCardsAllowed = startMaxCardsAllowed;
         //CurrentNumberOfDefenseCards = gameSaveData.currentNumberOfDefenseCards;
-        MaxCardsDefenseAllowed = gameSaveData.maxDefenseCardsAllowed;
+        MaxCardsDefenseAllowed = startMaxCardsDefenseAllowed;
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);

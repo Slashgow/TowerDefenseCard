@@ -25,7 +25,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     public List<float> OriginalTotalTimesCraftMode => originalTotalTimesCraftMode; 
     public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
     public float TimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] - timeElapsed;
-  
+
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
