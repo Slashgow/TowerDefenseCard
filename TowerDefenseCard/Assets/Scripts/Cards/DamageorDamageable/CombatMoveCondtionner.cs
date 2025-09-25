@@ -12,6 +12,7 @@ public class CombatMoveCondtionner : MonoBehaviour
     
     private BaseDamageor damageor;
     private BaseHealer healer;
+    private SimpleSlower slower;
 
     private Timer cooldownTimer;
 
@@ -23,6 +24,7 @@ public class CombatMoveCondtionner : MonoBehaviour
     {
         damageor = GetComponent<BaseDamageor>();
         healer = GetComponent<BaseHealer>();
+        slower = GetComponent<SimpleSlower>();
 
         cardMover.OnPointerDownEvent += CardMover_OnPointerDownEvent;
         cardMover.OnPointerUpEvent += CardMover_OnPointerUpEvent;
@@ -50,6 +52,8 @@ public class CombatMoveCondtionner : MonoBehaviour
             damageor.StartAttack();
         else if(healer != null)
             healer.StartHeal();
+        else if(slower != null)
+            slower.SetCanCauseSlow(true);
     }
 
     private void CardMover_OnPointerUpEvent()
@@ -61,6 +65,8 @@ public class CombatMoveCondtionner : MonoBehaviour
             damageor.StartAttack();
         else if(healer != null)
             healer.StartHeal();
+        else if(slower != null)
+            slower.SetCanCauseSlow(true);
 
         cardMover.DisableAutoMoveOnEnable();
         cardMover.enabled = false;
@@ -80,5 +86,7 @@ public class CombatMoveCondtionner : MonoBehaviour
             damageor.StopAttack();
         else if(healer != null)
             healer.StopHeal();
+        else if(slower != null)
+            slower.SetCanCauseSlow(false);
     }
 }

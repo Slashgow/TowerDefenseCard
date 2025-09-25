@@ -12,10 +12,18 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 3ea02f71e22c4b64f853f7c9d9856fe2, type: 2}
+    - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: maxHealth
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 2512170766306994665, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: combatMoveConditionner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9066352572164744812}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
@@ -82,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7035608351006909019, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
@@ -91,13 +99,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     - {fileID: 7001455847151747302, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
-    - {fileID: 1987891837020106568, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3297462285974561020}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3096619172244056135}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6188605535448149926}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &83007928072452727 stripped
 GameObject:
@@ -155,3 +168,57 @@ MonoBehaviour:
   startAngle: 0
   endAngle: -15
   rotateMode: 0
+--- !u!114 &3096619172244056135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83007928072452727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4b014438285f0479dd384c590b50c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSyncWithDamageor: 0
+  slowCooldown: 0.5
+  slowDuration: 3
+  slowMultiplier: 0.5
+  slowChance: 100
+  useSlowRange: 1
+  slowRange: 3
+  slowFieldOfView: 360
+  canCauseSlow: 1
+  slowEffectSpawnOffset: {x: 0, y: 0, z: 0}
+  slowEffectPrefab: {fileID: 0}
+  slowableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &6188605535448149926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83007928072452727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2dd1d2ee2513c4991c0e89fee7ce51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFearor: 0
+  isSlower: 1
+  fovMaterial: {fileID: 2100000, guid: 42ea8efc543210d448a287857d3fa3d1, type: 2}
+  fovResolution: 30
+  fovColor: {r: 0.28627452, g: 0.4392157, b: 0.47843137, a: 1}
+--- !u!114 &9066352572164744812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1987891837020106568, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+  m_PrefabInstance: {fileID: 7369101438526376228}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83007928072452727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd26fbdd7715360439890beb519b3e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,6 +1,6 @@
 ﻿using SplineMesh;
+using System;
 using UnityEngine;
-
 
 public abstract class AutoCardMovement : BaseCardMovement
 {
@@ -18,9 +18,17 @@ public abstract class AutoCardMovement : BaseCardMovement
     public float CurrentDistance => currentDistance;
     protected bool hasCompletedFirstLoop = false;
 
+    private float originalMoveSpeed;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        originalMoveSpeed = moveSpeed;
+    }
+
     private void Start()
     {
-        if(splineID != SplineID.NONE)
+        if (splineID != SplineID.NONE)
             spline = SplineManager.Instance.GetSplineByID(splineID);
     }
 
@@ -71,4 +79,7 @@ public abstract class AutoCardMovement : BaseCardMovement
 
     public virtual void StartMoving() => isMoving = true;
     public virtual void StopMoving() => isMoving = false;
+
+    public virtual void ApplySlow(float slowMultiplier) => moveSpeed = originalMoveSpeed * slowMultiplier;
+    public virtual void RemoveSlow() => moveSpeed = originalMoveSpeed;
 }

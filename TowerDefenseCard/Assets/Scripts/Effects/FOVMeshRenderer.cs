@@ -2,11 +2,16 @@
 
 public class FOVMeshRenderer : MonoBehaviour
 {
+    [Header("FOV Reference")]
+    [SerializeField] private bool isFearor = true;
+    [SerializeField] private bool isSlower = false;
+
     [Header("FOV Mesh Visualization")]
     [SerializeField] private Material fovMaterial;
     [SerializeField] private int fovResolution = 30;
     [SerializeField] private Color fovColor = new Color(1f, 0f, 0f, 0.3f);
 
+    private ISlower slower;
     private IFearor fearor;
     private Mesh fovMesh;
     private MeshRenderer meshRenderer;
@@ -14,9 +19,22 @@ public class FOVMeshRenderer : MonoBehaviour
 
     private void Start()
     {
-        fearor = GetComponent<IFearor>();
+        if(isSlower)
+            slower = GetComponent<ISlower>();
+
+        else if(isFearor)
+            fearor = GetComponent<IFearor>();
+
         SetupMesh();
         DrawFOVMesh();
+
+        if (isSlower)
+        {
+            if (slower != null && slower.CanCauseSlow)
+                meshRenderer.enabled = true;
+            else
+                meshRenderer.enabled = false;
+        }
     }
 
     private void SetupMesh()
@@ -46,20 +64,31 @@ public class FOVMeshRenderer : MonoBehaviour
 
     private void Update()
     {
-        if (fearor != null && fearor.CanCauseFear)
+        if (isFearor)
         {
-            //DrawFOVMesh();
-            meshRenderer.enabled = true;
-        }
-        else
-        {
-            meshRenderer.enabled = false;
+            if (fearor != null && fearor.CanCauseFear)
+                meshRenderer.enabled = true;
+            else
+                meshRenderer.enabled = false;
         }
     }
 
     private void DrawFOVMesh()
     {
-        float halfFOV = fearor.FearFieldOfView * 0.5f;
+        float fovRange = 0f;
+        float fieldOfView = 0f;
+        if(isSlower && slower != null)
+        {
+            fieldOfView = slower.SlowFieldOfView;
+            fovRange = slower.SlowRange;
+        } 
+        else if(isFearor && fearor != null)
+        {
+            fovRange = fearor.FearRange;
+            fieldOfView = fearor.FearFieldOfView;
+        }
+
+        float halfFOV = fieldOfView * 0.5f;
         Vector3 forward = -transform.up;
 
         int vertexCount = fovResolution + 2; // +1 for center, +1 for closing the arc
@@ -76,7 +105,7 @@ public class FOVMeshRenderer : MonoBehaviour
         {
             float angle = Mathf.Lerp(halfFOV, -halfFOV, (float)i / fovResolution);
             Vector3 direction = Quaternion.Euler(0, 0, angle) * forward;
-            vertices[i + 1] = direction * fearor.FearRange;
+            vertices[i + 1] = direction * fovRange;
 
             // Calculate UVs for arc vertices
             float uvAngle = Mathf.Deg2Rad * angle; // Convert angle to radians for UV mapping
