@@ -16,6 +16,8 @@ public class ImageUIColorChanger : Effect, IColorable
     [SerializeField] private bool shouldGoBackToOriginColor;
     [SerializeField] private Ease easing;
 
+
+
     private Image image;
     private Color originColor;
     private Tween colorTween;

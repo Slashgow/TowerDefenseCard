@@ -37,6 +37,7 @@ public class TutorialController : MonoSingleton<TutorialController>
     [SerializeField] private CardShop engineeringkCardShop;
     [SerializeField] private CardShop foodPackCardShop;
     [SerializeField] private GameObject enableAnimationPrefab;
+    [SerializeField] private ImageUIAlphaColorChanger craftTimerColorChanger;
 
     [Header("Start Settings")]
     [SerializeField, Range(0f, 20f)] private float startZoom;
@@ -80,6 +81,9 @@ public class TutorialController : MonoSingleton<TutorialController>
     private void OnDestroy()
     {
         mainQuestManager.OnQuestCompleted -= OnQuestCompleted;
+
+        if (firstTimePlaying && CardManager.HasInstance)
+            CardManager.Instance.OnDiscoverArcher -= CardManager_OnDiscoverArcher;
     }
 
 
@@ -92,9 +96,11 @@ public class TutorialController : MonoSingleton<TutorialController>
             return;
         }
 
+        CardManager.Instance.OnDiscoverArcher += CardManager_OnDiscoverArcher;
         StartTutorial();
     }
 
+    private void CardManager_OnDiscoverArcher() => craftTimerColorChanger.DoEffect();
 
     public void StartTutorial()
     {
