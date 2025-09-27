@@ -6,7 +6,7 @@ public class UICardMoreStat : MonoBehaviour
 {
     [Header("Cards")]
     [SerializeField] private UIPageCardsDiscovered uIPageCardsDiscovered;
-    [SerializeField] private GameObject cardPictureParent, cardStatsParents;
+    [SerializeField] private GameObject cardPictureParent, cardStatsParents, cardPictureAndStat;
     [SerializeField] private TextMeshProUGUI upgradeDescription;
     [SerializeField] private TextMeshProUGUI damageValue, attackSpeedValue, attackRangeValue, AttackAreaValue, DotDamageValue, DotDurationValue;
     [SerializeField] private TextMeshProUGUI descriptionValue;
@@ -42,7 +42,7 @@ public class UICardMoreStat : MonoBehaviour
     {
         CardUtility.DestroyAllChildren(cardPictureParent.transform);
         cardStatsParents.SetActive(false);
-
+        cardPictureAndStat.SetActive(false);
         if (upgradeDescription != null)
             upgradeDescription.gameObject.SetActive(false);
 
@@ -60,6 +60,7 @@ public class UICardMoreStat : MonoBehaviour
 
     private void UIPageCardsDiscovered_OnSelectCard(Card card)
     {
+        cardPictureAndStat.SetActive(true);
         successDescriptionText.text = string.Empty;
 
         CardUtility.DestroyAllChildren(cardPictureParent.transform);
@@ -76,16 +77,16 @@ public class UICardMoreStat : MonoBehaviour
 
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
         uICardMenu.SetupUICardMenu(card.CardData, true);
-        uiCardMenuGameObject.GetComponent<UIOutline>().enabled = false;
+        uiCardMenuGameObject.transform.GetChild(0).GetChild(3).GetComponent<UIOutline>().enabled = false;
         uiCardMenuGameObject.transform.GetChild(0).GetComponent<UICardOutlineSelector>().enabled = false;
 
         if (card is Currency)
         {
             uiCardMenuGameObject.transform.GetChild(0).GetComponent<Image>().color = new Color32(255, 213, 90, 255);
-            RectTransform rectTransformImage = uiCardMenuGameObject.transform.GetChild(1).GetComponent<RectTransform>();
+            RectTransform rectTransformImage = uiCardMenuGameObject.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>();
             Vector2 sizeDelta = rectTransformImage.sizeDelta;
             rectTransformImage.sizeDelta = sizeDelta * 0.5f;
-            uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
+            //uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
         }
 
         if (!card.GetComponent<BaseDamageor>())

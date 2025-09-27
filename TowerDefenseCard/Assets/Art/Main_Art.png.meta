@@ -963,6 +963,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ink_card
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1355
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3c7cec72221574d95ef61e80313ad6
+      internalID: 350326710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1013,6 +1035,7 @@ TextureImporter:
       bg_card_green: 2878311640646176475
       bg_card_rose: -2533790215428652826
       bg_card_yellow: -1615953430
+      ink_card: 350326710
       jade: -6950192332035175229
       tengu_shrine: 8504883195135373499
       torri gate: 1312731569831349898

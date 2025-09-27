@@ -35,10 +35,10 @@ public class UIPageCardsDiscovered : UIPage
             if(card is Currency)
             {
                 uICardOutline.GetComponent<Image>().color = new Color32(255, 213, 90, 255);
-                RectTransform rectTransform = uiCardMenuGameObject.transform.GetChild(1).GetComponent<RectTransform>();
+                RectTransform rectTransform = uiCardMenuGameObject.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>();
                 Vector2 sizeDelta = rectTransform.sizeDelta;
                 rectTransform.sizeDelta = sizeDelta * 0.5f;
-                uiCardMenuGameObject.transform.GetChild(3).gameObject.SetActive(false);
+                //uiCardMenuGameObject.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
             }
 
 

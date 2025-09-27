@@ -1235,10 +1235,10 @@ RectTransform:
   - {fileID: 8302820399467883020}
   m_Father: {fileID: 1070269557152106022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1610, y: 774}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: -80, y: -160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6956666395876573281
 CanvasRenderer:
@@ -3003,7 +3003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 49.4
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_enableAutoSizing
@@ -3196,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 49.4
       objectReference: {fileID: 0}
     - target: {fileID: 1656698062871614736, guid: 72376bf99935ff0429860733f157df04, type: 3}
       propertyPath: m_enableAutoSizing
@@ -4095,7 +4095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571894011229042704, guid: b504f55fb6c4dae47abfe6cb170914f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -105
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3571894011229042704, guid: b504f55fb6c4dae47abfe6cb170914f8, type: 3}
       propertyPath: m_AnchoredPosition.y
