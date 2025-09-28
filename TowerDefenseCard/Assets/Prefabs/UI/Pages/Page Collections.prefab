@@ -3789,10 +3789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 15
+    m_Right: 15
     m_Top: 30
-    m_Bottom: 0
+    m_Bottom: 15
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
@@ -6089,6 +6089,14 @@ PrefabInstance:
     - target: {fileID: 7014070935370720517, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916363673237606901, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916363673237606901, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_Padding.m_Bottom
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8646858383661708220, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
       propertyPath: m_AnchorMax.y

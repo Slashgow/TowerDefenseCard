@@ -54,6 +54,15 @@ public class SpriteColorChanger : Effect, IColorable
             colorTween = spriteRenderer.DOColor(endColor, timeToReachEndColor).SetEase(easing);
         else
             colorTween = spriteRenderer.DOColor(endColor, timeToReachEndColor).SetEase(easing).SetLoops(2, LoopType.Yoyo);
+
+        originColor = endColor;
+    }
+
+    private void OnDisable()
+    {
+        if (colorTween != null)
+            colorTween.Kill();
+        spriteRenderer.color = originColor;
     }
 
     private void OnDestroy()

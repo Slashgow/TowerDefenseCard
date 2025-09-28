@@ -6,7 +6,12 @@ public class CardShop : Card, ILoadable, ISavable
     [SerializeField] private bool spawnBoosterOnStart;
 
     [SerializeField] private Shop shop;
-    public Shop Shop => shop;   
+    public Shop Shop => shop;
+
+    [Header("Lock Graphics References")]
+    [SerializeField] private Sprite lockSprite;
+    [SerializeField] private SpriteColorChanger colorChanger;
+   
 
     protected override void Awake()
     {
@@ -14,12 +19,22 @@ public class CardShop : Card, ILoadable, ISavable
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
 
         shop.OnUnlock += UpdateCardShopData;
+        shop.OnUnlock += Shop_OnUnlock;
     }
+
+    protected override void OnDestroy()
+    {
+       base.OnDestroy();
+        shop.OnUnlock -= UpdateCardShopData;
+        shop.OnUnlock -= Shop_OnUnlock;
+    }
+
 
     protected override void Start()
     {
         base.Start();
 
+        InitializeLockGraphics();
         UpdateUI();
 
         LocalizationSettings.SelectedLocaleChanged -= OnLocaleChange;
@@ -60,6 +75,25 @@ public class CardShop : Card, ILoadable, ISavable
             UpdateCardShopData();
         else
             UpdateCardShopDataLock();
+    }
+
+    private void Shop_OnUnlock()
+    {
+        colorChanger.enabled = false;
+        backgroundSprite.color = Color.white;
+        backgroundSprite.sprite = cardData.CardBackgroundSprite;
+    }
+
+    public void InitializeLockGraphics()
+    {
+        if (shop.IsUnlocked)
+        {
+            Shop_OnUnlock();
+            return;
+        }
+
+        colorChanger.enabled = true;
+        backgroundSprite.sprite = lockSprite;
     }
 
     public void Load(GameSaveData gameSaveData)

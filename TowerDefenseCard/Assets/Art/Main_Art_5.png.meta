@@ -363,6 +363,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bg_card_white
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 491
+        width: 264
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d33683f24add924586f860367412a1f
+      internalID: -320074091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -382,11 +404,13 @@ TextureImporter:
       Kami_essence_factory: -4162777096168388130
       KasaObake_bras_bas: -1848370466
       KasaObake_bras_haut: -1284774192
+      Main_Art_5_1: 94030176
       Sakura_brick_factory: -9197449427629750923
       Yami_alive: 1184859872
       Yami_dead: 43710019
       bg_boss_rose: 2078790121
       bg_card_marron: 1818768302
+      bg_card_white: -320074091
       shuriken: 1121975513
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
