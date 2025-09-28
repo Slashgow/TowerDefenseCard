@@ -17,7 +17,7 @@ public class Shop : IUnlockable
     [SerializeField] private List<ShopItem> riggedBoosterCards = new List<ShopItem>();
     public List<ShopItem> RiggedBoosterCards => riggedBoosterCards;
 
-    private int riggedCardIndex = 0;
+    public int riggedCardIndex = 0;
     public int RiggedCardIndex => riggedCardIndex;
     public bool isFirstBoosterOpened { get; set; } = false;
 

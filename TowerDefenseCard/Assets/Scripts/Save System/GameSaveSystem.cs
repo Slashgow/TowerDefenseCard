@@ -340,6 +340,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             //maxDefenseCardsAllowed = cardManager.StartMaxCardsDefenseAllowed,
             //currentNumberOfDefenseCards = cardManager.GetCurrentNumberOfDefenseCards(),
             isBasePackFirstTimeOpened = false,
+            basePackRiggedCardIndex = 0,
             isDefensePackFirstTimeOpened = false,
             isEngineeringPackFirstTimeOpened = false,
             isFoodPackFirstTimeOpened = false

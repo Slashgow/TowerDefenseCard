@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using System.Collections.Generic;
+using System.Linq;
 
 public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 {
@@ -15,6 +17,8 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
     [SerializeField] private CardShop cheapestShop;
     public int MinimumShopCost => cheapestShop.Shop.ShopCost;
+
+    [SerializeField] private List<CardShop> cardShops = new List<CardShop>();
 
     public static event Action OnPurchaseBooster;
     public UnityEvent OnPurchaseBoosterUnity;
@@ -64,6 +68,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 
+    public Shop GetShopByID(ShopID shopID) => cardShops.FirstOrDefault(cardShop => cardShop.Shop.ShopID == shopID).Shop;
     public void Load(GameSaveData gameSaveData) => AddPlayerCoin(gameSaveData.currentPlayerCoin);
     public void Save(GameSaveData gameSaveData) => gameSaveData.currentPlayerCoin = currentPlayerCoin;
 }

@@ -12,6 +12,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     private int remainingCards;
     public int RemainingCards => remainingCards;
     private Shop shop;
+    private ShopID shopID;
     public static event Action OnDestroyBooster;
     public static event Action<CardID> OnOpenBooster;
     public UnityEvent OnOpenBoosterUnity;
@@ -24,6 +25,12 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             remainingCards = maxCardCount;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        if(shopID != ShopID.NONE)
+            shop = ShopManager.Instance.GetShopByID(shopID);
+    }
     public void Initialize(Shop shop) => this.shop = shop;
 
     public void OnPointerUp(PointerEventData eventData)
@@ -209,7 +216,8 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public void Load(BoosterSaveData boosterSaveData)
     {
         remainingCards = boosterSaveData.remainingCards;
-        shop = boosterSaveData.shop;
+        shopID = boosterSaveData.shopID;
+
     }
 
     public BoosterSaveData Save()
@@ -217,7 +225,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
         return new BoosterSaveData
         {
             remainingCards = this.remainingCards,
-            shop = this.shop
+            shopID = this.shop.ShopID
         };
     }
 }

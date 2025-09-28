@@ -16,10 +16,13 @@ public class SpriteColorChanger : Effect, IColorable
 
     private SpriteRenderer spriteRenderer;
     private Color originColor;
+    private Color disableColor;
     private Tween colorTween;
 
     public bool UseColorTheme => useColorTheme;
     public ColorID ColorID => colorID;
+
+    private bool disableInAdvance;
 
     protected virtual void Awake()
     {
@@ -45,6 +48,9 @@ public class SpriteColorChanger : Effect, IColorable
 
     public void ChangeColor()
     {
+        if(disableInAdvance)
+            return;
+
         spriteRenderer.color = originColor;
 
         if(colorTween != null)
@@ -58,11 +64,13 @@ public class SpriteColorChanger : Effect, IColorable
         originColor = endColor;
     }
 
-    private void OnDisable()
+
+    public void KillTween(bool disableInAdvance)
     {
         if (colorTween != null)
             colorTween.Kill();
-        spriteRenderer.color = originColor;
+
+       this.disableInAdvance = disableInAdvance;
     }
 
     private void OnDestroy()

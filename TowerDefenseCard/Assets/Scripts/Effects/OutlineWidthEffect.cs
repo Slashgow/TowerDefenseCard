@@ -25,4 +25,9 @@ public class OutlineWidthEffect : Effect
         uiOutlineUnscaled.enabled = false;
         outlineTween?.Kill();
     }
+
+    private void OnDestroy()
+    {
+        outlineTween?.Kill();
+    }
 }

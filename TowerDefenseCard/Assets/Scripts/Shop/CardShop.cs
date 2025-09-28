@@ -79,6 +79,7 @@ public class CardShop : Card, ILoadable, ISavable
 
     private void Shop_OnUnlock()
     {
+        colorChanger.KillTween(true);
         colorChanger.enabled = false;
         backgroundSprite.color = Color.white;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
@@ -102,6 +103,7 @@ public class CardShop : Card, ILoadable, ISavable
         {
             case ShopID.BASE:
                 this.shop.isFirstBoosterOpened = gameSaveData.isBasePackFirstTimeOpened;
+                this.shop.riggedCardIndex = gameSaveData.basePackRiggedCardIndex;
                 break;
             case ShopID.DEFENSE:
                 this.shop.isFirstBoosterOpened = gameSaveData.isDefensePackFirstTimeOpened;
@@ -124,6 +126,7 @@ public class CardShop : Card, ILoadable, ISavable
         {
             case ShopID.BASE:
                 gameSaveData.isBasePackFirstTimeOpened = this.shop.isFirstBoosterOpened;
+                gameSaveData.basePackRiggedCardIndex = this.shop.RiggedCardIndex;
                 break;
             case ShopID.DEFENSE:
                 gameSaveData.isDefensePackFirstTimeOpened = this.shop.isFirstBoosterOpened;

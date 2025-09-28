@@ -36,6 +36,8 @@ public class QuestManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        SaveQuestProgress();
+
         foreach (var quest in availableQuests)
         {
             quest.OnCompleteQuest -= OnQuestComplete;

@@ -4,5 +4,5 @@
 public class BoosterSaveData
 {
     public int remainingCards;
-    public Shop shop;
+    public ShopID shopID;
 }

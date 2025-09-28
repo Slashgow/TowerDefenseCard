@@ -18,6 +18,7 @@ public class GameSaveData
     public int currentEnnemyCount;
     public int amountOfSpawnedEnemies;
     public bool isBasePackFirstTimeOpened;
+    public int basePackRiggedCardIndex;
     public bool isDefensePackFirstTimeOpened;
     public bool isEngineeringPackFirstTimeOpened;
     public bool isFoodPackFirstTimeOpened;

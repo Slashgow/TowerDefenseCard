@@ -81,6 +81,12 @@ MonoBehaviour:
   logger: {fileID: 4014195417803570386}
   startPlayerCoin: 30
   currentPlayerCoin: 0
+  cheapestShop: {fileID: 0}
+  cardShops:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   OnPurchaseBoosterUnity:
     m_PersistentCalls:
       m_Calls:

@@ -109,6 +109,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     {
         base.Awake();
         TryLoadDiscoveredCard();
+        CardDefense.OnDestroyAnyCardDefense += CardDefense_OnDestroyAnyCardDefense;
+        CardDefense.OnCreateAnyCardDefense += CardDefense_OnCreateAnyCardDefense;
     }
 
     private void Start()
@@ -124,8 +126,6 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         Booster.OnOpenBooster += Booster_OnOpenBooster;
         CardExploitation.OnDestroyCardExploitation += CardExploitation_OnDestroyCardExploitation;
-        CardDefense.OnDestroyAnyCardDefense += CardDefense_OnDestroyAnyCardDefense;
-        CardDefense.OnCreateAnyCardDefense += CardDefense_OnCreateAnyCardDefense;
         Stealable.OnDestroy += IStealable_OnDestroy;
     }
 
@@ -331,6 +331,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     private void CardDefense_OnDestroyAnyCardDefense() => UpdateNumberOfDefenseCards(-1);
     private void UpdateNumberOfDefenseCards(int additionnalCard)
     {
+        Debug.Log($"Updating Defense Cards Count: {CurrentNumberOfDefenseCards} + {additionnalCard}");
         CurrentNumberOfDefenseCards += additionnalCard;
         OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);
 

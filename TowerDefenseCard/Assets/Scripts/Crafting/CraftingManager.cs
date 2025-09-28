@@ -15,6 +15,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     public event Action<int, CardID> OnCraftComplete = delegate { };
     public event Action OnDestroyCard = delegate { };
 
+    private float startingTimeElapsed = 0f;
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
     private Timer CraftingModeDurationTimer;
     public event Action OnStartCraftTimer;
@@ -231,7 +232,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public void StartCraftingModeTimer()
     {
-        float startingTimeElapsed = timeElapsed;
+        startingTimeElapsed = timeElapsed;
 
         OnStartCraftTimer?.Invoke();
 
@@ -351,7 +352,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public void Save(GameSaveData gameSaveData)
     {
-        gameSaveData.craftTimeElapsed = this.timeElapsed;
+        gameSaveData.craftTimeElapsed = this.timeElapsed + startingTimeElapsed;
     }
 
 
