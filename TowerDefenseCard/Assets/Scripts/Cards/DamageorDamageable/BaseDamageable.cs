@@ -22,6 +22,8 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
     private bool isDead = false;
     public bool IsDead => isDead;
 
+    public bool IsProtected { get; set; }
+
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
     public static event Action<float, Vector3> OnAnyHealableHealed;
     public event Action<float> OnTakeDamage;
@@ -31,6 +33,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
     protected virtual void Awake()
     {
         currentHealth = maxHealth;
+        IsProtected = false;
     }
 
     public virtual void Die()

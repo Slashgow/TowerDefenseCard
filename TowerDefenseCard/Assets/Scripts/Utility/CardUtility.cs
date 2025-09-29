@@ -78,6 +78,9 @@ public static class CardUtility
         {
             if (hit.TryGetComponent<IDamageable>(out var damageable))
             {
+                if(damageable.IsProtected)
+                    continue;
+
                 targets.Add(new DamageableTarget(hit, damageable));
             }
         }

@@ -32,6 +32,7 @@ public class SimpleDamageor : BaseDamageor
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AttackRange, enemyLayer);
         List<DamageableTarget> targets = CardUtility.GetDamageableTargets(hits);
+
         if (targets.Count > 0)
         {
             OnLaunchAttack();

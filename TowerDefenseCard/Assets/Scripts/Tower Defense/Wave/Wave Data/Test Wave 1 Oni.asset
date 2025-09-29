@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b69ae1373e4d14aafafd53fca4bdd0, type: 3}
-  m_Name: Oni
+  m_Script: {fileID: 11500000, guid: c0c849ccd188c494dada5325139a1436, type: 3}
+  m_Name: Test Wave 1 Oni
   m_EditorClassIdentifier: 
-  damage: 5
-  attackRange: 1.5
-  attackSpeed: 0.8
-  attackArea: 0
-  damageType: 0
-  dot: 0
-  dotDuration: 0
+  ennemyWaves:
+  - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
+    count: 1
+    spawnInterval: 2
+  waveDelay: 0
+  delayBuffer: 5

@@ -3,38 +3,45 @@
 public class FOVMeshRenderer : MonoBehaviour
 {
     [Header("FOV Reference")]
-    [SerializeField] private bool isFearor = true;
-    [SerializeField] private bool isSlower = false;
+    [SerializeField] private FOVType fovType = FOVType.Fearor;
 
     [Header("FOV Mesh Visualization")]
     [SerializeField] private Material fovMaterial;
     [SerializeField] private int fovResolution = 30;
     [SerializeField] private Color fovColor = new Color(1f, 0f, 0f, 0.3f);
 
+    private enum FOVType
+    {
+        Fearor,
+        Slower,
+        Occluder
+    }
+
     private ISlower slower;
     private IFearor fearor;
+    private IOccluder occluder;
     private Mesh fovMesh;
     private MeshRenderer meshRenderer;
     private MeshFilter meshFilter;
 
     private void Start()
     {
-        if(isSlower)
-            slower = GetComponent<ISlower>();
-
-        else if(isFearor)
-            fearor = GetComponent<IFearor>();
+        switch (fovType)
+        {
+            case FOVType.Slower:
+                slower = GetComponent<ISlower>();
+                break;
+            case FOVType.Fearor:
+                fearor = GetComponent<IFearor>();
+                break;
+            case FOVType.Occluder:
+                occluder = GetComponent<IOccluder>();
+                break;
+        }
 
         SetupMesh();
         DrawFOVMesh();
-
-        if (isSlower)
-        {
-            if (slower != null && slower.CanCauseSlow)
-                meshRenderer.enabled = true;
-            else
-                meshRenderer.enabled = false;
-        }
+        UpdateMeshVisibility();
     }
 
     private void SetupMesh()
@@ -44,7 +51,6 @@ public class FOVMeshRenderer : MonoBehaviour
         transform.rotation = Quaternion.identity;
         fovObject.transform.SetParent(transform);
         fovObject.transform.localPosition = Vector3.zero;
-      
 
         meshFilter = fovObject.AddComponent<MeshFilter>();
         meshRenderer = fovObject.AddComponent<MeshRenderer>();
@@ -59,46 +65,80 @@ public class FOVMeshRenderer : MonoBehaviour
         }
         fovMaterial.color = fovColor;
         meshRenderer.material = fovMaterial;
-        //meshRenderer.sortingOrder = -1; // Behind other sprites
     }
 
     private void Update()
     {
-        if (isFearor)
+        UpdateMeshVisibility();
+    }
+
+    private void UpdateMeshVisibility()
+    {
+        bool shouldBeVisible = false;
+
+        switch (fovType)
         {
-            if (fearor != null && fearor.CanCauseFear)
-                meshRenderer.enabled = true;
-            else
-                meshRenderer.enabled = false;
+            case FOVType.Fearor:
+                shouldBeVisible = fearor != null && fearor.CanCauseFear;
+                break;
+            case FOVType.Slower:
+                shouldBeVisible = slower != null && slower.CanCauseSlow;
+                break;
+            case FOVType.Occluder:
+                shouldBeVisible = occluder != null && occluder.CanOcclude;
+                break;
         }
+
+        meshRenderer.enabled = shouldBeVisible;
     }
 
     private void DrawFOVMesh()
     {
         float fovRange = 0f;
         float fieldOfView = 0f;
-        if(isSlower && slower != null)
+        Vector3 forward = Vector3.zero;
+
+        switch (fovType)
         {
-            fieldOfView = slower.SlowFieldOfView;
-            fovRange = slower.SlowRange;
-        } 
-        else if(isFearor && fearor != null)
-        {
-            fovRange = fearor.FearRange;
-            fieldOfView = fearor.FearFieldOfView;
+            case FOVType.Slower:
+                if (slower != null)
+                {
+                    fieldOfView = slower.SlowFieldOfView;
+                    fovRange = slower.SlowRange;
+                    forward = -transform.up;
+                }
+                break;
+            case FOVType.Fearor:
+                if (fearor != null)
+                {
+                    fovRange = fearor.FearRange;
+                    fieldOfView = fearor.FearFieldOfView;
+                    forward = -transform.up;
+                }
+                break;
+            case FOVType.Occluder:
+                if (occluder != null)
+                {
+                    fovRange = occluder.OcclusionRange;
+                    fieldOfView = occluder.OcclusionFieldOfView;
+                    forward = transform.up;
+                }
+                break;
         }
 
+        if (fovRange <= 0f || fieldOfView <= 0f)
+            return;
+
         float halfFOV = fieldOfView * 0.5f;
-        Vector3 forward = -transform.up;
 
         int vertexCount = fovResolution + 2; // +1 for center, +1 for closing the arc
         Vector3[] vertices = new Vector3[vertexCount];
-        Vector2[] uvs = new Vector2[vertexCount]; // Added for UV coordinates
+        Vector2[] uvs = new Vector2[vertexCount];
         int[] triangles = new int[(vertexCount - 2) * 3];
 
         // Center vertex
-        vertices[0] = Vector3.zero; // Local space
-        uvs[0] = new Vector2(0.5f, 0.5f); // Center of texture
+        vertices[0] = Vector3.zero;
+        uvs[0] = new Vector2(0.5f, 0.5f);
 
         // Arc vertices and UVs
         for (int i = 0; i <= fovResolution; i++)
@@ -107,10 +147,9 @@ public class FOVMeshRenderer : MonoBehaviour
             Vector3 direction = Quaternion.Euler(0, 0, angle) * forward;
             vertices[i + 1] = direction * fovRange;
 
-            // Calculate UVs for arc vertices
-            float uvAngle = Mathf.Deg2Rad * angle; // Convert angle to radians for UV mapping
-            float uvX = 0.5f + 0.5f * Mathf.Cos(uvAngle); // Map to [0,1] range
-            float uvY = 0.5f + 0.5f * Mathf.Sin(uvAngle); // Map to [0,1] range
+            float uvAngle = Mathf.Deg2Rad * angle;
+            float uvX = 0.5f + 0.5f * Mathf.Cos(uvAngle);
+            float uvY = 0.5f + 0.5f * Mathf.Sin(uvAngle);
             uvs[i + 1] = new Vector2(uvX, uvY);
         }
 
@@ -118,15 +157,15 @@ public class FOVMeshRenderer : MonoBehaviour
         int triangleIndex = 0;
         for (int i = 0; i < fovResolution; i++)
         {
-            triangles[triangleIndex] = 0; // Center
-            triangles[triangleIndex + 1] = i + 1; // Reversed order
-            triangles[triangleIndex + 2] = i + 2; // Reversed order
+            triangles[triangleIndex] = 0;
+            triangles[triangleIndex + 1] = i + 1;
+            triangles[triangleIndex + 2] = i + 2;
             triangleIndex += 3;
         }
 
         fovMesh.Clear();
         fovMesh.vertices = vertices;
-        fovMesh.uv = uvs; // Assign UVs to mesh
+        fovMesh.uv = uvs;
         fovMesh.triangles = triangles;
         fovMesh.RecalculateNormals();
     }

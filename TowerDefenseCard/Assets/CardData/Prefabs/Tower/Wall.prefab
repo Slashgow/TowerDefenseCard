@@ -94,11 +94,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
-      value: Torii Gate
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     - {fileID: 7001455847151747302, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+    - {fileID: 2139443655130780671, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -107,10 +108,13 @@ PrefabInstance:
       addedObject: {fileID: 3297462285974561020}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3096619172244056135}
+      addedObject: {fileID: 570809751681541051}
     - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6188605535448149926}
+      addedObject: {fileID: -3088811079889610841}
+    - targetCorrespondingSourceObject: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2438963309080897912}
   m_SourcePrefab: {fileID: 100100000, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
 --- !u!1 &83007928072452727 stripped
 GameObject:
@@ -168,7 +172,7 @@ MonoBehaviour:
   startAngle: 0
   endAngle: -15
   rotateMode: 0
---- !u!114 &3096619172244056135
+--- !u!114 &570809751681541051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,24 +181,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 83007928072452727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f4b014438285f0479dd384c590b50c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 339f51ac7de4be04ea4c0e73e027dc76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoSyncWithDamageor: 0
-  slowCooldown: 0.4
-  slowDuration: 3
-  slowMultiplier: 0.5
-  slowChance: 100
-  useSlowRange: 1
-  slowRange: 3
-  slowFieldOfView: 360
-  canCauseSlow: 1
-  slowEffectSpawnOffset: {x: 0, y: 0, z: 0}
-  slowEffectPrefab: {fileID: 0}
-  slowableLayer:
+  occlusionRange: 5
+  occlusionFieldOfView: 180
+  directionDotThreshold: 0.8
+  protectedLayer:
     serializedVersion: 2
-    m_Bits: 256
---- !u!114 &6188605535448149926
+    m_Bits: 64
+  canOcclude: 1
+  checkForProtectedDefenseInterval: 0.5
+--- !u!114 &-3088811079889610841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83007928072452727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c06c884bcea8439890469b134ecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLogs: 1
+  prefix: Wall
+  prefixColor: {r: 0.45382977, g: 1, b: 0, a: 1}
+--- !u!114 &-2438963309080897912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,10 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2dd1d2ee2513c4991c0e89fee7ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovType: 1
-  fovMaterial: {fileID: 2100000, guid: 42ea8efc543210d448a287857d3fa3d1, type: 2}
+  fovType: 2
+  fovMaterial: {fileID: 2100000, guid: 6776b7550af9b6b43b4b05a3faa79dd2, type: 2}
   fovResolution: 30
-  fovColor: {r: 0.28627452, g: 0.4392157, b: 0.47843137, a: 1}
+  fovColor: {r: 0.30980393, g: 0.49803925, b: 0.3372549, a: 1}
 --- !u!114 &9066352572164744812 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1987891837020106568, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
