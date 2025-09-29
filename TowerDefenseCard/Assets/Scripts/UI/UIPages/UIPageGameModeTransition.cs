@@ -91,7 +91,7 @@ public class UIPageGameModeTransition : UIPage
             GameManager.Instance.CurrentGameState = GameState.PLAY;
             if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)
             {
-                GameManager.Instance.SaveCardsAndBackToMainMenu();
+                SceneLoader.Instance.LoadNextSceneAsync();
             }
 
             logger.Log("Transition Finished", this);

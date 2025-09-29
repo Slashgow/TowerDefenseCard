@@ -230,4 +230,11 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         CardManager.Instance.TrySaveDiscoveredCards();
         SceneLoader.Instance.LoadNextSceneAsync();
     }
+
+    public void SaveCards()
+    {
+        GameSaveSystem.ResetGameSave();
+        CardManager.Instance.TrySaveDiscoveredCards();
+        SceneLoader.Instance.LoadNextSceneAsync();
+    }
 }

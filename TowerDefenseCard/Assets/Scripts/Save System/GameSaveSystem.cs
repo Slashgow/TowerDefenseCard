@@ -25,6 +25,14 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         LoadGame();
     }
 
+    private void Start() => PlayerHealth.OnPlayerDie += PlayerHealth_OnPlayerDie;
+    private void OnDestroy() => PlayerHealth.OnPlayerDie -= PlayerHealth_OnPlayerDie;
+
+    private void PlayerHealth_OnPlayerDie()
+    {
+        GameManager.Instance.SaveCardsAndBackToMainMenu();
+    }
+
     public static void ResetGameSave()
     {
         SavePath.DeleteGameSaves();

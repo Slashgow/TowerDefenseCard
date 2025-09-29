@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SimpleDamageor : BaseDamageor
@@ -12,41 +13,49 @@ public class SimpleDamageor : BaseDamageor
     [SerializeField, Range(0, 10)] private int numberOfProjectilePerAttack = 1;
     [SerializeField, Range(0f, 40f)] private float projectileSpeed = 5f;
 
+    public struct DamageableTarget
+    {
+        public Collider2D collider;
+        public IDamageable damageable;
+
+        public DamageableTarget(Collider2D collider, IDamageable damageable)
+        {
+            this.collider = collider;
+            this.damageable = damageable;
+        }
+    }
+
     protected override void Attack()
     {
         if (!CanAttack)
             return;
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AttackRange, enemyLayer);
-        if (hits.Length > 0)
+        List<DamageableTarget> targets = CardUtility.GetDamageableTargets(hits);
+        if (targets.Count > 0)
         {
             OnLaunchAttack();
 
             if (useProjectile)
-                SetupProjectiles(hits);
+                SetupProjectiles(targets);
             else
-                AttackImmediately(hits);
+                AttackImmediately(targets);
         }
     }
 
-    private void AttackImmediately(Collider2D[] hits)
+    private void AttackImmediately(List<DamageableTarget> targets)
     {
         if (isMonoTarget)
         {
-            if (hits[0].TryGetComponent<IDamageable>(out var damageable))
-                HitDamageable(hits[0], damageable);
+            HitDamageable(targets[0].collider, targets[0].damageable);
         }
         else
         {
-            //Collider2D[] targets = Physics2D.OverlapCircleAll(hits[0].transform.position, AttackArea, enemyLayer);
+            int targetCount = Mathf.Min(targets.Count, maxNumberOfTargets);
 
-            for (int i = 0; i < hits.Length; i++)
+            for (int i = 0; i < targetCount; i++)
             {
-                if(i > maxNumberOfTargets - 1)
-                    return;
-
-                if (hits[i].TryGetComponent<IDamageable>(out var damageable))
-                    HitDamageable(hits[i], damageable);
+                HitDamageable(targets[i].collider, targets[i].damageable);
             }
         }
     }
@@ -60,29 +69,25 @@ public class SimpleDamageor : BaseDamageor
     }
 
 
-    private void SetupProjectiles(Collider2D[] hits)
+    private void SetupProjectiles(List<DamageableTarget> targets)
     {
-        for (int i = 0; i < numberOfProjectilePerAttack; i++)
+        int projectileCount = Mathf.Min(numberOfProjectilePerAttack, targets.Count);
+
+        for (int i = 0; i < projectileCount; i++)
         {
-            if (i >= hits.Length)
-                return;
+            DamageableTarget target = targets[i];
+            ApplyDoT(target.collider.gameObject);
 
-            Collider2D target = hits[i];
-            if (target.TryGetComponent<IDamageable>(out var damageable))
-            {
-                ApplyDoT(hits[0].gameObject);
+            Vector3 direction = (target.collider.transform.position - transform.position).normalized;
 
-                Vector3 direction = (target.transform.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.Euler(0, 0, angle - 90f); // Adjust -90f for 2D up vector
 
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                Quaternion rotation = Quaternion.Euler(0, 0, angle - 90f); // Adjust -90f for 2D up vector
-
-                GameObject projectileGameObjectInstance = Instantiate(projectilePrefab, transform.position, rotation);
-                Projectile projectileInstance = projectileGameObjectInstance.GetComponent<Projectile>();
-                projectileInstance.OnProjectileHit -= ProjectileInstance_OnProjectileHit;
-                projectileInstance.OnProjectileHit += ProjectileInstance_OnProjectileHit;
-                projectileInstance.Initialize(direction, projectileSpeed, Damage, enemyLayer, isMonoTarget, AttackArea, impactEffectPrefab, AttackRange);
-            }
+            GameObject projectileGameObjectInstance = Instantiate(projectilePrefab, transform.position, rotation);
+            Projectile projectileInstance = projectileGameObjectInstance.GetComponent<Projectile>();
+            projectileInstance.OnProjectileHit -= ProjectileInstance_OnProjectileHit;
+            projectileInstance.OnProjectileHit += ProjectileInstance_OnProjectileHit;
+            projectileInstance.Initialize(direction, projectileSpeed, Damage, enemyLayer, isMonoTarget, AttackArea, impactEffectPrefab, AttackRange);
         }
     }
 

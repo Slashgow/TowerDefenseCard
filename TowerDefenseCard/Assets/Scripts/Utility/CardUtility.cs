@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static SimpleDamageor;
 
 public static class CardUtility 
 {
@@ -69,4 +70,19 @@ public static class CardUtility
             AddCardAndChildrenToList(stackedCard, list);
         }
     }
+
+    public static List<DamageableTarget> GetDamageableTargets(Collider2D[] hits)
+    {
+        List<DamageableTarget> targets = new List<DamageableTarget>();
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.TryGetComponent<IDamageable>(out var damageable))
+            {
+                targets.Add(new DamageableTarget(hit, damageable));
+            }
+        }
+
+        return targets;
+    }
+
 }
