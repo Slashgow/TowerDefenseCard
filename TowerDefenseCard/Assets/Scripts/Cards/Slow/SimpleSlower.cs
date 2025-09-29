@@ -60,7 +60,6 @@ public class SimpleSlower : MonoBehaviour, ISlower
             return;
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, SlowRange, slowableLayer);
-
         foreach (var hit in hits)
         {
             ISlowable slowable = hit.GetComponent<ISlowable>();
@@ -112,11 +111,12 @@ public class SimpleSlower : MonoBehaviour, ISlower
 
         if (enabled && (slowTimer == null || slowTimer.isCompleted))
         {
-            slowTimer = Timer.Register(slowCooldown, SlowNearbyTargets, isLooped: true);
+            slowTimer = Timer.Register(slowCooldown, onComplete: SlowNearbyTargets, isLooped: true);
         }
         else if (!enabled && slowTimer != null)
         {
             slowTimer.Cancel();
+            slowTimer = null;
         }
     }
 

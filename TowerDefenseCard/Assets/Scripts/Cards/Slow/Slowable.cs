@@ -49,9 +49,9 @@ public class Slowable : MonoBehaviour, ISlowable
 
         isSlowed = false;
         currentSlowDuration = 0f;
-        float previousMultiplier = currentSlowMultiplier;
+        //float previousMultiplier = currentSlowMultiplier;
         currentSlowMultiplier = 1f;
-        slowTimer?.Cancel();
+        //slowTimer?.Cancel();
 
         if (autoCardMovement != null)
             autoCardMovement.RemoveSlow();
