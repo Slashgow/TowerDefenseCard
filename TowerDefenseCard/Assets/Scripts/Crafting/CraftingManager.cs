@@ -13,7 +13,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public event Action<int> OnCraftCancel = delegate { };
     public event Action<int, CardID> OnCraftComplete = delegate { };
-    public event Action OnDestroyCard = delegate { };
+    public event Action<CardID> OnDestroyCard = delegate { };
 
     private float startingTimeElapsed = 0f;
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
@@ -177,7 +177,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             if (!shouldBeKept)
             {
                 craftInfo.StackCards[i].OnUnstack();
-                OnDestroyCard?.Invoke();
+                OnDestroyCard?.Invoke(craftInfo.StackCards[i].CardData.CardID);
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
             else if (craftInfo.StackCards.Any(card => card is CardRessourceGenerator) && craftInfo.CraftingRecipe.OutputCards[0].cardPrefab.GetComponent<CardRessourceGenerator>())

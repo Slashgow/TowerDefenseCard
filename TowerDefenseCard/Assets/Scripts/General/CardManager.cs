@@ -237,7 +237,14 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     private void IStealable_OnDestroy() => UpdateCurrentNumberOfCard(-1);
     private void CardExploitation_OnDestroyCardExploitation() => UpdateCurrentNumberOfCard(-1);
     private void TowerDamageable_OnTowerDie() => UpdateCurrentNumberOfCard(-1);
-    private void CraftingManager_OnDestroyCard() => UpdateCurrentNumberOfCard(-1);
+    private void CraftingManager_OnDestroyCard(CardID cardID)
+    {
+        if(cardID == CardID.CURRENCY)
+            ShopManager.Instance.RemovePlayerCoin(1);
+
+        UpdateCurrentNumberOfCard(-1);
+    }
+
     private void Reseller_OnResell(int numberOfReselledCard) => UpdateCurrentNumberOfCard(-numberOfReselledCard);
     private void Booster_OnOpenCardIdea() => UpdateCurrentNumberOfCard(1);
 
