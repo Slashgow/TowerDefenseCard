@@ -5,7 +5,7 @@ public class PopUp : MonoBehaviour
 {
     [SerializeField] private Button doActionButton, cancelButton;
 
-    private void Start() => gameObject.SetActive(false);
+    private void Awake() => gameObject.SetActive(false);
 
     private void OnEnable()
     {

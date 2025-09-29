@@ -240,7 +240,10 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     private void CraftingManager_OnDestroyCard(CardID cardID)
     {
         if(cardID == CardID.CURRENCY)
+        {
             ShopManager.Instance.RemovePlayerCoin(1);
+            return;
+        }
 
         UpdateCurrentNumberOfCard(-1);
     }
