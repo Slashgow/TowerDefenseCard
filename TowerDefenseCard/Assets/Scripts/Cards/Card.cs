@@ -240,4 +240,18 @@ public class Card : MonoBehaviour
         CardUtility.AddCardAndChildrenToList(root, stack);
         return stack;
     }
+
+    public bool TryClearStackCards()
+    {
+        bool isStackedCardJinxed = false;
+        for (int i = 0; i < StackedCards.Count; i++)
+        {
+            if (StackedCards[i] == null)
+            {
+                StackedCards.RemoveAt(i);
+                isStackedCardJinxed = true;
+            }
+        }
+        return isStackedCardJinxed;
+    }
 }

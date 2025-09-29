@@ -27,12 +27,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
 
     public static void ResetGameSave()
     {
-        if(SavePath.SaveExists)
-        {
-            SavePath.DeleteGameSaves();
-            SuccessSaveSystem.ResetSaveStatsByGame();
-            //File.Delete(SavePath.SavePathCardDiscovered);
-        }
+        SavePath.DeleteGameSaves();
+        SuccessSaveSystem.ResetSaveStatsByGame();
     }
 
 

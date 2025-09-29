@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chest
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 4
-    quantity: 3
+  - cardID: 0
+    quantity: 2
     isNotDestroyedOnCraft: 0
   - cardID: 15
     quantity: 1

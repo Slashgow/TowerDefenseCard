@@ -17,7 +17,7 @@ public class UICardManager : MonoBehaviour
         CardManager.Instance.OnUpdateMaxNumberOfDefenseCards += CardManager_OnUpdateNumberOfDefenseCards;
 
 
-        Debug.Log("Initializing UICardManager with current card counts.");
+        //Debug.Log("Initializing UICardManager with current card counts.");
         CardManager_OnUpdateNumberOfCards(CardManager.Instance.CurrentNumberOfCards, CardManager.Instance.MaxCardsAllowed);
         CardManager_OnUpdateNumberOfDefenseCards(CardManager.Instance.CurrentNumberOfDefenseCards, CardManager.Instance.MaxCardsDefenseAllowed);
     }
@@ -52,7 +52,7 @@ public class UICardManager : MonoBehaviour
 
     private void CardManager_OnUpdateNumberOfDefenseCards(int currentNumberOfDefenseCard, int maxNumberOfDefenseCard)
     {
-        Debug.Log($"Updating Defense Cards UI: {currentNumberOfDefenseCard}/{maxNumberOfDefenseCard}");
+        //Debug.Log($"Updating Defense Cards UI: {currentNumberOfDefenseCard}/{maxNumberOfDefenseCard}");
         UpdateText(numberOfDefenseCardText, currentNumberOfDefenseCard, maxNumberOfDefenseCard);
 
         if (CardManager.Instance.IsMaxDefenseCardsReached)

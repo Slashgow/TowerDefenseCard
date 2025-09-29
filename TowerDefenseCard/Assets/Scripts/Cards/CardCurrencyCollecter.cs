@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
+public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private Logger logger;
     [SerializeField, Range(0, 100)] private int maxCurrencyAmount = 50;
@@ -13,12 +13,14 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
 
     public int CurrentAmount { get; private set; }
 
-   // private void Awake()
-   // {
-   //     if(!GameSaveSystem.saveExists)
-   //         CurrentAmount = 0;
-   // }
-   //
+    private bool isDragging = false;
+
+    // private void Awake()
+    // {
+    //     if(!GameSaveSystem.saveExists)
+    //         CurrentAmount = 0;
+    // }
+    //
     public void CollectCurrency(Currency[] currencies)
     {
         if(CurrentAmount + currencies.Length > maxCurrencyAmount)
@@ -68,6 +70,10 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         logger.Log($"on pointer up", this);
+
+        if (isDragging)
+            return;
+
         DropCurrency();
     }
 
@@ -92,4 +98,14 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler
         CurrentAmount = cardSaveData.currentAmountOfCurrency;
     }
 
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log($"on end drag", this);
+        isDragging = false;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        isDragging = true;
+    }
 }

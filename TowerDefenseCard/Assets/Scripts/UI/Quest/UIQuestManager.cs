@@ -150,7 +150,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         if (uiQuest == null)
         {
-            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            //Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
             return;
         }
 
@@ -169,7 +169,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         if(uiQuest == null)
         {
-            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            //Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
             return;
         }
 
@@ -189,7 +189,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         if (uiQuest == null)
         {
-            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            //Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
             return;
         }
 
@@ -200,10 +200,10 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     private void MainQuestManager_OnQuestUnlocked(Quest quest)
     {
         UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
-        Debug.Log("Main Quest Manager, on quest unlocked");
+        //Debug.Log("Main Quest Manager, on quest unlocked");
         if (uiQuest == null)
         {
-            Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
+            //Debug.LogWarning($"UIQuest not found for Quest ID: {quest.QuestId}");
             return;
         }
 

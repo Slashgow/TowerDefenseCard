@@ -123,7 +123,16 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             Card otherCard = hit.GetComponent<Card>();
 
             if (otherCard.StackedCards.Count > 0)
-                continue;
+            {
+                // double check if stack cards contain null references and clean them
+                if (otherCard.TryClearStackCards())
+                {
+                    if (otherCard.StackedCards.Count > 0)
+                        continue;
+                }
+                else
+                    continue;
+            }
 
             if (otherCard != null && otherCard.CardData.IsStackable)
             {

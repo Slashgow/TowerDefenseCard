@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Booster : Card, IPointerDownHandler, IPointerUpHandler
+public class Booster : Card, IPointerUpHandler, IEndDragHandler, IBeginDragHandler
 {
-    [SerializeField, Range(1, 10)] private int maxCardCount = 3; 
+    [SerializeField, Range(1, 10)] private int maxCardCount = 3;
+    [SerializeField] private Vector3 spawnOffset = Vector3.down * 3;
     public int MaxCardCount => maxCardCount;
 
     private int remainingCards;
@@ -17,6 +18,8 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
     public static event Action<CardID> OnOpenBooster;
     public UnityEvent OnOpenBoosterUnity;
     public static event Action OnOpenCardIdea;
+
+    private bool isDragging = false;
 
     protected override void Awake()
     {
@@ -35,13 +38,15 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if(isDragging)
+            return;
+
         TrySpawnCardFromShopItemList();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        //TrySpawnCardFromShopItemList();
-    }
+    public void OnEndDrag(PointerEventData eventData) => isDragging = false;
+    public void OnBeginDrag(PointerEventData eventData) => isDragging = true;
+
 
     private void TrySpawnCardFromShopItemList()
     {
@@ -93,7 +98,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             selectedItem = SelectShopItem();
          
         
-        Instantiate(selectedItem.CardPrefab, this.transform.position, Quaternion.identity);
+        Instantiate(selectedItem.CardPrefab, this.transform.position + spawnOffset, Quaternion.identity);
 
         if (selectedItem.CardPrefab.GetComponent<Currency>())
         {
@@ -106,7 +111,7 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
 
     private void SpawnCardIdea(ShopCardIdea selectedShopCardIdea)
     {
-        GameObject cardIdeaVisualInstance = Instantiate(shop.CardIdeaVisualPrefab.gameObject, this.transform.position, Quaternion.identity);
+        GameObject cardIdeaVisualInstance = Instantiate(shop.CardIdeaVisualPrefab.gameObject, this.transform.position + spawnOffset, Quaternion.identity);
         cardIdeaVisualInstance.GetComponent<CardIdea>().Initialize(selectedShopCardIdea.CardIdeaPrefab);
         remainingCards--;
         OnOpenCardIdea?.Invoke();
@@ -228,4 +233,6 @@ public class Booster : Card, IPointerDownHandler, IPointerUpHandler
             shopID = this.shop.ShopID
         };
     }
+
+   
 }
