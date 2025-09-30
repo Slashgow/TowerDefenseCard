@@ -285,7 +285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319473351768311903}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a42cf16896ee7a43a9c867e97dd8ed6, type: 3}
   m_Name: 
@@ -407,7 +407,7 @@ MonoBehaviour:
   autoStartMove: 1
   isStartMoveRandom: 0
   startMoveNonRandomDirection: {x: 0, y: -1}
-  moveStep: 2
+  moveStep: 2.5
   checkRadius: 0.5
   maxIterations: 1
   startMoveDuration: 0.5

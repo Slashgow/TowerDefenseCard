@@ -111,44 +111,50 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     private void TryStackCards()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
+        if (!this.card.CardData.IsStackable)
+            hits = null;
 
-        foreach (var hit in hits)
+        if(hits != null)
         {
-            if (hit.gameObject == this.gameObject)
-                continue;
-
-            if (hit.transform.IsChildOf(this.transform))
-                continue;
-
-            Card otherCard = hit.GetComponent<Card>();
-
-            if (otherCard.StackedCards.Count > 0)
+            foreach (var hit in hits)
             {
-                // double check if stack cards contain null references and clean them
-                if (otherCard.TryClearStackCards())
+                if (hit.gameObject == this.gameObject)
+                    continue;
+
+                if (hit.transform.IsChildOf(this.transform))
+                    continue;
+
+                Card otherCard = hit.GetComponent<Card>();
+
+                if (otherCard.StackedCards.Count > 0)
                 {
-                    if (otherCard.StackedCards.Count > 0)
+                    // double check if stack cards contain null references and clean them
+                    if (otherCard.TryClearStackCards())
+                    {
+                        if (otherCard.StackedCards.Count > 0)
+                            continue;
+                    }
+                    else
                         continue;
                 }
-                else
-                    continue;
-            }
 
-            if (otherCard != null && otherCard.CardData.IsStackable)
-            {
-                card.OnStack(otherCard);
+                if (otherCard != null && otherCard.CardData.IsStackable)
+                {
+                    card.OnStack(otherCard);
 
-                Vector3 newPos = Vector3.zero;
-                newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
-                transform.localPosition = newPos;
-                CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
+                    Vector3 newPos = Vector3.zero;
+                    newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
+                    transform.localPosition = newPos;
+                    CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
 
-                if (CraftingManager.Instance.TryCraft(otherCard.transform.root, this.card))
+                    if (CraftingManager.Instance.TryCraft(otherCard.transform.root, this.card))
+                        return;
+
                     return;
-
-                return;
+                }
             }
         }
+        
 
         Vector3 pos2D = transform.position;
         pos2D.z = 0.0f;

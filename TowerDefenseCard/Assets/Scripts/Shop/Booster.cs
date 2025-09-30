@@ -31,10 +31,15 @@ public class Booster : Card, IPointerUpHandler, IEndDragHandler, IBeginDragHandl
     protected override void Start()
     {
         base.Start();
-        if(shopID != ShopID.NONE)
+        Debug.Log($"Booster Start - RemainingCards: {remainingCards}, MaxCardCount: {maxCardCount}, ShopID: {shopID}");
+        if (shopID != ShopID.NONE)
             shop = ShopManager.Instance.GetShopByID(shopID);
     }
-    public void Initialize(Shop shop) => this.shop = shop;
+    public void Initialize(Shop shop)
+    {
+        Debug.Log($"Booster Initialize - ShopID: {shop.ShopID}");
+        this.shop = shop;
+    }
 
     public void OnPointerUp(PointerEventData eventData)
     {
