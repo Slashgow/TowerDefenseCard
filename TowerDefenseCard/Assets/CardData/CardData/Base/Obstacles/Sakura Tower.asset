@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8c9d65e7483b145999d37c7a67e574, type: 3}
+  m_Name: Sakura Tower
+  m_EditorClassIdentifier: 
+  cardID: 67
+  cardName:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 18047803387670528
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:39567ff0bf25fe0498764248f1413610
+    m_TableEntryReference:
+      m_KeyId: 18047821708390400
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cardSprite: {fileID: -170961093, guid: ba30cc8b7b008cc4885b76205f49e07e, type: 3}
+  cardBackgroundSprite: {fileID: -5947617582768455614, guid: 361f48aeebdc4c74c9f78c015d434e4e, type: 3}
+  isStackable: 1
+  cost: 18
+  references:
+    version: 2
+    RefIds: []

@@ -62,7 +62,7 @@ public class Currency : Card, IEndDragHandler
                 }
                 else
                 {
-                    cardShop.TryPurchaseBooster(false);
+                    //cardShop.TryPurchaseBooster(false);
 
                     if (availableCurrency > requiredCost)
                     {
@@ -77,9 +77,12 @@ public class Currency : Card, IEndDragHandler
                         currencyChildren[i].OnUnstack();
                         pool.AddToPool(currencyChildren[i].gameObject);
                     }
+
+                    cardShop.TryPurchaseBooster(false);
+
                 }
 
-              
+
                 //cardShop.TryPurchaseBooster();
             }
         }

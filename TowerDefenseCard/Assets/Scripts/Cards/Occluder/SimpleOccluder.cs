@@ -8,7 +8,6 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
     [Header("Occluder Settings")]
     [SerializeField] private float occlusionRange = 5f;
     [SerializeField, Range(0f, 360f)] private float occlusionFieldOfView = 90f;
-    [SerializeField, Range(0f, 1f)] private float directionDotThreshold = 0.8f;
     [SerializeField] private LayerMask protectedLayer;
     [SerializeField] private bool canOcclude = true;
     [SerializeField, Range(0f,5f)] private float checkForProtectedDefenseInterval = 1f;
@@ -87,6 +86,9 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
 
             if (IsTargetInProtectionZone(hit.transform.position) && hit.TryGetComponent(out IDamageable damageable))
             {
+                if(hit.GetComponent<SimpleOccluder>() != null)
+                    continue;
+
                 damageable.IsProtected = true;
                 protectedTargets.Add(damageable);
             }

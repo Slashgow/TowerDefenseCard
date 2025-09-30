@@ -11,14 +11,14 @@ PrefabInstance:
     - target: {fileID: 391280489787409089, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ea02f71e22c4b64f853f7c9d9856fe2, type: 2}
+      objectReference: {fileID: 11400000, guid: 32ab277d82b523e43903d057c03b15e2, type: 2}
     - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: maxHealth
-      value: 600
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2512170766306994665, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: combatMoveConditionner
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: Bamboo Tower
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6696755751888011344, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
@@ -186,7 +186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   occlusionRange: 5
   occlusionFieldOfView: 180
-  directionDotThreshold: 0.8
   protectedLayer:
     serializedVersion: 2
     m_Bits: 64

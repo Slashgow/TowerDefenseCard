@@ -525,7 +525,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5379952642224128
-    m_Localized: Allows you to increase the number of defense cards on the field.
+    m_Localized: Allows you to increase the number of defense cards on the field
+      by 1.
     m_Metadata:
       m_Items: []
   - m_Id: 5380261624016896
@@ -556,6 +557,32 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 13772989328125952
     m_Localized: Sell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047703957499904
+    m_Localized: Bamboo Tower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047803387670528
+    m_Localized: Sakura Tower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047767417319424
+    m_Localized: "A tower that protects the defense in its field of view. It has
+      a 180\xB0 field of view."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047821708390400
+    m_Localized: "A tower that protects the defense in its field of view. It has
+      a 360\xB0 field of view."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18049420623212544
+    m_Localized: Village
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18049528987250688
+    m_Localized: A small village that increase defense card storage by 4.
     m_Metadata:
       m_Items: []
   references:

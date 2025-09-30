@@ -42,12 +42,12 @@ public class Reseller : MonoSingleton<Reseller>
             CraftingManager.Instance.TryCancelCraft(card);
         }
 
-        for (int i = 0; i < coinAmount; i++)
-        {
-            logger.Log($"spawn currency | {i} | coint amount {coinAmount} ", this);
-            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
-            currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
-        }
+        //for (int i = 0; i < coinAmount; i++)
+        //{
+        //    logger.Log($"spawn currency | {i} | coint amount {coinAmount} ", this);
+        //    GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
+        //    currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
+        //}
 
         ShopManager.Instance.AddPlayerCoin(coinAmount);
 
@@ -56,5 +56,12 @@ public class Reseller : MonoSingleton<Reseller>
 
         cards.ForEach(card => OnResellCardID?.Invoke(card.CardData.CardID));
         CardUtility.DestroyAllCards(cards);
+
+        for (int i = 0; i < coinAmount; i++)
+        {
+            logger.Log($"spawn currency | {i} | coint amount {coinAmount} ", this);
+            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
+            currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
+        }
     }
 }

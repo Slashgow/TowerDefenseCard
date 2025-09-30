@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
-  m_Name: House
+  m_Name: BambooTower
   m_EditorClassIdentifier: 
   ingredients:
+  - cardID: 15
+    quantity: 1
+    isNotDestroyedOnCraft: 0
   - cardID: 4
     quantity: 2
-    isNotDestroyedOnCraft: 0
-  - cardID: 59
-    quantity: 1
     isNotDestroyedOnCraft: 0
   - cardID: 42
     quantity: 1
     isNotDestroyedOnCraft: 1
-  craftingDelay: 15
+  craftingDelay: 10
   outputCards:
-  - cardID: 58
-    cardPrefab: {fileID: 8120017144925986195, guid: 7532c69d8d40253469a7302892abb7a0, type: 3}
+  - cardID: 66
+    cardPrefab: {fileID: 83007928072452727, guid: 62b534268bf9e814d9e459180321e866, type: 3}
     dropChance: 100

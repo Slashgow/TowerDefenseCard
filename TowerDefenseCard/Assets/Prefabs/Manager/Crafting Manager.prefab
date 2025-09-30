@@ -103,6 +103,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6aa113ebba6de8d4193c1cf593954223, type: 2}
   - {fileID: 11400000, guid: 6e87325d2d686c340a45223a3207166b, type: 2}
   - {fileID: 11400000, guid: 736e862840cdcb046bde9b596f6d7a9c, type: 2}
+  - {fileID: 11400000, guid: f56b411ee82f5f142bb899bb7944fc4c, type: 2}
+  - {fileID: 11400000, guid: 251584c89e1cc5242be396b304d42aab, type: 2}
+  - {fileID: 11400000, guid: 6120f8542a1361048bad227ee1d35cf2, type: 2}
   cooldownBarPrefab: {fileID: 5366261039685075114, guid: 05c0c4a21dc340540911cb28546c2564, type: 3}
   cooldownBarOffset: 1.2
   timeElapsed: 0
