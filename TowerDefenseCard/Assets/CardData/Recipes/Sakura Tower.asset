@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Sakura Tower
   m_EditorClassIdentifier: 
   ingredients:
-  - cardID: 15
+  - cardID: 66
     quantity: 1
     isNotDestroyedOnCraft: 0
-  - cardID: 4
+  - cardID: 5
     quantity: 2
     isNotDestroyedOnCraft: 0
   - cardID: 42
     quantity: 1
     isNotDestroyedOnCraft: 1
-  craftingDelay: 10
+  craftingDelay: 16
   outputCards:
-  - cardID: 66
-    cardPrefab: {fileID: 83007928072452727, guid: 62b534268bf9e814d9e459180321e866, type: 3}
+  - cardID: 67
+    cardPrefab: {fileID: 83007928072452727, guid: 879ecfc6aa63c7b429d661b85c9a0f49, type: 3}
     dropChance: 100
