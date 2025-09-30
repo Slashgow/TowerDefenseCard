@@ -59,6 +59,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public bool TryCraft(Transform stackParent, Card movedCard)
     {
+        RemoveInvalidCrafts();
+
         Card parentCard = stackParent.GetComponent<Card>();
         if (parentCard == null) return false;
 
@@ -268,6 +270,20 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     }
 
     public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.First(craftInfo => craftInfo.CraftID == cardID);
+
+
+    public void RemoveInvalidCrafts()
+    {
+        for (int i = currentCrafts.Count - 1; i >= 0; i--)
+        {
+            if (currentCrafts[i].StackCards.Any(card => card == null))
+            {
+                Debug.LogWarning("Removing invalid craft due to null card in stack");
+                OnCraftCancel?.Invoke(currentCrafts[i].CraftID);
+                currentCrafts.RemoveAt(i);
+            }
+        }
+    }
 
     private bool IsCardsInOnGoingCraft(List<Card> stackCards)
     {

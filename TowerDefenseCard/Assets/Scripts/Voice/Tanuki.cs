@@ -121,7 +121,7 @@ public class Tanuki : MonoBehaviour
         if (CardManager.HasInstance)
         {
             CardManager.Instance.OnMaxCardsReached -= CardManager_OnMaxCardsReached;
-            CardManager.Instance.OnMaxCardsDefenseReached -= CardManager_OnMaxCardsDefenseReached; ;
+            CardManager.Instance.OnMaxCardsDefenseReached -= CardManager_OnMaxCardsDefenseReached; 
         }
 
         if(WaveManager.HasInstance)
