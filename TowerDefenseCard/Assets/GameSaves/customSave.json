@@ -1,0 +1,3422 @@
+{
+    "currentPlayerHealth": 200.0,
+    "currentNumberOfCards": 81,
+    "craftTimeElapsed": 0.0,
+    "currentPlayerCoin": 20,
+    "gameMode": 0,
+    "currentWaveIndex": 7,
+    "currentWaveEnnemyIndex": 0,
+    "currentEnnemyCount": 0,
+    "amountOfSpawnedEnemies": 0,
+    "isBasePackFirstTimeOpened": false,
+    "basePackRiggedCardIndex": 0,
+    "isDefensePackFirstTimeOpened": false,
+    "isEngineeringPackFirstTimeOpened": false,
+    "isFoodPackFirstTimeOpened": false,
+    "cardStacks": [
+        {
+            "cards": [
+                {
+                    "cardID": 53,
+                    "position": {
+                        "x": 4.9642133712768559,
+                        "y": 3.846935987472534,
+                        "z": 1.7007551193237305
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 54,
+                    "position": {
+                        "x": -5.155811309814453,
+                        "y": 6.141807556152344,
+                        "z": 4.278337478637695
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 55,
+                    "position": {
+                        "x": 7.251269817352295,
+                        "y": 9.869939804077149,
+                        "z": -3.574556350708008
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 25,
+                    "position": {
+                        "x": 1.3535346984863282,
+                        "y": -7.317131042480469,
+                        "z": 1.943613052368164
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 25,
+                    "position": {
+                        "x": -5.198801040649414,
+                        "y": -4.750028610229492,
+                        "z": 7.279817581176758
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 25,
+                    "position": {
+                        "x": -0.48290157318115237,
+                        "y": 9.339056015014649,
+                        "z": 4.733543395996094
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -1.169651985168457,
+                        "y": 9.70477294921875,
+                        "z": -4.486955642700195
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 2.025026321411133,
+                        "y": -8.75636100769043,
+                        "z": 9.627771377563477
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -6.216924667358398,
+                        "y": 7.469726085662842,
+                        "z": 6.1164069175720219
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 9.63768196105957,
+                        "y": 7.135562896728516,
+                        "z": 5.4323554039001469
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 4.1851019859313969,
+                        "y": 5.215293884277344,
+                        "z": 3.6467432975769045
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 8.006110191345215,
+                        "y": -0.6183757781982422,
+                        "z": 5.541703701019287
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -9.327066421508789,
+                        "y": 4.892575740814209,
+                        "z": 4.829719066619873
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -3.284722328186035,
+                        "y": 2.188802719116211,
+                        "z": 5.469393730163574
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -5.173805236816406,
+                        "y": -8.968915939331055,
+                        "z": -8.314964294433594
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 3.7282607555389406,
+                        "y": 5.439631938934326,
+                        "z": -0.13459110260009767
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 3.082923650741577,
+                        "y": -6.037694931030273,
+                        "z": -5.35844612121582
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -4.492067337036133,
+                        "y": 8.452486991882325,
+                        "z": 0.9613428115844727
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 1.6348514556884766,
+                        "y": -2.339080810546875,
+                        "z": -2.686971664428711
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -8.197443008422852,
+                        "y": 8.793807029724121,
+                        "z": 9.372474670410157
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 5.72484016418457,
+                        "y": -8.731216430664063,
+                        "z": 7.538554668426514
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 8.915035247802735,
+                        "y": -8.237447738647461,
+                        "z": -1.3205089569091797
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -9.467052459716797,
+                        "y": 2.70127272605896,
+                        "z": -4.284177780151367
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -6.858310699462891,
+                        "y": -4.958929061889648,
+                        "z": -8.734638214111329
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": 3.118316650390625,
+                        "y": -4.232400894165039,
+                        "z": 9.266912460327149
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 41,
+                    "position": {
+                        "x": -3.391012191772461,
+                        "y": 1.1145439147949219,
+                        "z": -1.0643253326416016
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 39,
+                    "position": {
+                        "x": -0.9165868759155273,
+                        "y": 5.998549461364746,
+                        "z": 4.234747886657715
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 39,
+                    "position": {
+                        "x": 7.287799835205078,
+                        "y": 4.409999847412109,
+                        "z": 8.310020446777344
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 39,
+                    "position": {
+                        "x": -7.33006477355957,
+                        "y": -6.91270637512207,
+                        "z": 0.8301792144775391
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -2.735041618347168,
+                        "y": -4.260405540466309,
+                        "z": 3.549654006958008
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -6.410009384155273,
+                        "y": 8.372013092041016,
+                        "z": 1.7725906372070313
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -8.817026138305664,
+                        "y": 9.625471115112305,
+                        "z": -2.6687850952148439
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -6.6232829093933109,
+                        "y": 7.648532390594482,
+                        "z": 4.714298248291016
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 38,
+                    "position": {
+                        "x": -2.182373046875,
+                        "y": -1.2913475036621094,
+                        "z": 8.499626159667969
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -3.211277961730957,
+                        "y": 9.720403671264649,
+                        "z": 2.792067289352417
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 3.4757537841796877,
+                        "y": -9.484617233276368,
+                        "z": -1.3404903411865235
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 7.846183776855469,
+                        "y": 2.7106971740722658,
+                        "z": 7.704379558563232
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -5.041473388671875,
+                        "y": -5.916116714477539,
+                        "z": 3.7111682891845705
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 0.8307876586914063,
+                        "y": 4.433784484863281,
+                        "z": 4.071850776672363
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -2.404142379760742,
+                        "y": 0.5914602279663086,
+                        "z": -7.962942123413086
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -8.41151237487793,
+                        "y": -5.073637962341309,
+                        "z": 9.48023796081543
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -1.9040718078613282,
+                        "y": 9.609989166259766,
+                        "z": -3.6888017654418947
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -1.5487442016601563,
+                        "y": 8.055742263793946,
+                        "z": -7.428037643432617
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 3.0754542350769045,
+                        "y": 6.707784652709961,
+                        "z": -7.765899181365967
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 4.244363307952881,
+                        "y": 0.5030975341796875,
+                        "z": -6.630212783813477
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 8.040573120117188,
+                        "y": -3.057912826538086,
+                        "z": -5.62929630279541
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 1.4981565475463868,
+                        "y": 5.838785171508789,
+                        "z": 6.209564208984375
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 7.536685466766357,
+                        "y": -5.783842086791992,
+                        "z": -7.780570983886719
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 2.71807861328125,
+                        "y": 5.555400848388672,
+                        "z": 0.6511268615722656
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -2.774454116821289,
+                        "y": -0.5830421447753906,
+                        "z": 6.9365997314453129
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 9.491203308105469,
+                        "y": -1.7242584228515626,
+                        "z": 0.5927333831787109
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": -0.7752475738525391,
+                        "y": -9.431474685668946,
+                        "z": 5.246109962463379
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 2.1505632400512697,
+                        "y": 9.22878646850586,
+                        "z": 2.878713369369507
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 58,
+                    "position": {
+                        "x": 6.771366119384766,
+                        "y": -3.665546417236328,
+                        "z": -2.435861587524414
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 10,
+                    "position": {
+                        "x": -5.642406463623047,
+                        "y": 3.09771990776062,
+                        "z": -2.3744096755981447
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 11,
+                    "position": {
+                        "x": 8.511661529541016,
+                        "y": -7.690067291259766,
+                        "z": 6.98194694519043
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 17,
+                    "position": {
+                        "x": -6.154682159423828,
+                        "y": -9.402620315551758,
+                        "z": 3.2918758392333986
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 18,
+                    "position": {
+                        "x": 5.7677531242370609,
+                        "y": -2.0688858032226564,
+                        "z": 7.5667643547058109
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 60,
+                    "position": {
+                        "x": 2.565581798553467,
+                        "y": -2.7737321853637697,
+                        "z": 0.8410320281982422
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 61,
+                    "position": {
+                        "x": 3.136451244354248,
+                        "y": -3.131011962890625,
+                        "z": -3.339005470275879
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 62,
+                    "position": {
+                        "x": -4.671138763427734,
+                        "y": -4.402547836303711,
+                        "z": 7.753026485443115
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 63,
+                    "position": {
+                        "x": 0.07698440551757813,
+                        "y": -4.622167587280273,
+                        "z": 1.9517478942871094
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 6,
+                    "position": {
+                        "x": 1.252976417541504,
+                        "y": 6.055702209472656,
+                        "z": -9.208137512207032
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 23,
+                    "position": {
+                        "x": -6.455327987670898,
+                        "y": 6.455667018890381,
+                        "z": 9.250709533691407
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 22,
+                    "position": {
+                        "x": -8.16738510131836,
+                        "y": -2.381953239440918,
+                        "z": 5.128898620605469
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 19,
+                    "position": {
+                        "x": 7.083274841308594,
+                        "y": -5.5850934982299809,
+                        "z": -9.463274002075196
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 19,
+                    "position": {
+                        "x": 5.115692138671875,
+                        "y": -9.00448226928711,
+                        "z": -6.6220622062683109
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 51,
+                    "position": {
+                        "x": -1.5774736404418946,
+                        "y": 5.739040374755859,
+                        "z": 2.956995725631714
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 47,
+                    "position": {
+                        "x": 5.992595672607422,
+                        "y": 5.087528228759766,
+                        "z": -7.932947158813477
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 52,
+                    "position": {
+                        "x": -5.063538551330566,
+                        "y": 8.957244873046875,
+                        "z": -7.744588851928711
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 46,
+                    "position": {
+                        "x": -8.706033706665039,
+                        "y": 1.0602531433105469,
+                        "z": -3.5032691955566408
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 42,
+                    "position": {
+                        "x": -9.654561996459961,
+                        "y": 9.216827392578125,
+                        "z": 4.744164943695068
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 42,
+                    "position": {
+                        "x": -8.015823364257813,
+                        "y": 9.001266479492188,
+                        "z": 1.7391815185546876
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 42,
+                    "position": {
+                        "x": 2.882532835006714,
+                        "y": -4.086832046508789,
+                        "z": -5.609650611877441
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 48,
+                    "position": {
+                        "x": 9.099929809570313,
+                        "y": 7.574077129364014,
+                        "z": -8.629650115966797
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 50,
+                    "position": {
+                        "x": -7.161733627319336,
+                        "y": 4.070544242858887,
+                        "z": -3.804288864135742
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 45,
+                    "position": {
+                        "x": -6.145923614501953,
+                        "y": 4.590999603271484,
+                        "z": 7.693902969360352
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 44,
+                    "position": {
+                        "x": 4.280118942260742,
+                        "y": 0.7261667251586914,
+                        "z": 7.052829265594482
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 43,
+                    "position": {
+                        "x": 8.68659496307373,
+                        "y": 6.524133682250977,
+                        "z": 2.437087059020996
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 21,
+                    "position": {
+                        "x": 0.47087574005126955,
+                        "y": 4.504570960998535,
+                        "z": -8.842203140258789
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        },
+        {
+            "cards": [
+                {
+                    "cardID": 24,
+                    "position": {
+                        "x": 1.6569814682006837,
+                        "y": 1.3402996063232422,
+                        "z": -0.8685836791992188
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    },
+                    "stackCount": 1,
+                    "boosterSaveData": {
+                        "remainingCards": 0,
+                        "shopID": 0
+                    },
+                    "cardIdeaSaveData": {
+                        "card": {
+                            "instanceID": 0
+                        }
+                    },
+                    "autoCardMovementSaveData": {
+                        "cardID": 0,
+                        "splineID": 0,
+                        "splineLength": 0.0,
+                        "isMoving": false,
+                        "currentDistance": 0.0,
+                        "hasCompletedFirstLoop": false
+                    },
+                    "currentAmountOfCurrency": 0
+                }
+            ]
+        }
+    ],
+    "autoCardMovementDatas": [],
+    "questSaveDatas": []
+}

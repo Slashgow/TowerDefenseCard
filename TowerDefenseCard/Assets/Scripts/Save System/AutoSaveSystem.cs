@@ -42,7 +42,11 @@ public class AutoSaveSystem : MonoSingleton<AutoSaveSystem>
 
 
     private void OnStartCombatMode() => PerformAutoSave();
-    private void OnWaveCompleted(int obj) => PerformAutoSave();
+    private void OnWaveCompleted(int obj)
+    {
+        if(!WaveManager.Instance.IsAllWavesCompleted)
+            PerformAutoSave();
+    }
 
     private void InitializeAutoSave()
     {
