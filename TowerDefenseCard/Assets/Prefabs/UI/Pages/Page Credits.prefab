@@ -4491,10 +4491,10 @@ RectTransform:
   - {fileID: 8597665198776466145}
   m_Father: {fileID: 1070269557152106022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1610, y: 774}
+  m_SizeDelta: {x: -80, y: -80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6956666395876573281
 CanvasRenderer:
@@ -9568,6 +9568,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7053205054852231741}
     m_Modifications:
+    - target: {fileID: 2291371840709526645, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291371840709526645, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291371840709526645, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2499124806919839360, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9680,6 +9692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll View
       objectReference: {fileID: 0}
+    - target: {fileID: 3972061666563511026, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_Size
+      value: 0.6101695
+      objectReference: {fileID: 0}
     - target: {fileID: 4433494998911870004, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -9687,6 +9703,18 @@ PrefabInstance:
     - target: {fileID: 7916363673237606901, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816203516740225021, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816203516740225021, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816203516740225021, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7916363673237606901, guid: 6f48153388ff5fe459d32f598ba39311, type: 3}
