@@ -23,6 +23,7 @@ public class SFXManager : MonoSingleton<SFXManager>
         Booster.OnOpenBooster += Booster_OnOpenBooster;
         Booster.OnOpenCardIdea += Booster_OnOpenCardIdea;
         ShopManager.OnPurchaseBooster += ShopManager_OnPurchaseBooster;
+        ShopManager.OnPurchasePartiallyBoosterEvent += ShopManager_OnPurchaseBooster;
         QuestManager.OnAnyQuestCompleted += QuestManager_OnAnyQuestCompleted;
     }
 
@@ -36,6 +37,7 @@ public class SFXManager : MonoSingleton<SFXManager>
         Booster.OnOpenBooster -= Booster_OnOpenBooster;
         Booster.OnOpenCardIdea -= Booster_OnOpenCardIdea;
         ShopManager.OnPurchaseBooster -= ShopManager_OnPurchaseBooster;
+        ShopManager.OnPurchasePartiallyBoosterEvent -= ShopManager_OnPurchaseBooster;
         QuestManager.OnAnyQuestCompleted -= QuestManager_OnAnyQuestCompleted;
         Shop.OnAnyShopUnlock -= Shop_OnAnyShopUnlock;
     }

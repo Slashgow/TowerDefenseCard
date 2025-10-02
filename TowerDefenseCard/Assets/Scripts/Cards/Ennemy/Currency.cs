@@ -58,6 +58,7 @@ public class Currency : Card, IEndDragHandler
                     }
 
                     ShopManager.Instance.RemovePlayerCoin(availableCurrency);
+                    ShopManager.OnPurchasePartiallyBooster();
                     cardShop.UpdateCardShopData();
                 }
                 else

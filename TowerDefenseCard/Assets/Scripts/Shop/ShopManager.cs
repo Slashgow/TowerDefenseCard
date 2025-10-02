@@ -21,6 +21,9 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     [SerializeField] private List<CardShop> cardShops = new List<CardShop>();
 
     public static event Action OnPurchaseBooster;
+    public static event Action OnPurchasePartiallyBoosterEvent;
+
+    public static void OnPurchasePartiallyBooster() => OnPurchasePartiallyBoosterEvent?.Invoke();
     public UnityEvent OnPurchaseBoosterUnity;
 
     private void Start()
