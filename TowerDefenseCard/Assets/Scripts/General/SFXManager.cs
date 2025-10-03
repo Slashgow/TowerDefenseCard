@@ -8,12 +8,16 @@ public class SFXManager : MonoSingleton<SFXManager>
 
     [SerializeField] private List<AudioClip> popSounds = new List<AudioClip>();
     [SerializeField] private List<AudioClip> coinSounds = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> grabSounds = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> releaseSounds = new List<AudioClip>();
 
     [Header("AudioClips")]
     [SerializeField] private AudioClip onCompleteQuest;
     [SerializeField] private AudioClip onUnlockShop;
 
     private int currentAudioSourceIndex;
+
+    private int currentGrabSoundIndex = 0;
 
     private void Start()
     {
@@ -25,9 +29,10 @@ public class SFXManager : MonoSingleton<SFXManager>
         ShopManager.OnPurchaseBooster += ShopManager_OnPurchaseBooster;
         ShopManager.OnPurchasePartiallyBoosterEvent += ShopManager_OnPurchaseBooster;
         QuestManager.OnAnyQuestCompleted += QuestManager_OnAnyQuestCompleted;
+        CardMover.OnStartDragCard += CardMover_OnGrabCard;
+        CardMover.OnEndDragCard += CardMover_OnReleaseCard;
     }
 
-  
     private void OnDisable()
     {
         if (CraftingManager.HasInstance)
@@ -40,6 +45,8 @@ public class SFXManager : MonoSingleton<SFXManager>
         ShopManager.OnPurchasePartiallyBoosterEvent -= ShopManager_OnPurchaseBooster;
         QuestManager.OnAnyQuestCompleted -= QuestManager_OnAnyQuestCompleted;
         Shop.OnAnyShopUnlock -= Shop_OnAnyShopUnlock;
+        CardMover.OnStartDragCard -= CardMover_OnGrabCard;
+        CardMover.OnEndDragCard -= CardMover_OnReleaseCard;
     }
 
     private void Booster_OnOpenCardIdea() => PlayRandomAudioClip(popSounds);
@@ -49,6 +56,8 @@ public class SFXManager : MonoSingleton<SFXManager>
     private void CraftingManager_OnCraftComplete(int arg1, CardID arg2) => PlayRandomAudioClip(popSounds);
     private void QuestManager_OnAnyQuestCompleted() => PlayAudioClip(onCompleteQuest);
     private void Shop_OnAnyShopUnlock() => PlayAudioClip(onUnlockShop);
+    private void CardMover_OnReleaseCard() => PlayMatchingReleaseAudioClip(releaseSounds);
+    private void CardMover_OnGrabCard() => PlayRandomGrabAudioClip(grabSounds);
 
 
     public void PlayAudioClip(AudioClip audioClip)
@@ -62,6 +71,19 @@ public class SFXManager : MonoSingleton<SFXManager>
     {
         int randomIndex = Random.Range(0, audioClips.Count);
         AudioClip randomClip = audioClips[randomIndex];
+        PlayAudioClip(randomClip);
+    }
+
+    public void PlayRandomGrabAudioClip(List<AudioClip> audioClips)
+    {
+        currentGrabSoundIndex = Random.Range(0, audioClips.Count);
+        AudioClip randomClip = audioClips[currentGrabSoundIndex];
+        PlayAudioClip(randomClip);
+    }
+
+    public void PlayMatchingReleaseAudioClip(List<AudioClip> audioClips)
+    {
+        AudioClip randomClip = audioClips[currentGrabSoundIndex];
         PlayAudioClip(randomClip);
     }
 }

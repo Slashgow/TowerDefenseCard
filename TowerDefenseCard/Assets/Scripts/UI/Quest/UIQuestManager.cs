@@ -193,7 +193,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             return;
         }
 
-        contentScrollViewSecondaryQuest.localPosition = scrollRectSecondaryQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
+        //contentScrollViewSecondaryQuest.localPosition = scrollRectSecondaryQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
     }
 
@@ -207,7 +207,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             return;
         }
 
-        contentScrollViewMainQuest.localPosition = scrollRectMainQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
+        //contentScrollViewMainQuest.localPosition = scrollRectMainQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
     }
 
@@ -225,6 +225,11 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         {
             currentHighlightedQuest = nextQuest;
             currentHighlightedQuest.StartHighlight();
+
+            if(isMainQuest)
+                contentScrollViewMainQuest.localPosition = scrollRectMainQuest.GetSnapToPositionToBringChildIntoView(currentHighlightedQuest.GetComponent<RectTransform>());
+            else
+                contentScrollViewSecondaryQuest.localPosition = scrollRectSecondaryQuest.GetSnapToPositionToBringChildIntoView(currentHighlightedQuest.GetComponent<RectTransform>());
         }
     }
 

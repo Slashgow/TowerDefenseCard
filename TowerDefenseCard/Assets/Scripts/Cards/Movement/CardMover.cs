@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private bool autoStackOnEnable = true;
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
@@ -21,6 +21,12 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPos;
 
+    public static event Action OnStartDragCard;
+    public static event Action OnEndDragCard;
+    public static event Action OnHoverEnterCard;
+    public static event Action OnHoverExitCard;
+    public static event Action OnGrabCard;
+    public static event Action OnReleaseCard;
     public event Action OnPointerDownEvent;
     public event Action OnPointerUpEvent;
 
@@ -41,6 +47,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     {
         //Debug.Log($"on pointer down {this.name}");
         OnPointerDownEvent?.Invoke();
+        OnGrabCard?.Invoke();
 
         CardManager.Instance.ToggleCardsOutline(card);
         CameraMovement.Instance.IsDraggindEnable = false;
@@ -84,6 +91,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     {
         //Debug.Log($"on pointer up {this.name}");
         OnPointerUpEvent?.Invoke();
+        OnReleaseCard?.Invoke();
         isDragging = false;
         transform.rotation = Quaternion.identity; 
         HandleDrop();
@@ -220,11 +228,21 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //Debug.Log($"on pointer enter {this.name}");
+        OnHoverEnterCard?.Invoke();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Debug.Log($"on pointer exit {this.name}");
+        OnHoverExitCard?.Invoke();
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        OnStartDragCard?.Invoke();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        OnEndDragCard?.Invoke();
     }
 }

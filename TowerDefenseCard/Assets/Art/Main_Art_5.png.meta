@@ -394,7 +394,7 @@ TextureImporter:
         width: 264
         height: 264
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -416,7 +416,7 @@ TextureImporter:
         width: 264
         height: 264
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,7 +438,7 @@ TextureImporter:
         width: 264
         height: 264
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -447,6 +447,94 @@ TextureImporter:
       bones: []
       spriteID: b3bfe8798dba3f24bbbd2b54b706905a
       internalID: -170961093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_pointing
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 859
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fb7e4f6f785f3499f4dd9a9743613f
+      internalID: 210707590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_hover
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 705
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888cdc099d4a4db48ac2919f11a62db9
+      internalID: 61175488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_grab
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 714
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cc434f448fbc24ab75c6c1ee8f1819
+      internalID: 711996826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_idle
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 639
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d8c03e7b5146e4e90ff3adc3c4ddaf
+      internalID: 7202763
       vertices: []
       indices: 
       edges: []
@@ -471,7 +559,7 @@ TextureImporter:
       Kami_essence_factory: -4162777096168388130
       KasaObake_bras_bas: -1848370466
       KasaObake_bras_haut: -1284774192
-      Main_Art_5_0: -490396040
+      Main_Art_5_1: 2017794117
       Sakura_Tower: -170961093
       Sakura_brick_factory: -9197449427629750923
       Village: 94030176
@@ -480,6 +568,10 @@ TextureImporter:
       bg_boss_rose: 2078790121
       bg_card_marron: 1818768302
       bg_card_white: -320074091
+      cursor_grab: 711996826
+      cursor_hover: 61175488
+      cursor_idle: 7202763
+      cursor_pointing: -490396040
       shuriken: 1121975513
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
