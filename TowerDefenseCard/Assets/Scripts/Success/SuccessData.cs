@@ -1,10 +1,14 @@
 ﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Localization;
 
 [Serializable]
 public class SuccessData
 {
+    [SerializeField] private string steamId;
+    public string SteamId => steamId;
+
     [SerializeField] private LocalizedString title;
     public LocalizedString Title => title;
 
@@ -28,4 +32,9 @@ public class SuccessData
         isDone = true;
         OnComplete?.Invoke(this);
     }
+
+    public void Reset()
+    {
+        isDone = false;
+    }   
 }

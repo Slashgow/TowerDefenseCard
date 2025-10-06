@@ -147,6 +147,7 @@ public static class SavePath
             File.Delete(SavePathTutorial);
         if (File.Exists(SavePathCardDiscovered))
             File.Delete(SavePathCardDiscovered);
+        SteamIntegration.Instance?.ResetAllAchievements();
     }
 
     public static void DeleteGameSaves()
