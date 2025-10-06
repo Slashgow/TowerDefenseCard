@@ -38,6 +38,7 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
         if(SuccessManager.HasInstance)
             SuccessManager.Instance.AllSuccessData.ForEach(success => success.OnComplete -= UnlockAchievement);
 
+        logger.Log("Shutting down Steamworks...", this);
         SteamClient.Shutdown();
     }
 
@@ -74,5 +75,50 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
     {
         SuccessManager.Instance.AllSuccessData.ForEach(success => ClearAchievementStatus(success));
         logger.Log("All achievements reset", this);
+    }
+
+
+    public void SetStats(SuccessStatData successStatData)
+    {
+        logger.Log($"successStatData | boosterOpenedCounterAllTime : {successStatData.boosterOpenedCounterAllTime.ToString()}", this);
+        logger.Log($"successStatData | craftedCardCounterAllTime : {successStatData.craftedCardCounterAllTime.ToString()}", this);
+        logger.Log($"successStatData | soldCardCounterAllTime : {successStatData.soldCardCounterAllTime.ToString()}", this);
+
+
+        bool setBoosterOpenStat = SteamUserStats.SetStat("boosterOpenedCounterAllTime", successStatData.boosterOpenedCounterAllTime);
+        logger.Log($"SetStat boosterOpenedCounterAllTime success: {setBoosterOpenStat}", this);
+        SteamUserStats.SetStat("craftedCardCounterAllTime", successStatData.craftedCardCounterAllTime);
+        SteamUserStats.SetStat("soldCardCounterAllTime", successStatData.soldCardCounterAllTime);
+
+        PrintStats();
+    }
+
+    [Button("Print Stats")]
+    public void PrintStats()
+    {
+        logger.Log($"boosterOpenedCounterAllTime : {SteamUserStats.GetStatInt("boosterOpenedCounterAllTime")}", this);
+        logger.Log($"craftedCardCounterAllTime : {SteamUserStats.GetStatInt("craftedCardCounterAllTime")}", this);
+        logger.Log($"soldCardCounterAllTime : {SteamUserStats.GetStatInt("soldCardCounterAllTime")}", this);
+    }
+
+    public void StoreStats()
+    {
+        SteamUserStats.StoreStats();
+    }
+
+    [Button("Set Random Stats")]
+    public void SetRandomStats()
+    {
+        SteamUserStats.SetStat("boosterOpenedCounterAllTime", 10);
+        SteamUserStats.SetStat("craftedCardCounterAllTime", 154);
+        SteamUserStats.SetStat("soldCardCounterAllTime", 20);
+    }
+
+    [Button("Reset All Stats")]
+    public void ResetAllStats()
+    {
+        SteamUserStats.SetStat("boosterOpenedCounterAllTime", 0);
+        SteamUserStats.SetStat("craftedCardCounterAllTime", 0);
+        SteamUserStats.SetStat("soldCardCounterAllTime", 0);
     }
 }

@@ -84,7 +84,7 @@ public class Card : MonoBehaviour
 
     public virtual void OnStack(Card targetCard)
     {
-        Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
+        //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
         if (this.StackedCards.Contains(targetCard))
         {

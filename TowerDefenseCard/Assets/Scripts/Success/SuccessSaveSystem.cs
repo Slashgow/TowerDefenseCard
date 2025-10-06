@@ -48,6 +48,9 @@ public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
         {
             SuccessStatData currentStats = successManager.SuccessStatData;
 
+            SteamIntegration.Instance.SetStats(currentStats);
+            //SteamIntegration.Instance.StoreStats();
+
             SuccessSaveData saveData = new SuccessSaveData(currentStats.boosterOpenedCounterAllTime, currentStats.boosterOpenedCounterInGame,
                 currentStats.craftedCardCounterAllTime, currentStats.soldCardCounterAllTime, 
                 currentStats.factoriesIDThisGame, currentStats.defenseIDThisGame, successManager.AllSuccessData);
