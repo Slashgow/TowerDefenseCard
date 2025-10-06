@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +19,10 @@ public class UICardMoreStat : MonoBehaviour
     [Header("Success")]
     [SerializeField] private UIPageSuccess uIPageSuccess;
     [SerializeField] private TextMeshProUGUI successDescriptionText;
+
+    public static readonly string[] BOOSTER_OPEN_STEAM_SUCCESS_IDS = { "SUCCESS_BOOSTER_ADDICT_1", "SUCCESS_BOOSTER_ADDICT_2", "SUCCESS_BOOSTER_ADDICT_3", "SUCCESS_BOOSTER_ADDICT_4" };
+    public static readonly string[] CRAFTED_CARDS_STEAM_SUCCESS_IDS = { "SUCCESS_CRAFTER_2", "SUCCESS_CRAFTER_3", "SUCCESS_CRAFTER_4" };
+    public static readonly string[] SOLD_CARDS_STEAM_SUCCESS_IDS = { "SUCCESS_SELLER_1", "SUCCESS_SELLER_2", "SUCCESS_SELLER_3", "SUCCESS_SELLER_4" };
 
     private void OnEnable()
     {
@@ -56,6 +63,73 @@ public class UICardMoreStat : MonoBehaviour
             return;
 
         successDescriptionText.text = successData.Description.GetLocalizedString();
+        TryDisplaySuccessStat(successData.SteamId);
+    }
+
+    private void TryDisplaySuccessStat(string steamID)
+    {
+        SuccessStatData successStatData = SuccessManager.Instance.SuccessStatData;
+
+        if (BOOSTER_OPEN_STEAM_SUCCESS_IDS.Contains(steamID))
+        {
+            successDescriptionText.text += $"\n\n {successStatData.boosterOpenedCounterAllTime} /";
+            switch (steamID)
+            {
+                case "SUCCESS_BOOSTER_ADDICT_1":
+                    successDescriptionText.text += " 50";
+                    break;
+                case "SUCCESS_BOOSTER_ADDICT_2":
+                    successDescriptionText.text += " 250";
+                    break;
+                case "SUCCESS_BOOSTER_ADDICT_3":
+                    successDescriptionText.text += " 500";
+                    break;
+                case "SUCCESS_BOOSTER_ADDICT_4":
+                    successDescriptionText.text += " 1000";
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (CRAFTED_CARDS_STEAM_SUCCESS_IDS.Contains(steamID))
+        {
+            successDescriptionText.text += $"\n\n {successStatData.craftedCardCounterAllTime} /";
+            switch (steamID)
+            {
+                case "SUCCESS_CRAFTER_2":
+                    successDescriptionText.text += " 250";
+                    break;
+                case "SUCCESS_CRAFTER_3":
+                    successDescriptionText.text += " 1000";
+                    break;
+                case "SUCCESS_CRAFTER_4":
+                    successDescriptionText.text += " 10000";
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (SOLD_CARDS_STEAM_SUCCESS_IDS.Contains(steamID))
+        {
+            successDescriptionText.text += $"\n\n {successStatData.soldCardCounterAllTime} /";
+            switch (steamID)
+            {
+                case "SUCCESS_SELLER_1":
+                    successDescriptionText.text += " 100";
+                    break;
+                case "SUCCESS_SELLER_2":
+                    successDescriptionText.text += " 500";
+                    break;
+                case "SUCCESS_SELLER_3":
+                    successDescriptionText.text += " 2500";
+                    break;
+                case "SUCCESS_SELLER_4":
+                    successDescriptionText.text += " 5000";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     private void UIPageCardsDiscovered_OnSelectCard(Card card)
