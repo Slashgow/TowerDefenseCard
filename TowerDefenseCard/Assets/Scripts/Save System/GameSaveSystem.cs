@@ -94,6 +94,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         engineeringPackCardShop.Save(saveData);
         foodPackCardShop.Save(saveData);
         SaveCards(saveData);
+
+        if(DifficultyManager.HasInstance)
+            DifficultyManager.Instance.Save(saveData);
     }
     private void SaveCards(GameSaveData saveData)
     {
@@ -272,6 +275,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         foodPackCardShop.Load(saveData);
         //successSaveSystem.Load();
         LoadCards(saveData);
+
+        if (DifficultyManager.HasInstance)
+            DifficultyManager.Instance.Load(saveData);
     }
 
     private void LoadCards(GameSaveData saveData)
@@ -365,7 +371,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
             basePackRiggedCardIndex = 0,
             isDefensePackFirstTimeOpened = false,
             isEngineeringPackFirstTimeOpened = false,
-            isFoodPackFirstTimeOpened = false
+            isFoodPackFirstTimeOpened = false,
+            gameDifficulty = DifficultyManager.HasInstance ? DifficultyManager.Instance.CurrentDifficultyData.Difficulty : GameDifficulty.EASY
         };
         Load(saveData);
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Steamworks;
 using UnityEngine;
 
 public static class SavePath
@@ -147,8 +148,12 @@ public static class SavePath
             File.Delete(SavePathTutorial);
         if (File.Exists(SavePathCardDiscovered))
             File.Delete(SavePathCardDiscovered);
-        SteamIntegration.Instance?.ResetAllAchievements();
-        SteamIntegration.Instance.ResetAllStats();
+
+        if (SteamClient.IsValid)
+        {
+            SteamIntegration.Instance?.ResetAllAchievements();
+            SteamIntegration.Instance.ResetAllStats();
+        }
     }
 
     public static void DeleteGameSaves()

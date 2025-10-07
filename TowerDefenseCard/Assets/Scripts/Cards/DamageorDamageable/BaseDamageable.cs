@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
 {
+    [SerializeField] private bool isEnemy = false;
     [SerializeField, Range(0, 600)] private float maxHealth = 20;
     public float MaxHealth
     {
@@ -12,7 +13,12 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
             float baseMaxHealth = maxHealth;
             float multiplier = GetTotalUpgradeMultiplier(baseMaxHealth, u => 1f + (u.HealthBonusIsPercent ? u.HealthBonusPercentValue / 100f : 0f));
             float flatBonus = GetTotalUpgradeFlatBonus(baseMaxHealth, u => u.HealthBonusFlat);
-            return baseMaxHealth * multiplier + flatBonus;
+            float finalHealth = baseMaxHealth * multiplier + flatBonus;
+
+            if (isEnemy)
+                finalHealth *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyHealthPercentModifier / 100f);
+
+            return finalHealth;
         }
     }
 
@@ -32,7 +38,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
 
     protected virtual void Awake()
     {
-        currentHealth = maxHealth;
+        currentHealth = MaxHealth;
         IsProtected = false;
     }
 

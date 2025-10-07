@@ -25,6 +25,7 @@ public class GameSaveData
     public List<StackSaveData> cardStacks;
     public List<AutoCardMovementData> autoCardMovementDatas;
     public List<QuestSaveData> questSaveDatas;
+    public GameDifficulty gameDifficulty;
 
     public GameSaveData()
     {

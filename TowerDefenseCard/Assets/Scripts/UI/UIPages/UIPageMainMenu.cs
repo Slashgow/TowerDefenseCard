@@ -6,6 +6,7 @@ public class UIPageMainMenu : UIPage
 {
     [SerializeField] private VerticalLayoutGroup layoutGroup;
 
+    [SerializeField] private UIPageDifficulty uiPageDifficulty; 
     [SerializeField] private GameObject warningDeleteSavePopUp;
     [SerializeField] private Button startButton;
     [SerializeField] private Button continueGameButton;
@@ -27,10 +28,7 @@ public class UIPageMainMenu : UIPage
 
     private void OnClickStartButton()
     {
-        if(SavePath.SaveExists || SavePath.AutoSaveExists)
-            warningDeleteSavePopUp.SetActive(true);
-        else
-            SceneLoader.Instance.LoadNextSceneAsync();
+
     }
 
     private void OnClickContinueGameButton() => SceneLoader.Instance.LoadNextSceneAsync();

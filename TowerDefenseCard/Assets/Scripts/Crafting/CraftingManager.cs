@@ -24,8 +24,10 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private bool hasTriggeredHalfTimeEvent = false;
 
     public List<float> OriginalTotalTimesCraftMode => originalTotalTimesCraftMode; 
-    public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
-    public float TimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] - timeElapsed;
+    public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] * 
+        (1 + DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100 );
+    public float TimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] *
+        (1 + DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100) - timeElapsed;
 
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
@@ -37,6 +39,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         if (CardManager.HasInstance)
             CardManager.Instance.OnDiscoverArcher += GameManager_OnStartCraftMode;
+
+        Debug.Log($"time craft : {OriginaCurrentTotalTimeCraftMode}");
     }
 
     private void OnDisable()

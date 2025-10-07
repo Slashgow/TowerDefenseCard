@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Steamworks;
 using UnityEngine;
 
 public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
@@ -48,7 +49,8 @@ public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
         {
             SuccessStatData currentStats = successManager.SuccessStatData;
 
-            SteamIntegration.Instance.SetStats(currentStats);
+            if(SteamClient.IsValid)
+                SteamIntegration.Instance.SetStats(currentStats);
             //SteamIntegration.Instance.StoreStats();
 
             SuccessSaveData saveData = new SuccessSaveData(currentStats.boosterOpenedCounterAllTime, currentStats.boosterOpenedCounterInGame,

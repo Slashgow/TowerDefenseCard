@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 1
   maxHealth: 20
 --- !u!114 &4370179582870678725
 MonoBehaviour:
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 1
   cardDamageorData: {fileID: 0}
   enemyLayer:
     serializedVersion: 2

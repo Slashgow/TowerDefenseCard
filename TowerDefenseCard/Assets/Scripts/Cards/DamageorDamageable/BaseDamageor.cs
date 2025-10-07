@@ -6,6 +6,7 @@ using UnityTimer;
 
 public abstract class BaseDamageor : BaseUpgradable, IDamageor
 {
+    [SerializeField] private bool isEnemy = false;
     [SerializeField] private CardDamageorData cardDamageorData;
     public CardDamageorData CardDamageorData => cardDamageorData;
 
@@ -38,7 +39,12 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             float baseSpeed = cardDamageorData.AttackSpeed;
             float multiplier = GetTotalUpgradeMultiplier(baseSpeed, u => 1f + (u.AttackSpeedBonusIsPercent ? u.AttackSpeedBonusPercentValue / 100f : 0f));
             float flatBonus = GetTotalUpgradeFlatBonus(baseSpeed, u => u.AttackSpeedBonusFlat);
-            return baseSpeed * multiplier + flatBonus;
+            float finalSpeed = baseSpeed * multiplier + flatBonus;
+
+            if (isEnemy)
+                finalSpeed *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyAttackSpeedPercentModifier / 100f);
+
+            return finalSpeed;
         }
     }
 
@@ -62,7 +68,12 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             float baseDamage = cardDamageorData.Damage;
             float multiplier = GetTotalUpgradeMultiplier(baseDamage, u => 1f + (u.DamageBonusIsPercent ? u.DamageBonusPercentValue / 100f : 0f));
             float flatBonus = GetTotalUpgradeFlatBonus(baseDamage, u => u.DamageBonusFlat);
-            return baseDamage * multiplier + flatBonus;
+            float finalDamage = baseDamage * multiplier + flatBonus;
+
+            if (isEnemy)
+                finalDamage *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyDamagePercentModifier / 100f);
+     
+            return finalDamage;
         }
     }
 

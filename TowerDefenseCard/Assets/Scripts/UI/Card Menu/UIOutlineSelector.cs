@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class UIOutlineSelector<T> : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [SerializeField] private UIOutline uiOutline;
@@ -63,6 +64,11 @@ public class UIOutlineSelector<T> : MonoBehaviour, IPointerEnterHandler, IPointe
             currentSelected.HideOutline();
         }
 
+        Select();
+    }
+
+    public void Select()
+    {
         currentSelected = this;
         ShowOutline(selectedColor);
 
