@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logger: {fileID: 6874852337606724108}
   eventSettings:
-    minSpawnInterval: 60
+    minSpawnInterval: 100
     maxSpawnInterval: 150
     minimumWaveToStart: 1
     spawnProbability: 1
+    maxTimeRemainingBeforeWaveStartAllowed: 60
     enemyPrefabs:
     - {fileID: 926361174095843533, guid: c60b33f01c7e57646a9b2c12ce48b05d, type: 3}
     spawnRadius: 10
@@ -68,6 +69,7 @@ MonoBehaviour:
   enableRandomEvents: 1
   warningEffectPrefab: {fileID: 3887326593483052100, guid: 1c7d1a61632fa98479a21632d63a9657, type: 3}
   warningDuration: 5
+  playerHealth: {fileID: 0}
 --- !u!114 &6874852337606724108
 MonoBehaviour:
   m_ObjectHideFlags: 0
