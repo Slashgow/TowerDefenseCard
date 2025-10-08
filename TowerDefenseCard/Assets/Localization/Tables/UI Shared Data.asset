@@ -175,6 +175,22 @@ MonoBehaviour:
     m_Key: DIFFICULTY_HARD
     m_Metadata:
       m_Items: []
+  - m_Id: 39010932003041280
+    m_Key: MODIFIER_TIME_BETWEEN_WAVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011112433610752
+    m_Key: MODIFIER_ENEMY_DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011329723723776
+    m_Key: MODIFIER_ENEMY_HEALTH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011470329376768
+    m_Key: MODIFIER_ENEMY_ATTACK_SPEED
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

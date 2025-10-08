@@ -187,6 +187,22 @@ MonoBehaviour:
     m_Localized: Emperor
     m_Metadata:
       m_Items: []
+  - m_Id: 39010932003041280
+    m_Localized: 'Time between waves :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011112433610752
+    m_Localized: 'Enemies damage :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011329723723776
+    m_Localized: 'Enemies health :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39011470329376768
+    m_Localized: 'Enemies attack speed :'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
