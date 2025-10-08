@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(RectTransform))]
 public class RectTransformScaleEffect : Effect
 {
+    [SerializeField] private bool changeStartScale = false;
+    [SerializeField, Range(0f, 2f)] private float startScale = 1f;
+
     [SerializeField, Range(0f, 2f)] private float endScale;
     [SerializeField, Range(0f, 5f)] private float duration = 0.3f;
     [SerializeField] private Ease easing;
@@ -25,6 +28,8 @@ public class RectTransformScaleEffect : Effect
         if (moveTween != null)
             moveTween.Kill();
 
+        if (changeStartScale)
+            rectTransform.localScale = startScale * Vector3.one;
 
         moveTween = rectTransform.DOScale(endScale, duration).SetEase(easing).SetLoops(loops, loopType).SetUpdate(true);
     }

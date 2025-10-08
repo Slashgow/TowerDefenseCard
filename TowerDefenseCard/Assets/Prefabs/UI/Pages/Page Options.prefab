@@ -144,6 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1869601144047119059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2782688334502583096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7811498377846900456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3467635499390111257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1805,7 @@ GameObject:
   - component: {fileID: 1070269557152106022}
   - component: {fileID: 4946958912752859636}
   - component: {fileID: 1581798244677066737}
+  - component: {fileID: 8558523840272606228}
   m_Layer: 5
   m_Name: Page Options
   m_TagString: Untagged
@@ -1837,6 +1862,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8558523840272606228}
+        m_TargetAssemblyTypeName: RectTransformScaleEffect, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8558523840272606228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880527630791937334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7297f6bfbdd084eb8ee79f4a43c8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  changeStartScale: 1
+  startScale: 0.1
+  endScale: 1
+  duration: 0.3
+  easing: 7
+  loops: 0
+  loopType: 1
 --- !u!1 &5086584129459364135
 GameObject:
   m_ObjectHideFlags: 0

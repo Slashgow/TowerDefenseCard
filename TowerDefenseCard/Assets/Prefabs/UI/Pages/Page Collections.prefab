@@ -348,6 +348,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9039ddafc89fd4fa1b026c3f8ee227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &605502663249608878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1470,7 @@ GameObject:
   - component: {fileID: 2648377528356185408}
   - component: {fileID: 4543683582593696145}
   - component: {fileID: 4332163844166948808}
+  - component: {fileID: 625753517890628639}
   m_Layer: 5
   m_Name: Page Collections
   m_TagString: Untagged
@@ -1517,7 +1524,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0fb5d0a14bc7d4cb23f7f82c38eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625753517890628639}
+        m_TargetAssemblyTypeName: RectTransformScaleEffect, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   tabGroup: {fileID: 6016093243602836863}
+--- !u!114 &625753517890628639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728936806747368174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7297f6bfbdd084eb8ee79f4a43c8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  changeStartScale: 1
+  startScale: 0.1
+  endScale: 1
+  duration: 0.3
+  easing: 7
+  loops: 0
+  loopType: 1
 --- !u!1 &1867675108616913473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,6 +3046,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f031d343563b64286d2accd9389880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   uiSuccessPrefab: {fileID: 7906607294005972233, guid: 2744a2189e6d3f54194bd38abd1c6f30, type: 3}
   contentScrollView: {fileID: 4456913456301179806}
   successCounterText: {fileID: 2758309339444842194}
@@ -3213,6 +3264,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b873702da16014693d899b2a4d891d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShowUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   uiCardMenuPrefab: {fileID: 2133270098045632800, guid: de31f796468cc97468c06665fe8ff5d5, type: 3}
   contentScrollView: {fileID: 6351220471337511078}
   cardDiscoverCounterText: {fileID: 2669126891570108210}
