@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7cd3b23cb190842bdc9fa5c145cfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDefaultAppID: 0
+  appID: 4053750
+  usePlaytestAppID: 1
+  appIDPlaytest: 4100030
+  useDemoAppID: 0
+  appIDDemo: 4061600
   logger: {fileID: 1151206887239909490}
 --- !u!114 &1151206887239909490
 MonoBehaviour:

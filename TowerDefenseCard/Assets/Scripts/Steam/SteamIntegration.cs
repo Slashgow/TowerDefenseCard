@@ -4,13 +4,33 @@ using NaughtyAttributes;
 
 public class SteamIntegration : MonoSingleton<SteamIntegration>
 {
+    [SerializeField] private bool useDefaultAppID = true;
+    [SerializeField, ShowIf("useDefaultAppID")] private uint appID = 4053750;
+    [SerializeField] private bool usePlaytestAppID = false;
+    [SerializeField, ShowIf("usePlaytestAppID")] private uint appIDPlaytest = 480;
+    [SerializeField] private bool useDemoAppID = false;
+    [SerializeField, ShowIf("useDemoAppID")] private uint appIDDemo = 4061600;
     [SerializeField] private Logger logger;
 
     private void Start()
     {
         try
         {
-            SteamClient.Init(4053750);
+            if (usePlaytestAppID)
+            {
+                SteamClient.Init(appIDPlaytest);
+                logger.Log($"Initialized Steamworks with Playtest App ID: {appIDPlaytest}", this);
+            }
+            else if (useDemoAppID)
+            {
+                SteamClient.Init(appIDDemo);
+                logger.Log($"Initialized Steamworks with Demo App ID: {appIDDemo}", this);
+            }
+            else if (useDefaultAppID)
+            {
+                SteamClient.Init(appID);
+                logger.Log($"Initialized Steamworks with Default App ID: {appID}", this);
+            }
             logger.Log(SteamClient.Name, this);
 
 
