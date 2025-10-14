@@ -1,10 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 
 public class CardUpgrade : Card
 {
     [SerializeField] private UpgradeData upgradeData;
     public UpgradeData UpgradeData => upgradeData;
+
+    public static event Action OnAppliedAnyUpgrade;
+    public static event Action OnRemovedAnyUpgrade;
+
 
     public override void OnStack(Card targetCard)
     {
@@ -20,6 +25,7 @@ public class CardUpgrade : Card
                 if (upgradable.CanApplyUpgrade(upgradeData))
                 {
                     upgradable.ApplyUpgrade(upgradeData);
+                    OnAppliedAnyUpgrade?.Invoke();
                     Debug.Log($"Upgrade {upgradeData.UpgradeName} applied to {targetCard.name}");
                 }
                 else
@@ -38,11 +44,11 @@ public class CardUpgrade : Card
         {
             Debug.LogWarning($"Cannot apply upgrade {upgradeData.UpgradeName} to {targetCard.name}: Target does not support IUpgradable");
             // Unstack if incompatible
-            if (transform.parent == targetCard.transform)
-            {
-                transform.SetParent(null, true);
-                transform.position = Vector3.zero; // Reset position
-            }
+            //if (transform.parent == targetCard.transform)
+            //{
+            //    transform.SetParent(null, true);
+            //    transform.position = Vector3.zero; // Reset position
+            //}
         }
 
         var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
@@ -72,6 +78,7 @@ public class CardUpgrade : Card
                 foreach (var upgradable in upgradables)
                 {
                     upgradable.RemoveUpgrade(upgradeData.UpgradeName);
+                    OnRemovedAnyUpgrade?.Invoke();
                     Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {StackParent.name}");
                 }
             }

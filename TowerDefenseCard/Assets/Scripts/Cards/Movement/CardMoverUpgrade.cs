@@ -27,7 +27,7 @@ public class CardMoverUpgrade : CardMover
 
                 Card otherCard = hit.GetComponent<Card>();
 
-                if (otherCard.StackedCards.Count > 0)
+                if (otherCard.StackedCards.Count > 0 && !otherCard.GetComponentInChildren<UIUpgrades>())
                 {
                     // double check if stack cards contain null references and clean them
                     if (otherCard.TryClearStackCards())
@@ -55,13 +55,13 @@ public class CardMoverUpgrade : CardMover
                             {
                                 card.OnStack(otherCard);
                                 UIUpgradeSlot firstEmptySlot = uiUpgrades.GetFirstEmptySlot();
-                                firstEmptySlot.FillSlot(this.card);
+                                firstEmptySlot.FillSlot((CardUpgrade)this.card);
 
                                 this.card.transform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
                                 this.card.transform.DOMove(firstEmptySlot.transform.position, timeToReachSlot).SetUpdate(true).SetEase(moveEase);
                                 this.card.transform.DOScale(endScale, timeToReachSlot).SetUpdate(true).SetEase(moveEase)
-                                    .OnComplete(() => this.card.gameObject.SetActive(false));
+                                    .OnComplete(() => this.transform.position = new Vector3(2500f,2500f,2500f));
                                 this.enabled = false;
 
                             }

@@ -73,6 +73,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 79d9a892e5708034fbfcf08994b915b1, type: 3}
   onCompleteQuest: {fileID: 8300000, guid: df7f862f1039d4649a59bd2f960fa5c3, type: 3}
   onUnlockShop: {fileID: 8300000, guid: 5ae57f703d25ee24ba2ee7ffae87d317, type: 3}
+  onApplyUpgrade: {fileID: 8300000, guid: 8fdbe1cb67f253048bac41d3b41ff478, type: 3}
+  onRemoveUpgrade: {fileID: 8300000, guid: e8ee2d39fb2c6914b913345236c312d0, type: 3}
 --- !u!1 &1457461405237576364
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
     [SerializeField] private Image outline;
 
     public bool IsEmpty { get; private set; }
-    private Card upgradeCard;
+    private CardUpgrade upgradeCard;
 
     public static event Action<Vector3, CardID> OnHoverEnter;
     public static event Action OnHoverExit;
@@ -24,7 +24,7 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         EmptySlot();
     }
 
-    public void FillSlot(Card upgradeCard)
+    public void FillSlot(CardUpgrade upgradeCard)
     {
         this.upgradeCard = upgradeCard;
         IsEmpty = false;
@@ -44,10 +44,12 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             return;
 
         OnClick?.Invoke();
+        this.upgradeCard.transform.localScale = Vector3.one;
         this.upgradeCard.transform.position = this.transform.position + outOffset;
         this.upgradeCard.GetComponent<CardMoverUpgrade>().enabled = true;
-        this.upgradeCard.gameObject.SetActive(true);
+ 
         this.upgradeCard.OnUnstack();
+        //this.upgradeCard.gameObject.SetActive(true);
         EmptySlot();
     }
 
