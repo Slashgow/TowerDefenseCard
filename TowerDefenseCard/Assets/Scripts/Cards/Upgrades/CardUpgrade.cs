@@ -64,16 +64,19 @@ public class CardUpgrade : Card
     // Handle unstacking when removed
     public override void OnUnstack()
     {
-        var upgradables = StackParent.GetComponentsInParent<IUpgradable>();
-
-        if (upgradables.Length > 0)
+        if(StackParent != null)
         {
-            foreach( var upgradable in upgradables)
+            var upgradables = StackParent.GetComponentsInParent<IUpgradable>();
+            if (upgradables.Length > 0)
             {
-                upgradable.RemoveUpgrade(upgradeData.UpgradeName);
-                Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {StackParent.name}");
+                foreach (var upgradable in upgradables)
+                {
+                    upgradable.RemoveUpgrade(upgradeData.UpgradeName);
+                    Debug.Log($"Upgrade {upgradeData.UpgradeName} removed from {StackParent.name}");
+                }
             }
         }
+
         base.OnUnstack();
 
         var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);

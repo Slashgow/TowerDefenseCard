@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7cd3b23cb190842bdc9fa5c145cfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultAppID: 0
+  useDefaultAppID: 1
   appID: 4053750
-  usePlaytestAppID: 1
+  usePlaytestAppID: 0
   appIDPlaytest: 4100030
   useDemoAppID: 0
   appIDDemo: 4061600

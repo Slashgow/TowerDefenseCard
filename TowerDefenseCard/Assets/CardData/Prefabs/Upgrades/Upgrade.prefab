@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 319473351768311903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aacb8bc7b3f0da408d6afb51ad98fdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a1a338f7a11fa24db2d2a2ea5e39b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectionLayerMaskCards:
@@ -127,9 +127,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
-  detectionLayerMaskShop:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5

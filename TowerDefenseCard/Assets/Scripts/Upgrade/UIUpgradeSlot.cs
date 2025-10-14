@@ -1,0 +1,73 @@
+using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+{
+    [SerializeField] private Image backgroundCircle;
+    [SerializeField] private Color emptyColor, filledColor;
+    [SerializeField] private Vector3 outOffset;
+    [SerializeField] private Image outline;
+
+    public bool IsEmpty { get; private set; }
+    private Card upgradeCard;
+
+    public static event Action<Vector3, CardID> OnHoverEnter;
+    public static event Action OnHoverExit;
+    public static event Action OnClick;
+
+
+    private void Awake()
+    {
+        outline.enabled = false;
+        EmptySlot();
+    }
+
+    public void FillSlot(Card upgradeCard)
+    {
+        this.upgradeCard = upgradeCard;
+        IsEmpty = false;
+        backgroundCircle.color = filledColor;
+    }
+
+    public void EmptySlot()
+    {
+        this.upgradeCard = null;
+        IsEmpty = true;
+        backgroundCircle.color = emptyColor;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if(IsEmpty)
+            return;
+
+        OnClick?.Invoke();
+        this.upgradeCard.transform.position = this.transform.position + outOffset;
+        this.upgradeCard.GetComponent<CardMoverUpgrade>().enabled = true;
+        this.upgradeCard.gameObject.SetActive(true);
+        this.upgradeCard.OnUnstack();
+        EmptySlot();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        outline.enabled = true;
+
+        if(IsEmpty)
+            return;
+
+        OnHoverEnter?.Invoke(this.transform.position, this.upgradeCard.CardData.CardID);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        outline.enabled = false;
+
+        if(IsEmpty)
+            return;
+
+        OnHoverExit?.Invoke();
+    }
+}

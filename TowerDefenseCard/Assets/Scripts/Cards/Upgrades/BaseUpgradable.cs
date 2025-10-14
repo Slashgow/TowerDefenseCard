@@ -28,7 +28,9 @@ public abstract class BaseUpgradable : MonoBehaviour, IUpgradable
     public bool CanApplyUpgrade(UpgradeData upgrade)
     {
         // Prevent duplicate upgrades (simplistic check; enhance as needed)
-        return !System.Array.Exists(appliedUpgrades, u => u.UpgradeName == upgrade.UpgradeName);
+        return true;
+
+        //return !System.Array.Exists(appliedUpgrades, u => u.UpgradeName == upgrade.UpgradeName);
     }
 
     public virtual bool RemoveUpgrade(string upgradeName)

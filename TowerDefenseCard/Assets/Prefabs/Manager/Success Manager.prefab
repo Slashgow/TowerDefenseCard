@@ -760,6 +760,52 @@ MonoBehaviour:
     spriteLocked: {fileID: -906060726, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     spriteUnlocked: {fileID: 1559729376, guid: 671137d2b9683084dae0b04fbbc963da, type: 3}
     isDone: 0
+  completeMainQuestSuccess:
+    steamId: SUCCESS_MAIN_QUEST
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 14026823661121536
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 14026886407909376
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: 1174987327, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: -1256857097, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
+  completeSideQuestSuccess:
+    steamId: SUCCESS_SIDE_QUEST
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 14026950266187776
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 14027008592179200
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: 1606102183, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: 1887286863, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
   references:
     version: 2
     RefIds: []

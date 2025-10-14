@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SuccessManager : MonoSingleton<SuccessManager>
 {
+    [Header("References")]
+    [SerializeField] private QuestManager mainQuestManager;
+    [SerializeField] private QuestManager sideQuestManager;
+
     [SerializeField] private bool listenToSuccessCompletion = true;
 
     [Header("Newbie")]
@@ -64,6 +68,10 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
     [Header("Ink Collecter")]
     [SerializeField] private SuccessData craftChestSuccess;
+
+    [Header("Quests")]
+    [SerializeField] private SuccessData completeMainQuestSuccess;
+    [SerializeField] private SuccessData completeSideQuestSuccess;
 
     public SuccessData CraftTempleSuccess => craftTempleSuccess;
     public SuccessData FirstCraftSuccess => firstCraftSuccess;
@@ -171,7 +179,11 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             discoverAllCardsSuccess,
             
             // Ink Collector
-            craftChestSuccess
+            craftChestSuccess,
+
+            // Quests
+            completeMainQuestSuccess,
+            completeSideQuestSuccess
         };
     }
 
@@ -221,6 +233,8 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         CardManager.Instance.OnUpdateMaxNumberOfCards += CardManager_OnUpdateMaxNumberOfCards;
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftCompleted;
         Booster.OnDestroyBooster += Booster_OnDestroyBooster;
+        mainQuestManager.OnCompleteAllQuests += MainQuestManager_OnCompleteAllQuests;
+        sideQuestManager.OnCompleteAllQuests += SideQuestManager_OnCompleteAllQuests;
     }
 
     private void OnDestroy()
@@ -242,6 +256,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
         if(ShopManager.HasInstance)
             ShopManager.Instance.OnUpdatePlayerCoin -= ShopManager_OnUpdatePlayerCoin;
+
+        mainQuestManager.OnCompleteAllQuests -= MainQuestManager_OnCompleteAllQuests;
+        sideQuestManager.OnCompleteAllQuests -= SideQuestManager_OnCompleteAllQuests;
     }
 
     private void ShopManager_OnUpdatePlayerCoin(int currentPlayerCoin)
@@ -499,5 +516,15 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             craft4DifferentDefenseSuccess.Complete();
         else if (successStatData.defenseIDThisGame.Count >= 1)
             craftFirstDefenseSuccess.Complete();
+    }
+
+    private void SideQuestManager_OnCompleteAllQuests()
+    {
+        completeSideQuestSuccess.Complete();
+    }
+
+    private void MainQuestManager_OnCompleteAllQuests()
+    {
+        completeMainQuestSuccess.Complete();
     }
 }

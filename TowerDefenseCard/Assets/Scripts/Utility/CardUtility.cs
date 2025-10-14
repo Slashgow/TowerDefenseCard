@@ -26,6 +26,14 @@ public static class CardUtility
         if (transform.TryGetComponent(out Canvas canvas))
             canvas.sortingOrder = startSortingOrder;
 
+        if(transform.TryGetComponent(out SortOrder sortOrder))
+        {
+            if(sortOrder.IsCanvas)
+                sortOrder.Canvas.sortingOrder = sortOrder.SortingOrder;
+            if(sortOrder.IsSpriteRenderer)
+                sortOrder.SpriteRenderer.sortingOrder = sortOrder.SortingOrder;
+        }
+
         int childCount = transform.childCount;
         for (int i = 0; i < childCount; i++)
         {

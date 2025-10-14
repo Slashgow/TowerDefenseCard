@@ -16,6 +16,7 @@ public class QuestManager : MonoBehaviour
     public int CompletedQuestCount => availableQuests.Count - activeQuests.Keys.Count;
     public List<Quest> AvailableQuests => availableQuests;
 
+    public event Action OnCompleteAllQuests;
     public event Action<Quest> OnQuestCompleted;
     public event Action<Quest> OnQuestUnlocked;
     public static event Action OnAnyQuestCompleted;
@@ -91,6 +92,13 @@ public class QuestManager : MonoBehaviour
             activeQuests.Remove(quest.QuestId); 
             OnQuestCompleted?.Invoke(quest);
             OnAnyQuestCompleted?.Invoke();
+
+            if(activeQuests.Count == 0)
+            {
+                OnCompleteAllQuests?.Invoke();
+                logger.Log("All quests have been completed!", this);
+            }
+
             logger.Log($"Quest '{quest.Title}' marked as completed and removed from active quests!", this);
             UnlockNextQuest(quest);
         }

@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Linq;
 using UnityEngine;
@@ -8,16 +10,16 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     [SerializeField] private bool autoStackOnEnable = true;
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
     [SerializeField, Range(0f, 180f)] private float maxTiltAngle = 20f;
-    [SerializeField, Range(0f, 1f)] private float overlapRadius = 0.5f;
+    [SerializeField, Range(0f, 1f)] protected float overlapRadius = 0.5f;
   
     [SerializeField] private LayerMask detectionLayerMaskReseller;
-    [SerializeField][Range(0f, 1f)] private float stackingHeight = 0.1f;
+    [SerializeField][Range(0f, 1f)] protected float stackingHeight = 0.1f;
 
     private Vector2 startPosition;
     private Transform startParent;
     private bool isDragging = false;
     public bool IsDragging => isDragging;
-    private Camera mainCamera;
+    protected Camera mainCamera;
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPos;
 
@@ -45,6 +47,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
+
         //Debug.Log($"on pointer down {this.name}");
         OnPointerDownEvent?.Invoke();
         OnGrabCard?.Invoke();
@@ -89,6 +92,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnPointerUp(PointerEventData eventData)
     {
+
         //Debug.Log($"on pointer up {this.name}");
         OnPointerUpEvent?.Invoke();
         OnReleaseCard?.Invoke();
@@ -116,7 +120,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             reseller.Resell(CardUtility.GetAllCards(card.gameObject));
     }
 
-    private void TryStackCards()
+    protected virtual void TryStackCards()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapRadius, detectionLayerMaskCards);
         if (!this.card.CardData.IsStackable)

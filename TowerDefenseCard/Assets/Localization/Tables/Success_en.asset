@@ -266,6 +266,22 @@ MonoBehaviour:
     m_Localized: Newbie
     m_Metadata:
       m_Items: []
+  - m_Id: 14026823661121536
+    m_Localized: Main Path
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14026886407909376
+    m_Localized: Complete all main quests
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14026950266187776
+    m_Localized: Side Path
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14027008592179200
+    m_Localized: Complete all side quests
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
