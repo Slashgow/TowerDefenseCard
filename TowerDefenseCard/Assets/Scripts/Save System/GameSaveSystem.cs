@@ -124,6 +124,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                     CardIdeaSaveData cardIdeaSaveData = null;
                     AutoCardMovementData autoCardMovementData = null;
                     int currentAmountOfCurrency = 0;
+                    List<UpgradeSlotSaveData> upgradeSlotSaveDatas = new List<UpgradeSlotSaveData>();
 
                     if (stackCard is Booster)
                     {
@@ -144,6 +145,23 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                     {
                         autoCardMovementData = autoCardMovement.Save();
                     }
+                    else if(!stackCard.IsStackRoot() && stackCard is CardUpgrade)
+                    {
+                        continue;
+                    }
+
+                    else if (stackCard.GetComponentInChildren<UIUpgrades>())
+                    {
+                        UIUpgrades uIUpgrades = stackCard.GetComponentInChildren<UIUpgrades>();
+                        foreach (UIUpgradeSlot upgradeSlot in uIUpgrades.UpgradeSlots)
+                        {
+                            if (upgradeSlot != null)
+                            {
+                                UpgradeSlotSaveData upgradeSlotSaveData = upgradeSlot.Save();
+                                upgradeSlotSaveDatas.Add(upgradeSlotSaveData);
+                            }
+                        }
+                    }
 
                         CardSaveData cardSaveData = new CardSaveData(
                             stackCard.CardData.CardID,
@@ -152,7 +170,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                             boosterSaveData,
                             cardIdeaSaveData,
                             currentAmountOfCurrency,
-                            autoCardMovementData
+                            autoCardMovementData,
+                            upgradeSlotSaveDatas
                         );
 
                     stackData.AddCard(cardSaveData);
@@ -322,27 +341,49 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 //baseCardMovement.InitializeSortOrder();
             }
 
-            if(newCard is Booster)
+            if (newCard is Booster)
             {
                 Booster booster = (Booster)newCard;
                 booster.Load(cardData.boosterSaveData);
             }
 
-            else if(newCard is CardIdea)
+            else if (newCard is CardIdea)
             {
                 CardIdea cardIdea = (CardIdea)newCard;
                 cardIdea.Load(cardData.cardIdeaSaveData);
             }
 
-            else if(newCard is CardCurrencyCollecter)
+            else if (newCard is CardCurrencyCollecter)
             {
                 CardCurrencyCollecter cardCurrencyCollecter = (CardCurrencyCollecter)newCard;
                 cardCurrencyCollecter.Load(cardData);
-                
+
             }
 
             else if (newCard.TryGetComponent(out AutoCardMovement autoCardMovement))
                 autoCardMovement.Load(cardData.autoCardMovementSaveData);
+
+
+            else if (cardData.upgradeSlotSaveDatas != null && cardData.upgradeSlotSaveDatas.Count > 0)
+            {
+
+                if (newCard.GetComponentInChildren<UIUpgrades>())
+                {
+                    UIUpgrades uIUpgrades = newCard.GetComponentInChildren<UIUpgrades>();
+                    if (uIUpgrades.UpgradeSlots.Length < cardData.upgradeSlotSaveDatas.Count)
+                    {
+                        logger.LogWarning($"Card {newCard.CardData.CardID} has fewer upgrade slots ({uIUpgrades.UpgradeSlots.Length}) " +
+                            $"than saved upgrades ({cardData.upgradeSlotSaveDatas.Count}). Some upgrades may not be loaded correctly.", this);
+                    }
+                    else
+                    {
+                        for (int j = 0; j < cardData.upgradeSlotSaveDatas.Count; j++)
+                        {
+                            uIUpgrades.UpgradeSlots[j].Load(cardData.upgradeSlotSaveDatas[j]);
+                        }
+                    }
+                } 
+            }
 
             newCard.transform.position = cardData.position;
             newCard.transform.rotation = cardData.rotation;

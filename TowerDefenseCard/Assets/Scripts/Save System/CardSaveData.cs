@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -13,6 +14,7 @@ public class CardSaveData
     public CardIdeaSaveData cardIdeaSaveData;
     public AutoCardMovementData autoCardMovementSaveData;
     public int currentAmountOfCurrency;
+    public List<UpgradeSlotSaveData>upgradeSlotSaveDatas;
 
     public CardSaveData()
     {
@@ -25,6 +27,7 @@ public class CardSaveData
         cardIdeaSaveData = null;
         currentAmountOfCurrency = 0;
         autoCardMovementSaveData = null;
+        upgradeSlotSaveDatas = new List<UpgradeSlotSaveData>();
     }
 
     public CardSaveData(CardID cardID, Transform transform, int stackCount)
@@ -60,7 +63,7 @@ public class CardSaveData
         this.currentAmountOfCurrency = currentAmountOfCurrency;
     }
 
-    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency, AutoCardMovementData autoCardMovementData)
+    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency, AutoCardMovementData autoCardMovementData, List<UpgradeSlotSaveData> upgradeSlotSaveDatas)
     {
         this.cardID = cardID;
         this.position = transform.position;
@@ -71,5 +74,6 @@ public class CardSaveData
         this.cardIdeaSaveData = cardIdeaSaveData;
         this.currentAmountOfCurrency = currentAmountOfCurrency;
         this.autoCardMovementSaveData = autoCardMovementData;
+        this.upgradeSlotSaveDatas = upgradeSlotSaveDatas;
     }
 }

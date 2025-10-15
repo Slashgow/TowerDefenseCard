@@ -3,6 +3,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[Serializable]
+public class UpgradeSlotSaveData
+{
+    public bool isEmpty;
+    public CardID upgradeCardID;
+}
+
 public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image backgroundCircle;
@@ -71,5 +78,40 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             return;
 
         OnHoverExit?.Invoke();
+    }
+
+    public UpgradeSlotSaveData Save()
+    {
+        return new UpgradeSlotSaveData
+        {
+            isEmpty = this.IsEmpty,
+            upgradeCardID = this.IsEmpty ? CardID.BAMBOO : this.upgradeCard.CardData.CardID
+        };
+    }
+
+    public void Load(UpgradeSlotSaveData upgradeSlotSaveData)
+    {
+        this.IsEmpty = upgradeSlotSaveData.isEmpty;
+
+        if (this.IsEmpty)
+            EmptySlot();
+        else
+        {
+            CardUpgrade loadedUpgradeCardPrefab = (CardUpgrade) CardManager.Instance.GetCardPrefabByCardID(upgradeSlotSaveData.upgradeCardID);
+
+            if (loadedUpgradeCardPrefab != null)
+            {
+                CardUpgrade upgradeCardInstance = Instantiate(loadedUpgradeCardPrefab, new Vector3(2500f, 2500f, 2500f), Quaternion.identity);
+                upgradeCardInstance.OnStack(this.GetComponentInParent<Card>());
+                upgradeCardInstance.transform.position = new Vector3(2500f, 2500f, 2500f);
+                FillSlot(upgradeCardInstance);
+            }
+          
+            else
+            {
+                Debug.LogWarning($"Could not find CardUpgrade with ID: {upgradeSlotSaveData.upgradeCardID}");
+                EmptySlot();
+            }
+        }
     }
 }

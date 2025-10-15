@@ -119,7 +119,7 @@ MonoBehaviour:
   checkRadius: 0.5
   maxIterations: 1
   startMoveDuration: 0.5
-  autoStackOnEnable: 1
+  autoStackOnEnable: 0
   smoothTime: 0.009
   maxTiltAngle: 20
   overlapRadius: 0.5
@@ -127,6 +127,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
+  moveEase: 6
+  timeToReachSlot: 0.2
+  endScale: 0.2
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5
