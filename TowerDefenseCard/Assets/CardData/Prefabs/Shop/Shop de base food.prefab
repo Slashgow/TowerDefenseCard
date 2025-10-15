@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[0].cardPrefab
@@ -107,11 +107,11 @@ PrefabInstance:
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[2].cardIdeaPrefab
       value: 
-      objectReference: {fileID: 2861984798354678937, guid: b10b1f4a5abaabd479a96ab920a38c97, type: 3}
+      objectReference: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[3].cardIdeaPrefab
       value: 
-      objectReference: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
+      objectReference: {fileID: 2861984798354678937, guid: 51937327b456ad24ebc2d7a03c992c78, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[4].cardIdeaPrefab
       value: 

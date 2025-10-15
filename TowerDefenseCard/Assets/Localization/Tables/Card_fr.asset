@@ -354,15 +354,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223901
-    m_Localized: "Ajoute des d\xE9g\xE2ts de brulure."
+    m_Localized: "Augmente les d\xE9g\xE2ts"
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223902
-    m_Localized: Augmente la zone d'attaque
+    m_Localized: "Ressource de base. Peut \xEAtre utile pour construire une taverne."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418176
-    m_Localized: "Augmente la port\xE9e d'attaque"
+    m_Localized: Augmente le soin.
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418177
@@ -590,6 +590,177 @@ MonoBehaviour:
   - m_Id: 18049528987250688
     m_Localized: "Un petit village qui augmente la capacit\xE9 de stockage des cartes
       de d\xE9fense de 4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23482722549100544
+    m_Localized: Sel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483104440479744
+    m_Localized: Ressource de base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483192462143488
+    m_Localized: Poisson
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483356304240640
+    m_Localized: Ressource de base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483501557182464
+    m_Localized: Algue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483585204187136
+    m_Localized: Ressource de base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483681824174080
+    m_Localized: Graines de Soja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483946044354560
+    m_Localized: Ressource de base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483988645900288
+    m_Localized: Sauce Soja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23484104840704000
+    m_Localized: "sauce n\xE9cessaire pour parfumer de nombreux plats."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485530132312064
+    m_Localized: Dashi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485607806627840
+    m_Localized: Soupe de base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485881069727744
+    m_Localized: Miso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485953647964160
+    m_Localized: "P\xE2te de Miso pour parfummer de nombreux plats."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486103988596736
+    m_Localized: Oden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486164382380032
+    m_Localized: "Plat mijot\xE9. Augmente la port\xE9e d'attaque de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486630642184192
+    m_Localized: Soupe de Miso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486735214571520
+    m_Localized: "Augmente les d\xE9g\xE2ts sur la dur\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487016933388288
+    m_Localized: Chawanmushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487132205445120
+    m_Localized: "Augmente la port\xE9e d'attaque"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487533373845504
+    m_Localized: "Th\xE9 noir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487581004361728
+    m_Localized: Augmente la vitesse d'attaque
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487729038127104
+    m_Localized: Sushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487792577638400
+    m_Localized: Augmente la vie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488177719603200
+    m_Localized: Onigiri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488217066369024
+    m_Localized: "Augmente les d\xE9g\xE2ts sur la dur\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488339082866688
+    m_Localized: "Poisson Grill\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488379532734464
+    m_Localized: Augmente la vie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488561880100864
+    m_Localized: Mer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488597884006400
+    m_Localized: "Cette carte peut \xEAtre exploit\xE9e pour obtenir des ressources
+      de base."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488909243969536
+    m_Localized: Taverne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488935030550528
+    m_Localized: Placez un ouvrier sur cette carte pour recruter d'autres ouvriers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489138450100224
+    m_Localized: Charpentier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489189368950784
+    m_Localized: "Ce travailleur qualifi\xE9 peut construire et exploiter des structures
+      plus rapidement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489450586009600
+    m_Localized: Fermier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489466138488832
+    m_Localized: "Ce travailleur qualifi\xE9 peut exploiter les ressources agricoles
+      et pr\xE9parer des plats plus rapidement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489855143407616
+    m_Localized: Marteau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489934210232320
+    m_Localized: "Outil de travail. Tout ouvrier qualifi\xE9 en poss\xE8de un."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490176179630080
+    m_Localized: Faucille
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490192092819456
+    m_Localized: "Outil de travail. Tout ouvrier qualifi\xE9 en poss\xE8de une."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490298401648640
+    m_Localized: Marchant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490394820308992
+    m_Localized: "Marchant itin\xE9raire, vendant tout un tas d'objet."
     m_Metadata:
       m_Items: []
   references:

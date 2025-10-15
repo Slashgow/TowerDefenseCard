@@ -357,15 +357,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223901
-    m_Localized: 'add continous fire damage '
+    m_Localized: increase damage
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223902
-    m_Localized: Increase area of damage
+    m_Localized: base ressource. Can be useful to built a tavern.
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418176
-    m_Localized: Increase attack range
+    m_Localized: Increase heal
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418177
@@ -583,6 +583,175 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 18049528987250688
     m_Localized: A small village that increase defense card storage by 4.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23482722549100544
+    m_Localized: Salt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483104440479744
+    m_Localized: Base Ressource.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483192462143488
+    m_Localized: Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483356304240640
+    m_Localized: Base Ressource.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483501557182464
+    m_Localized: Seaweed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483585204187136
+    m_Localized: Base Ressource.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483681824174080
+    m_Localized: Soybean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483946044354560
+    m_Localized: Base Ressource.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23483988645900288
+    m_Localized: Soy Sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23484104840704000
+    m_Localized: sauce needed to flavor many dishes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485530132312064
+    m_Localized: Dashi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485607806627840
+    m_Localized: Base soup.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485881069727744
+    m_Localized: Miso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23485953647964160
+    m_Localized: Miso paste to flavor many dishes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486103988596736
+    m_Localized: Oden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486164382380032
+    m_Localized: Hotpot dish. Increase flat attack range.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486630642184192
+    m_Localized: Miso Soup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23486735214571520
+    m_Localized: Increase damage over time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487016933388288
+    m_Localized: Chawanmushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487132205445120
+    m_Localized: Increase attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487533373845504
+    m_Localized: Black Tea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487581004361728
+    m_Localized: Increase attack speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487729038127104
+    m_Localized: Sushi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23487792577638400
+    m_Localized: Increase health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488177719603200
+    m_Localized: Onigiri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488217066369024
+    m_Localized: Increase damage over time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488339082866688
+    m_Localized: Grilled Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488379532734464
+    m_Localized: Increase health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488561880100864
+    m_Localized: Sea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488597884006400
+    m_Localized: This card can be exploited to get some base ressources.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488909243969536
+    m_Localized: Tavern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23488935030550528
+    m_Localized: Drop a worker on this card to recruit other workers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489138450100224
+    m_Localized: Carpenter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489189368950784
+    m_Localized: This skilled worker can build and exploit structures faster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489450586009600
+    m_Localized: Farmer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489466138488832
+    m_Localized: This skilled worker can exploit agricultural ressources and make
+      dishes faster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489855143407616
+    m_Localized: Hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23489934210232320
+    m_Localized: Work tool. Any skilled worker has one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490176179630080
+    m_Localized: Sickle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490192092819456
+    m_Localized: Work tool. Any skilled worker has one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490298401648640
+    m_Localized: Merchant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23490394820308992
+    m_Localized: Walking around, selling all sorts of things.
     m_Metadata:
       m_Items: []
   references:

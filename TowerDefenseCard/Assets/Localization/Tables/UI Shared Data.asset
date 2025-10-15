@@ -119,22 +119,6 @@ MonoBehaviour:
     m_Key: WARNING_DELETE_SAVE
     m_Metadata:
       m_Items: []
-  - m_Id: 19156660432269312
-    m_Key: UPGRADE_RAMEN
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19156924291739648
-    m_Key: UPGRADE_SAKE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19157082681241600
-    m_Key: UPGRADE_SPICY_RAMEN
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19157294795583488
-    m_Key: UPGRADE_TAMAGO
-    m_Metadata:
-      m_Items: []
   - m_Id: 23081406769262592
     m_Key: WAVE
     m_Metadata:
@@ -197,6 +181,50 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39092521638686720
     m_Key: FEEDBACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41620578945593344
+    m_Key: UPGRADE_ATTACK_SPEED_FLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41620945653592064
+    m_Key: UPGRADE_ATTACK_SPEED_PERCENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621112163266560
+    m_Key: UPGRADE_HEALTH_FLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621339440017408
+    m_Key: UPGRADE_HEALTH_PERCENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621748439183360
+    m_Key: UPGRADE_DAMAGE_FLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621798670168064
+    m_Key: UPGRADE_DAMAGE_PERCENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621831402516480
+    m_Key: UPGRADE_DOT_FLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41621862926905344
+    m_Key: UPGRADE_DOT_PERCENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41622696582574080
+    m_Key: UPGRADE_ATTACK_RANGE_FLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41622744301170688
+    m_Key: UPGRADE_ATTACK_RANGE_PERCENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41624977034047488
+    m_Key: UPGRADE_HEAL_FLAT
     m_Metadata:
       m_Items: []
   m_Metadata:
