@@ -9,10 +9,21 @@ public class UIUpgradeDescription : MonoBehaviour
 
     public void Init(CardID cardID)
     {
-        CardData cardData = CardManager.Instance.GetCardPrefabByCardID(cardID).CardData;
+        Card card = CardManager.Instance.GetCardPrefabByCardID(cardID);
 
-        descriptionText.text = cardData.CardDescription.GetLocalizedString();
+        CardUpgrade cardUpgrade = (CardUpgrade)card;
+
+        if(cardUpgrade != null)
+        {
+            descriptionText.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
+        }
+        else
+        {
+            descriptionText.text = card.CardData.CardDescription.GetLocalizedString();
+        }
+
+            
         GameObject cardUIGameObject = Instantiate(cardUIPrefab, cardUIParent);
-        cardUIGameObject.GetComponent<UICardMenu>().SetupUICardMenu(cardData, true);
+        cardUIGameObject.GetComponent<UICardMenu>().SetupUICardMenu(card.CardData, true);
     }
 }

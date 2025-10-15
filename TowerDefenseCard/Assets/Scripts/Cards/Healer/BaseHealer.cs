@@ -98,6 +98,35 @@ public abstract class BaseHealer : BaseUpgradable, IHealer
         return healables.ToArray();
     }
 
+    public override void ApplyUpgrade(UpgradeData upgrade)
+    {
+        base.ApplyUpgrade(upgrade);
+
+        if (upgrade.AttackRangeBonusFlat > 0 || upgrade.AttackRangeBonusPercentValue > 0)
+        {
+            if (TryGetComponent(out MeshRangeEffect rangeEffect))
+            {
+                rangeEffect.UpdateCircleMesh(HealRange);
+            }
+        }
+    }
+
+    public override bool RemoveUpgrade(string upgradeName)
+    {
+        bool isUpgradeRemoved = base.RemoveUpgrade(upgradeName);
+
+        if (TryGetComponent(out MeshRangeEffect rangeEffect))
+        {
+            rangeEffect.UpdateCircleMesh(HealRange);
+        }
+        if (TryGetComponent(out LineRendererRangeEffect lineRendererRangeEffect))
+        {
+            lineRendererRangeEffect.UpdateRangeCircle(HealRange);
+        }
+
+        return isUpgradeRemoved;
+    }
+
     protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

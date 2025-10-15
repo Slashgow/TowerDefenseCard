@@ -17,12 +17,12 @@ public abstract class BaseUpgradable : MonoBehaviour, IUpgradable
 
     public virtual void ApplyUpgrade(UpgradeData upgrade)
     {
-        if (CanApplyUpgrade(upgrade))
-        {
-            System.Array.Resize(ref appliedUpgrades, appliedUpgrades.Length + 1);
-            appliedUpgrades[appliedUpgrades.Length - 1] = upgrade;
-            Debug.Log($"Applied upgrade {upgrade.UpgradeName} to {gameObject.name}");
-        }
+        if (!CanApplyUpgrade(upgrade))
+            return;
+        
+        System.Array.Resize(ref appliedUpgrades, appliedUpgrades.Length + 1);
+        appliedUpgrades[appliedUpgrades.Length - 1] = upgrade;
+        Debug.Log($"Applied upgrade {upgrade.UpgradeName} to {gameObject.name}");
     }
 
     public bool CanApplyUpgrade(UpgradeData upgrade)

@@ -118,8 +118,10 @@ public abstract class MeshRangeEffect : MonoBehaviour
         meshFilter.mesh = mesh;
     }
 
-    private void UpdateCircleMesh()
+    public void UpdateCircleMesh(float range)
     {
+        this.range = range;
+
         if (meshFilter == null || meshFilter.mesh == null)
         {
             CreateCircleMesh();

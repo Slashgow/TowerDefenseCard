@@ -56,4 +56,11 @@ public abstract class LineRendererRangeEffect: MonoBehaviour
         }
     }
 
+    public void UpdateRangeCircle(float range)
+    {
+        this.range = range;
+        rangeIndicator.positionCount = 0;
+        DrawRangeCircle();
+    }
+
 }

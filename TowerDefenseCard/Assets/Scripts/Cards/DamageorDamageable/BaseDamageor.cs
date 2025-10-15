@@ -157,6 +157,19 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             attackTimer.Cancel();
 
         attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
+
+
+        if(upgrade.AttackRangeBonusFlat > 0 || upgrade.AttackRangeBonusPercentValue > 0)
+        {
+            if (TryGetComponent(out MeshRangeEffect rangeEffect))
+            {
+                rangeEffect.UpdateCircleMesh(AttackRange);
+            }
+            if(TryGetComponent(out LineRendererRangeEffect lineRendererRangeEffect))
+            {
+                lineRendererRangeEffect.UpdateRangeCircle(AttackRange);
+            }
+        }
     }
 
     public override bool RemoveUpgrade(string upgradeName)
@@ -166,7 +179,19 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
 
         attackTimer = Timer.Register(1f / AttackSpeed, onComplete: () => Attack(), isLooped: true);
 
-        return base.RemoveUpgrade(upgradeName);
+        bool isUpgradeRemoved =  base.RemoveUpgrade(upgradeName);
+
+
+        if (TryGetComponent(out MeshRangeEffect rangeEffect))
+        {
+            rangeEffect.UpdateCircleMesh(AttackRange);
+        }
+        if (TryGetComponent(out LineRendererRangeEffect lineRendererRangeEffect))
+        {
+            lineRendererRangeEffect.UpdateRangeCircle(AttackRange);
+        }
+
+        return isUpgradeRemoved;
     }
 
     private void OnDrawGizmos()
