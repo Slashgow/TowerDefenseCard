@@ -92,39 +92,16 @@ public class FOVMeshRenderer : MonoBehaviour
         meshRenderer.enabled = shouldBeVisible;
     }
 
-    private void DrawFOVMesh()
+    public void DrawFOVMesh(float range = 0f)
     {
         float fovRange = 0f;
         float fieldOfView = 0f;
         Vector3 forward = Vector3.zero;
 
-        switch (fovType)
-        {
-            case FOVType.Slower:
-                if (slower != null)
-                {
-                    fieldOfView = slower.SlowFieldOfView;
-                    fovRange = slower.SlowRange;
-                    forward = -transform.up;
-                }
-                break;
-            case FOVType.Fearor:
-                if (fearor != null)
-                {
-                    fovRange = fearor.FearRange;
-                    fieldOfView = fearor.FearFieldOfView;
-                    forward = -transform.up;
-                }
-                break;
-            case FOVType.Occluder:
-                if (occluder != null)
-                {
-                    fovRange = occluder.OcclusionRange;
-                    fieldOfView = occluder.OcclusionFieldOfView;
-                    forward = transform.up;
-                }
-                break;
-        }
+        InitParameterWithType(ref fovRange, ref fieldOfView, ref forward);
+
+        if (range > 0f)
+            fovRange = range;
 
         if (fovRange <= 0f || fieldOfView <= 0f)
             return;
@@ -169,4 +146,36 @@ public class FOVMeshRenderer : MonoBehaviour
         fovMesh.triangles = triangles;
         fovMesh.RecalculateNormals();
     }
+
+    private void InitParameterWithType(ref float fovRange, ref float fieldOfView, ref Vector3 forward)
+    {
+        switch (fovType)
+        {
+            case FOVType.Slower:
+                if (slower != null)
+                {
+                    fieldOfView = slower.SlowFieldOfView;
+                    fovRange = slower.SlowRange;
+                    forward = -transform.up;
+                }
+                break;
+            case FOVType.Fearor:
+                if (fearor != null)
+                {
+                    fovRange = fearor.FearRange;
+                    fieldOfView = fearor.FearFieldOfView;
+                    forward = -transform.up;
+                }
+                break;
+            case FOVType.Occluder:
+                if (occluder != null)
+                {
+                    fovRange = occluder.OcclusionRange;
+                    fieldOfView = occluder.OcclusionFieldOfView;
+                    forward = transform.up;
+                }
+                break;
+        }
+    }
+
 }

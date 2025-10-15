@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityTimer;
 
-public class SimpleOccluder : MonoBehaviour, IOccluder
+public class SimpleOccluder : BaseUpgradable, IOccluder
 {
     [Header("Occluder Settings")]
     [SerializeField] private float occlusionRange = 5f;
@@ -12,7 +12,17 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
     [SerializeField] private bool canOcclude = true;
     [SerializeField, Range(0f,5f)] private float checkForProtectedDefenseInterval = 1f;
 
-    public float OcclusionRange => occlusionRange;
+    public float OcclusionRange
+    {
+        get
+        {
+            float baseRange = occlusionRange;
+            float multiplier = GetTotalUpgradeMultiplier(baseRange, u => 1f + (u.AttackRangeBonusIsPercent ? u.AttackRangeBonusPercentValue / 100f : 0f));
+            float flatBonus = GetTotalUpgradeFlatBonus(baseRange, u => u.AttackRangeBonusFlat);
+            return baseRange * multiplier + flatBonus;
+        }
+    }
+
     public float OcclusionFieldOfView => occlusionFieldOfView;
     public bool CanOcclude => canOcclude;
 
@@ -35,6 +45,27 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
         }
     }
 
+    public override void ApplyUpgrade(UpgradeData upgrade)
+    {
+        base.ApplyUpgrade(upgrade);
+
+        if (upgrade.AttackRangeBonusFlat > 0 || upgrade.AttackRangeBonusPercentValue > 0)
+        {
+            if (TryGetComponent(out FOVMeshRenderer fOVMeshRenderer))
+                fOVMeshRenderer.DrawFOVMesh(OcclusionRange);
+        }
+    }
+
+    public override bool RemoveUpgrade(string upgradeName)
+    {
+        bool isUpgradeRemoved = base.RemoveUpgrade(upgradeName);
+
+        if (TryGetComponent(out FOVMeshRenderer fOVMeshRenderer))
+            fOVMeshRenderer.DrawFOVMesh(OcclusionRange);
+
+        return isUpgradeRemoved;
+    }
+
     private void GameManager_OnEndCombatMode()
     {
         occlusionCheckTimer?.Cancel();
@@ -53,7 +84,7 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
     {
         // Check if target is within occlusion range
         float distance = Vector3.Distance(transform.position, targetPosition);
-        if (distance > occlusionRange)
+        if (distance > OcclusionRange)
             return false;
 
         return IsTargetInFieldOfView(targetPosition);
@@ -77,7 +108,7 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
         if (!canOcclude)
             return;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, occlusionRange, protectedLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, OcclusionRange, protectedLayer);
 
         foreach (Collider2D hit in hits)
         {
@@ -107,7 +138,7 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
 
         // Visualize occlusion range
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, occlusionRange);
+        Gizmos.DrawWireSphere(transform.position, OcclusionRange);
 
         // Draw field of view for protection zone
         Gizmos.color = Color.green;
@@ -115,8 +146,8 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
         float halfFOV = occlusionFieldOfView * 0.5f;
 
         // Calculate the two edges of the field of view
-        Vector3 leftBoundary = Quaternion.Euler(0, 0, halfFOV) * forward * occlusionRange;
-        Vector3 rightBoundary = Quaternion.Euler(0, 0, -halfFOV) * forward * occlusionRange;
+        Vector3 leftBoundary = Quaternion.Euler(0, 0, halfFOV) * forward * OcclusionRange;
+        Vector3 rightBoundary = Quaternion.Euler(0, 0, -halfFOV) * forward * OcclusionRange;
 
         // Draw the field of view cone
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary);
@@ -127,7 +158,7 @@ public class SimpleOccluder : MonoBehaviour, IOccluder
         for (int i = 1; i <= 20; i++)
         {
             float angle = Mathf.Lerp(halfFOV, -halfFOV, i / 20f);
-            Vector3 point = transform.position + Quaternion.Euler(0, 0, angle) * forward * occlusionRange;
+            Vector3 point = transform.position + Quaternion.Euler(0, 0, angle) * forward * OcclusionRange;
             Gizmos.DrawLine(previousPoint, point);
             previousPoint = point;
         }
