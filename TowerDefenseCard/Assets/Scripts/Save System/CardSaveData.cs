@@ -15,6 +15,7 @@ public class CardSaveData
     public AutoCardMovementData autoCardMovementSaveData;
     public int currentAmountOfCurrency;
     public List<UpgradeSlotSaveData>upgradeSlotSaveDatas;
+    public RecruterSaveData recruterSaveData;
 
     public CardSaveData()
     {
@@ -28,6 +29,7 @@ public class CardSaveData
         currentAmountOfCurrency = 0;
         autoCardMovementSaveData = null;
         upgradeSlotSaveDatas = new List<UpgradeSlotSaveData>();
+        recruterSaveData = null;
     }
 
     public CardSaveData(CardID cardID, Transform transform, int stackCount)
@@ -39,6 +41,7 @@ public class CardSaveData
         this.stackCount = stackCount;
         boosterSaveData = null;
         cardIdeaSaveData = null;
+        recruterSaveData = null;
     }
 
     public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData)
@@ -50,6 +53,7 @@ public class CardSaveData
         this.stackCount = stackCount;
         this.boosterSaveData = boosterSaveData;
         cardIdeaSaveData = null;
+        recruterSaveData = null;
     }
     public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency)
     {
@@ -61,9 +65,12 @@ public class CardSaveData
         this.boosterSaveData = boosterSaveData;
         this.cardIdeaSaveData = cardIdeaSaveData;
         this.currentAmountOfCurrency = currentAmountOfCurrency;
+        recruterSaveData = null;
     }
 
-    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency, AutoCardMovementData autoCardMovementData, List<UpgradeSlotSaveData> upgradeSlotSaveDatas)
+    public CardSaveData(CardID cardID, Transform transform, int stackCount, BoosterSaveData boosterSaveData, 
+        CardIdeaSaveData cardIdeaSaveData, int currentAmountOfCurrency, AutoCardMovementData autoCardMovementData, 
+        List<UpgradeSlotSaveData> upgradeSlotSaveDatas, RecruterSaveData recruterSaveData)
     {
         this.cardID = cardID;
         this.position = transform.position;
@@ -75,5 +82,6 @@ public class CardSaveData
         this.currentAmountOfCurrency = currentAmountOfCurrency;
         this.autoCardMovementSaveData = autoCardMovementData;
         this.upgradeSlotSaveDatas = upgradeSlotSaveDatas;
+        this.recruterSaveData = recruterSaveData;
     }
 }

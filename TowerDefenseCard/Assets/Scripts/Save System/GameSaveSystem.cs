@@ -125,6 +125,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                     AutoCardMovementData autoCardMovementData = null;
                     int currentAmountOfCurrency = 0;
                     List<UpgradeSlotSaveData> upgradeSlotSaveDatas = new List<UpgradeSlotSaveData>();
+                    RecruterSaveData recruterSaveData = null;
 
                     if (stackCard is Booster)
                     {
@@ -145,6 +146,12 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                     {
                         autoCardMovementData = autoCardMovement.Save();
                     }
+                    else if (stackCard is CardRecruter)
+                    {
+                        CardRecruter recruter = (CardRecruter)stackCard;
+                        recruterSaveData = recruter.Save();
+                    }
+
                     else if(!stackCard.IsStackRoot() && stackCard is CardUpgrade)
                     {
                         continue;
@@ -171,7 +178,8 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                             cardIdeaSaveData,
                             currentAmountOfCurrency,
                             autoCardMovementData,
-                            upgradeSlotSaveDatas
+                            upgradeSlotSaveDatas,
+                            recruterSaveData
                         );
 
                     stackData.AddCard(cardSaveData);
@@ -359,6 +367,12 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
                 cardCurrencyCollecter.Load(cardData);
 
             }
+            else if (newCard is CardRecruter)
+            {
+                CardRecruter recruter = (CardRecruter)newCard;
+                recruter.Load(cardData.recruterSaveData);
+            }
+
 
             else if (newCard.TryGetComponent(out AutoCardMovement autoCardMovement))
                 autoCardMovement.Load(cardData.autoCardMovementSaveData);

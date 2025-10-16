@@ -35,7 +35,7 @@ public class CooldownBarUI : MonoBehaviour
         //Debug.Log($"Destroy {this.transform.GetInstanceID()}");
     }
 
-    public void Init(Transform p_stackParent, float p_craftingDelay, float p_cooldownBarOffset, int p_craftID)
+    public void Init(Transform p_stackParent, float p_craftingDelay, float p_cooldownBarOffset, int p_craftID, float p_elapsedTime = 0f)
     {
         stackParent = p_stackParent;
         craftingDelay = p_craftingDelay;
@@ -43,10 +43,11 @@ public class CooldownBarUI : MonoBehaviour
         cooldownBarOffset = p_cooldownBarOffset;
         craftID = p_craftID;
 
+        fillImage.fillAmount = p_elapsedTime / p_craftingDelay;
 
         craftingTimer = Timer.Register(
-                    duration: craftingDelay,
-                    onUpdate: secondsElapsed => UpdateCooldownBar(secondsElapsed),
+                    duration: p_craftingDelay - p_elapsedTime,
+                    onUpdate: secondsElapsed => UpdateCooldownBar(secondsElapsed + p_elapsedTime),
                     onComplete: () =>
                     {
                         OnCraftDelayEnd?.Invoke(craftID);

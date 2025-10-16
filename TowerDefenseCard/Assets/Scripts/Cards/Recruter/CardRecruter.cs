@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 using UnityTimer;
 using System;
+
 
 public class CardRecruter : Card
 {
@@ -35,6 +35,7 @@ public class CardRecruter : Card
 
     private Dictionary<int, Timer> activeRecruitments = new Dictionary<int, Timer>();
     private Dictionary<int, GameObject> activeRecruitmentBars = new Dictionary<int, GameObject>();
+    private Dictionary<int, RecruitmentData> recruitmentDataByID = new Dictionary<int, RecruitmentData>(); // New dictionary to track RecruitmentData
     private int nextRecruitmentID = 0;
 
     public static event Action OnAnyRecruitmentComplete;
@@ -66,12 +67,6 @@ public class CardRecruter : Card
 
     private void OnCraftComplete(CraftInfo craftInfo, CardID completedCardID)
     {
-        if(completedCardID == CardID.CURRENCY)
-        {
-            ShopManager.Instance.AddPlayerCoin(1);
-        }
-
-
         foreach (var recruitment in recruitmentOptions)
         {
             if (recruitment.triggerRecipe == null)
@@ -81,6 +76,11 @@ public class CardRecruter : Card
 
             if (isMatchingRecipe)
             {
+                if (completedCardID == CardID.CURRENCY)
+                {
+                    ShopManager.Instance.AddPlayerCoin(1);
+                }
+
                 StartRecruitment(recruitment);
                 break;
             }
@@ -93,17 +93,18 @@ public class CardRecruter : Card
 
         logger.Log($"[RECRUTER] {cardData.CardID} starting recruitment for {recruitment.cardIDToSpawn} (delay: {recruitment.recruitmentDelay}s)", this);
 
-        InitRecrutementCooldownBar(recruitment, recruitmentID);
-        
+        InitRecrutementCooldownBar(recruitment, recruitmentID, 0f);
+
         Timer recruitmentTimer = Timer.Register(
             recruitment.recruitmentDelay,
             onComplete: () => SpawnRecruitedCard(recruitmentID, recruitment)
         );
 
         activeRecruitments[recruitmentID] = recruitmentTimer;
+        recruitmentDataByID[recruitmentID] = recruitment;
     }
 
-    private void InitRecrutementCooldownBar(RecruitmentData recruitment, int recruitmentID)
+    private void InitRecrutementCooldownBar(RecruitmentData recruitment, int recruitmentID, float elapsedTime)
     {
         if (recruitmentBarPrefab != null)
         {
@@ -115,7 +116,7 @@ public class CardRecruter : Card
             {
                 cooldownBarUI.OnCraftDelayEnd -= OnRecruitmentComplete;
                 cooldownBarUI.OnCraftDelayEnd += OnRecruitmentComplete;
-                cooldownBarUI.Init(transform, recruitment.recruitmentDelay, recruitmentBarOffset, recruitmentID);
+                cooldownBarUI.Init(transform, recruitment.recruitmentDelay, recruitmentBarOffset, recruitmentID, elapsedTime);
             }
 
             recruitmentBar.transform.position = transform.position + new Vector3(0, recruitmentBarOffset, 0);
@@ -142,7 +143,7 @@ public class CardRecruter : Card
         }
 
         Vector3 spawnPosition = transform.position + recruitment.spawnOffset;
-        GameObject spawnedCard = Instantiate( CardManager.Instance.GetCardPrefabByCardID(recruitment.cardIDToSpawn).gameObject, spawnPosition, Quaternion.identity);
+        GameObject spawnedCard = Instantiate(CardManager.Instance.GetCardPrefabByCardID(recruitment.cardIDToSpawn).gameObject, spawnPosition, Quaternion.identity);
 
         OnAnyRecruitmentComplete?.Invoke();
 
@@ -199,7 +200,61 @@ public class CardRecruter : Card
         }
     }
 
-  
+    public RecruterSaveData Save()
+    {
+        RecruterSaveData saveData = new RecruterSaveData();
+        foreach (var activeRecruitment in activeRecruitments)
+        {
+            int id = activeRecruitment.Key;
+            Timer timer = activeRecruitment.Value;
+            if (timer != null && recruitmentDataByID.ContainsKey(id))
+            {
+                RecruitmentData recruitment = recruitmentDataByID[id];
+                float remainingTime = timer.GetTimeRemaining();
+                saveData.activeRecruitments.Add(new RecruterSaveData.ActiveRecruitmentData(
+                    id,
+                    remainingTime,
+                    recruitment.cardIDToSpawn,
+                    recruitment.spawnOffset,
+                    recruitment.triggerRecipe,
+                    recruitment.recruitmentDelay
+                ));
+            }
+        }
+        return saveData;
+    }
 
+    public void Load(RecruterSaveData saveData)
+    {
+        CancelAllRecruitments();
+        nextRecruitmentID = 0;
 
+        foreach (var activeRecruitment in saveData.activeRecruitments)
+        {
+            int recruitmentID = activeRecruitment.recruitmentID;
+            if (recruitmentID >= nextRecruitmentID)
+            {
+                nextRecruitmentID = recruitmentID + 1;
+            }
+
+            RecruitmentData recruitment = new RecruitmentData
+            {
+                triggerRecipe = activeRecruitment.triggerRecipe,
+                recruitmentDelay = activeRecruitment.recruitmentDelay,
+                cardIDToSpawn = activeRecruitment.cardIDToSpawn,
+                spawnOffset = activeRecruitment.spawnOffset
+            };
+
+            float elapsedTime = activeRecruitment.recruitmentDelay - activeRecruitment.remainingTime;
+            InitRecrutementCooldownBar(recruitment, recruitmentID, elapsedTime);
+
+            Timer recruitmentTimer = Timer.Register(
+                activeRecruitment.remainingTime,
+                onComplete: () => SpawnRecruitedCard(recruitmentID, recruitment)
+            );
+
+            activeRecruitments[recruitmentID] = recruitmentTimer;
+            recruitmentDataByID[recruitmentID] = recruitment;
+        }
+    }
 }
