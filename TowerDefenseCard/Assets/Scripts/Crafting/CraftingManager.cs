@@ -13,6 +13,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public event Action<int> OnCraftCancel = delegate { };
     public event Action<int, CardID> OnCraftComplete = delegate { };
+    public event Action<CraftInfo, CardID> OnCraftCompleteWithInfo = delegate { };
     public event Action<CardID> OnDestroyCard = delegate { };
 
     private float startingTimeElapsed = 0f;
@@ -220,6 +221,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);
         OnCraftComplete?.Invoke(craftInfo.CraftID, outputCard.cardID);
+        OnCraftCompleteWithInfo?.Invoke(craftInfo, outputCard.cardID);
     }
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
@@ -262,7 +264,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private float CalculateCraftingDelay(CraftingRecipe recipe, List<Card> stackCards)
     {
         float baseDelay = recipe.CraftingDelay;
-        float totalSpeedModifier = 1f;
+        float totalSpeedModifier = 0f;
         int modifiersApplied = 0;
 
         // Pour chaque ingrédient WORKER dans la recette
@@ -311,7 +313,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         // Calculer la moyenne si plusieurs modificateurs
         if (modifiersApplied > 0)
         {
-            totalSpeedModifier /= (modifiersApplied + 1); // +1 pour inclure le 1f initial
+            totalSpeedModifier /= modifiersApplied; // +1 pour inclure le 1f initial
         }
         else
         {

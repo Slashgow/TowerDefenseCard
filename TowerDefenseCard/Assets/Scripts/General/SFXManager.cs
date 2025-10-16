@@ -34,7 +34,10 @@ public class SFXManager : MonoSingleton<SFXManager>
         CardMover.OnEndDragCard += CardMover_OnReleaseCard;
         CardUpgrade.OnAppliedAnyUpgrade += CardUpgrade_OnAppliedAnyUpgrade;
         CardUpgrade.OnRemovedAnyUpgrade += CardUpgrade_OnRemovedAnyUpgrade;
+        CardRecruter.OnAnyRecruitmentComplete += CardRecruter_OnAnyRecruitmentComplete;
     }
+
+ 
 
     private void OnDisable()
     {
@@ -52,6 +55,7 @@ public class SFXManager : MonoSingleton<SFXManager>
         CardMover.OnEndDragCard -= CardMover_OnReleaseCard;
         CardUpgrade.OnAppliedAnyUpgrade -= CardUpgrade_OnAppliedAnyUpgrade;
         CardUpgrade.OnRemovedAnyUpgrade -= CardUpgrade_OnRemovedAnyUpgrade;
+        CardRecruter.OnAnyRecruitmentComplete -= CardRecruter_OnAnyRecruitmentComplete;
     }
 
     private void Booster_OnOpenCardIdea() => PlayRandomAudioClip(popSounds);
@@ -65,7 +69,7 @@ public class SFXManager : MonoSingleton<SFXManager>
     private void CardMover_OnGrabCard() => PlayRandomGrabAudioClip(grabSounds);
     private void CardUpgrade_OnRemovedAnyUpgrade() => PlayAudioClip(onRemoveUpgrade);
     private void CardUpgrade_OnAppliedAnyUpgrade() => PlayAudioClip(onApplyUpgrade);
-
+    private void CardRecruter_OnAnyRecruitmentComplete() => PlayRandomAudioClip(popSounds);
 
     public void PlayAudioClip(AudioClip audioClip)
     {

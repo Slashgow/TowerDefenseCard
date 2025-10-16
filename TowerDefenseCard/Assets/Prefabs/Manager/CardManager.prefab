@@ -107,6 +107,12 @@ MonoBehaviour:
   - card: {fileID: 5582891460866795087, guid: 40dda6b0b4949c54ebf123a1890388db, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 1
+  - card: {fileID: 6756270804770270514, guid: a5c5e3532601d534b83fd4350cd5cb20, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 6756270804770270514, guid: bc8740dcbbb83704cbf71d4f4eae2147, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   - card: {fileID: 5596509187565464847, guid: 4efd486af8e4f3e47a7c5643b59464d7, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -168,6 +174,9 @@ MonoBehaviour:
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 8582749258856679299, guid: cd717f625729b904e8958bab1e19c8e6, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 3266315216697312082, guid: 0deadc427d7cb0c40a25c2dadcd7d063, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 9047908134774282088, guid: ef7fbb60b247a9643b4c04bbd8d8d24c, type: 3}

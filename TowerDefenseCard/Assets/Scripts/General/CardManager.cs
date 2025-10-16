@@ -127,6 +127,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         Booster.OnOpenBooster += Booster_OnOpenBooster;
         CardExploitation.OnDestroyCardExploitation += CardExploitation_OnDestroyCardExploitation;
         Stealable.OnDestroy += IStealable_OnDestroy;
+        CardRecruter.OnAnyRecruitmentComplete += CardRecruter_OnAnyRecruitmentComplete;
     }
 
     private void OnDisable()
@@ -147,8 +148,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         CardDefense.OnDestroyAnyCardDefense -= CardDefense_OnDestroyAnyCardDefense;
         CardDefense.OnCreateAnyCardDefense -= CardDefense_OnCreateAnyCardDefense;
         Stealable.OnDestroy -= IStealable_OnDestroy;
+        CardRecruter.OnAnyRecruitmentComplete -= CardRecruter_OnAnyRecruitmentComplete;
 
-        if(WaveManager.HasInstance)
+        if (WaveManager.HasInstance)
             WaveManager.Instance.OnSpawnEnnemy -= WaveManager_OnSpawnEnnemy;
     }
 
@@ -250,7 +252,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private void Reseller_OnResell(int numberOfReselledCard) => UpdateCurrentNumberOfCard(-numberOfReselledCard);
     private void Booster_OnOpenCardIdea() => UpdateCurrentNumberOfCard(1);
-
+    private void CardRecruter_OnAnyRecruitmentComplete() => UpdateCurrentNumberOfCard(1);
     private void Booster_OnOpenBooster(CardID cardID)
     {
         CheckCardDiscoveryState(cardID);
