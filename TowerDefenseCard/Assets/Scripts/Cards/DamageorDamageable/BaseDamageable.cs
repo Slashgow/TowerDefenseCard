@@ -16,7 +16,9 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
             float finalHealth = baseMaxHealth * multiplier + flatBonus;
 
             if (isEnemy)
-                finalHealth *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyHealthPercentModifier / 100f);
+                finalHealth *= (1f + (DifficultyManager.HasInstance ?  
+                    DifficultyManager.Instance.CurrentDifficultyData.EnnemyHealthPercentModifier / 100f : 
+                    0f));
 
             return finalHealth;
         }

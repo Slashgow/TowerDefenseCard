@@ -42,7 +42,9 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             float finalSpeed = baseSpeed * multiplier + flatBonus;
 
             if (isEnemy)
-                finalSpeed *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyAttackSpeedPercentModifier / 100f);
+                finalSpeed *= (1 + (DifficultyManager.HasInstance ?
+                    DifficultyManager.Instance.CurrentDifficultyData.EnnemyAttackSpeedPercentModifier / 100f :
+                    0f));
 
             return finalSpeed;
         }
@@ -71,7 +73,9 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             float finalDamage = baseDamage * multiplier + flatBonus;
 
             if (isEnemy)
-                finalDamage *= (1f + DifficultyManager.Instance.CurrentDifficultyData.EnnemyDamagePercentModifier / 100f);
+                finalDamage *= (1f + (DifficultyManager.HasInstance ?
+                    DifficultyManager.Instance.CurrentDifficultyData.EnnemyDamagePercentModifier / 100f :
+                    0f));
      
             return finalDamage;
         }

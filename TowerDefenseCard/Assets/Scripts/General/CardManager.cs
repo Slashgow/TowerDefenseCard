@@ -236,7 +236,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private void IStealable_OnDestroy() => UpdateCurrentNumberOfCard(-1);
     private void CardExploitation_OnDestroyCardExploitation() => UpdateCurrentNumberOfCard(-1);
-    private void TowerDamageable_OnTowerDie() => UpdateCurrentNumberOfCard(-1);
+    private void TowerDamageable_OnTowerDie(int numberOfDestroyedCard) => UpdateCurrentNumberOfCard(-numberOfDestroyedCard);
     private void CraftingManager_OnDestroyCard(CardID cardID)
     {
         if(cardID == CardID.CURRENCY)
