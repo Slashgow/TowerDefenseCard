@@ -110,8 +110,11 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                         }
                     }
                 }
+
+                float adjustedDelay = CalculateCraftingDelay(recipe, stackCards);
+
                 currentCrafts.Add(new CraftInfo(stackParent, recipe, stackCards, CardUtility.GenerateUniqueID()));
-                InitializeCooldownBar(stackParent, recipe.CraftingDelay, currentCrafts[currentCrafts.Count - 1].CraftID);
+                InitializeCooldownBar(stackParent, adjustedDelay, currentCrafts[currentCrafts.Count - 1].CraftID);
                 return true;
             }
         }
@@ -183,8 +186,21 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         for (int i = craftInfo.StackCards.Count - 1; i >= 0; i--)
         {
-            bool shouldBeKept = craftInfo.CraftingRecipe.Ingredients.First(ingredient => 
-                                        ingredient.cardID == craftInfo.StackCards[i].CardData.CardID).isNotDestroyedOnCraft;
+            CardID cardID = craftInfo.StackCards[i].CardData.CardID;
+
+            CardID ingredientCardID = cardID;
+            if ((cardID == CardID.FARMER || cardID == CardID.CARPENTER) &&
+                !craftInfo.CraftingRecipe.Ingredients.Any(ing => ing.cardID == cardID))
+            {
+                // This card is a FARMER or CARPENTER being used as WORKER
+                ingredientCardID = CardID.WORKER;
+            }
+
+            var matchingIngredient = craftInfo.CraftingRecipe.Ingredients.FirstOrDefault(ingredient =>
+                                        ingredient.cardID == ingredientCardID);
+
+            bool shouldBeKept = matchingIngredient.isNotDestroyedOnCraft;
+
             if (!shouldBeKept)
             {
                 craftInfo.StackCards[i].OnUnstack();
@@ -208,18 +224,107 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<CardID, int> cardCounts)
     {
-        if(recipe.Ingredients.Count != cardCounts.Count)
+        Dictionary<CardID, int> adjustedCardCounts = new Dictionary<CardID, int>(cardCounts);
+
+        // If the recipe requires WORKER, combine FARMER and CARPENTER counts into WORKER
+        bool recipeNeedsWorker = recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.WORKER);
+
+        if (recipeNeedsWorker)
+        {
+            int workerCount = adjustedCardCounts.GetValueOrDefault(CardID.WORKER, 0);
+            int farmerCount = adjustedCardCounts.GetValueOrDefault(CardID.FARMER, 0);
+            int carpenterCount = adjustedCardCounts.GetValueOrDefault(CardID.CARPENTER, 0);
+
+            // Combine all worker-type cards
+            adjustedCardCounts[CardID.WORKER] = workerCount + farmerCount + carpenterCount;
+
+            // Remove FARMER and CARPENTER from the adjusted counts for comparison
+            if (adjustedCardCounts.ContainsKey(CardID.FARMER))
+                adjustedCardCounts.Remove(CardID.FARMER);
+            if (adjustedCardCounts.ContainsKey(CardID.CARPENTER))
+                adjustedCardCounts.Remove(CardID.CARPENTER);
+        }
+
+
+        if (recipe.Ingredients.Count != adjustedCardCounts.Count)
             return false;
 
         foreach (var ingredient in recipe.Ingredients)
         {
-            if (!cardCounts.ContainsKey(ingredient.cardID) || cardCounts[ingredient.cardID] < ingredient.quantity)
+            if (!adjustedCardCounts.ContainsKey(ingredient.cardID) || adjustedCardCounts[ingredient.cardID] < ingredient.quantity)
             {
                 return false;
             }
         }
         return true;
     }
+
+    private float CalculateCraftingDelay(CraftingRecipe recipe, List<Card> stackCards)
+    {
+        float baseDelay = recipe.CraftingDelay;
+        float totalSpeedModifier = 1f;
+        int modifiersApplied = 0;
+
+        // Pour chaque ingrédient WORKER dans la recette
+        foreach (var ingredient in recipe.Ingredients)
+        {
+            if (ingredient.cardID == CardID.WORKER)
+            {
+                // Compter les cartes qui correspondent à cet ingrédient
+                int carpenterCount = 0;
+                int farmerCount = 0;
+                int workerCount = 0;
+                int cardsNeeded = ingredient.quantity;
+
+                // Compter les cartes dans la stack
+                foreach (var card in stackCards)
+                {
+                    CardID cardID = card.CardData.CardID;
+                    if (cardID == CardID.CARPENTER)
+                        carpenterCount++;
+                    else if (cardID == CardID.FARMER)
+                        farmerCount++;
+                    else if (cardID == CardID.WORKER)
+                        workerCount++;
+                }
+
+                int totalWorkerCards = carpenterCount + farmerCount + workerCount;
+
+                if (totalWorkerCards > 0)
+                {
+                    // Calculer le modificateur moyen pondéré pour cet ingrédient
+                    float carpenterRatio = (float)carpenterCount / totalWorkerCards;
+                    float farmerRatio = (float)farmerCount / totalWorkerCards;
+                    float workerRatio = (float)workerCount / totalWorkerCards;
+
+                    float ingredientModifier =
+                        (carpenterRatio * ingredient.carpenterSpeedModifier) +
+                        (farmerRatio * ingredient.farmerSpeedModifier) +
+                        (workerRatio * 1.0f); // WORKER normal = 1.0
+
+                    totalSpeedModifier += ingredientModifier;
+                    modifiersApplied++;
+                }
+            }
+        }
+
+        // Calculer la moyenne si plusieurs modificateurs
+        if (modifiersApplied > 0)
+        {
+            totalSpeedModifier /= (modifiersApplied + 1); // +1 pour inclure le 1f initial
+        }
+        else
+        {
+            totalSpeedModifier = 1f; // Pas de modificateurs
+        }
+
+        float finalDelay = baseDelay * totalSpeedModifier;
+
+        Debug.Log($"[CRAFT SPEED] Recipe: {recipe.name}, Base: {baseDelay}s, Modifier: {totalSpeedModifier:F2}x, Final: {finalDelay:F2}s");
+
+        return finalDelay;
+    }
+
 
     public void TryCancelCraft(Card card)
     {

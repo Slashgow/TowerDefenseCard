@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NaughtyAttributes;
 
 [CreateAssetMenu(fileName = "NewCraftingRecipe", menuName = "William/Recipe")]
 public class CraftingRecipe : ScriptableObject
@@ -10,6 +11,14 @@ public class CraftingRecipe : ScriptableObject
         public CardID cardID;
         public int quantity;
         public bool isNotDestroyedOnCraft;
+
+        [ShowIf("cardID", CardID.WORKER), AllowNesting]
+        [Range(0.1f, 2f), Tooltip("Speed multiplier when using CARPENTER (1.0 = normal, <1.0 = faster, >1.0 = slower)")]
+        public float carpenterSpeedModifier;
+
+        [ShowIf("cardID", CardID.WORKER), AllowNesting]
+        [Range(0.1f, 2f), Tooltip("Speed multiplier when using FARMER (1.0 = normal, <1.0 = faster, >1.0 = slower)")]
+        public float farmerSpeedModifier;
     }
 
     [System.Serializable]

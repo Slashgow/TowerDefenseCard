@@ -16,15 +16,23 @@ MonoBehaviour:
   - cardID: 16
     quantity: 1
     isNotDestroyedOnCraft: 0
+    carpenterSpeedModifier: 0
+    farmerSpeedModifier: 0
   - cardID: 48
     quantity: 1
     isNotDestroyedOnCraft: 1
+    carpenterSpeedModifier: 0
+    farmerSpeedModifier: 0
   - cardID: 42
     quantity: 1
     isNotDestroyedOnCraft: 1
+    carpenterSpeedModifier: 1
+    farmerSpeedModifier: 1
   - cardID: 36
     quantity: 3
     isNotDestroyedOnCraft: 0
+    carpenterSpeedModifier: 0
+    farmerSpeedModifier: 0
   craftingDelay: 19
   outputCards:
   - cardID: 51
