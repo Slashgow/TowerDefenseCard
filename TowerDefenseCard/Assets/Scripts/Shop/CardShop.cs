@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Localization.Settings;
 
+
+
 public class CardShop : Card, ILoadable, ISavable
 {
     [SerializeField] private bool unlockOnStart = false;
@@ -50,14 +52,15 @@ public class CardShop : Card, ILoadable, ISavable
         }
     }
 
-    public void TryPurchaseBooster(bool bypassLocked)
+    public virtual bool TryPurchaseBooster(bool bypassLocked)
     {
         if (!bypassLocked && !shop.IsUnlocked)
-            return;
+            return false;
 
-        ShopManager.Instance.TryPurchaseBooster(this.shop);
+        bool success = ShopManager.Instance.TryPurchaseBooster(this.shop);
         shop.ResetShopCost();
         UpdateUI();
+        return success;
     }
 
     private void OnLocaleChange(UnityEngine.Localization.Locale Locale)

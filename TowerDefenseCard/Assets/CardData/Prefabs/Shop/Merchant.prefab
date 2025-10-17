@@ -196,14 +196,61 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5671149840664658939}
+    - targetCorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4748511296407859465}
+    - targetCorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8908440367335690628}
+    - targetCorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2560852693183216327}
   m_SourcePrefab: {fileID: 100100000, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+--- !u!114 &1216720110161960565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8144159781733902472, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a42cf16896ee7a43a9c867e97dd8ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &3567136245303189775 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5793447513779673074, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4519179338073149991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6868042175936996570, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f1971b613a13a47a708036e49b1fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1971053207 &4786464230700009160 stripped
+SpriteShapeRenderer:
+  m_CorrespondingSourceObject: {fileID: 2561309630235832373, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4866040967462523335 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2477208669114640186, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7316529704785690274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 319473351768311903, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
@@ -245,3 +292,163 @@ MonoBehaviour:
   stopRotationEase: 4
   stopRotateMode: 3
   stopRotateModeTilt: 0
+--- !u!114 &4748511296407859465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c117635dff5a146b6ee9df9eff6a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 11400000, guid: 91f453c5bc75a8a4ebba40eb55fc6772, type: 2}
+  backgroundSprite: {fileID: 3567136245303189775}
+  cardSprite: {fileID: 4866040967462523335}
+  cardUI: {fileID: 4519179338073149991}
+  cardOutline: {fileID: 4786464230700009160}
+  unlockOnStart: 1
+  spawnBoosterOnStart: 0
+  shop:
+    shopID: 5
+    shopCost: 8
+    isFirstBoosterRigged: 0
+    riggedBoosterCards: []
+    riggedCardIndex: 0
+    shopItems:
+    - dropPercentage: 20
+      cardPrefab: {fileID: 1648138419762282337, guid: 62672558cd66fc14c8515fab41de7309, type: 3}
+    - dropPercentage: 20
+      cardPrefab: {fileID: 1648138419762282337, guid: 2055b1eb7e6eb7046a72c9732fa76273, type: 3}
+    - dropPercentage: 20
+      cardPrefab: {fileID: 1648138419762282337, guid: ea2f2b4533578464ba8ba9d5a1275cd5, type: 3}
+    - dropPercentage: 10
+      cardPrefab: {fileID: 1648138419762282337, guid: fd07456cf21c41349a0b2242a4cc464d, type: 3}
+    - dropPercentage: 10
+      cardPrefab: {fileID: 1648138419762282337, guid: 529fbda942b0717478886966ccd81e89, type: 3}
+    - dropPercentage: 10
+      cardPrefab: {fileID: 1648138419762282337, guid: ab332309a2ae78f4bb769b88e28a4f9e, type: 3}
+    - dropPercentage: 10
+      cardPrefab: {fileID: 1648138419762282337, guid: 1b290f4ccba072c44aadfd2fcfa5cc1e, type: 3}
+    spawnPoint: {fileID: 8093076971601772933}
+    booster: {fileID: 2897151779044961995, guid: aa076898c7fd90c45b8836fbe1beb91e, type: 3}
+    dropChanceBonus: 25
+    shopCardIdeas: []
+    cardIdeaVisualPrefab: {fileID: -230825123419585, guid: 5c0b48fa9d2b54940ad0ed4ce6d30ac3, type: 3}
+  lockSprite: {fileID: -320074091, guid: ba30cc8b7b008cc4885b76205f49e07e, type: 3}
+  colorChanger: {fileID: 1216720110161960565}
+  OnPurchaseBoosterSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8908440367335690628}
+        m_TargetAssemblyTypeName: EffectApplier, Assembly-CSharp
+        m_MethodName: DoEffects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  destroyDelayAfterPurchase: 0.5
+--- !u!114 &8908440367335690628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77bba0f777f3aa4086bfa23b496fffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 2560852693183216327}
+--- !u!114 &2560852693183216327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316529704785690274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88c1047f1aa723469c158cee6275c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 1
+  rotationDuration: 0.5
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.002714932
+      value: 0.0018658042
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5129007
+      value: 1
+      inSlope: -0.095589064
+      outSlope: -0.095589064
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.42854145
+    - serializedVersion: 3
+      time: 0.6730491
+      value: 0.7998798
+      inSlope: 0.07593554
+      outSlope: 0.07593554
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.5240186
+    - serializedVersion: 3
+      time: 0.8210175
+      value: 0.99816513
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9157035
+      value: 0.92138046
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationAxis: {x: 1, y: 0, z: 0}
+  startAngle: 180
+  endAngle: 0
+  rotateMode: 0
+--- !u!4 &8093076971601772933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1276512049353291640, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+  m_PrefabInstance: {fileID: 7054737437553243901}
+  m_PrefabAsset: {fileID: 0}

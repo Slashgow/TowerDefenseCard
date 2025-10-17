@@ -31,12 +31,12 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
     }
 
-    public void TryPurchaseBooster(Shop selectedShop)
+    public bool TryPurchaseBooster(Shop selectedShop)
     {
         if (CurrentPlayerCoin < selectedShop.CurrentShopCost)
         {
             logger.Log("Not enough YenCoins!",this);
-            return;
+            return false;
         }
 
         currentPlayerCoin -= selectedShop.CurrentShopCost;
@@ -52,6 +52,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
             logger.LogError("BoosterPrefab missing Booster component!", this);
 
         logger.Log("Booster purchased successfully!", this);
+        return true;
     }
 
     public void AddPlayerCoin(int coinAmount)

@@ -105,7 +105,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
 
         foreach (Card card in cardsOnBoard)
         {
-            if (card is CardShop)
+            if (card is CardShop && card is not Merchant)
                 continue;
 
             if (card.GetComponent<PlayerHealth>())
