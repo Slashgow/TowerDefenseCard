@@ -218,6 +218,30 @@ MonoBehaviour:
     m_Localized: sellCardIdea
     m_Metadata:
       m_Items: []
+  - m_Id: 24207406483763200
+    m_Localized: Tavern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24207474054000640
+    m_Localized: Craft a tavern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24207551413743616
+    m_Localized: Recrutment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24207668766175232
+    m_Localized: Recruit another worker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24207766678007808
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24207872538046464
+    m_Localized: Upgrade a defense card with a dish
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

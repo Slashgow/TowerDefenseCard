@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f7fed9169c33f654dbc9ea0cb7c80bee, type: 2}
     - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
       propertyPath: recruitmentOptions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
       propertyPath: recruitmentOptions.Array.data[0].cardIDToSpawn
@@ -85,11 +85,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 937bae5047d98a4459d1f0d872bf3cc7, type: 2}
     - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
+      propertyPath: recruitmentOptions.Array.data[2].cardIDToSpawn
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
+      propertyPath: recruitmentOptions.Array.data[2].spawnOffset.x
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
+      propertyPath: recruitmentOptions.Array.data[2].triggerRecipe
+      value: 
+      objectReference: {fileID: 11400000, guid: 66eb112627610ed47936decf9c7ec409, type: 2}
+    - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
       propertyPath: recruitmentOptions.Array.data[0].recruitmentDelay
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
       propertyPath: recruitmentOptions.Array.data[1].recruitmentDelay
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126976955783116, guid: f6090c54952116d4685ab2f61d0bf230, type: 3}
+      propertyPath: recruitmentOptions.Array.data[2].recruitmentDelay
       value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []

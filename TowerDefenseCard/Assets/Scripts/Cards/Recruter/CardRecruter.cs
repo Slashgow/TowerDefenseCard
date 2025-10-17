@@ -73,8 +73,9 @@ public class CardRecruter : Card
                 continue;
 
             bool isMatchingRecipe = craftInfo.CraftingRecipe == recruitment.triggerRecipe;
+            bool thisCardInvolved = craftInfo.StackCards.Exists(card => card == this);
 
-            if (isMatchingRecipe)
+            if (isMatchingRecipe && thisCardInvolved)
             {
                 if (completedCardID == CardID.CURRENCY)
                 {

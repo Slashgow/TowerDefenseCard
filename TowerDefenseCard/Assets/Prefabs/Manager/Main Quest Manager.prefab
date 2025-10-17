@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3988604651324426627}
   - component: {fileID: 3581945533476828497}
   m_Layer: 0
-  m_Name: Quest 24_Susanoo
+  m_Name: Quest 27_Susanoo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1128534431886111573}
   - component: {fileID: 2848508461406759917}
   m_Layer: 0
-  m_Name: Quest 22_Fujin
+  m_Name: Quest 25_Fujin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,6 +180,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 10
+--- !u!1 &923989492230304425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694489241231581770}
+  - component: {fileID: 5446944503473752855}
+  m_Layer: 0
+  m_Name: Quest 20_Recrutment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &694489241231581770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923989492230304425}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6744237406276751983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5446944503473752855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923989492230304425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2d8de9f23a772458a6639282e900a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354663762447336668
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +235,7 @@ GameObject:
   - component: {fileID: 688680384721702339}
   - component: {fileID: 5258648557199746727}
   m_Layer: 0
-  m_Name: Quest 23_Raijin
+  m_Name: Quest 26_Raijin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,6 +403,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardExploitationID: 43
+--- !u!1 &2472442128409405347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487253200005744217}
+  - component: {fileID: 8549305122982839021}
+  m_Layer: 0
+  m_Name: Quest 22_Upgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487253200005744217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472442128409405347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6744237406276751983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8549305122982839021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472442128409405347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aa7ac95623d784ea0a140d75d60e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2563946560499925609
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +458,7 @@ GameObject:
   - component: {fileID: 5509736477031912154}
   - component: {fileID: 5427258070229270780}
   m_Layer: 0
-  m_Name: Quest 19_Hachiman
+  m_Name: Quest 21_Hachiman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +547,7 @@ GameObject:
   - component: {fileID: 299799662752392757}
   - component: {fileID: 3650734080597979023}
   m_Layer: 0
-  m_Name: Quest 20_Dragon
+  m_Name: Quest 23_Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +771,7 @@ GameObject:
   - component: {fileID: 1846074071156962077}
   - component: {fileID: 6763654258346137590}
   m_Layer: 0
-  m_Name: Quest 25_Okuninushi
+  m_Name: Quest 28_Okuninushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,7 +860,7 @@ GameObject:
   - component: {fileID: 4591904941144412433}
   - component: {fileID: 7808302902195712193}
   m_Layer: 0
-  m_Name: Quest 21_Amaterasu
+  m_Name: Quest 24_Amaterasu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,6 +939,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCardId: 21
+--- !u!1 &5526308103123878590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5615355189004865562}
+  - component: {fileID: 5125480105907023208}
+  m_Layer: 0
+  m_Name: Quest 19_Tavern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5615355189004865562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526308103123878590}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6744237406276751983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5125480105907023208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526308103123878590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc02a70f624d1c44e9ae1ca1de01a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCardId: 84
 --- !u!1 &5576503544653934334
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +1078,10 @@ Transform:
   - {fileID: 8180455184194809836}
   - {fileID: 6527628310666978823}
   - {fileID: 6673767768456557579}
+  - {fileID: 5615355189004865562}
+  - {fileID: 694489241231581770}
   - {fileID: 5509736477031912154}
+  - {fileID: 487253200005744217}
   - {fileID: 299799662752392757}
   - {fileID: 4591904941144412433}
   - {fileID: 1128534431886111573}
@@ -1366,6 +1502,50 @@ MonoBehaviour:
     condition: {fileID: 6856871288931216174}
     goalCount: 1
     isLocked: 1
+  - questId: Tavern
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207406483763200
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207474054000640
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 5125480105907023208}
+    goalCount: 1
+    isLocked: 1
+  - questId: Recrutment
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207551413743616
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207668766175232
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 5446944503473752855}
+    goalCount: 1
+    isLocked: 1
   - questId: Hachiman
     title:
       m_TableReference:
@@ -1386,6 +1566,28 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     condition: {fileID: 5427258070229270780}
+    goalCount: 1
+    isLocked: 1
+  - questId: Upgrade
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207766678007808
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:21e217473ef47cb49a44b3c6b9bb0c92
+      m_TableEntryReference:
+        m_KeyId: 24207872538046464
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    condition: {fileID: 8549305122982839021}
     goalCount: 1
     isLocked: 1
   - questId: Dragon

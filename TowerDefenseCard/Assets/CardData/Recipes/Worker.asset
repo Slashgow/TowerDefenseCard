@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670811e3a2d3f4045919e488237c38e6, type: 3}
+  m_Name: Worker
+  m_EditorClassIdentifier: 
+  ingredients:
+  - cardID: 84
+    quantity: 1
+    isNotDestroyedOnCraft: 1
+    carpenterSpeedModifier: 0
+    farmerSpeedModifier: 0
+  - cardID: 26
+    quantity: 1
+    isNotDestroyedOnCraft: 0
+    carpenterSpeedModifier: 0
+    farmerSpeedModifier: 0
+  - cardID: 42
+    quantity: 1
+    isNotDestroyedOnCraft: 1
+    carpenterSpeedModifier: 1
+    farmerSpeedModifier: 1
+  craftingDelay: 10
+  outputCards:
+  - cardID: 41
+    cardPrefab: {fileID: 319473351768311903, guid: 212307dff9b2ebc48a0bdbb2cd118dcb, type: 3}
+    dropChance: 100
