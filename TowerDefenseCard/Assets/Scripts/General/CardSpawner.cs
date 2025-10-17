@@ -1,11 +1,12 @@
 using UnityEngine;
 
+
 public class CardSpawner : MonoBehaviour
 {
     [SerializeField] private bool spawnOnStart = true;
     [SerializeField] private CardID cardIDToSpawn;
     [SerializeField, Range(0, 10)] private int startAmount;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] protected Transform spawnPoint;
 
     public int StartAmount => startAmount;
 

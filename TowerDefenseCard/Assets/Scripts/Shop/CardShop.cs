@@ -3,6 +3,7 @@ using UnityEngine.Localization.Settings;
 
 public class CardShop : Card, ILoadable, ISavable
 {
+    [SerializeField] private bool unlockOnStart = false;
     [SerializeField] private bool spawnBoosterOnStart;
 
     [SerializeField] private Shop shop;
@@ -33,6 +34,9 @@ public class CardShop : Card, ILoadable, ISavable
     protected override void Start()
     {
         base.Start();
+
+        if (unlockOnStart)
+            shop.Unlock();
 
         InitializeLockGraphics();
         UpdateUI();

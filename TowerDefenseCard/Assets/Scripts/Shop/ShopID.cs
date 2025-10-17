@@ -4,5 +4,6 @@
     BASE,
     DEFENSE,
     ENGINEERING,
-    FOOD
+    FOOD,
+    MERCHANT
 }

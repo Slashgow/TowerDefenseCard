@@ -113,6 +113,12 @@ MonoBehaviour:
   - card: {fileID: 6756270804770270514, guid: bc8740dcbbb83704cbf71d4f4eae2147, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 2055b1eb7e6eb7046a72c9732fa76273, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 597159905614504105, guid: 62672558cd66fc14c8515fab41de7309, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
   - card: {fileID: 5596509187565464847, guid: 4efd486af8e4f3e47a7c5643b59464d7, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -303,6 +309,9 @@ MonoBehaviour:
     isDiscovered: 0
     isClickedAfterNotification: 0
   - card: {fileID: 2861984798354678937, guid: 279b997a2faabcb43b67f7dee4b673c2, type: 3}
+    isDiscovered: 0
+    isClickedAfterNotification: 0
+  - card: {fileID: 8871913060487438698, guid: 8940fcd8a72364b43ac01144fc8315f3, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
   startMaxCardsAllowed: 20
