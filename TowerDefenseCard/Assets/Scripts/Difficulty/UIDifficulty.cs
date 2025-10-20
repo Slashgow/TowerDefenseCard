@@ -14,6 +14,8 @@ public class UIDifficulty : MonoBehaviour, IUISelectable<DifficultyData>
     [SerializeField] private TextMeshProUGUI ennemyHealthModifierValueText;
     [SerializeField] private TextMeshProUGUI ennemyDamageModifierValueText;
     [SerializeField] private TextMeshProUGUI ennemyAttackSpeedModifierValueText;
+    [SerializeField] private TextMeshProUGUI startCardsAllowedValueText;
+    [SerializeField] private TextMeshProUGUI startDefenseCardsAllowedValueText;
 
     public event Action<DifficultyData> OnSelectEvent;
 
@@ -38,5 +40,8 @@ public class UIDifficulty : MonoBehaviour, IUISelectable<DifficultyData>
         modifier = difficultyData.EnnemyAttackSpeedPercentModifier;
         sign = modifier >= 0 ? "+" : "-";
         ennemyAttackSpeedModifierValueText.text = $"{sign}{Mathf.Abs(modifier)}%";
+
+        startCardsAllowedValueText.text = difficultyData.StartMaxCardsAllowed.ToString();
+        startDefenseCardsAllowedValueText.text = difficultyData.StartMaxDefenseCardsAllowed.ToString();
     }
 }

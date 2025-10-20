@@ -35,12 +35,12 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public List<CardDiscoveryState> AllCards => allCards;
 
     [SerializeField, Range(0, 100)] private int startMaxCardsAllowed = 30;
-    public int StartMaxCardsAllowed => startMaxCardsAllowed;
+    public int StartMaxCardsAllowed => DifficultyManager.HasInstance ? DifficultyManager.Instance.CurrentDifficultyData.StartMaxCardsAllowed : startMaxCardsAllowed;
     public int MaxCardsAllowed { get; private set; }
     public int CurrentNumberOfCards { get; private set; }
 
     [SerializeField, Range(0, 100)] private int startMaxCardsDefenseAllowed = 2;
-    public int StartMaxCardsDefenseAllowed => startMaxCardsDefenseAllowed;
+    public int StartMaxCardsDefenseAllowed => DifficultyManager.HasInstance ? DifficultyManager.Instance.CurrentDifficultyData.StartMaxDefenseCardsAllowed : startMaxCardsDefenseAllowed;
     public int MaxCardsDefenseAllowed { get; private set; }
     public int CurrentNumberOfDefenseCards { get; private set; }
     public bool IsMaxDefenseCardsReached => CurrentNumberOfDefenseCards >= MaxCardsDefenseAllowed;
@@ -398,9 +398,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
     public void Load(GameSaveData gameSaveData)
     {
         CurrentNumberOfCards = gameSaveData.currentNumberOfCards;
-        MaxCardsAllowed = startMaxCardsAllowed;
+        MaxCardsAllowed = StartMaxCardsAllowed;
         //CurrentNumberOfDefenseCards = gameSaveData.currentNumberOfDefenseCards;
-        MaxCardsDefenseAllowed = startMaxCardsDefenseAllowed;
+        MaxCardsDefenseAllowed = StartMaxCardsDefenseAllowed;
         OnUpdateMaxNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateNumberOfCards?.Invoke(CurrentNumberOfCards, MaxCardsAllowed);
         OnUpdateMaxNumberOfDefenseCards?.Invoke(CurrentNumberOfDefenseCards, MaxCardsDefenseAllowed);

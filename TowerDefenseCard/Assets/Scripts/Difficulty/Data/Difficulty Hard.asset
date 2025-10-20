@@ -17,3 +17,5 @@ MonoBehaviour:
   ennemyHealthPercentModifier: 10
   ennemyDamagePercentModifier: 15
   ennemyAttackSpeedPercentModifier: 20
+  startMaxCardsAllowed: 20
+  startMaxDefenseCardsAllowed: 2
