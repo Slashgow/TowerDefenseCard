@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1303275908409299606}
   - component: {fileID: 7261374961265092090}
   - component: {fileID: 4284565670028087877}
+  - component: {fileID: 652354637053883474}
   m_Layer: 6
   m_Name: Ressource
   m_TagString: Untagged
@@ -145,9 +146,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
-  detectionLayerMaskShop:
-    serializedVersion: 2
-    m_Bits: 512
+  parentFollower: {fileID: 652354637053883474}
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5
@@ -325,6 +324,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb4bebe218148c41bc04cd6e9df183e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &652354637053883474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161c1828a61ebf843990d4bbea11e1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDelay: 0.05
+  catchUpSpeed: 0.25
+  lagLocalOffset: {x: 0.1, y: -0.5, z: 0}
+  positionDistanceThreshold: 0.5
+  angleDifferenceThreshold: 0.5
+  lagPosition: 1
+  lagRotation: 1
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

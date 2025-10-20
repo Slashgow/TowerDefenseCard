@@ -1,7 +1,9 @@
 
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,10 +12,16 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     [SerializeField] private bool autoStackOnEnable = true;
     [SerializeField, Range(0f,1f)] private float smoothTime = 0.02f;
     [SerializeField, Range(0f, 180f)] private float maxTiltAngle = 20f;
+    [SerializeField, Range(0f,2f)] private float returnDuration = 0.2f;
     [SerializeField, Range(0f, 1f)] protected float overlapRadius = 0.5f;
   
     [SerializeField] private LayerMask detectionLayerMaskReseller;
     [SerializeField][Range(0f, 1f)] protected float stackingHeight = 0.1f;
+
+    public Vector3 TargetStackPosition => new Vector3(0f, -stackingHeight, 0f);
+
+    [Header("Lag Effect")]
+    [SerializeField] private ParentFollower parentFollower;
 
     private Vector2 startPosition;
     private Transform startParent;
@@ -22,6 +30,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     protected Camera mainCamera;
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPos;
+    private Vector3 dragOffset;
 
     public static event Action OnStartDragCard;
     public static event Action OnEndDragCard;
@@ -31,6 +40,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     public static event Action OnReleaseCard;
     public event Action OnPointerDownEvent;
     public event Action OnPointerUpEvent;
+
+    private Tween resetTiltLerp;
 
     protected override void OnEnable()
     {
@@ -43,6 +54,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     protected void Start()
     {
         mainCamera = Camera.main;
+
+        if (parentFollower != null)
+            parentFollower.enabled = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -62,10 +76,20 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         {
             CraftingManager.Instance.TryCancelCraft(this.card);
             card.OnUnstack();
+
+            if (parentFollower != null)
+                parentFollower.enabled = false;
         }     
 
         startPosition = transform.position;
         isDragging = true;
+
+        // NEW: Calculate the offset between mouse position and card position
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = transform.position.z;
+        dragOffset = transform.position - mousePos;
+
+        resetTiltLerp?.Kill();
 
         CardUtility.AssignSortingOrderRecursively(card.transform, 20);
     }
@@ -78,7 +102,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = -0f; // Ensure 2D
-        targetPos = mousePos;
+        targetPos = mousePos + dragOffset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
         // Optional: Tilt card like Hearthstone 
@@ -86,9 +110,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         float tiltAngle = Mathf.Clamp(delta.x * 10f, -maxTiltAngle, maxTiltAngle); // Tilt based on movement
         transform.rotation = Quaternion.Euler(0, 0, tiltAngle);
 
-        if(CardMovementInput.Instance.IsMagnetCardActive)
+        if (CardMovementInput.Instance.IsMagnetCardActive)
             MagnetSameTypeOfCard();
     }
+
 
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -97,11 +122,17 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         OnPointerUpEvent?.Invoke();
         OnReleaseCard?.Invoke();
         isDragging = false;
-        transform.rotation = Quaternion.identity; 
+
+        resetTiltLerp?.Kill();
+        resetTiltLerp = transform.DORotateQuaternion(Quaternion.identity, returnDuration).SetEase(Ease.OutQuad).SetUpdate(true);
+
+        //transform.rotation = Quaternion.identity;
+
         HandleDrop();
         CardManager.Instance.HideAllCardsOutline();
         CameraMovement.Instance.IsDraggindEnable = true;
     }
+
 
     private void HandleDrop()
     {
@@ -157,6 +188,17 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                     Vector3 newPos = Vector3.zero;
                     newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
                     transform.localPosition = newPos;
+
+                    // Ensure the card has a ParentFollower and set its target offset
+                    ParentFollower follower = card.GetComponent<ParentFollower>();
+                    if (follower == null)
+                    {
+                        follower = card.gameObject.AddComponent<ParentFollower>();
+                    }
+                    follower.enabled = false;
+
+
+
                     CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
 
                     if (CraftingManager.Instance.TryCraft(otherCard.transform.root, this.card))
@@ -173,6 +215,11 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         transform.position = pos2D;
         CardUtility.AssignSortingOrderRecursively(card.transform, 3);
         this.card.OnUnstack();
+        // Disable ParentFollower when not stacked
+        if (parentFollower != null)
+        {
+            parentFollower.enabled = false;
+        }
         //transform.SetParent(startParent, false);
     }
 
@@ -214,6 +261,14 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 newPos.y = -stackingHeight * (targetCard.StackedCards.Count);
                 otherCard.transform.localPosition = newPos;
 
+                // Ensure the card has a ParentFollower and set its target offset
+                ParentFollower follower = otherCard.GetComponent<ParentFollower>();
+                if (follower == null)
+                {
+                    follower = otherCard.gameObject.AddComponent<ParentFollower>();
+                }
+                follower.enabled = true; // Enable during magnet stacking
+
                 CardUtility.AssignSortingOrderRecursively(otherCard.transform,
                     targetCard.CardSprite.sortingOrder + targetCard.transform.childCount);
 
@@ -243,10 +298,42 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         OnStartDragCard?.Invoke();
+
+        List<Card> cards = CardUtility.GetAllCards(card.gameObject);
+
+        for (int i = 1; i < cards.Count; i++)
+        {
+            var stackedCard = cards[i];
+            if (stackedCard != null)
+            {
+                ParentFollower follower = stackedCard.GetComponent<ParentFollower>();
+                if (follower == null)
+                {
+                    follower = stackedCard.gameObject.AddComponent<ParentFollower>();
+                }
+                follower.enabled = true; // Enable during drag
+            }
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         OnEndDragCard?.Invoke();
+
+        List<Card> cards = CardUtility.GetAllCards(card.gameObject);
+
+        for (int i = 1; i < cards.Count; i++)
+        {
+            var stackedCard = cards[i];
+            if (stackedCard != null)
+            {
+                ParentFollower follower = stackedCard.GetComponent<ParentFollower>();
+                if (follower != null)
+                {
+                    //follower.enabled = true; // Keep enabled briefly
+                    //follower.ScheduleDisable(); // Schedule disable after duration
+                }
+            }
+        }
     }
 }
