@@ -20,11 +20,16 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
 
     [SerializeField] private List<CardShop> cardShops = new List<CardShop>();
 
+    [SerializeField] private PoolingSystem currencyPool;
+    [SerializeField] private Transform spawnPoint;
+
     public static event Action OnPurchaseBooster;
     public static event Action OnPurchasePartiallyBoosterEvent;
 
     public static void OnPurchasePartiallyBooster() => OnPurchasePartiallyBoosterEvent?.Invoke();
     public UnityEvent OnPurchaseBoosterUnity;
+
+    public int AdditionalInkFromEarlyStart => (int)Mathf.Max(Mathf.Ceil(CraftingManager.Instance.TimeCraftMode), 0f);
 
     private void Start()
     {
@@ -70,6 +75,17 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
         }
         currentPlayerCoin -= coinAmount;
         OnUpdatePlayerCoin?.Invoke(CurrentPlayerCoin);
+    }
+
+    public void SpawnAdditionalInkEarlyStart()
+    {
+        for (int i = 0; i < AdditionalInkFromEarlyStart; i++)
+        {
+            logger.Log($"spawn currency | {i} | coint amount {AdditionalInkFromEarlyStart} ", this);
+            GameObject currencyGameObjectInstance = currencyPool.GetPrefabFromPool(spawnPoint.position);
+            currencyGameObjectInstance.GetComponent<Currency>().Setup(currencyPool);
+        }
+        AddPlayerCoin(AdditionalInkFromEarlyStart);
     }
 
     public Shop GetShopByID(ShopID shopID) => cardShops.FirstOrDefault(cardShop => cardShop.Shop.ShopID == shopID).Shop;

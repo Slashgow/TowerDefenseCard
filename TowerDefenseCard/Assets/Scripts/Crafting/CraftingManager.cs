@@ -18,7 +18,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private float startingTimeElapsed = 0f;
     [SerializeField, HideInInspector] private float timeElapsed = 0f;
-    private Timer CraftingModeDurationTimer;
+    public Timer CraftingModeDurationTimer { get; private set; }
     public event Action OnStartCraftTimer;
     public event Action<float> OnTickTimeCraftingMode;
     public event Action OnHalfTimeCraftingMode;
@@ -371,6 +371,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 }
             });
     }
+
+    public void ResetTimeElapsed() => timeElapsed = 0f;
 
     public int GetCraftIDByCard(Card card)
     {

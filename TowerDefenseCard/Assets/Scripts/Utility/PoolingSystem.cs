@@ -6,7 +6,7 @@ public class PoolingSystem : MonoBehaviour
     [SerializeField]
     private GameObject prefab;
 
-    [SerializeField, Range(0, 20)]
+    [SerializeField, Range(0, 200)]
     private int growPoolSize = 10;
 
     private Queue<GameObject> availablePrefab = new Queue<GameObject>();
