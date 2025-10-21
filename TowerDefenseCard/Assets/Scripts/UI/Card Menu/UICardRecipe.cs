@@ -1,11 +1,13 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UICardRecipe : UICardMenu
 {
     [SerializeField] private TextMeshProUGUI cardAmount;
+    [SerializeField] private Image isDestroyedOnCraftImage;
 
-    public void SetupUICardRecipe(CardData cardData , int cardAmount)
+    public void SetupUICardRecipe(CardData cardData , int cardAmount, bool isDestroyedOnCraft)
     {
         this.cardData = cardData;
         cardTitle.text = cardData.CardName.GetLocalizedString();
@@ -13,6 +15,11 @@ public class UICardRecipe : UICardMenu
         cardImage.sprite = cardData.CardSprite;
         this.cardAmount.text = cardAmount.ToString();
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
+
+        if(isDestroyedOnCraft)
+            isDestroyedOnCraftImage.gameObject.SetActive(true);
+        else
+            isDestroyedOnCraftImage.gameObject.SetActive(false);
     }
 
     public void SetupUICardRecipe(CardData cardData, string dropChance)
@@ -23,5 +30,6 @@ public class UICardRecipe : UICardMenu
         cardImage.sprite = cardData.CardSprite;
         this.cardAmount.text = dropChance;
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
+        isDestroyedOnCraftImage.gameObject.SetActive(false);
     }
 }

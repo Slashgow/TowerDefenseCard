@@ -232,7 +232,7 @@ public class UICardMoreStat : MonoBehaviour
             {
                 GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
                 UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
-                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity);
+                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity, !ingredient.isNotDestroyedOnCraft);
             }
         }
         else
@@ -246,7 +246,7 @@ public class UICardMoreStat : MonoBehaviour
             {
                 GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
                 UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
-                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity);
+                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity, !ingredient.isNotDestroyedOnCraft);
             }
         }
     }
