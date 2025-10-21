@@ -29,7 +29,7 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     public static void OnPurchasePartiallyBooster() => OnPurchasePartiallyBoosterEvent?.Invoke();
     public UnityEvent OnPurchaseBoosterUnity;
 
-    public int AdditionalInkFromEarlyStart => (int)Mathf.Max(Mathf.Ceil(CraftingManager.Instance.TimeCraftMode), 0f);
+    public int AdditionalInkFromEarlyStart => (int)Mathf.Max(Mathf.Ceil(CraftingManager.Instance.RemainingTime), 0f);
 
     private void Start()
     {

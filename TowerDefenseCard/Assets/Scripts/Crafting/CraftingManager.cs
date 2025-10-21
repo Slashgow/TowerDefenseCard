@@ -17,7 +17,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     public event Action<CardID> OnDestroyCard = delegate { };
 
     private float startingTimeElapsed = 0f;
-    [SerializeField, HideInInspector] private float timeElapsed = 0f;
+    public float RemainingTime => TimeCraftMode - startingTimeElapsed;
+    [SerializeField] private float timeElapsed = 0f;
     public Timer CraftingModeDurationTimer { get; private set; }
     public event Action OnStartCraftTimer;
     public event Action<float> OnTickTimeCraftingMode;
