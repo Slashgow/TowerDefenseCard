@@ -716,6 +716,7 @@ MonoBehaviour:
   DotDamageValue: {fileID: 1618124905139862286}
   DotDurationValue: {fileID: 3549797817056145986}
   descriptionValue: {fileID: 2850017815655751602}
+  recipeHighestParent: {fileID: 24443873441142525}
   recipeParent: {fileID: 5230143422396292919}
   pairCardAndCostPrefab: {fileID: 3167682820422909871, guid: 2e4a71a4de83dd240baff11ec29f083d, type: 3}
   uIPageSuccess: {fileID: 68156040694936588}
@@ -2217,9 +2218,9 @@ RectTransform:
   - {fileID: 2065146145828547775}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 871.0741, y: 84}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5201127864426038949
@@ -3658,9 +3659,9 @@ RectTransform:
   - {fileID: 3515593723216350405}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163.0741, y: 84}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6519874431125508335
@@ -4043,9 +4044,9 @@ RectTransform:
   - {fileID: 6979253010129847652}
   m_Father: {fileID: 8634523531201371170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 517.0741, y: 84}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 314, y: 94}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3963824868739656015

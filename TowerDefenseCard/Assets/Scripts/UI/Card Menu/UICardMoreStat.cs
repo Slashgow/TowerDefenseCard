@@ -13,6 +13,7 @@ public class UICardMoreStat : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeDescription;
     [SerializeField] private TextMeshProUGUI damageValue, attackSpeedValue, attackRangeValue, AttackAreaValue, DotDamageValue, DotDurationValue;
     [SerializeField] private TextMeshProUGUI descriptionValue;
+    [SerializeField] private GameObject recipeHighestParent;
     [SerializeField] private Transform recipeParent;
     [SerializeField] private GameObject pairCardAndCostPrefab;
 
@@ -54,6 +55,7 @@ public class UICardMoreStat : MonoBehaviour
             upgradeDescription.gameObject.SetActive(false);
 
         CardUtility.DestroyAllChildren(recipeParent);
+        recipeHighestParent.SetActive(false);
         recipeParent.gameObject.SetActive(false);
         descriptionValue.text = string.Empty;
     }
@@ -188,7 +190,7 @@ public class UICardMoreStat : MonoBehaviour
             upgradeDescription.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
         }
 
-
+        recipeHighestParent.SetActive(true);
         recipeParent.gameObject.SetActive(true);   
         CardUtility.DestroyAllChildren(recipeParent);
 
