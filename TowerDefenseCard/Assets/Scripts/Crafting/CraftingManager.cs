@@ -65,7 +65,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         if (cardDiscoveryStateArcher == null || !cardDiscoveryStateArcher.isDiscovered)
             return;
 
-        StartCraftingModeTimer();
+        StartCraftingModeTimer(TimeCraftMode);
     }
 
     public bool TryCraft(Transform stackParent, Card movedCard)
@@ -349,17 +349,14 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         currentCrafts.Remove(GetCraftInfoByID(craftID));
     }
 
-    public void StartCraftingModeTimer()
+    public void StartCraftingModeTimer(float duration)
     {
         startingTimeElapsed = timeElapsed;
 
         OnStartCraftTimer?.Invoke();
 
-        CraftingModeDurationTimer = Timer.Register(TimeCraftMode, 
-            onComplete: () => {
-                GameManager.Instance.SwitchGameMode();
-                timeElapsed = 0;
-                }, 
+        CraftingModeDurationTimer = Timer.Register(duration, 
+            onComplete: OnCraftingModeTimerComplete, 
             onUpdate: timeElapsed =>
             {
                 OnTickTimeCraftingMode?.Invoke(timeElapsed + startingTimeElapsed);
@@ -371,6 +368,34 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                     hasTriggeredHalfTimeEvent = true;
                 }
             });
+    }
+
+    private void OnCraftingModeTimerComplete()
+    {
+        if (DifficultyManager.HasInstance)
+        {
+            if(DifficultyManager.Instance.CurrentDifficultyData.Difficulty == GameDifficulty.EASY &&
+               WaveManager.Instance.CurrentWaveIndex == 0 &&
+               CardManager.Instance.CurrentNumberOfDefenseCards < 2)
+            {
+                timeElapsed = 0f;
+
+                if (originalTotalTimesCraftMode[0] > 200f)
+                    originalTotalTimesCraftMode[0] *= 0.5f;
+               
+                StartCraftingModeTimer(TimeCraftMode);
+            }
+            else
+            {
+                GameManager.Instance.SwitchGameMode();
+                timeElapsed = 0f;
+            }
+        }
+        else
+        {
+            GameManager.Instance.SwitchGameMode();
+            timeElapsed = 0f;
+        } 
     }
 
     public void ResetTimeElapsed() => timeElapsed = 0f;

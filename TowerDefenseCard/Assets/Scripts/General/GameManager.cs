@@ -94,12 +94,12 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         //StartCoroutine(StartCraftingModeAfterDelay());
     }
 
-    public IEnumerator StartCraftingModeAfterDelay()
-    {
-        yield return new WaitForSeconds(delayBeforeCraftTimerStart);
-        CurrentGameMode = GameMode.CRAFTING;
-        CraftingManager.Instance.StartCraftingModeTimer();
-    }
+    //public IEnumerator StartCraftingModeAfterDelay()
+    //{
+    //    yield return new WaitForSeconds(delayBeforeCraftTimerStart);
+    //    CurrentGameMode = GameMode.CRAFTING;
+    //    CraftingManager.Instance.StartCraftingModeTimer();
+    //}
 
     public void SwitchGameMode()
     {
