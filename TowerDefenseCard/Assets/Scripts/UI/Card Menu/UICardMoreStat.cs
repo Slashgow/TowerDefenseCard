@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -204,9 +204,40 @@ public class UICardMoreStat : MonoBehaviour
                 uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(outputCard.cardID).CardData, dropChance);
             }
         }
+        else if(card is CardWorker)
+        {
+            List<CraftingRecipe> craftingRecipes = CraftingManager.Instance.GetRecipesByOutputCardID(CardID.CURRENCY);
+
+            CraftingRecipe craftingRecipe = null;
+
+            switch (card.CardData.CardID)
+            {
+                case CardID.WORKER:
+                    craftingRecipe = craftingRecipes.FirstOrDefault(recipe => recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.RICE));
+                    break;
+                case CardID.FARMER:
+                    craftingRecipe = craftingRecipes.FirstOrDefault(recipe => recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.SICKLE));
+                    break;
+                case CardID.CARPENTER:
+                    craftingRecipe = craftingRecipes.FirstOrDefault(recipe => recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.HAMMER));
+                    break;
+                default:
+                    break;
+            }
+
+            if(craftingRecipe == null)
+                return;
+
+            foreach (CraftingRecipe.Ingredient ingredient in craftingRecipe.Ingredients)
+            {
+                GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
+                UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
+                uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(ingredient.cardID).CardData, ingredient.quantity);
+            }
+        }
         else
         {
-            CraftingRecipe craftingRecipe = CraftingManager.Instance.GetRecipeByOuputCardID(card.CardData.CardID);
+            CraftingRecipe craftingRecipe = CraftingManager.Instance.GetRecipeByOutputCardID(card.CardData.CardID);
 
             if (craftingRecipe == null)
                 return;

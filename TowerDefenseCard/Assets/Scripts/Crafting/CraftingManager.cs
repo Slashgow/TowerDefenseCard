@@ -419,11 +419,18 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         return false;
     }
 
-    public CraftingRecipe GetRecipeByOuputCardID(CardID cardID)
+    public CraftingRecipe GetRecipeByOutputCardID(CardID cardID)
     {
         CraftingRecipe recipe = recipes.FirstOrDefault(recipe =>
              recipe.OutputCards.Any(output => output.cardID == cardID));
         return recipe;
+    }
+
+    public List<CraftingRecipe> GetRecipesByOutputCardID(CardID cardID)
+    {
+        List<CraftingRecipe> matchedRecipes = recipes.Where(recipe =>
+             recipe.OutputCards.Any(output => output.cardID == cardID)).ToList();
+        return matchedRecipes;
     }
 
     public List<(CardID cardID, float chance)> GetPossibleOutputs(CraftingRecipe recipe)
