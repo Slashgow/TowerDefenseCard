@@ -335,7 +335,15 @@ MonoBehaviour:
     spawnPoint: {fileID: 8093076971601772933}
     booster: {fileID: 2897151779044961995, guid: aa076898c7fd90c45b8836fbe1beb91e, type: 3}
     dropChanceBonus: 25
-    shopCardIdeas: []
+    shopCardIdeas:
+    - dropPercentage: 100
+      cardIdeaPrefab: {fileID: 597159905614504105, guid: ea2f2b4533578464ba8ba9d5a1275cd5, type: 3}
+    - dropPercentage: 100
+      cardIdeaPrefab: {fileID: 3266315216697312082, guid: 0deadc427d7cb0c40a25c2dadcd7d063, type: 3}
+    - dropPercentage: 100
+      cardIdeaPrefab: {fileID: 6756270804770270514, guid: bc8740dcbbb83704cbf71d4f4eae2147, type: 3}
+    - dropPercentage: 100
+      cardIdeaPrefab: {fileID: 6756270804770270514, guid: a5c5e3532601d534b83fd4350cd5cb20, type: 3}
     cardIdeaVisualPrefab: {fileID: -230825123419585, guid: 5c0b48fa9d2b54940ad0ed4ce6d30ac3, type: 3}
   lockSprite: {fileID: -320074091, guid: ba30cc8b7b008cc4885b76205f49e07e, type: 3}
   colorChanger: {fileID: 1216720110161960565}
