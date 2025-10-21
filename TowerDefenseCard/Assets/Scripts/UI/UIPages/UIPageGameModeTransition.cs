@@ -87,7 +87,8 @@ public class UIPageGameModeTransition : UIPage
             GameSettingsManager.Instance.BackToPreviousPauseSetting();
             uiInput.StartReceivingInput();
             uiTime.OnResume(true);
-            Hide();
+            //Hide();
+            uIPageController.ShowGamePage();
             GameManager.Instance.CurrentGameState = GameState.PLAY;
             if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)
             {

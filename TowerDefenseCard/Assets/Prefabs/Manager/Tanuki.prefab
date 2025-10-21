@@ -47,14 +47,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollTextWithVoice: {fileID: 6930343964962083189}
-  tanukiText: {fileID: 0}
-  bubbleImage: {fileID: 0}
-  tanukiImage: {fileID: 0}
+  tanukiTextWorldSpace: {fileID: 0}
+  bubbleImageWorldSpace: {fileID: 0}
+  tanukiImageWorldSpace: {fileID: 0}
+  tanukiTextScreenSpace: {fileID: 0}
+  bubbleImageScreenSpace: {fileID: 0}
+  tanukiImageScreenSpace: {fileID: 0}
   lastLineDurationThresholdForTeasing: 120
   keepShowingDuration: 15
   defaultTanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
   timeBeforeStartTutoText: 15
   timeBetweenTextInQueue: 3
+  canHaveSameLineSuccessively: 0
   linesWhenPlayerHit:
     lines:
     - line:
@@ -318,6 +322,38 @@ MonoBehaviour:
           m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
         m_TableEntryReference:
           m_KeyId: 2672160777039873
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesResetCraftingTimerEasyModeNoDefense:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 22862156355989504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 22863945553801216
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: -1392680081, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 22864089716224000
           m_Key: 
         m_FallbackState: 0
         m_WaitForCompletion: 0

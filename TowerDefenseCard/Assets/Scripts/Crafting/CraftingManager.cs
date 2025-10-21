@@ -39,6 +39,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
+    public static event Action OnResetCraftingManagerEasyModeNoDefense;
+
     private void Start()
     {
         if(GameManager.HasInstance)
@@ -383,6 +385,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 if (originalTotalTimesCraftMode[0] > 200f)
                     originalTotalTimesCraftMode[0] *= 0.5f;
                
+                OnResetCraftingManagerEasyModeNoDefense?.Invoke();
                 StartCraftingModeTimer(TimeCraftMode);
             }
             else

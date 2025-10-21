@@ -28,7 +28,7 @@ public class UIPageController : MonoBehaviour
             page.Hide();
         }
     }
-
+    public void ShowGamePage() => ShowPage(startPage);
     public void BackToPreviousPage() => ShowPage(previousPage);
     private UIPage GetPage(UIPage pageToShow) => pages.First(page => page == pageToShow);
 

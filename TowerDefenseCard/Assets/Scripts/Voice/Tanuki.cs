@@ -9,10 +9,13 @@ public class Tanuki : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ScrollTextWithVoice scrollTextWithVoice;
-    [SerializeField] private TextMeshProUGUI tanukiText;
-    [SerializeField] private Image bubbleImage;
-    [SerializeField] private Image tanukiImage;
-  
+    [SerializeField] private TextMeshProUGUI tanukiTextWorldSpace;
+    [SerializeField] private Image bubbleImageWorldSpace;
+    [SerializeField] private Image tanukiImageWorldSpace;
+    [SerializeField] private TextMeshProUGUI tanukiTextScreenSpace;
+    [SerializeField] private Image bubbleImageScreenSpace;
+    [SerializeField] private Image tanukiImageScreenSpace;
+
     [Header("Settings")]
     [SerializeField, Range(0f,150f)] private float lastLineDurationThresholdForTeasing = 30f;
     [SerializeField, Range(0f,15f)] private float keepShowingDuration = 10f;
@@ -36,6 +39,7 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private TanukiLine linesStackShortcuts;
     [SerializeField] private TanukiLine linesTutoSellForBooster;
     [SerializeField] private TanukiLine linesTutoDropInkOnShopToBuy;
+    [SerializeField] private TanukiLine linesResetCraftingTimerEasyModeNoDefense;
 
     private Timer startShowTutoTimer;
     private Timer lastLineTimer;
@@ -80,18 +84,29 @@ public class Tanuki : MonoBehaviour
         isDisplayingText = true;
         Timer.Cancel(lastLineTimer);
 
-        bubbleImage.enabled = true;
+        bubbleImageWorldSpace.enabled = true;
+        bubbleImageScreenSpace.enabled = true;
+
         TanukiLineData tanukiLineData = tanukiLine.GetRandomTanukiLineData();
-        tanukiImage.sprite = tanukiLineData.TanukiSprite;
-        scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiText, keepShowingDuration);
+
+        tanukiImageScreenSpace.enabled = true;
+
+        tanukiImageWorldSpace.sprite = tanukiLineData.TanukiSprite;
+        tanukiImageScreenSpace.sprite = tanukiLineData.TanukiSprite;
+
+        scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextWorldSpace, keepShowingDuration);
+        scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextScreenSpace, keepShowingDuration);
 
         lastLineTimer = Timer.Register(lastLineDurationThresholdForTeasing, onComplete: () => ShowTanukiText(linesTeasing));
     }
 
     private void Start()
     {
-        tanukiText.text = string.Empty;
-        bubbleImage.enabled = false;
+        tanukiTextWorldSpace.text = string.Empty;
+        tanukiTextScreenSpace.text = string.Empty;
+        bubbleImageWorldSpace.enabled = false;
+        bubbleImageScreenSpace.enabled = false;
+        tanukiImageScreenSpace.enabled = false;
 
         startShowTutoTimer = Timer.Register(timeBeforeStartTutoText, () => 
         {
@@ -111,8 +126,8 @@ public class Tanuki : MonoBehaviour
         SuccessManager.Instance.FirstFactorySuccess.OnComplete += OnCompleteFirstFactory;
         SuccessManager.Instance.CraftFirstDefenseSuccess.OnComplete += OnCompleteFirstDefense;
         SuccessManager.Instance.CraftTempleSuccess.OnComplete += OnCompleteCraftTemple;
+        CraftingManager.OnResetCraftingManagerEasyModeNoDefense += CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
     }
-
 
     private void OnDestroy()
     {
@@ -141,16 +156,20 @@ public class Tanuki : MonoBehaviour
             SuccessManager.Instance.CraftTempleSuccess.OnComplete -= OnCompleteCraftTemple;
         }
 
+        CraftingManager.OnResetCraftingManagerEasyModeNoDefense -= CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
+
         Timer.Cancel(lastLineTimer);
         Timer.Cancel(queueDelayTimer);
         Timer.Cancel(startShowTutoTimer);
         dialogueQueue.Clear();
     }
 
-    private void ScrollTextWithVoice_OnHideTextComplete()
+    private void ScrollTextWithVoice_OnHideTextComplete(TextMeshProUGUI textMeshProUGUI)
     {
-        bubbleImage.enabled = false;
-        tanukiImage.sprite = defaultTanukiSprite;
+        bubbleImageWorldSpace.enabled = false;
+        bubbleImageScreenSpace.enabled = false;
+        tanukiImageWorldSpace.sprite = defaultTanukiSprite;
+        tanukiImageScreenSpace.enabled = false;
         ProcessNextInQueueWithDelay();
     }
 
@@ -159,6 +178,7 @@ public class Tanuki : MonoBehaviour
     private void CardManager_OnMaxCardsReached() => ShowTanukiText(linesMaxCardsReached);
     private void WaveManager_OnPlayerWasNotHitThisWave() => ShowTanukiText(linesAfterWaveNoHit);
     private void WaveManager_OnPlayerWasHitThisWave() => ShowTanukiText(linesAfterWaveHit);
+    private void CraftingManager_OnResetCraftingManagerEasyModeNoDefense() => ShowTanukiText(linesResetCraftingTimerEasyModeNoDefense);
 
     private void CraftingManager_OnHalfTimeCraftingMode()
     {

@@ -45,7 +45,7 @@ public class TutorialStep
     }
     public void Hide(ScrollTextWithVoice scrollTextWithVoice)
     {
-        scrollTextWithVoice.StopTypingText();
+        //scrollTextWithVoice.StopTypingText();
 
         if (focusGameObject == null)
             return;
