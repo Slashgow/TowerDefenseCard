@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2002788825753034525}
   - component: {fileID: 5039714933184213662}
   - component: {fileID: 6407010441512434590}
+  - component: {fileID: -6129105716120573985}
   m_Layer: 6
   m_Name: RessourceGenerator
   m_TagString: Untagged
@@ -142,14 +143,13 @@ MonoBehaviour:
   autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
+  returnDuration: 0.2
   overlapRadius: 0.5
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
-  detectionLayerMaskShop:
-    serializedVersion: 2
-    m_Bits: 512
+  parentFollower: {fileID: -6129105716120573985}
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5
@@ -327,6 +327,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb4bebe218148c41bc04cd6e9df183e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6129105716120573985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161c1828a61ebf843990d4bbea11e1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDelay: 0.05
+  catchUpSpeed: 0.25
+  lagLocalOffset: {x: 0.1, y: -0.5, z: 0}
+  positionDistanceThreshold: 0.2
+  lagPosition: 1
+  lagRotation: 1
+  disableDelay: 1
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 2139443655130780671}
   - component: {fileID: 7001455847151747302}
   - component: {fileID: 1987891837020106568}
+  - component: {fileID: 3103532112044216929}
   m_Layer: 6
   m_Name: Base Tower
   m_TagString: Untagged
@@ -305,11 +306,13 @@ MonoBehaviour:
   autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
+  returnDuration: 0.2
   overlapRadius: 0.5
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.35
+  parentFollower: {fileID: 3103532112044216929}
 --- !u!50 &1068575674518649929
 Rigidbody2D:
   serializedVersion: 5
@@ -671,6 +674,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownDurationBetweenMoves: 5
   cardMover: {fileID: 2416808471045339520}
+--- !u!114 &3103532112044216929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449703591669134163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161c1828a61ebf843990d4bbea11e1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followDelay: 0.05
+  catchUpSpeed: 0.25
+  lagLocalOffset: {x: 0.1, y: -0.5, z: 0}
+  positionDistanceThreshold: 0.2
+  lagPosition: 1
+  lagRotation: 1
+  disableDelay: 1
 --- !u!1001 &2364463826043977075
 PrefabInstance:
   m_ObjectHideFlags: 0

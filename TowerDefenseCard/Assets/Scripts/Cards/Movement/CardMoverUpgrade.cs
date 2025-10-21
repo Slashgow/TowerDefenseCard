@@ -64,6 +64,13 @@ public class CardMoverUpgrade : CardMover
                                     .OnComplete(() => this.transform.position = new Vector3(2500f,2500f,2500f));
                                 this.enabled = false;
 
+                                //ParentFollower follower = card.GetComponent<ParentFollower>();
+                                //if (follower == null)
+                                //{
+                                //    follower = card.gameObject.AddComponent<ParentFollower>();
+                                //}
+                                //follower.enabled = false;
+
                             }
                             else
                             {
@@ -82,6 +89,13 @@ public class CardMoverUpgrade : CardMover
                         Vector3 newPos = Vector3.zero;
                         newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
                         transform.localPosition = newPos;
+
+                        //ParentFollower follower = card.GetComponent<ParentFollower>();
+                        //if (follower == null)
+                        //{
+                        //    follower = card.gameObject.AddComponent<ParentFollower>();
+                        //}
+                        //follower.enabled = false;
                     }
 
                     CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
@@ -100,6 +114,11 @@ public class CardMoverUpgrade : CardMover
         transform.position = pos2D;
         CardUtility.AssignSortingOrderRecursively(card.transform, 3);
         this.card.OnUnstack();
+
+        if (parentFollower != null)
+        {
+            parentFollower.enabled = false;
+        }
         //transform.SetParent(startParent, false);
     }
 

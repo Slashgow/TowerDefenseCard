@@ -21,7 +21,7 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
     public Vector3 TargetStackPosition => new Vector3(0f, -stackingHeight, 0f);
 
     [Header("Lag Effect")]
-    [SerializeField] private ParentFollower parentFollower;
+    [SerializeField] protected ParentFollower parentFollower;
 
     private Vector2 startPosition;
     private Transform startParent;
@@ -190,13 +190,13 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                     transform.localPosition = newPos;
 
                     // Ensure the card has a ParentFollower and set its target offset
-                    ParentFollower follower = card.GetComponent<ParentFollower>();
-                    if (follower == null)
-                    {
-                        follower = card.gameObject.AddComponent<ParentFollower>();
-                    }
-                    follower.enabled = false;
-
+                    //ParentFollower follower = card.GetComponent<ParentFollower>();
+                    //if (follower == null)
+                    //{
+                    //    follower = card.gameObject.AddComponent<ParentFollower>();
+                    //}
+                    //follower.enabled = false;
+                   
 
 
                     CardUtility.AssignSortingOrderRecursively(card.transform, otherCard.CardSprite.sortingOrder + otherCard.transform.childCount);
@@ -304,6 +304,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         for (int i = 1; i < cards.Count; i++)
         {
             var stackedCard = cards[i];
+
+            if (stackedCard is CardUpgrade && card is CardDefense)
+                continue;
+
             if (stackedCard != null)
             {
                 ParentFollower follower = stackedCard.GetComponent<ParentFollower>();
@@ -311,7 +315,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 {
                     follower = stackedCard.gameObject.AddComponent<ParentFollower>();
                 }
-                follower.enabled = true; // Enable during drag
+                follower.enabled = true;
+                follower.CancelDisableSchedule();// Enable during drag
             }
         }
     }
@@ -331,7 +336,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 if (follower != null)
                 {
                     //follower.enabled = true; // Keep enabled briefly
-                    //follower.ScheduleDisable(); // Schedule disable after duration
+
+                    if(follower.isActiveAndEnabled)
+                        follower.ScheduleDisable(); // Schedule disable after duration
                 }
             }
         }
