@@ -70,13 +70,13 @@ MonoBehaviour:
   m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 441a975b592d7774cac9458ae6c8a713, type: 2}
-  m_sharedMaterial: {fileID: -4791696063031461, guid: 441a975b592d7774cac9458ae6c8a713, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 70fbcade3465a3049bcd08017cba36fe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281216675
+    rgba: 4281748168
   m_fontColor: {r: 0.7843138, g: 0.2901961, b: 0.21176472, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doEffectOnEnable: 1
   transitionText: {fileID: 7324686975185311839}
-  textSizeDuration: 0.2
+  textSizeDuration: 0.5
   textSizeEase:
     serializedVersion: 2
     m_Curve:
@@ -166,8 +166,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.2391352
-      value: 1.0046122
+      time: 0.23640585
+      value: 1.004606
       inSlope: -0.017850269
       outSlope: -0.017850269
       tangentMode: 0
@@ -175,8 +175,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.06889253
     - serializedVersion: 3
-      time: 0.42371234
-      value: 0.7790301
+      time: 0.40735492
+      value: 0.47391534
       inSlope: -0.008281113
       outSlope: -0.008281113
       tangentMode: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.60447216
-      value: 1.0024616
+      time: 0.5908613
+      value: 0.79596436
       inSlope: 0.069964044
       outSlope: 0.069964044
       tangentMode: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.17737399
     - serializedVersion: 3
-      time: 0.80659467
-      value: 0.8789449
+      time: 0.722122
+      value: 0.53290606
       inSlope: 0.075567074
       outSlope: 0.075567074
       tangentMode: 0
@@ -202,8 +202,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.35897186
     - serializedVersion: 3
-      time: 1
-      value: 1
+      time: 0.99316406
+      value: 0.6502533
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   startTextSize: 0
-  endTextSize: 36
+  endTextSize: 120
 --- !u!114 &4300150955996664279
 MonoBehaviour:
   m_ObjectHideFlags: 0
