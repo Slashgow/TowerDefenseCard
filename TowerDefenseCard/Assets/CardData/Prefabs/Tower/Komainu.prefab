@@ -12,14 +12,50 @@ PrefabInstance:
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 1e2c3a533f2d78146a93bf05f1c310c0, type: 2}
+    - target: {fileID: 552554591200885830, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1061360421407002469, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: maxHealth
       value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528804407759035413, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528804407759035413, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528804407759035413, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528804407759035413, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3153706085142239167, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: cardData
       value: 
       objectReference: {fileID: 11400000, guid: 2edb5d92d342e2a4c9c167134f590a72, type: 2}
+    - target: {fileID: 4275893207541019712, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275893207541019712, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275893207541019712, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275893207541019712, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4670104876130534819, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70,11 +106,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458517459328159983, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7449703591669134163, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
       propertyPath: m_Name
       value: Komainu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048759600771906635, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048759600771906635, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048759600771906635, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048759600771906635, guid: bb0086d5cdbbdc94f875d95b909cb33c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9faeaca6f5a5e844bd49e22c19a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 0
   cardDamageorData: {fileID: 11400000, guid: a15a7a29b17907149936834f92d223cb, type: 2}
   enemyLayer:
     serializedVersion: 2

@@ -118,7 +118,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         if (!listenToEvents)
             return;
 
-        WaveManager.Instance.OnSpawnEnnemy += WaveManager_OnSpawnEnnemy;
+        if(WaveManager.HasInstance)
+            WaveManager.Instance.OnSpawnEnnemy += WaveManager_OnSpawnEnnemy;
+
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftComplete;
         CraftingManager.Instance.OnDestroyCard += CraftingManager_OnDestroyCard;
         Reseller.OnResell += Reseller_OnResell;

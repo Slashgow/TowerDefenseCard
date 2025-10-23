@@ -1,6 +1,8 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 {
@@ -8,6 +10,13 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     public WaveDataPaths[] WaveDataPaths => waveDataPaths;
 
     [SerializeField, Range(0f,10f)] private float initialWaveDelay = 5f;
+
+    [Header("Endless Mode")]
+    [SerializeField] private bool enableEndlessMode = false;
+    public bool EnableEndlessMode => enableEndlessMode;
+    public float EndlessModeMultiplier => enableEndlessMode ? 1f + (Mathf.Pow(endlessWaveNumber,2) / 100f) : 1f;
+
+    [SerializeField] private EndlessWaveConfig endlessWaveConfig;
 
     private int currentEnnemyCount;
     private int currentWaveEnnemyIndex = 0;
@@ -22,10 +31,21 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     public event Action<int> OnWaveEnd;
 
     public int NumberOfWaves => waveDataPaths.Length;
-    public bool IsAllWavesCompleted => !(currentWaveIndex < waveDataPaths.Length);
+    public bool IsAllWavesCompleted => enableEndlessMode ? false : !(currentWaveIndex < waveDataPaths.Length);
 
-    public Vector3 CurrentWaveFirstPathStartPosition => SplineManager.Instance.GetSplineDataByID(waveDataPaths[currentWaveIndex].Paths[0])
-        .Spline.GetSampleAtDistance(0f).location;
+    public Vector3 CurrentWaveFirstPathStartPosition
+    {
+        get
+        {
+            if (enableEndlessMode && endlessWaveConfig.pathPool.Length > 0)
+            {
+                return SplineManager.Instance.GetSplineDataByID(endlessWaveConfig.pathPool[0])
+                    .Spline.GetSampleAtDistance(0f).location;
+            }
+            return SplineManager.Instance.GetSplineDataByID(waveDataPaths[currentWaveIndex].Paths[0])
+                .Spline.GetSampleAtDistance(0f).location;
+        }
+    }
 
     private int amountOfSpawnedEnemies;
     private int amountOfEnemiesInCurrentWave;
@@ -34,6 +54,9 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     public static event Action OnPlayerWasHitThisWave;
     public static event Action OnPlayerWasNotHitThisWave;
     public event Action<CardID> OnSpawnEnnemy;
+
+    private int endlessWaveNumber = 0;
+    private SplineID[] currentEndlessWavePaths;
 
     private void OnEnable()
     {
@@ -96,6 +119,63 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         ShowNextWaveVisuals();
     }
 
+    private IEnumerator SpawnEndlessWave()
+    {
+        isWaveActive = true;
+        endlessWaveNumber++;
+
+        int totalEnemies = endlessWaveConfig.totalEnemyCount + (endlessWaveConfig.enemyCountIncreasePerWave * (endlessWaveNumber - 1));
+        float spawnInterval = Mathf.Max(0.1f, endlessWaveConfig.spawnInterval -(endlessWaveConfig.spawnIntervalDecreasePerWave * (endlessWaveNumber - 1)));
+
+        currentEndlessWavePaths = SelectRandomPaths();
+        SplineManager.Instance.ToggleVisuals(currentEndlessWavePaths, true);
+
+        amountOfEnemiesInCurrentWave = totalEnemies;
+        amountOfSpawnedEnemies = 0;
+
+        for (int i = 0; i < totalEnemies; i++)
+        {
+            GameObject enemyPrefab = endlessWaveConfig.enemyPrefabPool[UnityEngine.Random.Range(0, endlessWaveConfig.enemyPrefabPool.Length)];
+
+            SplineID pathID = currentEndlessWavePaths[UnityEngine.Random.Range(0, currentEndlessWavePaths.Length)];
+            SplineData pathData = SplineManager.Instance.GetSplineDataByID(pathID);
+
+            GameObject newEnemy = Instantiate(enemyPrefab,pathData.Spline.GetSampleAtDistance(0f).location, Quaternion.identity);
+
+            OnSpawnEnnemy?.Invoke(enemyPrefab.GetComponent<Card>().CardData.CardID);
+            amountOfSpawnedEnemies++;
+
+            CardUtility.AssignSortingOrderRecursively(newEnemy.transform, indexSortingOrder);
+            newEnemy.GetComponent<AutoCardMovement>().Init(pathData);
+
+            indexSortingOrder += 3;
+
+            yield return new WaitForSeconds(spawnInterval);
+        }
+
+        yield return new WaitUntil(() => AreAllEnemiesDefeated());
+
+        isWaveActive = false;
+        currentWaveIndex++;
+        OnWaveEnd?.Invoke(currentWaveIndex);
+
+        if (!playerWasHitThisWave)
+            OnPlayerWasNotHitThisWave?.Invoke();
+        else
+            OnPlayerWasHitThisWave?.Invoke();
+
+        SplineManager.Instance.ToggleVisuals(currentEndlessWavePaths, false);
+        ResetWaveParameters();
+    }
+
+    private SplineID[] SelectRandomPaths()
+    {
+        int pathCount = Mathf.Min(endlessWaveConfig.maxPathsPerWave, endlessWaveConfig.pathPool.Length);
+        List<SplineID> shuffledPaths = endlessWaveConfig.pathPool.OrderBy(x => UnityEngine.Random.value).ToList();
+        return shuffledPaths.Take(pathCount).ToArray();
+    }
+
+
     private void ResetWaveParameters()
     {
         currentEnnemyCount = 0;
@@ -121,25 +201,35 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
   
     public void TriggerNextWave()
     {
-        if (!isWaveActive && currentWaveIndex < waveDataPaths.Length)
+        if (!isWaveActive)
         {
-            StopAllCoroutines();
-            OnWaveStart?.Invoke(currentWaveIndex + 1);
-            StartCoroutine(SpawnWave(waveDataPaths[currentWaveIndex].WaveData));
+            if (enableEndlessMode)
+            {
+                StopAllCoroutines();
+                OnWaveStart?.Invoke(currentWaveIndex + 1);
+                StartCoroutine(SpawnEndlessWave());
+            }
+            else if (currentWaveIndex < waveDataPaths.Length)
+            {
+                StopAllCoroutines();
+                OnWaveStart?.Invoke(currentWaveIndex + 1);
+                StartCoroutine(SpawnWave(waveDataPaths[currentWaveIndex].WaveData));
+            }
         }
     }
 
     private void ShowNextWaveVisuals()
     {
-        if (currentWaveIndex >= waveDataPaths.Length)
+        if (enableEndlessMode || currentWaveIndex >= waveDataPaths.Length)
             return;
+
 
         SplineManager.Instance.ToggleVisuals(waveDataPaths[currentWaveIndex].Paths, true);
     }
 
     private void HidePreviousWaveVisuals()
     {
-        if (currentWaveIndex == 0)
+        if (enableEndlessMode || currentWaveIndex == 0)
             return;
 
         SplineManager.Instance.ToggleVisuals(waveDataPaths[currentWaveIndex - 1].Paths, false);
@@ -147,6 +237,17 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     private void ShowOnlyFirstPathVisual()
     {
+        if (enableEndlessMode)
+        {
+            foreach (var pathID in endlessWaveConfig.pathPool)
+            {
+                SplineManager.Instance.ToggleVisuals(new SplineID[] { pathID }, false);
+            }
+            return;
+        }
+
+
+
         for (int i = 0; i < waveDataPaths.Length; i++)
         {
             WaveDataPaths waveDataPath = waveDataPaths[i];

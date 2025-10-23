@@ -44,7 +44,7 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             if (isEnemy)
                 finalSpeed *= (1 + (DifficultyManager.HasInstance ?
                     DifficultyManager.Instance.CurrentDifficultyData.EnnemyAttackSpeedPercentModifier / 100f :
-                    0f));
+                    0f)) * WaveManager.Instance.EndlessModeMultiplier;
 
             return finalSpeed;
         }
@@ -75,7 +75,7 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
             if (isEnemy)
                 finalDamage *= (1f + (DifficultyManager.HasInstance ?
                     DifficultyManager.Instance.CurrentDifficultyData.EnnemyDamagePercentModifier / 100f :
-                    0f));
+                    0f)) * WaveManager.Instance.EndlessModeMultiplier;
      
             return finalDamage;
         }

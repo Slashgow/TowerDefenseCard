@@ -20,7 +20,7 @@ public class WaveUI : MonoBehaviour
 
         WaveManager.Instance.OnWaveStart += WaveManager_OnWaveStart;
 
-        waveText.text = $"{WaveManager.Instance.CurrentWaveIndex}/{WaveManager.Instance.NumberOfWaves}";
+        waveText.text = $"{WaveManager.Instance.CurrentWaveIndex}/{(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)}";
 
         startEarlyButton.onClick.AddListener(ClickOnStartEarly);
 
@@ -43,7 +43,7 @@ public class WaveUI : MonoBehaviour
     }
     private void WaveManager_OnWaveStart(int waveNumber)
     {
-        waveText.text = $"{waveNumber}/{WaveManager.Instance.NumberOfWaves}";
+        waveText.text = $"{waveNumber}/{(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)}";
     }
 
 

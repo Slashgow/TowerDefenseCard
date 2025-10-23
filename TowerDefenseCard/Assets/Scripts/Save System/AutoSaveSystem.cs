@@ -27,8 +27,11 @@ public class AutoSaveSystem : MonoSingleton<AutoSaveSystem>
 
     private void Start()
     {
-        GameManager.Instance.OnStartCombatMode += OnStartCombatMode;
-        WaveManager.Instance.OnWaveEnd += OnWaveCompleted;
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnStartCombatMode += OnStartCombatMode;
+
+        if(WaveManager.HasInstance)
+            WaveManager.Instance.OnWaveEnd += OnWaveCompleted;
     }
     private void OnDestroy()
     {

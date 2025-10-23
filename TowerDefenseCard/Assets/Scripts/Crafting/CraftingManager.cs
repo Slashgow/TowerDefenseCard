@@ -26,15 +26,27 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private bool hasTriggeredHalfTimeEvent = false;
 
     public List<float> OriginalTotalTimesCraftMode => originalTotalTimesCraftMode; 
-    public float OriginaCurrentTotalTimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] *
-          (1 + (DifficultyManager.HasInstance
-        ? DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100f
-        : 0f));
+    public float OriginaCurrentTotalTimeCraftMode
+    {
+        get
+        {
+            float originalTotalTimeCraftMode = WaveManager.Instance.CurrentWaveIndex >= originalTotalTimesCraftMode.Count ?
+                originalTotalTimesCraftMode[originalTotalTimesCraftMode.Count - 1] : originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
 
-    public float TimeCraftMode => originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex] *
-        (1 + (DifficultyManager.HasInstance
-         ? DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100
-         : 0f )) - timeElapsed;
+            return originalTotalTimeCraftMode * (1 + (DifficultyManager.HasInstance ? DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100f: 0f));
+        }
+    }
+        
+    public float TimeCraftMode
+    {
+        get
+        {
+            float originalTotalTimeCraftMode = WaveManager.Instance.CurrentWaveIndex >= originalTotalTimesCraftMode.Count ?
+                originalTotalTimesCraftMode[originalTotalTimesCraftMode.Count -1 ] : originalTotalTimesCraftMode[WaveManager.Instance.CurrentWaveIndex];
+
+            return originalTotalTimeCraftMode * (1 + (DifficultyManager.HasInstance ? DifficultyManager.Instance.CurrentDifficultyData.TimeBetweenWavesPercentModifier / 100 : 0f)) - timeElapsed;
+        }
+    }
 
     private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
@@ -49,7 +61,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         if (CardManager.HasInstance)
             CardManager.Instance.OnDiscoverArcher += GameManager_OnStartCraftMode;
 
-        Debug.Log($"time craft : {OriginaCurrentTotalTimeCraftMode}");
+        if(WaveManager.HasInstance)
+            Debug.Log($"time craft : {OriginaCurrentTotalTimeCraftMode}");
     }
 
     private void OnDisable()
@@ -353,6 +366,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     public void StartCraftingModeTimer(float duration)
     {
+        Debug.Log($"Starting crafting mode timer for duration: {duration} seconds");
         startingTimeElapsed = timeElapsed;
 
         OnStartCraftTimer?.Invoke();

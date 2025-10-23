@@ -122,6 +122,11 @@ public abstract class MeshRangeEffect : MonoBehaviour
     {
         this.range = range;
 
+        if(rangeIndicatorObject == null)
+        {
+            CreateRangeIndicator();
+        }
+
         if (meshFilter == null || meshFilter.mesh == null)
         {
             CreateCircleMesh();

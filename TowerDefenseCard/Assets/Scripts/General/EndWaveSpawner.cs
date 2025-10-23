@@ -12,6 +12,9 @@ public class EndWaveSpawner : CardSpawner
     {
         base.Start();
 
+        if(!WaveManager.HasInstance)
+            return;
+
         WaveManager.Instance.OnWaveEnd += SpawnCardAtEndOfWave;
     }
 

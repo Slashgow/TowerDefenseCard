@@ -56,7 +56,7 @@ public class UIPageGameModeTransition : UIPage
     private void GameManager_OnStartCraftMode() => DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString());
     private void GameManager_OnStartCombatMode()
     {
-        string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {WaveManager.Instance.NumberOfWaves} \n";
+        string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)} \n";
         text += startCombatPhaseLocalizedString.GetLocalizedString();
         DoTransitionEffect(text);
     }

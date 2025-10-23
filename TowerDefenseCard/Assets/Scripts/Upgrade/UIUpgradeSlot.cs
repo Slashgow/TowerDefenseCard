@@ -102,7 +102,8 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             if (loadedUpgradeCardPrefab != null)
             {
                 CardUpgrade upgradeCardInstance = Instantiate(loadedUpgradeCardPrefab, new Vector3(2500f, 2500f, 2500f), Quaternion.identity);
-                upgradeCardInstance.OnStack(this.GetComponentInParent<Card>());
+                Card card = this.GetComponentInParent<Card>();
+                upgradeCardInstance.OnStack(card);
                 upgradeCardInstance.transform.position = new Vector3(2500f, 2500f, 2500f);
                 FillSlot(upgradeCardInstance);
             }

@@ -18,7 +18,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
             if (isEnemy)
                 finalHealth *= (1f + (DifficultyManager.HasInstance ?  
                     DifficultyManager.Instance.CurrentDifficultyData.EnnemyHealthPercentModifier / 100f : 
-                    0f));
+                    0f)) * WaveManager.Instance.EndlessModeMultiplier;
 
             return finalHealth;
         }

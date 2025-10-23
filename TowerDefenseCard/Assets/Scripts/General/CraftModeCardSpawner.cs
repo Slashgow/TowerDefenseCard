@@ -31,7 +31,7 @@ public class CraftModeCardSpawner : CardSpawner
 
     private void OnDestroy()
     {
-        if (GameManager.Instance != null)
+        if (GameManager.HasInstance)
         {
             GameManager.Instance.OnStartCraftMode -= HandleCraftModeStart;
             GameManager.Instance.OnEndCraftMode -= HandleCraftModeEnd;
