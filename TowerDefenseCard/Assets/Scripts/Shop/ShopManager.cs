@@ -23,13 +23,16 @@ public class ShopManager : MonoSingleton<ShopManager>, ILoadable, ISavable
     [SerializeField] private PoolingSystem currencyPool;
     [SerializeField] private Transform spawnPoint;
 
+    [SerializeField, Range(0,100)] private int maxCoinFromEarlyStart = 50;
+
     public static event Action OnPurchaseBooster;
     public static event Action OnPurchasePartiallyBoosterEvent;
 
     public static void OnPurchasePartiallyBooster() => OnPurchasePartiallyBoosterEvent?.Invoke();
     public UnityEvent OnPurchaseBoosterUnity;
 
-    public int AdditionalInkFromEarlyStart => (int)Mathf.Max(Mathf.Ceil(CraftingManager.Instance.RemainingTime), 0f);
+    public int AdditionalInkFromEarlyStart => (int)Mathf.Max(-((float)maxCoinFromEarlyStart/CraftingManager.Instance.OriginaCurrentTotalTimeCraftMode) * 
+        Mathf.Ceil(CraftingManager.Instance.TimeElapsed) + maxCoinFromEarlyStart, 0f); // f(x) = -ax+b a=maxcoinfromearlystart/originaltotaltimecraftmode b=maxcoinfromearlystart x=remainingtime
 
     private void Start()
     {

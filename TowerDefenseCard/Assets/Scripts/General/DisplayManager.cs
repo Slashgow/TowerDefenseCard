@@ -28,8 +28,8 @@ public class DisplayManager : MonoSingleton<DisplayManager>
         base.Awake();
 
         CurrentResolution = new Vector2Int(
-            PlayerPrefs.GetInt(RESOLUTION_WIDTH_ID, defaultResolution.x),
-            PlayerPrefs.GetInt(RESOLUTION_HEIGHT_ID, defaultResolution.y)
+            PlayerPrefs.GetInt(RESOLUTION_WIDTH_ID, Screen.currentResolution.width),
+            PlayerPrefs.GetInt(RESOLUTION_HEIGHT_ID, Screen.currentResolution.height)
         );
         CurrentQuality = PlayerPrefs.GetInt(QUALITY_ID, defaultQuality);
         CurrentVSync = PlayerPrefs.GetInt(VSYNC_ID, defaultVSync ? 1 : 0) == 1;
@@ -45,6 +45,14 @@ public class DisplayManager : MonoSingleton<DisplayManager>
     public void SetResolution(Resolution resolution)
     {
         CurrentResolution = new Vector2Int(resolution.width, resolution.height);
+        Screen.SetResolution(CurrentResolution.x, CurrentResolution.y, CurrentWindowMode);
+        PlayerPrefs.SetInt(RESOLUTION_WIDTH_ID, CurrentResolution.x);
+        PlayerPrefs.SetInt(RESOLUTION_HEIGHT_ID, CurrentResolution.y);
+    }
+
+    public void SetResolution(Vector2Int resolution)
+    {
+        CurrentResolution = resolution;
         Screen.SetResolution(CurrentResolution.x, CurrentResolution.y, CurrentWindowMode);
         PlayerPrefs.SetInt(RESOLUTION_WIDTH_ID, CurrentResolution.x);
         PlayerPrefs.SetInt(RESOLUTION_HEIGHT_ID, CurrentResolution.y);
@@ -91,7 +99,7 @@ public class DisplayManager : MonoSingleton<DisplayManager>
 
     private void ApplySettings()
     {
-        SetResolution(Screen.currentResolution); // Ensure current resolution is applied
+        SetResolution(CurrentResolution); // Ensure current resolution is applied
         SetQuality(CurrentQuality);
         SetVSync(CurrentVSync);
         SetFramerate(CurrentFramerate);

@@ -18,6 +18,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private float startingTimeElapsed = 0f;
     public float RemainingTime => TimeCraftMode - startingTimeElapsed;
+    public float TimeElapsed => timeElapsed + startingTimeElapsed;
     [SerializeField] private float timeElapsed = 0f;
     public Timer CraftingModeDurationTimer { get; private set; }
     public event Action OnStartCraftTimer;
