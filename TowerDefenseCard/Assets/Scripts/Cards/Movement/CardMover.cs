@@ -223,6 +223,24 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         //transform.SetParent(startParent, false);
     }
 
+    public void TryManualStack(Card targetCard)
+    {
+        if (targetCard != null && targetCard.CardData.IsStackable)
+        {
+            card.OnStack(targetCard);
+
+            Vector3 newPos = Vector3.zero;
+            newPos.y = -stackingHeight * (targetCard.StackedCards.Count);//.transform.childCount);
+            transform.localPosition = newPos;
+
+            CardUtility.AssignSortingOrderRecursively(card.transform, targetCard.CardSprite.sortingOrder + targetCard.transform.childCount);
+
+            if (CraftingManager.Instance.TryCraft(targetCard.transform.root, this.card))
+                return;
+
+            return;
+        }
+    }
 
     private void MagnetSameTypeOfCard()
     {

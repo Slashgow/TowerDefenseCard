@@ -445,7 +445,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         #if UNITY_EDITOR
         protected void OnValidate()
         {
-            UpdateActionLabel();
+            //UpdateActionLabel();
             UpdateBindingDisplay();
         }
 
