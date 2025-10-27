@@ -253,6 +253,17 @@ MonoBehaviour:
     m_Localized: 'Starting defense cards allowed :'
     m_Metadata:
       m_Items: []
+  - m_Id: 45900165372309504
+    m_Localized: 'You''re about to delete your save, the cards you have discovered
+      and your achievements progression,
+
+      Are you sure ?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45901131920306176
+    m_Localized: Save reset sucessfully !
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

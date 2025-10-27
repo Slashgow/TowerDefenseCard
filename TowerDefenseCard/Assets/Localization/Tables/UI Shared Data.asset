@@ -239,6 +239,14 @@ MonoBehaviour:
     m_Key: MODIFIER_START_DEFENSE_CARDS_ALLOWED
     m_Metadata:
       m_Items: []
+  - m_Id: 45900165372309504
+    m_Key: WARNING_RESET_ALL_SAVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45901131920306176
+    m_Key: SAVE_RESET_SUCCESS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

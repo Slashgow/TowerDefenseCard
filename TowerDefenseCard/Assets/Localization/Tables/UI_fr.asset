@@ -247,6 +247,16 @@ MonoBehaviour:
     m_Localized: "Cartes de d\xE9fense de d\xE9part autoris\xE9es :"
     m_Metadata:
       m_Items: []
+  - m_Id: 45900165372309504
+    m_Localized: "Vous \xEAtes sur le point de supprimer votre sauvegarde, les cartes
+      que vous avez d\xE9couvertes et votre progression dans les succ\xE8s.\n\xCAtes-vous
+      s\xFBr ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45901131920306176
+    m_Localized: "Sauvegarde r\xE9initialis\xE9e avec succ\xE8s !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
