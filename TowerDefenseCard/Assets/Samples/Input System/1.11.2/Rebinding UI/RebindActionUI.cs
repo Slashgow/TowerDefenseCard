@@ -4,6 +4,8 @@ using TMPro;
 
 //using TMPro;
 using UnityEngine.Events;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 
@@ -348,6 +350,21 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
         }
 
+        private void Start()
+        {
+            LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
+        }
+
+        private void OnDestroy()
+        {
+            LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
+        }
+
+        private void LocalizationSettings_SelectedLocaleChanged(Locale locale)
+        {
+            UpdateActionLabel();
+        }
+
         // When the action system re-resolves bindings, we want to update our UI in response. While this will
         // also trigger from changes we made ourselves, it ensures that we react to changes made elsewhere. If
         // the user changes keyboard layout, for example, we will get a BoundControlsChanged notification and
@@ -389,6 +406,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             + "rebind UI not show a label for the action.")]
         [SerializeField]
         private TextMeshProUGUI m_ActionLabel;
+
+        [SerializeField] private LocalizedString actionDescriptionLocalized;
 
         [Tooltip("Text label that will receive the current, formatted binding string.")]
         [SerializeField]
@@ -437,7 +456,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             if (m_ActionLabel != null)
             {
                 var action = m_Action?.action;
-                m_ActionLabel.text = action != null ? action.name : string.Empty;
+                m_ActionLabel.text = action != null ? actionDescriptionLocalized.GetLocalizedString() : string.Empty;  //action.name : string.Empty;
             }
         }
 

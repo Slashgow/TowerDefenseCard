@@ -75,6 +75,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         pinToggle.onValueChanged.RemoveListener(OnClickOnPinToggle);
         mainQuestManager.OnQuestUnlocked -= MainQuestManager_OnQuestUnlocked;
         secondaryQuestManager.OnQuestUnlocked -= SecondaryQuestManager_OnQuestUnlocked;
+        LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
     }
     private void Start()
     {

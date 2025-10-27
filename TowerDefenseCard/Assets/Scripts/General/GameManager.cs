@@ -65,16 +65,19 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
 
     private IEnumerator Start()
     {
-        WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
-        WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
+        if (WaveManager.HasInstance)
+        {
+            WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
+            WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
 
-        //PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
+            //PlayerHealth.OnPlayerDie += CardPlayerHealth_OnPlayerDie;
 
-        yield return new WaitForSeconds(1f);
-        if (CurrentGameMode == GameMode.CRAFTING)
-            StartCraftMode();
-        else if (CurrentGameMode == GameMode.COMBAT)
-            StartCombatMode();
+            yield return new WaitForSeconds(1f);
+            if (CurrentGameMode == GameMode.CRAFTING)
+                StartCraftMode();
+            else if (CurrentGameMode == GameMode.COMBAT)
+                StartCombatMode();
+        }
     }
 
     private void OnDestroy()

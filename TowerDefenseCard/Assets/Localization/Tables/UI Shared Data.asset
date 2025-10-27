@@ -247,6 +247,66 @@ MonoBehaviour:
     m_Key: SAVE_RESET_SUCCESS
     m_Metadata:
       m_Items: []
+  - m_Id: 45907908187516928
+    m_Key: START_EARLY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908372597633024
+    m_Key: DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908431825399808
+    m_Key: ATTACK_SPEED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908576122040320
+    m_Key: ATTACK_RANGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908669097177088
+    m_Key: ATTACK_AREA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908781097676800
+    m_Key: DOT_DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45908970390810624
+    m_Key: DOT_DURATION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45914291184201728
+    m_Key: INPUT_ZOOM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45914414148612096
+    m_Key: INPUT_MOVE_CAMERA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45914572320010240
+    m_Key: INPUT_TOGGLE_CARD_MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45914792617439232
+    m_Key: INPUT_PLAY_PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45915033634729984
+    m_Key: INPUT_SPEED_UP_DOWN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45915199494287360
+    m_Key: INPUT_TOGGLE_SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45915328989229056
+    m_Key: INPUT_RECENTER_CAMERA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45915463794159616
+    m_Key: INPUT_MAGNET_SAME_TYPE_CARD
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
