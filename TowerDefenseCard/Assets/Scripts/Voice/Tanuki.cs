@@ -108,12 +108,15 @@ public class Tanuki : MonoBehaviour
         bubbleImageScreenSpace.enabled = false;
         tanukiImageScreenSpace.enabled = false;
 
-        startShowTutoTimer = Timer.Register(timeBeforeStartTutoText, () => 
+        if (TutorialController.Instance.FirstTimePlaying)
         {
-            ShowTanukiText(linesTutoSellForBooster);
-            ShowTanukiText(linesTutoDropInkOnShopToBuy);
-            ShowTanukiText(linesStackShortcuts);
-        });
+            startShowTutoTimer = Timer.Register(timeBeforeStartTutoText, () =>
+            {
+                ShowTanukiText(linesTutoSellForBooster);
+                ShowTanukiText(linesTutoDropInkOnShopToBuy);
+                ShowTanukiText(linesStackShortcuts);
+            });
+        }
 
         scrollTextWithVoice.OnHideTextComplete += ScrollTextWithVoice_OnHideTextComplete;
         PlayerHealth.OnPlayerHit += PlayerHealth_OnPlayerHit;

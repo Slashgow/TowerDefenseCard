@@ -59,6 +59,9 @@ public class TutorialController : MonoSingleton<TutorialController>
     [SerializeField] private TutorialZoomData showFoodPackSettings;
 
     private bool firstTimePlaying;
+
+    public bool FirstTimePlaying => firstTimePlaying;
+
     private bool isSellerShown = false;
     private bool isBasePackUnlocked = false;
     private bool isDefensePackUnlocked = false;
@@ -169,6 +172,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                     isFoodPackUnlocked = true;
                     Instantiate(enableAnimationPrefab, foodPackCardShop.transform.position, Quaternion.identity);
                     foodPackCardShop.Shop.Unlock();
+                    firstTimePlaying = false;
                     Save();
                     MoveCameraBack(showFoodPackSettings.TimeBeforeGoingBackToOriginalPosition, showFoodPackSettings.GoBackToOriginalPositionTime);
                 });
