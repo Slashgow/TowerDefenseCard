@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.UI;
 using UnityTimer;
@@ -18,6 +19,8 @@ public class UIPageGameModeTransition : UIPage
     [SerializeField] private UIPageController uIPageController;
     [SerializeField] private UITime uiTime;
     [SerializeField] private UIInput uiInput;
+    [SerializeField] private GameObject buttonContainer;
+    [SerializeField] private Button mainMenuButton, endlessModeButton;
 
     [Header("Transition")]
     [SerializeField, Range(0f, 5f)] public float transitionDuration;
@@ -31,6 +34,14 @@ public class UIPageGameModeTransition : UIPage
     [Header("Tween Text Size")]
     [SerializeField] TextSizeEffect textSizeEffect;
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        mainMenuButton.onClick.AddListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+        endlessModeButton.onClick.AddListener(() => ClickEndlessModeButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+        buttonContainer.SetActive(false);
+    }
 
     private void Start()
     {
@@ -51,25 +62,37 @@ public class UIPageGameModeTransition : UIPage
             GameManager.Instance.OnDefeatAllWaves -= GameManager_OnDefeatAllWaves;
         }
         PlayerHealth.OnPlayerDie -= PlayerHealth_OnPlayerDie;
+
+        mainMenuButton.onClick.RemoveListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+        endlessModeButton.onClick.RemoveListener(() => ClickEndlessModeButton(defeatAllWavesLocalizedString.GetLocalizedString()));
     }
 
-    private void GameManager_OnStartCraftMode() => DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString());
+    private void GameManager_OnStartCraftMode() => DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString(), true);
     private void GameManager_OnStartCombatMode()
     {
         string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)} \n";
         text += startCombatPhaseLocalizedString.GetLocalizedString();
-        DoTransitionEffect(text);
+        DoTransitionEffect(text, true);
     }
 
-    private void GameManager_OnDefeatAllWaves() => DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString());
-    private void PlayerHealth_OnPlayerDie() => DoTransitionEffect(playerDieLocalizedString.GetLocalizedString());
-
-    private void DoTransitionEffect(string text)
+    private void GameManager_OnDefeatAllWaves()
     {
-        Timer.Register(transitionDuration, onComplete: () =>
+        buttonContainer.SetActive(true);
+        DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString(), false);
+    }
+
+    private void PlayerHealth_OnPlayerDie() => DoTransitionEffect(playerDieLocalizedString.GetLocalizedString(), true);
+
+    private void DoTransitionEffect(string text, bool registerFadeOut)
+    {
+        if (registerFadeOut)
         {
-           DoFadeOutEffect(text);
-        }, useRealTime: true);
+            buttonContainer.SetActive(false);
+            Timer.Register(transitionDuration, onComplete: () =>
+            {
+                DoFadeOutEffect(text);
+            }, useRealTime: true);
+        }
 
         GameSettingsManager.Instance.AllowTemporaryPause();
         uiTime.OnPause();
@@ -90,7 +113,7 @@ public class UIPageGameModeTransition : UIPage
             //Hide();
             uIPageController.ShowGamePage();
             GameManager.Instance.CurrentGameState = GameState.PLAY;
-            if (GameManager.Instance.isFinished || PlayerHealth.IsPlayerDead)
+        if ((GameManager.Instance.isFinished && !WaveManager.Instance.EnableEndlessMode) || PlayerHealth.IsPlayerDead)
             {
                 SceneLoader.Instance.LoadNextSceneAsync();
             }
@@ -115,5 +138,17 @@ public class UIPageGameModeTransition : UIPage
     }
 
     private void SetTransitionText(string text) => transitionText.text = text;
+
+    private void ClickEndlessModeButton(string text)
+    {
+        WaveManager.Instance.StartEndlessMode();
+        GameManager.Instance.StartCraftMode();
+        DoFadeOutEffect(text);
+    }
+
+    private void ClickMainMenuButton(string text)
+    {
+        DoFadeOutEffect(text);
+    }
 
 }

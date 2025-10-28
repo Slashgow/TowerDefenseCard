@@ -26,6 +26,7 @@ public class GameSaveData
     public List<AutoCardMovementData> autoCardMovementDatas;
     public List<QuestSaveData> questSaveDatas;
     public GameDifficulty gameDifficulty;
+    public bool enableEndlessMode;
 
     public GameSaveData()
     {

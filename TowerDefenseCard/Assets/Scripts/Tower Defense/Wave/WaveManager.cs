@@ -13,6 +13,9 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
 
     [Header("Endless Mode")]
     [SerializeField] private bool enableEndlessMode = false;
+
+    public void StartEndlessMode() => enableEndlessMode = true;
+    public void StopEndlessMode() => enableEndlessMode = false;
     public bool EnableEndlessMode => enableEndlessMode;
     public float EndlessModeMultiplier => enableEndlessMode ? 1f + (Mathf.Pow(endlessWaveNumber,2) / 100f) : 1f;
 
@@ -263,6 +266,7 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         this.currentWaveEnnemyIndex = saveData.currentWaveEnnemyIndex;
         this.currentEnnemyCount = saveData.currentEnnemyCount;
         this.amountOfSpawnedEnemies = saveData.amountOfSpawnedEnemies;
+        this.enableEndlessMode = saveData.enableEndlessMode;
     }
 
     public void Save(GameSaveData saveData)
@@ -271,5 +275,6 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
         saveData.currentWaveEnnemyIndex = this.currentWaveEnnemyIndex;
         saveData.currentEnnemyCount = this.currentEnnemyCount;
         saveData.amountOfSpawnedEnemies = this.amountOfSpawnedEnemies;
+        saveData.enableEndlessMode = this.enableEndlessMode;
     }
 }

@@ -143,7 +143,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         OnEndCombatMode?.Invoke();
     }
 
-    private void StartCombatMode()
+    public void StartCombatMode()
     {
         CurrentGameMode = GameMode.COMBAT;
         logger.Log("Start Combat mode", this);
@@ -151,7 +151,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
         OnStartCombatMode?.Invoke();
     }
 
-    private void StartCraftMode()
+    public void StartCraftMode()
     {
         CurrentGameMode = GameMode.CRAFTING;
         logger.Log("Start craft mode", this);
