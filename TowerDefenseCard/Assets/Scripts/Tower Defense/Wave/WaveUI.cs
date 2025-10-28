@@ -9,6 +9,7 @@ public class WaveUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private Button startEarlyButton;
     [SerializeField] private TextMeshProUGUI additionnalInkText;
+    [SerializeField] private GameObject additionalInkParent;
     [SerializeField, Range(0f,5f)] private float refreshRateAdditionalInkText = 1f;
 
     private Timer refreshAdditionalInkTextTimer;
@@ -54,8 +55,19 @@ public class WaveUI : MonoBehaviour
         CraftingManager.Instance.CraftingModeDurationTimer?.Cancel();
         CraftingManager.Instance.ResetTimeElapsed();
     }
-    private void GameManager_OnEndCombatMode() => startEarlyButton.interactable = true;
-    private void GameManager_OnStartCombatMode() => startEarlyButton.interactable = false;
+    private void GameManager_OnEndCombatMode()
+    {
+        additionalInkParent.SetActive(true);
+        startEarlyButton.gameObject.SetActive(true);
+        startEarlyButton.interactable = true;
+    }
+
+    private void GameManager_OnStartCombatMode()
+    {
+        additionalInkParent.SetActive(false);
+        startEarlyButton.interactable = false;
+        startEarlyButton.gameObject.SetActive(false);
+    }
 
     private void UpdateAdditionalInkText()
     {
