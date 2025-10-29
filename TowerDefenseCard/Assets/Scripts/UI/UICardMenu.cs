@@ -10,6 +10,7 @@ public class UICardMenu : MonoBehaviour, IUISelectable<CardID>
     [SerializeField] protected TextMeshProUGUI cardTitle;
     [SerializeField] protected TextMeshProUGUI cardCost;
     [SerializeField] protected UINotificationCard uiNotificationCard;
+    [SerializeField] private UILockCard uiLockCard;
 
     protected CardData cardData;
     public CardID CardID => cardData.CardID;
@@ -33,5 +34,7 @@ public class UICardMenu : MonoBehaviour, IUISelectable<CardID>
         }
         else
             uiNotificationCard.Setup(CardID);
+
+        uiLockCard.Setup(cardData.CardID);
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
+
 public class UINotificationCard : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image notificationImage;

@@ -275,6 +275,12 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 return false;
             }
         }
+
+        if(recipe.OutputCards.Any(outputCard => CardManager.Instance.GetCardDiscoveryStateByCardID(outputCard.cardID).isLocked))
+        {
+            return false;
+        }
+
         return true;
     }
 

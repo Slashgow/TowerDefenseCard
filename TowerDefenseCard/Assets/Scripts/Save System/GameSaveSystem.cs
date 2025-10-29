@@ -29,6 +29,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     {
         PlayerHealth.OnPlayerDie += PlayerHealth_OnPlayerDie;
         GameManager.Instance.OnDefeatAllWaves += GameManager_OnDefeatAllWaves;
+        GameManager.Instance.OnDemoEnd += GameManager_OnDemoEnd;
     }
 
     private void OnDestroy()
@@ -38,6 +39,7 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         if (GameManager.HasInstance)
         {
             GameManager.Instance.OnDefeatAllWaves -= GameManager_OnDefeatAllWaves;
+            GameManager.Instance.OnDemoEnd -= GameManager_OnDemoEnd;
         }
     }
 
@@ -47,6 +49,11 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
     }
 
     private void GameManager_OnDefeatAllWaves()
+    {
+        GameManager.Instance.ResetGameSaveAndSaveCards();
+    }
+
+    private void GameManager_OnDemoEnd()
     {
         GameManager.Instance.ResetGameSaveAndSaveCards();
     }

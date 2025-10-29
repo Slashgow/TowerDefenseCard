@@ -34,7 +34,15 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     public event Action<int> OnWaveEnd;
 
     public int NumberOfWaves => waveDataPaths.Length;
-    public bool IsAllWavesCompleted => enableEndlessMode ? false : !(currentWaveIndex < waveDataPaths.Length);
+    public bool IsAllWavesCompleted => enableEndlessMode ? false : IsLastWave();
+
+    private bool IsLastWave()
+    {
+        if(DemoManager.HasInstance && DemoManager.Instance.UseDemoMode)
+            return currentWaveIndex >= DemoManager.Instance.EndWaveIndex;
+        else
+            return currentWaveIndex >= waveDataPaths.Length;
+    }
 
     public Vector3 CurrentWaveFirstPathStartPosition
     {

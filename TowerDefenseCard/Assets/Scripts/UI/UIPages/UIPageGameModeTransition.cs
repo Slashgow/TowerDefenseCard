@@ -48,10 +48,9 @@ public class UIPageGameModeTransition : UIPage
         GameManager.Instance.OnEndCraftMode += GameManager_OnStartCombatMode;
         GameManager.Instance.OnStartCraftMode += GameManager_OnStartCraftMode;
         GameManager.Instance.OnDefeatAllWaves += GameManager_OnDefeatAllWaves;
+        GameManager.Instance.OnDemoEnd += GameManager_OnDemoEnd;
         PlayerHealth.OnPlayerDie += PlayerHealth_OnPlayerDie;
     }
-
-
 
     private void OnDestroy()
     {
@@ -60,6 +59,7 @@ public class UIPageGameModeTransition : UIPage
             GameManager.Instance.OnEndCraftMode -= GameManager_OnStartCombatMode;
             GameManager.Instance.OnStartCraftMode -= GameManager_OnStartCraftMode;
             GameManager.Instance.OnDefeatAllWaves -= GameManager_OnDefeatAllWaves;
+            GameManager.Instance.OnDemoEnd -= GameManager_OnDemoEnd;
         }
         PlayerHealth.OnPlayerDie -= PlayerHealth_OnPlayerDie;
 
@@ -79,6 +79,10 @@ public class UIPageGameModeTransition : UIPage
     {
         buttonContainer.SetActive(true);
         DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString(), false);
+    }
+    private void GameManager_OnDemoEnd()
+    {
+        DoTransitionEffect(DemoManager.Instance.EndTextDemo.GetLocalizedString(), true);
     }
 
     private void PlayerHealth_OnPlayerDie() => DoTransitionEffect(playerDieLocalizedString.GetLocalizedString(), true);

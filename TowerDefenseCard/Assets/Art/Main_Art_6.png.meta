@@ -646,6 +646,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: lock
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 704
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35103967393671d4eb7d2dfd6502eab0
+      internalID: 1841092148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -668,6 +690,8 @@ TextureImporter:
       Fish: 2500138843069017616
       Grilled_Fish: 3850055726865771638
       Hammer: 7912412275464952812
+      Main_Art_6_0: 111176063
+      Main_Art_6_1: 180825378
       Main_Art_6_10: 6608360646673853501
       Main_Art_6_11: 6820409075752313888
       Main_Art_6_17: -2281659316103756249
@@ -685,6 +709,7 @@ TextureImporter:
       Soy_Sauce: -403726832446601867
       Sushi: 6726705863284051136
       Tavern: -6036517027996506497
+      lock: 1841092148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

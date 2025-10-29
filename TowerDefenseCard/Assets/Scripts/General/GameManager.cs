@@ -32,6 +32,7 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
     public UnityEvent OnEndCombatModeUnity;
     public event Action OnEndCombatMode;
 
+    public event Action OnDemoEnd;
     public event Action OnDefeatAllWaves;
 
     public event Action OnPause; 
@@ -122,7 +123,16 @@ public class GameManager : MonoSingleton<GameManager>, ILoadable, ISavable
             if (WaveManager.Instance.IsAllWavesCompleted)
             {
                 isFinished = true;
-                OnDefeatAllWaves?.Invoke();
+
+                if (DemoManager.HasInstance && DemoManager.Instance.IsDemoEnd())
+                {
+                    OnDemoEnd?.Invoke();
+                    logger.Log("Demo End reached", this);
+                }
+                else
+                {
+                    OnDefeatAllWaves?.Invoke();
+                }
             }
             else
             {

@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c475b3f976856f24cb2651b843ec3e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endScale: 1.2
+  endScale: 1.05
   duration: 0.3
   easing: 4
 --- !u!224 &1173375901571419278 stripped
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c475b3f976856f24cb2651b843ec3e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endScale: 1.2
+  endScale: 1.05
   duration: 0.3
   easing: 4
 --- !u!224 &1196494026323584203 stripped

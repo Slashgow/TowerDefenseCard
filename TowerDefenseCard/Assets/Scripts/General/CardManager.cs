@@ -12,6 +12,7 @@ public class CardDiscoveryState
 
     public bool isDiscovered;
     public bool isClickedAfterNotification;
+    public bool isLocked;
 }
 
 [Serializable]
@@ -115,6 +116,9 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
 
     private void Start()
     {
+        if(!DemoManager.Instance.UseDemoMode)
+            allCards.ForEach(cardDiscoveryState => cardDiscoveryState.isLocked = false);
+
         if (!listenToEvents)
             return;
 
@@ -426,6 +430,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
                         CardDiscoveryState cardDiscoveryState = saveData.allCards[i];
                         allCards[i].isDiscovered = cardDiscoveryState.isDiscovered;
                         allCards[i].isClickedAfterNotification = cardDiscoveryState.isClickedAfterNotification;
+                        allCards[i].isLocked = cardDiscoveryState.isLocked;
                     }
                 }
                 Debug.Log($"Game loaded from {SavePath.SavePathCardDiscovered}", this);
