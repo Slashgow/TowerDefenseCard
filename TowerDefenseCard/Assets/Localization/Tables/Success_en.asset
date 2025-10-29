@@ -282,6 +282,38 @@ MonoBehaviour:
     m_Localized: Complete all side quests
     m_Metadata:
       m_Items: []
+  - m_Id: 19907541570285568
+    m_Localized: Pack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840000
+    m_Localized: Unlock every pack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840001
+    m_Localized: Recruiter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840002
+    m_Localized: Recruit another worker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840003
+    m_Localized: Upgrader
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840004
+    m_Localized: Add 3 upgrades to a defense card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840005
+    m_Localized: Village
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840006
+    m_Localized: Craft a village
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

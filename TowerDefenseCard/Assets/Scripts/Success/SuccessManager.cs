@@ -73,6 +73,18 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     [SerializeField] private SuccessData completeMainQuestSuccess;
     [SerializeField] private SuccessData completeSideQuestSuccess;
 
+    [Header("Pack")]
+    [SerializeField] private SuccessData discoverAllPackSuccess;
+
+    [Header("Recruiter")]
+    [SerializeField] private SuccessData recruitAnotherWorkerSuccess;
+
+    [Header("Upgrader")]
+    [SerializeField] private SuccessData upgradeToMaxCardDefenseSuccess;
+
+    [Header("Village")]
+    [SerializeField] private SuccessData craftVillageSuccess;
+
     public SuccessData CraftTempleSuccess => craftTempleSuccess;
     public SuccessData FirstCraftSuccess => firstCraftSuccess;
     public SuccessData FirstFactorySuccess => firstFactorySuccess;
@@ -183,7 +195,20 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
             // Quests
             completeMainQuestSuccess,
-            completeSideQuestSuccess
+            completeSideQuestSuccess,
+
+            // Pack
+            discoverAllPackSuccess,
+
+            // Recruiter
+            recruitAnotherWorkerSuccess,
+
+            // Upgrader
+            upgradeToMaxCardDefenseSuccess,
+
+            // Village
+            craftVillageSuccess
+
         };
     }
 
@@ -235,6 +260,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         Booster.OnDestroyBooster += Booster_OnDestroyBooster;
         mainQuestManager.OnCompleteAllQuests += MainQuestManager_OnCompleteAllQuests;
         sideQuestManager.OnCompleteAllQuests += SideQuestManager_OnCompleteAllQuests;
+        TutorialController.OnUnlockAllShops += TutorialController_OnUnlockAllShops;
+        CardRecruter.OnAnyRecruitmentComplete += CardRecruter_OnAnyRecruitmentComplete;
+        UIUpgrades.OnFillAllUpgradeSlots += UIUpgrades_OnFillAllUpgradeSlots;
     }
 
     private void OnDestroy()
@@ -259,7 +287,17 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
         mainQuestManager.OnCompleteAllQuests -= MainQuestManager_OnCompleteAllQuests;
         sideQuestManager.OnCompleteAllQuests -= SideQuestManager_OnCompleteAllQuests;
+
+        if(TutorialController.HasInstance)
+            TutorialController.OnUnlockAllShops -= TutorialController_OnUnlockAllShops;
+
+        CardRecruter.OnAnyRecruitmentComplete -= CardRecruter_OnAnyRecruitmentComplete;
+        UIUpgrades.OnFillAllUpgradeSlots -= UIUpgrades_OnFillAllUpgradeSlots;
     }
+
+    private void TutorialController_OnUnlockAllShops() => discoverAllPackSuccess.Complete();
+    private void CardRecruter_OnAnyRecruitmentComplete() => recruitAnotherWorkerSuccess.Complete();
+    private void UIUpgrades_OnFillAllUpgradeSlots() => upgradeToMaxCardDefenseSuccess.Complete();
 
     private void ShopManager_OnUpdatePlayerCoin(int currentPlayerCoin)
     {
@@ -488,6 +526,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
                 break;
             case CardID.SAKURA_BRICK_FACTORY:
                 CheckSuccessFactories(CardID.SAKURA_BRICK_FACTORY);
+                break;
+            case CardID.VILLAGE:
+                craftVillageSuccess.Complete();
                 break;
         }
     }

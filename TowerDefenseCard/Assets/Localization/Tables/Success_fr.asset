@@ -271,7 +271,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14026886407909376
-    m_Localized: "Terminez toutes les qu\xEAtes principales"
+    m_Localized: "Termine toutes les qu\xEAtes principales"
     m_Metadata:
       m_Items: []
   - m_Id: 14026950266187776
@@ -279,7 +279,39 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14027008592179200
-    m_Localized: "Terminez toutes les qu\xEAtes secondaires"
+    m_Localized: "Termine toutes les qu\xEAtes secondaires"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541570285568
+    m_Localized: Pack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840000
+    m_Localized: "D\xE9bloque tous les packs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840001
+    m_Localized: Recruteur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840002
+    m_Localized: Recrute un autre travailleur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840003
+    m_Localized: Optimiseur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840004
+    m_Localized: "Ajoute 3 am\xE9liorations \xE0 une carte d\xE9fense"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840005
+    m_Localized: Village
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19907541603840006
+    m_Localized: Craft un village
     m_Metadata:
       m_Items: []
   references:

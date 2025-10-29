@@ -68,6 +68,8 @@ public class TutorialController : MonoSingleton<TutorialController>
     private bool isEngineeringPackUnlocked = false;
     private bool isFoodPackUnlocked = false;
 
+    public static event Action OnUnlockAllShops;
+
     protected override void Awake()
     {
         base.Awake();
@@ -172,6 +174,7 @@ public class TutorialController : MonoSingleton<TutorialController>
                     isFoodPackUnlocked = true;
                     Instantiate(enableAnimationPrefab, foodPackCardShop.transform.position, Quaternion.identity);
                     foodPackCardShop.Shop.Unlock();
+                    OnUnlockAllShops?.Invoke();
                     firstTimePlaying = false;
                     Save();
                     MoveCameraBack(showFoodPackSettings.TimeBeforeGoingBackToOriginalPosition, showFoodPackSettings.GoBackToOriginalPositionTime);

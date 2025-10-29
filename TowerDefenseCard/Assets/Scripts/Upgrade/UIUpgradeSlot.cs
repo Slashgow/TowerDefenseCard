@@ -36,6 +36,12 @@ public class UIUpgradeSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         this.upgradeCard = upgradeCard;
         IsEmpty = false;
         backgroundCircle.color = filledColor;
+
+        UIUpgrades uIUpgrades = this.GetComponentInParent<UIUpgrades>();
+        if (uIUpgrades != null && !uIUpgrades.HasEmptySlot())
+        {
+            uIUpgrades.OnFillAllUpgrades();
+        }
     }
 
     public void EmptySlot()

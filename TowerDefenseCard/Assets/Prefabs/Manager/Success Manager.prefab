@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293471b85d3b3594aa5e933642b32047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainQuestManager: {fileID: 0}
+  sideQuestManager: {fileID: 0}
   listenToSuccessCompletion: 1
   openFirstBoosterSuccess:
     steamId: SUCCESS_NEWBIE
@@ -805,6 +807,98 @@ MonoBehaviour:
       m_LocalVariables: []
     spriteLocked: {fileID: 1606102183, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
     spriteUnlocked: {fileID: 1887286863, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
+  discoverAllPackSuccess:
+    steamId: SUCCESS_PACK
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541570285568
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840000
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: -852921913, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: 1152557267, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
+  recruitAnotherWorkerSuccess:
+    steamId: SUCCESS_RECRUITER
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840001
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840002
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: 1403183685, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: 1711543231, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
+  upgradeToMaxCardDefenseSuccess:
+    steamId: SUCCESS_UPGRADE
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840003
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840004
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: 702535598, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: -1791855070, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    isDone: 0
+  craftVillageSuccess:
+    steamId: SUCCESS_VILLAGE
+    title:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840005
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    description:
+      m_TableReference:
+        m_TableCollectionName: GUID:48be452218381ca4485341b272b6e3a8
+      m_TableEntryReference:
+        m_KeyId: 19907541603840006
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    spriteLocked: {fileID: -2024198379, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
+    spriteUnlocked: {fileID: 404042686, guid: 28f475e5aabfd544494ed700749f0306, type: 3}
     isDone: 0
   references:
     version: 2
