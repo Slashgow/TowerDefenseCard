@@ -132,7 +132,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   autoStartMove: 1
-  isStartMoveRandom: 1
+  isStartMoveRandom: 0
   startMoveNonRandomDirection: {x: 0, y: -1}
   moveStep: 2
   checkRadius: 0.5

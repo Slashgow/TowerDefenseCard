@@ -65,6 +65,12 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         resetTiltLerp?.Kill();
     }
 
+    public override void OnEndStartMove()
+    {
+        base.OnEndStartMove();
+        TryStackCards();
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
 
@@ -181,10 +187,22 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                     if (otherCard.TryClearStackCards())
                     {
                         if (otherCard.StackedCards.Count > 0)
-                            continue;
+                        {
+                            //continue;
+                            Card targetCard = otherCard.GetLastCardInStack();
+                            TryManualStack(targetCard);
+                            return;
+                        }
+                            
                     }
                     else
-                        continue;
+                    {
+                        //continue;
+                        Card targetCard = otherCard.GetLastCardInStack();
+                        TryManualStack(targetCard);
+                        return;
+                    }
+                        
                 }
 
                 if (otherCard != null && otherCard.CardData.IsStackable)

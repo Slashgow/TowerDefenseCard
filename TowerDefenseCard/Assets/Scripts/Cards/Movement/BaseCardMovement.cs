@@ -78,6 +78,7 @@ public abstract class BaseCardMovement : MonoBehaviour
         }
 
         InitializeSortOrder();
+        OnEndStartMove();
     }
 
     public void InitializeSortOrder()
@@ -111,5 +112,10 @@ public abstract class BaseCardMovement : MonoBehaviour
             return otherCard.CardSprite.sortingOrder + otherCard.transform.childCount;
         }
         return 0;
+    }
+
+    public virtual void OnEndStartMove()
+    {
+
     }
 }
