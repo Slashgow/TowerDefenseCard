@@ -10,6 +10,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
+    [SerializeField] private Vector3 craftSpawnOffset;
 
     public event Action<int> OnCraftCancel = delegate { };
     public event Action<int, CardID> OnCraftComplete = delegate { };
@@ -235,7 +236,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             }
         }
         // Instantiate output card at the stack's position
-        craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position, Quaternion.identity, craftInfo.StackParent.parent);
+        craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position + craftSpawnOffset, Quaternion.identity, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);
         OnCraftComplete?.Invoke(craftInfo.CraftID, outputCard.cardID);
         OnCraftCompleteWithInfo?.Invoke(craftInfo, outputCard.cardID);

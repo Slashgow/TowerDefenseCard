@@ -22,7 +22,8 @@ public class JumpCardMovement : BaseCardMovement
     private bool isJumping = false;
     private bool isMovingToTarget = false;
     private Sequence jumpSequence;
-
+    private Tween horizontalTween;
+    private Tween verticalTween;
     public bool IsMoving => isMovingToTarget;
     public bool IsJumping => isJumping;
     public Vector3 TargetPosition => targetPosition;
@@ -96,10 +97,10 @@ public class JumpCardMovement : BaseCardMovement
         actualJumpDuration = Mathf.Max(jumpDuration, actualJumpDuration); 
 
         jumpSequence = DOTween.Sequence();
-        Tween horizontalTween = transform.DOMove(currentJumpTarget, actualJumpDuration).SetEase(Ease.Linear);
+        horizontalTween = transform.DOMove(currentJumpTarget, actualJumpDuration).SetEase(Ease.Linear);
         Vector3 peakPosition = Vector3.Lerp(startPos, currentJumpTarget, 0.5f);
         peakPosition.y += jumpHeight;
-        Tween verticalTween = transform.DOMoveY(peakPosition.y, actualJumpDuration * 0.5f).SetEase(Ease.OutQuad).SetLoops(2, LoopType.Yoyo);
+        verticalTween = transform.DOMoveY(peakPosition.y, actualJumpDuration * 0.5f).SetEase(Ease.OutQuad).SetLoops(2, LoopType.Yoyo);
 
         jumpSequence.Insert(0, horizontalTween);
         jumpSequence.Insert(0, verticalTween);
@@ -129,11 +130,9 @@ public class JumpCardMovement : BaseCardMovement
     {
         isJumping = false;
 
-        if (jumpSequence != null && jumpSequence.IsActive())
-        {
-            jumpSequence.Kill();
-            jumpSequence = null;
-        }
+        horizontalTween?.Kill();
+        verticalTween?.Kill();
+        jumpSequence?.Kill();
     }
 
     private void OnDestroy() => StopJumping();
