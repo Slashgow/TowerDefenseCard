@@ -621,8 +621,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    spriteLocked: {fileID: 1653063257, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
-    spriteUnlocked: {fileID: 713925049, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteLocked: {fileID: 1079098345, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
+    spriteUnlocked: {fileID: 1701868173, guid: 9bb076c06db639e4590f239b2cb7838e, type: 3}
     isDone: 0
   craftFirstDefenseSuccess:
     steamId: SUCCESS_DEFENDER_1
