@@ -2074,7 +2074,7 @@ GameObject:
   - component: {fileID: 6307360031073757493}
   - component: {fileID: 7874258551023757960}
   - component: {fileID: 3292139448463634336}
-  - component: {fileID: 3888080264617762903}
+  - component: {fileID: 1316194475402450193}
   m_Layer: 5
   m_Name: background progress bar
   m_TagString: Untagged
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3888080264617762903
+--- !u!114 &1316194475402450193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
