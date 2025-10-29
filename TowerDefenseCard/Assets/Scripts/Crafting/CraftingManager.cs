@@ -118,6 +118,9 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 // remove cards from stack if too much card per ingredients
                 foreach (var ingredient in recipe.Ingredients)
                 {
+                    if (ingredient.cardID == CardID.FOREST || ingredient.cardID == CardID.MONTAIN || ingredient.cardID == CardID.RICE_PADDY || ingredient.cardID == CardID.SEA || ingredient.cardID == CardID.FARM)
+                        continue;
+
                     if (cardCounts.ContainsKey(ingredient.cardID) && cardCounts[ingredient.cardID] > ingredient.quantity)
                     {
                         int surplueCount = cardCounts[ingredient.cardID] - ingredient.quantity;
@@ -236,7 +239,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             }
         }
         // Instantiate output card at the stack's position
-        craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position + craftSpawnOffset, Quaternion.identity, craftInfo.StackParent.parent);
+        craftedCard = Instantiate(outputCard.cardPrefab, craftInfo.StackCards[0].transform.position + craftSpawnOffset, Quaternion.identity); //, craftInfo.StackParent.parent);
         currentCrafts.Remove(craftInfo);
         OnCraftComplete?.Invoke(craftInfo.CraftID, outputCard.cardID);
         OnCraftCompleteWithInfo?.Invoke(craftInfo, outputCard.cardID);

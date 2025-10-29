@@ -51,7 +51,7 @@ public class CardRessourceGenerator : Card
         if (CraftingManager.HasInstance)
         {
             // Ensure the resource card itself can be used as the movedCard for a recipe
-            if (CraftingManager.Instance.TryCraft(transform, this))
+            if (CraftingManager.Instance.TryCraft(transform.root, this))
             {
                 currentCraftID = CraftingManager.Instance.GetCraftIDByCard(this);
                 Debug.Log($"Ressource Generator : Initiated craft with ID {currentCraftID}");
