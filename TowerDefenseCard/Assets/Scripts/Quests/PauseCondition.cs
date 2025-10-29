@@ -3,7 +3,12 @@
 public class PauseCondition : QuestCondition
 {
     private void Start() => GameManager.Instance.OnPause += GameManager_OnPause;
-    private void OnDestroy() => GameManager.Instance.OnPause -= GameManager_OnPause;
+    private void OnDestroy()
+    {
+        if(GameManager.HasInstance)
+            GameManager.Instance.OnPause -= GameManager_OnPause;
+    }
+
     private void GameManager_OnPause() => OnActionPerformed(null);
 
     public override bool IsCompleted()

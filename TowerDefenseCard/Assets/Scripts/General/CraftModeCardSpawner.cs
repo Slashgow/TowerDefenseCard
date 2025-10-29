@@ -22,7 +22,7 @@ public class CraftModeCardSpawner : CardSpawner
 
     protected override void Start()
     {
-        if (GameManager.Instance != null)
+        if (GameManager.HasInstance)
         {
             GameManager.Instance.OnStartCraftMode += HandleCraftModeStart;
             GameManager.Instance.OnEndCraftMode += HandleCraftModeEnd;

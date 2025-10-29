@@ -59,6 +59,12 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             parentFollower.enabled = false;
     }
 
+
+    private void OnDestroy()
+    {
+        resetTiltLerp?.Kill();
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
 

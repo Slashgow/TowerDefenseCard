@@ -82,7 +82,8 @@ public class Tanuki : MonoBehaviour
     private void DisplayTanukiLine(TanukiLine tanukiLine)
     {
         isDisplayingText = true;
-        Timer.Cancel(lastLineTimer);
+
+        lastLineTimer?.Cancel();
 
         bubbleImageWorldSpace.enabled = true;
         bubbleImageScreenSpace.enabled = true;
@@ -148,8 +149,12 @@ public class Tanuki : MonoBehaviour
             WaveManager.OnPlayerWasNotHitThisWave -= WaveManager_OnPlayerWasNotHitThisWave;
         }
 
-        if(CraftingManager.HasInstance)
+        if (CraftingManager.HasInstance)
+        {
             CraftingManager.Instance.OnHalfTimeCraftingMode -= CraftingManager_OnHalfTimeCraftingMode;
+            CraftingManager.OnResetCraftingManagerEasyModeNoDefense -= CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
+        }
+            
 
         if (SuccessManager.HasInstance)
         {
@@ -159,11 +164,11 @@ public class Tanuki : MonoBehaviour
             SuccessManager.Instance.CraftTempleSuccess.OnComplete -= OnCompleteCraftTemple;
         }
 
-        CraftingManager.OnResetCraftingManagerEasyModeNoDefense -= CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
+      
 
-        Timer.Cancel(lastLineTimer);
-        Timer.Cancel(queueDelayTimer);
-        Timer.Cancel(startShowTutoTimer);
+        lastLineTimer?.Cancel();
+        queueDelayTimer?.Cancel();
+        startShowTutoTimer?.Cancel();
         dialogueQueue.Clear();
     }
 

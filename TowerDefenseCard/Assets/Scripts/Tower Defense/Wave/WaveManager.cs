@@ -69,17 +69,26 @@ public class WaveManager : MonoSingleton<WaveManager>, ILoadable, ISavable
     private int endlessWaveNumber = 0;
     private SplineID[] currentEndlessWavePaths;
 
-    private void OnEnable()
-    {
-        GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
-        GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
-
-        PlayerHealth.OnPlayerHit += PlayerHealth_OnPlayerHit;
-    }
+    //private void OnEnable()
+    //{
+    //    
+    //}
 
     private void PlayerHealth_OnPlayerHit() => playerWasHitThisWave = true;
 
-    private void Start() => ShowOnlyFirstPathVisual();
+    private void Start()
+    {
+        if (GameManager.HasInstance)
+        {
+            GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
+            GameManager.Instance.OnStartCombatMode += GameManager_OnStartCombatMode;
+        }
+
+        PlayerHealth.OnPlayerHit += PlayerHealth_OnPlayerHit;
+
+
+        ShowOnlyFirstPathVisual();
+    }
 
     private void GameManager_OnStartCombatMode()
     {
