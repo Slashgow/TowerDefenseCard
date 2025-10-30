@@ -48,12 +48,14 @@ public class Currency : Card, IEndDragHandler
 
                     cardShop.Shop.CurrentShopCost = requiredCost - availableCurrency;
 
-                    for (int i = 0; i < availableCurrency; i++)
+                    for (int i = availableCurrency - 1; i >= 0; i--)
                     {
                         //if(currencyChildren.Length <= i)
                         //    break;
 
+                        //Debug.Log($"unstack : {currencyChildren[i].CardData.CardID}");
                         currencyChildren[i].OnUnstack();
+
                         pool.AddToPool(currencyChildren[i].gameObject);
                     }
 

@@ -45,6 +45,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     protected override void OnEnable()
     {
+        //Debug.Log($"on enable card mover : {this.card.CardData.CardID} {this.GetInstanceID()}");
+
         if (autoStackOnEnable)
             TryStackCards();
 
