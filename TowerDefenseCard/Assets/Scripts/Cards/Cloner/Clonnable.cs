@@ -31,9 +31,6 @@ public class Clonnable : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (lifetimeTimer != null && !lifetimeTimer.isDone)
-        {
-            lifetimeTimer.Cancel();
-        }
+        lifetimeTimer?.Cancel();
     }
 }

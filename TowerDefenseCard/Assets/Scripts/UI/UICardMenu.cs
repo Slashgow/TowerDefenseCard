@@ -35,6 +35,7 @@ public class UICardMenu : MonoBehaviour, IUISelectable<CardID>
         else
             uiNotificationCard.Setup(CardID);
 
-        uiLockCard.Setup(cardData.CardID);
+        if(uiLockCard != null)
+            uiLockCard.Setup(cardData.CardID);
     }
 }

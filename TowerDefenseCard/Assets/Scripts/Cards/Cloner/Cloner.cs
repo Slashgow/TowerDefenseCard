@@ -223,8 +223,7 @@ public class Cloner : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (cloneCooldownTimer != null && !cloneCooldownTimer.isDone)
-            cloneCooldownTimer.Cancel();
+        cloneCooldownTimer?.Cancel();
   
         DestroyAllClones();
     }

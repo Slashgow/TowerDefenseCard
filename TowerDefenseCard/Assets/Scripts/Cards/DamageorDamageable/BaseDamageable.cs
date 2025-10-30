@@ -55,7 +55,10 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
         OnTakeDamage?.Invoke(currentHealth);
-        OnAnyDamageableTakeDamage?.Invoke(damage, this.transform.position);
+
+        if(this != null)
+            OnAnyDamageableTakeDamage?.Invoke(damage, this.transform.position);
+
         if (currentHealth <= 0 && !isDead)
         {
             Die();
