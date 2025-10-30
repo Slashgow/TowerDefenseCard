@@ -55,16 +55,7 @@ public class CardRessourceGenerator : Card
             {
                 currentCraftID = CraftingManager.Instance.GetCraftIDByCard(this);
                 Debug.Log($"Ressource Generator : Initiated craft with ID {currentCraftID}");
-                //if (currentCraftID != -1)
-                //{
-                //    CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
-                //    Debug.Log($"Initiated craft with ID {currentCraftID}");
-                //}
-                //else
-                //{
-                //    Debug.LogWarning("Craft initiation failed, no valid craft ID assigned");
-                //    isCrafting = false; // Stop if craft fails
-                //}
+
             }
             else
             {

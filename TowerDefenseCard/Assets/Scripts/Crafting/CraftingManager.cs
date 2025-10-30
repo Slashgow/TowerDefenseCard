@@ -121,15 +121,39 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                     if (ingredient.cardID == CardID.FOREST || ingredient.cardID == CardID.MONTAIN || ingredient.cardID == CardID.RICE_PADDY || ingredient.cardID == CardID.SEA || ingredient.cardID == CardID.FARM)
                         continue;
 
+                    //if (ingredient.cardID == CardID.BAMBOO && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.BAMBOO_PLANK_FACTORY))
+                    //    continue;
+                    //
+                    //if (ingredient.cardID == CardID.SAKURA && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.SAKURA_BRICK_FACTORY))
+                    //    continue;
+                    //
+                    //if (ingredient.cardID == CardID.JADE && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.AMETHYSTE_FACTORY))
+                    //    continue;
+                    //
+                    //if (ingredient.cardID == CardID.SPIRIT_ESSENCE && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.KAMI_FACTORY))
+                    //    continue;
+
                     if (cardCounts.ContainsKey(ingredient.cardID) && cardCounts[ingredient.cardID] > ingredient.quantity)
                     {
                         int surplueCount = cardCounts[ingredient.cardID] - ingredient.quantity;
                         for (int i = 0; i < surplueCount; i++)
                         {
                             Card cardToRemove = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
-                            cardToRemove.OnUnstack();
+                            //cardToRemove.OnUnstack();
                             stackCards.Remove(cardToRemove);
                         }
+
+                        //if(recipe.Ingredients.Count > 1)
+                        //{
+                        //    Card cardToReStack = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
+                        //    cardToReStack.OnUnstack();
+                        //    Card target = stackCards.FirstOrDefault(card => card.CardData.CardID != ingredient.cardID &&
+                        //                                                    card.StackedCards != null && card.StackedCards.Count == 0);
+                        //
+                        //    if (target != null)
+                        //        cardToReStack.OnStack(target);
+                        //}
+
                     }
                 }
 
