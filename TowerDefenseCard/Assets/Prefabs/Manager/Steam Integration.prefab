@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDefaultAppID: 0
   appID: 4053750
-  usePlaytestAppID: 0
+  usePlaytestAppID: 1
   appIDPlaytest: 4100030
-  useDemoAppID: 1
+  useDemoAppID: 0
   appIDDemo: 4134200
   logger: {fileID: 1151206887239909490}
 --- !u!114 &1151206887239909490
