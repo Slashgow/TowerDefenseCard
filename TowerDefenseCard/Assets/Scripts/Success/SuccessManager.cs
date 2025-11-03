@@ -256,6 +256,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         Reseller.OnResell += Reseller_OnResell;
         WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
         CardManager.Instance.OnUpdateMaxNumberOfCards += CardManager_OnUpdateMaxNumberOfCards;
+        CardManager.OnDiscoverAllCards += CardManager_OnDiscoverAllCards;
         CraftingManager.Instance.OnCraftComplete += CraftingManager_OnCraftCompleted;
         Booster.OnDestroyBooster += Booster_OnDestroyBooster;
         mainQuestManager.OnCompleteAllQuests += MainQuestManager_OnCompleteAllQuests;
@@ -264,6 +265,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         CardRecruter.OnAnyRecruitmentComplete += CardRecruter_OnAnyRecruitmentComplete;
         UIUpgrades.OnFillAllUpgradeSlots += UIUpgrades_OnFillAllUpgradeSlots;
     }
+
 
     private void OnDestroy()
     {
@@ -276,9 +278,12 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         if (CraftingManager.HasInstance)
             CraftingManager.Instance.OnCraftComplete -= CraftingManager_OnCraftCompleted;
 
-        if(CardManager.HasInstance)
+        if (CardManager.HasInstance)
+        {
             CardManager.Instance.OnUpdateMaxNumberOfCards -= CardManager_OnUpdateMaxNumberOfCards;
-
+            CardManager.OnDiscoverAllCards -= CardManager_OnDiscoverAllCards;
+        }
+            
         if(WaveManager.HasInstance)
             WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
 
@@ -295,6 +300,8 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         UIUpgrades.OnFillAllUpgradeSlots -= UIUpgrades_OnFillAllUpgradeSlots;
     }
 
+
+    private void CardManager_OnDiscoverAllCards() => discoverAllCardsSuccess.Complete();
     private void TutorialController_OnUnlockAllShops() => discoverAllPackSuccess.Complete();
     private void CardRecruter_OnAnyRecruitmentComplete() => recruitAnotherWorkerSuccess.Complete();
     private void UIUpgrades_OnFillAllUpgradeSlots() => upgradeToMaxCardDefenseSuccess.Complete();
