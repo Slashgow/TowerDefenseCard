@@ -402,7 +402,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9b8dfe0fdbec8be4790c818b9121d9be, type: 3}
   - {fileID: 8300000, guid: 3d4e0ae755012ee4da40b7bee4d83a69, type: 3}
   - {fileID: 8300000, guid: ee9f5d7db30f9cf439f5b3bbf0a539a0, type: 3}
-  typingSpeed: 0.005
+  typingSpeed: 0.003
   volumeVariation: 0.1
   pitchVariation: 0.1
   soundFrequency: 1
@@ -416,7 +416,7 @@ AudioSource:
   m_GameObject: {fileID: 4595087871376421685}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7885289292835928984, guid: 8042f6c5fcec5fa48a18ff8043c59eea, type: 2}
+  OutputAudioMixerGroup: {fileID: -5175509595098666737, guid: 8042f6c5fcec5fa48a18ff8043c59eea, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0

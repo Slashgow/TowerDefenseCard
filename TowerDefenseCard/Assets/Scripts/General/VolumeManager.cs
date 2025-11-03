@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 public class VolumeManager : MonoSingleton<VolumeManager>
 {
     [SerializeField, Range(0.0001f, 1f)]
-    private float defaultMainVolume, defaultMusicVolume, defaultSfXVolume;
+    private float defaultMainVolume, defaultMusicVolume, defaultSfXVolume, defaultTanukiVolume;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -12,10 +12,12 @@ public class VolumeManager : MonoSingleton<VolumeManager>
     public float CurrentMainVolume { get; private set; }
     public float CurrentMusicVolume { get; private set; }
     public float CurrentSFXVolume { get; private set; }
+    public float CurrentTanukiVolume { get; private set; }
 
     public const string MAIN_VOLUME_ID = "MAIN_VOLUME";
     public const string MUSIC_VOLUME_ID = "MUSIC_VOLUME";
     public const string SFX_VOLUME_ID = "SFX_VOLUME";
+    public const string TANUKI_VOLUME_ID = "TANUKI_VOLUME";
 
 
     protected override void Awake()
@@ -36,6 +38,11 @@ public class VolumeManager : MonoSingleton<VolumeManager>
             CurrentSFXVolume = PlayerPrefs.GetFloat(SFX_VOLUME_ID);
         else 
             CurrentSFXVolume = defaultSfXVolume;
+
+        if(PlayerPrefs.HasKey(TANUKI_VOLUME_ID))
+            CurrentTanukiVolume = PlayerPrefs.GetFloat(TANUKI_VOLUME_ID);
+        else
+            CurrentTanukiVolume= defaultTanukiVolume;
     }
 
     private void Start()
@@ -43,6 +50,7 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         SetMainVolume(CurrentMainVolume);
         SetMusicVolume(CurrentMusicVolume);
         SetSFXVolume(CurrentSFXVolume);
+        SetTanukiVolume(CurrentTanukiVolume);
     }
 
     public void SetMainVolume(float value)
@@ -62,5 +70,12 @@ public class VolumeManager : MonoSingleton<VolumeManager>
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(value) * 20);
         CurrentSFXVolume = value;
         PlayerPrefs.SetFloat(SFX_VOLUME_ID, CurrentSFXVolume);
+    }
+
+    public void SetTanukiVolume(float value)
+    {
+        audioMixer.SetFloat("tanukiVolume", Mathf.Log10(value) * 20);
+        CurrentTanukiVolume = value;
+        PlayerPrefs.SetFloat(TANUKI_VOLUME_ID, CurrentTanukiVolume);
     }
 }

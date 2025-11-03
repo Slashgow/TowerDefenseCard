@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-5175509595098666737
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tanuki
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 8361993c79c97cb4e8037bdac2ae4f9d
+  m_Children: []
+  m_Volume: 1a83efa9627bd844a8bfbbc5b53c2607
+  m_Pitch: aa15c963aff121a4e86e6e694c208722
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 4712100791756661593}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-3939257117892616432
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -50,11 +69,14 @@ AudioMixerController:
     name: musicVolume
   - guid: df75bde9775cd28479277992508f9969
     name: sfxVolume
+  - guid: 1a83efa9627bd844a8bfbbc5b53c2607
+    name: tanukiVolume
   m_AudioMixerGroupViews:
   - guids:
     - 9ccb71926b46c1645ab8be9614843356
     - 503462038d52bb842a56fc56cc8f86bc
     - 129df37b7fd66cd4d994468a5506db92
+    - 8361993c79c97cb4e8037bdac2ae4f9d
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -70,6 +92,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 94874717214462747}
   - {fileID: 7885289292835928984}
+  - {fileID: -5175509595098666737}
   m_Volume: 62094e900644c8d47b68637afbbb6d79
   m_Pitch: 151010df32685884d8054d2711698980
   m_Send: 00000000000000000000000000000000
@@ -123,6 +146,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &4712100791756661593
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f58c20f3b966bea44a14784337551d26
+  m_EffectName: Attenuation
+  m_MixLevel: 413c274096ff39d40901e6ed5a988306
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &7885289292835928984
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
