@@ -149,11 +149,13 @@ public static class SavePath
         if (File.Exists(SavePathCardDiscovered))
             File.Delete(SavePathCardDiscovered);
 
+#if !UNITY_WEBGL
         if (SteamClient.IsValid)
         {
             SteamIntegration.Instance?.ResetAllAchievements();
             SteamIntegration.Instance.ResetAllStats();
         }
+#endif
     }
 
     public static void DeleteGameSaves()

@@ -53,7 +53,7 @@ public class Currency : Card, IEndDragHandler
                         //if(currencyChildren.Length <= i)
                         //    break;
 
-                        //Debug.Log($"unstack : {currencyChildren[i].CardData.CardID}");
+                        Debug.Log($"unstack : {currencyChildren[i].CardData.CardID}");
                         currencyChildren[i].OnUnstack();
 
                         pool.AddToPool(currencyChildren[i].gameObject);

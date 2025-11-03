@@ -12,6 +12,7 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
     [SerializeField, ShowIf("useDemoAppID")] private uint appIDDemo = 4061600;
     [SerializeField] private Logger logger;
 
+#if !UNITY_WEBGL
     private void Start()
     {
         try
@@ -141,4 +142,5 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
         SteamUserStats.SetStat("craftedCardCounterAllTime", 0);
         SteamUserStats.SetStat("soldCardCounterAllTime", 0);
     }
+#endif
 }

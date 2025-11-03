@@ -49,9 +49,11 @@ public class SuccessSaveSystem : MonoSingleton<SuccessSaveSystem>
         {
             SuccessStatData currentStats = successManager.SuccessStatData;
 
+#if !UNITY_WEBGL
             if(SteamClient.IsValid)
                 SteamIntegration.Instance.SetStats(currentStats);
             //SteamIntegration.Instance.StoreStats();
+#endif
 
             SuccessSaveData saveData = new SuccessSaveData(currentStats.boosterOpenedCounterAllTime, currentStats.boosterOpenedCounterInGame,
                 currentStats.craftedCardCounterAllTime, currentStats.soldCardCounterAllTime, 

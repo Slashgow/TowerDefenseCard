@@ -84,7 +84,7 @@ public class Card : MonoBehaviour
 
     public virtual void OnStack(Card targetCard)
     {
-        //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
+        Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
         if (this.StackedCards.Contains(targetCard))
         {
@@ -118,11 +118,11 @@ public class Card : MonoBehaviour
     {
         transform.SetParent(null, true);
 
-        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {
-            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
@@ -156,11 +156,11 @@ public class Card : MonoBehaviour
         if(setParent)
             transform.SetParent(null, true);
 
-        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {
-            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 

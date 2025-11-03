@@ -68,6 +68,20 @@ public static class CardUtility
 
     public static void AddCardAndChildrenToList(Card card, List<Card> list)
     {
+        HashSet<Card> visited = new HashSet<Card>();
+        AddCardAndChildrenToListRecursive(card, list, visited);
+    }
+
+    private static void AddCardAndChildrenToListRecursive(Card card, List<Card> list, HashSet<Card> visited)
+    {
+        if (card == null || visited.Contains(card))
+        {
+            Debug.LogWarning("add card and children to list circular");
+            return;
+        }
+       
+
+        visited.Add(card);
         list.Add(card);
 
         if (card.StackedCards == null)
@@ -75,7 +89,7 @@ public static class CardUtility
 
         foreach (Card stackedCard in card.StackedCards)
         {
-            AddCardAndChildrenToList(stackedCard, list);
+            AddCardAndChildrenToListRecursive(stackedCard, list, visited);
         }
     }
 
