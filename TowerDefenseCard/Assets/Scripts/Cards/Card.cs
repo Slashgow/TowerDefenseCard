@@ -35,7 +35,21 @@ public class Card : MonoBehaviour
     {
         cardSprite.sprite = cardData.CardSprite;
         backgroundSprite.sprite = cardData.CardBackgroundSprite;
+
+#if UNITY_WEBGL
+
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardUI.SetupCard(handle.Result, cardData.Cost.ToString());
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
+#endif
         //StackCount = 1;
         //StackedCards = new List<Card>();
         //entireStackParent = new List<Card>();
@@ -60,7 +74,20 @@ public class Card : MonoBehaviour
 
     private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale Locale)
     {
+#if UNITY_WEBGL
+
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardUI.SetupCard(handle.Result, cardData.Cost.ToString());
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString());
+#endif
     }
 
     protected virtual void Start()
@@ -84,7 +111,7 @@ public class Card : MonoBehaviour
 
     public virtual void OnStack(Card targetCard)
     {
-        Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
+        //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
         if (this.StackedCards.Contains(targetCard))
         {
@@ -118,11 +145,11 @@ public class Card : MonoBehaviour
     {
         transform.SetParent(null, true);
 
-        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 
@@ -156,11 +183,11 @@ public class Card : MonoBehaviour
         if(setParent)
             transform.SetParent(null, true);
 
-        Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
+        //Debug.Log($" Try Unstack {this.cardData.CardID} {this.GetInstanceID()}");
 
         if (StackParent != null)
         {
-            Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
+            //Debug.Log($"Unstack {this.cardData.CardID} {this.GetInstanceID()}  from {StackParent.cardData.CardID} {StackParent.GetInstanceID()}");
 
             StackParent.StackedCards.Remove(this);
 

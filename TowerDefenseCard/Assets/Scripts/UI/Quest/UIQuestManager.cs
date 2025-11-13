@@ -84,11 +84,13 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
         LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
 
+#if !UNITY_WEBGL
         if (enableQuestHighlighting)
         {
             HighlightNextQuest(ref currentHighlightedMainQuest, true);
             HighlightNextQuest(ref currentHighlightedSecondaryQuest, false);
         }
+#endif
     }
 
     private void LocalizationSettings_SelectedLocaleChanged(UnityEngine.Localization.Locale locale)
@@ -96,14 +98,39 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         for (int i = 0; i < mainQuestManager.AvailableQuests.Count; i++)
         {
             Quest quest = mainQuestManager.AvailableQuests[i];
+
+#if UNITY_WEBGL
+            quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    mainUIQuests[i].Setup(handle.Result, quest.IsCompleted, quest);
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
             mainUIQuests[i].Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
+#endif
 
         }
         for (int i = 0; i < secondaryQuestManager.AvailableQuests.Count; i++)
         {
             Quest quest = secondaryQuestManager.AvailableQuests[i];
-            secondaryUIQuests[i].Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
 
+#if UNITY_WEBGL
+            quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    secondaryUIQuests[i].Setup(handle.Result, quest.IsCompleted, quest);
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
+            secondaryUIQuests[i].Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
+#endif
         }
     }
 
@@ -128,21 +155,68 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
         titleSecondaryQuestCountText.text = $"({secondaryQuestManager.CompletedQuestCount}/{secondaryQuestManager.AvailableQuestCount})";
 
+#if UNITY_WEBGL
+        foreach (Quest quest in mainQuestManager.AvailableQuests)
+        {
+            quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewMainQuest);
+                    UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
+                    uIQuestInstance.Setup(handle.Result, quest.IsCompleted, quest);
+                    mainUIQuests.Add(uIQuestInstance);
+                }
+            }; 
+        }
+#endif
+
+#if !UNITY_WEBGL
         foreach (Quest quest in mainQuestManager.AvailableQuests)
         {
             GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewMainQuest);
             UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
             uIQuestInstance.Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
-            mainUIQuests.Add(uIQuestInstance);
+             
+         }
+#endif
 
+#if UNITY_WEBGL
+        foreach (Quest quest in secondaryQuestManager.AvailableQuests)
+        {
+            quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewSecondaryQuest);
+                    UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
+                    uIQuestInstance.Setup(handle.Result, quest.IsCompleted, quest);
+                    secondaryUIQuests.Add(uIQuestInstance);
+                }
+            };
         }
+#endif
+
+#if !UNITY_WEBGL
         foreach (Quest quest in secondaryQuestManager.AvailableQuests)
         {
             GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewSecondaryQuest);
             UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
+
             uIQuestInstance.Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
-            secondaryUIQuests.Add(uIQuestInstance);
+             secondaryUIQuests.Add(uIQuestInstance);
+         }
+#endif
+
+
+#if UNITY_WEBGL
+        if (enableQuestHighlighting)
+        {
+            HighlightNextQuest(ref currentHighlightedMainQuest, true);
+            HighlightNextQuest(ref currentHighlightedSecondaryQuest, false);
+
         }
+#endif
     }
 
     private void MainQuestManager_OnQuestCompleted(Quest quest)
@@ -195,7 +269,22 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         }
 
         //contentScrollViewSecondaryQuest.localPosition = scrollRectSecondaryQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
+
+#if UNITY_WEBGL
+        quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                uiQuest.UnlockQuest(handle.Result);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
+#endif
+
+
     }
 
     private void MainQuestManager_OnQuestUnlocked(Quest quest)
@@ -209,7 +298,20 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
         }
 
         //contentScrollViewMainQuest.localPosition = scrollRectMainQuest.GetSnapToPositionToBringChildIntoView(uiQuest.GetComponent<RectTransform>());
+
+#if UNITY_WEBGL
+        quest.Description.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                uiQuest.UnlockQuest(handle.Result);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         uiQuest.UnlockQuest(quest.Description.GetLocalizedString());
+#endif
     }
 
     private void HighlightNextQuest(ref UIQuest currentHighlightedQuest, bool isMainQuest)

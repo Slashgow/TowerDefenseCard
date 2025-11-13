@@ -17,7 +17,20 @@ public class TutorialStep
 
     public void Show(TextMeshProUGUI descriptionText, Image tanukiImage)
     {
-        descriptionText.text = Description.GetLocalizedString();
+#if UNITY_WEBGL
+        Description.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                descriptionText.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+            descriptionText.text = Description.GetLocalizedString();
+#endif
+
         tanukiImage.sprite = tanukiSprite;
 
         if (focusGameObject == null)
@@ -27,7 +40,20 @@ public class TutorialStep
     }
     public void Show(ScrollTextWithVoice scrollTextWithVoice, Image tanukiImage, TextMeshProUGUI textMeshProUGUI)
     {
-        scrollTextWithVoice.TypeText(Description.GetLocalizedString(), textMeshProUGUI);
+#if UNITY_WEBGL
+        Description.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                scrollTextWithVoice.TypeText(handle.Result, textMeshProUGUI);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+         scrollTextWithVoice.TypeText(Description.GetLocalizedString(), textMeshProUGUI);
+#endif
+
         tanukiImage.sprite = tanukiSprite;
 
         if (focusGameObject == null)

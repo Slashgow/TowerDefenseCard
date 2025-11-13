@@ -10,12 +10,57 @@ public class CardIdea : Card, IPointerDownHandler
     public void Initialize(Card card)
     {
         this.card = card;
+
+#if UNITY_WEBGL
+
+        string cardName = string.Empty;
+        card.CardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardName = handle.Result;
+            }
+        };
+
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardIdeaUI.SetupCard(handle.Result, cardData.Cost.ToString(), cardName);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardIdeaUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString(), card.CardData.CardName.GetLocalizedString());
+#endif
     }
 
     private void OnLocaleChange(UnityEngine.Localization.Locale Locale)
     {
+#if UNITY_WEBGL
+
+        string cardName = string.Empty;
+        card.CardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardName = handle.Result;
+            }
+        };
+
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardIdeaUI.SetupCard(handle.Result, cardData.Cost.ToString(), cardName);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardIdeaUI.SetupCard(cardData.CardName.GetLocalizedString(), cardData.Cost.ToString(), card.CardData.CardName.GetLocalizedString());
+#endif
     }
 
     protected override void Start()

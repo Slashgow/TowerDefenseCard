@@ -38,8 +38,22 @@ public class UIPageGameModeTransition : UIPage
     {
         base.Awake();
 
-        mainMenuButton.onClick.AddListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
-        endlessModeButton.onClick.AddListener(() => ClickEndlessModeButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+#if UNITY_WEBGL
+        defeatAllWavesLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                mainMenuButton.onClick.AddListener(() => ClickMainMenuButton(handle.Result));
+                endlessModeButton.onClick.AddListener(() => ClickEndlessModeButton(handle.Result));
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+          mainMenuButton.onClick.AddListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+          endlessModeButton.onClick.AddListener(() => ClickEndlessModeButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+#endif
+
         buttonContainer.SetActive(false);
     }
 
@@ -63,29 +77,119 @@ public class UIPageGameModeTransition : UIPage
         }
         PlayerHealth.OnPlayerDie -= PlayerHealth_OnPlayerDie;
 
-        mainMenuButton.onClick.RemoveListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+#if UNITY_WEBGL
+        defeatAllWavesLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                mainMenuButton.onClick.RemoveListener(() => ClickMainMenuButton(handle.Result));
+                endlessModeButton.onClick.RemoveListener(() => ClickEndlessModeButton(handle.Result));
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+            mainMenuButton.onClick.RemoveListener(() => ClickMainMenuButton(defeatAllWavesLocalizedString.GetLocalizedString()));
         endlessModeButton.onClick.RemoveListener(() => ClickEndlessModeButton(defeatAllWavesLocalizedString.GetLocalizedString()));
+#endif
     }
 
-    private void GameManager_OnStartCraftMode() => DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString(), true);
+    private void GameManager_OnStartCraftMode()
+    {
+#if UNITY_WEBGL
+        startCraftPhaseLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                DoTransitionEffect(handle.Result, true);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+          DoTransitionEffect(startCraftPhaseLocalizedString.GetLocalizedString(), true);
+#endif
+    }
+
     private void GameManager_OnStartCombatMode()
     {
-        string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)} \n";
-        text += startCombatPhaseLocalizedString.GetLocalizedString();
+#if UNITY_WEBGL
+        string text = string.Empty;
+        startCraftPhaseLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                text = $"{handle.Result} {WaveManager.Instance.CurrentWaveIndex + 1} / {(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)} \n";
+            }
+        };
+        startCombatPhaseLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                text += handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+         string text = $"{WaveLocalizedString.GetLocalizedString()} {WaveManager.Instance.CurrentWaveIndex + 1} / {(WaveManager.Instance.EnableEndlessMode ? "-" : WaveManager.Instance.NumberOfWaves)} \n";
+         text += startCombatPhaseLocalizedString.GetLocalizedString();
+#endif
+
         DoTransitionEffect(text, true);
     }
 
     private void GameManager_OnDefeatAllWaves()
     {
         buttonContainer.SetActive(true);
+
+#if UNITY_WEBGL
+        defeatAllWavesLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                DoTransitionEffect(handle.Result, false);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString(), false);
+#endif
     }
     private void GameManager_OnDemoEnd()
     {
+#if UNITY_WEBGL
+        DemoManager.Instance.EndTextDemo.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                DoTransitionEffect(handle.Result, true);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         DoTransitionEffect(DemoManager.Instance.EndTextDemo.GetLocalizedString(), true);
+#endif
     }
 
-    private void PlayerHealth_OnPlayerDie() => DoTransitionEffect(playerDieLocalizedString.GetLocalizedString(), true);
+    private void PlayerHealth_OnPlayerDie()
+    {
+#if UNITY_WEBGL
+        playerDieLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                DoTransitionEffect(handle.Result, true);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+        DoTransitionEffect(playerDieLocalizedString.GetLocalizedString(), true);
+#endif
+    }
 
     private void DoTransitionEffect(string text, bool registerFadeOut)
     {

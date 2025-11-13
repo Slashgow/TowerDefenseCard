@@ -24,6 +24,23 @@ public class LanguageManager : MonoSingleton<LanguageManager>
 
     public void SetLanguage(int index)
     {
+#if UNITY_WEBGL
+        LocalizationSettings.InitializationOperation.Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                var locales = LocalizationSettings.AvailableLocales.Locales;
+                if (index >= 0 && index < LocalizationSettings.AvailableLocales.Locales.Count)
+                {
+                    CurrentLocaleIndex = index;
+                    LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(locales[index].Identifier);
+                    SaveSettings();
+                }
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         var locales = LocalizationSettings.AvailableLocales.Locales;
         if (index >= 0 && index < LocalizationSettings.AvailableLocales.Locales.Count)
         {
@@ -31,6 +48,7 @@ public class LanguageManager : MonoSingleton<LanguageManager>
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(locales[index].Identifier);
             SaveSettings();
         }
+#endif
     }
 
     private void SaveSettings()

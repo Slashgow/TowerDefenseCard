@@ -70,7 +70,21 @@ public class CardShop : Card, ILoadable, ISavable
 
     public void UpdateCardShopData()
     {
-        cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.CurrentShopCost.ToString());
+#if UNITY_WEBGL
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardUI.SetupCard(handle.Result, shop.CurrentShopCost.ToString());
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+         cardUI.SetupCard(cardData.CardName.GetLocalizedString(), shop.CurrentShopCost.ToString());
+#endif
+
+
     }
     private void UpdateCardShopDataLock()
     {

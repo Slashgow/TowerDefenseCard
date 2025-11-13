@@ -85,18 +85,38 @@ public class Tanuki : MonoBehaviour
 
         lastLineTimer?.Cancel();
 
-        bubbleImageWorldSpace.enabled = true;
-        bubbleImageScreenSpace.enabled = true;
+        if(bubbleImageWorldSpace != null)
+            bubbleImageWorldSpace.enabled = true;
+
+        if(bubbleImageScreenSpace != null)
+            bubbleImageScreenSpace.enabled = true;
 
         TanukiLineData tanukiLineData = tanukiLine.GetRandomTanukiLineData();
 
-        tanukiImageScreenSpace.enabled = true;
+        if(tanukiImageScreenSpace != null)
+            tanukiImageScreenSpace.enabled = true;
 
-        tanukiImageWorldSpace.sprite = tanukiLineData.TanukiSprite;
-        tanukiImageScreenSpace.sprite = tanukiLineData.TanukiSprite;
+        if(tanukiImageWorldSpace != null && tanukiLineData.TanukiSprite != null)
+            tanukiImageWorldSpace.sprite = tanukiLineData.TanukiSprite;
 
-        scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextWorldSpace, keepShowingDuration);
-        scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextScreenSpace, keepShowingDuration);
+        if (tanukiImageScreenSpace != null && tanukiLineData.TanukiSprite != null)
+            tanukiImageScreenSpace.sprite = tanukiLineData.TanukiSprite;
+
+#if UNITY_WEBGL
+        tanukiLineData.Line.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                scrollTextWithVoice.TypeText(handle.Result, tanukiTextWorldSpace, keepShowingDuration);
+                scrollTextWithVoice.TypeText(handle.Result, tanukiTextScreenSpace, keepShowingDuration);
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+             scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextWorldSpace, keepShowingDuration);
+              scrollTextWithVoice.TypeText(tanukiLineData.Line.GetLocalizedString(), tanukiTextScreenSpace, keepShowingDuration);
+#endif
 
         lastLineTimer = Timer.Register(lastLineDurationThresholdForTeasing, onComplete: () => ShowTanukiText(linesTeasing));
     }

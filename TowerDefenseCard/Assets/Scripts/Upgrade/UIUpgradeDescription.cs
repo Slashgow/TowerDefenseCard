@@ -15,14 +15,38 @@ public class UIUpgradeDescription : MonoBehaviour
 
         if(cardUpgrade != null)
         {
+#if UNITY_WEBGL
+            cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    descriptionText.text = handle.Result;
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
             descriptionText.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
+#endif
         }
         else
         {
+#if UNITY_WEBGL
+            card.CardData.CardDescription.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    descriptionText.text = handle.Result;
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
             descriptionText.text = card.CardData.CardDescription.GetLocalizedString();
+#endif
         }
 
-            
+
         GameObject cardUIGameObject = Instantiate(cardUIPrefab, cardUIParent);
         cardUIGameObject.GetComponent<UICardMenu>().SetupUICardMenu(card.CardData, true);
     }

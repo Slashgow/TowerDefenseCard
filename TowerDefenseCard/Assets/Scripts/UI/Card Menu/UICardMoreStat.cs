@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,7 +65,21 @@ public class UICardMoreStat : MonoBehaviour
         if (successData == null) 
             return;
 
-        successDescriptionText.text = successData.Description.GetLocalizedString();
+#if UNITY_WEBGL
+        successData.Description.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                successDescriptionText.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+           successDescriptionText.text = successData.Description.GetLocalizedString();
+#endif
+
+
         TryDisplaySuccessStat(successData.SteamId);
     }
 
@@ -149,7 +164,22 @@ public class UICardMoreStat : MonoBehaviour
         rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         rectTransform.anchoredPosition = Vector2.zero;
 
-        descriptionValue.text = card.CardData.CardDescription.GetLocalizedString();
+
+#if UNITY_WEBGL
+        card.CardData.CardDescription.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                descriptionValue.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+       descriptionValue.text = card.CardData.CardDescription.GetLocalizedString();
+#endif
+
+
 
         UICardMenu uICardMenu = uiCardMenuGameObject.GetComponent<UICardMenu>();
         uICardMenu.SetupUICardMenu(card.CardData, true);
@@ -187,7 +217,20 @@ public class UICardMoreStat : MonoBehaviour
         else
         {
             upgradeDescription.gameObject.SetActive(true);
+
+#if UNITY_WEBGL
+            cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    upgradeDescription.text = handle.Result;
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
             upgradeDescription.text = cardUpgrade.UpgradeData.UpgradeLocalizedDescription.GetLocalizedString();
+#endif
         }
 
         recipeHighestParent.SetActive(true);

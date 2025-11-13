@@ -22,7 +22,21 @@ public class UIPageCardsDiscovered : UIPage
 
         List<Card> cardDiscovered = CardManager.Instance.GetAllCardsDiscovered();
 
+#if UNITY_WEBGL
+        cardDiscoverLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardDiscoverCounterText.text = $"{handle.Result} : {cardDiscovered.Count}/{CardManager.Instance.AllDiscoverableCards}";
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardDiscoverCounterText.text = $"{cardDiscoverLocalizedString.GetLocalizedString()} : {cardDiscovered.Count}/{CardManager.Instance.AllDiscoverableCards}";
+#endif
+
+
 
         foreach (Card card in cardDiscovered)
         {

@@ -23,7 +23,21 @@ public class UISuccess : MonoBehaviour, IUISelectable<SuccessData>
         successData.OnComplete -= OnCompleteSuccess;
         successData.OnComplete += OnCompleteSuccess;
 
-        successTitle.text = successData.Title.GetLocalizedString();
+#if UNITY_WEBGL
+        successData.Title.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                successTitle.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+           successTitle.text = successData.Title.GetLocalizedString();
+#endif
+
+
 
         UpdateSprite(successData);
 

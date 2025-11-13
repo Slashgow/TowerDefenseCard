@@ -456,7 +456,15 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             if (m_ActionLabel != null)
             {
                 var action = m_Action?.action;
-                m_ActionLabel.text = action != null ? actionDescriptionLocalized.GetLocalizedString() : string.Empty;  //action.name : string.Empty;
+#if UNITY_WEBGL
+                m_ActionLabel.text = action != null ? action.name : string.Empty;
+#endif
+
+#if !UNITY_WEBGL
+            m_ActionLabel.text = action != null ? actionDescriptionLocalized.GetLocalizedString() : string.Empty;  //action.name : string.Empty;
+#endif
+
+
             }
         }
 

@@ -22,7 +22,22 @@ public class UICardMenu : MonoBehaviour, IUISelectable<CardID>
     public virtual void SetupUICardMenu(CardData cardData, bool disableNotification)
     { 
         this.cardData = cardData;
-        cardTitle.text = cardData.CardName.GetLocalizedString();
+
+#if UNITY_WEBGL
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardTitle.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+         cardTitle.text = cardData.CardName.GetLocalizedString();
+#endif
+
+
         cardCost.text = cardData.Cost.ToString();
         cardImage.sprite = cardData.CardSprite;
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;

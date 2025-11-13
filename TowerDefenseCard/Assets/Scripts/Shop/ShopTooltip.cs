@@ -43,14 +43,56 @@ public class ShopTooltip : MonoBehaviour
         cardIdeaNames.Clear();
         foreach (ShopItem shopItem in cardShop.Shop.ShopItems)
         {
+#if UNITY_WEBGL
+            shopItem.CardPrefab.GetComponent<Card>().CardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    cardNames.Add(handle.Result);
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
             cardNames.Add(shopItem.CardPrefab.GetComponent<Card>().CardData.CardName.GetLocalizedString());
+#endif
+
+
         }
-        foreach(ShopCardIdea shopCardIdea in cardShop.Shop.ShopCardIdeas)
+        foreach (ShopCardIdea shopCardIdea in cardShop.Shop.ShopCardIdeas)
         {
-            cardIdeaNames.Add(shopCardIdea.CardIdeaPrefab.CardData.CardName.GetLocalizedString());
+#if UNITY_WEBGL
+            shopCardIdea.CardIdeaPrefab.CardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    cardIdeaNames.Add(handle.Result);
+                }
+            };
+#endif
+
+#if !UNITY_WEBGL
+           cardIdeaNames.Add(shopCardIdea.CardIdeaPrefab.CardData.CardName.GetLocalizedString());
+#endif
+
         }
 
+
+#if UNITY_WEBGL
+        startCardTooltip.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                tooltipText.text = $"<color={hexaCardNamesColor}> {handle.Result} ";
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         tooltipText.text = $"<color={hexaCardNamesColor}> {startCardTooltip.GetLocalizedString()} ";
+#endif
+
+
         for (int i = 0; i < cardNames.Count; i++)
         {
             string cardName = cardNames[i];
@@ -64,8 +106,23 @@ public class ShopTooltip : MonoBehaviour
             tooltipText.text += $"{cardName}, ";
         }
 
+#if UNITY_WEBGL
+        startCardTooltip.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                tooltipText.text += $"{handle.Result} ";
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         tooltipText.text += $"{startIdeaTooltip.GetLocalizedString()} ";
-        for(int i = 0;i < cardIdeaNames.Count; i++)
+#endif
+
+
+
+        for (int i = 0;i < cardIdeaNames.Count; i++)
         {
             string cardIdeaName = cardIdeaNames[i];
 

@@ -10,7 +10,22 @@ public class UICardRecipe : UICardMenu
     public void SetupUICardRecipe(CardData cardData , int cardAmount, bool isDestroyedOnCraft)
     {
         this.cardData = cardData;
-        cardTitle.text = cardData.CardName.GetLocalizedString();
+
+#if UNITY_WEBGL
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardTitle.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+           cardTitle.text = cardData.CardName.GetLocalizedString();
+#endif
+
+
         cardCost.text = cardData.Cost.ToString();
         cardImage.sprite = cardData.CardSprite;
         this.cardAmount.text = cardAmount.ToString();
@@ -25,7 +40,22 @@ public class UICardRecipe : UICardMenu
     public void SetupUICardRecipe(CardData cardData, string dropChance)
     {
         this.cardData = cardData;
+
+#if UNITY_WEBGL
+        cardData.CardName.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                cardTitle.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
         cardTitle.text = cardData.CardName.GetLocalizedString();
+#endif
+
+
         cardCost.text = cardData.Cost.ToString();
         cardImage.sprite = cardData.CardSprite;
         this.cardAmount.text = dropChance;

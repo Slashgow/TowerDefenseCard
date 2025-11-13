@@ -21,7 +21,22 @@ public class UIPageSuccess : UIPage
 
         List<SuccessData> successDatas = SuccessManager.Instance.AllSuccessData;
 
-        successCounterText.text = $"{successUnlockedLocalizedString.GetLocalizedString()} : {SuccessManager.Instance.GetCompletedSuccessCount()}/{successDatas.Count}";
+#if UNITY_WEBGL
+        successUnlockedLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                successCounterText.text = $"{handle.Result} : {SuccessManager.Instance.GetCompletedSuccessCount()}/{successDatas.Count}";
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+           successCounterText.text = $"{successUnlockedLocalizedString.GetLocalizedString()} : {SuccessManager.Instance.GetCompletedSuccessCount()}/{successDatas.Count}";
+#endif
+
+
+
 
         foreach (SuccessData successData in successDatas)
         {

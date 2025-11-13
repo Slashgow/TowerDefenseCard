@@ -107,7 +107,20 @@ public class InputShower : MonoBehaviour
     private void DisplayInputText(LocalizedString inputText)
     {
         inputDisplayText.gameObject.SetActive(true);
-        inputDisplayText.text = inputText.GetLocalizedString();
+
+#if UNITY_WEBGL
+        inputText.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                inputDisplayText.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+           inputDisplayText.text = inputText.GetLocalizedString();
+#endif
 
         Color currentColor = inputDisplayText.color;
         currentColor.a = 0f;
@@ -126,7 +139,21 @@ public class InputShower : MonoBehaviour
     {
         secondInputDisplayText.gameObject.SetActive(true);
 
-        secondInputDisplayText.text = inputText.GetLocalizedString();
+#if UNITY_WEBGL
+        inputText.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                secondInputDisplayText.text = handle.Result;
+            }
+        };
+#endif
+
+#if !UNITY_WEBGL
+            secondInputDisplayText.text = inputText.GetLocalizedString();
+#endif
+
+
 
         Color currentColor = secondInputDisplayText.color;
         currentColor.a = 0f;
