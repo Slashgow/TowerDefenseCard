@@ -436,7 +436,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
                         CardDiscoveryState cardDiscoveryState = saveData.allCards[i];
                         allCards[i].isDiscovered = cardDiscoveryState.isDiscovered;
                         allCards[i].isClickedAfterNotification = cardDiscoveryState.isClickedAfterNotification;
-                        allCards[i].isLocked = cardDiscoveryState.isLocked;
+                        //allCards[i].isLocked = cardDiscoveryState.isLocked;
                     }
                 }
                 Debug.Log($"Game loaded from {SavePath.SavePathCardDiscovered}", this);

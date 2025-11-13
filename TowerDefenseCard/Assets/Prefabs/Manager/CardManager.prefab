@@ -370,7 +370,7 @@ MonoBehaviour:
   - card: {fileID: 2861984798354678937, guid: 36f869e9217a37943bf09a65ae0225ba, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 2861984798354678937, guid: ea01672f1e9941343a5168291a734b9a, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   - card: {fileID: 2861984798354678937, guid: 0fb8d240bc12dfd43b9f1f71639de25c, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 2861984798354678937, guid: 5f3b332d30991d1449924c226951fa97, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   - card: {fileID: 2861984798354678937, guid: 8cc779646610f3c4d997b76499991649, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 2861984798354678937, guid: 56db25d635888184aa2c2f8e01afbf8f, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
