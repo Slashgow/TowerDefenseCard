@@ -64,8 +64,6 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             Hide();
     }
 
-
-
     private void OnDestroy()
     {
         dropButtonMainQuest.onClick.RemoveListener(ToggleScrollRectMainQuest);
@@ -177,8 +175,8 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
             GameObject uiQuestGameObjectInstance = Instantiate(UIQuestPrefab.gameObject, contentScrollViewMainQuest);
             UIQuest uIQuestInstance = uiQuestGameObjectInstance.GetComponent<UIQuest>();
             uIQuestInstance.Setup(quest.Description.GetLocalizedString(), quest.IsCompleted, quest);
-             
-         }
+            mainUIQuests.Add(uIQuestInstance);
+        }
 #endif
 
 #if UNITY_WEBGL
