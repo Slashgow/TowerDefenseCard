@@ -249,7 +249,20 @@ public class UICardMoreStat : MonoBehaviour
                 uICardRecipe.SetupUICardRecipe(CardManager.Instance.GetCardPrefabByCardID(outputCard.cardID).CardData, dropChance);
             }
         }
-        else if(card is CardWorker)
+        else if(card is Merchant)
+        {
+            Merchant cardMerchant = (Merchant)card;
+
+            foreach (ShopItem shopItem in cardMerchant.Shop.ShopItems)
+            {
+                GameObject pairCardAndCost = Instantiate(pairCardAndCostPrefab, recipeParent);
+                UICardRecipe uICardRecipe = pairCardAndCost.GetComponent<UICardRecipe>();
+                string dropChance = $"{shopItem.DropPercentage} %";
+                uICardRecipe.SetupUICardRecipe(shopItem.CardPrefab.GetComponent<Card>().CardData, dropChance);
+            }
+        }
+
+        else if (card is CardWorker)
         {
             List<CraftingRecipe> craftingRecipes = CraftingManager.Instance.GetRecipesByOutputCardID(CardID.CURRENCY);
 
@@ -270,7 +283,7 @@ public class UICardMoreStat : MonoBehaviour
                     break;
             }
 
-            if(craftingRecipe == null)
+            if (craftingRecipe == null)
                 return;
 
             foreach (CraftingRecipe.Ingredient ingredient in craftingRecipe.Ingredients)

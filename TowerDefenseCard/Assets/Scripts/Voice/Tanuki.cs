@@ -15,9 +15,10 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tanukiTextScreenSpace;
     [SerializeField] private Image bubbleImageScreenSpace;
     [SerializeField] private Image tanukiImageScreenSpace;
+    [SerializeField] private CardSpawner merchantSpawner;
 
     [Header("Settings")]
-    [SerializeField, Range(0f,150f)] private float lastLineDurationThresholdForTeasing = 30f;
+    [SerializeField, Range(0f,500f)] private float lastLineDurationThresholdForTeasing = 30f;
     [SerializeField, Range(0f,15f)] private float keepShowingDuration = 10f;
     [SerializeField] private Sprite defaultTanukiSprite;
     [SerializeField, Range(0f, 20f)] private float timeBeforeStartTutoText = 15f;
@@ -40,6 +41,7 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private TanukiLine linesTutoSellForBooster;
     [SerializeField] private TanukiLine linesTutoDropInkOnShopToBuy;
     [SerializeField] private TanukiLine linesResetCraftingTimerEasyModeNoDefense;
+    [SerializeField] private TanukiLine linesOnMerchantSpawn;
 
     private Timer startShowTutoTimer;
     private Timer lastLineTimer;
@@ -151,6 +153,7 @@ public class Tanuki : MonoBehaviour
         SuccessManager.Instance.CraftFirstDefenseSuccess.OnComplete += OnCompleteFirstDefense;
         SuccessManager.Instance.CraftTempleSuccess.OnComplete += OnCompleteCraftTemple;
         CraftingManager.OnResetCraftingManagerEasyModeNoDefense += CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
+        merchantSpawner.OnSpawnCard += MerchantSpawner_OnSpawnCard;
     }
 
     private void OnDestroy()
@@ -184,7 +187,7 @@ public class Tanuki : MonoBehaviour
             SuccessManager.Instance.CraftTempleSuccess.OnComplete -= OnCompleteCraftTemple;
         }
 
-      
+        merchantSpawner.OnSpawnCard -= MerchantSpawner_OnSpawnCard;
 
         lastLineTimer?.Cancel();
         queueDelayTimer?.Cancel();
@@ -218,5 +221,10 @@ public class Tanuki : MonoBehaviour
     private void OnCompleteFirstDefense(SuccessData successData) => ShowTanukiText(linesOnCraftFirstDefense);
     private void OnCompleteFirstFactory(SuccessData successData) => ShowTanukiText(linesOnFirstFactoryComplete);
     private void OnCompleteFirstCraft(SuccessData successData) => ShowTanukiText(linesOnFirstCraftComplete);
+    private void MerchantSpawner_OnSpawnCard(CardID cardID)
+    {
+        if(cardID == CardID.MERCHANT)
+            ShowTanukiText(linesOnMerchantSpawn);
+    }
 
 }

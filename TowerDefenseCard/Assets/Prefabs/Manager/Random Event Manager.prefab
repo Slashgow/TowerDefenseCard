@@ -50,7 +50,7 @@ MonoBehaviour:
   eventSettings:
     minSpawnInterval: 100
     maxSpawnInterval: 150
-    minimumWaveToStart: 1
+    minimumWaveToStart: 2
     spawnProbability: 1
     maxTimeRemainingBeforeWaveStartAllowed: 60
     enemyPrefabs:

@@ -53,7 +53,8 @@ MonoBehaviour:
   tanukiTextScreenSpace: {fileID: 0}
   bubbleImageScreenSpace: {fileID: 0}
   tanukiImageScreenSpace: {fileID: 0}
-  lastLineDurationThresholdForTeasing: 120
+  merchantSpawner: {fileID: 0}
+  lastLineDurationThresholdForTeasing: 300
   keepShowingDuration: 15
   defaultTanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
   timeBeforeStartTutoText: 15
@@ -359,6 +360,18 @@ MonoBehaviour:
         m_WaitForCompletion: 0
         m_LocalVariables: []
       tanukiSprite: {fileID: -906768733, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
+  linesOnMerchantSpawn:
+    lines:
+    - line:
+        m_TableReference:
+          m_TableCollectionName: GUID:ddc349f0a26451848b441f5abb364850
+        m_TableEntryReference:
+          m_KeyId: 33348108233732096
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      tanukiSprite: {fileID: 773370902, guid: 6fbe15ce636b03f409923033c536a08b, type: 3}
   references:
     version: 2
     RefIds: []
