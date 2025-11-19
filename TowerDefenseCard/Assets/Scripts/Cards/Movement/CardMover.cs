@@ -1,8 +1,5 @@
-
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -75,6 +72,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (eventData.button != 0)
+            return;
 
         //Debug.Log($"on pointer down {this.name}");
         OnPointerDownEvent?.Invoke();
@@ -110,6 +109,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (eventData.button != 0)
+            return;
+
         //Debug.Log($"on drag {this.name}");
         if (!isDragging) 
             return;
@@ -131,6 +133,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (eventData.button != 0)
+            return;
 
         //Debug.Log($"on pointer up {this.name}");
         OnPointerUpEvent?.Invoke();
@@ -341,6 +345,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (eventData.button != 0)
+            return;
+
         OnStartDragCard?.Invoke();
 
         List<Card> cards = CardUtility.GetAllCards(card.gameObject);
@@ -367,6 +374,9 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (eventData.button != 0)
+            return;
+
         OnEndDragCard?.Invoke();
 
         List<Card> cards = CardUtility.GetAllCards(card.gameObject);
