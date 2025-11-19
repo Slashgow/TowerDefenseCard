@@ -16,6 +16,7 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private Image bubbleImageScreenSpace;
     [SerializeField] private Image tanukiImageScreenSpace;
     [SerializeField] private CardSpawner merchantSpawner;
+    [SerializeField] private CardSpawner workerSpawner;
 
     [Header("Settings")]
     [SerializeField, Range(0f,500f)] private float lastLineDurationThresholdForTeasing = 30f;
@@ -42,6 +43,7 @@ public class Tanuki : MonoBehaviour
     [SerializeField] private TanukiLine linesTutoDropInkOnShopToBuy;
     [SerializeField] private TanukiLine linesResetCraftingTimerEasyModeNoDefense;
     [SerializeField] private TanukiLine linesOnMerchantSpawn;
+    [SerializeField] private TanukiLine linesOnWorkerSpawn;
 
     private Timer startShowTutoTimer;
     private Timer lastLineTimer;
@@ -154,6 +156,7 @@ public class Tanuki : MonoBehaviour
         SuccessManager.Instance.CraftTempleSuccess.OnComplete += OnCompleteCraftTemple;
         CraftingManager.OnResetCraftingManagerEasyModeNoDefense += CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
         merchantSpawner.OnSpawnCard += MerchantSpawner_OnSpawnCard;
+        workerSpawner.OnSpawnCard += WorkerSpawner_OnSpawnCard;
     }
 
     private void OnDestroy()
@@ -188,6 +191,7 @@ public class Tanuki : MonoBehaviour
         }
 
         merchantSpawner.OnSpawnCard -= MerchantSpawner_OnSpawnCard;
+        workerSpawner.OnSpawnCard -= WorkerSpawner_OnSpawnCard;
 
         lastLineTimer?.Cancel();
         queueDelayTimer?.Cancel();
@@ -226,5 +230,9 @@ public class Tanuki : MonoBehaviour
         if(cardID == CardID.MERCHANT)
             ShowTanukiText(linesOnMerchantSpawn);
     }
-
+    private void WorkerSpawner_OnSpawnCard(CardID cardID)
+    {
+        if (cardID == CardID.WORKER)
+            ShowTanukiText(linesOnWorkerSpawn);
+    }
 }

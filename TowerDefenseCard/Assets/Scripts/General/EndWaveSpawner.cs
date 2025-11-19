@@ -28,7 +28,7 @@ public class EndWaveSpawner : CardSpawner
     {
         if(spawnEachWave)
             SpawnCard();
-        else if(waveIndexToSpawn[currentIndex] < waveIndex && currentIndex < waveIndexToSpawn.Count)
+        else if(currentIndex < waveIndexToSpawn.Count && waveIndexToSpawn[currentIndex] == waveIndex)
         {
             currentIndex++;
             SpawnCard();
