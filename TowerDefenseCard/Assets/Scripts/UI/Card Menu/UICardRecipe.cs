@@ -35,6 +35,11 @@ public class UICardRecipe : UICardMenu
             isDestroyedOnCraftImage.gameObject.SetActive(true);
         else
             isDestroyedOnCraftImage.gameObject.SetActive(false);
+
+        if(cardData.CardID == CardID.CURRENCY)
+        {
+            cardBackgroundImage.color = new Color32(255, 213, 90, 255);
+        }
     }
 
     public void SetupUICardRecipe(CardData cardData, string dropChance)
@@ -61,5 +66,10 @@ public class UICardRecipe : UICardMenu
         this.cardAmount.text = dropChance;
         cardBackgroundImage.sprite = cardData.CardBackgroundSprite;
         isDestroyedOnCraftImage.gameObject.SetActive(false);
+
+        if (cardData.CardID == CardID.CURRENCY)
+        {
+            cardBackgroundImage.color = new Color32(255, 213, 90, 255);
+        }
     }
 }
