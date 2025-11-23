@@ -2,26 +2,32 @@
 
 public class CardRessourceGenerator : Card
 {
-    [SerializeField] private CardID craftableCardID; // The card to craft (must match a recipe)
-    [SerializeField] private int craftCount = 1; // Number of cards to craft per cycle
+    [SerializeField] private CardID craftableCardID; 
+    [SerializeField] private int craftCount = 1; 
 
     private bool isCrafting = false;
     private int currentCraftID = -1;
 
    protected override void Start()
-   {
+    {
         base.Start();
-        //StartCrafting();
-        CraftingManager.Instance.OnCraftComplete += OnCraftComplete;
+        ListenToCraft();
     }
-   
-   private void OnDisable()
-   {
-        //StopCrafting();
 
+    private void ListenToCraft()
+    {
         if(CraftingManager.HasInstance)
-            CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
-   }
+        {
+            CraftingManager.Instance.OnCraftCompleteWithInfo -= OnCraftCompleteWithInfo;
+            CraftingManager.Instance.OnCraftCompleteWithInfo += OnCraftCompleteWithInfo;
+        } 
+    }
+
+    private void OnDisable()
+    {
+        if(CraftingManager.HasInstance)
+            CraftingManager.Instance.OnCraftCompleteWithInfo -= OnCraftCompleteWithInfo;
+    }
 
     public void StartCrafting()
     {
@@ -40,7 +46,7 @@ public class CardRessourceGenerator : Card
         isCrafting = false;
         if (currentCraftID != -1 && CraftingManager.HasInstance)
         {
-            CraftingManager.Instance.OnCraftComplete -= OnCraftComplete;
+            CraftingManager.Instance.OnCraftCompleteWithInfo -= OnCraftCompleteWithInfo;
             CraftingManager.Instance.TryCancelCraft(this); 
         }
         Debug.Log("Crafting stopped");
@@ -65,8 +71,11 @@ public class CardRessourceGenerator : Card
         }
     }
 
-    private void OnCraftComplete(int craftID, CardID outputCardID)
+    private void OnCraftCompleteWithInfo(CraftInfo craftInfo, CardID outputCardID)
     {
+        if(!craftInfo.StackCards.Contains(this))
+            return;
+
         if (craftableCardID == outputCardID)
         {
             Debug.Log("on craft complete reinitate craft");

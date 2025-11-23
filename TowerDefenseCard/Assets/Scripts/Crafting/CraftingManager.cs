@@ -485,7 +485,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         foreach(Card card in stackCards)
         {
-            foreach(CraftInfo craftInfo in currentCrafts)
+            Debug.Log($"Checking card {card.CardData.CardID}{card.GetInstanceID()} for ongoing crafts");
+            foreach (CraftInfo craftInfo in currentCrafts)
             {
                 if (craftInfo.StackCards.Any(stackCard => stackCard.GetInstanceID() == card.GetInstanceID()))
                 {
