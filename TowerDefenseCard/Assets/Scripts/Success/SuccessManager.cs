@@ -17,7 +17,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     [SerializeField] private SuccessData open50BoosterSuccess;
     [SerializeField] private SuccessData open250BoosterSuccess;
     [SerializeField] private SuccessData open500BoosterSuccess;
-    [SerializeField] private SuccessData open1000BoosterSuccess;
+    //[SerializeField] private SuccessData open1000BoosterSuccess;
 
     [Header("Reroller")]
     [SerializeField] private SuccessData open100BoosterDuringAGame;
@@ -39,13 +39,13 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     [SerializeField] private SuccessData firstCraftSuccess;
     [SerializeField] private SuccessData craft250Cards;
     [SerializeField] private SuccessData craft1000Cards;
-    [SerializeField] private SuccessData craft10000Cards;
+    //[SerializeField] private SuccessData craft10000Cards;
 
     [Header("Seller")]
     [SerializeField] private SuccessData sell100CardsSuccess;
     [SerializeField] private SuccessData sell500CardsSuccess;
     [SerializeField] private SuccessData sell2500CardsSuccess;
-    [SerializeField] private SuccessData sell5000CardsSuccess;
+    //[SerializeField] private SuccessData sell5000CardsSuccess;
 
     [Header("Industrialist")]
     [SerializeField] private SuccessData firstFactorySuccess;
@@ -141,7 +141,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             open50BoosterSuccess,
             open250BoosterSuccess,
             open500BoosterSuccess,
-            open1000BoosterSuccess,
+            //open1000BoosterSuccess,
             
             // Reroller
             open100BoosterDuringAGame,
@@ -163,13 +163,13 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             firstCraftSuccess,
             craft250Cards,
             craft1000Cards,
-            craft10000Cards,
+            //craft10000Cards,
             
             // Seller
             sell100CardsSuccess,
             sell500CardsSuccess,
             sell2500CardsSuccess,
-            sell5000CardsSuccess,
+            //sell5000CardsSuccess,
             
             // Industrialist
             firstFactorySuccess,
@@ -316,9 +316,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     {
         successStatData.soldCardCounterAllTime += cardCount;
 
-        if (successStatData.soldCardCounterAllTime >= 5000)
-            sell5000CardsSuccess.Complete();
-        else if (successStatData.soldCardCounterAllTime >= 2500)
+        //if (successStatData.soldCardCounterAllTime >= 5000)
+        //    sell5000CardsSuccess.Complete();
+        if (successStatData.soldCardCounterAllTime >= 2500)
             sell2500CardsSuccess.Complete();
         else if (successStatData.soldCardCounterAllTime >= 500)
             sell500CardsSuccess.Complete();
@@ -357,9 +357,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         if(successStatData.boosterOpenedCounterInGame > 100)
             open100BoosterDuringAGame.Complete();
 
-        if(successStatData.boosterOpenedCounterAllTime >= 1000)
-            open1000BoosterSuccess.Complete();
-        else if(successStatData.boosterOpenedCounterAllTime >= 500)
+        //if(successStatData.boosterOpenedCounterAllTime >= 1000)
+        //    open1000BoosterSuccess.Complete();
+        if(successStatData.boosterOpenedCounterAllTime >= 500)
             open500BoosterSuccess.Complete();
         else if(successStatData.boosterOpenedCounterAllTime >= 250)
             open250BoosterSuccess.Complete();
@@ -371,9 +371,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     {
         successStatData.craftedCardCounterAllTime++;
 
-        if(successStatData.craftedCardCounterAllTime >= 10000)
-            craft10000Cards.Complete();
-        else if(successStatData.craftedCardCounterAllTime >= 1000)
+        //if(successStatData.craftedCardCounterAllTime >= 10000)
+        //    craft10000Cards.Complete();
+        if(successStatData.craftedCardCounterAllTime >= 1000)
             craft1000Cards.Complete();
         else if (successStatData.craftedCardCounterAllTime >= 250)
             craft250Cards.Complete();
