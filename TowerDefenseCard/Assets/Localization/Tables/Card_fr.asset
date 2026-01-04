@@ -115,7 +115,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5058903535640
-    m_Localized: Feuilles
+    m_Localized: Feuille
     m_Metadata:
       m_Items: []
   - m_Id: 5058903535641
@@ -300,17 +300,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223888
-    m_Localized: "Mi-chien, mi-lion, mordant les ennemis en AOE.\nSes d\xE9gats sont
-      renforc\xE9s si un autre Komainu est dans sa port\xE9e d'attaque"
+    m_Localized: 'Mi-chien, mi-lion, mordant les ennemis en zone.
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223889
-    m_Localized: "Grue japonaise.\nIl inflige de faibles d\xE9g\xE2ts en AOE en 
+    m_Localized: "Grue japonaise.\nIl inflige de faibles d\xE9g\xE2ts en zone en 
       battant ses ailes."
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223890
-    m_Localized: "Cr\xE9ature mythologique, br\xFBle ses ennemis sur la dur\xE9e."
+    m_Localized: "Cr\xE9ature mythologique br\xFBlant ses ennemis sur la dur\xE9e."
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223891
@@ -318,7 +319,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223892
-    m_Localized: "Cr\xE9ature mythologique, lance des boules de feus sur ses ennemis."
+    m_Localized: "Cr\xE9ature mythologique lan\xE7ant des boules de feus sur ses
+      ennemis."
     m_Metadata:
       m_Items: []
   - m_Id: 12719334223893
@@ -387,28 +389,28 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418183
-    m_Localized: Dieu du vent, peut repousser les ennemis en zone.
+    m_Localized: Dieu du vent, repoussant les ennemis en zone.
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418184
-    m_Localized: Dieu de la foudre, foudroie les ennemis en zone.
+    m_Localized: Dieu de la foudre, foudroyant les ennemis en zone.
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418185
-    m_Localized: Dieu du soleil, peut aveugler les ennemis en zone.
+    m_Localized: Dieu du soleil, aveuglant les ennemis en zone.
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418186
-    m_Localized: "Dieu des temp\xEAtes, peut stun les ennemis en zone."
+    m_Localized: "Dieu des temp\xEAtes, \xE9tourdissant les ennemis en zone."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418187
-    m_Localized: "Dieu de l'agriculture et de la m\xE9decine, peut soigner ses alli\xE9s
+    m_Localized: "Dieu de l'agriculture et de la m\xE9decine, soignant ses alli\xE9s
       en zone."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418188
-    m_Localized: "Serpents \xE0 8 t\xEAtes, empoisonnent ses ennemis."
+    m_Localized: "Serpents \xE0 8 t\xEAtes, empoisonnant ses ennemis."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418189
@@ -440,11 +442,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418195
-    m_Localized: Court vite et griffe ses ennemis en zone.
+    m_Localized: "Cr\xE9ature inspir\xE9e du chat, courant vite et infligeant des
+      griffures en zone."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418196
-    m_Localized: Aveugle tout les ennemis se trouvant dans son champ de vision.
+    m_Localized: "Cr\xE9ature inspir\xE9e du chat, aveuglant tous les ennemis se
+      trouvant dans son champ de vision."
     m_Metadata:
       m_Items: []
   - m_Id: 12719338418197
@@ -496,7 +500,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5379032051216384
-    m_Localized: " Alimentez cette usine avec 2 Essence d'Esprit pour cr\xE9er une
+    m_Localized: "Alimenter cette usine avec 2 Essence d'Esprit pour cr\xE9er une
       Essence de Dieu."
     m_Metadata:
       m_Items: []
@@ -505,16 +509,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5379319247794176
-    m_Localized: " Alimentez cette usine avec 2 Jade pour cr\xE9er une Am\xE9thyste."
+    m_Localized: "Alimenter cette usine avec 2 Jades pour cr\xE9er une Am\xE9thyste."
     m_Metadata:
       m_Items: []
   - m_Id: 5379604166864896
-    m_Localized: " Alimentez cette usine avec 2 Bambous pour cr\xE9er une Planche
+    m_Localized: "Alimenter cette usine avec 2 Bambous pour cr\xE9er une Planche
       de Bambou."
     m_Metadata:
       m_Items: []
   - m_Id: 5379684647170048
-    m_Localized: " Alimentez cette usine avec 2 Sakura pour cr\xE9er une Brique de
+    m_Localized: "Alimenter cette usine avec 2 Sakura pour cr\xE9er une Brique de
       Sakura"
     m_Metadata:
       m_Items: []
@@ -531,8 +535,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5379952642224128
-    m_Localized: "Permet d'augmenter votre nombre de cartes d\xE9fense sur le terrain
-      de 1."
+    m_Localized: "Permet d'augmenter votre nombre de cartes de d\xE9fense sur le
+      terrain de 1."
     m_Metadata:
       m_Items: []
   - m_Id: 5380261624016896
@@ -574,12 +578,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18047767417319424
-    m_Localized: "Une tour qui prot\xE8ge les d\xE9fenses dans son champ de vision.
+    m_Localized: "Une tour prot\xE8geant les d\xE9fenses dans son champ de vision.
       Elle a un champ de vision de 180\xB0."
     m_Metadata:
       m_Items: []
   - m_Id: 18047821708390400
-    m_Localized: "Une tour qui prot\xE8ge les d\xE9fenses dans son champ de vision.
+    m_Localized: "Une tour prot\xE8geant les d\xE9fenses dans son champ de vision.
       Elle a un champ de vision de 360\xB0."
     m_Metadata:
       m_Items: []
@@ -588,7 +592,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18049528987250688
-    m_Localized: "Un petit village qui augmente la capacit\xE9 de stockage des cartes
+    m_Localized: "Un petit village augmentant la capacit\xE9 de stockage des cartes
       de d\xE9fense de 4."
     m_Metadata:
       m_Items: []
@@ -629,7 +633,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 23484104840704000
-    m_Localized: "sauce n\xE9cessaire pour parfumer de nombreux plats."
+    m_Localized: "Sauce n\xE9cessaire pour parfumer de nombreux plats."
     m_Metadata:
       m_Items: []
   - m_Id: 23485530132312064
@@ -645,7 +649,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 23485953647964160
-    m_Localized: "P\xE2te de Miso pour parfummer de nombreux plats."
+    m_Localized: "P\xE2te de Miso pour parfumer de nombreux plats."
     m_Metadata:
       m_Items: []
   - m_Id: 23486103988596736
@@ -653,7 +657,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 23486164382380032
-    m_Localized: "Plat mijot\xE9. Augmente la port\xE9e d'attaque de base."
+    m_Localized: "Plat mijot\xE9, augmentant la port\xE9e d'attaque de base."
     m_Metadata:
       m_Items: []
   - m_Id: 23486630642184192
@@ -718,7 +722,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 23488935030550528
-    m_Localized: Placez un ouvrier sur cette carte pour recruter d'autres ouvriers.
+    m_Localized: Placer un ouvrier sur cette carte pour recruter d'autres ouvriers.
     m_Metadata:
       m_Items: []
   - m_Id: 23489138450100224

@@ -35,12 +35,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 22970494977
-    m_Localized: "Ce nombre indique le nombre de vagues que tu dois survivre avant
-      que je te d\xE9clare comp\xE9tent. Pas de pression !"
+    m_Localized: "Cette valeur indique le nombre de vagues \xE0 surmonter avant que
+      je te d\xE9clare comp\xE9tent. Pas de pression !"
     m_Metadata:
       m_Items: []
   - m_Id: 22970494978
-    m_Localized: "Ach\xE8tes des boosters dans les boutiques, car tu auras besoin
+    m_Localized: "Ach\xE8te des boosters dans les boutiques, car tu auras besoin
       de toute l'aide possible !"
     m_Metadata:
       m_Items: []
@@ -82,11 +82,11 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2672160680570880
     m_Localized: "S\xE9rieusement! Tu pr\xE9tends d\xE9fendre mon royaume et tu n'as
-      pas encore craft de cartes d\xE9fense ?!\nQu'est-ce que tu attends ?"
+      pas encore craft de cartes de d\xE9fense ?!\nQu'est-ce que tu attends ?"
     m_Metadata:
       m_Items: []
   - m_Id: 2672160684765184
-    m_Localized: Comment tu ferais sans moi ?
+    m_Localized: Comment ferais-tu sans moi ?
     m_Metadata:
       m_Items: []
   - m_Id: 2672160688959488
@@ -102,7 +102,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2672160701542400
-    m_Localized: "Une ex\xE9cution parfaite ! ... pour se faire frapper par tout."
+    m_Localized: "Une ex\xE9cution parfaite ! ... m\xEAme si tu t'en ai pris plein
+      la tronche."
     m_Metadata:
       m_Items: []
   - m_Id: 2672160705736704
@@ -126,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2672160730902528
-    m_Localized: "Et voil\xE0, mes amis, comment on fait. Prenez des notes !"
+    m_Localized: "Et voil\xE0 le travail. Prenez des notes !"
     m_Metadata:
       m_Items: []
   - m_Id: 2672160730902529
@@ -146,7 +147,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2672160747679744
     m_Localized: "Aucun d\xE9g\xE2t ? Je devrais probablement vous remercier... mais
-      je ne le ferai pas. C'est ton travail !"
+      je ne le ferai pas. C'est ton travail apr\xE8s tout !"
     m_Metadata:
       m_Items: []
   - m_Id: 2672160751874048
@@ -155,8 +156,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2672160756068352
-    m_Localized: "Et voil\xE0 ! C'est ton premier pas pour \xE9viter de te ridiculiser
-      compl\xE8tement."
+    m_Localized: "Et voil\xE0 ! Pour une fois que tu n'es pas compl\xE9tement ridicule..."
     m_Metadata:
       m_Items: []
   - m_Id: 2672160764456960
@@ -170,9 +170,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2672160772845568
-    m_Localized: "Conseil de pro de votre g\xE9n\xE9reux souverain : maintiens la
+    m_Localized: "Conseil de pro de votre g\xE9n\xE9reux souverain : maintenez la
       touche Maj enfonc\xE9e tout en d\xE9pla\xE7ant les cartes pour attirer les
-      cartes similaires. De rien !"
+      cartes similaires. Il n'y a pas de quoi !"
     m_Metadata:
       m_Items: []
   - m_Id: 2672160777039872
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2672160777039873
-    m_Localized: "D\xE9poses des encres sur la boutique pour obtenir un booster !
+    m_Localized: "D\xE9pose des encres sur la boutique pour obtenir un booster !
       Ce n'est pas sorcier, c'est juste du shopping basique."
     m_Metadata:
       m_Items: []
@@ -218,19 +218,20 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 22862156355989504
-    m_Localized: "\xC0 court de d\xE9fenses ? Quelle surprise. Je vais appeler les
-      Yoka\xEFs et implorer leur piti\xE9 en ton nom. Encore une fois..."
+    m_Localized: "\xC0 court de d\xE9fenses ? Quelle surprise... Je vais appeler
+      les Yoka\xEFs et implorer leur piti\xE9 en ton nom. Une fois de plus..."
     m_Metadata:
       m_Items: []
   - m_Id: 22863945553801216
-    m_Localized: "Pas pr\xEAt ? Quelle surprise ! J'appelle les Yoka\xEFs pour retarder
-      leur attaque parce que mon \xAB d\xE9fenseur \xBB a oubli\xE9 de d\xE9fendre."
+    m_Localized: "Toujours pas pr\xEAt ? Quelle surprise... J'appelle les Yoka\xEFs
+      pour retarder leur attaque parce que mon \xAB d\xE9fenseur \xBB a oubli\xE9
+      de d\xE9fendre."
     m_Metadata:
       m_Items: []
   - m_Id: 22864089716224000
     m_Localized: "Aucune d\xE9fense ? Quelle strat\xE9gie brillante ! Laisse moi
-      appeler les Yoka\xEFs et leur expliquer que mon d\xE9fenseur a besoin de faire
-      une sieste d'abord."
+      appeler les Yoka\xEFs pour leur expliquer que mon d\xE9fenseur a besoin de
+      faire une sieste d'abord."
     m_Metadata:
       m_Items: []
   - m_Id: 33348108233732096
