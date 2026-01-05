@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55774a75b1ff9eb4a92b293d5b5c81ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDemoMode: 1
+  useDemoMode: 0
   endWaveIndex: 5
   endTextDemo:
     m_TableReference:
