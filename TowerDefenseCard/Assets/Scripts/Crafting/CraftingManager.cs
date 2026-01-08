@@ -181,7 +181,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private void CooldownBarUI_OnCraftDelayEnd(int craftID)
     {
-        CraftInfo craftInfo = currentCrafts.First(currentCraft => currentCraft.CraftID == craftID);
+        CraftInfo craftInfo = currentCrafts.FirstOrDefault(currentCraft => currentCraft.CraftID == craftID);
 
         if (craftInfo == null)
         {

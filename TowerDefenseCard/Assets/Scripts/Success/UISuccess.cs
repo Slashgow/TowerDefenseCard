@@ -45,6 +45,18 @@ public class UISuccess : MonoBehaviour, IUISelectable<SuccessData>
 
     private void UpdateSprite(SuccessData successData)
     {
+        if(successData == null)
+        {
+            Debug.LogWarning("UISuccess: UpdateSprite called with null successData");
+            return;
+        }
+
+        if(successData.SpriteUnlocked || successData.SpriteLocked == null)
+        {
+            Debug.LogWarning($"UISuccess: UpdateSprite called but one or both sprites are null for successData {successData.Title.GetLocalizedString()}");
+            return;
+        }
+
         if (successData.isDone)
         {
             if (successData.SpriteUnlocked != null)
