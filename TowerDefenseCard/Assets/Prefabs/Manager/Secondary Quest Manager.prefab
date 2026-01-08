@@ -442,6 +442,7 @@ MonoBehaviour:
     condition: {fileID: 1506988919479403828}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Chest
     title:
       m_TableReference:
@@ -464,6 +465,7 @@ MonoBehaviour:
     condition: {fileID: 525439848770912124}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Warehouse
     title:
       m_TableReference:
@@ -486,6 +488,7 @@ MonoBehaviour:
     condition: {fileID: 3509188638453161618}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Farm
     title:
       m_TableReference:
@@ -508,6 +511,7 @@ MonoBehaviour:
     condition: {fileID: 2331985012975660631}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: RicePaddy
     title:
       m_TableReference:
@@ -530,6 +534,7 @@ MonoBehaviour:
     condition: {fileID: 3487736306305938297}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Matcha
     title:
       m_TableReference:
@@ -552,6 +557,7 @@ MonoBehaviour:
     condition: {fileID: 6028164634012996269}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Jade Factory
     title:
       m_TableReference:
@@ -574,6 +580,7 @@ MonoBehaviour:
     condition: {fileID: 8735524550377196331}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: SpiritFactory
     title:
       m_TableReference:
@@ -596,6 +603,7 @@ MonoBehaviour:
     condition: {fileID: 3950917503763731607}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Storage30
     title:
       m_TableReference:
@@ -618,6 +626,7 @@ MonoBehaviour:
     condition: {fileID: 3333179646426974128}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Storage50
     title:
       m_TableReference:
@@ -640,6 +649,7 @@ MonoBehaviour:
     condition: {fileID: 4620780991961083833}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Storage100
     title:
       m_TableReference:
@@ -662,6 +672,7 @@ MonoBehaviour:
     condition: {fileID: 104223318817992340}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   references:
     version: 2
     RefIds: []

@@ -1128,6 +1128,7 @@ MonoBehaviour:
     condition: {fileID: 386970793131609297}
     goalCount: 3
     isLocked: 1
+    isDemoLocked: 0
   - questId: UseCardForest
     title:
       m_TableReference:
@@ -1150,6 +1151,7 @@ MonoBehaviour:
     condition: {fileID: 8363642092357133697}
     goalCount: 4
     isLocked: 1
+    isDemoLocked: 0
   - questId: SellCard
     title:
       m_TableReference:
@@ -1172,6 +1174,7 @@ MonoBehaviour:
     condition: {fileID: 1164211642832345378}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: BuyFirstBooster
     title:
       m_TableReference:
@@ -1194,6 +1197,7 @@ MonoBehaviour:
     condition: {fileID: 3288850185214155598}
     goalCount: 2
     isLocked: 1
+    isDemoLocked: 0
   - questId: SellCardIdea
     title:
       m_TableReference:
@@ -1216,6 +1220,7 @@ MonoBehaviour:
     condition: {fileID: 1433426231254433207}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: OpenCraftMenu
     title:
       m_TableReference:
@@ -1238,6 +1243,7 @@ MonoBehaviour:
     condition: {fileID: 8306335332440777769}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: PauseGame
     title:
       m_TableReference:
@@ -1260,6 +1266,7 @@ MonoBehaviour:
     condition: {fileID: 6742471618330665049}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Bamboo Plank
     title:
       m_TableReference:
@@ -1282,6 +1289,7 @@ MonoBehaviour:
     condition: {fileID: 5426033686656557094}
     goalCount: 2
     isLocked: 1
+    isDemoLocked: 0
   - questId: 'SakuraBricks '
     title:
       m_TableReference:
@@ -1304,6 +1312,7 @@ MonoBehaviour:
     condition: {fileID: 6639373078356056970}
     goalCount: 2
     isLocked: 1
+    isDemoLocked: 0
   - questId: Bamboo Factory
     title:
       m_TableReference:
@@ -1326,6 +1335,7 @@ MonoBehaviour:
     condition: {fileID: 1270814747188998983}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: speedup_down
     title:
       m_TableReference:
@@ -1348,6 +1358,7 @@ MonoBehaviour:
     condition: {fileID: 1488333931061695889}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: SakuraFactory
     title:
       m_TableReference:
@@ -1370,6 +1381,7 @@ MonoBehaviour:
     condition: {fileID: 6782851557319356427}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Archer
     title:
       m_TableReference:
@@ -1392,6 +1404,7 @@ MonoBehaviour:
     condition: {fileID: 226149382550471929}
     goalCount: 2
     isLocked: 1
+    isDemoLocked: 0
   - questId: house
     title:
       m_TableReference:
@@ -1414,6 +1427,7 @@ MonoBehaviour:
     condition: {fileID: 2982419550328156272}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: AkitaInu
     title:
       m_TableReference:
@@ -1436,6 +1450,7 @@ MonoBehaviour:
     condition: {fileID: 5597331212207616966}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Torii Gate
     title:
       m_TableReference:
@@ -1458,6 +1473,7 @@ MonoBehaviour:
     condition: {fileID: 7983741458701172068}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 0
   - questId: Komainu
     title:
       m_TableReference:
@@ -1480,6 +1496,7 @@ MonoBehaviour:
     condition: {fileID: 7213308970379518789}
     goalCount: 2
     isLocked: 1
+    isDemoLocked: 1
   - questId: Temple
     title:
       m_TableReference:
@@ -1502,6 +1519,7 @@ MonoBehaviour:
     condition: {fileID: 6856871288931216174}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Tavern
     title:
       m_TableReference:
@@ -1524,6 +1542,7 @@ MonoBehaviour:
     condition: {fileID: 5125480105907023208}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Recrutment
     title:
       m_TableReference:
@@ -1546,6 +1565,7 @@ MonoBehaviour:
     condition: {fileID: 5446944503473752855}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Hachiman
     title:
       m_TableReference:
@@ -1568,6 +1588,7 @@ MonoBehaviour:
     condition: {fileID: 5427258070229270780}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Upgrade
     title:
       m_TableReference:
@@ -1590,6 +1611,7 @@ MonoBehaviour:
     condition: {fileID: 8549305122982839021}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Dragon
     title:
       m_TableReference:
@@ -1612,6 +1634,7 @@ MonoBehaviour:
     condition: {fileID: 3650734080597979023}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Amaterasu
     title:
       m_TableReference:
@@ -1634,6 +1657,7 @@ MonoBehaviour:
     condition: {fileID: 7808302902195712193}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Fujin
     title:
       m_TableReference:
@@ -1656,6 +1680,7 @@ MonoBehaviour:
     condition: {fileID: 2848508461406759917}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Raijin
     title:
       m_TableReference:
@@ -1678,6 +1703,7 @@ MonoBehaviour:
     condition: {fileID: 5258648557199746727}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Susanoo
     title:
       m_TableReference:
@@ -1700,6 +1726,7 @@ MonoBehaviour:
     condition: {fileID: 3581945533476828497}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   - questId: Okuninushi
     title:
       m_TableReference:
@@ -1722,6 +1749,7 @@ MonoBehaviour:
     condition: {fileID: 6763654258346137590}
     goalCount: 1
     isLocked: 1
+    isDemoLocked: 1
   references:
     version: 2
     RefIds: []

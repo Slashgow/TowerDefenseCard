@@ -258,6 +258,9 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
     private void SecondaryQuestManager_OnQuestUnlocked(Quest quest)
     {
+        if (quest.IsDemoLocked)
+            return;
+
         UIQuest uiQuest = GetSecondaryUIQuestByQuestID(quest.QuestId);
 
         if (uiQuest == null)
@@ -287,6 +290,9 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
     private void MainQuestManager_OnQuestUnlocked(Quest quest)
     {
+        if (quest.IsDemoLocked)
+            return;
+
         UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
         //Debug.Log("Main Quest Manager, on quest unlocked");
         if (uiQuest == null)
@@ -338,9 +344,9 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     {
         UIQuest nextMainQuest;
         if (isMainQuest)
-            nextMainQuest = mainUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted);
+            nextMainQuest = mainUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && !uiQuest.Quest.IsDemoLocked);
         else
-            nextMainQuest = secondaryUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted);
+            nextMainQuest = secondaryUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && !uiQuest.Quest.IsDemoLocked);
         return nextMainQuest; 
     }
 

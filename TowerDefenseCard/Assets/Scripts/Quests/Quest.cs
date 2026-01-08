@@ -26,7 +26,10 @@ public class Quest
     [SerializeField] private bool isLocked = true; 
     public bool IsLocked => isLocked;
 
-    public bool IsCompleted => condition.IsCompleted() && !isLocked;
+    [SerializeField] private bool isDemoLocked = false;
+    public bool IsDemoLocked => isDemoLocked;
+
+    public bool IsCompleted => condition.IsCompleted() && !isLocked && !isDemoLocked;
 
     public event Action<Quest> OnCompleteQuest;
     public event Action<Quest> OnUnlockQuest;
@@ -37,7 +40,7 @@ public class Quest
     {
         currentProgress++;
 
-        if (isLocked)
+        if (isLocked || isDemoLocked)
             return;
 
         if (IsCompleted)
@@ -53,7 +56,7 @@ public class Quest
 
     public void CheckProgress()
     {
-        if (isLocked)
+        if (isLocked || isDemoLocked)
             return;
 
         if (IsCompleted)
@@ -61,6 +64,12 @@ public class Quest
     }
     public void UnlockQuest()
     {
+        if (isDemoLocked)
+        {
+            Debug.LogWarning($"Cannot unlock quest '{questId}' - it is demo locked.");
+            return;
+        }
+
         isLocked = false;
         OnUnlockQuest?.Invoke(this);
     }
