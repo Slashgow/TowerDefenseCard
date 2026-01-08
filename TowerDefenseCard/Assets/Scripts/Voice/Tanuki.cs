@@ -139,7 +139,6 @@ public class Tanuki : MonoBehaviour
             {
                 ShowTanukiText(linesTutoSellForBooster);
                 ShowTanukiText(linesTutoDropInkOnShopToBuy);
-                ShowTanukiText(linesStackShortcuts);
             });
         }
 
@@ -147,6 +146,7 @@ public class Tanuki : MonoBehaviour
         PlayerHealth.OnPlayerHit += PlayerHealth_OnPlayerHit;
         CardManager.Instance.OnMaxCardsReached += CardManager_OnMaxCardsReached;
         CardManager.Instance.OnMaxCardsDefenseReached += CardManager_OnMaxCardsDefenseReached;
+        WaveManager.Instance.OnWaveEnd += WaveManager_OnWaveEnd;
         WaveManager.OnPlayerWasHitThisWave += WaveManager_OnPlayerWasHitThisWave;
         WaveManager.OnPlayerWasNotHitThisWave += WaveManager_OnPlayerWasNotHitThisWave;
         CraftingManager.Instance.OnHalfTimeCraftingMode += CraftingManager_OnHalfTimeCraftingMode;
@@ -158,6 +158,8 @@ public class Tanuki : MonoBehaviour
         merchantSpawner.OnSpawnCard += MerchantSpawner_OnSpawnCard;
         workerSpawner.OnSpawnCard += WorkerSpawner_OnSpawnCard;
     }
+
+
 
     private void OnDestroy()
     {
@@ -171,6 +173,7 @@ public class Tanuki : MonoBehaviour
 
         if(WaveManager.HasInstance)
         {
+            WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
             WaveManager.OnPlayerWasHitThisWave -= WaveManager_OnPlayerWasHitThisWave;
             WaveManager.OnPlayerWasNotHitThisWave -= WaveManager_OnPlayerWasNotHitThisWave;
         }
@@ -213,6 +216,12 @@ public class Tanuki : MonoBehaviour
     private void CardManager_OnMaxCardsReached() => ShowTanukiText(linesMaxCardsReached);
     private void WaveManager_OnPlayerWasNotHitThisWave() => ShowTanukiText(linesAfterWaveNoHit);
     private void WaveManager_OnPlayerWasHitThisWave() => ShowTanukiText(linesAfterWaveHit);
+    private void WaveManager_OnWaveEnd(int waveIndex)
+    {
+        if(waveIndex == 1)
+            ShowTanukiText(linesStackShortcuts);
+    }
+
     private void CraftingManager_OnResetCraftingManagerEasyModeNoDefense() => ShowTanukiText(linesResetCraftingTimerEasyModeNoDefense);
 
     private void CraftingManager_OnHalfTimeCraftingMode()
