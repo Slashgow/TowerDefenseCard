@@ -92,10 +92,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 150
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4370179582870678725, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+      insertIndex: 10
+      addedObject: {fileID: 7575184562507359100}
     - targetCorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7000862410035099585}
@@ -108,6 +112,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 505245852151396201, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
   m_PrefabInstance: {fileID: 2925635628897247381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7575184562507359100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430349243848366076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a98ba20d11e9844a447250d65900b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemy: 1
+  cardDamageorData: {fileID: 11400000, guid: 7a6d9554ee378544e80747da0e5ecfd5, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  impactEffectPrefab: {fileID: 3887326593483052100, guid: d2c78afc786b94948b34250894a0646f, type: 3}
+  OnLaunchAttackEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isMonoTarget: 0
+  maxNumberOfTargets: 1
+  useProjectile: 1
+  projectilePrefab: {fileID: 6281592712183866792, guid: 27a913d9eb013d34e93c5c6bd1feb8cb, type: 3}
+  numberOfProjectilePerAttack: 2
+  projectileSpeed: 20
+  detectionRangeDamageable: 15
+  dotAreaPrefab: {fileID: 19978495659472546, guid: c8d93494cc3252e42a8b413b3cef91b3, type: 3}
+  warningDuration: 4
+  dotAreaTickRate: 0.5
+  abilityInterval: 10
+  maxAreasPerCast: 3
+  warningColor: {r: 1, g: 0.5, b: 0, a: 0.5}
+  activeColor: {r: 1, g: 0, b: 0, a: 0.7}
+  areaRadius: 2
 --- !u!114 &7000862410035099585
 MonoBehaviour:
   m_ObjectHideFlags: 0

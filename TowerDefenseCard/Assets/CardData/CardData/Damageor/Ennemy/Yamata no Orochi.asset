@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Yamata no Orochi
   m_EditorClassIdentifier: 
   damage: 15
-  attackRange: 3.5
+  attackRange: 2.5
   attackSpeed: 1.2
   attackArea: 0
   damageType: 0
   dot: 2
-  dotDuration: 2
+  dotDuration: 2.2

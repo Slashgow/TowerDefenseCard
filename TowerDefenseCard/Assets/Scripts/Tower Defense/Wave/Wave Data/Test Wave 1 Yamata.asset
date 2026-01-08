@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c849ccd188c494dada5325139a1436, type: 3}
-  m_Name: Test Wave 1 Oni
+  m_Name: Test Wave 1 Yamata
   m_EditorClassIdentifier: 
   ennemyWaves:
-  - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
+  - enemyPrefab: {fileID: 3430349243848366076, guid: 1a51b02af912d454d93d6a55f2e4efe4, type: 3}
     count: 1
     spawnInterval: 2
   waveDelay: 0

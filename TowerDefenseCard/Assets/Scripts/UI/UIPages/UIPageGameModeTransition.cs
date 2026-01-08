@@ -144,6 +144,20 @@ public class UIPageGameModeTransition : UIPage
         buttonContainer.SetActive(true);
 
 #if UNITY_WEBGL
+        bool useDemoMode = DemoManager.Instance != null && DemoManager.Instance.UseDemoMode;
+        
+        if(useDemoMode)
+        {
+            DemoManager.Instance.EndTextDemo.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    DoTransitionEffect(handle.Result, false);
+                }
+            };
+            return;
+        }
+
         defeatAllWavesLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
         {
             if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
@@ -154,7 +168,8 @@ public class UIPageGameModeTransition : UIPage
 #endif
 
 #if !UNITY_WEBGL
-        DoTransitionEffect(defeatAllWavesLocalizedString.GetLocalizedString(), false);
+        DoTransitionEffect(DemoManager.Instance.UseDemoMode ? DemoManager.Instance.EndTextDemo.GetLocalizedString() :
+            defeatAllWavesLocalizedString.GetLocalizedString(), false);
 #endif
     }
     private void GameManager_OnDemoEnd()
