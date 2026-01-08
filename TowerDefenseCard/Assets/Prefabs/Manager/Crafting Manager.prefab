@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8123120441041739272}
   - component: {fileID: 69551339698428556}
+  - component: {fileID: 332370765481028297}
+  - component: {fileID: 1840637805235243770}
   m_Layer: 0
   m_Name: Crafting Manager
   m_TagString: Untagged
@@ -126,3 +128,49 @@ MonoBehaviour:
   cooldownBarOffset: 1.2
   craftSpawnOffset: {x: 2, y: 0, z: 0}
   timeElapsed: 0
+--- !u!114 &332370765481028297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337280644744091060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b84e0c863adef4c8840eab985f41d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningThreshold: 10
+  OnSecondTickUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840637805235243770}
+        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
+        m_MethodName: DoEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1840637805235243770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337280644744091060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f703788dda8bec4cb549bfe0f7ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doEffectOnEnable: 0
+  audioClips:
+  - {fileID: 8300000, guid: 7b2d01152c7910442b433903ddea6ab7, type: 3}
+  - {fileID: 8300000, guid: a18cf78a887a60b4eaca0cfc8a86ac39, type: 3}
+  - {fileID: 8300000, guid: 8d1d199099ce1384084384ed8bf71887, type: 3}
+  - {fileID: 8300000, guid: f4da4b99685098e4c83197484468f621, type: 3}
