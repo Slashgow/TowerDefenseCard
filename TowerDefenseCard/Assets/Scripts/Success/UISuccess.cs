@@ -51,7 +51,7 @@ public class UISuccess : MonoBehaviour, IUISelectable<SuccessData>
             return;
         }
 
-        if(successData.SpriteUnlocked || successData.SpriteLocked == null)
+        if(successData.SpriteUnlocked == null || successData.SpriteLocked == null)
         {
             Debug.LogWarning($"UISuccess: UpdateSprite called but one or both sprites are null for successData {successData.Title.GetLocalizedString()}");
             return;
