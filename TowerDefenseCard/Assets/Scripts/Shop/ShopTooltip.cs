@@ -12,6 +12,7 @@ public class ShopTooltip : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tooltipText;
     [SerializeField] private CardShop cardShop;
     [SerializeField] private LocalizedString startCardTooltip, startIdeaTooltip;
+    [SerializeField] private LocalizedString showMoreInfoTooltip;
 
     private List<string> cardNames = new List<string>();
     private List<string> cardIdeaNames = new List<string>();
@@ -79,17 +80,26 @@ public class ShopTooltip : MonoBehaviour
 
 
 #if UNITY_WEBGL
+        showMoreInfoTooltip.GetLocalizedStringAsync().Completed += (handle) =>
+        {
+            if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                tooltipText.text = handle.Result + "\n\n";
+            }
+        };
+
         startCardTooltip.GetLocalizedStringAsync().Completed += (handle) =>
         {
             if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
             {
-                tooltipText.text = $"<color={hexaCardNamesColor}> {handle.Result} ";
+                tooltipText.text += $"<color={hexaCardNamesColor}> {handle.Result} ";
             }
         };
 #endif
 
 #if !UNITY_WEBGL
-        tooltipText.text = $"<color={hexaCardNamesColor}> {startCardTooltip.GetLocalizedString()} ";
+        tooltipText.text = showMoreInfoTooltip.GetLocalizedString() + "\n\n";
+        tooltipText.text += $"<color={hexaCardNamesColor}> {startCardTooltip.GetLocalizedString()} ";
 #endif
 
 

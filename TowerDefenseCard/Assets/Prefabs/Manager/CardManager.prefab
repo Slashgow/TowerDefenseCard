@@ -122,7 +122,7 @@ MonoBehaviour:
   - card: {fileID: 5582891460866795087, guid: b18e1ff2e28c29d47a925c8b713ddc5d, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 5582891460866795087, guid: 40dda6b0b4949c54ebf123a1890388db, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 1
@@ -174,7 +174,7 @@ MonoBehaviour:
   - card: {fileID: 5596509187565464847, guid: 2400f452c3ce13844a158c3601011e82, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 597159905614504105, guid: fd07456cf21c41349a0b2242a4cc464d, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   - card: {fileID: 3266315216697312082, guid: 0deadc427d7cb0c40a25c2dadcd7d063, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 9047908134774282088, guid: ef7fbb60b247a9643b4c04bbd8d8d24c, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -258,11 +258,11 @@ MonoBehaviour:
   - card: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 1804478811844947874, guid: 5cb086656ffe1c64ead098276b33144e, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 1804478811844947874, guid: 35b5640d336bb6241acaca3e0e37914f, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   - card: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
-    isLocked: 0
+    isLocked: 1
   - card: {fileID: 1804478811844947874, guid: b1ede9ade0cb1094085a0d23a731ba46, type: 3}
     isDiscovered: 0
     isClickedAfterNotification: 0
