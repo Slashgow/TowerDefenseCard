@@ -192,6 +192,21 @@ public class UIPageGameModeTransition : UIPage
     private void PlayerHealth_OnPlayerDie()
     {
 #if UNITY_WEBGL
+
+        bool useDemoMode = DemoManager.Instance != null && DemoManager.Instance.UseDemoMode;
+        
+        if(useDemoMode)
+        {
+            DemoManager.Instance.EndTextDemo.GetLocalizedStringAsync().Completed += (handle) =>
+            {
+                if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+                {
+                    DoTransitionEffect(handle.Result, false);
+                }
+            };
+            return;
+        }
+
         playerDieLocalizedString.GetLocalizedStringAsync().Completed += (handle) =>
         {
             if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
@@ -202,7 +217,8 @@ public class UIPageGameModeTransition : UIPage
 #endif
 
 #if !UNITY_WEBGL
-        DoTransitionEffect(playerDieLocalizedString.GetLocalizedString(), true);
+        DoTransitionEffect(DemoManager.Instance.UseDemoMode ? DemoManager.Instance.EndTextDemo.GetLocalizedString() : 
+            playerDieLocalizedString.GetLocalizedString(), true);
 #endif
     }
 
