@@ -38,12 +38,16 @@ public class SimpleOccluder : BaseUpgradable, IOccluder
     {
         occlusionCheckTimer?.Cancel();
 
+        ClearProtectedTargets();
+
         if (GameManager.HasInstance)
         {
             GameManager.Instance.OnStartCombatMode -= GameManager_OnStartCombatMode;
             GameManager.Instance.OnEndCombatMode -= GameManager_OnEndCombatMode;
         }
     }
+
+  
 
     public override void ApplyUpgrade(UpgradeData upgrade)
     {
@@ -70,6 +74,8 @@ public class SimpleOccluder : BaseUpgradable, IOccluder
     {
         occlusionCheckTimer?.Cancel();
         occlusionCheckTimer = null;
+
+        ClearProtectedTargets();
     }
 
     private void GameManager_OnStartCombatMode()
@@ -102,8 +108,7 @@ public class SimpleOccluder : BaseUpgradable, IOccluder
 
     private void CheckForProtectedDefense()
     {
-        protectedTargets.ForEach(protectedTargets => protectedTargets.IsProtected = false);
-        protectedTargets.Clear();
+        ClearProtectedTargets();
 
         if (!canOcclude)
             return;
@@ -120,10 +125,23 @@ public class SimpleOccluder : BaseUpgradable, IOccluder
                 if(hit.GetComponent<SimpleOccluder>() != null)
                     continue;
 
+                if(damageable.IsDead || !damageable.CanBeProtected)
+                    continue;
+
                 damageable.IsProtected = true;
                 protectedTargets.Add(damageable);
             }
         }
+    }
+
+    private void ClearProtectedTargets()
+    {
+        foreach (var target in protectedTargets)
+        {
+            if (target != null)
+                target.IsProtected = false;
+        }
+        protectedTargets.Clear();
     }
 
     public void SetCanOcclude(bool enabled)

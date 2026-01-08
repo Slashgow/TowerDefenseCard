@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 
@@ -6,6 +5,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
 {
     [SerializeField] private bool isEnemy = false;
     [SerializeField, Range(0, 600)] private float maxHealth = 20;
+    [SerializeField] private bool canBeProtected = true;
     public float MaxHealth
     {
         get
@@ -31,6 +31,7 @@ public abstract class BaseDamageable : BaseUpgradable, IDamageable, IHealable
     public bool IsDead => isDead;
 
     public bool IsProtected { get; set; }
+    public bool CanBeProtected => canBeProtected;
 
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;
     public static event Action<float, Vector3> OnAnyHealableHealed;

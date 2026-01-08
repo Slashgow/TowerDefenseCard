@@ -10,6 +10,7 @@ public interface IDamageable
     public bool IsDead { get; }
 
     public bool IsProtected { get; set; }
+    public bool CanBeProtected { get; }
 
     public event Action<float> OnTakeDamage;
     public static event Action<float, Vector3> OnAnyDamageableTakeDamage;

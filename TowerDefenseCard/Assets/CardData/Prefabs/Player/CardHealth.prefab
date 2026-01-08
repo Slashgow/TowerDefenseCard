@@ -113,6 +113,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   autoStartMove: 1
+  isStartMoveRandom: 1
+  startMoveNonRandomDirection: {x: 0, y: -1}
   moveStep: 2
   checkRadius: 0.5
   maxIterations: 1
@@ -120,11 +122,13 @@ MonoBehaviour:
   autoStackOnEnable: 1
   smoothTime: 0.009
   maxTiltAngle: 20
+  returnDuration: 0.2
   overlapRadius: 0.5
   detectionLayerMaskReseller:
     serializedVersion: 2
     m_Bits: 128
   stackingHeight: 0.1
+  parentFollower: {fileID: 0}
 --- !u!50 &352179694236223436
 Rigidbody2D:
   serializedVersion: 5
@@ -210,7 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e438b411ab9a24bb9c84e7b6a20490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 0
   maxHealth: 20
+  canBeProtected: 0
   OnPlayerTakeDamageUnity:
     m_PersistentCalls:
       m_Calls: []
