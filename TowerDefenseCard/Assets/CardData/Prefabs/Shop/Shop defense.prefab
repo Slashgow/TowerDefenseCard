@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.size
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopItems.Array.data[0].cardPrefab
@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[7].cardIdeaPrefab
       value: 
-      objectReference: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
+      objectReference: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[7].dropPercentage
       value: 30
@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[8].cardIdeaPrefab
       value: 
-      objectReference: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
+      objectReference: {fileID: 1804478811844947874, guid: e184ee63494dfd147b574eb8bfdf6604, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[8].dropPercentage
       value: 30
@@ -179,9 +179,49 @@ PrefabInstance:
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[9].cardIdeaPrefab
       value: 
-      objectReference: {fileID: 1804478811844947874, guid: 0d9a78ac681db0b40bdbd8a99c41ffd9, type: 3}
+      objectReference: {fileID: 1804478811844947874, guid: b77ab149dabc08a4991fe02ac8c4580e, type: 3}
     - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
       propertyPath: shop.shopCardIdeas.Array.data[9].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[10].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: be70af1b5d917924aba3d3429832e73c, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[10].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[11].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 35b5640d336bb6241acaca3e0e37914f, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[11].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[12].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: aecf53876da20704eb7bcb1240dd252d, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[12].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[13].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: 186b67377681bef46b82aba80571b5a0, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[13].dropPercentage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[14].cardIdeaPrefab
+      value: 
+      objectReference: {fileID: 1804478811844947874, guid: b1ede9ade0cb1094085a0d23a731ba46, type: 3}
+    - target: {fileID: 1943351335151867799, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
+      propertyPath: shop.shopCardIdeas.Array.data[14].dropPercentage
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3316222728470766249, guid: e5bdc0cf8435b8c4d8a37fe9b203efcc, type: 3}
