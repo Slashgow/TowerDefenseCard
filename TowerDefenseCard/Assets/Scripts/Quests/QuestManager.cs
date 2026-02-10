@@ -79,6 +79,9 @@ public class QuestManager : MonoBehaviour
     {
         foreach (var quest in availableQuests)
         {
+            if (!DemoManager.Instance.UseDemoMode)
+                quest.isDemoLocked = false;
+
             quest.OnCompleteQuest += OnQuestComplete;
             quest.CheckProgress();
         }

@@ -258,7 +258,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
     private void SecondaryQuestManager_OnQuestUnlocked(Quest quest)
     {
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && quest.IsDemoLocked)
             return;
 
         UIQuest uiQuest = GetSecondaryUIQuestByQuestID(quest.QuestId);
@@ -290,7 +290,7 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
 
     private void MainQuestManager_OnQuestUnlocked(Quest quest)
     {
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && quest.IsDemoLocked)
             return;
 
         UIQuest uiQuest = GetMainUIQuestByQuestID(quest.QuestId);
@@ -344,9 +344,11 @@ public class UIQuestManager : UIPage, IPointerExitHandler, IPointerEnterHandler
     {
         UIQuest nextMainQuest;
         if (isMainQuest)
-            nextMainQuest = mainUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && !uiQuest.Quest.IsDemoLocked);
+            nextMainQuest = mainUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && 
+            !(DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && uiQuest.Quest.IsDemoLocked));
         else
-            nextMainQuest = secondaryUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && !uiQuest.Quest.IsDemoLocked);
+            nextMainQuest = secondaryUIQuests.FirstOrDefault(uiQuest => !uiQuest.Quest.IsCompleted && 
+            !(DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && uiQuest.Quest.IsDemoLocked));
         return nextMainQuest; 
     }
 

@@ -23,7 +23,7 @@ public class UIQuest : MonoBehaviour
     {
         this.quest = quest;
 
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && quest.IsDemoLocked)
         {
             toggleIsDone.isOn = false;
 
@@ -81,7 +81,7 @@ public class UIQuest : MonoBehaviour
 
     public void UnlockQuest(string questDescription)
     {
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode &&  quest.IsDemoLocked)
         {
             Debug.LogWarning("Cannot unlock a demo locked quest");
             return;
@@ -93,7 +93,7 @@ public class UIQuest : MonoBehaviour
 
     public void SetQuestAsCompleted()
     {
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && quest.IsDemoLocked)
         {
             Debug.LogWarning("Cannot complete a demo locked quest");
             return;
@@ -108,7 +108,7 @@ public class UIQuest : MonoBehaviour
     }
     public void StartHighlight()
     {
-        if (quest.IsDemoLocked)
+        if (DemoManager.HasInstance && DemoManager.Instance.UseDemoMode && quest.IsDemoLocked)
             return;
 
         if (outlineEffect != null && !quest.IsCompleted)

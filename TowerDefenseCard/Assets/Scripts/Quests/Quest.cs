@@ -26,7 +26,7 @@ public class Quest
     [SerializeField] private bool isLocked = true; 
     public bool IsLocked => isLocked;
 
-    [SerializeField] private bool isDemoLocked = false;
+    [SerializeField] public bool isDemoLocked = false;
     public bool IsDemoLocked => isDemoLocked;
 
     public bool IsCompleted => condition.IsCompleted() && !isLocked && !isDemoLocked;
