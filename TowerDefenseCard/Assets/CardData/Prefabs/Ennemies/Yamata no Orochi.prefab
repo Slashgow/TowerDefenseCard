@@ -141,10 +141,10 @@ MonoBehaviour:
   projectileSpeed: 20
   detectionRangeDamageable: 15
   dotAreaPrefab: {fileID: 19978495659472546, guid: c8d93494cc3252e42a8b413b3cef91b3, type: 3}
-  warningDuration: 4
+  warningDuration: 6
   dotAreaTickRate: 0.5
-  abilityInterval: 10
-  maxAreasPerCast: 3
+  abilityInterval: 15
+  maxAreasPerCast: 2
   warningColor: {r: 1, g: 0.5, b: 0, a: 0.5}
   activeColor: {r: 1, g: 0, b: 0, a: 0.7}
   areaRadius: 2

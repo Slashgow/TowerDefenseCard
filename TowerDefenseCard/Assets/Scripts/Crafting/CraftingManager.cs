@@ -386,17 +386,34 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         if (craftID == -1)
             return;
 
+        CraftInfo craftInfo = GetCraftInfoByID(craftID);
+        if (craftInfo == null)
+            return; // already removed, nothing to cancel
+
         OnCraftCancel?.Invoke(craftID);
-        currentCrafts.Remove(GetCraftInfoByID(craftID));
+        currentCrafts.Remove(craftInfo);
+
+        //OnCraftCancel?.Invoke(craftID);
+        //currentCrafts.Remove(GetCraftInfoByID(craftID));
     }
 
     public void TryCancelCraft(int craftID)
     {
-        if (craftID == -1)
+        //if (craftID == -1)
+        //    return;
+        //
+        //OnCraftCancel?.Invoke(craftID);
+        //currentCrafts.Remove(GetCraftInfoByID(craftID));
+        //
+        if (craftID == -1) 
             return;
 
+        CraftInfo craftInfo = GetCraftInfoByID(craftID);
+        if (craftInfo == null) 
+            return; // already removed, nothing to cancel
+
         OnCraftCancel?.Invoke(craftID);
-        currentCrafts.Remove(GetCraftInfoByID(craftID));
+        currentCrafts.Remove(craftInfo);
     }
 
     public void StartCraftingModeTimer(float duration)
@@ -465,7 +482,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         return -1;
     }
 
-    public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.First(craftInfo => craftInfo.CraftID == cardID);
+    public CraftInfo GetCraftInfoByID(int cardID) => currentCrafts.FirstOrDefault(craftInfo => craftInfo.CraftID == cardID);
 
 
     public void RemoveInvalidCrafts()
@@ -550,14 +567,27 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         foreach (var card in craftInfo.StackCards)
         {
             bool isDefenseCard = card.GetComponent<CardDefense>() != null;
-            bool willBeDestroyed = !craftInfo.CraftingRecipe.Ingredients
-                .First(ingredient => ingredient.cardID == card.CardData.CardID)
-                .isNotDestroyedOnCraft;
+
+            // Mirror the same FARMER/CARPENTER ? WORKER substitution used in Craft()
+            CardID ingredientCardID = card.CardData.CardID;
+            if ((ingredientCardID == CardID.FARMER || ingredientCardID == CardID.CARPENTER) &&
+                !craftInfo.CraftingRecipe.Ingredients.Any(ing => ing.cardID == ingredientCardID))
+            {
+                ingredientCardID = CardID.WORKER;
+            }
+
+            // Use FirstOrDefault to avoid the exception if no match is found
+            var matchingIngredient = craftInfo.CraftingRecipe.Ingredients
+                .FirstOrDefault(ingredient => ingredient.cardID == ingredientCardID);
+
+            // If no matching ingredient found, skip this card
+            if (matchingIngredient.cardID == default)
+                continue;
+
+            bool willBeDestroyed = !matchingIngredient.isNotDestroyedOnCraft;
 
             if (isDefenseCard && willBeDestroyed)
-            {
                 defenseCardsToDestroy++;
-            }
         }
 
         int netDefenseCardChange = 1 - defenseCardsToDestroy;

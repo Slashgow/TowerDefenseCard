@@ -24,6 +24,7 @@ public class JumpCardMovement : BaseCardMovement
     private Sequence jumpSequence;
     private Tween horizontalTween;
     private Tween verticalTween;
+    private Tween pauseTween;
     public bool IsMoving => isMovingToTarget;
     public bool IsJumping => isJumping;
     public Vector3 TargetPosition => targetPosition;
@@ -56,6 +57,8 @@ public class JumpCardMovement : BaseCardMovement
 
     private void StartNextJump()
     {
+        if (this == null) return; // Object has been destroyed
+
         if (!isMovingToTarget || isJumping)
             return;
 
@@ -106,12 +109,17 @@ public class JumpCardMovement : BaseCardMovement
         jumpSequence.Insert(0, verticalTween);
 
         jumpSequence.OnComplete(() => {
+            if (this == null) return;
+
             isJumping = false;
             transform.position = currentJumpTarget; 
 
             if (pauseBetweenJumps > 0)
             {
-                DOVirtual.DelayedCall(pauseBetweenJumps, () => {
+                pauseTween = DOVirtual.DelayedCall(pauseBetweenJumps, () => {
+                    if (this == null) 
+                        return;
+
                     if (isMovingToTarget)
                         StartNextJump();
                 });
@@ -133,6 +141,7 @@ public class JumpCardMovement : BaseCardMovement
         horizontalTween?.Kill();
         verticalTween?.Kill();
         jumpSequence?.Kill();
+        pauseTween?.Kill();
     }
 
     private void OnDestroy() => StopJumping();

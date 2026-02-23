@@ -23,6 +23,13 @@ public class ScrollTextWithVoice : MonoBehaviour
 
     public void TypeText(string text, TextMeshProUGUI textMeshProUGUI)
     {
+        if (textMeshProUGUI == null)
+        {
+            Debug.LogWarning("TypeText called with null TextMeshProUGUI", this);
+            return;
+        }
+
+
         StopTypingText(textMeshProUGUI);
         Coroutine coroutine = StartCoroutine(TypeTextCoroutine(text, textMeshProUGUI, 0f));
         activeCoroutines[textMeshProUGUI] = coroutine;
@@ -30,6 +37,12 @@ public class ScrollTextWithVoice : MonoBehaviour
 
     public void TypeText(string text, TextMeshProUGUI textMeshProUGUI, float keepShowingDuration)
     {
+        if (textMeshProUGUI == null)
+        {
+            Debug.LogWarning("TypeText called with null TextMeshProUGUI", this);
+            return;
+        }
+
         StopTypingText(textMeshProUGUI);
         Coroutine coroutine = StartCoroutine(TypeTextCoroutine(text, textMeshProUGUI, keepShowingDuration));
         activeCoroutines[textMeshProUGUI] = coroutine;

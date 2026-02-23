@@ -174,16 +174,17 @@ public class Tanuki : MonoBehaviour
         if(WaveManager.HasInstance)
         {
             WaveManager.Instance.OnWaveEnd -= WaveManager_OnWaveEnd;
-            WaveManager.OnPlayerWasHitThisWave -= WaveManager_OnPlayerWasHitThisWave;
-            WaveManager.OnPlayerWasNotHitThisWave -= WaveManager_OnPlayerWasNotHitThisWave;
         }
+        WaveManager.OnPlayerWasHitThisWave -= WaveManager_OnPlayerWasHitThisWave;
+        WaveManager.OnPlayerWasNotHitThisWave -= WaveManager_OnPlayerWasNotHitThisWave;
+
 
         if (CraftingManager.HasInstance)
         {
             CraftingManager.Instance.OnHalfTimeCraftingMode -= CraftingManager_OnHalfTimeCraftingMode;
-            CraftingManager.OnResetCraftingManagerEasyModeNoDefense -= CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
+         
         }
-            
+        CraftingManager.OnResetCraftingManagerEasyModeNoDefense -= CraftingManager_OnResetCraftingManagerEasyModeNoDefense;
 
         if (SuccessManager.HasInstance)
         {
@@ -204,6 +205,8 @@ public class Tanuki : MonoBehaviour
 
     private void ScrollTextWithVoice_OnHideTextComplete(TextMeshProUGUI textMeshProUGUI)
     {
+        if (textMeshProUGUI != tanukiTextWorldSpace) return;
+
         bubbleImageWorldSpace.enabled = false;
         bubbleImageScreenSpace.enabled = false;
         tanukiImageWorldSpace.sprite = defaultTanukiSprite;
