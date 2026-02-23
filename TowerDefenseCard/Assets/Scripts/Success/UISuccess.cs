@@ -73,4 +73,10 @@ public class UISuccess : MonoBehaviour, IUISelectable<SuccessData>
     {
         UpdateSprite(successData);
     }
+
+    private void OnDestroy()
+    {
+        if(currentSuccessData != null)
+            currentSuccessData.OnComplete -= OnCompleteSuccess;
+    }
 }
