@@ -331,11 +331,11 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     {
         if (WaveManager.Instance.IsAllWavesCompleted)
             waveBossSuccess.Complete();
-        else if (currentWaveIndex > 6)
+        else if (currentWaveIndex >= 6)
             wave6Success.Complete();
-        else if (currentWaveIndex > 3)
+        else if (currentWaveIndex >= 3)
             wave3Success.Complete();
-        else if (currentWaveIndex > 1)
+        else if (currentWaveIndex >= 1)
             wave1Success.Complete();
     }
 
