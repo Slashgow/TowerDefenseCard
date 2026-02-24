@@ -81,12 +81,16 @@ public class UITime : MonoBehaviour
         if (!bypassInput && !uiInput.IsReceivingInput)
             return;
 
-        GameManager.Instance.Resume();
+        //Debug.Log("resume");
         pauseButton.gameObject.SetActive(true);
         resumeButton.gameObject.SetActive(false);
 
         speedUpButton.interactable = true;
         speedDownButton.interactable = true;
+        OnSpeedDown();
+
+        GameManager.Instance.Resume();
+       
     }
 
     public void OnPause()
@@ -96,18 +100,20 @@ public class UITime : MonoBehaviour
 
         if (!GameSettingsManager.Instance.IsPauseEnable)
             return;
-
-        GameManager.Instance.Pause();
+        //Debug.Log("Pause");
         pauseButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(true);
 
         speedUpButton.interactable = false;
         speedDownButton.interactable = false;
+        GameManager.Instance.Pause();
+      
     }
 
     public void TogglePlayResume()
     {
-        if(pauseButton.gameObject.activeSelf)
+        //if(pauseButton.gameObject.activeSelf)
+        if (!GameManager.Instance.IsPaused)
             OnPause();
         else
             OnResume(false);
