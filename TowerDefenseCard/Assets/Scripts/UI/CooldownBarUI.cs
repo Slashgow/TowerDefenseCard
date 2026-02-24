@@ -31,7 +31,7 @@ public class CooldownBarUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        Timer.Cancel(craftingTimer);
+        craftingTimer?.Cancel();
         //Debug.Log($"Destroy {this.transform.GetInstanceID()}");
     }
 
@@ -51,6 +51,7 @@ public class CooldownBarUI : MonoBehaviour
                     onComplete: () =>
                     {
                         OnCraftDelayEnd?.Invoke(craftID);
+                        OnCraftDelayEnd = null;
                         Destroy(this.gameObject);
                     });
     }
@@ -60,7 +61,9 @@ public class CooldownBarUI : MonoBehaviour
         if(craftID != this.craftID)
             return;
 
-        Timer.Cancel(craftingTimer);
+        craftingTimer?.Cancel();
+        OnCraftDelayEnd = null;
+        //Timer.Cancel(craftingTimer);
         //Debug.Log($"try cancel {this.transform.GetInstanceID()}");
         Destroy(this.gameObject);
     }

@@ -113,6 +113,29 @@ public class Card : MonoBehaviour
     {
         //Debug.Log($"Stack {this.cardData.CardID} {this.GetInstanceID()}  on {targetCard.cardData.CardID}{targetCard.GetInstanceID()}");
 
+        // Guard: don't stack onto self
+        if (targetCard == this)
+        {
+            Debug.LogWarning($"{cardData.CardID} tried to stack onto itself.");
+            return;
+        }
+
+        // Guard: don't stack onto a card that is already our descendant
+        if (targetCard.transform.IsChildOf(this.transform))
+        {
+            Debug.LogWarning($"{cardData.CardID} tried to use {targetCard.cardData.CardID} as parent but it is already a descendant.");
+            targetCard.OnUnstack();
+            return;
+        }
+
+        // Guard: don't stack onto a card we're already stacked under
+        if (this.transform.IsChildOf(targetCard.transform))
+        {
+            Debug.LogWarning($"{cardData.CardID} is already a child of {targetCard.cardData.CardID}.");
+            return;
+        }
+
+
         if (this.StackedCards.Contains(targetCard))
         {
             Debug.LogWarning($"{this.cardData.CardID} {this.GetInstanceID()} try to use {targetCard.cardData.CardID}{targetCard.GetInstanceID()} as parent " +

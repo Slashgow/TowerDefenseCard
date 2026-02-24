@@ -185,6 +185,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 if (hit.transform.IsChildOf(this.transform))
                     continue;
 
+                //Also skip if we are already a child of this card
+                if (this.transform.IsChildOf(hit.transform))
+                    continue;
+
                 Card otherCard = hit.GetComponent<Card>();
 
                 if (otherCard.StackedCards.Count > 0)

@@ -50,7 +50,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         }
     }
 
-    private GameObject cooldownBar;
+    //private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
     public static event Action OnResetCraftingManagerEasyModeNoDefense;
@@ -170,10 +170,10 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private void InitializeCooldownBar(Transform stackParent, float craftingDelay, int craftID)
     {
-        cooldownBar = Instantiate(cooldownBarPrefab, stackParent.position, Quaternion.identity, stackParent);
+        GameObject cooldownBar = Instantiate(cooldownBarPrefab, stackParent.position, Quaternion.identity, stackParent);
         cooldownBar.GetComponent<Canvas>().sortingOrder = 30;
         CooldownBarUI cooldownBarUI = cooldownBar.GetComponentInChildren<CooldownBarUI>();
-        cooldownBarUI.OnCraftDelayEnd -= CooldownBarUI_OnCraftDelayEnd;
+        //cooldownBarUI.OnCraftDelayEnd -= CooldownBarUI_OnCraftDelayEnd;
         cooldownBarUI.OnCraftDelayEnd += CooldownBarUI_OnCraftDelayEnd;
         cooldownBarUI.Init(stackParent, craftingDelay, cooldownBarOffset, craftID);
         cooldownBar.transform.position = stackParent.position + new Vector3(0, cooldownBarOffset, 0);
