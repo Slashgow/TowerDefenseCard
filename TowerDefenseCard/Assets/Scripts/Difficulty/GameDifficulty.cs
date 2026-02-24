@@ -2,5 +2,6 @@
 {
     EASY,
     MEDIUM,
-    HARD
+    HARD,
+    ZEN
 }

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultDifficulty: {fileID: 11400000, guid: 2988325037e18064f995ad24c7c737ee, type: 2}
   allDifficultyDatas:
+  - {fileID: 11400000, guid: 93779e0aa2ae4ce4cbd869855d5389ef, type: 2}
   - {fileID: 11400000, guid: 2988325037e18064f995ad24c7c737ee, type: 2}
   - {fileID: 11400000, guid: 37570c7af89e9c1479dcfeb80be3a300, type: 2}
   - {fileID: 11400000, guid: 62056bc3a7b3fc945959ee9718745faf, type: 2}

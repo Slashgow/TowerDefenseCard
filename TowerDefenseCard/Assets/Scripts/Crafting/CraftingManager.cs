@@ -442,7 +442,8 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         if (DifficultyManager.HasInstance)
         {
-            if(DifficultyManager.Instance.CurrentDifficultyData.Difficulty == GameDifficulty.EASY &&
+            if((DifficultyManager.Instance.CurrentDifficultyData.Difficulty == GameDifficulty.EASY || 
+                DifficultyManager.Instance.CurrentDifficultyData.Difficulty == GameDifficulty.ZEN )&&
                WaveManager.Instance.CurrentWaveIndex == 0 &&
                CardManager.Instance.CurrentNumberOfDefenseCards < 2)
             {
