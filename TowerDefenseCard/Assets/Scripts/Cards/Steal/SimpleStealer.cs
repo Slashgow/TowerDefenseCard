@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class SimpleStealer : MonoBehaviour, IStealer
 {
+    [Header("References")]
+    [SerializeField] private BaseDamageable damageable;
+    [SerializeField] private JumpCardMovement jumpCardMovement;
+
     [SerializeField] private Vector3 carryOffset = Vector3.up;
     [SerializeField, Range(0f,2f)] private float stealRange = 1f;
     [SerializeField] private LayerMask stealableLayerMask;
@@ -16,24 +20,18 @@ public class SimpleStealer : MonoBehaviour, IStealer
 
     public Vector3 CarryOffset => carryOffset;
 
-    private BaseDamageable damageable;
-    private JumpCardMovement jumpCardMovement;
-
     public event Action OnSteal;
     public UnityEvent OnStealUnity;
 
     public JumpCardMovement JumpCardMovement => jumpCardMovement;
 
-    private void Awake()
+    private void OnEnable()
     {
-        damageable = GetComponent<BaseDamageable>();
         damageable.OnDie += Damageable_OnDie;
-
-        jumpCardMovement = GetComponent<JumpCardMovement>();
         jumpCardMovement.OnReachTarget += JumpCardMovement_OnReachTarget;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         damageable.OnDie -= Damageable_OnDie;
         jumpCardMovement.OnReachTarget -= JumpCardMovement_OnReachTarget;

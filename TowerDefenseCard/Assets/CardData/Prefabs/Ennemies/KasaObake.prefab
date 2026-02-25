@@ -68,7 +68,9 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4370179582870678725, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+    - {fileID: 7147628001615255226, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -82,6 +84,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3487297582032804274}
   m_SourcePrefab: {fileID: 100100000, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+--- !u!114 &657630117849046606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8043164391734740855, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
+  m_PrefabInstance: {fileID: 7403724813586798905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042976781341503056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e4a3ae37b654142b3b8e0c3a670f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &926361174095843533 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1557039402861704716, guid: 1320f33c4759f444aa2f07daac23fdcc, type: 3}
@@ -114,6 +127,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   autoStartMove: 1
+  isStartMoveRandom: 1
+  startMoveNonRandomDirection: {x: 0, y: -1}
   moveStep: 0.1
   checkRadius: 0.5
   maxIterations: 10
@@ -138,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57950342c092bb54e833a3e0e305e2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageable: {fileID: 657630117849046606}
+  jumpCardMovement: {fileID: 8506768334802506265}
   carryOffset: {x: 0, y: 1.8, z: 0}
   stealRange: 1
   stealableLayerMask:
