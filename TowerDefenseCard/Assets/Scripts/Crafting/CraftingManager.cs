@@ -50,7 +50,6 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
         }
     }
 
-    //private GameObject cooldownBar;
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
     public static event Action OnResetCraftingManagerEasyModeNoDefense;
@@ -102,15 +101,12 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             return false;
         }
             
-
-        // Count cards by cardID
         Dictionary<CardID, int> cardCounts = new Dictionary<CardID, int>();
         foreach (var card in stackCards)
         {
             cardCounts[card.CardData.CardID] = cardCounts.GetValueOrDefault(card.CardData.CardID, 0) + 1;
         }
 
-        // Check each recipe
         foreach (var recipe in recipes)
         {
             if (IsRecipeMatch(recipe, cardCounts))
@@ -121,18 +117,6 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                     if (ingredient.cardID == CardID.FOREST || ingredient.cardID == CardID.MONTAIN || ingredient.cardID == CardID.RICE_PADDY || ingredient.cardID == CardID.SEA || ingredient.cardID == CardID.FARM)
                         continue;
 
-                    //if (ingredient.cardID == CardID.BAMBOO && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.BAMBOO_PLANK_FACTORY))
-                    //    continue;
-                    //
-                    //if (ingredient.cardID == CardID.SAKURA && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.SAKURA_BRICK_FACTORY))
-                    //    continue;
-                    //
-                    //if (ingredient.cardID == CardID.JADE && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.AMETHYSTE_FACTORY))
-                    //    continue;
-                    //
-                    //if (ingredient.cardID == CardID.SPIRIT_ESSENCE && recipe.Ingredients.Any(ingredient => ingredient.cardID == CardID.KAMI_FACTORY))
-                    //    continue;
-
                     if (cardCounts.ContainsKey(ingredient.cardID) && cardCounts[ingredient.cardID] > ingredient.quantity)
                     {
                         int surplueCount = cardCounts[ingredient.cardID] - ingredient.quantity;
@@ -142,18 +126,6 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                             //cardToRemove.OnUnstack();
                             stackCards.Remove(cardToRemove);
                         }
-
-                        //if(recipe.Ingredients.Count > 1)
-                        //{
-                        //    Card cardToReStack = stackCards.Where(card => card.CardData.CardID == ingredient.cardID).First();
-                        //    cardToReStack.OnUnstack();
-                        //    Card target = stackCards.FirstOrDefault(card => card.CardData.CardID != ingredient.cardID &&
-                        //                                                    card.StackedCards != null && card.StackedCards.Count == 0);
-                        //
-                        //    if (target != null)
-                        //        cardToReStack.OnStack(target);
-                        //}
-
                     }
                 }
 
@@ -392,19 +364,10 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
         OnCraftCancel?.Invoke(craftID);
         currentCrafts.Remove(craftInfo);
-
-        //OnCraftCancel?.Invoke(craftID);
-        //currentCrafts.Remove(GetCraftInfoByID(craftID));
     }
 
     public void TryCancelCraft(int craftID)
     {
-        //if (craftID == -1)
-        //    return;
-        //
-        //OnCraftCancel?.Invoke(craftID);
-        //currentCrafts.Remove(GetCraftInfoByID(craftID));
-        //
         if (craftID == -1) 
             return;
 

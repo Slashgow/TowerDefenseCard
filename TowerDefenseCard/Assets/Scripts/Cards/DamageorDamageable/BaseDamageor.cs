@@ -131,6 +131,12 @@ public abstract class BaseDamageor : BaseUpgradable, IDamageor
                                  {
                                      totalTimeElapsed += 1f;
 
+                                     if (enemy == null)
+                                         return;
+
+                                     if (damageable == null)
+                                         return;
+
                                      if(damageable.IsDead || !canAttack)
                                          return;
 

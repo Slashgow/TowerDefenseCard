@@ -63,7 +63,6 @@ public class CooldownBarUI : MonoBehaviour
 
         craftingTimer?.Cancel();
         OnCraftDelayEnd = null;
-        //Timer.Cancel(craftingTimer);
         //Debug.Log($"try cancel {this.transform.GetInstanceID()}");
         Destroy(this.gameObject);
     }

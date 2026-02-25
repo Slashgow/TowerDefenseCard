@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ennemyWaves:
   - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
-    count: 1
-    spawnInterval: 2
+    count: 2
+    spawnInterval: 3
   - enemyPrefab: {fileID: 3430349243848366076, guid: 5de5ee9fd40b5c143a8523b8a310d3c7, type: 3}
     count: 3
     spawnInterval: 3
   - enemyPrefab: {fileID: 7042976781341503056, guid: 088620fecb4100f4cadad59f7399e466, type: 3}
-    count: 2
-    spawnInterval: 2
+    count: 1
+    spawnInterval: 2.5
   - enemyPrefab: {fileID: 3430349243848366076, guid: 5de5ee9fd40b5c143a8523b8a310d3c7, type: 3}
     count: 3
-    spawnInterval: 3
+    spawnInterval: 4
   waveDelay: 0
   delayBuffer: 5
