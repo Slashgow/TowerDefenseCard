@@ -503,12 +503,13 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     {
         foreach(Card card in stackCards)
         {
-            Debug.Log($"Checking card {card.CardData.CardID}{card.GetInstanceID()} for ongoing crafts");
+            //Debug.Log($"Checking card {card.CardData.CardID}{card.GetInstanceID()} for ongoing crafts");
             foreach (CraftInfo craftInfo in currentCrafts)
             {
                 if (craftInfo.StackCards.Any(stackCard => stackCard.GetInstanceID() == card.GetInstanceID()))
                 {
-                    Debug.Log("card is already on on going craft");
+                    Debug.Log($" Recipe : {craftInfo.CraftingRecipe.name} || card is already on on going craft");
+
                     return true;
                 }
             }

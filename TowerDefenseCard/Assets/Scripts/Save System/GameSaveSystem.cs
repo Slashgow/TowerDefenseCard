@@ -297,6 +297,9 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
 
     private void Load(GameSaveData saveData)
     {
+        if (DifficultyManager.HasInstance)
+            DifficultyManager.Instance.Load(saveData);
+
         gameManager.Load(saveData);
         waveManager.Load(saveData);
         shopManager.Load(saveData);
@@ -309,9 +312,6 @@ public class GameSaveSystem : MonoSingleton<GameSaveSystem>
         foodPackCardShop.Load(saveData);
         //successSaveSystem.Load();
         LoadCards(saveData);
-
-        if (DifficultyManager.HasInstance)
-            DifficultyManager.Instance.Load(saveData);
     }
 
     private void LoadCards(GameSaveData saveData)
