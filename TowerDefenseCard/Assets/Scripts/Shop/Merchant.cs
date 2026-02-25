@@ -19,7 +19,7 @@ public class Merchant : CardShop
             destroyTimer = Timer.Register(destroyDelayAfterPurchase, () =>
             {
                 Destroy(this.gameObject);
-            });
+            }, useRealTime: true);
         }
 
         return success;
