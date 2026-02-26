@@ -222,6 +222,13 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
             if (!shouldBeKept)
             {
                 craftInfo.StackCards[i].OnUnstack();
+
+                // made for special case like barn stack like sakura sakura (sakura) (sakura !! here) bamboo bamboo (bamboo) (bamoo)
+                if (craftInfo.StackCards[i].StackedCards != null && craftInfo.StackCards[i].StackedCards.Count > 0)
+                {
+                    craftInfo.StackCards[i].StackedCards[0].OnUnstack();
+                }
+
                 OnDestroyCard?.Invoke(craftInfo.StackCards[i].CardData.CardID);
                 Destroy(craftInfo.StackCards[i].gameObject);
             }
