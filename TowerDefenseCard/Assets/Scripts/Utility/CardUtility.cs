@@ -1,9 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static SimpleDamageor;
 
 public static class CardUtility 
 {
+    public static List<CardID> GetUpgradeCardIDs(List<Card> cards)
+    {
+        return cards
+            .Where(c => c is CardUpgrade)
+            .Select(c => c.CardData.CardID)
+            .ToList();
+    }
+
     public static List<Card> GetAllCards(GameObject rootObject)
     {
         List<Card> cards = new List<Card>();

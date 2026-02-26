@@ -69,7 +69,10 @@ public class UIQuest : MonoBehaviour
 
     
         toggleIsDone.interactable = false;
-        completeParticleSystem.gameObject.SetActive(false);
+
+        if(completeParticleSystem != null)
+            completeParticleSystem.gameObject.SetActive(false);
+
         backgroundDemoLockedImage.enabled = false;
 
         if (outlineEffect != null)

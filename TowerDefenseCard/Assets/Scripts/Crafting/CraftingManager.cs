@@ -53,6 +53,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
     private List<CraftInfo> currentCrafts = new List<CraftInfo>();
 
     public static event Action OnResetCraftingManagerEasyModeNoDefense;
+    public static event Action<Vector3> OnTryToCraftButHasUpgrade;
 
     private void Start()
     {
@@ -136,6 +137,28 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
                 return true;
             }
         }
+
+        // No recipe matched — check if one would match if we ignored upgrade cards.
+        // If so, the stack is blocked by upgrades: notify the player.
+        List<CardID> upgradeCardIDs = CardUtility.GetUpgradeCardIDs(stackCards);
+        if (upgradeCardIDs.Count > 0)
+        {
+            List<Card> nonUpgradeCards = stackCards.Where(c => !(c is CardUpgrade)).ToList();
+            Dictionary<CardID, int> nonUpgradeCounts = new Dictionary<CardID, int>();
+            foreach (var card in nonUpgradeCards)
+                nonUpgradeCounts[card.CardData.CardID] = nonUpgradeCounts.GetValueOrDefault(card.CardData.CardID, 0) + 1;
+
+            foreach (var recipe in recipes)
+            {
+                if (IsRecipeMatch(recipe, nonUpgradeCounts))
+                {
+                    OnTryToCraftButHasUpgrade?.Invoke(stackParent.position);
+                    Debug.Log("on try to craft but has upgrade");
+                    break;
+                }
+            }
+        }
+
 
         return false;
     }

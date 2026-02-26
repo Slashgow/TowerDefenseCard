@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CardUpgrade : Card
@@ -10,6 +12,13 @@ public class CardUpgrade : Card
     public static event Action OnAppliedAnyUpgrade;
     public static event Action OnRemovedAnyUpgrade;
 
+    private Coroutine coroutine;
+    private IEnumerator Reposition(Card card)
+    {
+        yield return new WaitForEndOfFrame(); // Wait for the current frame to finish
+        card.transform.position = this.transform.position + Vector3.right * 2f;
+        card.transform.rotation = Quaternion.identity; // Reset rotation if needed
+    }
 
     public override void OnStack(Card targetCard)
     {
@@ -19,6 +28,32 @@ public class CardUpgrade : Card
 
         if (upgradables.Length > 0)
         {
+            // unstack cards if try to stack several cards stacked at once
+            var childCards = GetComponentsInChildren<Card>().Skip(1).ToList();
+            if(childCards.Count > 0)
+            {
+                Card cardToTruncate = childCards[0];
+
+                ParentFollower follower = cardToTruncate.GetComponent<ParentFollower>();
+                if (follower != null)
+                {
+                    follower.enabled = false;
+                    follower.CancelDisableSchedule();
+                }
+
+                cardToTruncate.OnUnstack();
+
+                if(coroutine != null)
+                {
+                    StopCoroutine(coroutine);
+                    coroutine = null;
+                }
+
+                coroutine = StartCoroutine(Reposition(cardToTruncate));
+
+                //cardToTruncate.transform.position = this.transform.position + Vector3.right * 2f;
+            }
+
             foreach ( var upgradable in upgradables)
             {
                 //IUpgradable upgradable = (IUpgradable)targetCard;
@@ -43,19 +78,6 @@ public class CardUpgrade : Card
         else
         {
             Debug.LogWarning($"Cannot apply upgrade {upgradeData.UpgradeName} to {targetCard.name}: Target does not support IUpgradable");
-            // Unstack if incompatible
-            //if (transform.parent == targetCard.transform)
-            //{
-            //    transform.SetParent(null, true);
-            //    transform.position = Vector3.zero; // Reset position
-            //}
-        }
-
-        var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
-        foreach (var childUpgrade in childrenUpgrades)
-        {
-            //Debug.Log($"child upgrade | {childUpgrade}");
-            childUpgrade.OnStack(targetCard);
         }
     }
 
@@ -86,10 +108,26 @@ public class CardUpgrade : Card
 
         base.OnUnstack();
 
-        var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
-        foreach (var childUpgrade in childrenUpgrades)
-        {
-            childUpgrade.OnUnstack();
-        }
+
+        //var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
+        //foreach (var childUpgrade in childrenUpgrades)
+        //{
+        //    childUpgrade.OnUnstack();
+        //}
+
+        // ???????????????????? sert quand on veut mettre upgrade sur defense mais plusieurs upgrade stacker
+        //if(StackParent != null)
+        //{
+        //    var upgradables = StackParent.GetComponentsInParent<IUpgradable>();
+        //    if (upgradables.Length <= 0)
+        //        return;
+        //
+        //    var childrenUpgrades = GetComponentsInChildren<CardUpgrade>().Skip(1);
+        //    foreach (var childUpgrade in childrenUpgrades)
+        //    {
+        //        childUpgrade.OnUnstack();
+        //    }
+        //}
+
     }
 }

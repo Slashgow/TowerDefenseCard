@@ -200,6 +200,13 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                         {
                             //continue;
                             Card targetCard = otherCard.GetLastCardInStack();
+
+                            if (targetCard is CardUpgrade)
+                                targetCard = GetLastNonUpgradeCard(otherCard);
+                            //
+                            //if(targetCard == null)
+                            //    targetCard = otherCard.GetLastCardInStack();
+
                             TryManualStack(targetCard);
                             return;
                         }
@@ -209,6 +216,13 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                     {
                         //continue;
                         Card targetCard = otherCard.GetLastCardInStack();
+
+                        if (targetCard is CardUpgrade)
+                            targetCard = GetLastNonUpgradeCard(otherCard);
+                        // 
+                        // if (targetCard == null)
+                        //     targetCard = otherCard.GetLastCardInStack();
+
                         TryManualStack(targetCard);
                         return;
                     }
@@ -220,7 +234,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                     card.OnStack(otherCard);
 
                     Vector3 newPos = Vector3.zero;
-                    newPos.y = -stackingHeight * (otherCard.StackedCards.Count);//.transform.childCount);
+
+                    int stackCount = otherCard is CardDefense ? GetStackCountWithoutCardUpgrades(otherCard) : otherCard.StackedCards.Count;
+
+                    newPos.y = -stackingHeight * stackCount; // (otherCard.StackedCards.Count);//.transform.childCount);
                     transform.localPosition = newPos;
 
                     // Ensure the card has a ParentFollower and set its target offset
@@ -257,6 +274,23 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         //transform.SetParent(startParent, false);
     }
 
+    private Card GetLastNonUpgradeCard(Card rootCard)
+    {
+        Card[] allInStack = rootCard.GetComponentsInChildren<Card>();
+        Card lastNonUpgrade = null;
+        foreach (Card c in allInStack)
+        {
+            if (!(c is CardUpgrade))
+                lastNonUpgrade = c;
+        }
+        return lastNonUpgrade;
+    }
+
+    private int GetStackCountWithoutCardUpgrades(Card targetCard)
+    {
+        return targetCard.StackedCards.FindAll(c => !(c is CardUpgrade)).Count;
+    }
+
     public void TryManualStack(Card targetCard)
     {
         if (targetCard != null && targetCard.CardData.IsStackable)
@@ -264,7 +298,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             card.OnStack(targetCard);
 
             Vector3 newPos = Vector3.zero;
-            newPos.y = -stackingHeight * (targetCard.StackedCards.Count);//.transform.childCount);
+            
+            int stackCount = targetCard is CardDefense ? GetStackCountWithoutCardUpgrades(targetCard) : targetCard.StackedCards.Count;
+
+            newPos.y = -stackingHeight * stackCount; //(targetCard.StackedCards.Count);//.transform.childCount);
             transform.localPosition = newPos;
 
             CardUtility.AssignSortingOrderRecursively(card.transform, targetCard.CardSprite.sortingOrder + targetCard.transform.childCount);
@@ -360,8 +397,10 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
         {
             var stackedCard = cards[i];
 
-            if (stackedCard is CardUpgrade && card is CardDefense)
+            if (stackedCard is CardUpgrade && stackedCard.StackParent != null && stackedCard.StackParent is CardDefense)
+            { 
                 continue;
+            }
 
             if (stackedCard != null)
             {
