@@ -281,6 +281,7 @@ public class UIPageGameModeTransition : UIPage
     private void ClickEndlessModeButton(string text)
     {
         WaveManager.Instance.StartEndlessMode();
+        WaveManager.Instance.ShowNextEndlessWaveVisuals();
         GameManager.Instance.StartCraftMode();
         DoFadeOutEffect(text);
     }

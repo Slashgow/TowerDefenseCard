@@ -15,4 +15,12 @@ public class SplineManager : MonoSingleton<SplineManager>
             GetSplineByID(splineID).gameObject.SetActive(enable);
         }
     }
+
+    public void HideAllVisuals()
+    {
+        foreach (var splineData in splineDatas)
+        {
+            splineData.Spline.gameObject.SetActive(false);
+        }
+    }
 }
