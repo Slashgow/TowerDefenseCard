@@ -44,7 +44,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     [Header("Seller")]
     [SerializeField] private SuccessData sell100CardsSuccess;
     [SerializeField] private SuccessData sell500CardsSuccess;
-    [SerializeField] private SuccessData sell2500CardsSuccess;
+    //[SerializeField] private SuccessData sell2500CardsSuccess;
     //[SerializeField] private SuccessData sell5000CardsSuccess;
 
     [Header("Industrialist")]
@@ -168,7 +168,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             // Seller
             sell100CardsSuccess,
             sell500CardsSuccess,
-            sell2500CardsSuccess,
+            //sell2500CardsSuccess,
             //sell5000CardsSuccess,
             
             // Industrialist
@@ -318,9 +318,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
         //if (successStatData.soldCardCounterAllTime >= 5000)
         //    sell5000CardsSuccess.Complete();
-        if (successStatData.soldCardCounterAllTime >= 2500)
-            sell2500CardsSuccess.Complete();
-        else if (successStatData.soldCardCounterAllTime >= 500)
+        //if (successStatData.soldCardCounterAllTime >= 2500)
+        //    sell2500CardsSuccess.Complete();
+        if (successStatData.soldCardCounterAllTime >= 500)
             sell500CardsSuccess.Complete();
         else if (successStatData.soldCardCounterAllTime >= 100)
             sell100CardsSuccess.Complete();
@@ -363,6 +363,8 @@ public class SuccessManager : MonoSingleton<SuccessManager>
             open500BoosterSuccess.Complete();
         else if(successStatData.boosterOpenedCounterAllTime >= 250)
             open250BoosterSuccess.Complete();
+        else if(successStatData.boosterOpenedCounterAllTime >= 50)
+            open50BoosterSuccess.Complete();
         else if (successStatData.boosterOpenedCounterAllTime >= 1)
             openFirstBoosterSuccess.Complete();
     }
