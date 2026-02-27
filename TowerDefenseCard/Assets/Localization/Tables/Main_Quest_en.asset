@@ -242,6 +242,15 @@ MonoBehaviour:
     m_Localized: Upgrade a defense card with a dish
     m_Metadata:
       m_Items: []
+  - m_Id: 72400514132078592
+    m_Localized: Craft possible menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72400582499233792
+    m_Localized: Right click on a card to see all the discovered crafts using this
+      card
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

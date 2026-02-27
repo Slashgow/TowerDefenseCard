@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5039714933184213662}
   - component: {fileID: 6407010441512434590}
   - component: {fileID: -6129105716120573985}
+  - component: {fileID: 4705154596154839805}
   m_Layer: 6
   m_Name: RessourceGenerator
   m_TagString: Untagged
@@ -346,6 +347,19 @@ MonoBehaviour:
   lagPosition: 1
   lagRotation: 1
   disableDelay: 1
+--- !u!114 &4705154596154839805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b824ccd03d485499644cf711a0b8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 7044126976955783116}
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CardUpgrade : Card

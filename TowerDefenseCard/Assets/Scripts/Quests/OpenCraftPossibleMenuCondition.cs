@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 
-
-public class OpenMenuCondition : QuestCondition
+public class OpenCraftPossibleMenuCondition : QuestCondition
 {
-    [SerializeField] private UIPage menuToOpen;
+    [SerializeField] private UIPanelCardCraftingRecipes craftingRecipesPanel;
+    private void Start() => craftingRecipesPanel.OnShow += OnShowMenu;
+    private void OnDestroy() => craftingRecipesPanel.OnShow -= OnShowMenu;
 
-    private void Start() => menuToOpen.OnShow += OnShowMenu;
-    private void OnDestroy() => menuToOpen.OnShow -= OnShowMenu;
     protected void OnShowMenu()
     {
         OnActionPerformed(null);
@@ -15,7 +14,7 @@ public class OpenMenuCondition : QuestCondition
     {
         bool isCompleted = quest.CurrentProgress >= quest.GoalCount;
         if (isCompleted)
-            menuToOpen.OnShow -= OnShowMenu;
+            craftingRecipesPanel.OnShow -= OnShowMenu;
         return isCompleted;
     }
     public override void OnActionPerformed(object actionData)

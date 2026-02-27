@@ -246,6 +246,15 @@ MonoBehaviour:
     m_Localized: "Am\xE9liorer une carte de d\xE9fense avec un plat"
     m_Metadata:
       m_Items: []
+  - m_Id: 72400514132078592
+    m_Localized: Craft possible menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72400582499233792
+    m_Localized: "Clic droit sur une carte pour voir tous les crafts d\xE9couverts
+      utilisant cette carte."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

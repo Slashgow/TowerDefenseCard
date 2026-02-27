@@ -8,6 +8,7 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 {
     [SerializeField, Range(0f, 500f)] private List<float> originalTotalTimesCraftMode;
     [SerializeField] private List<CraftingRecipe> recipes;
+    public List<CraftingRecipe> Recipes => recipes;
     [SerializeField] private GameObject cooldownBarPrefab;
     [SerializeField, Range(0f,2f)] private float cooldownBarOffset = 0.3f;
     [SerializeField] private Vector3 craftSpawnOffset;

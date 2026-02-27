@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -7959594304674898046}
   - component: {fileID: -3336365954974460798}
   - component: {fileID: 4764719793607493749}
+  - component: {fileID: 3415059351102369901}
   m_Layer: 6
   m_Name: Upgrade
   m_TagString: Untagged
@@ -335,6 +336,19 @@ MonoBehaviour:
   lagPosition: 1
   lagRotation: 1
   disableDelay: 1
+--- !u!114 &3415059351102369901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319473351768311903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b824ccd03d485499644cf711a0b8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 7200738044120811425}
 --- !u!1 &3180402255020645522
 GameObject:
   m_ObjectHideFlags: 0

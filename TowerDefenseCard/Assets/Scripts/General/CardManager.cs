@@ -323,7 +323,7 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
         return allCards.First(cardDiscoveryState => cardDiscoveryState.Card.CardData.CardID == cardID).Card;
     }
 
-    public CardDiscoveryState GetCardDiscoveryStateByCardID(CardID cardID) => allCards.First(cardDiscoveryState => cardDiscoveryState.Card.CardData.CardID == cardID);
+    public CardDiscoveryState GetCardDiscoveryStateByCardID(CardID cardID) => allCards.FirstOrDefault(cardDiscoveryState => cardDiscoveryState.Card.CardData.CardID == cardID);
 
     public void SetNotificationStatusByCardID(CardID cardID, bool notificationStatus)
     {
