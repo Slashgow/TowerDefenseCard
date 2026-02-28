@@ -294,7 +294,8 @@ public class CardManager : MonoSingleton<CardManager>, ISavable, ILoadable
             discoveredCardIDs.Add(matchingCardIDState.Card.CardData.CardID);
             OnDiscoverNewCard?.Invoke();
 
-            if(AllDiscoverableCards >= allCards.Count(cardDiscoveryState => cardDiscoveryState.isDiscovered) - 3)
+            int counCardDiscovered = allCards.Count(cardDiscoveryState => cardDiscoveryState.isDiscovered);
+            if (counCardDiscovered - 3 >= AllDiscoverableCards)
             {
                 OnDiscoverAllCards?.Invoke();
             }

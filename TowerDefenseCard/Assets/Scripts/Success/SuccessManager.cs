@@ -322,7 +322,7 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         //    sell2500CardsSuccess.Complete();
         if (successStatData.soldCardCounterAllTime >= 500)
             sell500CardsSuccess.Complete();
-        else if (successStatData.soldCardCounterAllTime >= 100)
+        if (successStatData.soldCardCounterAllTime >= 100)
             sell100CardsSuccess.Complete();
     }
 
@@ -331,11 +331,11 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     {
         if (WaveManager.Instance.IsAllWavesCompleted)
             waveBossSuccess.Complete();
-        else if (currentWaveIndex >= 6)
+        if (currentWaveIndex >= 6)
             wave6Success.Complete();
-        else if (currentWaveIndex >= 3)
+        if (currentWaveIndex >= 3)
             wave3Success.Complete();
-        else if (currentWaveIndex >= 1)
+        if (currentWaveIndex >= 1)
             wave1Success.Complete();
     }
 
@@ -343,9 +343,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
     {
         if (maxCardsAllowed >= 100)
             cardStorage100Success.Complete();
-        else if (maxCardsAllowed >= 50)
+        if (maxCardsAllowed >= 50)
             cardStorage50Success.Complete();
-        else if (maxCardsAllowed >= 30)
+        if (maxCardsAllowed >= 30)
             cardStorage30Success.Complete();
     }
 
@@ -361,11 +361,11 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         //    open1000BoosterSuccess.Complete();
         if(successStatData.boosterOpenedCounterAllTime >= 500)
             open500BoosterSuccess.Complete();
-        else if(successStatData.boosterOpenedCounterAllTime >= 250)
+        if(successStatData.boosterOpenedCounterAllTime >= 250)
             open250BoosterSuccess.Complete();
-        else if(successStatData.boosterOpenedCounterAllTime >= 50)
+        if(successStatData.boosterOpenedCounterAllTime >= 50)
             open50BoosterSuccess.Complete();
-        else if (successStatData.boosterOpenedCounterAllTime >= 1)
+        if (successStatData.boosterOpenedCounterAllTime >= 1)
             openFirstBoosterSuccess.Complete();
     }
 
@@ -377,9 +377,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
         //    craft10000Cards.Complete();
         if(successStatData.craftedCardCounterAllTime >= 1000)
             craft1000Cards.Complete();
-        else if (successStatData.craftedCardCounterAllTime >= 250)
+        if (successStatData.craftedCardCounterAllTime >= 250)
             craft250Cards.Complete();
-        else if (successStatData.craftedCardCounterAllTime >= 1)
+        if (successStatData.craftedCardCounterAllTime >= 1)
             firstCraftSuccess.Complete();
 
 
@@ -549,9 +549,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
         if (successStatData.factoriesIDThisGame.Count >= 8)
             craft8DifferentFactoriesSuccess.Complete();
-        else if (successStatData.factoriesIDThisGame.Count >= 4)
+        if (successStatData.factoriesIDThisGame.Count >= 4)
             craft4DifferentFactoriesSuccess.Complete();
-        else if (successStatData.factoriesIDThisGame.Count >= 1)
+        if (successStatData.factoriesIDThisGame.Count >= 1)
             firstFactorySuccess.Complete();
     }
 
@@ -562,9 +562,9 @@ public class SuccessManager : MonoSingleton<SuccessManager>
 
         if (successStatData.defenseIDThisGame.Count >= 8)
             craft8DifferentDefenseSuccess.Complete();
-        else if (successStatData.defenseIDThisGame.Count >= 4)
+        if (successStatData.defenseIDThisGame.Count >= 4)
             craft4DifferentDefenseSuccess.Complete();
-        else if (successStatData.defenseIDThisGame.Count >= 1)
+        if (successStatData.defenseIDThisGame.Count >= 1)
             craftFirstDefenseSuccess.Complete();
     }
 
