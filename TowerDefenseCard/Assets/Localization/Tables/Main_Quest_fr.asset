@@ -44,11 +44,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 940189282304
-    m_Localized: Crafter planche de bamboo
+    m_Localized: Fabriquer planche de bambou
     m_Metadata:
       m_Items: []
   - m_Id: 992248983552
-    m_Localized: Crafter deux planches de bamboo
+    m_Localized: Fabriquer deux planches de bambous
     m_Metadata:
       m_Items: []
   - m_Id: 1147232710656
@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1227645906944
-    m_Localized: Crafter deux briques de Sakura
+    m_Localized: Fabriquer deux briques de Sakura
     m_Metadata:
       m_Items: []
   - m_Id: 1355500875776
@@ -64,7 +64,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1423649927168
-    m_Localized: Crafter une usine de bambou
+    m_Localized: Fabriquer une usine de bambou
     m_Metadata:
       m_Items: []
   - m_Id: 1542516502528
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1608094445568
-    m_Localized: Crafter une usine de Sakura
+    m_Localized: Fabriquer une usine de Sakura
     m_Metadata:
       m_Items: []
   - m_Id: 1706996133888
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1742345728000
-    m_Localized: Crafter deux archers
+    m_Localized: Fabriquer deux archers
     m_Metadata:
       m_Items: []
   - m_Id: 3488820853338112
@@ -88,7 +88,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3488976566874112
-    m_Localized: Crafter un Akita Inu
+    m_Localized: Fabriquer un Akita Inu
     m_Metadata:
       m_Items: []
   - m_Id: 3489065217683456
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3489249888694272
-    m_Localized: Crafter une Torii Gate
+    m_Localized: Fabriquer une Torii Gate
     m_Metadata:
       m_Items: []
   - m_Id: 3489394948698112
@@ -104,7 +104,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3489449675976704
-    m_Localized: Crafter deux Komainu
+    m_Localized: Fabriquer deux Komainu
     m_Metadata:
       m_Items: []
   - m_Id: 3489559885508608
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3489687811780608
-    m_Localized: Crafter un temple
+    m_Localized: Fabriquer un temple
     m_Metadata:
       m_Items: []
   - m_Id: 3489754023063552
@@ -120,7 +120,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3489823501709312
-    m_Localized: Crafter Hachiman
+    m_Localized: Fabriquer Hachiman
     m_Metadata:
       m_Items: []
   - m_Id: 3489936961826816
@@ -128,7 +128,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490000547475456
-    m_Localized: Crafter un dragon
+    m_Localized: Fabriquer un dragon
     m_Metadata:
       m_Items: []
   - m_Id: 3490056998612992
@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490173080170496
-    m_Localized: Crafter Amaterasu
+    m_Localized: Fabriquer Amaterasu
     m_Metadata:
       m_Items: []
   - m_Id: 3490229631971328
@@ -144,7 +144,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490359454068736
-    m_Localized: Crafter Fujin
+    m_Localized: Fabriquer Fujin
     m_Metadata:
       m_Items: []
   - m_Id: 3490433676472320
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490471643312128
-    m_Localized: Crafter Raijin
+    m_Localized: Fabriquer Raijin
     m_Metadata:
       m_Items: []
   - m_Id: 3490515482177536
@@ -160,7 +160,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490565658636288
-    m_Localized: Crafter Susanoo
+    m_Localized: Fabriquer Susanoo
     m_Metadata:
       m_Items: []
   - m_Id: 3490624043347968
@@ -168,7 +168,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3490695665283072
-    m_Localized: Crafter Okuninushi
+    m_Localized: Fabriquer Okuninushi
     m_Metadata:
       m_Items: []
   - m_Id: 13625774899982336
@@ -227,7 +227,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24207474054000640
-    m_Localized: Crafter une taverne
+    m_Localized: Fabriquer une taverne
     m_Metadata:
       m_Items: []
   - m_Id: 24207551413743616
@@ -251,8 +251,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72400582499233792
-    m_Localized: "Clic droit sur une carte pour voir tous les crafts d\xE9couverts
-      utilisant cette carte."
+    m_Localized: "Clic droit sur une carte pour voir tous les recettes de fabrication
+      d\xE9couvertes utilisant cette carte."
     m_Metadata:
       m_Items: []
   references:

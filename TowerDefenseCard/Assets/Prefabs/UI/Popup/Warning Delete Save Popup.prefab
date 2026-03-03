@@ -16,6 +16,22 @@ PrefabInstance:
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:0973f375f04bcf845b691bad9cad1996
       objectReference: {fileID: 0}
+    - target: {fileID: 1779003647600161563, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779003647600161563, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779003647600161563, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779003647600161563, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1962271759189027722, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -196,7 +212,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warning Delete Save Popup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7675934114507074532, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675934114507074532, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675934114507074532, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675934114507074532, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7569386952610148372, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+    - {fileID: 4796674177494375997, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
+    - {fileID: 3505800302567392962, guid: b379b8aed90f4e644b1eb58b821b7773, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

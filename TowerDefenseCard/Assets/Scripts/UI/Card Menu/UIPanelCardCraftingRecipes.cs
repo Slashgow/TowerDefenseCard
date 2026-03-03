@@ -35,7 +35,12 @@ public class UIPanelCardCraftingRecipes : MonoSingleton<UIPanelCardCraftingRecip
             return;
 
         matchingRecipes.Clear();
-        matchingRecipes = GetRecipesContainingCard(sourceCard.CardData.CardID);
+        CraftingRecipe thisCardRecipe = CraftingManager.Instance.GetRecipeByOutputCardID(sourceCard.CardData.CardID);
+        if(thisCardRecipe != null)
+        {
+            matchingRecipes.Add(thisCardRecipe);
+        }
+        matchingRecipes.AddRange(GetRecipesContainingCard(sourceCard.CardData.CardID));
 
         if (matchingRecipes.Count == 0)
         {

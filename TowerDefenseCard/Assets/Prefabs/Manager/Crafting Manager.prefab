@@ -77,8 +77,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bc40ec9c2e68dc4b8039a01414ed47d, type: 2}
   - {fileID: 11400000, guid: c237b528672bf5e468618ef5adadd9b7, type: 2}
   - {fileID: 11400000, guid: 1fa5600641b60554492778946e0aff80, type: 2}
-  - {fileID: 11400000, guid: 662b7ae0527ea4d4aad7f62fc405fb28, type: 2}
-  - {fileID: 11400000, guid: 3dddd4da13062d94a84432a7a8bf1927, type: 2}
   - {fileID: 11400000, guid: 849cc33304c4ba74db81cc72507d34cf, type: 2}
   - {fileID: 11400000, guid: b4a0ac61a7229eb4d914b11068afb51b, type: 2}
   - {fileID: 11400000, guid: 08c3e04cf57798345b76636d0ebeaaa3, type: 2}
@@ -92,7 +90,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d21c3e39d2c180841a6520d74ed21b6f, type: 2}
   - {fileID: 11400000, guid: ff9e04878c9bced40ab26ca459e49229, type: 2}
   - {fileID: 11400000, guid: e7d89d9467f86d84faa2add074b15d21, type: 2}
-  - {fileID: 11400000, guid: 79b153f8fad995b4f8d45a37aea5160b, type: 2}
   - {fileID: 11400000, guid: 014564bab56df814bab11a8a0e5b910b, type: 2}
   - {fileID: 11400000, guid: 8857b56474f823d419b068f2e52c8a34, type: 2}
   - {fileID: 11400000, guid: e1358bcef86044f4f8e2bb834873b22f, type: 2}
@@ -100,7 +97,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff313dccc19f500428b760356787644a, type: 2}
   - {fileID: 11400000, guid: a0d324ee32dcf47439f184381f78e2ab, type: 2}
   - {fileID: 11400000, guid: 95651774f26b9af4a8cd5b6a74e20847, type: 2}
-  - {fileID: 11400000, guid: 4d8454e98f7d4d74eb73a732a2058223, type: 2}
   - {fileID: 11400000, guid: d8bde257dbbacbf44bb3d6506692b633, type: 2}
   - {fileID: 11400000, guid: 06348e49d6aaa124c8bced716da24060, type: 2}
   - {fileID: 11400000, guid: 6e87325d2d686c340a45223a3207166b, type: 2}
@@ -108,11 +104,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9f7a995831230845bdbe2a4f196413e, type: 2}
   - {fileID: 11400000, guid: 251584c89e1cc5242be396b304d42aab, type: 2}
   - {fileID: 11400000, guid: 3be3e6204401db0458e3e99b2c7f920b, type: 2}
-  - {fileID: 11400000, guid: 72aa9178315d76d44b12e623a9180fef, type: 2}
+  - {fileID: 11400000, guid: 3dddd4da13062d94a84432a7a8bf1927, type: 2}
   - {fileID: 11400000, guid: e064e48f1898849498166db2f2bdfc65, type: 2}
   - {fileID: 11400000, guid: 248a9425709dea7458ff04d2acb0db6e, type: 2}
   - {fileID: 11400000, guid: cd7cf5531efe66843b72d4b5cd1791e3, type: 2}
   - {fileID: 11400000, guid: 77a6f8a27d3abff4993ed205c137ddb7, type: 2}
+  - {fileID: 11400000, guid: 79b153f8fad995b4f8d45a37aea5160b, type: 2}
   - {fileID: 11400000, guid: ed49142f5355a1748925bd6e0340a288, type: 2}
   - {fileID: 11400000, guid: be9a6d4dff8d03847a9cde95d029fe7a, type: 2}
   - {fileID: 11400000, guid: 7d13d3c9851434446bba2226eb9d0130, type: 2}
@@ -125,6 +122,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7d3d24e7cba49946a876e5236a770c4, type: 2}
   - {fileID: 11400000, guid: 937bae5047d98a4459d1f0d872bf3cc7, type: 2}
   - {fileID: 11400000, guid: 66eb112627610ed47936decf9c7ec409, type: 2}
+  - {fileID: 11400000, guid: 662b7ae0527ea4d4aad7f62fc405fb28, type: 2}
+  - {fileID: 11400000, guid: 72aa9178315d76d44b12e623a9180fef, type: 2}
+  - {fileID: 11400000, guid: 4d8454e98f7d4d74eb73a732a2058223, type: 2}
   cooldownBarPrefab: {fileID: 5366261039685075114, guid: 05c0c4a21dc340540911cb28546c2564, type: 3}
   cooldownBarOffset: 1.2
   craftSpawnOffset: {x: 2, y: 0, z: 0}
