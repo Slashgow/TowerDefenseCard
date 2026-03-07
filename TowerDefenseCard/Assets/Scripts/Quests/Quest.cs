@@ -64,12 +64,13 @@ public class Quest
     }
     public void UnlockQuest()
     {
-        if (isDemoLocked)
+        if (isDemoLocked && DemoManager.Instance.UseDemoMode)
         {
             Debug.LogWarning($"Cannot unlock quest '{questId}' - it is demo locked.");
             return;
         }
 
+        Debug.Log($"Unlocking quest '{questId}'");
         isLocked = false;
         OnUnlockQuest?.Invoke(this);
     }
@@ -89,5 +90,6 @@ public class Quest
     {
         this.currentProgress = questSaveData.currentProgress;
         this.isLocked = questSaveData.isLocked;
+        Debug.Log($"Loaded quest '{questId}' with progress {currentProgress} and locked status {isLocked}");
     }
 }

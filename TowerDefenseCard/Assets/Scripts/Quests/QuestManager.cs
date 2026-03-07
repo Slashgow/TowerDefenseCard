@@ -184,6 +184,8 @@ public class QuestManager : MonoBehaviour
                 string json = File.ReadAllText(SavePath.QuestSaveFilePath);
                 QuestSaveContainer questSaveContainer = JsonUtility.FromJson<QuestSaveContainer>(json);
 
+                // Pass 1: restore all quest states first, so no quest gets
+                // overwritten by a Load() that runs after it was just unlocked.
                 foreach (var quest in availableQuests)
                 {
                     QuestSaveData questSaveData;
@@ -193,14 +195,15 @@ public class QuestManager : MonoBehaviour
                         questSaveData = questSaveContainer.GetSecondaryQuestSaveDataByQuestID(quest.QuestId);
 
                     if (questSaveData.questID != null)
-                    {
                         quest.Load(questSaveData);
+                }
 
-                        if (quest.IsCompleted)
-                        {
-                            OnQuestComplete(quest);
-                        }
-                    }
+                // Pass 2: now that all states are restored, process completions.
+                // UnlockNextQuest() won't be clobbered by a subsequent Load() call.
+                foreach (var quest in availableQuests)
+                {
+                    if (quest.IsCompleted)
+                        OnQuestComplete(quest);
                 }
 
                 logger.Log($"Quest progress loaded from {SavePath.QuestSaveFilePath}", this);

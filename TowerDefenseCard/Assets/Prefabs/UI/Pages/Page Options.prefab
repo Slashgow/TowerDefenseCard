@@ -4838,6 +4838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Wishlist Side
       objectReference: {fileID: 0}
+    - target: {fileID: 5998726034896345401, guid: d9451146d22630e48aabf0ac1dbc8d14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099535930965211033, guid: d9451146d22630e48aabf0ac1dbc8d14, type: 3}
       propertyPath: m_Pivot.x
       value: 0
