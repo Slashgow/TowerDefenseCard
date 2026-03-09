@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Difficulty Medium
   m_EditorClassIdentifier: 
   difficulty: 1
-  timeBetweenWavesPercentModifier: -5
-  ennemyHealthPercentModifier: 15
+  timeBetweenWavesPercentModifier: -15
+  ennemyHealthPercentModifier: 50
   ennemyDamagePercentModifier: 5
   ennemyAttackSpeedPercentModifier: 5
   startMaxCardsAllowed: 30

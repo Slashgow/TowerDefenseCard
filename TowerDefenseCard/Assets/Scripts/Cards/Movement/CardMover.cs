@@ -325,8 +325,8 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             if (hit.transform.IsChildOf(this.transform))
                 continue;
 
-            if (this.transform.IsChildOf(hit.transform))
-                continue;
+            //if (this.transform.IsChildOf(hit.transform))
+            //    continue;
 
             Card otherCard = hit.GetComponent<Card>();
             if (otherCard == null)
@@ -344,45 +344,45 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
                 Card targetCard = this.card.GetLastCardInStack();
 
                 // Mirror TryStackCards: if the last card is a CardUpgrade, find the last non-upgrade card
-                if (targetCard is CardUpgrade)
+                if (targetCard is CardUpgrade && this.card is not CardUpgrade)
                     targetCard = GetLastNonUpgradeCard(this.card);
 
                 if (targetCard == null)
                     continue;
 
                 // Mirror TryStackCards: handle stacked cards with null-reference cleanup
-                if (otherCard.StackedCards.Count > 0)
-                {
-                    if (otherCard.TryClearStackCards())
-                    {
-                        if (otherCard.StackedCards.Count > 0)
-                        {
-                            Card lastInStack = otherCard.GetLastCardInStack();
-
-                            if (lastInStack is CardUpgrade)
-                                lastInStack = GetLastNonUpgradeCard(otherCard);
-
-                            if (lastInStack == null)
-                                continue;
-
-                            TryManualStack(lastInStack);
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        Card lastInStack = otherCard.GetLastCardInStack();
-
-                        if (lastInStack is CardUpgrade)
-                            lastInStack = GetLastNonUpgradeCard(otherCard);
-
-                        if (lastInStack == null)
-                            continue;
-
-                        TryManualStack(lastInStack);
-                        continue;
-                    }
-                }
+                //if (otherCard.StackedCards.Count > 0)
+                //{
+                //    if (otherCard.TryClearStackCards())
+                //    {
+                //        if (otherCard.StackedCards.Count > 0)
+                //        {
+                //            Card lastInStack = otherCard.GetLastCardInStack();
+                //
+                //            if (lastInStack is CardUpgrade)
+                //                lastInStack = GetLastNonUpgradeCard(otherCard);
+                //
+                //            if (lastInStack == null)
+                //                continue;
+                //
+                //            TryManualStack(lastInStack);
+                //            continue;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        Card lastInStack = otherCard.GetLastCardInStack();
+                //
+                //        if (lastInStack is CardUpgrade)
+                //            lastInStack = GetLastNonUpgradeCard(otherCard);
+                //
+                //        if (lastInStack == null)
+                //            continue;
+                //
+                //        TryManualStack(lastInStack);
+                //        continue;
+                //    }
+                //}
 
                 otherCard.OnStack(targetCard);
 

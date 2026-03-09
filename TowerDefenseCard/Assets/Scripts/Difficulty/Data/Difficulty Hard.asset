@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Difficulty Hard
   m_EditorClassIdentifier: 
   difficulty: 2
-  timeBetweenWavesPercentModifier: -15
-  ennemyHealthPercentModifier: 30
+  timeBetweenWavesPercentModifier: -25
+  ennemyHealthPercentModifier: 100
   ennemyDamagePercentModifier: 15
   ennemyAttackSpeedPercentModifier: 20
   startMaxCardsAllowed: 20
-  startMaxDefenseCardsAllowed: 2
+  startMaxDefenseCardsAllowed: 3
