@@ -36,6 +36,8 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
 
 
             SuccessManager.Instance.AllSuccessData.ForEach(success => success.OnComplete += UnlockAchievement);
+
+            MatchSuccessSteamWithSuccessStatus();
         }
         catch (System.Exception e)
         {
@@ -46,6 +48,17 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
             //     Don't have permission to play app?
             //
             logger.LogError(e.Message, this);
+        }
+    }
+
+    private void MatchSuccessSteamWithSuccessStatus()
+    {
+        foreach (SuccessData successData in SuccessManager.Instance.AllSuccessData)
+        {
+            if (successData.isDone && !IsThisAchievementUnlocked(successData.SteamId))
+            {
+                UnlockAchievement(successData);
+            }
         }
     }
 
@@ -63,10 +76,11 @@ public class SteamIntegration : MonoSingleton<SteamIntegration>
         SteamClient.Shutdown();
     }
 
-    public void IsThisAchievementUnlocked(string id)
+    public bool IsThisAchievementUnlocked(string id)
     {
-        var achievement = new Steamworks.Data.Achievement(id);
+        Steamworks.Data.Achievement achievement = new Steamworks.Data.Achievement(id);
         logger.Log($"Achievement {id} unlocked: {achievement.State}", this);
+        return achievement.State;
     }
 
     public void UnlockAchievement(SuccessData successData)
