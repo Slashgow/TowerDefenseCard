@@ -495,19 +495,42 @@ public class CraftingManager : MonoSingleton<CraftingManager>, ILoadable, ISavab
 
     private bool IsCardsInOnGoingCraft(List<Card> stackCards)
     {
-        foreach(Card card in stackCards)
+        string incomingCardsSummary = string.Join(", ", stackCards.Select(c => $"{c.CardData.CardID}(id:{c.GetInstanceID()})"));
+        Debug.Log($"[IsCardsInOnGoingCraft] Checking {stackCards.Count} card(s): [{incomingCardsSummary}] | Active crafts count: {currentCrafts.Count}");
+
+        if (currentCrafts.Count == 0)
+        {
+            Debug.Log("[IsCardsInOnGoingCraft] No active crafts — returning false");
+            return false;
+        }
+
+        // Dump all active crafts for reference
+        for (int i = 0; i < currentCrafts.Count; i++)
+        {
+            CraftInfo ci = currentCrafts[i];
+            string craftCardsSummary = string.Join(", ", ci.StackCards.Select(c => c != null ? $"{c.CardData.CardID}(id:{c.GetInstanceID()})" : "NULL"));
+            Debug.Log($"[IsCardsInOnGoingCraft] Active craft [{i}] — CraftID:{ci.CraftID} | Recipe:{ci.CraftingRecipe.name} | Cards:[{craftCardsSummary}]");
+        }
+
+
+
+        foreach (Card card in stackCards)
         {
             //Debug.Log($"Checking card {card.CardData.CardID}{card.GetInstanceID()} for ongoing crafts");
             foreach (CraftInfo craftInfo in currentCrafts)
             {
-                if (craftInfo.StackCards.Any(stackCard => stackCard.GetInstanceID() == card.GetInstanceID()))
+                Card matchedCard = craftInfo.StackCards.FirstOrDefault(stackCard => stackCard != null && stackCard.GetInstanceID() == card.GetInstanceID());
+                if (matchedCard != null)
                 {
-                    Debug.Log($" Recipe : {craftInfo.CraftingRecipe.name} || card is already on on going craft");
-
+                    Debug.LogWarning($"[IsCardsInOnGoingCraft] BLOCKED — Card {card.CardData.CardID}(id:{card.GetInstanceID()}) " +
+                        $"is already in craft CraftID:{craftInfo.CraftID} Recipe:{craftInfo.CraftingRecipe.name} | " +
+                        $"Matched stack card: {matchedCard.CardData.CardID}(id:{matchedCard.GetInstanceID()}) | Returning TRUE");
                     return true;
                 }
             }
+            Debug.Log($"[IsCardsInOnGoingCraft] Card {card.CardData.CardID}(id:{card.GetInstanceID()}) — not found in any active craft");
         }
+        Debug.Log("[IsCardsInOnGoingCraft] No conflicts found — returning false");
         return false;
     }
 

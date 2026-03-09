@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 2
   timeBetweenWavesPercentModifier: -15
-  ennemyHealthPercentModifier: 10
+  ennemyHealthPercentModifier: 30
   ennemyDamagePercentModifier: 15
   ennemyAttackSpeedPercentModifier: 20
   startMaxCardsAllowed: 20
