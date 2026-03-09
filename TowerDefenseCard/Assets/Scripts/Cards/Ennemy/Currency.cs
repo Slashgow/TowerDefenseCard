@@ -6,6 +6,7 @@ public class Currency : Card, IEndDragHandler
 {
     [SerializeField, Range(0f, 10f)] private float shopDetectionRadius = 1f;
     [SerializeField] private LayerMask shopLayerMask;
+    [SerializeField] private LayerMask cardCurrencyCollecterLayerMask;
 
     private PoolingSystem pool;
     public PoolingSystem Pool => pool;
@@ -21,6 +22,21 @@ public class Currency : Card, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Collider2D[] hitsCardCurrencyCollecter = Physics2D.OverlapCircleAll(transform.position, shopDetectionRadius, cardCurrencyCollecterLayerMask);
+
+        if(hitsCardCurrencyCollecter != null && hitsCardCurrencyCollecter.Length > 0)
+        {
+            foreach(Collider2D col in hitsCardCurrencyCollecter)
+            {
+                Debug.Log("hit card currency collecter");
+                if (col.TryGetComponent(out CardCurrencyCollecter cardCurrencyCollecter))
+                {
+                    Debug.Log("found card currency collecter");
+                    cardCurrencyCollecter.OnDrop(this);
+                }
+            }
+        }
+
         Collider2D hit = Physics2D.OverlapCircle(transform.position, shopDetectionRadius, shopLayerMask);
 
         if (hit != null)

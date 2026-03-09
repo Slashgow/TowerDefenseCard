@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler, IEndDragHandler, IBeginDragHandler
+public class CardCurrencyCollecter : Card, IPointerUpHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private Logger logger;
     [SerializeField, Range(0, 100)] private int maxCurrencyAmount = 50;
@@ -14,6 +14,7 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler, IEnd
     public int CurrentAmount { get; private set; }
 
     private bool isDragging = false;
+    private bool isHovered = false;
 
     // private void Awake()
     // {
@@ -77,10 +78,10 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IDropHandler, IEnd
         DropCurrency();
     }
 
-    public void OnDrop(PointerEventData eventData)
+    public void OnDrop(Currency currency)
     {
         logger.Log($"on drop", this);
-        Currency[] currencies = eventData.pointerDrag.GetComponentsInChildren<Currency>();
+        Currency[] currencies = currency.GetComponentsInChildren<Currency>();
 
         if (currencies.Length <= 0)
             return;

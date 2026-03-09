@@ -118,7 +118,7 @@ MonoBehaviour:
   cardUI: {fileID: 6868042175936996570}
   cardOutline: {fileID: 5723574174763954823}
   logger: {fileID: 6951544489701109645}
-  maxCurrencyAmount: 50
+  maxCurrencyAmount: 100
   spawnAmount: 10
   spawnOffset: {x: 0, y: -1.5, z: 0}
 --- !u!114 &6208533192665768891
