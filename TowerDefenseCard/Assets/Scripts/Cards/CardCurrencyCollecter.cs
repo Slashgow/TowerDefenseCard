@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -82,6 +83,10 @@ public class CardCurrencyCollecter : Card, IPointerUpHandler, IEndDragHandler, I
     {
         logger.Log($"on drop", this);
         Currency[] currencies = currency.GetComponentsInChildren<Currency>();
+
+        Card[] cards = currency.GetComponentsInChildren<Card>();
+        if (cards.Any(card => card is not Currency))
+            return;
 
         if (currencies.Length <= 0)
             return;
