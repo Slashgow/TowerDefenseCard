@@ -322,16 +322,15 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             if (hit.gameObject == this.gameObject)
                 continue;
 
-
             if (hit.transform.IsChildOf(this.transform))
+                continue;
+
+            if (this.transform.IsChildOf(hit.transform))
                 continue;
 
             Card otherCard = hit.GetComponent<Card>();
             if (otherCard == null)
                 continue;
-
-            //if (otherCard.StackedCards.Count > 0)
-            //    continue;
 
             if (otherCard.StackParent != null)
                 continue;
@@ -344,10 +343,52 @@ public class CardMover : BaseCardMovement , IPointerDownHandler, IDragHandler, I
             {
                 Card targetCard = this.card.GetLastCardInStack();
 
+                // Mirror TryStackCards: if the last card is a CardUpgrade, find the last non-upgrade card
+                if (targetCard is CardUpgrade)
+                    targetCard = GetLastNonUpgradeCard(this.card);
+
+                if (targetCard == null)
+                    continue;
+
+                // Mirror TryStackCards: handle stacked cards with null-reference cleanup
+                if (otherCard.StackedCards.Count > 0)
+                {
+                    if (otherCard.TryClearStackCards())
+                    {
+                        if (otherCard.StackedCards.Count > 0)
+                        {
+                            Card lastInStack = otherCard.GetLastCardInStack();
+
+                            if (lastInStack is CardUpgrade)
+                                lastInStack = GetLastNonUpgradeCard(otherCard);
+
+                            if (lastInStack == null)
+                                continue;
+
+                            TryManualStack(lastInStack);
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        Card lastInStack = otherCard.GetLastCardInStack();
+
+                        if (lastInStack is CardUpgrade)
+                            lastInStack = GetLastNonUpgradeCard(otherCard);
+
+                        if (lastInStack == null)
+                            continue;
+
+                        TryManualStack(lastInStack);
+                        continue;
+                    }
+                }
+
                 otherCard.OnStack(targetCard);
 
                 Vector3 newPos = Vector3.zero;
-                newPos.y = -stackingHeight * (targetCard.StackedCards.Count);
+                int stackCount = targetCard is CardDefense ? GetStackCountWithoutCardUpgrades(targetCard) : targetCard.StackedCards.Count;
+                newPos.y = -stackingHeight * stackCount;
                 otherCard.transform.localPosition = newPos;
 
                 // Ensure the card has a ParentFollower and set its target offset
